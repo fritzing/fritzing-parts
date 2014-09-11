@@ -1,4 +1,4 @@
-# fritzing-PARTS
+# fritzing-parts
 
 this repository is the main part-library of all fritzing-application parts. It includes all needed svgs in the svg folders and the part "fzp"-files in the specific folders.
 
