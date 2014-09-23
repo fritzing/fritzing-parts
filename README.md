@@ -1,27 +1,11 @@
-# fritzing-parts
+# Fritzing Parts
 
-this repository is the main part-library of all fritzing-application parts. It includes all needed svgs in the svg folders and the part "fzp"-files in the specific folders.
+This repository contains all part definitions that are shipped with the [Fritzing App](https://github.com/fritzing/fritzing-app).
 
-howto's for parts are:
+Parts are composed of meta-data (.fzp) and related graphics (.svg). Depending on who created them, they reside in the core folder (the "official" selection), the contrib folder (shared community contributions), or the user folder (the user's own parts).
 
-- [https://learn.sparkfun.com/tutorials/make-your-own-fritzing-parts](https://learn.sparkfun.com/tutorials/make-your-own-fritzing-parts)
+Read more on the part folder structure and file format here: [http://fritzing.org/developer/fritzing-part-format](http://fritzing.org/developer/fritzing-part-format)
 
-- [fritzing learning section link]
+# Creating parts
 
-
-the folder structure is very needed for the fritzing-application. so it is neassesary to have every thing in place. that means we want to have user generated parts seperated from contributed libarys from known manufactures and the fritzing core parts. 
-
-the folder structure is prepared for it.
-fzp's have to be copied into their remaining folders: 
-1. user parts
-2. contributed parts
-3. core-parts
-
-into the svg folder is a quite similar structure. so the svgs has to go into the right folder for user, contrib and core parts. into the svg-folder you find breadboard, schematic and pcb folders. place the svg for the part into it.
-
-example for user parts:
-
-- fzp -> "user"-folder
-- breadboard-svg -> svg/user/breadboard
-- schematic-svg -> svg/user/schematic
-- pcb-svg -> svg/user/schematic
+Learn how to create your own parts here: [http://fritzing.org/learning/tutorials/creating-custom-parts/](http://fritzing.org/learning/tutorials/creating-custom-parts/)
