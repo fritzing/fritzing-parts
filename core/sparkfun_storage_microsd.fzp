@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="sparkfun_storage_microsd.fzp" fritzingVersion="0.9.0b" moduleId="sparkfun_storage_microsd">
+ <author>Althaus</author>
+ <title>SparkFun - microSD Transflash</title>
+ <label>microSD Transflash</label>
+ <date>Di Okt 7 2014</date>
+ <tags>
+  <tag>MicroSD</tag>
+  <tag>SD</tag>
+  <tag>storage</tag>
+ </tags>
+ <properties>
+  <property name="family">Storage</property>
+  <property name="part number"></property>
+  <property name="layer"></property>
+  <property name="variant">BOB-00544</property>
+ </properties>
+ <description>https://www.sparkfun.com/products/544&#xd;&#xd;&#xd;
+&#xd;&#xd;&#xd;
+Breakout board for the microSD socket that is not much bigger than your fingernail. Compatible with the SPI interface found on any SD card, this tiny form factor was created for cell phone storage and is perfect for your next MP3 project! Board comes fully assembled and tested.&#xd;&#xd;&#xd;
+The bare socket is available.</description>
+ <views>
+  <iconView>
+   <layers image="icon/sparkfun_storage_microsd_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/sparkfun_storage_microsd_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <pcbView>
+   <layers image="pcb/sparkfun_storage_microsd_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+  <schematicView>
+   <layers image="schematic/sparkfun_storage_microsd_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+ </views>
+ <connectors>
+  <connector id="connector3" type="male" name="GND">
+   <description>ground</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector3terminal" svgId="connector3"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector3"/>
+     <p layer="copper0" svgId="connector3"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector4" type="male" name="SCK">
+   <description>serial clock</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector4terminal" svgId="connector4"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector4"/>
+     <p layer="copper0" svgId="connector4"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector5" type="male" name="VCC">
+   <description>voltage collector collector - IC power supply pin</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector5terminal" svgId="connector5"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector5"/>
+     <p layer="copper0" svgId="connector5"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector6" type="male" name="DI">
+   <description>data in</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector6terminal" svgId="connector6"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector6"/>
+     <p layer="copper0" svgId="connector6"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector7" type="male" name="CS">
+   <description>card select</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector7terminal" svgId="connector7"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector7"/>
+     <p layer="copper0" svgId="connector7"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" type="male" name="CD">
+   <description>card detect</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector1terminal" svgId="connector1"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector1"/>
+     <p layer="copper0" svgId="connector1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector2" type="male" name="DO">
+   <description>data out</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector2terminal" svgId="connector2"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector2"/>
+     <p layer="copper0" svgId="connector2"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>
