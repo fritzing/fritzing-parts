@@ -9,14 +9,16 @@ The most powerful and small developing board. UDOO is a multi development platfo
 
 At this link you can also find a more technical and exhaustive document, the UDOO&#8217;s block diagram.
 </description>
-<title>Udoo Dual</title>
+<title>Udoo Board</title>
 <url>http://www.udoo.org/</url>
 <tags>
 <tag>Arduino Mega 2560</tag>
-<tag>ATmega2560</tag>
-<tag>microcontrollerboard</tag>
+<tag>Atmel SAM3X8E</tag>
+<tag>microcontroller</tag>
+<tag>ARM Cortex-M3</tag>
 <tag>Udoo</tag>
 <tag>Dual</tag>
+<tag>Quad</tag>
 <tag>1 GB Ram</tag>
 <tag>HDMI</tag>
 <tag>SATA</tag>
@@ -25,10 +27,13 @@ At this link you can also find a more technical and exhaustive document, the UDO
 <tag>mini USB</tag>
 <tag>Micro SD</tag>
 <tag>12V Power</tag>
+<tag>CAM</tag>
+<tag>iot</tag>
+<tag>GPIO</tag>
 </tags>
 <properties>
 <property name='family'>microcontroller board (Udoo)</property>
-<property name="type">UDOO Dual</property>
+<property name="type">UDOO Dual/Quad</property>
 </properties>
 <views>
 <breadboardView>
@@ -95,8 +100,8 @@ At this link you can also find a more technical and exhaustive document, the UDO
 <p layer='copper0' svgId='connector3pad'/><p layer='copper1' svgId='connector3pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector4' type='female' name='A12'>
-<description>A12</description><views>
+<connector id='connector4' type='female' name='DAC0'>
+<description>DAC0</description><views>
 <breadboardView>
 <p layer='breadboardbreadboard' svgId='connector4pin'/></breadboardView>
 <schematicView>
@@ -105,8 +110,8 @@ At this link you can also find a more technical and exhaustive document, the UDO
 <p layer='copper0' svgId='connector4pad'/><p layer='copper1' svgId='connector4pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector5' type='female' name='A13'>
-<description>A13</description><views>
+<connector id='connector5' type='female' name='DAC1'>
+<description>DAC1</description><views>
 <breadboardView>
 <p layer='breadboardbreadboard' svgId='connector5pin'/></breadboardView>
 <schematicView>
@@ -115,8 +120,8 @@ At this link you can also find a more technical and exhaustive document, the UDO
 <p layer='copper0' svgId='connector5pad'/><p layer='copper1' svgId='connector5pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector6' type='female' name='A14'>
-<description>A14</description><views>
+<connector id='connector6' type='female' name='CANRX'>
+<description>CANRX</description><views>
 <breadboardView>
 <p layer='breadboardbreadboard' svgId='connector6pin'/></breadboardView>
 <schematicView>
@@ -125,8 +130,8 @@ At this link you can also find a more technical and exhaustive document, the UDO
 <p layer='copper0' svgId='connector6pad'/><p layer='copper1' svgId='connector6pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector7' type='female' name='A15'>
-<description>A15</description><views>
+<connector id='connector7' type='female' name='CANTX'>
+<description>CANTX</description><views>
 <breadboardView>
 <p layer='breadboardbreadboard' svgId='connector7pin'/></breadboardView>
 <schematicView>
