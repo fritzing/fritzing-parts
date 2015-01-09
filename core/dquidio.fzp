@@ -1,22 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module referenceFile="dquidio.fzp" moduleId="dquidio">
  <version>4</version>
- <author>f althaus</author>
+<author>fabian althaus</author>
  <title>dquidio board</title>
- <label>Microcontroller</label>
- <date>So Dez 21 2014</date>
+ <label>Microcontroller </label>
+ <date>Fr Jan 9 2015</date>
  <tags>
   <tag>Microcontroller</tag>
   <tag>fritzing core</tag>
  </tags>
  <properties>
-  <property name="family">Microcontrollerboard</property>
-  <property name="package">Bluethoot Wlan</property>
   <property name="part number"></property>
+  <property name="variant">Dquid IO</property>
+  <property name="family">Microcontrollerboard (DquidIO)</property>
   <property name="layer"></property>
+  <property name="package">Bluethoot Wlan</property>
  </properties>
  <taxonomy>microcontroller</taxonomy>
- <description> the dquidio board</description>
+ <description>the dquidio board. for more information visit:
+http://www.dquid.com/landing/dquid-io</description>
  <views>
   <iconView>
    <layers image="icon/dquidio_icon.svg">
@@ -42,8 +44,8 @@
   </pcbView>
  </views>
  <connectors>
-  <connector type="male" id="connector0" name="pin1">
-   <description>pin 1</description>
+  <connector type="male" id="connector0" name="12V_Input">
+   <description>pin 1 - User 12V – Input</description>
    <views>
     <breadboardView>
      <p svgId="connector0pin" terminalId="connector0terminal" layer="breadboard"/>
@@ -57,8 +59,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector1" name="pin2">
-   <description>pin 2</description>
+  <connector type="male" id="connector1" name="5V_Output">
+   <description>pin 2 - 5V- Output</description>
    <views>
     <breadboardView>
      <p svgId="connector1pin" terminalId="connector1terminal" layer="breadboard"/>
@@ -72,8 +74,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector2" name="pin3">
-   <description>pin 3</description>
+  <connector type="male" id="connector2" name="RS-232 Rx">
+   <description>pin 3 - to be managed via Firmware</description>
    <views>
     <breadboardView>
      <p svgId="connector2pin" terminalId="connector2terminal" layer="breadboard"/>
@@ -87,8 +89,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector3" name="pin4">
-   <description>pin 4</description>
+  <connector type="male" id="connector3" name="RS-232 Tx">
+   <description>pin 4 - to be managed via Firmware</description>
    <views>
     <breadboardView>
      <p svgId="connector3pin" terminalId="connector3terminal" layer="breadboard"/>
@@ -102,8 +104,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector4" name="pin5">
-   <description>pin 5</description>
+  <connector type="male" id="connector4" name="GND">
+   <description>pin 5 - GND</description>
    <views>
     <breadboardView>
      <p svgId="connector4pin" terminalId="connector4terminal" layer="breadboard"/>
@@ -117,8 +119,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector5" name="pin6">
-   <description>pin 6</description>
+  <connector type="male" id="connector5" name="GND">
+   <description>pin 6 - GND</description>
    <views>
     <breadboardView>
      <p svgId="connector5pin" terminalId="connector5terminal" layer="breadboard"/>
@@ -132,8 +134,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector6" name="pin7">
-   <description>pin 7</description>
+  <connector type="male" id="connector6" name="GND">
+   <description>pin 7 - GND</description>
    <views>
     <breadboardView>
      <p svgId="connector6pin" terminalId="connector6terminal" layer="breadboard"/>
@@ -147,8 +149,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector7" name="pin8">
-   <description>pin 8</description>
+  <connector type="male" id="connector7" name="GND">
+   <description>pin 8 - GND</description>
    <views>
     <breadboardView>
      <p svgId="connector7pin" terminalId="connector7terminal" layer="breadboard"/>
@@ -162,8 +164,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector8" name="pin9">
-   <description>pin 9</description>
+  <connector type="male" id="connector8" name="I2C_SCL">
+   <description>pin 9 - to be managed via Firmware</description>
    <views>
     <breadboardView>
      <p svgId="connector8pin" terminalId="connector8terminal" layer="breadboard"/>
@@ -177,8 +179,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector9" name="pin10">
-   <description>pin 10</description>
+  <connector type="male" id="connector9" name="I2C_SDA">
+   <description>pin 10 - to be managed via Firmware</description>
    <views>
     <breadboardView>
      <p svgId="connector9pin" terminalId="connector9terminal" layer="breadboard"/>
@@ -192,8 +194,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector10" name="pin11">
-   <description>pin 11</description>
+  <connector type="male" id="connector10" name="UART Tx">
+   <description>pin 11 - to be managed via Firmware</description>
    <views>
     <breadboardView>
      <p svgId="connector10pin" terminalId="connector10terminal" layer="breadboard"/>
@@ -207,8 +209,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector11" name="pin12">
-   <description>pin 12</description>
+  <connector type="male" id="connector11" name="UART Rx">
+   <description>pin 12 - to be managed via Firmware</description>
    <views>
     <breadboardView>
      <p svgId="connector11pin" terminalId="connector11terminal" layer="breadboard"/>
@@ -222,8 +224,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector12" name="pin13">
-   <description>pin 13</description>
+  <connector type="male" id="connector12" name="OUTPUT 1">
+   <description>pin 13 - can be configured via DQuid APP</description>
    <views>
     <breadboardView>
      <p svgId="connector12pin" terminalId="connector12terminal" layer="breadboard"/>
@@ -237,8 +239,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector13" name="pin14">
-   <description>pin 14</description>
+  <connector type="male" id="connector13" name="OUTPUT 2">
+   <description>pin 14 - can be configured via DQuid APP</description>
    <views>
     <breadboardView>
      <p svgId="connector13pin" terminalId="connector13terminal" layer="breadboard"/>
@@ -252,8 +254,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector14" name="pin15">
-   <description>pin 15</description>
+  <connector type="male" id="connector14" name="OUTPUT 3">
+   <description>pin 15 - can be configured via DQuid APP</description>
    <views>
     <breadboardView>
      <p svgId="connector14pin" terminalId="connector14terminal" layer="breadboard"/>
@@ -267,8 +269,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector15" name="pin16">
-   <description>pin 16</description>
+  <connector type="male" id="connector15" name="OUTPUT 4">
+   <description>pin 16 - can be configured via DQuid APP</description>
    <views>
     <breadboardView>
      <p svgId="connector15pin" terminalId="connector15terminal" layer="breadboard"/>
@@ -282,8 +284,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector16" name="pin17">
-   <description>pin 17</description>
+  <connector type="male" id="connector16" name="INPUT 1">
+   <description>pin 17 - can be configured via DQuid APP</description>
    <views>
     <breadboardView>
      <p svgId="connector16pin" terminalId="connector16terminal" layer="breadboard"/>
@@ -297,8 +299,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector17" name="pin18">
-   <description>pin 18</description>
+  <connector type="male" id="connector17" name="INPUT 2">
+   <description>pin 18 - can be configured via DQuid APP</description>
    <views>
     <breadboardView>
      <p svgId="connector17pin" terminalId="connector17terminal" layer="breadboard"/>
@@ -312,8 +314,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector18" name="pin19">
-   <description>pin 19</description>
+  <connector type="male" id="connector18" name="INPUT 3">
+   <description>pin 19 - can be configured via DQuid APP</description>
    <views>
     <breadboardView>
      <p svgId="connector18pin" terminalId="connector18terminal" layer="breadboard"/>
@@ -327,8 +329,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector19" name="pin20">
-   <description>pin 20</description>
+  <connector type="male" id="connector19" name="INPUT 4">
+   <description>pin 20 - can be configured via DQuid APP</description>
    <views>
     <breadboardView>
      <p svgId="connector19pin" terminalId="connector19terminal" layer="breadboard"/>
@@ -643,4 +645,12 @@
    </views>
   </connector>
  </connectors>
+<buses>
+<bus id='gnd'>
+<nodeMember connectorId='connector4'/>
+<nodeMember connectorId='connector5'/>
+<nodeMember connectorId='connector6'/>
+<nodeMember connectorId='connector7'/>
+</bus>
+</buses>
 </module>
