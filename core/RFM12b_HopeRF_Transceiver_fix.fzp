@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.9.0b" moduleId="RFM12b_hope">
-<version replacedby="RFM12b_hope_fix">3</version>
+<module fritzingVersion="0.9.0b" moduleId="RFM12b_hope_fix">
+<version>4</version>
     <author>fabian althaus</author>
     <title>RFM12b HopeRF Transceiver</title>
     <label>RFM12b</label>
-    <date>2014-06-11</date>
+    <date>2015-15-02</date>
     <tags/>
     <properties>
-        <property name="family">//obsolete// RFM12B Transreceiver</property>
+        <property name="family">RFM12B Transreceiver</property>
         <property name="part number"/>
     </properties>
     <description>RF Transceiver by Hope RF.  Well supported Arduino libraries are available.  Part is available in several frequencies (433MHz, 915MHz)...</description>
@@ -28,10 +28,10 @@
             </layers>
         </schematicView>
         <pcbView>
-            <layers image="pcb/RFM12b_HopeRF_Transceiver__9c603c735b502.svg">
+            <layers image="pcb/RFM12b_HopeRF_Transceiver.svg">
                 <layer layerId="copper1"/>
                 <layer layerId="silkscreen"/>
-                <layer layerId="copper0"/>
+
             </layers>
         </pcbView>
     </views>
