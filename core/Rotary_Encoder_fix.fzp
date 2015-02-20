@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1255" moduleId="ALPS_STEC12E07">
- <version>4</version>
- <author>Stefan Hermann</author>
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1255" moduleId="alps_stec12e07_fix">
+ <version>5</version>
+ <author>Fabian Althaus</author>
  <title>Rotary Encoder</title>
  <label>RE</label>
- <date>2011-09-15</date>
+ <date>2015-02-15</date>
  <tags>
   <tag>Rotary</tag>
   <tag>Encoder</tag>
@@ -64,7 +64,7 @@
      <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector1pad"/>
@@ -79,7 +79,7 @@
      <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector2pad"/>
