@@ -1,24 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-Passives-RESISTOR-2010">
-<!-- generated from Sparkfun Eagle Library 'SparkFun-Passives' RESISTOR 2010 -->
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-Passives-RESISTOR-0402-ResistorModuleID">
+<!-- generated from Sparkfun Eagle Library 'SparkFun-Passives' RESISTOR 0402-RES -->
 <version>4</version>
 <date>2013-02-13</date>
 <label>R</label>
 <author>www.fritzing.org</author>
 <description>&lt;b&gt;Resistor&lt;/b&gt;
 Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</description>
-<title>Resistor</title>
-<tags>
-<tag>RESISTOR</tag>
-<tag>R2010</tag>
-<tag>2010</tag>
-</tags>
-<properties>
-<property name="package">2010 [SMD]</property>
-<property name="family">Resistor</property>
+    <title>220 Ω Resistor</title>
+   <tags>
+        <tag>Resistor</tag>
+        <tag>basic resistor</tag>
+        <tag>fritzing core</tag>
+    <tag>SMD</tag></tags>
+    <properties>
         <property name="Resistance" showInLabel="yes">220</property>
+        <property name="family">Resistor</property>
+      <property name="package">0402 [SMD]</property>
       <property name="power" showInLabel="yes"/>
       <property name="tolerance" showInLabel="yes">&#177;5%</property>
-</properties>
+    </properties>
+    <taxonomy>discreteParts.resistor.220</taxonomy>
+    <description>A generic resistor</description>
+    <spice><line>R{instanceTitle} {net connector0} {net connector1} {resistance}</line></spice>
 <views>
 <breadboardView>
 <layers image="breadboard/resistor_220.svg">
@@ -31,7 +34,7 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </layers>
 </schematicView>
 <pcbView>
-<layers image="pcb/sparkfun-passives_r2010_pcb.svg">
+<layers image="pcb/sparkfun-passives_0402-res_pcb.svg">
 <layer layerId="copper1"/>
 <layer layerId="silkscreen"/>
 </layers>
