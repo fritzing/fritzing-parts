@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="2be9a2bfe23b7c0d91538c44cce37534_43" referenceFile="Trackballer-v12.fzp">
+ <version>4</version>
+ <date>Thu Feb 28 2013</date>
+ <author>SparkFun</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Description: &lt;/span>Have you ever wanted your project to just &amp;quot;hibernate&amp;quot; until someone picks it up or moves it? It's a great strategy for dramatically extending the battery life of a widget that doesn't need to be active all the time. The Wake-on-Shake board is designed to make it really simple to do just that!&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The Wake-on-Shake, based on a concept by Nitzan Gadish of Analog Devices, combines the ATTiny2313A with the ADXL362 low-power accelerometer to cut power to your project for long periods of time, all the while waiting for a shake or a bump and sipping &amp;lt;2uA at 3.7V! With power consumption that low, the limiting factor for lifespan in most devices will be aging-related self-discharge of the batteries.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The board is easy to use, you basically connect it as a power switch between your device and a power source (2.0-5.5V). By default, the board will activate the load when it experiences a mild bump or tilt; the load will be powered for 5 seconds after that. Using a serial data connection, the sensitivity can be increased or decreased, as can the delay time. Additionally, the “WAKE” pin allows the load to control when it goes back to sleep. By pulling the wake signal high (to at least 2.7V), the load will remain energized until it releases the pin.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Note:&lt;/span> While it is possible to connect the load to the on-board serial port, allowing the load to access the ADXL362 and EEPROM storage of the ATTiny2313A, caution must be exercised when doing this to avoid sourcing current to the load through the serial port data lines on the ATTiny2313A, which could damage the ATTiny2313A as well as causing excessive off-state power dissipation.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Features:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Supply Voltage: 2.0 - 5.5VDC &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Power Consumption in Hibernation: &amp;lt;2uA @ 3.7V &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Wake Signal: 2.7 - 15V &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Serial Header for Configuration is FTDI Basic Breakout Compatible &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">ISP Header for ATTiny2313A is Broken Out, No Bootloader is Available &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2mm JST Connector for LiPo Battery Input&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Documents: &lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Widgets/ADXL362WakeOnShake.pdf">&lt;span style=" text-decoration: underline; color:#0000ff;">Schematic&lt;/span>&lt;/a> &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="https://github.com/sparkfun/Wake_on_shake/tree/master/Hardware">&lt;span style=" text-decoration: underline; color:#0000ff;">Eagle Files&lt;/span>&lt;/a> &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Widgets/Wake-on-Shake_Guide.pdf">&lt;span style=" text-decoration: underline; color:#0000ff;">User Guide&lt;/span>&lt;/a> &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="https://github.com/sparkfun/Wake_on_shake">&lt;span style=" text-decoration: underline; color:#0000ff;">Github Repo&lt;/span>&lt;/a> &lt;/li>&lt;/ul>&lt;/body>&lt;/html></description>
+ <title>Wake-On-Shake Board</title>
+ <url>https://www.sparkfun.com/products/11447</url>
+ <tags>
+  <tag>Sleep</tag>
+  <tag>Wake</tag>
+  <tag>Accelerometer</tag>
+ </tags>
+ <properties>
+  <property name="family">Widget</property>
+  <property name="variant">variant 1</property>
+  <property name="part number"></property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Wos.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/WOS_Schem.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/WOS_PCB.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Wos.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="pad" id="connector21" name="VIN">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector21pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector21pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector21pin" layer="copper0"/>
+     <p svgId="connector21pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector22" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector22pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector22pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector22pin" layer="copper0"/>
+     <p svgId="connector22pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector23" name="PB3">
+   <description>PB3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector23pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector23pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector23pin" layer="copper0"/>
+     <p svgId="connector23pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector24" name="PB2">
+   <description>PB2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector24pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector24pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector24pin" layer="copper0"/>
+     <p svgId="connector24pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector25" name="PB1">
+   <description>PB1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector25pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector25pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector25pin" layer="copper0"/>
+     <p svgId="connector25pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector26" name="PB0">
+   <description>PB0</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector26pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector26pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector26pin" layer="copper0"/>
+     <p svgId="connector26pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector27" name="PD6">
+   <description>PD6</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector27pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector27pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector27pin" layer="copper0"/>
+     <p svgId="connector27pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector28" name="WAKE">
+   <description>WAKE</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector28pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector28pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector28pin" layer="copper0"/>
+     <p svgId="connector28pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector29" name="VOUT">
+   <description>VOUT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector29pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector29pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector29pin" layer="copper0"/>
+     <p svgId="connector29pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector30" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector30pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector30pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector30pin" layer="copper0"/>
+     <p svgId="connector30pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector31" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector31pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector31pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector31pin" layer="copper0"/>
+     <p svgId="connector31pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector32" name="CTS">
+   <description>CTS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector32pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector32pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector32pin" layer="copper0"/>
+     <p svgId="connector32pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector33" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector33pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector33pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector33pin" layer="copper0"/>
+     <p svgId="connector33pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector34" name="RXI">
+   <description>RXI</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector34pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector34pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector34pin" layer="copper0"/>
+     <p svgId="connector34pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector35" name="TXO">
+   <description>TXO</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector35pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector35pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector35pin" layer="copper0"/>
+     <p svgId="connector35pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector36" name="DTR">
+   <description>DTR</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector36pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector36pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector36pin" layer="copper0"/>
+     <p svgId="connector36pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+</module>
