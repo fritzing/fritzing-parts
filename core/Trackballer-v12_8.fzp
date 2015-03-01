@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="466b94396a95d7078e5d4d138140b694_8" referenceFile="Trackballer-v12.fzp">
+ <version>4</version>
+ <date>Thu Feb 28 2013</date>
+ <author>SparkFun</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Description:&lt;/span> The PowerCell board is a single cell LiPo boost converter (to 3.3V and 5V) and micro-USB charger in one.  The board comes with a JST connector for a single cell LiPo battery, a micro-USB connector for the 5V charge input, and selectable 3.3V and 5V ouput pins (labeled 'out'). There are also two charge pins broken out (labeled 'charge'), so you can use another 5V power source to charge the batteries, if you don't have a micro-USB cable.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">We've also broken out the power-save and enable pins, so that you can have full control of the switching regulator. Keep in mind, if you keep your battery connected to the Powercell, it is recommended that you disable the switching regulator (pull EN low) in order to prevent the battery from discharging and reaching the under voltage cutoff on the battery itself. There is also an under-voltage lockout on the Powercell board which is tied to a solder jumper so that you can disable it if you like.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The micro-USB charger uses the &lt;a href="http://www.sparkfun.com/datasheets/Prototyping/Batteries/MCP73831T.pdf">&lt;span style=" text-decoration: underline; color:#0000ff;">MCP73831&lt;/span>&lt;/a> and allows you to charge 3.7V LiPo cells at a rate of 100mA max. If you want to charge at a faster rate, you will need to connect a separate power supply to the pins labeled '5V' and 'GND' under the label 'charge'.  &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The boost converter is based on the TPS61200 from TI and has solder jumper selectable 5V and 3.3V output, and an under voltage protection of 2.6V (which can be disabled via solder jumper on the back of the PCB).&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Note:&lt;/span> This board does not have reverse polarity protection, so please be sure to recognize the polarity of your connections!&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Dimensions:&lt;/span> 1.03 x 0.95&amp;quot;&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Features:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">MCP73831 Single Cell LiPo charger at 500mA &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">TPS61200 Boost Converter &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Selectable output voltage 3.3 or 5V &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5V @ 600mA max &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3.3V @ 200mA max &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Undervoltage lock out at 2.6V (with disable jumper) &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Quiescent current, less than 55uA &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">JST connector for LiPo battery &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">micro-USB connector for charge power source &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Inductor: 4.7uH, 1.2A Sumida CDRH2D18 &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Over temperature protection&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Documents:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Prototyping/PowerCell-v13.pdf">&lt;span style=" text-decoration: underline; color:#0000ff;">Schematic&lt;/span>&lt;/a> &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Prototyping/PowerCell-v13.zip">&lt;span style=" text-decoration: underline; color:#0000ff;">Eagle Files&lt;/span>&lt;/a> &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="http://www.sparkfun.com/tutorials/379">&lt;span style=" text-decoration: underline; color:#0000ff;">Tutorial&lt;/span>&lt;/a> &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="http://www.sparkfun.com/datasheets/Prototyping/Batteries/MCP73831T.pdf">&lt;span style=" text-decoration: underline; color:#0000ff;">Datasheet&lt;/span>&lt;/a> (MCP73831T) &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="http://www.sparkfun.com/datasheets/Prototyping/tps61200.pdf">&lt;span style=" text-decoration: underline; color:#0000ff;">Datasheet&lt;/span>&lt;/a> (TPS61200)&lt;/li>&lt;/ul>&lt;/body>&lt;/html></description>
+ <title>Power Cell - LiPo Charger/Booster</title>
+ <url>https://www.sparkfun.com/products/11231</url>
+ <tags>
+  <tag>TPS61200</tag>
+  <tag>Charger</tag>
+  <tag>Booster</tag>
+  <tag>MCP73831</tag>
+  <tag>LiPo</tag>
+  <tag>Power</tag>
+ </tags>
+ <properties>
+  <property name="family">Power</property>
+  <property name="variant">variant 1</property>
+  <property name="part number"></property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Powercell.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/PowerCell_Schem.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Powercell_PCB.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Powercell.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="pad" id="connector21" name="5V">
+   <description>5V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector21pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector21pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector21pin" layer="copper0"/>
+     <p svgId="connector21pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector22" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector22pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector22pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector22pin" layer="copper0"/>
+     <p svgId="connector22pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector23" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector23pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector23pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector23pin" layer="copper0"/>
+     <p svgId="connector23pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector24" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector24pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector24pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector24pin" layer="copper0"/>
+     <p svgId="connector24pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector25" name="PS">
+   <description>PS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector25pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector25pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector25pin" layer="copper0"/>
+     <p svgId="connector25pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector26" name="EN">
+   <description>EN</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector26pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector26pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector26pin" layer="copper0"/>
+     <p svgId="connector26pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+</module>
