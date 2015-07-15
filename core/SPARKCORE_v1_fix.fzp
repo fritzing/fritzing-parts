@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.5.2b.02.18.4756" moduleId="SPARKCORE_v1" referenceFile="SPARKCORE_v1.fzp">
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="SPARKCORE_v1_fix" referenceFile="SPARKCORE_v1_fix.fzp">
  <version>5</version>
  <date>Wed Jan 22 2014</date>
  <author>BDub @ Technobly.com</author>
@@ -36,12 +36,12 @@ p, li { white-space: pre-wrap; }
    </layers>
   </breadboardView>
   <schematicView>
-   <layers image="schematic/SPARKCORE_v1_schematic.svg">
+   <layers image="schematic/SPARKCORE_v1_fix_schematic.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="pcb/SPARKCORE_v1_pcb.svg">
+   <layers image="pcb/SPARKCORE_v1_fix_pcb.svg">
     <layer layerId="copper1"/>
     <layer layerId="silkscreen"/>
     <layer layerId="copper0"/>
@@ -174,8 +174,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector49" name="TX">
-   <description>Serial1 UART Transmit</description>
+  <connector type="male" id="connector49" name="RX">
+   <description>Serial1 UART Receive</description>
    <views>
     <breadboardView>
      <p svgId="connector49pin" layer="breadboardbreadboard"/>
@@ -189,8 +189,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector50" name="RX">
-   <description>Serial1 UART Receive</description>
+  <connector type="male" id="connector50" name="TX">
+   <description>Serial1 UART Transmit</description>
    <views>
     <breadboardView>
      <p svgId="connector50pin" layer="breadboardbreadboard"/>
