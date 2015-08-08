@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.7.2b' moduleId='intel_edison_minibreakout'>
+<module fritzingVersion='0.7.2b' moduleId='intel_edison_minibreakout_bottom'>
 <!-- generated from 'Edison-HiroseDF40.lbr' EDISON  -->
-<version>4</version>
+<version replacedby="intel_edison_minibreakout_bottom_fix">4</version>
 <date>2014-11-20</date>
 <label>U</label>
 <author>www.fritzing.org</author>
@@ -20,15 +20,15 @@ The tiny Edison fits nicely onto a breakout board - sort of like a tiny IoT spar
 <tag>EDISON_minibreakout</tag>
 </tags>
 <properties>
-  <property name="family">microcontroller board (intel)</property>
+  <property name="family">/obsolete/microcontroller board (intel)</property>
   <property name="part number">
   </property>
   <property name="type">Edison miniBreakout</property>
-  <property name="view">top View</property>
+  <property name="view">bottom view</property>
 </properties>
 <views>
 <breadboardView>
-<layers image='breadboard/intel_edison_minibreakout_breadboard.svg'>
+<layers image='breadboard/intel_edison_minibreakout_bottom_breadboard.svg'>
 <layer layerId='breadboardbreadboard'/>
 </layers>
 </breadboardView>
@@ -172,7 +172,7 @@ The tiny Edison fits nicely onto a breakout board - sort of like a tiny IoT spar
 </pcbView>
 </views>
 </connector>
-<connector id='pin9' type="female" name='GP28 '>
+<connector id='pin9' type="female" name='GP28'>
 <description>I2C6_SDA  GPIO, I2C6 data open collector. </description>
 <views>
 <breadboardView>
@@ -682,7 +682,7 @@ The tiny Edison fits nicely onto a breakout board - sort of like a tiny IoT spar
 </pcbView>
 </views>
 </connector>
-<connector id='pin43' type="female" name='NC '>
+<connector id='pin43' type="female" name='NC'>
 <description> No connect. </description>
 <views>
 <breadboardView>
