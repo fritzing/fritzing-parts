@@ -42,7 +42,7 @@ Thanks for contributing.
 
 Push to your fork and [submit a pull request](https://github.com/fritzing/fritzing-parts/compare/)
 
-# Contributing a fixe
+# Contributing a fix
 fritzing has an obsolete mechanism. 
 *will follow soon*
 
