@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.4.3b.09.26.4458" moduleId="Paralaxping(((_4c0eeaf646333612a3bbee1df76daf36_16" referenceFile="SRF05 Ultrasonic Rangefinder__856ec32add635ca789a835a39fed2389__67d4590627079fd4efa77e6430f0e9c7__7feda7cf112876e5bd1c6b854136dc6d__2deb64b76e84d54b89aa5b7925b91a01__1309efc522384c71a9feeaf68dcf45c3.fzp">
+ <author>Shai Perendik</author>
+ <date>Mon Jun 22 2015</date>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">ParallaxPing</property>
+  <property name="part number">28014</property>
+  <property name="layer"></property>
+ </properties>
+ <views>
+  <iconView>
+   <layers image="icon/Paralaxping(((_73435c0a4d28333a6f82e2d9eb92c3ad_1_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/Paralaxping(((_73435c0a4d28333a6f82e2d9eb92c3ad_1_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <pcbView>
+   <layers image="pcb/Paralaxping(((_73435c0a4d28333a6f82e2d9eb92c3ad_1_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+  <schematicView>
+   <layers image="schematic/Paralaxping(((_73435c0a4d28333a6f82e2d9eb92c3ad_1_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+ </views>
+ <connectors>
+  <connector name="5V" id="connector8" type="male">
+   <description>5VDC</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector8terminal" svgId="connector8" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector8terminal" svgId="connector8" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector8" layer="copper1"/>
+     <p svgId="connector8" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="Sig" id="connector9" type="male">
+   <description>signal pin</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector9terminal" svgId="connector9" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector9terminal" svgId="connector9" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector9" layer="copper1"/>
+     <p svgId="connector9" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector11" type="male">
+   <description>ground</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector11terminal" svgId="connector11" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector11terminal" svgId="connector11" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector11" layer="copper1"/>
+     <p svgId="connector11" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <title>Parallax Ping))) Ultrasonic Range Sendor</title>
+ <url>http://www.parallax.com/product/28015</url>
+ <label>Ping)))</label>
+</module>
