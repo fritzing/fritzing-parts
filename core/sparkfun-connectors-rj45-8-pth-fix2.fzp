@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-Connectors-RJ45-8-PTH">
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-Connectors-RJ45-8-PTH_fix_bottom">
 <!-- generated from Sparkfun Eagle Library 'SparkFun-Connectors' RJ45-8 PTH -->
-<version>4</version>
+<version>5</version>
 <date>2013-02-13</date>
 <label>U</label>
 <author>www.fritzing.org</author>
@@ -13,7 +13,7 @@ Simple RJ45, 8-pin connection - connector for common Cat5, Cat5e, and Cat6 Ether
 </tags>
 <properties>
 <property name="package">rj45-8</property>
-<property name="target">RJ-45</property>
+<property name="target">RJ-45 bottom</property>
 <property name="family">sparkfun RJ-XX Jack</property>
 <property name="variant">pth</property>
 </properties>
@@ -29,7 +29,7 @@ Simple RJ45, 8-pin connection - connector for common Cat5, Cat5e, and Cat6 Ether
 </layers>
 </schematicView>
 <pcbView>
-<layers image="pcb/sparkfun-connectors_rj45-8_pcb.svg">
+<layers image="pcb/sparkfun-connectors_rj45-8_pcb_fix_bottom.svg">
 <layer layerId="copper1"/>
 <layer layerId="silkscreen"/>
 <layer layerId="copper0"/>
