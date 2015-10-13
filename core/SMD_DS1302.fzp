@@ -39,7 +39,7 @@
         </schematicView>
     </views>
     <connectors>
-        <connector id="connector0" name="+V" type="male">
+        <connector id="connector0" name="+V" type="pad">
             <description>Connect to the positive rail of the power supply in your circuit</description>
             <views>
                 <breadboardView>
@@ -52,7 +52,7 @@
                 <p layer="copper1" svgId="connector0pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector1" name="X1 - Crystal" type="male">
+        <connector id="connector1" name="X1 - Crystal" type="pad">
             <description>Connect this pin to a 32kHz watch crystal</description>
             <views>
                 <breadboardView>
@@ -65,7 +65,7 @@
                 <p layer="copper1" svgId="connector1pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector2" name="X2 - Crystal" type="male">
+        <connector id="connector2" name="X2 - Crystal" type="pad">
             <description>Connect this pin to a 32kHz watch crystal</description>
             <views>
                 <breadboardView>
@@ -78,7 +78,7 @@
                 <p layer="copper1" svgId="connector2pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector3" name="0V" type="male">
+        <connector id="connector3" name="0V" type="pad">
             <description>Connect to the 0V (ground) of the power supply in your circuit</description>
             <views>
                 <breadboardView>
@@ -91,7 +91,7 @@
                 <p layer="copper1" svgId="connector3pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector4" name="CE - Chip Enable" type="male">
+        <connector id="connector4" name="CE - Chip Enable" type="pad">
             <description>This pin is used as a chip enable and to initiate communications with the device. This pin is active high and the chip will be enabled when this pin has a logic high presented to it. Connect this pin to a digital output pin of your controller</description>
             <views>
                 <breadboardView>
@@ -104,7 +104,7 @@
                 <p layer="copper1" svgId="connector4pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector5" name="I/O - SPI Data In/Out" type="male">
+        <connector id="connector5" name="I/O - SPI Data In/Out" type="pad">
             <description>This pin is used to read data from the device and to write data to the device</description>
             <views>
                 <breadboardView>
@@ -117,7 +117,7 @@
                 <p layer="copper1" svgId="connector5pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector6" name="SCLK - SPI Clock" type="male">
+        <connector id="connector6" name="SCLK - SPI Clock" type="pad">
             <description>Connect this pin to the 'SPI Clock' (SCLK) signal of the controller</description>
             <views>
                 <breadboardView>
@@ -130,7 +130,7 @@
                 <p layer="copper1" svgId="connector6pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector7" name="Vbat - Backup Supply" type="male">
+        <connector id="connector7" name="Vbat - Backup Supply" type="pad">
             <description>Connect this pin to the positive connection of a 3V battery</description>
             <views>
                 <breadboardView>
