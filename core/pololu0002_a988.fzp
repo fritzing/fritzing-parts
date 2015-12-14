@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="pololu0002_a988" referenceFile="pololu0002_a988.fzp">
+ <version>5</version>
+ <date>mer feb 26 2014</date>
+ <author>Matteo Perini + Fabian Althaus</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Ubuntu'; font-size:9pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The A4988 stepper motor driver carrier is a breakout board for Allegro’s A4988 microstepping bipolar stepper motor driver. The driver features adjustable current limiting, overcurrent and overtemperature protection, and five different microstep resolutions (down to 1/16-step). It operates from 8 – 35 V and can deliver up to approximately 1 A per phase without a heat sink or forced air flow (it is rated for 2 A per coil with sufficient additional cooling).&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:x-large; font-weight:600;">Dimensions&lt;/span>&lt;/p>
+&lt;table border="0" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;" cellspacing="2" cellpadding="0">
+&lt;tr>
+&lt;td>
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Size: &lt;/span>&lt;/p>&lt;/td>
+&lt;td>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0.6″ × 0.8″ &lt;/p>&lt;/td>&lt;/tr>
+&lt;tr>
+&lt;td>
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">  Weight: &lt;/span>&lt;/p>&lt;/td>
+&lt;td>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1.3 g&lt;a href="http://www.pololu.com/product/1182/specs#note1">&lt;span style=" text-decoration: underline; color:#0057ae; vertical-align:super;">1&lt;/span>&lt;/a> &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+&lt;p style=" margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:x-large; font-weight:600;">General specifications&lt;/span>&lt;/p>
+&lt;table border="0" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;" cellspacing="2" cellpadding="0">
+&lt;tr>
+&lt;td>
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Minimum operating voltage: &lt;/span>&lt;/p>&lt;/td>
+&lt;td>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">8 V &lt;/p>&lt;/td>&lt;/tr>
+&lt;tr>
+&lt;td>
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Maximum operating voltage: &lt;/span>&lt;/p>&lt;/td>
+&lt;td>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">35 V &lt;/p>&lt;/td>&lt;/tr>
+&lt;tr>
+&lt;td>
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Continuous current per phase: &lt;/span>&lt;/p>&lt;/td>
+&lt;td>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1 A&lt;a href="http://www.pololu.com/product/1182/specs#note2">&lt;span style=" text-decoration: underline; color:#0057ae; vertical-align:super;">2&lt;/span>&lt;/a> &lt;/p>&lt;/td>&lt;/tr>
+&lt;tr>
+&lt;td>
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Maximum current per phase: &lt;/span>&lt;/p>&lt;/td>
+&lt;td>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2 A&lt;a href="http://www.pololu.com/product/1182/specs#note3">&lt;span style=" text-decoration: underline; color:#0057ae; vertical-align:super;">3&lt;/span>&lt;/a> &lt;/p>&lt;/td>&lt;/tr>
+&lt;tr>
+&lt;td>
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Minimum logic voltage: &lt;/span>&lt;/p>&lt;/td>
+&lt;td>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3 V &lt;/p>&lt;/td>&lt;/tr>
+&lt;tr>
+&lt;td>
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Maximum logic voltage: &lt;/span>&lt;/p>&lt;/td>
+&lt;td>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5.5 V &lt;/p>&lt;/td>&lt;/tr>
+&lt;tr>
+&lt;td>
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Microstep resolutions: &lt;/span>&lt;/p>&lt;/td>
+&lt;td>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">full, 1/2, 1/4, 1/8, and 1/16 &lt;/p>&lt;/td>&lt;/tr>
+&lt;tr>
+&lt;td>
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Reverse voltage protection?: &lt;/span>&lt;/p>&lt;/td>
+&lt;td>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">N &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This product is a carrier board or breakout board for Allegro’s A4988 DMOS Microstepping Driver with Translator and Overcurrent Protection; we therefore recommend careful reading of the &lt;a href="http://www.pololu.com/file/download/a4988_DMOS_microstepping_driver_with_translator.pdf?file_id=0J450">&lt;span style=" text-decoration: underline; color:#0057ae;">A4988 datasheet&lt;/span>&lt;/a> (380k pdf) before using this product. This stepper motor driver lets you control one &lt;a href="http://www.pololu.com/category/87/stepper-motors">&lt;span style=" text-decoration: underline; color:#0057ae;">bipolar stepper motor&lt;/span>&lt;/a> at up to 2 A output current per coil (see the &lt;span style=" font-style:italic;">Power Dissipation Considerations&lt;/span> section below for more information). Here are some of the driver’s key features:&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Simple step and direction control interface &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Five different step resolutions: full-step, half-step, quarter-step, eighth-step, and sixteenth-step &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Adjustable current control lets you set the maximum current output with a potentiometer, which lets you use voltages above your stepper motor’s rated voltage to achieve higher step rates &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Intelligent chopping control that automatically selects the correct current decay mode (fast decay or slow decay) &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Over-temperature thermal shutdown, under-voltage lockout, and crossover-current protection &lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Short-to-ground and shorted-load protection&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This product ships with all surface-mount components—including the A4988 driver IC—installed as shown in the product picture.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Note that we carry several stepper motor drivers that can be used as alternatives for this module. The &lt;a href="http://www.pololu.com/product/2128">&lt;span style=" text-decoration: underline; color:#0057ae;">Black Edition A4988 stepper motor driver carrier&lt;/span>&lt;/a> is available with approximately 20% better performance; except for thermal characteristics, the Black Edition and this (green) board are interchangeable. We also sell a &lt;a href="http://www.pololu.com/product/1183">&lt;span style=" text-decoration: underline; color:#0057ae;">larger version of the A4988 carrier&lt;/span>&lt;/a> that has reverse power protection on the main power input and built-in 5 V and 3.3 V voltage regulators that eliminate the need for separate logic and motor supplies. Our &lt;a href="http://www.pololu.com/product/2133">&lt;span style=" text-decoration: underline; color:#0057ae;">DRV8825 carrier&lt;/span>&lt;/a> offers approximately 50% better performance over a wider voltage range and with a few additional features, while our &lt;a href="http://www.pololu.com/product/2134">&lt;span style=" text-decoration: underline; color:#0057ae;">DRV8834 carrier&lt;/span>&lt;/a> works with motor supply voltages as low as 2.5 V; either of these boards can be used as a drop-in replacement for this driver in many applications.&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Pololu A4988</title>
+ <tags>
+  <tag>stepper motor driver</tag>
+ <tag>pololu</tag>
+  <tag>a988</tag>
+ </tags>
+ <properties>
+  <property name="family">stepper motor driver</property>
+  <property name="variant">variant 2</property>
+  <property name="package">SO16</property>
+  <property name="layer"></property>
+  <property name="editable pin labels">false</property>
+  <property name="chip label">IC</property>
+  <property name="part number"></property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/pololu0002_a988_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/pololu0002_a988_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/pololu0002_a988_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+       <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/pololu0002_a988_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="ENABLE">
+   <description>if 0  true</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pad" layer="copper1"/>
+    <p svgId="connector0pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector1" name="MS1">
+   <description/>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pad" layer="copper1"/>
+    <p svgId="connector1pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector2" name="MS2">
+   <description/>
+   <views>
+    <breadboardView>
+     <p svgId="connector2pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector2pad" layer="copper1"/>
+    <p svgId="connector2pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector3" name="MS3">
+   <description/>
+   <views>
+    <breadboardView>
+     <p svgId="connector3pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector3pin" layer="schematic" terminalId="connector3terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector3pad" layer="copper1"/>
+    <p svgId="connector3pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector4" name="RESET">
+   <description>If 0 true</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector4pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector4pin" layer="schematic" terminalId="connector4terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector4pad" layer="copper1"/>
+    <p svgId="connector4pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector5" name="SLEEP">
+   <description>If 0 true</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector5pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector5pin" layer="schematic" terminalId="connector5terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector5pad" layer="copper1"/>
+    <p svgId="connector5pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector6" name="STEP">
+   <description/>
+   <views>
+    <breadboardView>
+     <p svgId="connector6pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector6pin" layer="schematic" terminalId="connector6terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector6pad" layer="copper1"/>
+    <p svgId="connector6pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector7" name="DIR">
+   <description/>
+   <views>
+    <breadboardView>
+     <p svgId="connector7pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector7pin" layer="schematic" terminalId="connector7terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector7pad" layer="copper1"/>
+    <p svgId="connector7pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector8" name="GND">
+   <description>logic ground</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector8pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector8pin" layer="schematic" terminalId="connector8terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector8pad" layer="copper1"/>
+    <p svgId="connector8pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector9" name="VDD">
+   <description>logic power supply (3-5.5V)</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector9pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector9pin" layer="schematic" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector9pad" layer="copper1"/>
+    <p svgId="connector9pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector10" name="1B">
+   <description/>
+   <views>
+    <breadboardView>
+     <p svgId="connector10pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector10pin" layer="schematic" terminalId="connector10terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector10pad" layer="copper1"/>
+    <p svgId="connector10pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector11" name="1A">
+   <description/>
+   <views>
+    <breadboardView>
+     <p svgId="connector11pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector11pin" layer="schematic" terminalId="connector11terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector11pad" layer="copper1"/>
+    <p svgId="connector11pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector12" name="2A">
+   <description/>
+   <views>
+    <breadboardView>
+     <p svgId="connector12pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector12pin" layer="schematic" terminalId="connector12terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector12pad" layer="copper1"/>
+    <p svgId="connector12pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector13" name="2B">
+   <description/>
+   <views>
+    <breadboardView>
+     <p svgId="connector13pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector13pin" layer="schematic" terminalId="connector13terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector13pad" layer="copper1"/>
+    <p svgId="connector13pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector14" name="GND">
+   <description>motor ground</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector14pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector14pin" layer="schematic" terminalId="connector14terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector14pad" layer="copper1"/>
+    <p svgId="connector14pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector15" name="VMOT">
+   <description>motor power supply (8-35V)</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector15pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector15pin" layer="schematic" terminalId="connector15terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector15pad" layer="copper1"/>
+    <p svgId="connector15pad" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>http://www.pololu.com/product/1182</url>
+ <label>Pololu A4988</label>
+</module>

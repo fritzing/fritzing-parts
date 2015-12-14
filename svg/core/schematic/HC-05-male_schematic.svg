@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" y="0in" baseProfile="tiny" width="1.1in" height="1in"  viewBox="0 0 27.94 25.4" x="0in">
+    <desc >
+        <referenceFile >ArduinoBluetoothMatev13_schematic.svg</referenceFile>
+    </desc>
+    <g  id="schematic" gorn="0.1">
+        <rect y="5.23875" width="17.4625" fill="#FFFFFF" stroke="#000000" class="interior rect" height="14.9225"  stroke-width="0.3175" stroke-linecap="round" x="5.23875"/>
+        <line x2="27.8165" fill="none" stroke="#787878" class="pin"  id="connector14pin" stroke-width="0.246944" gorn="0.1.1" y1="10.16" stroke-linecap="round" y2="10.16" x1="22.7365"/>
+        <text y="10.4069" fill="#8c8c8c" stroke="none" class="text" font-family="'Droid Sans'"  font-size="1.23472" stroke-width="0" text-anchor="end" x="22.2426">TX_5V</text>
+        <rect y="10.0365" width="0.246944" fill="none" stroke="none" class="terminal" height="0.246944"  id="connector14terminal" stroke-width="0" gorn="0.1.3" x="27.8165"/>
+        <line x2="27.8165" fill="none" stroke="#787878" class="pin"  id="connector13pin" stroke-width="0.246944" gorn="0.1.4" y1="12.7" stroke-linecap="round" y2="12.7" x1="22.7365"/>
+        <text y="12.9469" fill="#8c8c8c" stroke="none" class="text" font-family="'Droid Sans'"  font-size="1.23472" stroke-width="0" text-anchor="end" x="22.2426">RX_5V</text>
+        <rect y="12.5765" width="0.246944" fill="none" stroke="none" class="terminal" height="0.246944"  id="connector13terminal" stroke-width="0" gorn="0.1.6" x="27.8165"/>
+        <line x2="27.8165" fill="none" stroke="#787878" class="pin"  id="connector12pin" stroke-width="0.246944" gorn="0.1.7" y1="15.24" stroke-linecap="round" y2="15.24" x1="22.7365"/>
+        <text y="15.4869" fill="#8c8c8c" stroke="none" class="text" font-family="'Droid Sans'"  font-size="1.23472" stroke-width="0" text-anchor="end" x="22.2426">RTS_5V</text>
+        <rect y="15.1165" width="0.246944" fill="none" stroke="none" class="terminal" height="0.246944"  id="connector12terminal" stroke-width="0" gorn="0.1.9" x="27.8165"/>
+        <line x2="5.20347" fill="none" stroke="#787878" class="pin"  id="connector16pin" stroke-width="0.246944" gorn="0.1.10" y1="10.16" stroke-linecap="round" y2="10.16" x1="0.123472"/>
+        <text y="10.4069" fill="#8c8c8c" stroke="none" class="text" font-family="'Droid Sans'"  font-size="1.23472" stroke-width="0" text-anchor="start" x="5.69736">CTS_5V</text>
+        <rect y="10.0365" width="0.246944" fill="none" stroke="none" class="terminal" height="0.246944"  id="connector16terminal" stroke-width="0" gorn="0.1.12" x="-0.123472"/>
+        <line x2="12.7" fill="none" stroke="#787878" class="pin"  id="connector17pin" stroke-width="0.246944" gorn="0.1.13" y1="20.1965" stroke-linecap="round" y2="25.2765" x1="12.7"/>
+        <g  transform="translate(12.9469,19.7026)">
+            <g >
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g  transform="rotate(270)">
+                                        <g >
+                                            <g >
+                                                <g >
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <text y="0" fill="#8c8c8c" stroke="none" class="text" font-family="'Droid Sans'"  font-size="1.23472" stroke-width="0" text-anchor="start" x="0">GND</text>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <rect y="25.2765" width="0.246944" fill="none" stroke="none" class="terminal" height="0.246944"  id="connector17terminal" stroke-width="0" gorn="0.1.15" x="12.5765"/>
+        <line x2="12.7" fill="none" stroke="#787878" class="pin"  id="connector15pin" stroke-width="0.246944" gorn="0.1.16" y1="0.123472" stroke-linecap="round" y2="5.20347" x1="12.7"/>
+        <g  transform="translate(12.9469,5.69736)">
+            <g >
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g  transform="rotate(270)">
+                                        <g >
+                                            <g >
+                                                <g >
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <text y="0" fill="#8c8c8c" stroke="none" class="text" font-family="'Droid Sans'"  font-size="1.23472" stroke-width="0" text-anchor="end" x="0">VCC</text>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <rect y="-0.123472" width="0.246944" fill="none" stroke="none" class="terminal" height="0.246944"  id="connector15terminal" stroke-width="0" gorn="0.1.18" x="12.5765"/>
+        <text y="10.4598" fill="#000000" stroke="none" class="text" font-family="'Droid Sans'"  font-size="1.49931" id="label" stroke-width="0" gorn="0.1.19" text-anchor="middle" x="14.1288">Bluetooth</text>
+        <text y="12.0591" fill="#000000" stroke="none" class="text" font-family="'Droid Sans'"  font-size="1.49931" id="label" stroke-width="0" gorn="0.1.20" text-anchor="middle" x="14.1288">Mate</text>
+        <text y="13.6584" fill="#000000" stroke="none" class="text" font-family="'Droid Sans'"  font-size="1.49931" id="label" stroke-width="0" gorn="0.1.21" text-anchor="middle" x="14.1288">Silver</text>
+    </g>
+</svg>

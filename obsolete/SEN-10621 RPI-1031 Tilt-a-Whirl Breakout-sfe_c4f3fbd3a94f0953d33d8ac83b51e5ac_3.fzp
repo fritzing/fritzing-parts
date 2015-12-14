@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="SEN-10621 RPI-1031 Tilt-a-Whirl Breakout-sfe_c4f3fbd3a94f0953d33d8ac83b51e5ac_3" referenceFile="HMC5883L_Breakout-v11.fzp">
+ <version replacedby="Sparkfun_TiltaWhirl">4</version>
+ <date>Tue Oct 1 2013</date>
+ <author>SparkFun and Fritzing toolkit</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Arial,MS Sans Serif,Geneva,sans-serif'; font-size:14px; color:#333333; background-color:#ffffff;">The RPI-1031 tilt sensor is capable of sensing a change in orientation in four different directions: forward, back, left or right. This breakout board makes it easier to incorporate the RPI-1031 in your next project by breaking the necessary pins out to standard 0.1&amp;quot; spaced headers. This board will work at either 3.3 or 5V.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>SparkFun RPI-1031 Tilt-a-Whirl Breakout</title>
+ <url>https://www.sparkfun.com/products/10621</url>
+ <tags>
+  <tag>Breakout Board</tag>
+  <tag>tilt sensor</tag>
+  <tag>RPI-1031</tag>
+  <tag>sensor</tag>
+  <tag>SparkFun</tag>
+ </tags>
+ <properties>
+  <property name="family">//obsolete//SparkFun Breakout Boards</property>
+  <property name="variant">variant 2</property>
+  <property name="layer"></property>
+  <property name="part number">SEN-10621</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/SEN-10621 RPI-1031 Tilt-a-Whirl Breakout-sfe_c4f3fbd3a94f0953d33d8ac83b51e5ac_3_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/SEN-10621 RPI-1031 Tilt-a-Whirl Breakout-sfe_c4f3fbd3a94f0953d33d8ac83b51e5ac_3_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/SEN-10621 RPI-1031 Tilt-a-Whirl Breakout-sfe_c4f3fbd3a94f0953d33d8ac83b51e5ac_3_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/SEN-10621 RPI-1031 Tilt-a-Whirl Breakout-sfe_c4f3fbd3a94f0953d33d8ac83b51e5ac_3_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector6" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector6pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector6pin" layer="schematic" terminalId="connector6terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector6pad" layer="copper0"/>
+     <p svgId="connector6pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector7" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector7pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector7pin" layer="schematic" terminalId="connector7terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector7pad" layer="copper0"/>
+     <p svgId="connector7pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector8" name="S1">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector8pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector8pin" layer="schematic" terminalId="connector8terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector8pad" layer="copper0"/>
+     <p svgId="connector8pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector9" name="S2">
+   <description>S2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector9pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector9pin" layer="schematic" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector9pad" layer="copper0"/>
+     <p svgId="connector9pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <label>SparkFun RPI-1031 Tilt-a-Whirl Breakout</label>
+</module>

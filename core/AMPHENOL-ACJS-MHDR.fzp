@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="AMPHENOL-ACJS-MHDR" referenceFile="AMPHENOL-ACJS-MHDR.fzp">
+ <version>4</version>
+ <author>Fabian Althaus</author>
+ <title>AMPHENOL - ACJS-MHDR</title>
+ <label>AMPHENOL - ACJS-MHDR - JACK, 6.35MM</label>
+ <date>So Jan 11 2015</date>
+ <tags>
+  <tag>Stereo</tag>
+  <tag>fritzing core</tag>
+  <tag>6,35mm</tag>
+  <tag>Jack</tag>
+ </tags>
+ <properties>
+  <property name="family">JACK</property>
+  <property name="variant">6.35MM</property>
+  <property name="chip label">AMPHENOL JACK, 6.35MM</property>
+  <property name="package">ACJS-MHDR</property>
+  <property name="pins">6</property>
+  <property name="hole size"></property>
+  <property name="layer"></property>
+  <property name="editable pin labels">false</property>
+  <property name="part number"></property>
+ </properties>
+ <taxonomy>part.dip.6.pins</taxonomy>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica Neue,Helvetica,sans-serif'; font-size:13px; color:#222222; background-color:#ffffff;">AMPHENOL - ACJS-MHDR - JACK, 6.35MM, PCB, STEREO)&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/AMPHENOL-ACJS-MHDR_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/AMPHENOL-ACJS-MHDR_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/AMPHENOL-ACJS-MHDR_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/AMPHENOL-ACJS-MHDR_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector id="connector0" type="male" name="Sleeve (1)">
+   <description>pin 1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" terminalId="connector0terminal" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" terminalId="connector0terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="copper0"/>
+     <p svgId="connector0pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" type="male" name="Ring (2)">
+   <description>pin 2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" terminalId="connector1terminal" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="copper0"/>
+     <p svgId="connector1pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector2" type="male" name="Tip (3)">
+   <description>pin 3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector2pin" terminalId="connector2terminal" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector2pin" terminalId="connector2terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector2pin" layer="copper0"/>
+     <p svgId="connector2pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector3" type="male" name="Sleeve (4)">
+   <description>pin 4</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector3pin" terminalId="connector3terminal" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector3pin" terminalId="connector3terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector3pin" layer="copper0"/>
+     <p svgId="connector3pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector4" type="male" name="Ring (5)">
+   <description>pin 5</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector4pin" terminalId="connector4terminal" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector4pin" terminalId="connector4terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector4pin" layer="copper0"/>
+     <p svgId="connector4pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector5" type="male" name="Tip (6)">
+   <description>pin 6</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector5pin" terminalId="connector5terminal" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector5pin" terminalId="connector5terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector5pin" layer="copper0"/>
+     <p svgId="connector5pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>http://www.amphenolaudio.com/drawing/550_Series/55010154502222.pdf</url>
+</module>
