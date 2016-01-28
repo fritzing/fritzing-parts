@@ -525,27 +525,20 @@
  </connectors>
  <buses>
   <bus id="+5v">
-   <nodeMember connectorId="connector40"/>
-   <nodeMember connectorId="connector46"/>
    <nodeMember connectorId="connector87"/>
   </bus>
   <bus id="gnd">
-   <nodeMember connectorId="connector44"/>
-   <nodeMember connectorId="connector50"/>
    <nodeMember connectorId="connector57"/>
    <nodeMember connectorId="connector88"/>
    <nodeMember connectorId="connector89"/>
   </bus>
   <bus id="mosi">
-   <nodeMember connectorId="connector42"/>
    <nodeMember connectorId="connector54"/>
   </bus>
   <bus id="miso">
-   <nodeMember connectorId="connector39"/>
    <nodeMember connectorId="connector55"/>
   </bus>
   <bus id="sck">
-   <nodeMember connectorId="connector41"/>
    <nodeMember connectorId="connector56"/>
   </bus>
   <bus id="ad4/sda">
@@ -557,7 +550,6 @@
    <nodeMember connectorId="connector60"/>
   </bus>
   <bus id="reset">
-   <nodeMember connectorId="connector43"/>
    <nodeMember connectorId="connector85"/>
   </bus>
  </buses>
