@@ -9,3 +9,10 @@ Read more on the part folder structure and file format here: [https://github.com
 # Creating parts
 
 Learn how to create your own parts here: [http://fritzing.org/learning/tutorials/creating-custom-parts/](http://fritzing.org/learning/tutorials/creating-custom-parts/)
+
+# Testing Parts via travis-ci
+
+documentation follow. 
+
+fzp validator tool can be found at:  
+[https://github.com/fritzing/fritzing/fzp/](https://github.com/fritzing/fritzing/fzp)
