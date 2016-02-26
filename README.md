@@ -14,7 +14,7 @@ Learn how to create your own parts here: [http://fritzing.org/learning/tutorials
 
 The check status of the core fzp-files is at the moment:  
 
-![check Status:](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=master)
+![check Status:](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=travis)
 
 
 documentation follow. 
