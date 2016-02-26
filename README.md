@@ -12,7 +12,13 @@ Learn how to create your own parts here: [http://fritzing.org/learning/tutorials
 
 # Testing Parts via travis-ci
 
+The check status of the core fzp-files is at the moment:  
+
+![check Status:](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=master)
+
+
 documentation follow. 
 
 fzp validator tool can be found at:  
 [https://github.com/fritzing/fritzing/fzp/](https://github.com/fritzing/fritzing/fzp)
+
