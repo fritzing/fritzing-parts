@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='SparkFun_LSM303C_6_DOF_IMU_Breakout'>
+<version>4</version>
+<date>2015-10-04</date>
+<author>f.althaus</author>
+<url>https://www.sparkfun.com/products/13303</url>
+<description>SparkFun 6 Degrees of Freedom Breakout - LSM303C
+The LSM303C is a 6 Degrees of Freedom (6DOF) inertial measurement unit (IMU) in a single package, specifically developed as an eCompass device. Due to the IC housing a 3-axis accelerometer and a 3-axis magnetometer combined with its low cost, the LSM303C was perfect for us to create this small breakout board just for you! Each LSM303C Breakout has been designed to be super-flexible and can be configured specifically for many applications. The LSM303C Breakout can be configured to generate an interrupt signal for free-fall, motion detection and magnetic field detection!
+
+The range of each sensor on the LSM303C is configurable: the accelerometer&#8217;s scale can be set to &#177;2g, &#177;4g, &#177;6g, or &#177;8g, while the magnetometer has full-scale range of &#177;16 gauss, and supports I2C and SPI communication.
+
+Each pin has been broken out on the LSM303C, with 10 plated through hole connections featuring power and I2C and SPI functionality, interrupt outputs, and accelerometer and magnetometer data out. Please keep in mind that the LSM303C is a 2.5V device so supplying voltages greater than ~4.8V can permanently damage the IC. As long as your Arduino has a 3.3V supply output, you shouldn&#8217;t need any extra level shifting.</description>
+<title>LSM303C (6 DOF)</title>
+<tags>
+<tag>Breakout</tag>
+<tag>LSM303C</tag>
+<tag>LGA-28L</tag>
+<tag>Sparkfun</tag>
+</tags>
+<properties>
+<property name='power'>1.9 to 3.6V</property>
+<property name='family'>Sparkfun Breakout</property>
+<property name='variant'>LSM303C 6 DOF IMU</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/SparkFun_LSM303C_6_DOF_IMU_Breakout_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/SparkFun_LSM303C_6_DOF_IMU_Breakout_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/SparkFun_LSM303C_6_DOF_IMU_Breakout_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/SparkFun_LSM303C_6_DOF_IMU_Breakout_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector10' type='female' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector10pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector10pin' terminalId='connector10terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector10pad'/><p layer='copper1' svgId='connector10pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector11' type='female' name='VDD_IO'>
+<description>VDD_IO</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector11pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector11pin' terminalId='connector11terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector11pad'/><p layer='copper1' svgId='connector11pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector12' type='female' name='SDA/SDI/SDO'>
+<description>SDA/SDI/SDO</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector12pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector12pin' terminalId='connector12terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector12pad'/><p layer='copper1' svgId='connector12pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector13' type='female' name='SCL/SCLK'>
+<description>SCL/SCLK</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector13pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector13pin' terminalId='connector13terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector13pad'/><p layer='copper1' svgId='connector13pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector14' type='female' name='INT_XL'>
+<description>INT_XL</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector14pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector14pin' terminalId='connector14terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector14pad'/><p layer='copper1' svgId='connector14pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector15' type='female' name='DRDY_MAG'>
+<description>DRDY_MAG</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector15pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector15pin' terminalId='connector15terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector15pad'/><p layer='copper1' svgId='connector15pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector16' type='female' name='!CS_XL'>
+<description>!CS_XL</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector16pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector16pin' terminalId='connector16terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector16pad'/><p layer='copper1' svgId='connector16pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector17' type='female' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector17pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector17pin' terminalId='connector17terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector17pad'/><p layer='copper1' svgId='connector17pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector18' type='female' name='!CS_MAG'>
+<description>!CS_MAG</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector18pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector18pin' terminalId='connector18terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector18pad'/><p layer='copper1' svgId='connector18pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector19' type='female' name='INT_MAG'>
+<description>INT_MAG</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector19pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector19pin' terminalId='connector19terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector19pad'/><p layer='copper1' svgId='connector19pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

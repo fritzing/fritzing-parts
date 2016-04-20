@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.2.9.b" moduleId="polarizedheader4pin_0.156in">
+    <version>1</version>
+    <author>f.althaus</author>
+    <title>polarizedheader 4pin 0.156in</title>
+    <label>H</label>
+    <date>2016-02-12</date>
+    <tags>
+        <tag>4pin header</tag>
+        <tag>polarized</tag>
+        <tag>0.156in</tag>
+        <tag>tht</tag>
+        <tag>center locking</tag>
+    </tags>
+    <properties>
+        <property name="family">polarized header</property>
+        <property name="hole size"></property>
+        <property name="Pins">4</property>
+        <property name="Pin Spacing">0.156in (3.96mm)</property>
+        <property name="package">tht</property>
+   <property name="package">THT</property></properties>
+    <description>.156” CENTERS LOCKING POLARIZED HEADERS</description>
+    <url>http://www.masterelectronics.com/datasheet/70-6804.aspx?p=12171792</url>
+    <views>
+        <iconView>
+            <layers image="icon/polarizedheader4pin.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/polarizedheader4pin_0.156in_bread.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView fliphorizontal="true">
+            <layers image="schematic/polarizedheader4pin_0.156in_schem.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/polarizedheader4pin_0.156in_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+	      <layer layerId="copper1"/>
+	</layers>
+        </pcbView>
+    </views>
+    <connectors>
+   <connector id="connector0" name="pin1" type="male">
+   <description>pin 1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+    <p layer="copper1" svgId="connector0pin"/></pcbView>
+   </views>
+  </connector>
+    <connector id="connector1" name="pin2" type="male">
+   <description>pin 2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+    <p layer="copper1" svgId="connector1pin"/></pcbView>
+   </views>
+  </connector>
+    <connector id="connector2" name="pin3" type="male">
+   <description>pin 3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector2pin"/>
+    <p layer="copper1" svgId="connector2pin"/></pcbView>
+   </views>
+  </connector>
+    <connector id="connector3" name="pin4" type="male">
+   <description>pin 4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector3pin"/>
+    <p layer="copper1" svgId="connector3pin"/></pcbView>
+   </views>
+  </connector>
+  
+    </connectors>
+</module>

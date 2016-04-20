@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="powerbutton_adafruit.fzp" moduleId="powerpushbutton_adafruit" fritzingVersion="0.9.2b">
+ <version>1</version>
+ <author>Fabian Althaus</author>
+ <title>Adafruit Push-button Power Switch Breakout</title>
+ <url>https://www.adafruit.com/product/1400 </url>
+ <label>Btn</label>
+ <date>Mo Jul 20 2015</date>
+  <tags>
+    <tag>Powerbutton</tag>
+    <tag>push</tag>
+    <tag>breakout</tag>
+    <tag>Switch</tag>
+    <tag>Adafruit</tag>
+    <tag>Pushbutton</tag>
+    <tag>Power</tag>
+  </tags>
+ <properties>
+    <property name="family">Button</property>
+    <property name="package">THT</property>
+    <property name="variant">Adafruit Power Switch</property>
+ </properties>
+ <description>The Adafruit Push-button Power Switch is a tidy little design that lets you control a DC power source using an everyday tactile button. The breakout uses a latching analog circuit that is triggered by a push of the button. Press once to turn on, then press again to turn off. The circuit uses a 3A P-FET to connect and disconnect the IN pin to the OUT pin. Works great from 3V to 14VDC and up to 3A (although the FET gets a little toasty at continuous 3A draw) yet has only 0.5uA quiescent current draw.</description>
+ <views>
+  <iconView>
+   <layers image="icon/powerpushbutton_adafruit_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/powerpushbutton_adafruit_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView fliphorizontal="true">
+   <layers image="schematic/powerpushbutton_adafruit_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/powerpushbutton_adafruit_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+    <connector name="IN" id="connector0" type="male">
+     <description>(pin 1) Vcc IN</description>
+     <views>
+      <breadboardView>
+       <p layer="breadboard" svgId="connector0pin"/>
+      </breadboardView>
+      <schematicView>
+       <p terminalId="connector0terminal" layer="schematic" svgId="connector0pin"/>
+      </schematicView>
+      <pcbView>
+       <p layer="copper0" svgId="connector0pin"/>
+       <p layer="copper1" svgId="connector0pin"/>
+      </pcbView>
+     </views>
+    </connector>
+    <connector name="OUT" id="connector1" type="male">
+     <description>(pin 2) OUT</description>
+     <views>
+      <breadboardView>
+       <p layer="breadboard" svgId="connector1pin"/>
+      </breadboardView>
+      <schematicView>
+       <p terminalId="connector1terminal" layer="schematic" svgId="connector1pin"/>
+      </schematicView>
+      <pcbView>
+       <p layer="copper0" svgId="connector1pin"/>
+       <p layer="copper1" svgId="connector1pin"/>
+      </pcbView>
+     </views>
+    </connector>
+    <connector name="GND" id="connector2" type="male">
+     <description>(pin 3) Ground</description>
+     <views>
+      <breadboardView>
+       <p layer="breadboard" svgId="connector2pin"/>
+      </breadboardView>
+      <schematicView>
+       <p terminalId="connector2terminal" layer="schematic" svgId="connector2pin"/>
+      </schematicView>
+      <pcbView>
+       <p layer="copper0" svgId="connector2pin"/>
+       <p layer="copper1" svgId="connector2pin"/>
+      </pcbView>
+     </views>
+    </connector>
+    <connector name="OFF" id="connector3" type="male">
+     <description>(pin 4) off</description>
+     <views>
+      <breadboardView>
+       <p layer="breadboard" svgId="connector3pin"/>
+      </breadboardView>
+      <schematicView>
+       <p terminalId="connector3terminal" layer="schematic" svgId="connector3pin"/>
+      </schematicView>
+      <pcbView>
+       <p layer="copper0" svgId="connector3pin"/>
+       <p layer="copper1" svgId="connector3pin"/>
+      </pcbView>
+     </views>
+    </connector>
+    <connector name="IN" id="connector4" type="male">
+     <description>(pin 5) Vcc IN</description>
+     <views>
+      <breadboardView>
+       <p layer="breadboard" svgId="connector4pin"/>
+      </breadboardView>
+      <schematicView>
+       <p terminalId="connector4terminal" layer="schematic" svgId="connector4pin"/>
+      </schematicView>
+      <pcbView>
+       <p layer="copper0" svgId="connector4pin"/>
+       <p layer="copper1" svgId="connector4pin"/>
+      </pcbView>
+     </views>
+    </connector>
+    <connector name="OUT" id="connector5" type="male">
+     <description>(pin 6) OUT</description>
+     <views>
+      <breadboardView>
+       <p layer="breadboard" svgId="connector5pin"/>
+      </breadboardView>
+      <schematicView>
+       <p terminalId="connector5terminal" layer="schematic" svgId="connector5pin"/>
+      </schematicView>
+      <pcbView>
+       <p layer="copper0" svgId="connector5pin"/>
+       <p layer="copper1" svgId="connector5pin"/>
+      </pcbView>
+     </views>
+    </connector>
+    <connector name="GND" id="connector6" type="male">
+     <description>(pin 7) Ground</description>
+     <views>
+      <breadboardView>
+       <p layer="breadboard" svgId="connector6pin"/>
+      </breadboardView>
+      <schematicView>
+       <p terminalId="connector6terminal" layer="schematic" svgId="connector6pin"/>
+      </schematicView>
+      <pcbView>
+       <p layer="copper0" svgId="connector6pin"/>
+       <p layer="copper1" svgId="connector6pin"/>
+      </pcbView>
+     </views>
+    </connector>
+    <connector name="OFF" id="connector7" type="male">
+     <description>(pin 8) Off</description>
+     <views>
+      <breadboardView>
+       <p layer="breadboard" svgId="connector7pin"/>
+      </breadboardView>
+      <schematicView>
+       <p terminalId="connector7terminal" layer="schematic" svgId="connector7pin"/>
+      </schematicView>
+      <pcbView>
+       <p layer="copper0" svgId="connector7pin"/>
+       <p layer="copper1" svgId="connector7pin"/>
+      </pcbView>
+     </views>
+    </connector>
+ </connectors>
+    <buses>
+    <bus id="IN">
+     <nodeMember connectorId="connector0"/>
+     <nodeMember connectorId="connector4"/>
+    </bus>
+    <bus id="OUT">
+     <nodeMember connectorId="connector1"/>
+     <nodeMember connectorId="connector5"/>
+    </bus>
+    <bus id="GND">
+     <nodeMember connectorId="connector2"/>
+     <nodeMember connectorId="connector6"/>
+    </bus>
+    <bus id="Off">
+     <nodeMember connectorId="connector3"/>
+     <nodeMember connectorId="connector7"/>
+    </bus>
+ </buses>
+</module>

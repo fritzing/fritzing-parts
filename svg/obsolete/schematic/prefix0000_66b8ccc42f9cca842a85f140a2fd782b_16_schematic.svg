@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" y="0px" gorn="0" xmlns:xml="http://www.w3.org/XML/1998/namespace" width="0.790556in" height="1.30236in" viewBox="0 0 56.92 93.77"  enable-background="new 0 0 56.92 93.77" xml:space="preserve" id="Layer_1" version="1.1" x="0px">
+    <desc >
+        <referenceFile >NRF24L01_SCHEMATIC_v1.svg</referenceFile>
+    </desc>
+    <style type="text/css" ><![CDATA[
+@font-face{font-family:DroidSans;src:url("data:;base64,\
+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\
+Sh5Ku9Rq7hvBvJGYtx+2l7OZr5wI+zYHZ3hlfGKBCIFiWIZQGw7i+ej3JxWDBnx0enZ4d3d2dHly\
+fHF8bn9rggiCa2eHYxtNUpejWB9Yo1+vZrtmum/Gd9IId9KB3ega6ZXen9Ien9KnxrC7sLu3r76k\
+CKO+xJfJG7Kvh4KrH6uCqIClfKR8onqfeJ94nHaadgiXBomiiaCJoIqciZ2KngiKnYqZlhr4SPdK\
+HPns+ycH+873FxW+tpOarh+umqejoaqgqpuzlrqVupHBjMoItAfOh8eCwB6Cv3u3dq91rm6mZ54I\
+nWdelFUbMUlnQmEfYEJ2I/scGvsfoCO2Rx5Gtc5p5hsOevj0dxVCSJekTh9OpFevYLpfumnGc9EI\
+c9F/2+Ua5pbcodIeodKqyLO9s7y7scOlCKXCyZjOG83Gf3TAH8Bzt2qwYLBgp1efTwieTpVIQhr7\
+Bf1IB477Factvk4ITr7WbfAbrauNjqgfqI6nkKaSppGlk6SVpJSllqWXCPs2B3B+cYBygnGCcYNw\
+hXCFb4duiAiIbmuKaRte+m8VP09xV18fXldxP4QoCPiABriHtYKxHoKwfat4pnimcp9umgiabmeS\
+YhsOKvfq+MsV9xv3Pve59/0F92cG/CX8b/hA/QMF+2UG++T4jPsBOQX8OvtIHAYU90j9Xgd7+6cF\
+Duj58Bb5Vwfiesxoth62aFShQBtVXoJ6Zh9mem5xdWl0aXthgloIgVqGUksa/M37Svre9ygHpfso\
+BZUGnKifpKKgoqCknKaZppmolaqSCJKqqo6rG/cO52tMyR/IS6ol+yAa/WEHDtD6wfi7FTCAOnVE\
+HnREa09iW2FaWGZQcghyUEh+QRtGTJikUR9RpFmwYbxgu2rHdNIIc9J/3OYa5pbbotIeodGrxrS8\
+tLu+sMekCKTGzpfVG9DKf3LFH8VyvWa2W7VarFCjRQiiRJc7MBr9lBb7H6IiuUUeRLjVaPIb8tWu\
+0rgfuNGh9PcfGvcfdPRe0B7QXUGtJBskQmlGXh9eRnQi+x8aDvu8+R368hWeoYqKox+jiaCInIhz\
++zwYeI54jniOCI13eIx6G2Flg3poH2h6bnJybHJrd2V+Xwh9XoRaVRr85PtK+t73KAeh+10Fkwac\
+qJ2mnqaepqCio6Cin6abqJgIl6itkbAbDvw3+I73FRWXmYyMmh+ajJmNmY2ZjZiNl46WjpSNkY0I\
++x4HgoeAh36Hfod8iHuIe4h6iHqKCIl6eop6G2JkkJZoH2iWbJ1ypXGld658uAh8t4TDzhr5Efsv\
+3Af3L9nZ93oF9PuQ96j7Hfuo/REGSpZboGoeaqCte7sbDuj6CRZw9ycFgQZ6bnhzdHZ0dnF5cH5w\
+fW6BbIQIhGxsiGsbTlaTml0fXZplo2ysbKx0tHy+CHu+g8fRGvlh90r9Vwc0nUquYB5grsJ11RvB\
+uJScsB+wnKiloq2hrJu1lbwIlLyQxMsa+M73Sv7eBw76/BT67RUAAAAAAQAAAAoAHgAsAAFERkxU\
+AAgABAAAAAD//wABAAAAAWtlcm4ACAAAAAEAAAABAAQAAgAAAAEACAABAM4ABAAAAAsAIAAqADwA\
+QgBUAGYAfACGAJAAwgDIAAIAEf/sABr/7AAEAA3/1wAQ/9cAFv/XABf/1wABABoAFAAEAA3/7AAQ\
+/+wAFv/sABf/7AAEAA3/1wAQ/9cAFv/XABf/1wAFAA3/7AAQ/+wAFv/sABf/7AAa/64AAgAR/+wA\
+Gv/XAAIAEf/sABr/1wAMAA3/1wAQ/9cAFv/XABf/1wAb/8MAHP/DAB3/wwAe/8MAIP/XACH/wwAi\
+/9cAJP/XAAEAG//sAAEAIwAUAAEACwAMAA0ADwARABIAEwAWABcAGgAiACM=")}
+]]></style>
+    <g gorn="0.2"  id="schematic">
+        <rect y="7.2" gorn="0.2.0" stroke="#010101" width="43.198" fill="#FFFFFF" height="79.351" stroke-width="0.9002"  stroke-linecap="round" id="part_symbol" x="7.2"/>
+        <g gorn="0.2.1"  id="pins">
+            <g >
+                <line gorn="0.2.1.0.0" y1="36" stroke-linejoin="round" y2="36.004" stroke="#565656" x1="50.4" x2="57.6" fill="none" stroke-width="0.7"  stroke-linecap="round" id="connector15pin"/>
+                <rect y="36.00129561121919" gorn="0.2.1.0.1" stroke="none" width="0.01580077756160844" fill="none" height="0.001408777561608432" stroke-width="0"  id="connector15terminal" x="57.94229400162131"/>
+            </g>
+            <g >
+                <line gorn="0.2.1.1.0" y1="86.56" stroke-linejoin="round" y2="93.761" stroke="#565656" x1="28.8" x2="28.8" fill="none" stroke-width="0.7"  stroke-linecap="round" id="connector8pin"/>
+                <rect y="94.10309899999999" gorn="0.2.1.1.1" stroke="none" width="0.001400000000000006" fill="none" height="0.01580199999999997" stroke-width="0"  id="connector8terminal" x="28.7993"/>
+            </g>
+            <line gorn="0.2.1.2" y1="28.8" stroke-linejoin="round" y2="28.8" stroke="#565656" x1="0" x2="7.2" fill="none" stroke-width="0.7"  stroke-linecap="round" id="connector12pin"/>
+            <rect y="28.7993" gorn="0.2.1.3" stroke="none" width="0.0158" fill="none" height="0.001400000000000006" stroke-width="0"  id="connector12terminal" x="-0.3579"/>
+            <line gorn="0.2.1.4" y1="21.6" stroke-linejoin="round" y2="21.6" stroke="#565656" x1="0" x2="7.2" fill="none" stroke-width="0.7"  stroke-linecap="round" id="connector10pin"/>
+            <rect y="21.5993" gorn="0.2.1.5" stroke="none" width="0.0158" fill="none" height="0.001400000000000006" stroke-width="0"  id="connector10terminal" x="-0.3579"/>
+            <line y1="43.2" stroke-linejoin="round" y2="43.2" stroke="#565656" x1="0" x2="7.2" display="none" fill="none" stroke-width="0.7"  stroke-linecap="round"/>
+            <line gorn="0.2.1.7" y1="36" stroke-linejoin="round" y2="36" stroke="#565656" x1="0" x2="7.2" fill="none" stroke-width="0.7"  stroke-linecap="round" id="connector14pin"/>
+            <rect y="35.9993" gorn="0.2.1.8" stroke="none" width="0.0158" fill="none" height="0.001400000000000006" stroke-width="0"  id="connector14terminal" x="-0.3579"/>
+            <g >
+                <line gorn="0.2.1.9.0" y1="7.201" stroke-linejoin="round" y2="0" stroke="#565656" x1="28.8" x2="28.8" fill="none" stroke-width="0.7"  stroke-linecap="round" id="connector9pin"/>
+                <rect y="-0.357901" gorn="0.2.1.9.1" stroke="none" width="0.001400000000000006" fill="none" height="0.015802" stroke-width="0"  id="connector9terminal" x="28.7993"/>
+            </g>
+            <g >
+                <line gorn="0.2.1.10.0" y1="28.8" stroke-linejoin="round" y2="28.8" stroke="#565656" x1="50.4" x2="57.6" fill="none" stroke-width="0.7"  stroke-linecap="round" id="connector13pin"/>
+                <rect y="28.7993" gorn="0.2.1.10.1" stroke="none" width="0.01580000000000001" fill="none" height="0.001400000000000006" stroke-width="0"  id="connector13terminal" x="57.9421"/>
+            </g>
+            <g >
+                <line gorn="0.2.1.11.0" y1="21.6" stroke-linejoin="round" y2="21.604" stroke="#565656" x1="50.4" x2="57.6" fill="none" stroke-width="0.7"  stroke-linecap="round" id="connector11pin"/>
+                <rect y="21.6012956112192" gorn="0.2.1.11.1" stroke="none" width="0.01580077756160844" fill="none" height="0.001408777561608417" stroke-width="0"  id="connector11terminal" x="57.94229400162131"/>
+            </g>
+        </g>
+        <g gorn="0.2.2"  id="pin_numbers">
+            <g  transform="matrix(1 0 0 1 53.3105 20.1543)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="3">4</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 53.1406 27.4492)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="3">6</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 2.7744 20.0605)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="3">3</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 30.1621 3.873)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="3">2</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 30.1621 91.5508)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="3">1</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 2.7744 27.1855)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="3">5</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 1.9473 34.6855)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="3">7</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 53.3105 34.6855)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="3">8</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g gorn="0.2.3"  id="pin_labels">
+            <g  transform="matrix(1 0 0 1 40.7119 37.0684)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="4.5">IRQ</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 40.7119 51.6191)">
+                <g >
+                    <g >
+                        <text display="none" fill="#565656" font-family="DroidSans"  font-size="4.5" enable-background="new    ">Out</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 24.6104 83.7354)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="4.5">Gnd</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 25.5117 12.5352)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="4.5">Vcc</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 9.2598 22.6836)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="4.5">CE</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 9.2188 29.9863)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="4.5">SCK</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 9.2598 37.0684)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="4.5">MISO</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 9.2188 44.3721)">
+                <g >
+                    <g >
+                        <text display="none" fill="#565656" font-family="DroidSans"  font-size="4.5" enable-background="new    ">In</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 43.0449 22.6836)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="4.5">CS</text>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1 0 0 1 36.9297 29.9863)">
+                <g >
+                    <g >
+                        <text fill="#565656" font-family="DroidSans"  font-size="4.5">MOSI</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g  transform="matrix(1 0 0 1 13.6338 54.252)">
+            <g >
+                <g >
+                    <g  enable-background="new    ">
+                        <text y="0" fill="#010101" font-family="DroidSans"  font-size="6" x="0">NRF24L01+</text>
+                        <text y="7.201" fill="#010101" font-family="DroidSans"  font-size="6" x="2.905">Breakout</text>
+                        <text y="14.4" fill="#010101" font-family="DroidSans"  font-size="6" x="6.245">Board </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

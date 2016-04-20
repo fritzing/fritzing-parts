@@ -1,0 +1,904 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.7.2b' moduleId='intel_edison_minibreakout_bottom_fix'>
+<!-- generated from 'Edison-HiroseDF40.lbr' EDISON  -->
+<version>4</version>
+<date>2014-11-20</date>
+<label>U</label>
+<author>www.fritzing.org</author>
+<description>The Intel&#174; Edison is a compact computing platform that&apos;s small by design so you can easily integrate it into projects.  It&apos;s primarily designed for &quot;Internet of Things&quot; projects and is pretty powerful for its small size. 
+
+The Edison has a bunch of features that makes it appealing for makers of all skill levels.  It uses a 22 nm Intel SoC that includes a dual core, dual threaded Intel Atom CPU at 500MHz and a 32-bit Intel&#174; Quark microctroller which runs at 100 MHz.  It&apos;s a lot of power for a board that&apos;s about the size of an LED Matrix.
+
+The board supports 40 GPIOs and includes 1 GB LPDDR3, 4 GB EMMC, and has dual-band WiFI and BTLE - which makes it essentially wireless.
+
+The tiny Edison fits nicely onto a breakout board - sort of like a tiny IoT sparrow into a very small nest - so you can expose the native 1.8 V I/O of the Edison.  The breakout board has a power supply, USB serial, USB OTG port and power switch, an I/O header, and a battery charger.  Together, there&apos;s seamless device-to-device and device-to-cloud communication.
+</description>
+<title>EDISON</title>
+<tags>
+<tag>Intel</tag>
+<tag>EDISON</tag>
+<tag>EDISON_minibreakout</tag>
+</tags>
+<properties>
+  <property name="family">microcontroller board (intel)</property>
+  <property name="part number">
+  </property>
+  <property name="type">Edison miniBreakout</property>
+  <property name="view">bottom view</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/intel_edison_minibreakout_bottom_breadboard.svg'>
+<layer layerId='breadboardbreadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/intel_edison_minibreakout_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/intel_edison-minibreakout_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='silkscreen0'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='icon/intel_edison_icon.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='pin1' type="female" name='GP182_PWM2'>
+<description> GPIO capable of PWM output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin1'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin1' terminalId='pin1terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector1pin'/>
+<p layer='copper1' svgId='connector1pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin2' type="female" name='NC'>
+<description> No connect. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin2'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin2' terminalId='pin2terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector2pin'/>
+<p layer='copper1' svgId='connector2pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin3' type="female" name='NC'>
+<description> No connect. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin3'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin3' terminalId='pin3terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector3pin'/>
+<p layer='copper1' svgId='connector3pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin4' type="female" name='VIN'>
+<description> 7 to 15 V. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin4'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin4' terminalId='pin4terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector4pin'/>
+<p layer='copper1' svgId='connector4pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin5' type="female" name='GP135 '>
+<description>UART2_TX GPIO, UART2 transmit output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin5'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin5' terminalId='pin5terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector5pin'/>
+<p layer='copper1' svgId='connector5pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin6' type="female" name='RCVR_MODE '>
+<description> Firmware recovery mode. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin6'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin6' terminalId='pin6terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector6pin'/>
+<p layer='copper1' svgId='connector6pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin7' type="female" name='GP27'>
+<description> I2C6_SCL GPIO,IC26 SCL output open collector. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin7'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin7' terminalId='pin7terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector7pin'/>
+<p layer='copper1' svgId='connector7pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin8' type="female" name='GP20 '>
+<description>I2C1_SDA GPIO, I2C1 data open collector. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin8'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin8' terminalId='pin8terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector8pin'/>
+<p layer='copper1' svgId='connector8pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin9' type="female" name='GP28'>
+<description>I2C6_SDA  GPIO, I2C6 data open collector. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin9'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin9' terminalId='pin9terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector9pin'/>
+<p layer='copper1' svgId='connector9pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin10' type="female" name='GP111 '>
+<description>SSP5_FS1  GPIO, SSP2 chip select 2 output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin10'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin10' terminalId='pin10terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector10pin'/>
+<p layer='copper1' svgId='connector10pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin11' type="female" name='GP109 '>
+<description>SSP5_CLK  GPIO, SSP5 clock output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin11'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin11' terminalId='pin11terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector11pin'/>
+<p layer='copper1' svgId='connector11pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin12' type="female" name='GP115 '>
+<description>SSP5_TXD  GPIO, SSP5 transmit data output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin12'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin12' terminalId='pin12terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector12pin'/>
+<p layer='copper1' svgId='connector12pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin13' type="female" name='OSC_CLK_OUT_0 '>
+<description> High speed clock output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin13'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin13' terminalId='pin13terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector13pin'/>
+<p layer='copper1' svgId='connector13pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin14' type="female" name='GP128 '>
+<description>UART1_CTS  GPIO, UART1 clear to send input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin14'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin14' terminalId='pin14terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector14pin'/>
+<p layer='copper1' svgId='connector14pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin15' type="female" name='GP13_PWM1'>
+<description>  GPIO capable of PWM output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin15'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin15' terminalId='pin15terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector15pin'/>
+<p layer='copper1' svgId='connector15pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin16' type="female" name='GP165 '>
+<description> GPIO</description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin16'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin16' terminalId='pin16terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector16pin'/>
+<p layer='copper1' svgId='connector16pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin17' type="female" name='GPI_PWRBTN_N'>
+<description>  Power button input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin17'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin17' terminalId='pin17terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector17pin'/>
+<p layer='copper1' svgId='connector17pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin18' type="female" name='MSIC_SLP_CLK2 '>
+<description> 32 kHz sleep clock. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin18'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin18' terminalId='pin18terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector18pin'/>
+<p layer='copper1' svgId='connector18pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin19' type="female" name='V_VBAT_BKUP RTC '>
+<description> backup battery input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin19'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin19' terminalId='pin19terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector19pin'/>
+<p layer='copper1' svgId='connector19pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin20' type="female" name='GP19 '>
+<description>I2C1_SCL  GPIO,IC21 SCL output open collector. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin20'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin20' terminalId='pin20terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector20pin'/>
+<p layer='copper1' svgId='connector20pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin21' type="female" name='GP12_PWM0 '>
+<description> GPIO capable of PWM output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin21'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin21' terminalId='pin21terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector21pin'/>
+<p layer='copper1' svgId='connector21pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin22' type="female" name='GP183_PWM3 '>
+<description> GPIO capable of PWM output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin22'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin22' terminalId='pin22terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector22pin'/>
+<p layer='copper1' svgId='connector22pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin23' type="female" name='NC'>
+<description> No connect. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin23'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin23' terminalId='pin23terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector23pin'/>
+<p layer='copper1' svgId='connector23pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin24' type="female" name='GP110 '>
+<description>SSP5_FS0  GPIO, SSP1 chip select 2 output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin24'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin24' terminalId='pin24terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector24pin'/>
+<p layer='copper1' svgId='connector24pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin25' type="female" name='GP114 '>
+<description>SSP5_RX  GPIO, SSP5 receive data input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin25'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin25' terminalId='pin25terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector25pin'/>
+<p layer='copper1' svgId='connector25pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin26' type="female" name='GP129 '>
+<description>UART1_RTS  GPIO, UART1 ready to send output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin26'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin26' terminalId='pin26terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector26pin'/>
+<p layer='copper1' svgId='connector26pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin27' type="female" name='GP130 '>
+<description>UART1_RX  GPIO, UART1 receive data input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin27'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin27' terminalId='pin27terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector27pin'/>
+<p layer='copper1' svgId='connector27pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin28' type="female" name='FW_RCVR '>
+<description> Firmware recovery, active high on boot. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin28'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin28' terminalId='pin28terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector28pin'/>
+<p layer='copper1' svgId='connector28pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin29' type="female" name='V_VSYS '>
+<description> System input power. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin29'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin29' terminalId='pin29terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector29pin'/>
+<p layer='copper1' svgId='connector29pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin30' type="female" name='V_V3P30 '>
+<description> System 3.3 V output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin30'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin30' terminalId='pin30terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector30pin'/>
+<p layer='copper1' svgId='connector30pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin31' type="female" name='GP134 '>
+<description>UART2_RX UART2 Rx (input). </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin31'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin31' terminalId='pin31terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector31pin'/>
+<p layer='copper1' svgId='connector31pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin32' type="female" name='GP45 '>
+<description>COMPASS_DRDY GPIO, compass data ready input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin32'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin32' terminalId='pin32terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector32pin'/>
+<p layer='copper1' svgId='connector32pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin33' type="female" name='GP47 '>
+<description>ACCELEROMETER_INT_2 GPIO, accelerometer interrupt input 2. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin33'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin33' terminalId='pin33terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector33pin'/>
+<p layer='copper1' svgId='connector33pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin34' type="female" name='GP49 '>
+<description>GYRO_INT GPIO, gyro interrupt input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin34'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin34' terminalId='pin34terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector34pin'/>
+<p layer='copper1' svgId='connector34pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin35' type="female" name='GP15 '>
+<description> GPIO. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin35'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin35' terminalId='pin35terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector35pin'/>
+<p layer='copper1' svgId='connector35pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin36' type="female" name='GP84 '>
+<description>SD_CLK_FB GPIO, SD clock feedback input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin36'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin36' terminalId='pin36terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector36pin'/>
+<p layer='copper1' svgId='connector36pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin37' type="female" name='GP42 '>
+<description>SSP2_RXD  GPIO, SSP2 Rx data input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin37'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin37' terminalId='pin37terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector37pin'/>
+<p layer='copper1' svgId='connector37pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin38' type="female" name='GP41 '>
+<description>SSP2_FS  GPIO, SSP2 frame sync output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin38'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin38' terminalId='pin38terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector38pin'/>
+<p layer='copper1' svgId='connector38pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin39' type="female" name='GP78 '>
+<description>SD_CLK  GPIO, SD clock output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin39'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin39' terminalId='pin39terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector39pin'/>
+<p layer='copper1' svgId='connector39pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin40' type="female" name='GP79 '>
+<description>SD_CMD  GPIO, SD command. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin40'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin40' terminalId='pin40terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector40pin'/>
+<p layer='copper1' svgId='connector40pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin41' type="female" name='GP80 '>
+<description>SD_DAT0 GPIO, SD data 0. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin41'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin41' terminalId='pin41terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector41pin'/>
+<p layer='copper1' svgId='connector41pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin42' type="female" name='GP81'>
+<description>SD_DAT1 GP81 SD data 1. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin42'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin42' terminalId='pin42terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector42pin'/>
+<p layer='copper1' svgId='connector42pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin43' type="female" name='NC'>
+<description> No connect. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin43'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin43' terminalId='pin43terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector43pin'/>
+<p layer='copper1' svgId='connector43pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin44' type="female" name='V_V1P80'>
+<description> System 1.8 V I/O output power. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin44'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin44' terminalId='pin44terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector44pin'/>
+<p layer='copper1' svgId='connector44pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin45' type="female" name='GND '>
+<description> Ground. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin45'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin45' terminalId='pin45terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector45pin'/>
+<p layer='copper1' svgId='connector45pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin46' type="female" name='GP44 '>
+<description>ALS_INT_N  GPIO, ALS interrupt input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin46'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin46' terminalId='pin46terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector46pin'/>
+<p layer='copper1' svgId='connector46pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin47' type="female" name='GP46 '>
+<description>ACCELEROMETER_INT_1  GPIO, accelerometer interrupt input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin47'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin47' terminalId='pin47terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector47pin'/>
+<p layer='copper1' svgId='connector47pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin48' type="female" name='GP48 '>
+<description>GYRO_DRDY  GPIO, gyro data ready input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin48'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin48' terminalId='pin48terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector48pin'/>
+<p layer='copper1' svgId='connector48pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin49' type="female" name='RESET_OUT# '>
+<description> System reset out low. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin49'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin49' terminalId='pin49terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector49pin'/>
+<p layer='copper1' svgId='connector49pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin50' type="female" name='GP131 '>
+<description>UART1_TX  GPIO, UART 1 Tx output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin50'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin50' terminalId='pin50terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector50pin'/>
+<p layer='copper1' svgId='connector50pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin51' type="female" name='GP14 '>
+<description>AUDIO_CODEC_INT  GPIO, audio codec interrupt input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin51'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin51' terminalId='pin51terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector51pin'/>
+<p layer='copper1' svgId='connector51pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin52' type="female" name='GP40 '>
+<description>SSP2_CLK  GPIO, SSP2 clock output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin52'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin52' terminalId='pin52terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector52pin'/>
+<p layer='copper1' svgId='connector52pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin53' type="female" name='GP43 '>
+<description>SSP2_TXD  GPIO, SSP2 transmit data output. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin53'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin53' terminalId='pin53terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector53pin'/>
+<p layer='copper1' svgId='connector53pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin54' type="female" name='GP77 '>
+<description>SD_CDN  GPIO, SD card detect low input. </description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin54'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin54' terminalId='pin54terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector54pin'/>
+<p layer='copper1' svgId='connector54pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin55' type="female" name='GP82'>
+<description>SD_DAT2  GPIO, SD data 2</description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin55'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin55' terminalId='pin55terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector55pin'/>
+<p layer='copper1' svgId='connector55pin'/>
+</pcbView>
+</views>
+</connector>
+<connector id='pin56' type="female" name='GP83'>
+<description>SD_DAT3  GPIO, SD data 3</description>
+<views>
+<breadboardView>
+<p layer='breadboardbreadboard' svgId='pin56'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='pin56' terminalId='pin56terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector56pin'/>
+<p layer='copper1' svgId='connector56pin'/>
+</pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+	 <bus id="NC">
+            <nodeMember connectorId="pin2"/>
+            <nodeMember connectorId="pin3"/>
+            <nodeMember connectorId="pin23"/>
+            <nodeMember connectorId="pin43"/>
+        </bus>
+</buses>
+</module>

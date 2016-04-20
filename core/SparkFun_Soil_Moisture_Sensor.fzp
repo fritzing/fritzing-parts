@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='SparkFun_Soil_Moisture_Sensor'>
+<version>4</version>
+<date>2015-10-31</date>
+<author>f.althaus</author>
+<description>SparkFun Soil Moisture Sensor
+The SparkFun Soil Moisture Sensor is a simple breakout for measuring the moisture in soil and similar materials. The soil moisture sensor is pretty straight forward to use. The two large exposed pads function as probes for the sensor, together acting as a variable resistor. The more water that is in the soil means the better the conductivity between the pads will be and will result in a lower resistance, and a higher SIG out.
+
+To get the SparkFun Soil Moisture Sensor functioning all you will need is to connect the VCC and GND pins to your Arduino-based device (or compatible development board) and you will receive a SIG out which will depend on the amount of water in the soil. One commonly known issue with soil moisture senors is their short lifespan when exposed to a moist environment. To combat this, we’ve had the PCB coated in Gold Finishing (ENIG or Electroless Nickel Immersion Gold). We recommend either a simple 3-pin screw pin terminal or a 3-pin jumper wire assembly (both can be found in the Recommended Products section below) to be soldered onto the sensor for easy wiring.
+
+Note: Check the Hookup Guide in the Documents section below for assembly and weatherproofing instructions as well as a simple example project that you can put to together yourself!</description>
+<title>Soil Moisture Sensor</title>
+<url>https://www.sparkfun.com/products/13322</url>
+<tags>
+<tag>Soil</tag>
+<tag>Moisture</tag>
+<tag>Sensor</tag>
+<tag>Sparkfun</tag>
+</tags>
+<properties>
+<property name='family'>Sparkfun Breakout</property>
+<property name='variant'>Soil Moisture Sensor</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/SparkFun_Soil_Moisture_Sensor_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/SparkFun_Soil_Moisture_Sensor_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/SparkFun_Soil_Moisture_Sensor_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/SparkFun_Soil_Moisture_Sensor_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector2' type='female' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector2pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector2pad'/><p layer='copper1' svgId='connector2pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector3' type='female' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector3pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector3pin' terminalId='connector3terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector3pad'/><p layer='copper1' svgId='connector3pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector4' type='female' name='SIG'>
+<description>SIG</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector4pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector4pin' terminalId='connector4terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector4pad'/><p layer='copper1' svgId='connector4pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector5' type='female' name='SIG'>
+<description>SIG</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector5pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector5pin' terminalId='connector5terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector5pad'/><p layer='copper1' svgId='connector5pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector6' type='female' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector6pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector6pin' terminalId='connector6terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector6pad'/><p layer='copper1' svgId='connector6pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector7' type='female' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector7pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector7pin' terminalId='connector7terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector7pad'/><p layer='copper1' svgId='connector7pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+<bus id='sig'>
+<nodeMember connectorId='connector4'/>
+<nodeMember connectorId='connector5'/>
+</bus>
+<bus id='gnd'>
+<nodeMember connectorId='connector3'/>
+<nodeMember connectorId='connector6'/>
+</bus>
+<bus id='vcc'>
+<nodeMember connectorId='connector2'/>
+<nodeMember connectorId='connector7'/>
+</bus>
+</buses>
+</module>

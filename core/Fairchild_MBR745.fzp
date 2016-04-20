@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.1.1255" referenceFile="basic_fet_n.fzp" moduleId="Fairchild_MBR745">
+ <version>5</version>
+ <author>S. van Doorn, F.Althaus</author>
+ <title>MBR745 Schottky</title>
+ <label>D</label>
+ <date>Tue Nov 18 2014</date>
+ <tags>
+  <tag>DIODE</tag>
+  <tag>Schottky</tag>
+  <tag>Fairchild</tag>
+ </tags>
+ <properties>
+  <property name="family">Semiconductor</property>
+  <property name="variant">Skotty Doide</property>
+  <property name="package">TO220 [THT]</property>
+  <property name="part number">MBR745</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.Lucida Grande UI'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Arial,Bold'; font-size:12pt;">Features &lt;/span>&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Arial'; font-size:9pt;">• LowPowerLoss,HighEfficiency&lt;br />• HighSurgeCapacity&lt;br />• MetalSiliconJunction,MajorityCarrierConduction • HighCurrentCapacity,LowForward-VoltageDrop • GuardRingforOver-VoltageProtection(OVP) &lt;/span>&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Arial'; font-size:9pt;">Usage:&lt;/span>&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Arial'; font-size:9pt;">Low-Voltage,High-FrequencyInverters &lt;/span>&lt;span style=" font-family:'Arial'; font-size:8pt;">• &lt;/span>&lt;span style=" font-family:'Arial'; font-size:9pt;">Free Wheeling and Polarity Protection &lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/Fairchild_MBR745_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/Fairchild_MBR745_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Fairchild_MBR745_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Fairchild_MBR745_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector name="Cathode" id="connector0" type="male">
+   <description>cathode</description>
+   <views>
+    <breadboardView>
+     <p legId="connector0leg" svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" terminalId="connector0terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pad" layer="copper0"/>
+     <p svgId="connector0pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="Anode" id="connector1" type="male">
+   <description>anode</description>
+   <views>
+    <breadboardView>
+     <p legId="connector1leg" svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pad" layer="copper0"/>
+     <p svgId="connector1pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>

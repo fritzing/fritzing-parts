@@ -1,0 +1,1949 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='sodaq_mbili_rev4 (4)'>
+<version>4</version>
+<date>2015-01-12</date>
+<author>fabian althaus</author>
+<description>We have designed the new SODAQ Mbili (which means Two in Swahili) with all the input we got from our early adopters.
+
+
+
+What’s so great about the Mbili?
+
+
+
+1284P Microcontroller
+
+
+
+The Atmega 1284P is the ‘big brother’ of the 328P. It has all the memory and program space you have been hoping for.
+
+
+
+128kB flash for your programs (that’s 4x more than the 328P)
+
+16kB memory (that’s 8x more!)
+
+It’s still a picopower chip, so it is ideal for low (solar) power applications. You can still program it with the Arduino IDE. The bootloader has been patched and the hardware files are available. Just recompile your sketches and you are ready to go.</description>
+<title>sodaq mbili</title>
+<url>http://mbili.sodaq.net/</url>
+<tags>
+<tag>rev4</tag>
+<tag>sodaq</tag>
+<tag>mbili</tag>
+<tag>ATmega1284P</tag>
+</tags>
+<properties>
+<property name='family'>microcontroller board (sodaq)</property>
+<property name='type'>Sodaq Mbili (Rev4)</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/sodaq_mbili_rev4 (4)_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/sodaq_mbili_rev4 (4)_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/sodaq_mbili_rev4 (4)_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/sodaq_mbili_rev4 (4)_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+ <connectors>
+  <connector name="BEE_1_3.3V" id="connector0" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" terminalId="connector0terminal" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector0terminal" hybrid="yes" svgId="connector0pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector0pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector0pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_2_RXD" id="connector1" type="female">
+   <description>Pin 2 on the bee slot is connected to Serial1 (RXD1). With a solder jumber this can be changed to Serial (RDX0)</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector1terminal" hybrid="yes" svgId="connector1pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector1pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector1pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_3_TXD" id="connector2" type="female">
+   <description>Pin 3 on the bee slot is connected to Serial1 (TXD1). With a solder jumber this can be changed to Serial (TDX0)</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector2terminal" hybrid="yes" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector2pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector2pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_4_NC" id="connector3" type="female">
+   <description>Pin 4 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector3terminal" hybrid="yes" svgId="connector3pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector3pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector3pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_5_NC" id="connector4" type="female">
+   <description>Pin 5 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector4terminal" hybrid="yes" svgId="connector4pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector4pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector4pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_6" id="connector5" type="female">
+   <description>Pin 6 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector5terminal" hybrid="yes" svgId="connector5pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector5pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector5pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_7" id="connector6" type="female">
+   <description>Pin 7 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector6terminal" hybrid="yes" svgId="connector6pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector6pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector6pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_8" id="connector7" type="female">
+   <description>Pin 8 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector7terminal" hybrid="yes" svgId="connector7pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector7pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector7pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_9_DTR" id="connector8" type="female">
+   <description>Pin 9 on the bee slot is connected to D23 and is used as DTR pin to switch bee modules on and off or enable sleep</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector8terminal" hybrid="yes" svgId="connector8pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector8pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector8pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_10_GND" id="connector9" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector9terminal" hybrid="yes" svgId="connector9pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector9pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector9pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_11_NC" id="connector10" type="female">
+   <description>Pin 11 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector10terminal" hybrid="yes" svgId="connector10pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector10pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector10pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_12_CTS" id="connector11" type="female">
+   <description>Pin 12 on the bee slot is connected to D8 and is used as CTS pin to indicate if the bee module is ready</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector11terminal" hybrid="yes" svgId="connector11pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector11pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_13_NC" id="connector12" type="female">
+   <description>Pin 13 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector12terminal" hybrid="yes" svgId="connector12pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector12pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_14_NC" id="connector13" type="female">
+   <description>Pin 14 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector13terminal" hybrid="yes" svgId="connector13pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector13pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector13pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_15_ASSOC" id="connector14" type="female">
+   <description>Pin 15 on the bee slot is normally not connected but by using solder jumper it can be used to connect to pin A7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector14terminal" hybrid="yes" svgId="connector14pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector14pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector14pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_16_RTS" id="connector15" type="female">
+   <description>Pin 16 on the bee slot is connected to D9 and can be used for the RTS signal</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector15terminal" hybrid="yes" svgId="connector15pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector15pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector15pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_17_RESET" id="connector16" type="female">
+   <description>Pin 17 on the bee slot is normally not connected but can be connected to the MCU RESET pin by making solder jumper SJ7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector16pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector16terminal" hybrid="yes" svgId="connector16pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector16pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector16pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_18_NC" id="connector17" type="female">
+   <description>Pin 18 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector17terminal" hybrid="yes" svgId="connector17pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector17pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector17pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_19_NC" id="connector18" type="female">
+   <description>Pin 19 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector18terminal" hybrid="yes" svgId="connector18pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector18pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector18pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_20_RI" id="connector19" type="female">
+   <description>Pin 20 on the bee slot is normally not connected but by using solder jumper it can be used to connect to pin A7 for the Ring Indicator signal</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector19terminal" hybrid="yes" svgId="connector19pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector19pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector19pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A4" id="connector164" type="female">
+   <description>A4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector164pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector164terminal" svgId="connector164pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector164pad"/>
+     <p layer="copper1" svgId="connector164pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A5" id="connector165" type="female">
+   <description>A5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector165pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector165terminal" svgId="connector165pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector165pad"/>
+     <p layer="copper1" svgId="connector165pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector166" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector166pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector166terminal" svgId="connector166pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector166pad"/>
+     <p layer="copper1" svgId="connector166pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector167" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector167pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector167terminal" svgId="connector167pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector167pad"/>
+     <p layer="copper1" svgId="connector167pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A2" id="connector168" type="female">
+   <description>A2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector168pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector168terminal" svgId="connector168pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector168pad"/>
+     <p layer="copper1" svgId="connector168pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A3" id="connector169" type="female">
+   <description>A3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector169pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector169terminal" svgId="connector169pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector169pad"/>
+     <p layer="copper1" svgId="connector169pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3V3_SW" id="connector170" type="female">
+   <description>3.3V switched power on when  D22 is high</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector170pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector170terminal" svgId="connector170pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector170pad"/>
+     <p layer="copper1" svgId="connector170pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector171" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector171pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector171terminal" svgId="connector171pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector171pad"/>
+     <p layer="copper1" svgId="connector171pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A0" id="connector172" type="female">
+   <description>A0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector172pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector172terminal" svgId="connector172pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector172pad"/>
+     <p layer="copper1" svgId="connector172pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A1" id="connector173" type="female">
+   <description>A1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector173pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector173terminal" svgId="connector173pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector173pad"/>
+     <p layer="copper1" svgId="connector173pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector174" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector174pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector174terminal" svgId="connector174pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector174pad"/>
+     <p layer="copper1" svgId="connector174pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector175" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector175pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector175terminal" svgId="connector175pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector175pad"/>
+     <p layer="copper1" svgId="connector175pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D10" id="connector176" type="female">
+   <description>D10</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector176pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector176terminal" svgId="connector176pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector176pad"/>
+     <p layer="copper1" svgId="connector176pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D11" id="connector177" type="female">
+   <description>D11</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector177pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector177terminal" svgId="connector177pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector177pad"/>
+     <p layer="copper1" svgId="connector177pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3V3_SW" id="connector178" type="female">
+   <description>3.3V switched power on when  D22 is high</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector178pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector178terminal" svgId="connector178pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector178pad"/>
+     <p layer="copper1" svgId="connector178pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector179" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector179pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector179terminal" svgId="connector179pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector179pad"/>
+     <p layer="copper1" svgId="connector179pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="TXD1" id="connector180" type="female">
+   <description>TXD1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector180pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector180terminal" svgId="connector180pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector180pad"/>
+     <p layer="copper1" svgId="connector180pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="RXD1" id="connector181" type="female">
+   <description>RXD1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector181pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector181terminal" svgId="connector181pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector181pad"/>
+     <p layer="copper1" svgId="connector181pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector182" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector182pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector182terminal" svgId="connector182pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector182pad"/>
+     <p layer="copper1" svgId="connector182pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector183" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector183pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector183terminal" svgId="connector183pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector183pad"/>
+     <p layer="copper1" svgId="connector183pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="TXD0" id="connector184" type="female">
+   <description>TXD0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector184pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector184terminal" svgId="connector184pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector184pad"/>
+     <p layer="copper1" svgId="connector184pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="RXD0" id="connector185" type="female">
+   <description>RXD0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector185pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector185terminal" svgId="connector185pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector185pad"/>
+     <p layer="copper1" svgId="connector185pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3V3_SW" id="connector186" type="female">
+   <description>3.3V switched power on when  D22 is high</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector186pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector186terminal" svgId="connector186pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector186pad"/>
+     <p layer="copper1" svgId="connector186pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector187" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector187pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector187terminal" svgId="connector187pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector187pad"/>
+     <p layer="copper1" svgId="connector187pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D4" id="connector188" type="female">
+   <description>D4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector188pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector188terminal" svgId="connector188pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector188pad"/>
+     <p layer="copper1" svgId="connector188pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D5" id="connector189" type="female">
+   <description>D5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector189pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector189terminal" svgId="connector189pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector189pad"/>
+     <p layer="copper1" svgId="connector189pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector190" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector190pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector190terminal" svgId="connector190pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector190pad"/>
+     <p layer="copper1" svgId="connector190pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector191" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector191pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector191terminal" svgId="connector191pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector191pad"/>
+     <p layer="copper1" svgId="connector191pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D6" id="connector192" type="female">
+   <description>D6</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector192pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector192terminal" svgId="connector192pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector192pad"/>
+     <p layer="copper1" svgId="connector192pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D7" id="connector193" type="female">
+   <description>D7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector193pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector193terminal" svgId="connector193pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector193pad"/>
+     <p layer="copper1" svgId="connector193pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3V3_SW" id="connector194" type="female">
+   <description>3.3V switched power on when  D22 is high</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector194pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector194terminal" svgId="connector194pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector194pad"/>
+     <p layer="copper1" svgId="connector194pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector195" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector195pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector195terminal" svgId="connector195pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector195pad"/>
+     <p layer="copper1" svgId="connector195pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_1_3.3V" id="connector196" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector196pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector196terminal" hybrid="yes" svgId="connector196pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector196pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector196pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_2_RXD" id="connector197" type="female">
+   <description>Pin 2 on the bee slot is connected to Serial1 (RXD1). With a solder jumber this can be changed to Serial (RDX0)</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector197pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector197terminal" hybrid="yes" svgId="connector197pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector197pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector197pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_3_TXD" id="connector198" type="female">
+   <description>Pin 3 on the bee slot is connected to Serial1 (TXD1). With a solder jumber this can be changed to Serial (TDX0)</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector198pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector198terminal" hybrid="yes" svgId="connector198pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector198pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector198pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_4_NC" id="connector199" type="female">
+   <description>Pin 4 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector199pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector199terminal" hybrid="yes" svgId="connector199pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector199pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector199pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_5_NC" id="connector200" type="female">
+   <description>Pin 5 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector200pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector200terminal" hybrid="yes" svgId="connector200pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector200pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector200pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_6_NC" id="connector201" type="female">
+   <description>Pin 6 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector201pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector201terminal" hybrid="yes" svgId="connector201pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector201pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector201pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_7_NC" id="connector202" type="female">
+   <description>Pin 7 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector202pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector202terminal" hybrid="yes" svgId="connector202pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector202pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector202pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_8_NC" id="connector203" type="female">
+   <description>Pin 8 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector203pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector203terminal" hybrid="yes" svgId="connector203pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector203pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector203pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_9_DTR" id="connector204" type="female">
+   <description>Pin 9 on the bee slot is connected to D23 and is used as DTR pin to switch bee modules on and off or enable sleep</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector204pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector204terminal" hybrid="yes" svgId="connector204pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector204pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector204pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_10_GND" id="connector205" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector205pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector205terminal" hybrid="yes" svgId="connector205pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector205pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector205pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_11_NC" id="connector206" type="female">
+   <description>Pin 11 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector206pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector206terminal" hybrid="yes" svgId="connector206pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector206pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector206pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_12_CTS" id="connector207" type="female">
+   <description>Pin 12 on the bee slot is connected to D8 and is used as CTS pin to indicate if the bee module is ready</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector207pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector207terminal" hybrid="yes" svgId="connector207pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector207pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector207pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_13_NC" id="connector208" type="female">
+   <description>Pin 13 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector208pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector208terminal" hybrid="yes" svgId="connector208pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector208pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector208pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_14_NC" id="connector209" type="female">
+   <description>Pin 14 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector209pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector209terminal" hybrid="yes" svgId="connector209pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector209pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector209pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_15_ASSOC" id="connector210" type="female">
+   <description>Pin 15 on the bee slot is normally not connected but by using solder jumper it can be used to connect to pin A7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector210pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector210terminal" hybrid="yes" svgId="connector210pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector210pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector210pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_16_D9" id="connector211" type="female">
+   <description>Pin 16 on the bee slot is connected to D9 and can be used for the RTS signal</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector211pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector211terminal" hybrid="yes" svgId="connector211pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector211pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector211pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_17_RESET" id="connector212" type="female">
+   <description>Pin 17 on the bee slot is normally not connected but can be connected to the MCU RESET pin by making solder jumper SJ7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector212pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector212terminal" hybrid="yes" svgId="connector212pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector212pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector212pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_18_NC" id="connector213" type="female">
+   <description>Pin 18 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector213pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector213terminal" hybrid="yes" svgId="connector213pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector213pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector213pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_19_NC" id="connector214" type="female">
+   <description>Pin 19 on the bee slot is normally not connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector214pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector214terminal" hybrid="yes" svgId="connector214pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector214pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector214pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BEE_20_RI" id="connector215" type="female">
+   <description>Pin 20 on the bee slot is normally not connected but by using solder jumper it can be used to connect to pin A7 for the Ring Indicator signal</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector215pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector215terminal" hybrid="yes" svgId="connector215pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector215pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector215pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D20" id="connector216" type="female">
+   <description>D20</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector216pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector216terminal" svgId="connector216pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector216pad"/>
+     <p layer="copper1" svgId="connector216pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D21" id="connector217" type="female">
+   <description>D21</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector217pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector217terminal" svgId="connector217pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector217pad"/>
+     <p layer="copper1" svgId="connector217pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector218" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector218pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector218terminal" svgId="connector218pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector218pad"/>
+     <p layer="copper1" svgId="connector218pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector219" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector219pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector219terminal" svgId="connector219pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector219pad"/>
+     <p layer="copper1" svgId="connector219pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D18" id="connector220" type="female">
+   <description>D18</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector220pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector220terminal" svgId="connector220pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector220pad"/>
+     <p layer="copper1" svgId="connector220pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D19" id="connector221" type="female">
+   <description>D19</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector221pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector221terminal" svgId="connector221pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector221pad"/>
+     <p layer="copper1" svgId="connector221pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3V3_SW" id="connector222" type="female">
+   <description>3.3V switched power on when  D22 is high</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector222pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector222terminal" svgId="connector222pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector222pad"/>
+     <p layer="copper1" svgId="connector222pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector223" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector223pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector223terminal" svgId="connector223pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector223pad"/>
+     <p layer="copper1" svgId="connector223pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MISO" id="connector224" type="female">
+   <description>MISO</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector224pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector224terminal" hybrid="yes" svgId="connector224pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector224pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector224pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector225" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector225pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector225terminal" hybrid="yes" svgId="connector225pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector225pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector225pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCK" id="connector226" type="female">
+   <description>SCK</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector226pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector226terminal" hybrid="yes" svgId="connector226pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector226pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector226pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MOSI" id="connector227" type="female">
+   <description>MOSI</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector227pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector227terminal" hybrid="yes" svgId="connector227pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector227pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector227pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="RESET" id="connector228" type="female">
+   <description>RESET</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector228pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector228terminal" hybrid="yes" svgId="connector228pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector228pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector228pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector229" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector229pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector229terminal" hybrid="yes" svgId="connector229pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector229pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector229pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" id="connector230" type="female">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector230pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector230terminal" svgId="connector230pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector230pad"/>
+     <p layer="copper1" svgId="connector230pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" id="connector231" type="female">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector231pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector231terminal" svgId="connector231pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector231pad"/>
+     <p layer="copper1" svgId="connector231pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector232" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector232pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector232terminal" svgId="connector232pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector232pad"/>
+     <p layer="copper1" svgId="connector232pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector233" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector233pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector233terminal" svgId="connector233pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector233pad"/>
+     <p layer="copper1" svgId="connector233pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D8" id="connector234" type="female">
+   <description>D8</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector234pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector234terminal" svgId="connector234pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector234pad"/>
+     <p layer="copper1" svgId="connector234pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D9" id="connector235" type="female">
+   <description>D9</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector235pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector235terminal" svgId="connector235pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector235pad"/>
+     <p layer="copper1" svgId="connector235pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3V3_SW" id="connector236" type="female">
+   <description>3.3V switched power on when  D22 is high</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector236pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector236terminal" svgId="connector236pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector236pad"/>
+     <p layer="copper1" svgId="connector236pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector237" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector237pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector237terminal" svgId="connector237pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector237pad"/>
+     <p layer="copper1" svgId="connector237pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector251" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector251pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector251terminal" hybrid="yes" svgId="connector251pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector251pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector251pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="AREF" id="connector252" type="female">
+   <description>AREF</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector252pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector252terminal" hybrid="yes" svgId="connector252pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector252pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector252pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GPRSBEE_SW1" id="connector253" type="female">
+   <description>This is used to switch V_BAT directly to the GPRSbee</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector253pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector253terminal" hybrid="yes" svgId="connector253pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector253pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector253pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector254" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector254pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector254terminal" hybrid="yes" svgId="connector254pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector254pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector254pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="JTAG_TCK" id="connector255" type="female">
+   <description>JTAG TCK connects to pin D18 on the MCU</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector255pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector255terminal" hybrid="yes" svgId="connector255pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector255pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector255pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector256" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector256pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector256terminal" hybrid="yes" svgId="connector256pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector256pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector256pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="JTAG_TD0" id="connector257" type="female">
+   <description>JTAG TDO connects to pin D20 on the MCU</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector257pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector257terminal" hybrid="yes" svgId="connector257pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector257pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector257pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector258" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector258pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector258terminal" hybrid="yes" svgId="connector258pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector258pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector258pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="JTAG_TMS" id="connector259" type="female">
+   <description>JTAG TMS connects to pin D19 on the MCU</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector259pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector259terminal" hybrid="yes" svgId="connector259pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector259pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector259pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="RESET" id="connector260" type="female">
+   <description>RESET</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector260pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector260terminal" hybrid="yes" svgId="connector260pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector260pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector260pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector261" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector261pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector261terminal" hybrid="yes" svgId="connector261pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector261pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector261pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="JTAG_NC" id="connector262" type="female">
+   <description>Not Connected</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector262pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector262terminal" hybrid="yes" svgId="connector262pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector262pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector262pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="JTAG_TD1" id="connector263" type="female">
+   <description>JTAG TD1 connects to pin D21 on the MCU</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector263pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector263terminal" hybrid="yes" svgId="connector263pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector263pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector263pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector264" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector264pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector264terminal" hybrid="yes" svgId="connector264pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector264pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector264pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="JP_BAT2" id="connector265" type="female">
+   <description>This jumper needs to be installed when running on battery. Can be removed to measure the current.</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector265pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector265terminal" hybrid="yes" svgId="connector265pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector265pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector265pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="JP_BAT1" id="connector266" type="female">
+   <description>This jumper needs to be installed when running on battery. Can be removed to measure the current.</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector266pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector266terminal" hybrid="yes" svgId="connector266pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector266pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector266pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SW_1" id="connector267" type="female">
+   <description>This socket is to allow for external power switch. To use this put onboard switch in off positio</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector267pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector267terminal" svgId="connector267pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector267pad"/>
+     <p layer="copper1" svgId="connector267pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SW_2" id="connector268" type="female">
+   <description>This socket is to allow for external power switch. To use this put onboard switch in off position</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector268pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector268terminal" hybrid="yes" svgId="connector268pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector268pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector268pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="V_BAT" id="connector269" type="female">
+   <description>Connects to Litium Polymer (LiPo) batteries with nominal voltage of 3.7V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector269pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector269terminal" hybrid="yes" svgId="connector269pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector269pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector269pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector270" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector270pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector270terminal" hybrid="yes" svgId="connector270pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector270pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector270pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="V_SOLAR" id="connector280" type="female">
+   <description>Max voltage 6V and max panel size 3W</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector280pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector280terminal" hybrid="yes" svgId="connector280pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector280pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector280pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector281" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector281pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector281terminal" hybrid="yes" svgId="connector281pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" hybrid="yes" svgId="connector281pad"/>
+     <p layer="copper1" hybrid="yes" svgId="connector281pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="3.3v">
+   <nodeMember connectorId="connector0"/>
+   <nodeMember connectorId="connector166"/>
+   <nodeMember connectorId="connector174"/>
+   <nodeMember connectorId="connector182"/>
+   <nodeMember connectorId="connector190"/>
+   <nodeMember connectorId="connector196"/>
+   <nodeMember connectorId="connector218"/>
+   <nodeMember connectorId="connector225"/>
+   <nodeMember connectorId="connector232"/>
+   <nodeMember connectorId="connector258"/>
+   <nodeMember connectorId="connector261"/>
+  </bus>
+  <bus id="gnd">
+   <nodeMember connectorId="connector9"/>
+   <nodeMember connectorId="connector167"/>
+   <nodeMember connectorId="connector171"/>
+   <nodeMember connectorId="connector175"/>
+   <nodeMember connectorId="connector179"/>
+   <nodeMember connectorId="connector183"/>
+   <nodeMember connectorId="connector187"/>
+   <nodeMember connectorId="connector191"/>
+   <nodeMember connectorId="connector195"/>
+   <nodeMember connectorId="connector205"/>
+   <nodeMember connectorId="connector219"/>
+   <nodeMember connectorId="connector223"/>
+   <nodeMember connectorId="connector229"/>
+   <nodeMember connectorId="connector233"/>
+   <nodeMember connectorId="connector237"/>
+   <nodeMember connectorId="connector251"/>
+   <nodeMember connectorId="connector254"/>
+   <nodeMember connectorId="connector256"/>
+   <nodeMember connectorId="connector264"/>
+   <nodeMember connectorId="connector270"/>
+   <nodeMember connectorId="connector281"/>
+  </bus>
+  <bus id="n$12">
+   <nodeMember connectorId="connector170"/>
+   <nodeMember connectorId="connector178"/>
+   <nodeMember connectorId="connector186"/>
+   <nodeMember connectorId="connector194"/>
+   <nodeMember connectorId="connector222"/>
+   <nodeMember connectorId="connector236"/>
+  </bus>
+  <bus id="rxd_bee">
+   <nodeMember connectorId="connector1"/>
+   <nodeMember connectorId="connector197"/>
+  </bus>
+  <bus id="txd_bee">
+   <nodeMember connectorId="connector2"/>
+   <nodeMember connectorId="connector198"/>
+  </bus>
+  <bus id="n$17">
+   <nodeMember connectorId="connector3"/>
+   <nodeMember connectorId="connector199"/>
+  </bus>
+  <bus id="bee_rst">
+   <nodeMember connectorId="connector4"/>
+   <nodeMember connectorId="connector200"/>
+  </bus>
+  <bus id="n$19">
+   <nodeMember connectorId="connector5"/>
+   <nodeMember connectorId="connector201"/>
+  </bus>
+  <bus id="n$21">
+   <nodeMember connectorId="connector6"/>
+   <nodeMember connectorId="connector202"/>
+  </bus>
+  <bus id="n$22">
+   <nodeMember connectorId="connector7"/>
+   <nodeMember connectorId="connector203"/>
+  </bus>
+  <bus id="d23">
+   <nodeMember connectorId="connector8"/>
+   <nodeMember connectorId="connector204"/>
+  </bus>
+  <bus id="n$36">
+   <nodeMember connectorId="connector10"/>
+   <nodeMember connectorId="connector206"/>
+  </bus>
+  <bus id="d8">
+   <nodeMember connectorId="connector11"/>
+   <nodeMember connectorId="connector207"/>
+   <nodeMember connectorId="connector234"/>
+  </bus>
+  <bus id="n$34">
+   <nodeMember connectorId="connector12"/>
+   <nodeMember connectorId="connector208"/>
+  </bus>
+  <bus id="n$33">
+   <nodeMember connectorId="connector13"/>
+   <nodeMember connectorId="connector209"/>
+  </bus>
+  <bus id="assoc">
+   <nodeMember connectorId="connector14"/>
+   <nodeMember connectorId="connector210"/>
+  </bus>
+  <bus id="d9">
+   <nodeMember connectorId="connector15"/>
+   <nodeMember connectorId="connector211"/>
+   <nodeMember connectorId="connector235"/>
+  </bus>
+  <bus id="n$6">
+   <nodeMember connectorId="connector16"/>
+   <nodeMember connectorId="connector212"/>
+  </bus>
+  <bus id="n$29">
+   <nodeMember connectorId="connector17"/>
+   <nodeMember connectorId="connector213"/>
+  </bus>
+  <bus id="n$28">
+   <nodeMember connectorId="connector18"/>
+   <nodeMember connectorId="connector214"/>
+  </bus>
+  <bus id="ri">
+   <nodeMember connectorId="connector19"/>
+   <nodeMember connectorId="connector215"/>
+  </bus>
+  <bus id="d18">
+   <nodeMember connectorId="connector220"/>
+   <nodeMember connectorId="connector255"/>
+  </bus>
+  <bus id="d20">
+   <nodeMember connectorId="connector216"/>
+   <nodeMember connectorId="connector257"/>
+  </bus>
+  <bus id="d19">
+   <nodeMember connectorId="connector221"/>
+   <nodeMember connectorId="connector259"/>
+  </bus>
+  <bus id="reset">
+   <nodeMember connectorId="connector228"/>
+   <nodeMember connectorId="connector260"/>
+  </bus>
+  <bus id="d21">
+   <nodeMember connectorId="connector217"/>
+   <nodeMember connectorId="connector263"/>
+  </bus>
+  <bus id="n$20">
+   <nodeMember connectorId="connector266"/>
+   <nodeMember connectorId="connector269"/>
+  </bus>
+ </buses>
+</module>

@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="PowerBoost 500C - Adafruit" fritzingVersion="0.5.2b.02.18.4756" referenceFile="PowerBoost 500C - Adafruit.fzp">
+ <version>1</version>
+ <date>lun giu 1 2015</date>
+ <author>Dean Cording fixed by FA</author>
+ <description>The PowerBoost 500C is a little DC/DC boost converter module that can be powered by any 3.7V LiIon/LiPoly battery, and convert the battery output to 5.2V DC for running your 5V projects.  At its heart is a TPS61090 boost converter from TI. This boost converter chip has some really nice extras such as low battery detection, 2A internal switch, synchronous conversion, excellent efficiency, and 700KHz high-frequency operation. <p/>A MicroLipo charger circuit, powered from a microUSB jack, will recharge any 3.7V/4.2V LiIon or LiPoly battery at 500mA max rate. You can charge and boost at the same time no problem, without any interruption on the output so its fine for use as a "UPS" (un-interruptable power supply) for a low-current draw device.</description>
+ <title>PowerBoost 500 Charger</title>
+ <url>https://www.adafruit.com/products/1944</url>
+ <tags>
+  <tag>adafruit</tag>
+  <tag>tps61090</tag>
+  <tag>boost converter</tag>
+  <tag>charger</tag>
+  <tag>lipo</tag>
+  <tag>breakout</tag>
+ </tags>
+ <properties>
+  <property name="family">PowerBoost</property>
+  <property name="output connector">USB</property>
+  <property name="input connector">JST</property>
+  <property name="variant">variant 1</property>
+  <property name="part number"></property>
+  <property name="layer"></property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/PowerBoost500C-Adafruit_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/PowerBoost500C-Adafruit_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/PowerBoost500C-Adafruit_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/PowerBoost500C-Adafruit_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector0" type="pad" name="GND BAT IN">
+   <description>Battery/power ground</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pad" layer="breadboard"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" type="pad" name="VBAT IN">
+   <description>LiPo Battery</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pad" layer="breadboard"/>
+     <p svgId="connector1pad" layer="breadboard"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector22" type="male" name="VBAT OUT">
+   <description>LiPo Battery</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector22pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector22pin" layer="schematic" terminalId="connector22terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector22pad" layer="copper0"/>
+     <p svgId="connector22pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector23" type="male" name="ENABLE">
+   <description>Enable</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector23pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector23pin" layer="schematic" terminalId="connector23terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector23pad" layer="copper0"/>
+     <p svgId="connector23pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector24" type="male" name="GND">
+   <description>Battery/power ground</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector24pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector24pin" layer="schematic" terminalId="connector24terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector24pad" layer="copper0"/>
+     <p svgId="connector24pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector25" type="male" name="LBO">
+   <description>Low Battery Output</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector25pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector25pin" layer="schematic" terminalId="connector25terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector25pad" layer="copper0"/>
+     <p svgId="connector25pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector26" type="male" name="GND">
+   <description>Battery/power ground</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector26pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector26pin" layer="schematic" terminalId="connector26terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector26pad" layer="copper0"/>
+     <p svgId="connector26pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector27" type="male" name="5.0V">
+   <description>5.2V boosted output</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector27pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector27pin" layer="schematic" terminalId="connector27terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector27pad" layer="copper0"/>
+     <p svgId="connector27pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector28" type="male" name="USB">
+   <description>USB 5V power</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector28pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector28pin" layer="schematic" terminalId="connector28terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector28pad" layer="copper0"/>
+     <p svgId="connector28pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector29" type="male" name="GND">
+   <description>Battery/power ground</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector29pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector29pin" layer="schematic" terminalId="connector29terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector29pad" layer="copper0"/>
+     <p svgId="connector29pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector24"/>
+   <nodeMember connectorId="connector26"/>
+   <nodeMember connectorId="connector29"/>
+  </bus>
+ </buses>
+</module>

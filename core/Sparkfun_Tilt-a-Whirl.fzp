@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.9.2b" moduleId="Sparkfun_TiltaWhirl">
+ <version>5</version>
+ <date>Dec 1 2015</date>
+ <author>SparkFun and Fritzing toolkit</author>
+ <description></description>
+ <title>SparkFun RPI-1031 Tilt-a-Whirl Breakout</title>
+ <url>https://www.sparkfun.com/products/10621</url>
+ <tags>
+  <tag>Breakout Board</tag>
+  <tag>tilt sensor</tag>
+  <tag>RPI-1031</tag>
+  <tag>sensor</tag>
+  <tag>SparkFun</tag>
+ </tags>
+ <properties>
+  <property name="family">SparkFun Breakout Boards</property>
+  <property name="variant"></property>
+  <property name="layer"></property>
+  <property name="part number">SEN-10621</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Sparkfun_Tilt-a-Whirl_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Sparkfun_Tilt-a-Whirl_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Sparkfun_Tilt-a-Whirl_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Sparkfun_Tilt-a-Whirl_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector6" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector6pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector6pin" layer="schematic" terminalId="connector6terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector6pad" layer="copper0"/>
+     <p svgId="connector6pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector7" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector7pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector7pin" layer="schematic" terminalId="connector7terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector7pad" layer="copper0"/>
+     <p svgId="connector7pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector8" name="S1">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector8pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector8pin" layer="schematic" terminalId="connector8terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector8pad" layer="copper0"/>
+     <p svgId="connector8pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector9" name="S2">
+   <description>S2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector9pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector9pin" layer="schematic" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector9pad" layer="copper0"/>
+     <p svgId="connector9pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+</module>

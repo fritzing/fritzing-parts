@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.1.beta.1396" moduleId="P1000K_laydown" >
+ <version>4</version>
+ <author>nail</author>
+ <title>Rectifier Diode 10A</title>
+ <label>D</label>
+ <date>Fri Apr 12 2013</date>
+ <tags>
+  <tag>diode</tag>
+  <tag>rectifier</tag>
+  <tag>semiconductor</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family">diode</property>
+  <property name="variant">PCB laydown</property>
+  <property name="type">Rectifier</property>
+  <property name="part number">P1000K</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">A standard rectifier diode 10A&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/basic-diode.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView fliphorizontal="true" flipvertical="true">
+   <layers image="breadboard/P1000K_diode.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/P1000K_diode.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/P1000K_diode_10A.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="cathode">
+   <description>Cathode Pin</description>
+   <views>
+    <breadboardView>
+     <p legId="connector0leg" svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="copper0"/>
+     <p svgId="connector0pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector1" name="anode">
+   <description>Anode Pin</description>
+   <views>
+    <breadboardView>
+     <p legId="connector1leg" svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="copper0"/>
+     <p svgId="connector1pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>
