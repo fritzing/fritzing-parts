@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.7.7b.08.14.6293" referenceFile="A4988_Stepper_Motor_Driver_Carrier__3435bf9bd5708b982b93aaee2713f798.fzp" moduleId="8825_a9994b2c46c1c84975a2a1aad1684bc9_2">
+	<version replacedby="DRV8825_breakout">1</version>
+ <author>Bantum Works</author>
+ <title>DRV 8825 Stepper Motor Carrier, High Current</title>
+ <label>DRV 8825</label>
+ <date>Mon Sep 14 2015</date>
+ <tags>
+  <tag>Motor Driver</tag>
+  <tag>Stepper</tag>
+ </tags>
+ <properties>
+  <property name="variant">V1</property>
+  <property name="Layer">Step Motor Driver</property>
+  <property name="Part Number">DRV 8825</property>
+  <property name="family">//obsolete//Stepper Motor Driver</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">This is a Stepper Motor Controller for integrated circuits.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This breakout board for TI’s DRV8825 microstepping bipolar stepper motor driver features adjustable current limiting, over-current and over-temperature protection, and six microstep resolutions (down to 1/32-step). It operates from 8.2 V to 45 V and can deliver up to approximately 1.5 A per phase without a heat sink or forced air flow (rated for up to 2.2 A per coil with sufficient additional cooling). The driver has a pinout and interface that are nearly identical to those of our &lt;a href="https://www.pololu.com/product/1182">&lt;span style=" text-decoration: underline; color:#0000ff;">A4988 stepper motor driver carriers&lt;/span>&lt;/a>, so it can be used as a higher-performance drop-in replacement for those boards in many applications. This board ships with 0.1″ male header pins included but not soldered in.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">Features :&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>Simple step and direction control interface&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>Six different step resolutions: full-step, half-step, 1/4-step, 1/8-step, 1/16-step, and 1/32-step&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>Adjustable current control lets you set the maximum current output with a potentiometer, which lets you use voltages above your stepper motor’s rated voltage to achieve higher step rates&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>Intelligent chopping control that automatically selects the correct current decay mode (fast decay or slow decay)&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>45 V maximum supply voltage&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>Built-in regulator (no external logic voltage supply needed)&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>Can interface directly with 3.3 V and 5 V systems&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>Over-temperature thermal shutdown, over-current shutdown, and under-voltage lockout&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>Short-to-ground and shorted-load protection&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>4-layer, 2 oz copper PCB for improved heat dissipation&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">•  &lt;/span>Exposed solderable ground pad below the driver IC on the bottom of the PCB&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;br />&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;br />&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;br />&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/8825_12c9fcf3c0e04f3327fc0a73325fbaee_3_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <iconView>
+   <layers image="icon/8825_12c9fcf3c0e04f3327fc0a73325fbaee_3_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <schematicView>
+   <layers image="schematic/8825_12c9fcf3c0e04f3327fc0a73325fbaee_3_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/8825_12c9fcf3c0e04f3327fc0a73325fbaee_3_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="pad" name="ENABLE" id="connector130">
+   <description>This input turns on or off all of the FET outputs. When set to a logic high, the outputs are disabled. When set to a logic low, the internal control enables the outputs as required. The translator inputs STEP, DIR, and MSx, as well as the internal sequencing logic, all remain active, independent of the ENABLE input state.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector130" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector130" terminalId="connector130terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector130" layer="copper0"/>
+     <p svgId="connector130" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="GROUND ST/ MT" id="connector141">
+   <description>Stepper / Motor Ground.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector141" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector141" terminalId="connector141terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector141" layer="copper0"/>
+     <p svgId="connector141" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="MS1" id="connector131">
+   <description>Microstep Resolution Switch 1.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector131" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector131" terminalId="connector131terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector131" layer="copper0"/>
+     <p svgId="connector131" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="OUT 2B" id="connector142">
+   <description>Power connections to the stepper.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector142" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector142" terminalId="connector142terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector142" layer="copper0"/>
+     <p svgId="connector142" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="MS2" id="connector132">
+   <description>Microstep Resolution Switch 2.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector132" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector132" terminalId="connector132terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector132" layer="copper0"/>
+     <p svgId="connector132" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="OUT 2A" id="connector143">
+   <description>Power connections to the stepper.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector143" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector143" terminalId="connector143terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector143" layer="copper0"/>
+     <p svgId="connector143" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="MS3" id="connector133">
+   <description>Microstep Resolution Switch 3.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector133" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector133" terminalId="connector133terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector133" layer="copper0"/>
+     <p svgId="connector133" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="OUT 1A" id="connector144">
+   <description>Power connections to the stepper.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector144" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector144" terminalId="connector144terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector144" layer="copper0"/>
+     <p svgId="connector144" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="RESET" id="connector134">
+   <description>Reset chip.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector134" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector134" terminalId="connector134terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector134" layer="copper0"/>
+     <p svgId="connector134" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="OUT 1B" id="connector145">
+   <description>Power connections to the stepper.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector145" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector145" terminalId="connector145terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector145" layer="copper0"/>
+     <p svgId="connector145" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="SLEEP" id="connector135">
+   <description>Sleep pin</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector135" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector135" terminalId="connector135terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector135" layer="copper0"/>
+     <p svgId="connector135" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="VOLTAGE DD" id="connector146">
+   <description>Logic Voltage : 2 - 5 V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector146" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector146" terminalId="connector146terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector146" layer="copper0"/>
+     <p svgId="connector146" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="STEP" id="connector136">
+   <description>Stepping impulse.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector136" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector136" terminalId="connector136terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector136" layer="copper0"/>
+     <p svgId="connector136" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="GROUND LOG" id="connector147">
+   <description>Logic ground</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector147" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector147" terminalId="connector147terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector147" layer="copper0"/>
+     <p svgId="connector147" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="DIRECTION" id="connector137">
+   <description>This determines the direction of rotation of the motor. Changes to this input do not take effect  until the next STEP rising edge.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector137" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector137" terminalId="connector137terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector137" layer="copper0"/>
+     <p svgId="connector137" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" name="VOLTAGE ST/ MT" id="connector140">
+   <description>Stepper/ Motor Voltage : 5 -12 V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector140" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector140" terminalId="connector140terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector140" layer="copper0"/>
+     <p svgId="connector140" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>https://www.pololu.com/product/2133</url>
+</module>
