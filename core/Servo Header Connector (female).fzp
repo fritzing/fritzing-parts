@@ -40,13 +40,6 @@ p, li { white-space: pre-wrap; }
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
-  <pcbView>
-   <layers image="pcb/Servo Header Connector (female)_2.svg">
-    <layer layerId="copper0"/>
-    <layer layerId="silkscreen"/>
-    <layer layerId="copper1"/>
-   </layers>
-  </pcbView>
  </views>
  <connectors>
   <connector type="male" name="gnd" id="connector0">
@@ -58,10 +51,6 @@ p, li { white-space: pre-wrap; }
     <schematicView>
      <p layer="schematic" terminalId="connector0terminal" svgId="connector0pin"/>
     </schematicView>
-    <pcbView>
-     <p layer="copper0" svgId="connector0pin"/>
-     <p layer="copper1" svgId="connector0pin"/>
-    </pcbView>
    </views>
   </connector>
   <connector type="male" name="Vcc" id="connector1">
@@ -73,10 +62,6 @@ p, li { white-space: pre-wrap; }
     <schematicView>
      <p layer="schematic" terminalId="connector1terminal" svgId="connector1pin"/>
     </schematicView>
-    <pcbView>
-     <p layer="copper0" svgId="connector1pin"/>
-     <p layer="copper1" svgId="connector1pin"/>
-    </pcbView>
    </views>
   </connector>
   <connector type="male" name="pulse" id="connector2">
@@ -88,10 +73,6 @@ p, li { white-space: pre-wrap; }
     <schematicView>
      <p layer="schematic" terminalId="connector2terminal" svgId="connector2pin"/>
     </schematicView>
-    <pcbView>
-     <p layer="copper0" svgId="connector2pin"/>
-     <p layer="copper1" svgId="connector2pin"/>
-    </pcbView>
    </views>
   </connector>
  </connectors>
