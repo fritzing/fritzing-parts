@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="Dagu_DGServo_9g_Top_view_No_PCB_connector" referenceFile="servo.fzp">
+ <version>4</version>
+ <author>Stephen Parry</author>
+ <title>Dagu DGServo 9g (Top view - No PCB connector)</title>
+ <label>M</label>
+ <date>Mon Jun 6 2016</date>
+ <tags>
+  <tag>Dagu</tag>
+  <tag>fritzing core</tag>
+  <tag>servo</tag>
+ </tags>
+ <properties>
+  <property name="variant">- Top view - No PCB connector</property>
+  <property name="family">Dagu DGServo 9g</property>
+  <property name="view">top</property>
+  <property name="part number"></property>
+  <property name="PCB connectors">none</property>
+  <property name="layer"></property>
+  <property name="turning circle">no</property>
+ </properties>
+ <taxonomy>discreteParts.servo</taxonomy>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Dagu DGServo 9g (Top view - No PCB connector)&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">The breadboard view is rendered as non-perspective top projection for layout on stripboard or similar.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">For maximum flexibility, This variant includes no PCB holes of any kind.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">PCB Electrical connections should be made via another part, e.g. the separate Servo Header Male Pins and Servo Header Female Connector or pins on a microcontroller board.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;br />&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/Dagu DGServo 9g (Top view - No PCB connector)_2.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/Dagu DGServo 9g (Top view - No PCB connector)_2.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Dagu DGServo 9g (Top view - No PCB connector)_2.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+ </views>
+ <connectors>
+  <connector id="connector0" name="gnd" type="male">
+   <description>ground</description>
+   <views>
+    <breadboardView>
+     <p legId="connector0leg" svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector0terminal" svgId="connector0pin" layer="schematic"/>
+    </schematicView>
+   </views>
+  </connector>
+  <connector id="connector1" name="vcc" type="male">
+   <description>vcc</description>
+   <views>
+    <breadboardView>
+     <p legId="connector1leg" svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector1terminal" svgId="connector1pin" layer="schematic"/>
+    </schematicView>
+   </views>
+  </connector>
+  <connector id="connector2" name="pulse" type="male">
+   <description>pulse</description>
+   <views>
+    <breadboardView>
+     <p legId="connector2leg" svgId="connector2pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector2terminal" svgId="connector2pin" layer="schematic"/>
+    </schematicView>
+   </views>
+  </connector>
+ </connectors>
+</module>
