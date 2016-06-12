@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module moduleId="Servo_Header_male" referenceFile="generic_male_pin_header_3_100mil.fzp" fritzingVersion="0.2.2.b.03.04.2550">
+<module moduleId="Dagu_DGServo_9g_header_male" referenceFile="generic_male_pin_header_3_100mil.fzp" fritzingVersion="0.2.2.b.03.04.2550">
  <version>4</version>
  <author>Stephen Parry</author>
- <title>Servo Header (male)</title>
+ <title>Dagu DGServo 9g header (male)</title>
  <label>J</label>
  <date>Tue Jun 7 2016</date>
  <tags/>
@@ -17,32 +17,32 @@
   <property name="Pins">3</property>
   <property name="Form">♂ (male)</property>
   <property name="layer"></property>
-  <property name="family">Servo Header</property>
+  <property name="family">Dagu DGServo 9g header</property>
  </properties>
  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Servo Header (male)&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Plug this header into a breadboard or stripboard or PCB to allow a servo header female connector plug (e.g. on the Dagu DGServo 9g) to be connected to theboard.&lt;/p>&lt;/body>&lt;/html></description>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Dagu DGServo 9g header (male)&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This part is a minor variation of the standard three pin header; in schematic view the pins have been labelled to show clearly pulse, Vcc and ground. Plug this header into a breadboard, stripboard or PCB to allow a servo header female connector plug (e.g. on the Dagu DGServo 9g) to be connected to the board.&lt;/p>&lt;/body>&lt;/html></description>
  <views>
   <iconView>
-   <layers image="icon/Servo Header (male)_6.svg">
+   <layers image="icon/Dagu_DGServo_9g_header_male_icon.svg">
     <layer layerId="icon"/>
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="breadboard/Servo Header (male)_6.svg">
+   <layers image="breadboard/Dagu_DGServo_9g_header_male_breadboard.svg">
     <layer layerId="breadboard"/>
    </layers>
   </breadboardView>
   <schematicView fliphorizontal="true">
-   <layers image="schematic/Servo Header (male)_6.svg">
+   <layers image="schematic/Dagu_DGServo_9g_header_male_schematic.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="pcb/Servo Header (male)_6.svg">
+   <layers image="pcb/Dagu_DGServo_9g_header_male_pcb.svg">
     <layer layerId="copper0"/>
     <layer layerId="silkscreen"/>
     <layer layerId="copper1"/>
