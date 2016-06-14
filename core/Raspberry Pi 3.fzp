@@ -24,7 +24,7 @@
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The RPi3, a faster version of the awesome Raspberry Pi 2 B ARM Board with 40 pin gipo. Ready for special Raspberry Pi B+ and RPi2 Hat (Hardware attached (on) top)&lt;/p>&lt;/body>&lt;/html></description>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The RPi3, a faster version of the awesome Raspberry Pi 2 B ARM Board with 40 pin gpio. Ready for special Raspberry Pi B+ and RPi2 Hat (Hardware attached (on) top)&lt;/p>&lt;/body>&lt;/html></description>
  <views>
   <iconView>
    <layers image="icon/raspberry_pi_3_rev-1.2.svg">
@@ -95,8 +95,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector3" name="GIPO4">
-   <description>GIPO4</description>
+  <connector type="male" id="connector3" name="GPIO4">
+   <description>GPIO4</description>
    <views>
     <breadboardView>
      <p terminalId="connector3terminal" svgId="connector3pin" layer="breadboardbreadboard"/>
@@ -125,8 +125,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector5" name="GIPO17">
-   <description>GIPO17</description>
+  <connector type="male" id="connector5" name="GPIO17">
+   <description>GPIO17</description>
    <views>
     <breadboardView>
      <p terminalId="connector5terminal" svgId="connector5pin" layer="breadboardbreadboard"/>
@@ -140,8 +140,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector6" name="GIPO27">
-   <description>GIPO27</description>
+  <connector type="male" id="connector6" name="GPIO27">
+   <description>GPIO27</description>
    <views>
     <breadboardView>
      <p terminalId="connector6terminal" svgId="connector6pin" layer="breadboardbreadboard"/>
@@ -155,8 +155,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector7" name="GIPO22">
-   <description>GIPO22</description>
+  <connector type="male" id="connector7" name="GPIO22">
+   <description>GPIO22</description>
    <views>
     <breadboardView>
      <p terminalId="connector7terminal" svgId="connector7pin" layer="breadboardbreadboard"/>
@@ -185,8 +185,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector9" name="GIPO10">
-   <description>SPI0_MOSI - GIPO10</description>
+  <connector type="male" id="connector9" name="GPIO10">
+   <description>SPI0_MOSI - GPIO10</description>
    <views>
     <breadboardView>
      <p terminalId="connector9terminal" svgId="connector9pin" layer="breadboardbreadboard"/>
@@ -200,8 +200,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector10" name="GIPO9">
-   <description>SPI0_MISO - GIPO9</description>
+  <connector type="male" id="connector10" name="GPIO9">
+   <description>SPI0_MISO - GPIO9</description>
    <views>
     <breadboardView>
      <p terminalId="connector10terminal" svgId="connector10pin" layer="breadboardbreadboard"/>
@@ -215,8 +215,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector11" name="GIPO11">
-   <description>SPI0_SCLK - GIPO11</description>
+  <connector type="male" id="connector11" name="GPIO11">
+   <description>SPI0_SCLK - GPIO11</description>
    <views>
     <breadboardView>
      <p terminalId="connector11terminal" svgId="connector11pin" layer="breadboardbreadboard"/>
@@ -260,8 +260,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector14" name="GIPO5">
-   <description>GIPO5</description>
+  <connector type="male" id="connector14" name="GPIO5">
+   <description>GPIO5</description>
    <views>
     <breadboardView>
      <p terminalId="connector14terminal" svgId="connector14pin" layer="breadboardbreadboard"/>
@@ -275,8 +275,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector15" name="GIPO6">
-   <description>GIPO6</description>
+  <connector type="male" id="connector15" name="GPIO6">
+   <description>GPIO6</description>
    <views>
     <breadboardView>
      <p terminalId="connector15terminal" svgId="connector15pin" layer="breadboardbreadboard"/>
@@ -290,8 +290,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector16" name="GIPO13">
-   <description>GIPO13</description>
+  <connector type="male" id="connector16" name="GPIO13">
+   <description>GPIO13</description>
    <views>
     <breadboardView>
      <p terminalId="connector16terminal" svgId="connector16pin" layer="breadboardbreadboard"/>
@@ -305,8 +305,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector17" name="GIPO19">
-   <description>GIPO19</description>
+  <connector type="male" id="connector17" name="GPIO19">
+   <description>GPIO19</description>
    <views>
     <breadboardView>
      <p terminalId="connector17terminal" svgId="connector17pin" layer="breadboardbreadboard"/>
@@ -320,8 +320,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector18" name="GIPO26">
-   <description>GIPO26</description>
+  <connector type="male" id="connector18" name="GPIO26">
+   <description>GPIO26</description>
    <views>
     <breadboardView>
      <p terminalId="connector18terminal" svgId="connector18pin" layer="breadboardbreadboard"/>
@@ -350,8 +350,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector20" name="GIPO21">
-   <description>GIPO21</description>
+  <connector type="male" id="connector20" name="GPIO21">
+   <description>GPIO21</description>
    <views>
     <breadboardView>
      <p terminalId="connector20terminal" svgId="connector20pin" layer="breadboardbreadboard"/>
@@ -365,8 +365,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector21" name="GIPO20">
-   <description>GIPO20</description>
+  <connector type="male" id="connector21" name="GPIO20">
+   <description>GPIO20</description>
    <views>
     <breadboardView>
      <p terminalId="connector21terminal" svgId="connector21pin" layer="breadboardbreadboard"/>
@@ -380,8 +380,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector22" name="GIPO16">
-   <description>GIPO16</description>
+  <connector type="male" id="connector22" name="GPIO16">
+   <description>GPIO16</description>
    <views>
     <breadboardView>
      <p terminalId="connector22terminal" svgId="connector22pin" layer="breadboardbreadboard"/>
@@ -410,8 +410,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector24" name="GIPO12">
-   <description>GIPO12</description>
+  <connector type="male" id="connector24" name="GPIO12">
+   <description>GPIO12</description>
    <views>
     <breadboardView>
      <p terminalId="connector24terminal" svgId="connector24pin" layer="breadboardbreadboard"/>
@@ -455,8 +455,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector27" name="GIPO7">
-   <description>SPI0_CE1_N - GIPO7</description>
+  <connector type="male" id="connector27" name="GPIO7">
+   <description>SPI0_CE1_N - GPIO7</description>
    <views>
     <breadboardView>
      <p terminalId="connector27terminal" svgId="connector27pin" layer="breadboardbreadboard"/>
@@ -470,8 +470,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector28" name="GIPO8">
-   <description>SPI0_CE0_N - GIPO8</description>
+  <connector type="male" id="connector28" name="GPIO8">
+   <description>SPI0_CE0_N - GPIO8</description>
    <views>
     <breadboardView>
      <p terminalId="connector28terminal" svgId="connector28pin" layer="breadboardbreadboard"/>
@@ -485,8 +485,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector29" name="GIPO25">
-   <description>GIPO25</description>
+  <connector type="male" id="connector29" name="GPIO25">
+   <description>GPIO25</description>
    <views>
     <breadboardView>
      <p terminalId="connector29terminal" svgId="connector29pin" layer="breadboardbreadboard"/>
@@ -515,8 +515,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector31" name="GIPO24">
-   <description>GIPO24</description>
+  <connector type="male" id="connector31" name="GPIO24">
+   <description>GPIO24</description>
    <views>
     <breadboardView>
      <p terminalId="connector31terminal" svgId="connector31pin" layer="breadboardbreadboard"/>
@@ -530,8 +530,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector32" name="GIPO23">
-   <description>GIPO23</description>
+  <connector type="male" id="connector32" name="GPIO23">
+   <description>GPIO23</description>
    <views>
     <breadboardView>
      <p terminalId="connector32terminal" svgId="connector32pin" layer="breadboardbreadboard"/>
@@ -560,8 +560,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector34" name="GIPO18">
-   <description>PCM_CLK - GIPO18</description>
+  <connector type="male" id="connector34" name="GPIO18">
+   <description>PCM_CLK - GPIO18</description>
    <views>
     <breadboardView>
      <p terminalId="connector34terminal" svgId="connector34pin" layer="breadboardbreadboard"/>
@@ -575,8 +575,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector35" name="GIPO15">
-   <description>UART0_RXD - GIPO15</description>
+  <connector type="male" id="connector35" name="GPIO15">
+   <description>UART0_RXD - GPIO15</description>
    <views>
     <breadboardView>
      <p terminalId="connector35terminal" svgId="connector35pin" layer="breadboardbreadboard"/>
@@ -590,8 +590,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector36" name="GIPO14">
-   <description>UART0_TXD - GIPO14</description>
+  <connector type="male" id="connector36" name="GPIO14">
+   <description>UART0_TXD - GPIO14</description>
    <views>
     <breadboardView>
      <p terminalId="connector36terminal" svgId="connector36pin" layer="breadboardbreadboard"/>

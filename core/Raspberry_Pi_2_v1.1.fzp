@@ -19,7 +19,7 @@
   <property name="variant">Raspberry Pi 2</property>
     <property name="revision">RPI-2-V1.1</property>
  </properties>
- <description>The RPi2, a faster version of the awesome Raspberry Pi B+ ARM Board with 40 pin gipo. Ready for special Raspberry Pi B+ and RPi2 Hat (Hardware attached (on) top)</description>
+ <description>The RPi2, a faster version of the awesome Raspberry Pi B+ ARM Board with 40 pin GPIO. Ready for special Raspberry Pi B+ and RPi2 Hat (Hardware attached (on) top)</description>
  <views>
   <iconView>
    <layers image="icon/raspberry_pi2_v1.1_icon.svg">
@@ -88,8 +88,8 @@
     <p layer="copper1" svgId="connector2pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector3" name="GIPO4" type="male">
-   <description>GIPO4</description>
+    <connector id="connector3" name="GPIO4" type="male">
+   <description>GPIO4</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector3pin" terminalId="connector3terminal"/>
@@ -116,8 +116,8 @@
     <p layer="copper1" svgId="connector4pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector5" name="GIPO17" type="male">
-   <description>GIPO17</description>
+    <connector id="connector5" name="GPIO17" type="male">
+   <description>GPIO17</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector5pin" terminalId="connector5terminal"/>
@@ -130,8 +130,8 @@
     <p layer="copper1" svgId="connector5pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector6" name="GIPO27" type="male">
-   <description>GIPO27</description>
+    <connector id="connector6" name="GPIO27" type="male">
+   <description>GPIO27</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector6pin" terminalId="connector6terminal"/>
@@ -144,8 +144,8 @@
     <p layer="copper1" svgId="connector6pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector7" name="GIPO22" type="male">
-   <description>GIPO22</description>
+    <connector id="connector7" name="GPIO22" type="male">
+   <description>GPIO22</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector7pin" terminalId="connector7terminal"/>
@@ -172,8 +172,8 @@
     <p layer="copper1" svgId="connector8pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector9" name="GIPO10" type="male">
-   <description>SPI0_MOSI - GIPO10</description>
+    <connector id="connector9" name="GPIO10" type="male">
+   <description>SPI0_MOSI - GPIO10</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector9pin" terminalId="connector9terminal"/>
@@ -186,8 +186,8 @@
     <p layer="copper1" svgId="connector9pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector10" name="GIPO9" type="male">
-   <description>SPI0_MISO - GIPO9</description>
+    <connector id="connector10" name="GPIO9" type="male">
+   <description>SPI0_MISO - GPIO9</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector10pin" terminalId="connector10terminal"/>
@@ -200,8 +200,8 @@
     <p layer="copper1" svgId="connector10pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector11" name="GIPO11" type="male">
-   <description>SPI0_SCLK - GIPO11</description>
+    <connector id="connector11" name="GPIO11" type="male">
+   <description>SPI0_SCLK - GPIO11</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector11pin" terminalId="connector11terminal"/>
@@ -242,8 +242,8 @@
     <p layer="copper1" svgId="connector13pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector14" name="GIPO5" type="male">
-   <description>GIPO5</description>
+    <connector id="connector14" name="GPIO5" type="male">
+   <description>GPIO5</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector14pin" terminalId="connector14terminal"/>
@@ -256,8 +256,8 @@
     <p layer="copper1" svgId="connector14pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector15" name="GIPO6" type="male">
-   <description>GIPO6</description>
+    <connector id="connector15" name="GPIO6" type="male">
+   <description>GPIO6</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector15pin" terminalId="connector15terminal"/>
@@ -270,8 +270,8 @@
     <p layer="copper1" svgId="connector15pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector16" name="GIPO13" type="male">
-   <description>GIPO13</description>
+    <connector id="connector16" name="GPIO13" type="male">
+   <description>GPIO13</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector16pin" terminalId="connector16terminal"/>
@@ -284,8 +284,8 @@
     <p layer="copper1" svgId="connector16pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector17" name="GIPO19" type="male">
-   <description>GIPO19</description>
+    <connector id="connector17" name="GPIO19" type="male">
+   <description>GPIO19</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector17pin" terminalId="connector17terminal"/>
@@ -298,8 +298,8 @@
     <p layer="copper1" svgId="connector17pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector18" name="GIPO26" type="male">
-   <description>GIPO26</description>
+    <connector id="connector18" name="GPIO26" type="male">
+   <description>GPIO26</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector18pin" terminalId="connector18terminal"/>
@@ -326,8 +326,8 @@
     <p layer="copper1" svgId="connector19pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector20" name="GIPO21" type="male">
-   <description>GIPO21</description>
+    <connector id="connector20" name="GPIO21" type="male">
+   <description>GPIO21</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector20pin" terminalId="connector20terminal"/>
@@ -340,8 +340,8 @@
     <p layer="copper1" svgId="connector20pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector21" name="GIPO20" type="male">
-   <description>GIPO20</description>
+    <connector id="connector21" name="GPIO20" type="male">
+   <description>GPIO20</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector21pin" terminalId="connector21terminal"/>
@@ -354,8 +354,8 @@
     <p layer="copper1" svgId="connector21pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector22" name="GIPO16" type="male">
-   <description>GIPO16</description>
+    <connector id="connector22" name="GPIO16" type="male">
+   <description>GPIO16</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector22pin" terminalId="connector22terminal"/>
@@ -382,8 +382,8 @@
     <p layer="copper1" svgId="connector23pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector24" name="GIPO12" type="male">
-   <description>GIPO12</description>
+    <connector id="connector24" name="GPIO12" type="male">
+   <description>GPIO12</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector24pin" terminalId="connector24terminal"/>
@@ -424,8 +424,8 @@
     <p layer="copper1" svgId="connector26pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector27" name="GIPO7" type="male">
-   <description>SPI0_CE1_N - GIPO7</description>
+    <connector id="connector27" name="GPIO7" type="male">
+   <description>SPI0_CE1_N - GPIO7</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector27pin" terminalId="connector27terminal"/>
@@ -438,8 +438,8 @@
     <p layer="copper1" svgId="connector27pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector28" name="GIPO8" type="male">
-   <description>SPI0_CE0_N - GIPO8</description>
+    <connector id="connector28" name="GPIO8" type="male">
+   <description>SPI0_CE0_N - GPIO8</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector28pin" terminalId="connector28terminal"/>
@@ -452,8 +452,8 @@
     <p layer="copper1" svgId="connector28pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector29" name="GIPO25" type="male">
-   <description>GIPO25</description>
+    <connector id="connector29" name="GPIO25" type="male">
+   <description>GPIO25</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector29pin" terminalId="connector29terminal"/>
@@ -480,8 +480,8 @@
     <p layer="copper1" svgId="connector30pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector31" name="GIPO24" type="male">
-   <description>GIPO24</description>
+    <connector id="connector31" name="GPIO24" type="male">
+   <description>GPIO24</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector31pin" terminalId="connector31terminal"/>
@@ -494,8 +494,8 @@
     <p layer="copper1" svgId="connector31pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector32" name="GIPO23" type="male">
-   <description>GIPO23</description>
+    <connector id="connector32" name="GPIO23" type="male">
+   <description>GPIO23</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector32pin" terminalId="connector32terminal"/>
@@ -522,8 +522,8 @@
     <p layer="copper1" svgId="connector33pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector34" name="GIPO18" type="male">
-   <description>PCM_CLK - GIPO18</description>
+    <connector id="connector34" name="GPIO18" type="male">
+   <description>PCM_CLK - GPIO18</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector34pin" terminalId="connector34terminal"/>
@@ -536,8 +536,8 @@
     <p layer="copper1" svgId="connector34pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector35" name="GIPO15" type="male">
-   <description>UART0_RXD - GIPO15</description>
+    <connector id="connector35" name="GPIO15" type="male">
+   <description>UART0_RXD - GPIO15</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector35pin" terminalId="connector35terminal"/>
@@ -550,8 +550,8 @@
     <p layer="copper1" svgId="connector35pin"/></pcbView>
    </views>
   </connector>
-    <connector id="connector36" name="GIPO14" type="male">
-   <description>UART0_TXD - GIPO14</description>
+    <connector id="connector36" name="GPIO14" type="male">
+   <description>UART0_TXD - GPIO14</description>
    <views>
     <breadboardView>
      <p layer="breadboardbreadboard" svgId="connector36pin" terminalId="connector36terminal"/>
