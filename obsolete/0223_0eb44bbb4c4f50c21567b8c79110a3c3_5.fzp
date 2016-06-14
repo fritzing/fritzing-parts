@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.7.7b.08.14.6293" moduleId="0223_0eb44bbb4c4f50c21567b8c79110a3c3_5" referenceFile="A4988_Stepper_Motor_Driver_Carrier__3435bf9bd5708b982b93aaee2713f798.fzp">
+<version replacedby="pololu0002_a988">1</version>
+ <author>Király László</author>
+ <title>A4988 Stepper Motor Driver Carrier</title>
+ <label>MD09B</label>
+ <date>일 2월 23 2014</date>
+ <tags>
+  <tag>Motor Driver</tag>
+  <tag>Pololu</tag>
+  <tag>MD09B</tag>
+  <tag>Stepper</tag>
+  <tag>1182</tag>
+  <tag>1201</tag>
+ </tags>
+ <properties>
+  <property name="family">//obsolete//Stepper Motor Driver</property>
+  <property name="part number"></property>
+  <property name="layer"></property>
+  <property name="variant">variant 4</property>
+ </properties>
+ <description>The Pololu stepper motor driver carrier for the A4988 motor driver integrated circuits.&#xd;
+http://www.pololu.com/catalog/product/1182</description>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/0223_0eb44bbb4c4f50c21567b8c79110a3c3_5_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <iconView>
+   <layers image="icon/0223_0eb44bbb4c4f50c21567b8c79110a3c3_5_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <schematicView>
+   <layers image="schematic/0223_0eb44bbb4c4f50c21567b8c79110a3c3_5_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/0223_0eb44bbb4c4f50c21567b8c79110a3c3_5_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector130" name="Enable" replacedby="ENABLE">
+   <description>This input turns on or off all of the FET outputs. When set to a logic high, the outputs are disabled. When set to a logic low, the internal control enables the outputs as required. The translator inputs STEP, DIR, and MSx, as well as the internal sequencing logic, all remain active, independent of the ENABLE input state.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector130" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector130" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector130" layer="copper0"/>
+     <p svgId="connector130" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector141" name="GROUND" replacedby="GND">
+   <description>Stepper ground.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector141" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector141" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector141" layer="copper0"/>
+     <p svgId="connector141" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector131" name="MS1" replacedby="MS1">
+   <description>Microstep Resolution Switch 1.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector131" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector131" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector131" layer="copper0"/>
+     <p svgId="connector131" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector142" name="OUT 2B" replacedby="2B">
+   <description>Power connections to the stepper.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector142" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector142" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector142" layer="copper0"/>
+     <p svgId="connector142" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector132" name="MS2" replacedby="MS2">
+   <description>Microstep Resolution Switch 2.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector132" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector132" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector132" layer="copper0"/>
+     <p svgId="connector132" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector143" name="OUT 2A" replacedby="2A">
+   <description>Power connections to the stepper.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector143" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector143" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector143" layer="copper0"/>
+     <p svgId="connector143" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector133" name="MS3" replacedby="MS3">
+   <description>Microstep Resolution Switch 3.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector133" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector133" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector133" layer="copper0"/>
+     <p svgId="connector133" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector144" name="OUT 1A" replacedby="1A">
+   <description>Power connections to the stepper.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector144" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector144" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector144" layer="copper0"/>
+     <p svgId="connector144" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector134" name="RESET" replacedby="RESET">
+   <description>Reset chip.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector134" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector134" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector134" layer="copper0"/>
+     <p svgId="connector134" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector145" name="OUT 1B" replacedby="1B">
+   <description>Power connections to the stepper.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector145" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector145" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector145" layer="copper0"/>
+     <p svgId="connector145" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector135" name="SLEEP" replacedby="SLEEP">
+   <description>Sleep pin</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector135" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector135" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector135" layer="copper0"/>
+     <p svgId="connector135" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector146" name="VDD" replacedby="VDD">
+   <description>Logic Voltage</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector146" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector146" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector146" layer="copper0"/>
+     <p svgId="connector146" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector136" name="STEP" replacedby="STEP">
+   <description>Stepping impulse.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector136" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector136" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector136" layer="copper0"/>
+     <p svgId="connector136" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector147" name="GROUND" replacedby="GND">
+   <description>Logic ground</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector147" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector147" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector147" layer="copper0"/>
+     <p svgId="connector147" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector137" name="DIR" replacedby="DIR">
+   <description>This determines the direction of rotation of the motor. Changes to this input do not take effect  until the next STEP rising edge.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector137" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector137" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector137" layer="copper0"/>
+     <p svgId="connector137" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector140" name="VMOT" replacedby="VMOT">
+   <description>Stepper voltage.</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector140" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector140" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector140" layer="copper0"/>
+     <p svgId="connector140" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>
