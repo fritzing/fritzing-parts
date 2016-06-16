@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="Dagu_DGServo_9g_header_male" referenceFile="generic_male_pin_header_3_100mil.fzp" fritzingVersion="0.2.2.b.03.04.2550">
+ <version>4</version>
+ <author>Stephen Parry</author>
+ <title>Dagu DGServo 9g header (male)</title>
+ <label>J</label>
+ <date>Tue Jun 7 2016</date>
+ <tags/>
+ <properties>
+  <property name="package">THT</property>
+  <property name="hole size"></property>
+  <property name="part number"></property>
+  <property name="Row">single</property>
+  <property name="Position"></property>
+  <property name="variant">- male pins</property>
+  <property name="Pin Spacing">0.1in (2.54mm)</property>
+  <property name="Pins">3</property>
+  <property name="Form">♂ (male)</property>
+  <property name="layer"></property>
+  <property name="family">Dagu DGServo 9g header</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Dagu DGServo 9g header (male)&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This part is a minor variation of the standard three pin header; in schematic view the pins have been labelled to show clearly pulse, Vcc and ground. Plug this header into a breadboard, stripboard or PCB to allow a servo header female connector plug (e.g. on the Dagu DGServo 9g) to be connected to the board.&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/Dagu_DGServo_9g_header_male_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/Dagu_DGServo_9g_header_male_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView fliphorizontal="true">
+   <layers image="schematic/Dagu_DGServo_9g_header_male_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Dagu_DGServo_9g_header_male_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector id="connector0" name="gnd" type="male">
+   <description>ground</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector0terminal" svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector0terminal" svgId="connector0pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="copper0"/>
+     <p svgId="connector0pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" name="Vcc" type="male">
+   <description>Vcc</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector1terminal" svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector1terminal" svgId="connector1pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="copper0"/>
+     <p svgId="connector1pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector2" name="pulse" type="male">
+   <description>pulse</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector2terminal" svgId="connector2pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector2terminal" svgId="connector2pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector2pin" layer="copper0"/>
+     <p svgId="connector2pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>

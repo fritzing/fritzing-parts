@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="servo.fzp" moduleId="Dagu_DGServo_9g_PCB_mounting_holes">
+ <version>4</version>
+ <author>Stephen Parry</author>
+ <title>Dagu DGServo 9g PCB mounting holes</title>
+ <label>M</label>
+ <date>Tue Jun 7 2016</date>
+ <tags>
+  <tag>Dagu</tag>
+  <tag>servo</tag>
+  <tag>holes</tag>
+ </tags>
+ <properties>
+  <property name="variant">- Mounting holes</property>
+  <property name="layer"></property>
+  <property name="view">top</property>
+  <property name="family">Dagu DGServo 9g</property>
+  <property name="part number"></property>
+ </properties>
+ <taxonomy>discreteParts.servo</taxonomy>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">&#xd;
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">&#xd;
+p, li { white-space: pre-wrap; }&#xd;
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">&#xd;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Dagu DGServo 9g PCB mounting holes&lt;/p>&#xd;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">This PCB view only part provides just the holes for physically mounting the whole Dagu DGServo 9g through the PCB.&lt;/span>&lt;/p>&#xd;&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="pcb/Dagu_DGServo_9g_PCB_mounting_holes_pcb.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <pcbView>
+   <layers image="pcb/Dagu_DGServo_9g_PCB_mounting_holes_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+ </connectors>
+</module>

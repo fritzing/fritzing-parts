@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="generic_female_pin_header_3_100mil.fzp" moduleId="Dagu_DGServo_9g_header_connector_female" fritzingVersion="0.2.2.b.03.04.2550">
+ <version>4</version>
+ <author>Stephen Parry</author>
+ <title>Dagu DGServo 9g header connector (female)</title>
+ <label>J</label>
+ <date>Tue Jun 7 2016</date>
+ <tags/>
+ <properties>
+  <property name="package">THT</property>
+  <property name="hole size"></property>
+  <property name="part number"></property>
+  <property name="Row">single</property>
+  <property name="Position"></property>
+  <property name="variant">- female connector</property>
+  <property name="Pin Spacing">0.1in (2.54mm)</property>
+  <property name="Pins">3</property>
+  <property name="Form">♀ (female)</property>
+  <property name="layer"></property>
+  <property name="family">Dagu DGServo 9g header</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Dagu DGServo 9g header connector (female)&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This part represents the header plug found on the DGServo 9g. It is based on the standard female header, but is labelled to clearly indicate the ground, Vcc and pulse pins in schematic view. To use it, simply plug this part onto whichever header pins you are using, then attach the wires from a DGServo 9g part to the back of it. In schematic view, ensure this part is closer to the servo, than the header pin but further from the next component in the chain. This should route the rats nest wires the right way. In PCB view, ensure this part is off-board.&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/Dagu_DGServo_9g_header_connector_female_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/Dagu_DGServo_9g_header_connector_female_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView fliphorizontal="true">
+   <layers image="schematic/Dagu_DGServo_9g_header_connector_female_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Dagu_DGServo_9g_header_connector_female_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView> </views>
+ <connectors>
+  <connector type="male" name="gnd" id="connector0">
+   <description>ground</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" terminalId="connector0terminal" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector0terminal" svgId="connector0pin"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="copper0"/>
+     <p svgId="connector0pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="Vcc" id="connector1">
+   <description>Vcc</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" terminalId="connector1terminal" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector1terminal" svgId="connector1pin"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="copper0"/>
+     <p svgId="connector1pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="pulse" id="connector2">
+   <description>pulse</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" terminalId="connector2terminal" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector2terminal" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector2pin" layer="copper0"/>
+     <p svgId="connector2pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>
