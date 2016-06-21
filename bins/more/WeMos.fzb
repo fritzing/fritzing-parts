@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.9.3b" icon="wemos.png">
+	<title>WeMos</title>
+	<instances>
+		<instance moduleIdRef="WeMos_D1_mini_fixed" path="WeMos-D1-mini-female-headers-above_fixed.fzp">
+			<views>
+				<iconView layer="icon">
+					<geometry z="-1" x="-1" y="-1"></geometry>
+				</iconView>
+			</views>
+		</instance>
+		<instance moduleIdRef="WeMos_D1_mini_male_headers_above_fix" path="WeMos-D1-mini-male-headers-above_fixed.fzp">
+			<views>
+				<iconView layer="icon">
+					<geometry z="-1" x="-1" y="-1"></geometry>
+				</iconView>
+			</views>
+		</instance>
+	</instances>
+</module>
