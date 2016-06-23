@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module moduleId="PC847X_7eb43b60a64029b53561d2a746e15e5e_1" fritzingVersion="0.9.0b">
- <version>4</version>
+ <version>5</version>
  <author>ThomDietrich</author>
  <title>Sharp PC847X</title>
  <label>U</label>
@@ -15,11 +15,11 @@
   <property name="family">Optocoupler</property>
   <property name="package">THT</property>
  </properties>
- <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Optocoupler with four channels on one chip (without sensititvity pins)&lt;/p>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">&#xd;
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">&#xd;
+p, li { white-space: pre-wrap; }&#xd;
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">&#xd;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Optocoupler with four channels on one chip (without sensititvity pins)&lt;/p>&#xd;
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">PC847X / 4x 817X / LTV 847&lt;/p>&lt;/body>&lt;/html></description>
  <views>
   <iconView>
@@ -49,7 +49,7 @@ p, li { white-space: pre-wrap; }
   </pcbView>
  </views>
  <connectors>
-  <connector type="male" id="connector3" name="Pin 4">
+  <connector id="connector3" type="male" name="Pin 4">
    <description>Cathode</description>
    <views>
     <breadboardView>
@@ -64,7 +64,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector4" name="Pin 5">
+  <connector id="connector4" type="male" name="Pin 5">
    <description>Anode</description>
    <views>
     <breadboardView>
@@ -79,7 +79,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector5" name="Pin 6">
+  <connector id="connector5" type="male" name="Pin 6">
    <description>Cathode</description>
    <views>
     <breadboardView>
@@ -94,7 +94,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector0" name="Pin 1">
+  <connector id="connector0" type="male" name="Pin 1">
    <description>Anode</description>
    <views>
     <breadboardView>
@@ -109,7 +109,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector1" name="Pin 2">
+  <connector id="connector1" type="male" name="Pin 2">
    <description>Cathode</description>
    <views>
     <breadboardView>
@@ -124,7 +124,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector2" name="Pin 3">
+  <connector id="connector2" type="male" name="Pin 3">
    <description>Anode</description>
    <views>
     <breadboardView>
@@ -139,7 +139,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector7" name="Pin 7">
+  <connector id="connector7" type="male" name="Pin 7">
    <description>Anode</description>
    <views>
     <breadboardView>
@@ -154,7 +154,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector8" name="Pin 8">
+  <connector id="connector8" type="male" name="Pin 8">
    <description>Cathode</description>
    <views>
     <breadboardView>
@@ -169,7 +169,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector9" name="Pin 9">
+  <connector id="connector9" type="male" name="Pin 9">
    <description>Emitter</description>
    <views>
     <breadboardView>
@@ -184,7 +184,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector10" name="Pin 10">
+  <connector id="connector10" type="male" name="Pin 10">
    <description>Collector</description>
    <views>
     <breadboardView>
@@ -199,7 +199,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector11" name="Pin 11">
+  <connector id="connector11" type="male" name="Pin 11">
    <description>Emitter</description>
    <views>
     <breadboardView>
@@ -214,7 +214,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector12" name="Pin 12">
+  <connector id="connector12" type="male" name="Pin 12">
    <description>Collector</description>
    <views>
     <breadboardView>
@@ -229,7 +229,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector13" name="Pin 13">
+  <connector id="connector13" type="male" name="Pin 13">
    <description>Emitter</description>
    <views>
     <breadboardView>
@@ -244,7 +244,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector14" name="Pin 14">
+  <connector id="connector14" type="male" name="Pin 14">
    <description>Collector</description>
    <views>
     <breadboardView>
@@ -259,7 +259,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector15" name="Pin 15">
+  <connector id="connector15" type="male" name="Pin 15">
    <description>Emitter</description>
    <views>
     <breadboardView>
@@ -274,7 +274,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector16" name="Pin 16">
+  <connector id="connector16" type="male" name="Pin 16">
    <description>Collector</description>
    <views>
     <breadboardView>
