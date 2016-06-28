@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.1.1201" moduleId="RioRand_LM2596_4d4c679376dd350f31d88f2a45c5c688_11" referenceFile="resistor.fzp">
+ <version>4</version>
+ <title>RioRand LM2596</title>
+ <label>LM2596</label>
+ <date>Sun Jun 26 2016</date>
+ <author>Jenny Madorsky</author>
+ <tags>
+  <tag>dc dc converter</tag>
+  <tag>dc-dc converter</tag>
+  <tag>step down module</tag>
+  <tag>step-down module</tag>
+ </tags>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Converter</property>
+ </properties>
+ <taxonomy>discreteParts.resistor.220</taxonomy>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Step-down DC-DC Converter&lt;/p>&lt;/body>&lt;/html></description>
+ <spice>
+  <line>R{instanceTitle} {net connector0} {net connector1} {resistance}</line>
+ </spice>
+ <views>
+  <iconView>
+   <layers image="icon/RioRand_LM2596_4d4c679376dd350f31d88f2a45c5c688_11_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/RioRand_LM2596_4d4c679376dd350f31d88f2a45c5c688_11_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/RioRand_LM2596_4d4c679376dd350f31d88f2a45c5c688_11_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/RioRand_LM2596_4d4c679376dd350f31d88f2a45c5c688_11_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+    <layer layerId="keepout"/>
+    <layer layerId="soldermask"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="outline"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="female" id="connector0" name="Pin 0">
+   <description>In+</description>
+   <views>
+    <breadboardView>
+     <p legId="connector0leg" layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+     <p layer="copper1" svgId="connector0pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector1" name="Pin 1">
+   <description>In-</description>
+   <views>
+    <breadboardView>
+     <p legId="connector1leg" layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+     <p layer="copper1" svgId="connector1pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector2" name="Pin 2">
+   <description>Out+</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector2pin"/>
+     <p layer="copper1" svgId="connector2pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector3" name="Pin 3">
+   <description>Out-</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector3pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector3pin"/>
+     <p layer="copper1" svgId="connector3pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>
