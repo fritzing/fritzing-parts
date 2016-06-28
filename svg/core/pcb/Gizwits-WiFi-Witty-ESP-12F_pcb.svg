@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 87.874 90.709" width="3.1cm" height="3.2cm" xml:space="preserve">
+<g id="silkscreen">
+	<g class="centered" transform="translate(0.737, 3)">
+		<g class="esp-placeholder">
+			<rect fill="none" stroke="#000000" stroke-width="0.2" stroke-dasharray="2,2" x="20.523" y="0" width="45.354" height="68.031"/>
+		</g>
+		<g class="esp8266" transform="translate(20.523,0)">
+			<g class="antenna" fill="#000000">
+				<polygon points="43.301,15.289 42.081,15.289 42.081,3.269 36.961,3.269 36.961,10.969 28.617,10.969 28.617,3.269 23.357,3.269 23.357,10.969 15.077,10.969 15.077,3.269 9.961,3.269 9.961,15.286 8.741,15.286 8.741,3.269 3.697,3.269 3.697,15.289 2.049,15.289 2.049,2.049 16.297,2.049 16.297,9.749 22.137,9.749 22.137,2.049 29.837,2.049 29.837,9.749 35.741,9.749 35.741,2.049 43.301,2.049"/>
+			</g>
+			<g class="cover" fill="#000000">
+				<rect class="main" x="5.575" y="21.26" fill="none" stroke="#000000" stroke-width="0.2" stroke-dasharray="2,2" width="34.2" height="43.2"/>
+			</g>
+			<text class="label" fill="#000000" font-family="'Droid Sans'" font-size="4" x="22.5" y="44" text-anchor="middle">ESP-8266</text>
+		</g>
+	</g>
+	<g stroke="none" fill="#000000">
+		<path class="board-outline" d="M0,2.8v85h87.9v-85H0z M87.4,87.4H0.5v-84h86.9V87.4z"/>
+	</g>
+</g>
+<g id="copper1">
+	<g id="copper0">
+		<g class="pads" fill="none">
+			<g class="pads-left" transform="translate(0, 20.494)">
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector0pad" class="pad-rest"   cx="3.6" cy="3.6" r="2.05"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector1pad" class="pad-adc"    cx="3.6" cy="3.6" r="2.05" transform="translate(0, 7.2)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector2pad" class="pad-ch_pd"  cx="3.6" cy="3.6" r="2.05" transform="translate(0, 14.4)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector3pad" class="pad-gpio16" cx="3.6" cy="3.6" r="2.05" transform="translate(0, 21.6)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector4pad" class="pad-gpio14" cx="3.6" cy="3.6" r="2.05" transform="translate(0, 28.8)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector5pad" class="pad-gpio12" cx="3.6" cy="3.6" r="2.05" transform="translate(0, 36.0)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector6pad" class="pad-gpio13" cx="3.6" cy="3.6" r="2.05" transform="translate(0, 43.2)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector7pad" class="pad-vcc"    cx="3.6" cy="3.6" r="2.05" transform="translate(0, 50.4)"/>
+			</g>
+			<g class="pads-right" transform="translate(0, 20.494)">
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector15pad" class="pad-txd"    cx="3.6" cy="3.6" r="2.05" transform="translate(79.2, 0)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector14pad" class="pad-rxd"    cx="3.6" cy="3.6" r="2.05" transform="translate(79.2, 7.2)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector13pad" class="pad-gpio5"  cx="3.6" cy="3.6" r="2.05" transform="translate(79.2, 14.4)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector12pad" class="pad-gpio4"  cx="3.6" cy="3.6" r="2.05" transform="translate(79.2, 21.6)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector11pad" class="pad-gpio0"  cx="3.6" cy="3.6" r="2.05" transform="translate(79.2, 28.8)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector10pad" class="pad-gpio2"  cx="3.6" cy="3.6" r="2.05" transform="translate(79.2, 36.0)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector9pad"  class="pad-gpio15" cx="3.6" cy="3.6" r="2.05" transform="translate(79.2, 43.2)"/>
+				<circle stroke="#F7BD13" stroke-width="1.5" id="connector8pad"  class="pad-gnd"    cx="3.6" cy="3.6" r="2.05" transform="translate(79.2, 50.4)"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
