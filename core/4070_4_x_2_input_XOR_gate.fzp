@@ -276,8 +276,7 @@ p, li { white-space: pre-wrap; }
      <p svgId="connector14pin" terminalId="connector14terminal" layer="schematic"/>
     </schematicView>
     <pcbView>
-     <p svgId="connector14pin" layer="copper0" hybrid="yes"/>
-     <p svgId="connector14pin" layer="copper1" hybrid="yes"/>
+     <p svgId="connector14pin" layer="unknown" hybrid="yes"/>
     </pcbView>
    </views>
   </connector>
@@ -291,8 +290,7 @@ p, li { white-space: pre-wrap; }
      <p svgId="connector15pin" terminalId="connector15terminal" layer="schematic"/>
     </schematicView>
     <pcbView>
-     <p svgId="connector15pin" layer="copper0" hybrid="yes"/>
-     <p svgId="connector15pin" layer="copper1" hybrid="yes"/>
+     <p svgId="connector15pin" layer="unknown" hybrid="yes"/>
     </pcbView>
    </views>
   </connector>
@@ -306,8 +304,7 @@ p, li { white-space: pre-wrap; }
      <p svgId="connector16pin" terminalId="connector16terminal" layer="schematic"/>
     </schematicView>
     <pcbView>
-     <p svgId="connector16pin" layer="copper0" hybrid="yes"/>
-     <p svgId="connector16pin" layer="copper1" hybrid="yes"/>
+     <p svgId="connector16pin" layer="unknown" hybrid="yes"/>
     </pcbView>
    </views>
   </connector>
@@ -321,8 +318,7 @@ p, li { white-space: pre-wrap; }
      <p svgId="connector17pin" terminalId="connector17terminal" layer="schematic"/>
     </schematicView>
     <pcbView>
-     <p svgId="connector14pin" layer="copper0" hybrid="yes"/>
-     <p svgId="connector14pin" layer="copper1" hybrid="yes"/>
+     <p svgId="connector17pin" layer="unknown" hybrid="yes"/>
     </pcbView>
    </views>
   </connector>
@@ -368,21 +364,23 @@ p, li { white-space: pre-wrap; }
   </subpart>
  </schematic-subparts>
  <buses>
+<!--
 	 <bus id="0">
-		<connector id="connector2"/>
-		<connector id="connector14"/>
+		<nodeMember connectorId="connector0"/>
+		<nodeMember connectorId="connector1"/>
 	 </bus>
 	 <bus id="1">
-		<connector id="connector3"/>
-		<connector id="connector15"/>
+		<nodeMember connectorId="connector3"/>
+		<nodeMember connectorId="connector15"/>
 	 </bus>
 	 <bus id="2">
-		<connector id="connector9"/>
-		<connector id="connector16"/>
+		<nodeMember connectorId="connector9"/>
+		<nodeMember connectorId="connector16"/>
 	 </bus>
 	 <bus id="3">
-		<connector id="connector10"/>
-		<connector id="connector17"/>
+		<nodeMember connectorId="connector10"/>
+		<nodeMember connectorId="connector17"/>
 	 </bus>
+	 -->
  </buses>
 </module>
