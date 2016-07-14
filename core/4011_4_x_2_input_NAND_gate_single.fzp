@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module moduleId="4001_4_x_2_input_NOR_gate" referenceFile="generic_ic_dip_14_300mil.fzp">
+<module moduleId="4011_4_x_2_input_NAND_gate_single" referenceFile="generic_ic_dip_14_300mil.fzp">
  <version>4</version>
  <author>Stephen G. Parry</author>
- <title>4001 4 x 2 Input NOR Gate</title>
+ <title>4011 4 x 2 Input NAND Gate, single part</title>
  <label>IC</label>
  <date>Sun Jun 19 2016</date>
  <tags>
@@ -12,10 +12,10 @@
   <tag>fritzing core</tag>
  </tags>
  <properties>
-  <property name="chip label">4001</property>
+  <property name="chip label">4011</property>
   <property name="editable pin labels">false</property>
-  <property name="variant">4 x 2 Input NOR gate</property>
-  <property name="part number">4001</property>
+  <property name="variant">4 x 2 Input NAND gate, single part</property>
+  <property name="part number">4011</property>
   <property name="family">40xx 4x2 input logic gate</property>
   <property name="pins">14</property>
   <property name="hole size"></property>
@@ -30,10 +30,10 @@
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Oxygen-Sans'; font-size:10pt;">4001 4 x 2 Input NOR Gate with sub-parts.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Oxygen-Sans'; font-size:10pt;">4011 4 x 2 Input NAND Gate as a single part&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
  <views>
   <iconView>
-   <layers image="icon/40xx_series_DIP14_icon.svg">
+   <layers image="icon/40xx_series_DIP14_single_icon.svg">
     <layer layerId="icon"/>
    </layers>
   </iconView>
@@ -43,7 +43,7 @@ p, li { white-space: pre-wrap; }
    </layers>
   </breadboardView>
   <schematicView>
-   <layers image="schematic/4001_4_x_2_input_NOR_gate_schematic.svg">
+   <layers image="schematic/4011_4_x_2_input_NAND_gate_single_schematic.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
@@ -266,121 +266,5 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector id="connector14" name="Q1" type="male">
-   <description>Q1</description>
-   <views>
-    <breadboardView>
-     <p svgId="connector14pin" terminalId="connector14terminal" layer="breadboard" hybrid="yes"/>
-    </breadboardView>
-    <schematicView>
-     <p svgId="connector14pin" terminalId="connector14terminal" layer="schematic"/>
-    </schematicView>
-    <pcbView>
-     <p svgId="connector14pin" layer="unknown" hybrid="yes"/>
-    </pcbView>
-   </views>
-  </connector>
-  <connector id="connector15" name="Q2" type="male">
-   <description>Q2</description>
-   <views>
-    <breadboardView>
-     <p svgId="connector15pin" terminalId="connector15terminal" layer="breadboard" hybrid="yes"/>
-    </breadboardView>
-    <schematicView>
-     <p svgId="connector15pin" terminalId="connector15terminal" layer="schematic"/>
-    </schematicView>
-    <pcbView>
-     <p svgId="connector15pin" layer="unknown" hybrid="yes"/>
-    </pcbView>
-   </views>
-  </connector>
-  <connector id="connector16" name="Q3" type="male">
-   <description>Q3</description>
-   <views>
-    <breadboardView>
-     <p svgId="connector16pin" terminalId="connector16terminal" layer="breadboard" hybrid="yes"/>
-    </breadboardView>
-    <schematicView>
-     <p svgId="connector16pin" terminalId="connector16terminal" layer="schematic"/>
-    </schematicView>
-    <pcbView>
-     <p svgId="connector16pin" layer="unknown" hybrid="yes"/>
-    </pcbView>
-   </views>
-  </connector>
-  <connector id="connector17" name="Q4" type="male">
-   <description>Q4</description>
-   <views>
-    <breadboardView>
-     <p svgId="connector17pin" terminalId="connector17terminal" layer="breadboard" hybrid="yes"/>
-    </breadboardView>
-    <schematicView>
-     <p svgId="connector17pin" terminalId="connector17terminal" layer="schematic"/>
-    </schematicView>
-    <pcbView>
-     <p svgId="connector17pin" layer="unknown" hybrid="yes"/>
-    </pcbView>
-   </views>
-  </connector>
  </connectors>
- <schematic-subparts>
-  <subpart id="subpart1" label="">
-   <connectors>
-    <connector id="connector6"/>
-    <connector id="connector13"/>
-    <connector id="connector2"/>
-    <connector id="connector3"/>
-    <connector id="connector9"/>
-    <connector id="connector10"/>
-   </connectors>
-  </subpart>
-  <subpart id="subpart2" label="1">
-   <connectors>
-    <connector id="connector0"/>
-    <connector id="connector1"/>
-    <connector id="connector14"/>
-   </connectors>
-  </subpart>
-  <subpart id="subpart3" label="2">
-   <connectors>
-    <connector id="connector4"/>
-    <connector id="connector5"/>
-    <connector id="connector15"/>
-   </connectors>
-  </subpart>
-  <subpart id="subpart4" label="3">
-   <connectors>
-    <connector id="connector7"/>
-    <connector id="connector8"/>
-    <connector id="connector16"/>
-   </connectors>
-  </subpart>
-  <subpart id="subpart5" label="4">
-   <connectors>
-    <connector id="connector11"/>
-    <connector id="connector12"/>
-    <connector id="connector17"/>
-   </connectors>
-  </subpart>
- </schematic-subparts>
- <buses>
-<!--
-	 <bus id="0">
-		<nodeMember connectorId="connector0"/>
-		<nodeMember connectorId="connector1"/>
-	 </bus>
-	 <bus id="1">
-		<nodeMember connectorId="connector3"/>
-		<nodeMember connectorId="connector15"/>
-	 </bus>
-	 <bus id="2">
-		<nodeMember connectorId="connector9"/>
-		<nodeMember connectorId="connector16"/>
-	 </bus>
-	 <bus id="3">
-		<nodeMember connectorId="connector10"/>
-		<nodeMember connectorId="connector17"/>
-	 </bus>
-	 -->
- </buses>
 </module>
