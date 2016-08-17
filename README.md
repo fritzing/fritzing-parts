@@ -9,3 +9,14 @@ See the [contribution guidelines](https://github.com/fritzing/fritzing-parts/blo
 ## Creating parts
 
 Learn [how to create custom parts](http://fritzing.org/learning/tutorials/creating-custom-parts/)
+
+## Testing Parts via travis-ci
+
+The check status of the core fzp-files is at the moment:  
+
+![check Status:](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=travis)
+
+documentation follow. 
+
+fzp validator tool can be found at:  
+[https://github.com/fritzing/fritzing/fzp/](https://github.com/fritzing/fritzing/fzp)
