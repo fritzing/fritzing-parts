@@ -3,7 +3,8 @@ language: go
 go:
   - 1.6
 
-before_install:
+install:
+  - echo "install fzp tool"
   - go get github.com/fritzing/fzp/bin/fzp
 
 script:
