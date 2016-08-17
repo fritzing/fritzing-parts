@@ -6,9 +6,9 @@ go:
 install:
   - echo "install fzp tool"
   - go get github.com/fritzing/fzp/bin/fzp
-
-script:
-  - $GOPATH/src/github.com/fritzing/fzp/bin/fzp -v
+  - echo "fzp succefully installed. Version:"
   - fzp -v
 
-  - $GOPATH/src/github.com/fritzing/fzp/bin/fzp validate -d $GOPATH/src/github.com/fritzing/fritzing-parts/core
+script:
+  - echo "run fzp validation tool in fritzing-parts/core"
+  - fzp validate -d $HOME/gopath/src/github.com/fritzing/fritzing-parts/core
