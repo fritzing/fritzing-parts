@@ -1,0 +1,1474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.9.3b" moduleId="WeMos_D1_Mini_Protoboard_Shield_no_headers">
+ <version>1</version>
+ <author>Mike Causer</author>
+ <title>WeMos D1 Mini Protoboard Shield</title>
+ <label>WeMos D1 Mini Protoboard Shield</label>
+ <date>Mon Jun 27 2016</date>
+ <url>http://wemos.cc</url>
+ <tags>
+  <tag>Protoboard</tag>
+  <tag>Shield</tag>
+  <tag>D1 Mini</tag>
+  <tag>WeMoS</tag>
+ </tags>
+ <properties>
+  <property name="family">WeMos D1 Mini Shield</property>
+  <property name="variant">Protoboard Shield</property>
+  <property name="headers">no headers</property>
+ </properties>
+ <description>A shield with an 89x standard 0.1" spaced plated through solder points.</description>
+ <views>
+  <iconView>
+   <layers image="breadboard/WeMos-D1-mini-Protoboard-Shield-no-headers_breadboard.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/WeMos-D1-mini-Protoboard-Shield-no-headers_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/WeMos-D1-mini-Protoboard-Shield_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/WeMos-D1-mini-Protoboard-Shield_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+
+  <connector type="female" id="rst" name="RST">
+   <description>RST</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" terminalId="connector0terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pad" layer="copper0"/>
+     <p svgId="connector0pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="a0" name="A0">
+   <description>A0</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pad" layer="copper0"/>
+     <p svgId="connector1pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="d0" name="D0">
+   <description>D0</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector2pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector2pin" terminalId="connector2terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector2pad" layer="copper0"/>
+     <p svgId="connector2pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="d5" name="D5">
+   <description>D5</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector3pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector3pin" terminalId="connector3terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector3pad" layer="copper0"/>
+     <p svgId="connector3pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="d6" name="D6">
+   <description>D6</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector4pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector4pin" terminalId="connector4terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector4pad" layer="copper0"/>
+     <p svgId="connector4pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="d7" name="D7">
+   <description>D7</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector5pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector5pin" terminalId="connector5terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector5pad" layer="copper0"/>
+     <p svgId="connector5pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="d8" name="D8">
+   <description>D8</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector6pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector6pin" terminalId="connector6terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector6pad" layer="copper0"/>
+     <p svgId="connector6pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="3v3" name="3V3">
+   <description>3V3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector7pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector7pin" terminalId="connector7terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector7pad" layer="copper0"/>
+     <p svgId="connector7pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="5v" name="5V">
+   <description>5V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector8pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector8pin" terminalId="connector8terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector8pad" layer="copper0"/>
+     <p svgId="connector8pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="g" name="G">
+   <description>G</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector9pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector9pin" terminalId="connector9terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector9pad" layer="copper0"/>
+     <p svgId="connector9pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="d4" name="D4">
+   <description>D4</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector10pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector10pin" terminalId="connector10terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector10pad" layer="copper0"/>
+     <p svgId="connector10pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="d3" name="D3">
+   <description>D3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector11pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector11pin" terminalId="connector11terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector11pad" layer="copper0"/>
+     <p svgId="connector11pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="d2" name="D2">
+   <description>D2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector12pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector12pin" terminalId="connector12terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector12pad" layer="copper0"/>
+     <p svgId="connector12pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="d1" name="D1">
+   <description>D1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector13pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector13pin" terminalId="connector13terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector13pad" layer="copper0"/>
+     <p svgId="connector13pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="rx" name="RX">
+   <description>RX</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector14pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector14pin" terminalId="connector14terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector14pad" layer="copper0"/>
+     <p svgId="connector14pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="tx" name="TX">
+   <description>TX</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector15pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector15pin" terminalId="connector15terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector15pad" layer="copper0"/>
+     <p svgId="connector15pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="x1-y10" name="X1-Y10">
+   <description>X1-Y10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector16pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector16pin" terminalId="connector16terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector16pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector16pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x1-y11" name="X1-Y11">
+   <description>X1-Y11</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector17pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector17pin" terminalId="connector17terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector17pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector17pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="x2-y1" name="X2-Y1">
+   <description>X2-Y1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector18pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector18pin" terminalId="connector18terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector18pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector18pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x2-y2" name="X2-Y2">
+   <description>X2-Y2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector19pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector19pin" terminalId="connector19terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector19pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector19pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x2-y3" name="X2-Y3">
+   <description>X2-Y3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector20pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector20pin" terminalId="connector20terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector20pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector20pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x2-y4" name="X2-Y4">
+   <description>X2-Y4</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector21pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector21pin" terminalId="connector21terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector21pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector21pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x2-y5" name="X2-Y5">
+   <description>X2-Y5</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector22pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector22pin" terminalId="connector22terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector22pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector22pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x2-y6" name="X2-Y6">
+   <description>X2-Y6</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector23pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector23pin" terminalId="connector23terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector23pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector23pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x2-y7" name="X2-Y7">
+   <description>X2-Y7</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector24pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector24pin" terminalId="connector24terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector24pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector24pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x2-y8" name="X2-Y8">
+   <description>X2-Y8</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector25pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector25pin" terminalId="connector25terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector25pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector25pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x2-y9" name="X2-Y9">
+   <description>X2-Y9</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector26pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector26pin" terminalId="connector26terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector26pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector26pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x2-y10" name="X2-Y10">
+   <description>X2-Y10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector27pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector27pin" terminalId="connector27terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector27pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector27pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x2-y11" name="X2-Y11">
+   <description>X2-Y11</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector28pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector28pin" terminalId="connector28terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector28pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector28pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="x3-y1" name="X3-Y1">
+   <description>X3-Y1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector29pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector29pin" terminalId="connector29terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector29pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector29pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x3-y2" name="X3-Y2">
+   <description>X3-Y2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector30pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector30pin" terminalId="connector30terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector30pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector30pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x3-y3" name="X3-Y3">
+   <description>X3-Y3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector31pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector31pin" terminalId="connector31terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector31pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector31pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x3-y4" name="X3-Y4">
+   <description>X3-Y4</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector32pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector32pin" terminalId="connector32terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector32pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector32pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x3-y5" name="X3-Y5">
+   <description>X3-Y5</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector33pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector33pin" terminalId="connector33terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector33pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector33pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x3-y6" name="X3-Y6">
+   <description>X3-Y6</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector34pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector34pin" terminalId="connector34terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector34pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector34pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x3-y7" name="X3-Y7">
+   <description>X3-Y7</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector35pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector35pin" terminalId="connector35terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector35pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector35pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x3-y8" name="X3-Y8">
+   <description>X3-Y8</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector36pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector36pin" terminalId="connector36terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector36pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector36pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x3-y9" name="X3-Y9">
+   <description>X3-Y9</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector37pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector37pin" terminalId="connector37terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector37pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector37pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x3-y10" name="X3-Y10">
+   <description>X3-Y10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector38pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector38pin" terminalId="connector38terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector38pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector38pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x3-y11" name="X3-Y11">
+   <description>X3-Y11</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector39pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector39pin" terminalId="connector39terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector39pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector39pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="x4-y1" name="X4-Y1">
+   <description>X4-Y1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector40pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector40pin" terminalId="connector40terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector40pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector40pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x4-y2" name="X4-Y2">
+   <description>X4-Y2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector41pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector41pin" terminalId="connector41terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector41pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector41pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x4-y3" name="X4-Y3">
+   <description>X4-Y3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector42pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector42pin" terminalId="connector42terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector42pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector42pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x4-y4" name="X4-Y4">
+   <description>X4-Y4</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector43pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector43pin" terminalId="connector43terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector43pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector43pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x4-y5" name="X4-Y5">
+   <description>X4-Y5</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector44pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector44pin" terminalId="connector44terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector44pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector44pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x4-y6" name="X4-Y6">
+   <description>X4-Y6</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector45pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector45pin" terminalId="connector45terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector45pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector45pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x4-y7" name="X4-Y7">
+   <description>X4-Y7</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector46pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector46pin" terminalId="connector46terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector46pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector46pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x4-y8" name="X4-Y8">
+   <description>X4-Y8</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector47pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector47pin" terminalId="connector47terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector47pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector47pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x4-y9" name="X4-Y9">
+   <description>X4-Y9</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector48pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector48pin" terminalId="connector48terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector48pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector48pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x4-y10" name="X4-Y10">
+   <description>X4-Y10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector49pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector49pin" terminalId="connector49terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector49pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector49pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x4-y11" name="X4-Y11">
+   <description>X4-Y11</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector50pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector50pin" terminalId="connector50terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector50pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector50pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="x5-y1" name="X5-Y1">
+   <description>X5-Y1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector51pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector51pin" terminalId="connector51terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector51pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector51pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x5-y2" name="X5-Y2">
+   <description>X5-Y2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector52pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector52pin" terminalId="connector52terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector52pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector52pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x5-y3" name="X5-Y3">
+   <description>X5-Y3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector53pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector53pin" terminalId="connector53terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector53pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector53pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x5-y4" name="X5-Y4">
+   <description>X5-Y4</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector54pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector54pin" terminalId="connector54terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector54pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector54pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x5-y5" name="X5-Y5">
+   <description>X5-Y5</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector55pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector55pin" terminalId="connector55terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector55pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector55pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x5-y6" name="X5-Y6">
+   <description>X5-Y6</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector56pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector56pin" terminalId="connector56terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector56pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector56pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x5-y7" name="X5-Y7">
+   <description>X5-Y7</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector57pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector57pin" terminalId="connector57terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector57pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector57pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x5-y8" name="X5-Y8">
+   <description>X5-Y8</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector58pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector58pin" terminalId="connector58terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector58pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector58pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x5-y9" name="X5-Y9">
+   <description>X5-Y9</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector59pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector59pin" terminalId="connector59terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector59pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector59pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x5-y10" name="X5-Y10">
+   <description>X5-Y10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector60pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector60pin" terminalId="connector60terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector60pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector60pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x5-y11" name="X5-Y11">
+   <description>X5-Y11</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector61pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector61pin" terminalId="connector61terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector61pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector61pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="x6-y1" name="X6-Y1">
+   <description>X6-Y1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector62pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector62pin" terminalId="connector62terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector62pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector62pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x6-y2" name="X6-Y2">
+   <description>X6-Y2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector63pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector63pin" terminalId="connector63terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector63pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector63pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x6-y3" name="X6-Y3">
+   <description>X6-Y3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector64pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector64pin" terminalId="connector64terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector64pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector64pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x6-y4" name="X6-Y4">
+   <description>X6-Y4</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector65pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector65pin" terminalId="connector65terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector65pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector65pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x6-y5" name="X6-Y5">
+   <description>X6-Y5</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector66pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector66pin" terminalId="connector66terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector66pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector66pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x6-y6" name="X6-Y6">
+   <description>X6-Y6</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector67pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector67pin" terminalId="connector67terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector67pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector67pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x6-y7" name="X6-Y7">
+   <description>X6-Y7</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector68pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector68pin" terminalId="connector68terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector68pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector68pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x6-y8" name="X6-Y8">
+   <description>X6-Y8</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector69pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector69pin" terminalId="connector69terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector69pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector69pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x6-y9" name="X6-Y9">
+   <description>X6-Y9</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector70pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector70pin" terminalId="connector70terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector70pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector70pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x6-y10" name="X6-Y10">
+   <description>X6-Y10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector71pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector71pin" terminalId="connector71terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector71pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector71pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x6-y11" name="X6-Y11">
+   <description>X6-Y11</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector72pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector72pin" terminalId="connector72terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector72pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector72pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="x7-y1" name="X7-Y1">
+   <description>X7-Y1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector73pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector73pin" terminalId="connector73terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector73pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector73pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x7-y2" name="X7-Y2">
+   <description>X7-Y2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector74pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector74pin" terminalId="connector74terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector74pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector74pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x7-y3" name="X7-Y3">
+   <description>X7-Y3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector75pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector75pin" terminalId="connector75terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector75pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector75pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x7-y4" name="X7-Y4">
+   <description>X7-Y4</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector76pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector76pin" terminalId="connector76terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector76pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector76pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x7-y5" name="X7-Y5">
+   <description>X7-Y5</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector77pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector77pin" terminalId="connector77terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector77pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector77pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x7-y6" name="X7-Y6">
+   <description>X7-Y6</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector78pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector78pin" terminalId="connector78terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector78pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector78pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x7-y7" name="X7-Y7">
+   <description>X7-Y7</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector79pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector79pin" terminalId="connector79terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector79pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector79pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x7-y8" name="X7-Y8">
+   <description>X7-Y8</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector80pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector80pin" terminalId="connector80terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector80pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector80pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x7-y9" name="X7-Y9">
+   <description>X7-Y9</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector81pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector81pin" terminalId="connector81terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector81pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector81pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x7-y10" name="X7-Y10">
+   <description>X7-Y10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector82pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector82pin" terminalId="connector82terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector82pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector82pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x7-y11" name="X7-Y11">
+   <description>X7-Y11</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector83pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector83pin" terminalId="connector83terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector83pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector83pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="x8-y9" name="X8-Y9">
+   <description>X8-Y9</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector84pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector84pin" terminalId="connector84terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector84pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector84pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x8-y10" name="X8-Y10">
+   <description>X8-Y10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector85pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector85pin" terminalId="connector85terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector85pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector85pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x8-y11" name="X8-Y11">
+   <description>X8-Y11</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector86pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector86pin" terminalId="connector86terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector86pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector86pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+
+  <connector type="female" id="x9-y10" name="X9-Y10">
+   <description>X9-Y10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector87pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector87pin" terminalId="connector87terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector87pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector87pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="x9-y11" name="X9-Y11">
+   <description>X9-Y11</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector88pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector88pin" terminalId="connector88terminal" layer="schematic" hybrid="yes"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector88pad" layer="copper0" hybrid="yes"/>
+     <p svgId="connector88pad" layer="copper1" hybrid="yes"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="rst-x2">
+   <nodeMember connectorId="rst"/>
+   <nodeMember connectorId="x2-y1"/>
+  </bus>
+  <bus id="a0-x2">
+   <nodeMember connectorId="a0"/>
+   <nodeMember connectorId="x2-y2"/>
+  </bus>
+  <bus id="d0-x2">
+   <nodeMember connectorId="d0"/>
+   <nodeMember connectorId="x2-y3"/>
+  </bus>
+  <bus id="d5-x2">
+   <nodeMember connectorId="d5"/>
+   <nodeMember connectorId="x2-y4"/>
+  </bus>
+  <bus id="d6-x2">
+   <nodeMember connectorId="d6"/>
+   <nodeMember connectorId="x2-y5"/>
+  </bus>
+  <bus id="d7-x2">
+   <nodeMember connectorId="d7"/>
+   <nodeMember connectorId="x2-y6"/>
+  </bus>
+  <bus id="d8-x2">
+   <nodeMember connectorId="d8"/>
+   <nodeMember connectorId="x2-y7"/>
+  </bus>
+  <bus id="3v3-x2">
+   <nodeMember connectorId="3v3"/>
+   <nodeMember connectorId="x2-y8"/>
+  </bus>
+
+  <bus id="5v-x7">
+   <nodeMember connectorId="5v"/>
+   <nodeMember connectorId="x7-y8"/>
+  </bus>
+  <bus id="g-x7">
+   <nodeMember connectorId="g"/>
+   <nodeMember connectorId="x7-y7"/>
+  </bus>
+  <bus id="d4-x7">
+   <nodeMember connectorId="d4"/>
+   <nodeMember connectorId="x7-y6"/>
+  </bus>
+  <bus id="d3-x7">
+   <nodeMember connectorId="d3"/>
+   <nodeMember connectorId="x7-y5"/>
+  </bus>
+  <bus id="d2-x7">
+   <nodeMember connectorId="d2"/>
+   <nodeMember connectorId="x7-y4"/>
+  </bus>
+  <bus id="d1-x7">
+   <nodeMember connectorId="d1"/>
+   <nodeMember connectorId="x7-y3"/>
+  </bus>
+  <bus id="rx-x7">
+   <nodeMember connectorId="rx"/>
+   <nodeMember connectorId="x7-y2"/>
+  </bus>
+  <bus id="tx-x7">
+   <nodeMember connectorId="tx"/>
+   <nodeMember connectorId="x7-y1"/>
+  </bus>
+ </buses>
+</module>
