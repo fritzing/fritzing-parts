@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module fritzingVersion="0.6.3b.08.16.5401" moduleId="WIZ820io_fix">
-    <version>2</version>
+<module fritzingVersion="0.6.3b.08.16.5401" moduleId="WIZ820io">
+    <version replacedby="WIZ820io_fix">1</version>
     <author>Jinbuhm Kim (jinbuhm.Kim@gmail.com) fixed by fabian althaus</author>
     <title>WIZ820io</title>
     <label>WIZ820io</label>
@@ -10,7 +10,7 @@
         <tag>WIZnet</tag>
     </tags>
     <properties>
-        <property name="family">networkmodule</property>
+        <property name="family">//obsolete//wiz820</property>
         <property name="part number">WIZ820io</property>
     </properties>
     <description>Plug-in Network Module having W5200 &amp; Mag Jack</description>
@@ -26,7 +26,7 @@
             </layers>
         </schematicView>
         <pcbView>
-            <layers image="pcb/WIZ820io_fix_pcb.svg">
+            <layers image="pcb/WIZ820io_pcb.svg">
                 <layer layerId="copper0"/>
                 <layer layerId="copper1"/>
                 <layer layerId="silkscreen"/>
