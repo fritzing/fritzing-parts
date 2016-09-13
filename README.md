@@ -14,7 +14,8 @@ Learn [how to create custom parts](http://fritzing.org/learning/tutorials/creati
 
 The check status of the core fzp-files is at the moment:  
 
-![check Status:](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=test)
+[![Build Status](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=test)](https://travis-ci.org/fritzing/fritzing-parts)  
+
 documentation follow. 
 
 fzp validator tool can be found at:  
