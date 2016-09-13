@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.7.2b" moduleId="TE_RELAY_6b97f554b4dba02fd6f20b912a42ebf0_9" referenceFile="sparkfun-electromechanical-relay-pth.fzp">
+ <!-- generated from Sparkfun Eagle Library 'SparkFun-Electromechanical' RELAY PTH -->
+ <version replacedby="TE_RELAY">4</version>
+ <date>Wed Sep 7 2016</date>
+ <label>U</label>
+ <author>www.squarewolf.nl, fixed by f.althaus</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">SPST relay&lt;/p>&lt;/body>&lt;/html></description>
+ <title>RELAY</title>
+ <tags>
+  <tag>PTH</tag>
+  <tag>RELAY-G5Q</tag>
+  <tag>RELAY</tag>
+ </tags>
+ <properties>
+  <property name="package">OJ</property>
+  <property name="part number"></property>
+  <property name="layer"></property>
+  <property name="variant">miniature</property>
+  <property name="family">//obsolete//TE General Purpose Relays</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/TE_RELAY_05435a7cf6a72ed64571d5e62307969c_1_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/TE_RELAY_05435a7cf6a72ed64571d5e62307969c_1_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/TE_RELAY_05435a7cf6a72ed64571d5e62307969c_1_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/TE_RELAY_05435a7cf6a72ed64571d5e62307969c_1_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector4" type="male" name="COIL1">
+   <description>COIL1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector4pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector4pin" terminalId="connector4terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector4pad" layer="copper0"/>
+     <p svgId="connector4pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector0" type="male" name="COIL2">
+   <description>COIL2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" terminalId="connector0terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pad" layer="copper0"/>
+     <p svgId="connector0pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" type="male" name="MAIN">
+   <description>MAIN</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pad" layer="copper0"/>
+     <p svgId="connector1pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector2" type="male" name="NO">
+   <description>NO</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector2pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector2pin" terminalId="connector2terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector2pad" layer="copper0"/>
+     <p svgId="connector2pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+</module>
