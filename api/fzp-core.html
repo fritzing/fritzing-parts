@@ -1,0 +1,11 @@
+---
+layout: null
+permalink: /fzp/core
+---
+{% assign fzpArr = site.static_files | where: "extname", ".fzp" %}
+{% assign fzpArrCore = fzpArr | where_exp:"item", "item.path contains '/core/'" %}
+
+{
+  {% for file in fzpArrCore %} "{{ file.path | replace: '/core/', '' }}": "{{ site.url }}{{ file.path }}"{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+}
