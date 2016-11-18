@@ -1,14 +1,8 @@
 ---
 layout: null
+permalink: /fzb/
 ---
-{
-  "data": [
-  {% assign fzbArr = site.static_files | where: "extname", ".fzb" %}
-  {% for file in fzbArr %}
-    {
-      "name": "{{ file.path }}",
-      "url": "{{ site.url }}{{ file.path }}"
-    }{% unless forloop.last %},{% endunless %}
+{ {% assign fzbArr = site.static_files | where: "extname", ".fzb" %}
+  {% for file in fzbArr %} "{{ file.path | replace: '/bins/', 'bins/' }}": "{{ site.url }}{{ file.path }}"{% unless forloop.last %},{% endunless %}
   {% endfor %}
-  ]
 }
