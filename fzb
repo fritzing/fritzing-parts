@@ -1,0 +1,14 @@
+---
+layout: null
+---
+{
+  "data": [
+  {% assign fzbArr = site.static_files | where: "extname", ".fzb" %}
+  {% for file in fzbArr %}
+    {
+      "name": "{{ file.path }}",
+      "url": "{{ site.url }}{{ file.path }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ]
+}
