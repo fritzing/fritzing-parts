@@ -1,0 +1,299 @@
+swagger: '2.0'
+
+
+#
+# docs infos
+#
+info:
+  version: 0.0.1
+  title: fritzing-parts
+  termsOfService: http://fritzing.github.io/fritzing-parts
+  contact:
+    name: github.com/paulvollmer
+  license:
+    name: Fritzing and the Parts Contributors
+    url: http://fritzing.github.io/fritzing-parts/LICENSE.txt
+
+
+#
+# settings
+#
+host: paulvollmer.net
+basePath: /fritzing-parts
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+
+
+#
+# api routes
+#
+paths:
+
+  '/':
+    get:
+      description: "the fritzing-parts index route return metadata about the api"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+              description:
+                type: string
+              revision:
+                type: string
+              time:
+                type: string
+              license:
+                type: string
+              fzb:
+                type: string
+              fzp:
+                type: string
+              
+
+  '/fzb':
+    get:
+      description: "get a list of all fzb files"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              fzb:
+                type: string
+              
+
+  '/bins/{title}':
+    get:
+      description: "get a specific fzb file"
+      produces:
+      - application/xml
+      parameters:
+        - name: title
+          in: path
+          description: ID of pet to return
+          required: true
+          type: string
+          default: core.fzb
+          #enum:
+          #- "contribParts.fzb"
+          #- "core.fzb"
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: "#/definitions/FZB"
+
+
+  '/fzp':
+    get:
+      description: "get a list of all fzp files"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              type: string
+
+
+  '/fzp/core':
+    get:
+      description: "get a list of all fzp core files"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              type: string
+
+
+
+  '/fzp/obsolete':
+    get:
+      description: "get a list of all obsolete fzp files"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              type: string
+
+  '/core/{title}':
+    parameters:
+    - name: title
+      in: path
+      type: string
+      description: Title of the fzp file
+      required: true
+      default: "11LC010.fzp"
+      #enum:
+      #- "contribParts.fzb"
+      #- "core.fzb"
+    get:
+      description: "get a core fzp file"
+      produces:
+      - application/xml
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: "#/definitions/FZP"
+
+  '/LICENSE.txt':
+    get:
+      description: "create a new contact"
+      produces:
+      - text/plain
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+
+#
+# definition of data models
+#
+definitions:
+
+  #
+  #
+  #
+  FZB:
+    description: the fzb data model
+    type: object
+    properties:
+      title:
+        type: string
+      instances:
+        type: array
+        items:
+          type: object
+          properties:
+            moduleIdRef:
+              type: string
+            modelIndex:
+              type: string
+            path:
+              type: string
+            views:
+              type: object
+              properties:
+                iconView:
+                  type: object
+                  properties:
+                    layer:
+                      type: string
+                    geometry:
+                      type: object
+                      properties:
+                        x:
+                          type: integer
+                        y:
+                          type: integer
+                        z:
+                          type: integer
+
+  #
+  #
+  #
+  FZP:
+    description: the fzp data model
+    type: object
+    properties:
+      version:
+        type: string
+        description: version of the part
+      author:
+        type: string
+        description: author of the part
+      title:
+        type: string
+      label:
+        type: string
+      date:
+        type: string
+      description:
+        type: string
+      tags:
+        type: array
+        items:
+          type: object
+          properties:
+            tag:
+              type: string
+      props:
+        type: array
+        items:
+          type: object
+          properties:
+            propertyName: 
+              type: string
+            propertyValue: 
+              type: string
+      views:
+        type: object
+        properties:
+          iconView:
+            type: object
+            properties:
+              layers:
+                type: object
+                properties:
+                  image:
+                    type: string
+                  layer:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        layerId:
+                          type: string
+          breadboardView:
+            type: object
+          pcbView:
+            type: object
+          schematicView:
+            type: object
+      
+      connectors:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            description:
+              type: string
+            views:
+              type: object
+              properties:
+                iconView:
+                  type: object
+                  properties:
+                    layer:
+                      type: string
+                    svgId: 
+                      type: string
+                    terminalId:
+                      type: string
+                breadboardView:
+                  type: object
+                pcbView:
+                  type: object
+                schematicView:
+                  type: object
+            
