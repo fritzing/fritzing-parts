@@ -8,7 +8,14 @@ install:
   - go get github.com/fritzing/fzp/bin/fzp
   - echo "fzp succefully installed. Version:"
   - fzp -v
+  - go get github.com/fritzing/fzb/bin/fzb
+  - echo "fzb succefully installed. Version:"
+  - fzp -version
 
 script:
   - echo "run fzp validation tool in fritzing-parts/core"
   - fzp validate -d $HOME/gopath/src/github.com/fritzing/fritzing-parts/core
+  - echo "validate core bin"
+  - fzb -f $HOME/gopath/src/github.com/fritzing/fritzing-parts/bins/core.fzb
+  - echo "run fzb validation tool"
+  - fzb -d $HOME/gopath/src/github.com/fritzing/fritzing-parts/bins/more
