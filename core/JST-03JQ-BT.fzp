@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="JST-JQ-BT" fritzingVersion="0.9.3b">
+ <version>4</version>
+ <author>Stephen G. Parry</author>
+ <title>JST-03JQ-BT</title>
+ <label>J</label>
+ <date>01.02.2017</date>
+ <tags>
+ 	<tag>jst</tag>
+ 	<tag>03jq-bt</tag>
+ 	<tag>jq-bt</tag>
+ </tags>
+ <properties>
+  <property name="family">JST connector</property>
+  <property name="variant">3 pin boardconnector</property>
+  <property name="hole size"></property>
+  <property name="part number">JST-JQ-BT</property>
+  <property name="Pin Spacing">0.98in (2.5mm)</property>
+  <property name="Form">♂ (male)</property>
+  <property name="Pins">3</property>
+  <property name="package">THT</property>
+ </properties>
+ <description></description>
+ <views>
+  <iconView>
+   <layers image="icon/JST-03JQ-BT_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/JST-03JQ-BT_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView fliphorizontal="true">
+   <layers image="schematic/JST-03JQ-BT_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/JST-03JQ-BT_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector name="pin2" id="connector0" type="male">
+   <description>pin 2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboard" terminalId="connector1terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="copper0"/>
+     <p svgId="connector1pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="pin1" id="connector1" type="male">
+   <description>pin 1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboard" terminalId="connector0terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="copper0"/>
+     <p svgId="connector0pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="pin3" id="connector2" type="male">
+   <description>pin 3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector2pin" layer="breadboard" terminalId="connector2terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector2pin" layer="copper0"/>
+     <p svgId="connector2pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>
