@@ -464,5 +464,34 @@
     </pcbView>
    </views>
   </connector>
+
+      <connector type="male" id="connector30" name="pin31">
+   <description>pin 31</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector30pin" layer="breadboard" terminalId="connector30terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector30pin" layer="schematic" terminalId="connector30terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector30pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+        <connector type="male" id="connector31" name="pin32">
+   <description>pin 32</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector31pin" layer="breadboard" terminalId="connector31terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector31pin" layer="schematic" terminalId="connector31terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector31pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
  </connectors>
 </module>
