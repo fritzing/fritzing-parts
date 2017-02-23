@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module moduleId="JST-VHR-3N" referenceFile="generic_male_pin_header_3_0.156in.fzp" fritzingVersion="0.2.2.b.03.04.2550">
- <version>4</version>
+<module moduleId="JST-VHR-3N" fritzingVersion="0.9.3.b">
+ <version>5</version>
  <author>Stephen G. Parry</author>
  <title>JST-VHR-3N</title>
  <label>J</label>
@@ -18,8 +18,6 @@
   <property name="Form">♀ (female)</property>
   <property name="Pins">3</property>
   <property name="layer"></property>
-  <property name="Position"></property>
-  <property name="Row">single</property>
   <property name="package">THT</property>
  </properties>
  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
@@ -105,10 +103,10 @@ p, li { white-space: pre-wrap; }
    <description>pin 4</description>
    <views>
     <breadboardView>
-     <p svgId="connector3pin" layer="breadboard"/>
+     <p svgId="connector3pin" terminalId="connector3terminal" layer="breadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector3pin" layer="schematic"/>
+     <p svgId="connector3pin" terminalId="connector3terminal" layer="schematic"/>
     </schematicView>
     <pcbView>
      <p svgId="connector3pin" layer="unknown" hybrid="yes" />
@@ -119,10 +117,10 @@ p, li { white-space: pre-wrap; }
    <description>pin 5</description>
    <views>
     <breadboardView>
-     <p svgId="connector4pin" layer="breadboard"/>
+     <p svgId="connector4pin" terminalId="connector4terminal" layer="breadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector4pin" layer="schematic"/>
+     <p svgId="connector4pin" terminalId="connector4terminal" layer="schematic"/>
     </schematicView>
     <pcbView>
      <p svgId="connector4pin" layer="unknown" hybrid="yes" />
@@ -133,10 +131,10 @@ p, li { white-space: pre-wrap; }
    <description>pin 6</description>
    <views>
     <breadboardView>
-     <p svgId="connector5pin" layer="breadboard"/>
+     <p svgId="connector5pin" terminalId="connector5terminal" layer="breadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector5pin" layer="schematic"/>
+     <p svgId="connector5pin" terminalId="connector5terminal" layer="schematic"/>
     </schematicView>
     <pcbView>
      <p svgId="connector5pin" layer="unknown" hybrid="yes" />
