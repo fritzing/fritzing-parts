@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module fritzingVersion="0.2.2.b.03.04.2550" referenceFile="screw_terminal_4_200mil.fzp" moduleId="Camdenboss_CTB0158-4_5_08mm_pitch_90deg_terminals">
- <version>4</version>
+ <version>5</version>
  <author>Stephen Parry</author>
  <title>Camdenboss CTB0158-4</title>
  <label>J</label>
@@ -121,7 +121,7 @@ p, li { white-space: pre-wrap; }
      <p layer="breadboard" svgId="connector4pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector4pin"/>
+     <p terminalId="connector4terminal" layer="schematic" svgId="connector4pin"/>
     </schematicView>
     <pcbView>
      <p layer="unknown" hybrid="yes" svgId="connector4pin"/>
@@ -135,7 +135,7 @@ p, li { white-space: pre-wrap; }
      <p layer="breadboard" svgId="connector5pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector5pin"/>
+     <p terminalId="connector5terminal" layer="schematic" svgId="connector5pin"/>
     </schematicView>
     <pcbView>
      <p layer="unknown" hybrid="yes" svgId="connector5pin"/>
@@ -149,7 +149,7 @@ p, li { white-space: pre-wrap; }
      <p layer="breadboard" svgId="connector6pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector6pin"/>
+     <p terminalId="connector6terminal" layer="schematic" svgId="connector6pin"/>
     </schematicView>
     <pcbView>
      <p layer="unknown" hybrid="yes" svgId="connector6pin"/>
@@ -163,7 +163,7 @@ p, li { white-space: pre-wrap; }
      <p layer="breadboard" svgId="connector7pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector7pin"/>
+     <p terminalId="connector7terminal" layer="schematic" svgId="connector7pin"/>
     </schematicView>
     <pcbView>
      <p layer="unknown" hybrid="yes" svgId="connector7pin"/>
