@@ -20,5 +20,5 @@ The check status of the core fzp-files is at the moment:
 documentation follow. 
 
 fzp validator tool can be found at:  
-[https://github.com/fritzing/fritzing/fzp/](https://github.com/fritzing/fritzing/fzp)
+[https://github.com/fritzing/fritzing/fzp/](https://github.com/fritzing/fzp)
 
