@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.1.1255" referenceFile="Rotary_Encoder_fix.fzp" moduleId="APEM-PT65-303_Rotary_coded_hexadecimal_switch">
- <version>5</version>
+<module fritzingVersion="0.9.3.b" referenceFile="Rotary_Encoder_fix.fzp" moduleId="APEM-PT65-303_Rotary_coded_hexadecimal_switch">
+ <version>6</version>
  <author>Stephen Parry</author>
  <title>Hexadecimal Rotary Encoder</title>
  <label>RE</label>
@@ -16,7 +16,7 @@
   <tag>rotary</tag>
  </tags>
  <properties>
-  <property name="family">APEM PT65 rotary encoded switches</property>
+  <property name="family">APEM-PT65</property>
   <property name="variant">actuator:spindle, code:hexadecimal, pins:straight</property>
   <property name="layer"></property>
   <property name="package">THT</property>
@@ -57,7 +57,7 @@ p, li { white-space: pre-wrap; }&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
    <description>1 output pin</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" terminalId="connector0terminal" svgId="connector0pin"/>
+     <p layer="breadboard" svgId="connector0pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" terminalId="connector0terminal" svgId="connector0pin"/>
@@ -75,7 +75,7 @@ p, li { white-space: pre-wrap; }&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
      <p layer="breadboard" svgId="connector1pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector1pin"/>
+     <p layer="schematic" terminalId="connector1terminal" svgId="connector1pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector1pin"/>
@@ -90,7 +90,7 @@ p, li { white-space: pre-wrap; }&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
      <p layer="breadboard" svgId="connector2pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector2pin"/>
+     <p layer="schematic" terminalId="connector2terminal" svgId="connector2pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector2pin"/>
@@ -105,7 +105,7 @@ p, li { white-space: pre-wrap; }&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
      <p layer="breadboard" svgId="connector3pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector3pin"/>
+     <p layer="schematic" terminalId="connector3terminal" svgId="connector3pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector3pin"/>
@@ -120,7 +120,7 @@ p, li { white-space: pre-wrap; }&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
      <p layer="breadboard" svgId="connector4pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector4pin"/>
+     <p layer="schematic" terminalId="connector4terminal" svgId="connector4pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector4pin"/>
@@ -135,7 +135,7 @@ p, li { white-space: pre-wrap; }&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
      <p layer="breadboard" svgId="connector5pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector5pin"/>
+     <p layer="unknown" svgId="connector5pin" hybrid="yes" />
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector5pin"/>
