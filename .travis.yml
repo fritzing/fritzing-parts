@@ -5,7 +5,9 @@ go:
 
 before_install:
   - go get github.com/fritzing/fzp/bin/fzp
-  - cd $GOPATH/src/github.com/fritzing/fzp/bin/fzp; go build
+  - cd $GOPATH/src/github.com/fritzing/fzp/bin/fzp; 
+  - go get -u -v 
+  - go build
 
 script:
   - $GOPATH/src/github.com/fritzing/fzp/bin/fzp -v
