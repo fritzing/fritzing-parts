@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-Connectors-RJ11-6-PTH">
 <!-- generated from Sparkfun Eagle Library 'SparkFun-Connectors' RJ11-6 PTH -->
-<version>4</version>
+<version replacedby="SparkFun-Connectors-RJ11-6-PTH_fix">4</version>
 <date>2013-02-13</date>
 <label>J</label>
 <author>www.fritzing.org</author>
@@ -14,7 +14,7 @@ Simple 6 pin RJ11 jack. Commonly found on CAT3 devices and Microchip programmers
 <properties>
 <property name="package">rj11-6</property>
 <property name="target">RJ-11</property>
-<property name="family">sparkfun RJ-XX Jack</property>
+<property name="family">//obsolete//sparkfun RJ-XX Jack</property>
 <property name="variant">pth</property>
 </properties>
 <views>
@@ -24,7 +24,7 @@ Simple 6 pin RJ11 jack. Commonly found on CAT3 devices and Microchip programmers
 </layers>
 </breadboardView>
 <schematicView>
-<layers image="schematic//generic_female_pin_header_6_100mil_10thin_schematic.svg">
+<layers image="schematic/generic_female_pin_header_6_100mil_10thin_schematic.svg">
 <layer layerId="schematic"/>
 </layers>
 </schematicView>
