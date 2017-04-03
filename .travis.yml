@@ -4,9 +4,9 @@ go:
   - 1.4
 
 before_install:
-  - go get github.com/fritzing/fzp
-  - cd $GOPATH/src/github.com/fritzing/fzp; go build
+  - go get github.com/fritzing/fzp/bin/fzp
+  - cd $GOPATH/src/github.com/fritzing/fzp/bin/fzp; go build
 
 script:
-  - $GOPATH/src/github.com/fritzing/fzp/fzp -v
-  - $GOPATH/src/github.com/fritzing/fzp/fzp validate -d $GOPATH/src/github.com/fritzing/fritzing-parts/core
+  - $GOPATH/src/github.com/fritzing/fzp/bin/fzp -v
+  - $GOPATH/src/github.com/fritzing/fzp/bin/fzp validate -d $GOPATH/src/github.com/fritzing/fritzing-parts/core
