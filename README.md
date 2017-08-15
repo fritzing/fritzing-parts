@@ -4,7 +4,7 @@ Parts are composed of meta-data (.fzp) and related graphics (.svg). Read more on
 
 ## Contributing parts
 
-See the [contribution guidelines](https://github.com/fritzing/fritzing-parts/blob/master/CONTRIBUTING.md) on how to contribute directly to this repository. If this seems too complex, you may alternatively sare your part in the [fritzing forum](http://forum.fritzing.org/c/parts-submit).
+See the [contribution guidelines](https://github.com/fritzing/fritzing-parts/blob/master/CONTRIBUTING.md) on how to contribute directly to this repository. If this seems too complex, you may alternatively share your part in the [fritzing forum](http://forum.fritzing.org/c/parts-submit).
 
 ## Creating parts
 
