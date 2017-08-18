@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8'?>
+ <module moduleId="SparkfunIMUBreakoutMPU-9250" fritzingVersion="0.5.2b.02.18.4756" referenceFile="SparkFun_MPU9250_Breakout.fzp">
+ <version>4</version>
+ <date>fr aug 18 2017</date>
+ <author>fredrmag</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The SparkFun MPU-9250 IMU Breakout features the latest 9-axis MEMS sensor from InvenSense. Each of these 9DoF breakouts feature an MPU-9250 with a System in Package (SiP) that combines two chips: the MPU-6500, which contains a 3-axis gyroscope as well as a 3-axis accelerometer, and the AK8963, which features a 3-axis magnetometer. This breakout has been designed to be smaller than some of our other offerings to fit in smaller projects. However, if you plan to use a breadboard, or secure the IMU board to a project with something like epoxy, the mounting holes can be easily snapped off. &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">To achieve its smaller size, the MPU-9250 Breakout features PTH pins that have been wrapped around the border of the PCB in three rows of three or four. The top row (J1) is all one needs to get the most functionality out of the IMU. These include the I&lt;span style=" vertical-align:super;">2&lt;/span>C and power interface. The second most likely to be used set of PTHs are found along the bottom (J3). This includes the address pin, the interrupt pin, and the IO voltage supply for easy interface with a more modern 1.8V processor. The third, a non-breadboard-compatible row (J2), is used for features like running other I&lt;span style=" vertical-align:super;">2&lt;/span>C devices as slaves to this one. For prototyping with these connections, throw your connections on top as you would with an Arduino Pro mini or similar product. &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The MPU-9250 replaces the popular EOL MPU-9150 and decreases power consumption by 44 percent. According to InvenSense, “Gyro noise performance is 3x better, and compass full-scale range is over 4x better than competitive offerings.” The MPU-9250 uses 16-bit Analog-to-Digital Converters (ADCs) for digitizing all nine axes, making it a very stable 9 Degrees of Freedom board.&lt;/p>&lt;/body>&lt;/html></description>
+ <title>SparkFun IMU Breakout - MPU-9250</title>
+ <tags/>
+ <properties>
+  <property name="variant">v1</property>
+  <property name="family">IMU Sensor</property>
+  <property name="part number"> SEN-13762</property>
+  <property name="vcc">3.3V</property>
+  <property name="sensors">gyroscope, accelerometer, magnetometer</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Sparkfun_IMU_Breakout_MPU-9250_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Sparkfun_IMU_Breakout_MPU-9250_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Sparkfun_IMU_Breakout_MPU-9250_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Sparkfun_IMU_Breakout_MPU-9250_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="male" name="SCL/SCLK" id="connector6">
+   <description>SCL/SCLK</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector6terminal" svgId="connector6pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pad"/>
+     <p layer="copper1" svgId="connector6pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="SDA/SDI" id="connector7">
+   <description>SDA/SDI</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector7terminal" svgId="connector7pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector7pad"/>
+     <p layer="copper1" svgId="connector7pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="VDD" id="connector8">
+   <description>VDD</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector8terminal" svgId="connector8pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector8pad"/>
+     <p layer="copper1" svgId="connector8pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="GND" id="connector9">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector9terminal" svgId="connector9pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pad"/>
+     <p layer="copper1" svgId="connector9pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="AUX_CL" id="connector10">
+   <description>AUX_CL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector10terminal" svgId="connector10pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pad"/>
+     <p layer="copper1" svgId="connector10pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="FSYNC" id="connector11">
+   <description>FSYNC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector11terminal" svgId="connector11pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="AUX_DA" id="connector12">
+   <description>AUX_DA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector12terminal" svgId="connector12pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="VDDIO" id="connector13">
+   <description>VDDIO</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector13terminal" svgId="connector13pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pad"/>
+     <p layer="copper1" svgId="connector13pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="AD0/SDO" id="connector14">
+   <description>AD0/SDO</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector14terminal" svgId="connector14pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pad"/>
+     <p layer="copper1" svgId="connector14pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="!CS" id="connector15">
+   <description>!CS</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector15terminal" svgId="connector15pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector15pad"/>
+     <p layer="copper1" svgId="connector15pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="INT" id="connector16">
+   <description>INT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector16pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector16terminal" svgId="connector16pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector16pad"/>
+     <p layer="copper1" svgId="connector16pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.sparkfun.com/products/13762</url>
+ <label>MPU9250,MPU-9250</label>
+</module>
