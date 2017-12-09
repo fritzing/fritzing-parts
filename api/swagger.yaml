@@ -56,9 +56,9 @@ paths:
                 type: string
               fzp:
                 type: string
-              
 
-  '/fzb':
+
+  '/fzb/':
     get:
       description: "get a list of all fzb files"
       responses:
@@ -69,31 +69,31 @@ paths:
             properties:
               fzb:
                 type: string
-              
-
-  '/bins/{title}':
-    get:
-      description: "get a specific fzb file"
-      produces:
-      - application/xml
-      parameters:
-        - name: title
-          in: path
-          description: ID of pet to return
-          required: true
-          type: string
-          default: core.fzb
-          #enum:
-          #- "contribParts.fzb"
-          #- "core.fzb"
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: "#/definitions/FZB"
 
 
-  '/fzp':
+  # '/bins/{title}':
+  #   get:
+  #     description: "get a specific fzb file"
+  #     produces:
+  #     - application/xml
+  #     parameters:
+  #       - name: title
+  #         in: path
+  #         description: ID of pet to return
+  #         required: true
+  #         type: string
+  #         default: core.fzb
+  #         #enum:
+  #         #- "contribParts.fzb"
+  #         #- "core.fzb"
+  #     responses:
+  #       '200':
+  #         description: OK
+  #         schema:
+  #           $ref: "#/definitions/FZB"
+
+
+  '/fzp/':
     get:
       description: "get a list of all fzp files"
       responses:
@@ -129,37 +129,37 @@ paths:
             items:
               type: string
 
-  '/core/{title}':
-    parameters:
-    - name: title
-      in: path
-      type: string
-      description: Title of the fzp file
-      required: true
-      default: "11LC010.fzp"
-      #enum:
-      #- "contribParts.fzb"
-      #- "core.fzb"
-    get:
-      description: "get a core fzp file"
-      produces:
-      - application/xml
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: "#/definitions/FZP"
-
-  '/LICENSE.txt':
-    get:
-      description: "create a new contact"
-      produces:
-      - text/plain
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
+  # '/core/{title}':
+  #   parameters:
+  #   - name: title
+  #     in: path
+  #     type: string
+  #     description: Title of the fzp file
+  #     required: true
+  #     default: "11LC010.fzp"
+  #     #enum:
+  #     #- "contribParts.fzb"
+  #     #- "core.fzb"
+  #   get:
+  #     description: "get a core fzp file"
+  #     produces:
+  #     - application/xml
+  #     responses:
+  #       '200':
+  #         description: OK
+  #         schema:
+  #           $ref: "#/definitions/FZP"
+  #
+  # '/LICENSE.txt':
+  #   get:
+  #     description: "create a new contact"
+  #     produces:
+  #     - text/plain
+  #     responses:
+  #       '200':
+  #         description: OK
+  #         schema:
+  #           type: string
 
 #
 # definition of data models
@@ -237,9 +237,9 @@ definitions:
         items:
           type: object
           properties:
-            propertyName: 
+            propertyName:
               type: string
-            propertyValue: 
+            propertyValue:
               type: string
       views:
         type: object
@@ -265,7 +265,7 @@ definitions:
             type: object
           schematicView:
             type: object
-      
+
       connectors:
         type: array
         items:
@@ -285,7 +285,7 @@ definitions:
                   properties:
                     layer:
                       type: string
-                    svgId: 
+                    svgId:
                       type: string
                     terminalId:
                       type: string
@@ -295,4 +295,3 @@ definitions:
                   type: object
                 schematicView:
                   type: object
-            
