@@ -1,0 +1,24 @@
+{
+  "name": "fzp-to-json",
+  "version": "0.0.1",
+  "description": "convert fritzing part files (fzp) to json file",
+  "main": "fetch-fzps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "fritzing-parts"
+  },
+  "keywords": [
+    "fzp",
+    "to",
+    "json"
+  ],
+  "author": "fabian althaus, paul vollmer",
+  "license": "MIT",
+  "dependencies": {
+    "standard": "^10.0.3",
+    "xml2js": "^0.4.19"
+  }
+}
