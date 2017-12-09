@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.b.1486" moduleId="1001AAACOptocoupler">
-<version>4</version>
- <author>Dirk van Oosterbosch</author>
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.b.1486" moduleId="1001AAACOptocoupler_fix">
+<version>5</version>
+ <author>Dirk van Oosterbosch, f.althaus</author>
  <title>Optocoupler</title>
  <label>U</label>
- <date>2008-11-12</date>
+ <date>2017-04-03</date>
  <tags>
   <tag>IC</tag>
   <tag>optocoupler</tag>
   <tag>isolator</tag>
+  <tag>4N35</tag>
  </tags>
  <properties>
   <property name="family">Optocoupler</property>
@@ -32,7 +33,7 @@
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="pcb/dip_6_300mil_pcb.svg">
+   <layers image="pcb/optocoupler4n35_pcb.svg">
     <layer layerId="copper0"/>
     <layer layerId="keepout"/>
     <layer layerId="soldermask"/>

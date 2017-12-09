@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.9.3b" moduleId="optical_jack_orj-8">
+    <version>4</version>
+    <author>f.althaus</author>
+    <title>optical jack orj-8</title>
+    <label>ORJ-8</label>
+    <date>09.02.2017</date>
+    <tags>
+           <tag>optical</tag>
+        <tag>orj-8</tag>
+        <tag>jack</tag>
+        <tag>receiver</tag>
+      <tag>orj</tag>
+    </tags>
+    <properties>
+        <property name="family">Optical Jack</property>
+        <property name="Form">receiver</property>
+        <property name="package">tht</property>
+      </properties>
+    <description>Optical Jacks from CLIFF Receiver ORJ-8</description>
+    <views>
+        <iconView>
+            <layers image="breadboard/optical_jack_orj-8_breadoard.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/optical_jack_orj-8_breadoard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView fliphorizontal="true">
+            <layers image="schematic/optical_jack_orj-8_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/optical_jack_orj-8_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+	      <layer layerId="copper1"/>
+	</layers>
+        </pcbView>
+    </views>
+    <connectors>
+   <connector id="connector0" name="pin1" type="male">
+   <description>pin 1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+    <p layer="copper1" svgId="connector0pin"/></pcbView>
+   </views>
+  </connector>
+   <connector id="connector0" name="pin1" type="male">
+   <description>Vcc</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+    <p layer="copper1" svgId="connector0pin"/></pcbView>
+   </views>
+  </connector>
+    <connector id="connector1" name="pin2" type="male">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+    <p layer="copper1" svgId="connector1pin"/></pcbView>
+   </views>
+  </connector>
+    <connector id="connector2" name="pin3" type="male">
+   <description>Vout</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector2pin"/>
+    <p layer="copper1" svgId="connector2pin"/></pcbView>
+   </views>
+  </connector>
+
+      <connector id="connector3" name="pin4" type="male">
+   <description>pin 4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector3pin"/>
+    <p layer="copper1" svgId="connector3pin"/></pcbView>
+   </views>
+  </connector>
+
+      <connector id="connector4" name="pin5" type="male">
+   <description>pin 5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin" terminalId="connector4terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector4pin"/>
+    <p layer="copper1" svgId="connector4pin"/></pcbView>
+   </views>
+  </connector>
+  
+    </connectors>
+</module>

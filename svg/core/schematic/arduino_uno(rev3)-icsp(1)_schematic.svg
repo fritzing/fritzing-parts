@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="108px" height="180px"
-	 viewBox="0 0 108 180" xml:space="preserve">
+	 viewBox="0 0 108 180" enable-background="new 0 0 108 180" xml:space="preserve">
 <g id="schematic">
 	
 		<rect x="14.85" y="14.85" fill="#FFFFFF" stroke="#000000" stroke-width="0.3175" stroke-linecap="round" width="78.3" height="150.3"/>
@@ -106,15 +107,6 @@
 	<rect id="connector39terminal" x="-0.35" y="93.25" fill="none" width="0.7" height="0.699"/>
 	
 		<line id="connector42pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="0.35" y1="93.6" x2="14.75" y2="93.6"/>
-	<text transform="matrix(1 0 0 1 16.1494 94.3008)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">I</text>
-	<text transform="matrix(1 0 0 1 17.3013 94.3008)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">C</text>
-	<text transform="matrix(1 0 0 1 19.4121 94.3008)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">S</text>
-	<text transform="matrix(1 0 0 1 21.2285 94.3008)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">P</text>
-	<text transform="matrix(1 0 0 1 23.2451 94.3008)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5"> </text>
-	<text transform="matrix(1 0 0 1 24.1543 94.3008)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">M</text>
-	<text transform="matrix(1 0 0 1 27.1997 94.3008)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">O</text>
-	<text transform="matrix(1 0 0 1 29.7974 94.3008)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">S</text>
-	<text transform="matrix(1 0 0 1 31.6143 94.3008)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">I</text>
 	<rect id="connector42terminal" x="-0.35" y="93.25" fill="none" width="0.7" height="0.699"/>
 	<line id="connector4pin" fill="none" x1="0.35" y1="93.6" x2="14.75" y2="93.6"/>
 	<rect id="connector4terminal" x="-0.35" y="93.25" fill="none" width="0.7" height="0.699"/>
@@ -125,7 +117,6 @@
 	<rect id="connector5terminal" x="-0.35" y="100.449" fill="none" width="0.7" height="0.701"/>
 	
 		<line id="connector60pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="0.35" y1="100.8" x2="14.75" y2="100.8"/>
-	<text transform="matrix(1 0 0 1 16.1494 101.5)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">A5/SCL</text>
 	<rect id="connector60terminal" x="-0.35" y="100.449" fill="none" width="0.7" height="0.701"/>
 	
 		<line id="connector91pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="0.35" y1="136.8" x2="14.75" y2="136.8"/>
@@ -175,12 +166,14 @@
 		</g>
 	</g>
 	<rect id="connector90terminal" x="64.449" y="-0.35" fill="none" width="0.701" height="0.7"/>
-	<text id="label" transform="matrix(1 0 0 1 46.7862 81.3828)" font-family="'DroidSans'" font-size="4.25">Arduino</text>
+	<text id="label" transform="matrix(1 0 0 1 46.7861 81.3828)" font-family="'DroidSans'" font-size="4.25">Arduino</text>
 	<text id="label_1_" transform="matrix(1 0 0 1 50.4893 85.916)" font-family="'DroidSans'" font-size="4.25">Uno</text>
 	<text id="label_2_" transform="matrix(1 0 0 1 48.5928 90.4512)" font-family="'DroidSans'" font-size="4.25">(Rev3)</text>
 	<text transform="matrix(1 0 0 1 50.1416 94.9844)" font-family="'DroidSans'" font-size="4.25">I</text>
-	<text transform="matrix(1 0 0 1 51.5401 94.9844)" font-family="'DroidSans'" font-size="4.25">C</text>
-	<text transform="matrix(1 0 0 1 54.1031 94.9844)" font-family="'DroidSans'" font-size="4.25">S</text>
+	<text transform="matrix(1 0 0 1 51.54 94.9844)" font-family="'DroidSans'" font-size="4.25">C</text>
+	<text transform="matrix(1 0 0 1 54.103 94.9844)" font-family="'DroidSans'" font-size="4.25">S</text>
 	<text transform="matrix(1 0 0 1 56.3086 94.9844)" font-family="'DroidSans'" font-size="4.25">P</text>
+	<text transform="matrix(1 0 0 1 16.1494 94.9844)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">A4/SDA</text>
+	<text transform="matrix(1 0 0 1 16.1494 102.1836)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">A5/SCL</text>
 </g>
 </svg>

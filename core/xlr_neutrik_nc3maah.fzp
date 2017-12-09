@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="XLR3_NEUTRIK_NC3MAAH">
+<version>1</version>
+<date>2013-02-13</date>
+<label>XLR</label>
+<author>f.althaus</author>
+<description>XLR connector</description>
+<title>XLR NC3MAAH</title>
+<tags>
+<tag>NC3MAAH</tag>
+<tag>Neutrik</tag>
+<tag>XLR</tag>
+<tag>Audio</tag>
+</tags>
+<properties>
+<property name="family">Neutrik</property>
+<property name="type">XLR Connector</property>
+<property name="package">nc3maah</property>
+<property name="sex">male</property>
+</properties>
+<views>
+<breadboardView>
+<layers image="breadboard/xlr_neutrik_nc3maah_breadboard.svg">
+<layer layerId="breadboard"/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image="schematic/xlr_neutrik_nc3maah_schematic.svg">
+<layer layerId="schematic"/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image="pcb/xlr_neutrik_nc3maah_pcb.svg">
+<layer layerId="copper1"/>
+<layer layerId="silkscreen"/>
+<layer layerId="copper0"/>
+</layers>
+</pcbView>
+<iconView>
+<layers image="icon/xlr_neutrik_nc3maah_icon.svg">
+<layer layerId="icon"/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id="connector0" name="1" type="male">
+<description>1</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector0pin"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+</schematicView>
+<pcbView>
+<p layer="copper0" svgId="connector0pad"/>
+<p layer="copper1" svgId="connector0pad"/>
+</pcbView>
+</views>
+</connector>
+<connector id="connector1" name="2" type="male">
+<description>2</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector1pin"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+</schematicView>
+<pcbView>
+<p layer="copper0" svgId="connector1pad"/>
+<p layer="copper1" svgId="connector1pad"/>
+</pcbView>
+</views>
+</connector>
+<connector id="connector2" name="3" type="male">
+<description>3</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector2pin"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+</schematicView>
+<pcbView>
+<p layer="copper0" svgId="connector2pad"/>
+<p layer="copper1" svgId="connector2pad"/>
+</pcbView>
+</views>
+</connector>
+<connector id="connector3" name="G" type="male">
+<description>G</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector3pin"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+</schematicView>
+<pcbView>
+<p layer="copper0" svgId="connector3pad"/>
+<p layer="copper1" svgId="connector3pad"/>
+</pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>
