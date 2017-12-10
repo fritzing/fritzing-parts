@@ -11,12 +11,16 @@
 
 3. Place the `.fzp` file in the core folder and the related `.svg` in the view-specific folders:
 
-        description.fzp -> core/
-        breadboard_view.svg -> svg/breadboard/ 
-        schematic_view.svg -> svg/schematic/ 
-        pcb_view.svg -> svg/pcb/ 
+        partname.fzp -> core/
+        partname_icon.svg -> svg/icon/
+        partname_breadboard.svg -> svg/breadboard/ 
+        partname_schematic.svg -> svg/schematic/ 
+        partname_pcb.svg -> svg/pcb/ 
+        
+   *if the partname is allready used see the obsolete parts-instructions*
 
-    See below for exporting your `.fzpz` file to the correct structure.
+   See below for exporting your `.fzpz` file to the correct structure.  
+
 
 4. Then test and push!
 
