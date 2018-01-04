@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<module moduleId="zero_81699322f82a623afbd08d93176de99b_1" referenceFile="zero_ea47bc8663b7eda73dcd09c4f1ef5d55_1.fzp" fritzingVersion="0.9.3b">
+<module moduleId="Raspberry_Pi_Zero_rev1.1" fritzingVersion="0.9.3b">
   <version>1</version>
   <author>Anudit Nagar (modifed by Peter Van Epp Jan 2018</author>
   <title>Raspberry Pi Zero</title>
@@ -15,7 +15,7 @@
     <tag>Raspberry</tag>
   </tags>
   <properties>
-    <property name="variant">variant 2</property>
+    <property name="variant">pi zero</property>
     <property name="family">cpu board (raspberry pi)</property>
     <property name="revision">RPI-Zero-V1.1</property>
     <property name="processor">Broadcom BCM2835 ARMv11</property>
@@ -36,22 +36,22 @@ p, li { white-space: pre-wrap; }
 Jan 2018: In this version schematic has been changed so the pins match the GPIO connector. I.e. the left hand pins are all the pins (the power pins were moved) on the CPU side of the GPIO connector and the right pins are the pins on the edge of the circuit board on the GPIO connector (the orginal schematic had these backwards!). The pin names are from https://pinout.xyz/pinout/pin36_gpio16 as of jan 2018 (as the names have changed since June 2017 when I first did this, and thus may change again in future) which the RPI site refers to. As well the pins were renumbered to the standard pin numbers for dual connectors (as specified on the RPI site, i.e 1 2 now rather than 1 40 before at the top and 39 40 rather than 20 21 at the bottom). This will be incompatible with the old part and likely break a sketch when substituted in as the pin number / meanings have all changed and will need to be rerouted in all views. As well on PCB the hole size was changed from .035in to the standard .038in for .1 square posts (headers) and most importantly changed from 2mm spacing to the correct .1 spacing.The mounting holes are only on silkscreen, if you want the mounting holes drilled in your board you need to drag a hole from the core pcb menu over the pad in silkscreen and set the appropriate 2.75mm size for the hole.  &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
   <views>
     <iconView>
-      <layers image="icon/zero_81699322f82a623afbd08d93176de99b_1_icon.svg">
+      <layers image="icon/raspberrypi_zero_1_icon.svg">
         <layer layerId="icon"/>
       </layers>
     </iconView>
     <breadboardView>
-      <layers image="breadboard/zero_81699322f82a623afbd08d93176de99b_1_breadboard.svg">
+      <layers image="breadboard/raspberrypi_zero_1_breadboard.svg">
         <layer layerId="breadboard"/>
       </layers>
     </breadboardView>
     <schematicView>
-      <layers image="schematic/zero_81699322f82a623afbd08d93176de99b_1_schematic.svg">
+      <layers image="schematic/raspberrypi_zero_1_schematic.svg">
         <layer layerId="schematic"/>
       </layers>
     </schematicView>
     <pcbView>
-      <layers image="pcb/zero_81699322f82a623afbd08d93176de99b_1_pcb.svg">
+      <layers image="pcb/raspberrypi_zero_1_pcb.svg">
         <layer layerId="copper0"/>
         <layer layerId="copper1"/>
         <layer layerId="silkscreen"/>
