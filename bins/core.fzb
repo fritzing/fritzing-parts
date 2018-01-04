@@ -861,13 +861,6 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="raspberry_pi_zero_rev-1.1" modelIndex="48" path="raspberry_pi_zero_rev-1.1.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
         
         <instance moduleIdRef="arduino_Yun(rev1)_v1" modelIndex="1" path="arduino_Yun(rev1)_v1.fzp">
           <views>
@@ -905,6 +898,13 @@
             </views>
         </instance>
         <instance moduleIdRef="96boards_CE_fixed" modelIndex="48" path="96boards_CE.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="IchigoJamT" modelIndex="48" path="IchigoJamT.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
