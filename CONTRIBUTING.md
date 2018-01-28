@@ -20,6 +20,8 @@
    *if the partname is allready used see the obsolete parts-instructions*
 
    See below for exporting your `.fzpz` file to the correct structure.  
+   
+   You may also find the separate files in your home directory (e.g. `C:\Users\<user>\Documents\Fritzing\parts\user\`; `C:\Users\<user>\Documents\Fritzing\parts\svg\user\`) after you saved the part with the editor.
 
 
 4. Then test and push!  
