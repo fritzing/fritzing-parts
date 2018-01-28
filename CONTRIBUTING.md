@@ -12,10 +12,10 @@
 3. Place the `.fzp` file in the core folder and the related `.svg` in the view-specific folders:
 
         partname.fzp -> core/
-        partname_icon.svg -> svg/icon/
-        partname_breadboard.svg -> svg/breadboard/ 
-        partname_schematic.svg -> svg/schematic/ 
-        partname_pcb.svg -> svg/pcb/ 
+        partname_icon.svg -> svg/core/icon/
+        partname_breadboard.svg -> svg/core/breadboard/ 
+        partname_schematic.svg -> svg/core/schematic/ 
+        partname_pcb.svg -> svg/core/pcb/ 
         
    *if the partname is allready used see the obsolete parts-instructions*
 
