@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="expeyes_27be2e3ef306f79d4562626985a1c937_1" referenceFile="generic_ic_dip_8_300mil.fzp">
+ <version>4</version>
+ <author>Akshai M</author>
+ <title>ExpEYES , Pocket Science Lab</title>
+ <label>ExpEYES Hardware</label>
+ <date>Thu May 5 2016</date>
+ <tags>
+  <tag>ExpEYES</tag>
+  <tag>Science Lab</tag>
+  <tag>Tool</tag>
+ </tags>
+ <properties>
+  <property name="family">Lab Tool Kit</property>
+  <property name="variant">variant 4</property>
+  <property name="chip label">PIC24F</property>
+  <property name="part number"></property>
+  <property name="layer"></property>
+ </properties>
+ <taxonomy>part.dip.8.pins</taxonomy>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Ubuntu'; font-size:11pt;">ExpEYES - Experiments for Young Engineers and Scientists. &lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/expeyes_a19cbf01a45d12e76122acebd3870d5e_1_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/expeyes_a19cbf01a45d12e76122acebd3870d5e_1_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/expeyes_a19cbf01a45d12e76122acebd3870d5e_1_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/expeyes_a19cbf01a45d12e76122acebd3870d5e_1_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector id="connector0" type="female" name="GND">
+   <description>Ground/Reference.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector0terminal" svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector0terminal" svgId="connector0pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector0terminal" svgId="connector0pin" layer="copper0"/>
+     <p svgId="connector0pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" type="female" name="IN1 3">
+   <description>Digital Input 0-5v.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector1terminal" svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector1terminal" svgId="connector1pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector1terminal" svgId="connector1pin" layer="copper0"/>
+     <p svgId="connector1pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector3" type="female" name="IN2 4">
+   <description>Digital Input 0-5v.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector3terminal" svgId="connector3pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector3terminal" svgId="connector3pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector3terminal" svgId="connector3pin" layer="copper0"/>
+     <p svgId="connector3pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector4" type="female" name="SEN 5,0">
+   <description>Sensor input feed 5 , Comparator output on 0.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector4terminal" svgId="connector4pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector4terminal" svgId="connector4pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector4terminal" svgId="connector4pin" layer="copper0"/>
+     <p svgId="connector4pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector5" type="female" name="SQR1 8,6">
+   <description>+/- 5v Square Wave 0.7Hz - 100kHz.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector5terminal" svgId="connector5pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector5terminal" svgId="connector5pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector5terminal" svgId="connector5pin" layer="copper0"/>
+     <p svgId="connector5pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector6" type="female" name="SQR2 9,7">
+   <description>+/- 5v Square Wave 0.7Hz - 100kHz.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector6terminal" svgId="connector6pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector6pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector6terminal" svgId="connector6pin" layer="copper0"/>
+     <p svgId="connector6pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector7" type="female" name="OD1 10">
+   <description>Digital Output 0 / 5v.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector7terminal" svgId="connector7pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector7terminal" svgId="connector7pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector7terminal" svgId="connector7pin" layer="copper0"/>
+     <p svgId="connector7pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector8" type="female" name="CCS 11">
+   <description>Constant current source ~ 1mA.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector8terminal" svgId="connector8pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector8terminal" svgId="connector8pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector8terminal" svgId="connector8pin" layer="copper0"/>
+     <p svgId="connector8pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector9" type="female" name="GND">
+   <description>Ground/Reference.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector9terminal" svgId="connector9pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector9terminal" svgId="connector9pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector9terminal" svgId="connector9pin" layer="copper0"/>
+     <p svgId="connector9pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector10" type="female" name="GND">
+   <description>Ground/Reference.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector10terminal" svgId="connector10pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector10pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector10terminal" svgId="connector10pin" layer="copper0"/>
+     <p svgId="connector10pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector11" type="female" name="SINE">
+   <description>+/- 4v 150 Hz Sine Wave.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector11terminal" svgId="connector11pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector11pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector11terminal" svgId="connector11pin" layer="copper0"/>
+     <p svgId="connector11pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector12" type="female" name="MIC">
+   <description>Microphone Output with an internal gain of 51.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector12terminal" svgId="connector12pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector12pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector12terminal" svgId="connector12pin" layer="copper0"/>
+     <p svgId="connector12pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector13" type="female" name="IN">
+   <description>Input to the Opamp.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector13terminal" svgId="connector13pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector13pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector13terminal" svgId="connector13pin" layer="copper0"/>
+     <p svgId="connector13pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector14" type="female" name="OUT">
+   <description>Opamp output with a gain of 51.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector14terminal" svgId="connector14pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector14pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector14terminal" svgId="connector14pin" layer="copper0"/>
+     <p svgId="connector14pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector15" type="female" name="PVS 12">
+   <description>Programmable Voltage source 12bit (1.25 millivolts resolution).</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector15terminal" svgId="connector15pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector15pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector15terminal" svgId="connector15pin" layer="copper0"/>
+     <p svgId="connector15pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector16" type="female" name="A2 ">
+   <description>Analog Input 2 +/- 5v range with an 10Mohm input impedence.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector16terminal" svgId="connector16pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector16pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector16terminal" svgId="connector16pin" layer="copper0"/>
+     <p svgId="connector16pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector17" type="female" name="A1">
+   <description>Analog Input 1 +/- 5v range with an 10Mohm input impedence.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector17terminal" svgId="connector17pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector17pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector17terminal" svgId="connector17pin" layer="copper0"/>
+     <p svgId="connector17pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector18" type="female" name="GND">
+   <description>Ground/Reference.</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector18terminal" svgId="connector18pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector18pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p terminalId="connector18terminal" svgId="connector18pin" layer="copper0"/>
+     <p svgId="connector18pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>http://www.expeyes.in</url>
+</module>
