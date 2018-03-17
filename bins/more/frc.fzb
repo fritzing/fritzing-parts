@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.6.4" icon="frc.png">
+    <title>FRC</title>
+	<instances>
+        <instance moduleIdRef="__spacer__" modelIndex="3" path="Controller">
+          <views>
+            <iconView layer="icon">
+              <geometry z="-1" x="-1" y="-1"></geometry>
+            </iconView>
+          </views>
+        </instance>
+        <instance moduleIdRef="FRC_RoboRio" modelIndex="1" path="RoboRio.fzp">
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+        </instance>
+        <instance moduleIdRef="FRC_VRM" modelIndex="2" path="VRM.fzp">
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+        </instance>
+        <instance moduleIdRef="FRC_PCM" modelIndex="3" path="PCM.fzp">
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+        </instance>
+        <instance moduleIdRef="FRC_PDP" modelIndex="4" path="PDP.fzp">
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+        </instance>
+        <instance moduleIdRef="FRC_Talon_SRX" modelIndex="5" path="TalonSRX.fzp">
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+        </instance>
+        <instance moduleIdRef="FRC_AMT103" modelIndex="6" path="AMT103.fzp">
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+        </instance>
+	</instances>
+</module>
