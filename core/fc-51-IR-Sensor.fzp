@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module fritzingVersion="0.9.3b" moduleId="fc-51_85d98481ce3be6f2e9b641181c0f798b_1" referenceFile="fc-51_85d98481ce3be6f2e9b641181c0f798b_1.fzp">
+ <version>4</version>
+ <author>Peter Van Epp (vanepp in forums)</author>
+ <title>fc-51</title>
+ <label>M</label>
+ <date>dom. mar. 18 2018</date>
+ <tags>
+  <tag>contrib</tag>
+  <tag>Infrared Obstacle Avoidance Proximity Sensor</tag>
+  <tag>fc-51</tag>
+  <tag>fritzing user</tag>
+  <tag>sensor</tag>
+  <tag>linfra red</tag>
+ </tags>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Line sensor</property>
+  <property name="editable pin labels">false</property>
+  <property name="part number"></property>
+  <property name="pins">3</property>
+  <property name="layer"></property>
+  <property name="package">THT</property>
+  <property name="hole size"></property>
+  <property name="pin spacing">100mil</property>
+  <property name="layout">Single Row</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Fc-51 Infrared Obstacle Avoidance Proximity Sensor module. IR transmitter led, receiver LED, lm393 compaitor and a pot. 3.3 V to 5V power.&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/fc-51_2.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/fc-51_2.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/fc-51_2.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/fc-51_2.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector id="connector0" type="male" name="pin1">
+   <description>OUT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+     <p layer="copper1" svgId="connector0pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" type="male" name="pin2">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+     <p layer="copper1" svgId="connector1pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector2" type="male" name="pin3">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector2pin"/>
+     <p layer="copper1" svgId="connector2pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>
