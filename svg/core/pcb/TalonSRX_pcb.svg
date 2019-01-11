@@ -1,27 +1,44 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!-- Created with Fritzing (http://www.fritzing.org/) -->
-<svg xmlns="http://www.w3.org/2000/svg" y="0in" width="0.42in" baseProfile="tiny" viewBox="0 0 420 420" height="0.42in"  x="0in" version="1.2">
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" xmlns:xml="http://www.w3.org/XML/1998/namespace" width="2.75597in"  y="0px" id="Layer_1" height="1.18111in" viewBox="0 0 198.43 85.04" gorn="0" xml:space="preserve" baseProfile="tiny" version="1.2">
     <desc >
-        <referenceFile >dip_8_300mil_pcb.svg</referenceFile>
+        <referenceFile >TalonSRX-PCB copy.svg</referenceFile>
     </desc>
-    <g gorn="0.1"  id="silkscreen">
-        <line y1="10" y2="410"  stroke-width="10" x2="10" x1="10" stroke="white"/>
-        <line y1="410" y2="410"  stroke-width="10" x2="410" x1="10" stroke="white"/>
-        <line y1="410" y2="10"  stroke-width="10" x2="410" x1="410" stroke="white"/>
-        <line y1="10" y2="10"  stroke-width="10" x2="160" x1="10" stroke="white"/>
-        <line y1="10" y2="10"  stroke-width="10" x2="410" x1="260" stroke="white"/>
-    </g>
-    <g gorn="0.2"  id="copper1">
-        <g gorn="0.2.0"  id="copper0">
-            <rect y="32.5" width="55" height="55" gorn="0.2.0.0"  fill="none" stroke-width="20" id="square" x="32.5" stroke="rgb(255, 191, 0)"/>
-            <circle cy="60" cx="60" r="27.5" gorn="0.2.0.1"  fill="none" stroke-width="20" id="connector0pin" stroke="rgb(255, 191, 0)"/>
-            <circle cy="60" cx="360" r="27.5" gorn="0.2.0.2"  fill="none" stroke-width="20" id="connector7pin" stroke="rgb(255, 191, 0)"/>
-            <circle cy="160" cx="60" r="27.5" gorn="0.2.0.3"  fill="none" stroke-width="20" id="connector1pin" stroke="rgb(255, 191, 0)"/>
-            <circle cy="160" cx="360" r="27.5" gorn="0.2.0.4"  fill="none" stroke-width="20" id="connector6pin" stroke="rgb(255, 191, 0)"/>
-            <circle cy="260" cx="60" r="27.5" gorn="0.2.0.5"  fill="none" stroke-width="20" id="connector2pin" stroke="rgb(255, 191, 0)"/>
-            <circle cy="260" cx="360" r="27.5" gorn="0.2.0.6"  fill="none" stroke-width="20" id="connector5pin" stroke="rgb(255, 191, 0)"/>
-            <circle cy="360" cx="60" r="27.5" gorn="0.2.0.7"  fill="none" stroke-width="20" id="connector3pin" stroke="rgb(255, 191, 0)"/>
-            <circle cy="360" cx="360" r="27.5" gorn="0.2.0.8"  fill="none" stroke-width="20" id="connector4pin" stroke="rgb(255, 191, 0)"/>
+    <g  id="silkscreen" gorn="0.1">
+        <rect x="22" width="154.167"  height="4.667" stroke-miterlimit="10" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+        <rect x="36" width="134.167"  y="36.667" height="11.667" stroke-miterlimit="10" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+        <rect x="22" width="154.167"  y="17.167" height="7.833" stroke-miterlimit="10" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+        <rect x="22" width="154.167"  y="59.666" height="7.834" stroke-miterlimit="10" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+        <g  transform="matrix(0 -1 1 0 14.2803 21.0845)">
+            <g >
+                <text font-size="12"  stroke-miterlimit="10" font-family="Droid Sans" stroke="#FFFFFF" stroke-width="1" fill="none">V+</text>
+            </g>
         </g>
+        <g  transform="matrix(0 -1 1 0 14.2803 78.2363)">
+            <g >
+                <text font-size="12"  stroke-miterlimit="10" font-family="Droid Sans" stroke="#FFFFFF" stroke-width="1" fill="none">GND</text>
+            </g>
+        </g>
+        <g  transform="matrix(0 -1 1 0 192.7803 75.1152)">
+            <g >
+                <text font-size="12"  stroke-miterlimit="10" font-family="Droid Sans" stroke="#FFFFFF" stroke-width="1" fill="none">m-</text>
+            </g>
+        </g>
+        <g  transform="matrix(0 -1 1 0 192.7803 25.0005)">
+            <g >
+                <text font-size="12"  stroke-miterlimit="10" font-family="Droid Sans" stroke="#FFFFFF" stroke-width="1" fill="none">m+</text>
+            </g>
+        </g>
+        <rect x="0.635" width="197.794"  height="85.04" stroke-miterlimit="10" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+    </g>
+    <g  id="copper0" gorn="0.2">
+        <circle cy="12.297"  id="connector0pin" gorn="0.2.0" r="2.088" stroke="#FEBF10" cx="2.722" stroke-width="1.2" fill="none"/>
+        <circle cy="67.5"  id="connector1pin" gorn="0.2.1" r="2.088" stroke="#FEBF10" cx="2.723" stroke-width="1.2" fill="none"/>
+        <circle cy="16.473"  id="connector2pin" gorn="0.2.2" r="2.088" stroke="#FEBF10" cx="195.775" stroke-width="1.2" fill="none"/>
+        <circle cy="71.676"  id="connector3pin" gorn="0.2.3" r="2.088" stroke="#FEBF10" cx="195.775" stroke-width="1.2" fill="none"/>
+        <circle cy="81.456"  id="connector7pin" gorn="0.2.4" r="2.088" stroke="#FEBF10" cx="54.375" stroke-width="1.2" fill="none"/>
+        <circle cy="81.456"  id="connector6pin" gorn="0.2.5" r="2.088" stroke="#FEBF10" cx="45.625" stroke-width="1.2" fill="none"/>
+        <circle cy="81.456"  id="connector5pin" gorn="0.2.6" r="2.088" stroke="#FEBF10" cx="36.875" stroke-width="1.2" fill="none"/>
+        <circle cy="81.456"  id="connector4pin" gorn="0.2.7" r="2.088" stroke="#FEBF10" cx="28.125" stroke-width="1.2" fill="none"/>
     </g>
 </svg>
