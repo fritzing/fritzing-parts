@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module fritzingVersion="0.9.3b" referenceFile="prefix0000_642e08dceb3d1de4c31ea2bcfb635c6f_1.fzp" moduleId="prefix0000_642e08dceb3d1de4c31ea2bcfb635c6f_1">
+  <version>4</version>
+  <author>Peter Van Epp (vanepp in forums)</author>
+  <title>PH meter</title>
+  <label>S</label>
+  <date>Fri Mar 23 2018</date>
+  <tags>
+    <tag>DFrobot PH meter (SKU SEN0161)</tag>
+    <tag>fritzing user</tag>
+    <tag>contrib</tag>
+    <tag>PH meter</tag>
+  </tags>
+  <properties>
+    <property name="family">PH sensor</property>
+    <property name="variant">variant 1</property>
+    <property name="Pins">3</property>
+    <property name="hole size"/>
+    <property name="Pin Spacing">0.1in (2.54mm)</property>
+    <property name="part number"/>
+    <property name="layer"/>
+    <property name="Row">single</property>
+    <property name="package">THT</property>
+    <property name="Position"/>
+  </properties>
+  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;DFrobot PH meter (SKU SEN0161)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <views>
+    <iconView>
+      <layers image="icon/prefix0000_1.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/prefix0000_1.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView fliphorizontal="true">
+      <layers image="schematic/prefix0000_1.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="pcb/prefix0000_1.svg">
+        <layer layerId="copper0"/>
+        <layer layerId="silkscreen"/>
+        <layer layerId="copper1"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector name="pin1" id="connector0" type="male">
+      <description>A</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" terminalId="connector0terminal" svgId="connector0pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" terminalId="connector0terminal" svgId="connector0pin"/>
+        </schematicView>
+        <pcbView>
+          <p layer="copper0" svgId="connector0pin"/>
+          <p layer="copper1" svgId="connector0pin"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="pin2" id="connector1" type="male">
+      <description>+5V</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" terminalId="connector1terminal" svgId="connector1pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" terminalId="connector1terminal" svgId="connector1pin"/>
+        </schematicView>
+        <pcbView>
+          <p layer="copper0" svgId="connector1pin"/>
+          <p layer="copper1" svgId="connector1pin"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="pin3" id="connector2" type="male">
+      <description>GND</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" terminalId="connector2terminal" svgId="connector2pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" terminalId="connector2terminal" svgId="connector2pin"/>
+        </schematicView>
+        <pcbView>
+          <p layer="copper0" svgId="connector2pin"/>
+          <p layer="copper1" svgId="connector2pin"/>
+        </pcbView>
+      </views>
+    </connector>
+  </connectors>
+</module>

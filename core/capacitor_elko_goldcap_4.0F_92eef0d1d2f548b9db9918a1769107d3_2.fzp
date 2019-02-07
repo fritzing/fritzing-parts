@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="capacitor_elko_goldcap_4.0F_92eef0d1d2f548b9db9918a1769107d3_2" fritzingVersion="0.2.1223" referenceFile="capacitor_electrolytic_large.fzp">
+ <version>4</version>
+ <author>Christoph Wempe</author>
+ <title>Electrolytic Capacitor</title>
+ <label>C</label>
+ <date>Di Jan 16 2018</date>
+ <tags>
+  <tag>Electrolytic</tag>
+  <tag>Supercap</tag>
+  <tag>Capacitor</tag>
+  <tag>Goldcap</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family">capacitor [unidirectional]</property>
+  <property name="variant">variant 1</property>
+  <property name="part number"></property>
+  <property name="voltage"></property>
+  <property name="layer"></property>
+  <property name="capacitance">4.0F</property>
+  <property name="package">2cm H-Type</property>
+ </properties>
+ <taxonomy>discreteParts.capacitor.electrolytic</taxonomy>
+ <description>1000µF electrolytic capacitor</description>
+ <spice>
+  <line>C{instanceTitle} {net connector0} {net connector1} {capacitance} IC=0</line>
+ </spice>
+ <views>
+  <iconView>
+   <layers image="icon/capacitor_elko_goldcap_4.0F_8647a5c11c9b485c095f1ac7ddec049d_2_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView flipvertical="true" fliphorizontal="true">
+   <layers image="breadboard/capacitor_elko_goldcap_4.0F_8647a5c11c9b485c095f1ac7ddec049d_2_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/capacitor_elko_goldcap_4.0F_8647a5c11c9b485c095f1ac7ddec049d_2_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/capacitor_elko_goldcap_4.0F_8647a5c11c9b485c095f1ac7ddec049d_2_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="-">
+   <description>- side</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboard" legId="connector0leg"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="copper0"/>
+     <p svgId="connector0pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector1" name="+">
+   <description>+ side</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboard" legId="connector1leg"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="copper0"/>
+     <p svgId="connector1pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>

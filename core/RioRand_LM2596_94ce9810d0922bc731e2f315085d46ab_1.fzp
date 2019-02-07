@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module fritzingVersion="0.9.3b" moduleId="RioRand_LM2596_94ce9810d0922bc731e2f315085d46ab_1" referenceFile="RioRand_LM2596_94ce9810d0922bc731e2f315085d46ab_1.fzp">
+  <version>4</version>
+  <title>RioRand LM2596</title>
+  <label>M</label>
+  <date>Wed Jan 10 2018</date>
+  <author>Jenny Madorsky  (modified by Peter Van Epp)</author>
+  <tags>
+    <tag>dc dc converter</tag>
+    <tag>contrib</tag>
+    <tag>step down module</tag>
+    <tag>buck converter module</tag>
+    <tag>Fritzing user</tag>
+  </tags>
+  <properties>
+    <property name="variant">variant 2</property>
+    <property name="chip label">lm2596</property>
+    <property name="family">converter</property>
+    <property name="part number"/>
+    <property name="layer"/>
+  </properties>
+  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Step-down DC-DC Converter&lt;/p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;
+(modified to correct all views by Peter Van Epp january 2018)&lt;/p&gt;
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Corrected the pins so the part works in all views. Changed the sizes in bb and pcb to match the data sheet. PCB view had a small outline (possibly only for wires), changed it to pads in the same places as the module and added holes in the PCB silkscreen layer where the mounting holes on the module are (you need to check the alignment though as they are not fully specified on the drawing I used and I don't have one ...). so that you could mount the module on standoffs on a board. The mounting holes are only on silksceen, you need to drag a hole of the correct size over them if you want a hole in the actual board.&lt;/p&gt;&lt;&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <views>
+    <iconView>
+      <layers image="icon/RioRand_LM2596_94ce9810d0922bc731e2f315085d46ab_1_icon.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/RioRand_LM2596_94ce9810d0922bc731e2f315085d46ab_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/RioRand_LM2596_94ce9810d0922bc731e2f315085d46ab_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="pcb/RioRand_LM2596_94ce9810d0922bc731e2f315085d46ab_1_pcb.svg">
+        <layer layerId="copper0"/>
+        <layer layerId="copper1"/>
+        <layer layerId="silkscreen"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector id="connector0" name="Pin 1" type="male">
+      <description>In+</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector0terminal" svgId="connector0pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pin" layer="copper0"/>
+          <p svgId="connector0pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector id="connector1" name="Pin 2" type="male">
+      <description>In-</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector1terminal" svgId="connector1pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector1pin" layer="copper0"/>
+          <p svgId="connector1pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector id="connector2" name="Pin 3" type="male">
+      <description>Out+</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector2pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector2terminal" svgId="connector2pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector2pin" layer="copper0"/>
+          <p svgId="connector2pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector id="connector3" name="Pin 4" type="male">
+      <description>Out-</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector3pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector3terminal" svgId="connector3pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector3pin" layer="copper0"/>
+          <p svgId="connector3pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+  </connectors>
+</module>
