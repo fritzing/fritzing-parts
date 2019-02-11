@@ -5,348 +5,375 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   viewBox="0 0 35 33"
-   height="0.33000001in"
-   width="0.34999999in"
+   viewBox="0 0 700 330"
+   height="0.33in"
+   width="0.7in"
    id="svg2"
    version="1.2">
   <metadata
-     id="metadata10193">
+     id="metadata76">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs10191" />
+     id="defs74" />
   <g
-     transform="translate(-3.5,0)"
-     id="breadboard">
+     id="icon">
     <rect
-       style="fill:#303030"
-       height="27"
-       width="70"
-       y="3"
+       fill="#303030"
+       stroke-width="10"
+       height="270"
+       width="700"
+       y="30"
        x="0"
        id="middle" />
     <rect
-       style="fill:#3d3d3d"
-       height="2.46"
-       width="70"
-       y="3"
+       fill="#3d3d3d"
+       stroke-width="10"
+       height="24.6"
+       width="700"
+       y="30"
        x="0"
        id="top" />
     <rect
-       style="fill:#000000"
-       height="2.46"
-       width="70"
-       y="27.540001"
+       fill="#000000"
+       stroke-width="10"
+       height="24.6"
+       width="700"
+       y="275"
        x="0"
        id="bottom" />
     <polygon
-       style="fill:#141414"
-       points="70,30 70,3 69.25,5.46 69.25,27.54 "
+       fill="#141414"
+       points="692.5,275.4 700,300 700,30 692.5,54.6 "
        id="right" />
     <polygon
-       style="fill:#1f1f1f"
-       points="0,30 0,3 0.75,5.46 0.75,27.54 "
+       fill="#1f1f1f"
+       points="7.5,275 0,300 0,30 7.5,54 "
        id="left" />
     <polygon
-       style="fill:#1c1c1c"
-       points="0.56,16.5 5,16.5 5,11.5 0.75,11.46 0.56,13.58 "
+       fill="#1c1c1c"
+       points="50,115 7.5,114 5.6,135 5.6,165 50,165 "
        id="left-upper-rect" />
     <polygon
-       style="fill:#383838"
-       points="0.56,16.5 0.56,19.42 0.75,21.55 5,21.55 5,16.5 "
+       fill="#383838"
+       points="7.5,215 50,215 50,165 5.6,165 5.6,190 "
        id="left-lower-rect" />
     <path
-       style="fill:#262626"
-       d="m 0.56,13.58 0,5.83 c 1.47,-0.17 2.62,-1.4 2.62,-2.92 0,-1.52 -1.14,-2.74 -2.62,-2.91 z"
+       fill="#262626"
+       stroke-width="10"
+       d="m 5.6,135 v 58.3 c 14.7,-1.7 26,-14 26,-29 0,-15 -11,-27 -26,-29 z"
        id="slot" />
     <path
-       style="fill:#303030"
-       d="m 0.75,5.46 0,5.99 c 2.38,0.45 4.19,2.53 4.19,5.04 0,2.51 -1.8,4.6 -4.19,5.05 l 0,0.01 5,0 0,-16.09 -5,0 z"
+       fill="#303030"
+       stroke-width="10"
+       d="m 7.5,54 v 60 c 24,4.5 42,25 42,50 0,25 -18,46 -42,50 v 0.1 H 58 V 55 Z"
        id="cover" />
+    <circle
+       fill="#212121"
+       stroke-width="10"
+       id="circle13"
+       r="20.6"
+       cy="234"
+       cx="65" />
+    <text
+       font-size="60"
+       y="150.21127"
+       x="350.9155"
+       id="label"
+       style="font-size:60px;font-family:OCRA;text-anchor:middle;fill:#e6e6e6">IC</text>
+    <text
+       font-size="49"
+       y="236.85915"
+       x="355.84509"
+       id="text4196"
+       style="font-size:49px;font-family:OCRA;text-anchor:middle;fill:#00ffff">Multipart</text>
     <rect
-       style="fill:#8c8c8c"
-       height="4.3400002"
-       width="3"
-       y="28.66"
-       x="63.5"
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       y="286"
+       x="35"
+       id="connector0pin" />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       y="300"
+       x="35"
+       id="connector0terminal" />
+    <polygon
+       fill="#8c8c8c"
+       id="polygon18"
+       points="35,286 35,306 65,306 85,297 85,286 " />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       x="35"
+       id="connector13pin"
+       y="0" />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       x="35"
+       id="connector13terminal"
+       y="0" />
+    <polygon
+       fill="#8c8c8c"
+       id="polygon22"
+       points="85,43 85,32 65,23 35,23 35,43 " />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       y="286"
+       x="635"
        id="connector6pin" />
     <rect
-       style="fill:#8c8c8c"
-       height="3"
-       width="3"
-       y="30"
-       x="63.5"
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       y="300"
+       x="635"
        id="connector6terminal" />
     <polygon
-       style="fill:#8c8c8c"
-       id="polygon10143"
-       points="66.5,30.66 66.5,28.66 61.5,28.66 61.5,29.74 63.5,30.66 " />
+       fill="#8c8c8c"
+       id="polygon26"
+       points="615,286 615,297 635,306 665,306 665,286 " />
     <rect
-       style="fill:#8c8c8c"
-       height="4.3400002"
-       width="3"
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
        y="0"
-       x="63.5"
+       x="635"
        id="connector7pin" />
     <rect
-       style="fill:#8c8c8c"
-       height="3"
-       width="3"
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
        y="0"
-       x="63.5"
+       x="635"
        id="connector7terminal" />
     <polygon
-       style="fill:#8c8c8c"
-       id="polygon10147"
-       points="61.5,3.26 61.5,4.34 66.5,4.34 66.5,2.34 63.5,2.34 " />
+       fill="#8c8c8c"
+       id="polygon30"
+       points="665,43 665,23 635,23 615,32 615,43 " />
     <rect
-       style="fill:#8c8c8c"
-       height="4.3400002"
-       width="3"
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
        y="0"
-       x="43.5"
+       x="135"
+       id="connector12pin" />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       x="135"
+       id="connector12terminal"
+       y="0" />
+    <polygon
+       fill="#8c8c8c"
+       id="polygon34"
+       points="115,32 115,43 185,43 185,32 165,23 135,23 " />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       y="0"
+       x="235"
+       id="connector11pin" />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       x="235"
+       id="connector11terminal"
+       y="0" />
+    <polygon
+       fill="#8c8c8c"
+       id="polygon38"
+       points="215,32 215,43 285,43 285,32 265,23 235,23 " />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       y="0"
+       x="335"
+       id="connector10pin" />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       x="335"
+       id="connector10terminal"
+       y="0" />
+    <polygon
+       fill="#8c8c8c"
+       id="polygon42"
+       points="315,32 315,43 385,43 385,32 365,23 335,23 " />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       y="0"
+       x="435"
        id="connector9pin" />
     <rect
-       style="fill:#8c8c8c"
-       y="0"
-       height="3"
-       width="3"
-       x="43.5"
-       id="connector9terminal" />
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       x="435"
+       id="connector9terminal"
+       y="0" />
     <polygon
-       style="fill:#8c8c8c"
-       id="polygon10163"
-       points="43.5,2.34 41.5,3.26 41.5,4.34 48.5,4.34 48.5,3.26 46.5,2.34 " />
+       fill="#8c8c8c"
+       id="polygon46"
+       points="415,32 415,43 485,43 485,32 465,23 435,23 " />
     <rect
-       style="fill:#8c8c8c"
-       height="4.3400002"
-       width="3"
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
        y="0"
-       x="53.5"
+       x="535"
        id="connector8pin" />
     <rect
-       style="fill:#8c8c8c"
-       y="0"
-       height="3"
-       width="3"
-       x="53.5"
-       id="connector8terminal" />
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       x="535"
+       id="connector8terminal"
+       y="0" />
     <polygon
-       style="fill:#8c8c8c"
-       id="polygon10167"
-       points="53.5,2.34 51.5,3.26 51.5,4.34 58.5,4.34 58.5,3.26 56.5,2.34 " />
-    <g
-       id="icon">
-      <circle
-         style="fill:#212121"
-         cx="6.5"
-         cy="23.469999"
-         r="2.0599999"
-         id="circle10130" />
-      <text
-         style="font-size:8px;font-family:OCRA;text-anchor:start;fill:#e6e6e6;stroke:none"
-         id="label"
-         x="6.5"
-         y="16.5"
-         font-size="8">IC</text>
-      <rect
-         style="fill:#8c8c8c"
-         id="connector0pin"
-         x="3.5"
-         y="28.66"
-         width="3"
-         height="4.3400002" />
-      <rect
-         style="fill:#8c8c8c"
-         id="connector0terminal"
-         x="3.5"
-         y="30"
-         width="3"
-         height="3" />
-      <polygon
-         style="fill:#8c8c8c"
-         points="8.5,28.66 3.5,28.66 3.5,30.66 6.5,30.66 8.5,29.74 "
-         id="polygon10135" />
-      <rect
-         style="fill:#8c8c8c"
-         y="0"
-         id="connector13pin"
-         x="3.5"
-         width="3"
-         height="4.3400002" />
-      <rect
-         style="fill:#8c8c8c"
-         y="0"
-         id="connector13terminal"
-         x="3.5"
-         width="3"
-         height="3" />
-      <polygon
-         style="fill:#8c8c8c"
-         points="3.5,4.34 8.5,4.34 8.5,3.26 6.5,2.34 3.5,2.34 "
-         id="polygon10139" />
-      <rect
-         style="fill:#8c8c8c"
-         id="connector12pin"
-         x="13.5"
-         y="0"
-         width="3"
-         height="4.3400002" />
-      <rect
-         style="fill:#8c8c8c"
-         y="0"
-         id="connector12terminal"
-         x="13.5"
-         width="3"
-         height="3" />
-      <polygon
-         style="fill:#8c8c8c"
-         points="11.5,3.26 11.5,4.34 18.5,4.34 18.5,3.26 16.5,2.34 13.5,2.34 "
-         id="polygon10151" />
-      <rect
-         style="fill:#8c8c8c"
-         id="connector11pin"
-         x="23.5"
-         y="0"
-         width="3"
-         height="4.3400002" />
-      <rect
-         style="fill:#8c8c8c"
-         y="0"
-         id="connector11terminal"
-         x="23.5"
-         width="3"
-         height="3" />
-      <polygon
-         style="fill:#8c8c8c"
-         points="21.5,3.26 21.5,4.34 28.5,4.34 28.5,3.26 26.5,2.34 23.5,2.34 "
-         id="polygon10155" />
-      <rect
-         style="fill:#8c8c8c"
-         id="connector10pin"
-         x="33.5"
-         y="0"
-         width="3"
-         height="4.3400002" />
-      <rect
-         style="fill:#8c8c8c"
-         y="0"
-         id="connector10terminal"
-         x="33.5"
-         width="3"
-         height="3" />
-      <polygon
-         style="fill:#8c8c8c"
-         points="31.5,3.26 31.5,4.34 38.5,4.34 38.5,3.26 36.5,2.34 33.5,2.34 "
-         id="polygon10159" />
-      <rect
-         style="fill:#8c8c8c"
-         id="connector1pin"
-         x="13.5"
-         y="28.66"
-         width="3"
-         height="4.3400002" />
-      <rect
-         style="fill:#8c8c8c"
-         id="connector1terminal"
-         x="13.5"
-         y="30"
-         width="3"
-         height="3" />
-      <polygon
-         style="fill:#8c8c8c"
-         points="18.5,29.74 18.5,28.66 11.5,28.66 11.5,29.74 13.5,30.66 16.5,30.66 "
-         id="polygon10171" />
-      <rect
-         style="fill:#8c8c8c"
-         id="connector2pin"
-         x="23.5"
-         y="28.66"
-         width="3"
-         height="4.3400002" />
-      <rect
-         style="fill:#8c8c8c"
-         id="connector2terminal"
-         x="23.5"
-         y="30"
-         width="3"
-         height="3" />
-      <polygon
-         style="fill:#8c8c8c"
-         points="28.5,29.74 28.5,28.66 21.5,28.66 21.5,29.74 23.5,30.66 26.5,30.66 "
-         id="polygon10175" />
-      <rect
-         style="fill:#8c8c8c"
-         id="connector3pin"
-         x="33.5"
-         y="28.66"
-         width="3"
-         height="4.3400002" />
-      <rect
-         style="fill:#8c8c8c"
-         id="connector3terminal"
-         x="33.5"
-         y="30"
-         width="3"
-         height="3" />
-      <polygon
-         style="fill:#8c8c8c"
-         points="38.5,29.74 38.5,28.66 31.5,28.66 31.5,29.74 33.5,30.66 36.5,30.66 "
-         id="polygon10179" />
-      <text
-         font-size="8"
-         y="22.74"
-         x="6.5"
-         id="text4196"
-         style="font-size:8.00000027px;font-family:'Droid Sans';text-anchor:start;fill:#00ffff;stroke:none;-inkscape-font-specification:'Droid Sans, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-align:start;writing-mode:lr;line-height:125%;">
-        <tspan
-           id="tspan5406">Multipart</tspan>
-      </text>
-    </g>
+       fill="#8c8c8c"
+       id="polygon50"
+       points="515,32 515,43 585,43 585,32 565,23 535,23 " />
     <rect
-       style="fill:#8c8c8c"
-       height="4.3400002"
-       width="3"
-       y="28.66"
-       x="43.5"
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       y="286"
+       x="135"
+       id="connector1pin" />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       y="300"
+       x="135"
+       id="connector1terminal" />
+    <polygon
+       fill="#8c8c8c"
+       id="polygon54"
+       points="185,297 185,286 115,286 115,297 135,306 165,306 " />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       y="286"
+       x="235"
+       id="connector2pin" />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       y="300"
+       x="235"
+       id="connector2terminal" />
+    <polygon
+       fill="#8c8c8c"
+       id="polygon58"
+       points="285,297 285,286 215,286 215,297 235,306 265,306 " />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       y="286"
+       x="335"
+       id="connector3pin" />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       y="300"
+       x="335"
+       id="connector3terminal" />
+    <polygon
+       fill="#8c8c8c"
+       id="polygon62"
+       points="385,297 385,286 315,286 315,297 335,306 365,306 " />
+    <rect
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       y="286"
+       x="435"
        id="connector4pin" />
     <rect
-       style="fill:#8c8c8c"
-       height="3"
-       width="3"
-       y="30"
-       x="43.5"
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       y="300"
+       x="435"
        id="connector4terminal" />
     <polygon
-       style="fill:#8c8c8c"
-       id="polygon10183"
-       points="46.5,30.66 48.5,29.74 48.5,28.66 41.5,28.66 41.5,29.74 43.5,30.66 " />
+       fill="#8c8c8c"
+       id="polygon66"
+       points="485,297 485,286 415,286 415,297 435,306 465,306 " />
     <rect
-       style="fill:#8c8c8c"
-       height="4.3400002"
-       width="3"
-       y="28.66"
-       x="53.5"
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="43"
+       width="30"
+       y="286"
+       x="535"
        id="connector5pin" />
     <rect
-       style="fill:#8c8c8c"
-       height="3"
-       width="3"
-       y="30"
-       x="53.5"
+       fill="#8c8c8c"
+       stroke-width="10"
+       height="30"
+       width="30"
+       y="300"
+       x="535"
        id="connector5terminal" />
     <polygon
-       style="fill:#8c8c8c"
-       id="polygon10187"
-       points="56.5,30.66 58.5,29.74 58.5,28.66 51.5,28.66 51.5,29.74 53.5,30.66 " />
+       fill="#8c8c8c"
+       id="polygon70"
+       points="585,297 585,286 515,286 515,297 535,306 565,306 " />
   </g>
 </svg>
