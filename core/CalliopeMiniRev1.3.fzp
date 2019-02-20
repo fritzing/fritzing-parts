@@ -13,9 +13,11 @@ This page provides technical information about the project. Other information, s
 	<tag>Developerboard</tag>
 </tags>
 <properties>
-	    <property name="family">microcontroller board</property>
-        <property name="part number"/>
-        <property name="type">Calliope Mini (Rev1.3)</property>
+  <property name="family">Calliope</property>
+  <property name="variant">Rev1.3</property>
+  <property name="processor">Cortex M0</property>
+  <property name="part number"/>
+  <property name="layer"/>
 </properties>
 
 <views>
@@ -50,7 +52,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/></schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector0pad'/></pcbView>
+<p layer='none' svgId='connector0pad'/></pcbView>
 </views>
 </connector>
 <connector id='connector1' type='female' name='GND'>
@@ -60,7 +62,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/></schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector1pad'/></pcbView>
+<p layer='none' svgId='connector1pad'/></pcbView>
 </views>
 </connector>
 <connector id='connector98' type='female' name='GND'>
@@ -70,7 +72,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector98pin' terminalId='connector98terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector98pad'/><p layer='copper1' svgId='connector98pad'/></pcbView>
+<p layer='copper0' svgId='connector98pin'/><p layer='copper1' svgId='connector98pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector99' type='female' name='VCC'>
@@ -80,7 +82,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector99pin' terminalId='connector99terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector99pad'/><p layer='copper1' svgId='connector99pad'/></pcbView>
+<p layer='copper0' svgId='connector99pin'/><p layer='copper1' svgId='connector99pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector100' type='female' name='SCL/P19'>
@@ -90,7 +92,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector100pin' terminalId='connector100terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector100pad'/><p layer='copper1' svgId='connector100pad'/></pcbView>
+<p layer='copper0' svgId='connector100pin'/><p layer='copper1' svgId='connector100pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector101' type='female' name='SDA/P20'>
@@ -100,7 +102,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector101pin' terminalId='connector101terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector101pad'/><p layer='copper1' svgId='connector101pad'/></pcbView>
+<p layer='copper0' svgId='connector101pin'/><p layer='copper1' svgId='connector101pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector102' type='female' name='P27'>
@@ -110,7 +112,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector102pin' terminalId='connector102terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector102pad'/><p layer='copper1' svgId='connector102pad'/></pcbView>
+<p layer='copper0' svgId='connector102pin'/><p layer='copper1' svgId='connector102pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector103' type='female' name='P26'>
@@ -120,7 +122,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector103pin' terminalId='connector103terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector103pad'/><p layer='copper1' svgId='connector103pad'/></pcbView>
+<p layer='copper0' svgId='connector103pin'/><p layer='copper1' svgId='connector103pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector104' type='female' name='P15'>
@@ -130,7 +132,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector104pin' terminalId='connector104terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector104pad'/><p layer='copper1' svgId='connector104pad'/></pcbView>
+<p layer='copper0' svgId='connector104pin'/><p layer='copper1' svgId='connector104pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector105' type='female' name='P14'>
@@ -140,7 +142,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector105pin' terminalId='connector105terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector105pad'/><p layer='copper1' svgId='connector105pad'/></pcbView>
+<p layer='copper0' svgId='connector105pin'/><p layer='copper1' svgId='connector105pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector106' type='female' name='P13'>
@@ -150,7 +152,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector106pin' terminalId='connector106terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector106pad'/><p layer='copper1' svgId='connector106pad'/></pcbView>
+<p layer='copper0' svgId='connector106pin'/><p layer='copper1' svgId='connector106pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector107' type='female' name='P12'>
@@ -160,7 +162,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector107pin' terminalId='connector107terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector107pad'/><p layer='copper1' svgId='connector107pad'/></pcbView>
+<p layer='copper0' svgId='connector107pin'/><p layer='copper1' svgId='connector107pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector108' type='female' name='P11'>
@@ -170,7 +172,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector108pin' terminalId='connector108terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector108pad'/><p layer='copper1' svgId='connector108pad'/></pcbView>
+<p layer='copper0' svgId='connector108pin'/><p layer='copper1' svgId='connector108pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector109' type='female' name='P10'>
@@ -180,7 +182,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector109pin' terminalId='connector109terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector109pad'/><p layer='copper1' svgId='connector109pad'/></pcbView>
+<p layer='copper0' svgId='connector109pin'/><p layer='copper1' svgId='connector109pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector110' type='female' name='GND'>
@@ -190,7 +192,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector110pin' terminalId='connector110terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector110pad'/><p layer='copper1' svgId='connector110pad'/></pcbView>
+<p layer='copper0' svgId='connector110pin'/><p layer='copper1' svgId='connector110pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector111' type='female' name='GND'>
@@ -200,7 +202,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector111pin' terminalId='connector111terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector111pad'/><p layer='copper1' svgId='connector111pad'/></pcbView>
+<p layer='copper0' svgId='connector111pin'/><p layer='copper1' svgId='connector111pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector112' type='female' name='P9'>
@@ -210,7 +212,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector112pin' terminalId='connector112terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector112pad'/><p layer='copper1' svgId='connector112pad'/></pcbView>
+<p layer='copper0' svgId='connector112pin'/><p layer='copper1' svgId='connector112pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector113' type='female' name='P8'>
@@ -220,7 +222,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector113pin' terminalId='connector113terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector113pad'/><p layer='copper1' svgId='connector113pad'/></pcbView>
+<p layer='copper0' svgId='connector113pin'/><p layer='copper1' svgId='connector113pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector114' type='female' name='P7'>
@@ -230,7 +232,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector114pin' terminalId='connector114terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector114pad'/><p layer='copper1' svgId='connector114pad'/></pcbView>
+<p layer='copper0' svgId='connector114pin'/><p layer='copper1' svgId='connector114pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector115' type='female' name='P6'>
@@ -240,7 +242,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector115pin' terminalId='connector115terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector115pad'/><p layer='copper1' svgId='connector115pad'/></pcbView>
+<p layer='copper0' svgId='connector115pin'/><p layer='copper1' svgId='connector115pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector116' type='female' name='P5'>
@@ -250,7 +252,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector116pin' terminalId='connector116terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector116pad'/><p layer='copper1' svgId='connector116pad'/></pcbView>
+<p layer='copper0' svgId='connector116pin'/><p layer='copper1' svgId='connector116pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector117' type='female' name='P4'>
@@ -260,7 +262,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector117pin' terminalId='connector117terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector117pad'/><p layer='copper1' svgId='connector117pad'/></pcbView>
+<p layer='copper0' svgId='connector117pin'/><p layer='copper1' svgId='connector117pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector118' type='female' name='P22'>
@@ -270,7 +272,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector118pin' terminalId='connector118terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector118pad'/><p layer='copper1' svgId='connector118pad'/></pcbView>
+<p layer='copper0' svgId='connector118pin'/><p layer='copper1' svgId='connector118pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector119' type='female' name='P2'>
@@ -280,7 +282,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector119pin' terminalId='connector119terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector119pad'/><p layer='copper1' svgId='connector119pad'/></pcbView>
+<p layer='copper0' svgId='connector119pin'/><p layer='copper1' svgId='connector119pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector120' type='female' name='P1'>
@@ -290,7 +292,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector120pin' terminalId='connector120terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector120pad'/><p layer='copper1' svgId='connector120pad'/></pcbView>
+<p layer='copper0' svgId='connector120pin'/><p layer='copper1' svgId='connector120pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector121' type='female' name='P0'>
@@ -300,7 +302,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector121pin' terminalId='connector121terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector121pad'/><p layer='copper1' svgId='connector121pad'/></pcbView>
+<p layer='copper0' svgId='connector121pin'/><p layer='copper1' svgId='connector121pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector122' type='female' name='VCC'>
@@ -310,7 +312,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector122pin' terminalId='connector122terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector122pad'/><p layer='copper1' svgId='connector122pad'/></pcbView>
+<p layer='copper0' svgId='connector122pin'/><p layer='copper1' svgId='connector122pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector123' type='female' name='GND'>
@@ -320,7 +322,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector123pin' terminalId='connector123terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector123pad'/><p layer='copper1' svgId='connector123pad'/></pcbView>
+<p layer='copper0' svgId='connector123pin'/><p layer='copper1' svgId='connector123pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector126' type='female' name='SCL/P19'>
@@ -330,7 +332,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector126pin' terminalId='connector126terminal'/></schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector126pad'/></pcbView>
+<p layer='none' svgId='connector126pad'/></pcbView>
 </views>
 </connector>
 <connector id='connector127' type='female' name='SDA/P20'>
@@ -340,7 +342,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector127pin' terminalId='connector127terminal'/></schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector127pad'/></pcbView>
+<p layer='none' svgId='connector127pad'/></pcbView>
 </views>
 </connector>
 <connector id='connector128' type='female' name='VCC'>
@@ -350,7 +352,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector128pin' terminalId='connector128terminal'/></schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector128pad'/></pcbView>
+<p layer='none' svgId='connector128pad'/></pcbView>
 </views>
 </connector>
 <connector id='connector129' type='female' name='GND'>
@@ -360,7 +362,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector129pin' terminalId='connector129terminal'/></schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector129pad'/></pcbView>
+<p layer='none' svgId='connector129pad'/></pcbView>
 </views>
 </connector>
 <connector id='connector237' type='female' name='GND'>
@@ -370,7 +372,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector237pin' terminalId='connector237terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector237pad'/><p layer='copper1' svgId='connector237pad'/></pcbView>
+<p layer='copper0' svgId='connector237pin'/><p layer='copper1' svgId='connector237pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector238' type='female' name='Motor A'>
@@ -380,7 +382,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector238pin' terminalId='connector238terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector238pad'/><p layer='copper1' svgId='connector238pad'/></pcbView>
+<p layer='copper0' svgId='connector238pin'/><p layer='copper1' svgId='connector238pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector239' type='female' name='Motor B'>
@@ -390,7 +392,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector239pin' terminalId='connector239terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector239pad'/><p layer='copper1' svgId='connector239pad'/></pcbView>
+<p layer='copper0' svgId='connector239pin'/><p layer='copper1' svgId='connector239pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector240' type='female' name='GND'>
@@ -400,7 +402,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector240pin' terminalId='connector240terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector240pad'/><p layer='copper1' svgId='connector240pad'/></pcbView>
+<p layer='copper0' svgId='connector240pin'/><p layer='copper1' svgId='connector240pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector241' type='female' name='VM (max9V)'>
@@ -410,7 +412,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector241pin' terminalId='connector241terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector241pad'/><p layer='copper1' svgId='connector241pad'/></pcbView>
+<p layer='copper0' svgId='connector241pin'/><p layer='copper1' svgId='connector241pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector242' type='female' name='GND'>
@@ -420,7 +422,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector242pin' terminalId='connector242terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector242pad'/><p layer='copper1' svgId='connector242pad'/></pcbView>
+<p layer='copper0' svgId='connector242pin'/><p layer='copper1' svgId='connector242pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector315' type='female' name='1'>
@@ -430,7 +432,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector315pin' terminalId='connector315terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector315pad'/><p layer='copper1' svgId='connector315pad'/></pcbView>
+<p layer='none' svgId='connector315pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector316' type='female' name='P0'>
@@ -440,7 +442,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector316pin' terminalId='connector316terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector316pad'/><p layer='copper1' svgId='connector316pad'/></pcbView>
+<p layer='none' svgId='connector316pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector317' type='female' name='P1'>
@@ -450,7 +452,8 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector317pin' terminalId='connector317terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector317pad'/><p layer='copper1' svgId='connector317pad'/></pcbView>
+<p layer='none' svgId='connector317pin'/>
+</pcbView>
 </views>
 </connector>
 <connector id='connector318' type='female' name='P2'>
@@ -460,7 +463,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector318pin' terminalId='connector318terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector318pad'/><p layer='copper1' svgId='connector318pad'/></pcbView>
+<p layer='none' svgId='connector318pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector319' type='female' name='P22'>
@@ -470,7 +473,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector319pin' terminalId='connector319terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector319pad'/><p layer='copper1' svgId='connector319pad'/></pcbView>
+<p layer='none' svgId='connector319pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector320' type='female' name='GND'>
@@ -480,7 +483,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector320pin' terminalId='connector320terminal'/></schematicView>
 <pcbView>
-<p layer='copper0' svgId='connector320pad'/><p layer='copper1' svgId='connector320pad'/></pcbView>
+<p layer='none' svgId='connector320pin'/></pcbView>
 </views>
 </connector>
 <connector id='connector433' type='female' name='RX'>
@@ -490,7 +493,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector433pin' terminalId='connector433terminal'/></schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector433pad'/></pcbView>
+<p layer='none' svgId='connector433pad'/></pcbView>
 </views>
 </connector>
 <connector id='connector434' type='female' name='TX'>
@@ -500,7 +503,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector434pin' terminalId='connector434terminal'/></schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector434pad'/></pcbView>
+<p layer='none' svgId='connector434pad'/></pcbView>
 </views>
 </connector>
 <connector id='connector435' type='female' name='VCC'>
@@ -510,7 +513,7 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector435pin' terminalId='connector435terminal'/></schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector435pad'/></pcbView>
+<p layer='none' svgId='connector435pad'/></pcbView>
 </views>
 </connector>
 <connector id='connector436' type='female' name='GND'>
@@ -520,53 +523,53 @@ This page provides technical information about the project. Other information, s
 <schematicView>
 <p layer='schematic' svgId='connector436pin' terminalId='connector436terminal'/></schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector436pad'/></pcbView>
+<p layer='none' svgId='connector436pad'/></pcbView>
 </views>
 </connector>
 </connectors>
 <buses>
-<bus id='gnd'>
-<nodeMember connectorId='connector1'/>
-<nodeMember connectorId='connector98'/>
-<nodeMember connectorId='connector110'/>
-<nodeMember connectorId='connector111'/>
-<nodeMember connectorId='connector123'/>
-<nodeMember connectorId='connector129'/>
-<nodeMember connectorId='connector237'/>
-<nodeMember connectorId='connector240'/>
-<nodeMember connectorId='connector242'/>
-<nodeMember connectorId='connector320'/>
-<nodeMember connectorId='connector436'/>
+<bus id='GND'>
+	<nodeMember connectorId='connector1'/>
+	<nodeMember connectorId='connector98'/>
+	<nodeMember connectorId='connector110'/>
+	<nodeMember connectorId='connector111'/>
+	<nodeMember connectorId='connector123'/>
+	<nodeMember connectorId='connector129'/>
+	<nodeMember connectorId='connector237'/>
+	<nodeMember connectorId='connector240'/>
+	<nodeMember connectorId='connector242'/>
+	<nodeMember connectorId='connector320'/>
+	<nodeMember connectorId='connector436'/>
 </bus>
-<bus id='vcc'>
-<nodeMember connectorId='connector99'/>
-<nodeMember connectorId='connector122'/>
-<nodeMember connectorId='connector128'/>
-<nodeMember connectorId='connector435'/>
+<bus id='VCC'>
+	<nodeMember connectorId='connector99'/>
+	<nodeMember connectorId='connector122'/>
+	<nodeMember connectorId='connector128'/>
+	<nodeMember connectorId='connector435'/>
 </bus>
-<bus id='scl/p19'>
-<nodeMember connectorId='connector100'/>
-<nodeMember connectorId='connector126'/>
+<bus id='SCL/P19'>
+	<nodeMember connectorId='connector100'/>
+	<nodeMember connectorId='connector126'/>
 </bus>
-<bus id='sda/p20'>
-<nodeMember connectorId='connector101'/>
-<nodeMember connectorId='connector127'/>
+<bus id='SDA/P20'>
+	<nodeMember connectorId='connector101'/>
+	<nodeMember connectorId='connector127'/>
 </bus>
-<bus id='p0'>
-<nodeMember connectorId='connector121'/>
-<nodeMember connectorId='connector316'/>
+<bus id='P0'>
+	<nodeMember connectorId='connector121'/>
+	<nodeMember connectorId='connector316'/>
 </bus>
-<bus id='p1'>
-<nodeMember connectorId='connector120'/>
-<nodeMember connectorId='connector317'/>
+<bus id='P1'>
+	<nodeMember connectorId='connector120'/>
+	<nodeMember connectorId='connector317'/>
 </bus>
-<bus id='p2'>
-<nodeMember connectorId='connector119'/>
-<nodeMember connectorId='connector318'/>
+<bus id='P2'>
+	<nodeMember connectorId='connector119'/>
+	<nodeMember connectorId='connector318'/>
 </bus>
-<bus id='p22'>
-<nodeMember connectorId='connector118'/>
-<nodeMember connectorId='connector319'/>
+<bus id='P22'>
+	<nodeMember connectorId='connector118'/>
+	<nodeMember connectorId='connector319'/>
 </bus>
 </buses>
 </module>
