@@ -1,15 +1,14 @@
 language: go
 
 go:
-  - 1.5
+  - "1.10"
   - 1.6
-  - tip
 
 before_install:
   - go get github.com/fritzing/fzp/bin/fzp
   - cd $GOPATH/src/github.com/fritzing/fzp/bin/fzp;
   - go get -u -v
-  - cd $GOPATH/src/github.com/fritzing/fzp/bin/fzp; go build main.go
+  - cd $GOPATH/src/github.com/fritzing/fzp/bin/fzp; go build
 
 script:
   - $GOPATH/src/github.com/fritzing/fzp/bin/./fzp -v
