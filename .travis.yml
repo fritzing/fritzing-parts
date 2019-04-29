@@ -5,11 +5,12 @@ go:
   - 1.6
 
 before_install:
+  # FIXME: Why this wired fzp/bin/fzp/fzp structure?  I think source files don't belong in a 'bin' directory. Is this golang specific?
   - go get github.com/fritzing/fzp/bin/fzp
   - cd $GOPATH/src/github.com/fritzing/fzp/bin/fzp;
   - go get -u -v
   - cd $GOPATH/src/github.com/fritzing/fzp/bin/fzp; go build
 
 script:
-  - $GOPATH/src/github.com/fritzing/fzp/bin/./fzp -v
-  - $GOPATH/src/github.com/fritzing/fzp/bin/./fzp validate -d $GOPATH/src/github.com/fritzing/fritzing-parts/core
+  - $GOPATH/src/github.com/fritzing/fzp/bin/fzp/fzp -v
+  - $GOPATH/src/github.com/fritzing/fzp/bin/fzp/fzp validate -d $GOPATH/src/github.com/fritzing/fritzing-parts/core
