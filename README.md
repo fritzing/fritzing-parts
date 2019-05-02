@@ -1,3 +1,7 @@
+[![Build Status master](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=master)](https://travis-ci.org/fritzing/fritzing-parts)
+[![Build Status nightlyParts](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=nightlyParts)](https://travis-ci.org/fritzing/fritzing-parts)
+[![Build Status CI](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=CI)](https://travis-ci.org/fritzing/fritzing-parts)
+
 This repository contains all part definitions that are shipped with the [fritzing app](https://github.com/fritzing/fritzing-app). Every fritzing installation contains a clone of this repository and is continuously updated through github, so take great care when making changes.
 
 Parts are composed of meta-data (.fzp) and related graphics (.svg). Read more on the [part folder structure and file format](https://github.com/fritzing/fritzing-app/wiki/2.1-Part-file-format).
