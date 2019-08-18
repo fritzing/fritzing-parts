@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module referenceFile="xl4015_6b5078816154b8728cafe03e7fce04a5_1.fzp" fritzingVersion="0.9.3b" moduleId="mic4576_to220_7ca7aead36ea07c96091208b0122f0cc_1">
+ <version>4</version>
+ <author>Daniël Mantione</author>
+ <title>MIC4576 (TO220)</title>
+ <label>VR</label>
+ <date>za aug. 17 2019</date>
+ <tags>
+  <tag>buck regulator</tag>
+  <tag>to220</tag>
+  <tag>microchip</tag>
+  <tag>LM2576</tag>
+ </tags>
+ <properties>
+  <property name="family">voltage regulator</property>
+  <property name="variant">MIC4576_TO220</property>
+  <property name="max current">3A</property>
+  <property name="package">TO220 [THT]</property>
+  <property name="input voltage">4V-36V</property>
+  <property name="part number">MIC4576</property>
+  <property name="oscillator frequency">200 KHz</property>
+  <property name="layer"></property>
+  <property name="subfamily">switched buck regulator</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'.SF NS Text'; font-size:13pt;">MIC4576 &lt;/span>3A 200KHz 24V Buck DC to DC converter&lt;span style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt;"> in TO220 package.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'sans-serif';">The MIC4576 improves on the LM2576 by increasing the switching frequency to 200Khz, allowing the use of smaller inductors and capacitors. It is pin-compatible.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/mic4576_to220_dd3aefdf2fb0efb1bed0a2abbbf1b0d3_1_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/mic4576_to220_dd3aefdf2fb0efb1bed0a2abbbf1b0d3_1_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/mic4576_to220_dd3aefdf2fb0efb1bed0a2abbbf1b0d3_1_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/mic4576_to220_dd3aefdf2fb0efb1bed0a2abbbf1b0d3_1_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="Pin 1">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector0terminal" layer="schematic" svgId="connector0pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector0pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector1" name="Pin 2">
+   <description>SW</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector1terminal" layer="schematic" svgId="connector1pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector1pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector2" name="Pin 3">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector2terminal" layer="schematic" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector2pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector3" name="pin 4">
+   <description>FB</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector3terminal" layer="schematic" svgId="connector3pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector3pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector4" name="Pin 5">
+   <description>EN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector4terminal" layer="schematic" svgId="connector4pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector4pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="tabpin" name="Tab">
+   <description>SW</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="tabpin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="tabterminal" layer="schematic" svgId="tabpin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="tabpin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>http://www.microchip.com/downloads/en/DeviceDoc/mic4576.pdf</url>
+ <buses>
+  <bus id="internal1"/>
+  <bus id="internal2">
+   <nodeMember connectorId="connector2"/>
+   <nodeMember connectorId="connector6"/>
+  </bus>
+ </buses>
+</module>
