@@ -15,7 +15,7 @@ See the [contribution guidelines](https://github.com/fritzing/fritzing-parts/blo
 
 ### Pull Requests
 
-Because a master-pull request results in a parts-update for all fritzing users, there is a nightly-parts branch. This branch is for testing and quality management. Please commit your pull-requests to this branch, so the master branch is clean and ready to use for all fritzing users. The nightly-parts branch gets merged from time to time after the QA is done.
+Because a master-pull request results in a parts-update for all fritzing users, there is a develop branch. This branch is for new parts, testing and quality management. Please commit your pull-requests to this branch, so the master branch is clean and ready to use for all fritzing users. The develop branch gets merged from time to time after the QA is done.
 
 ## Creating parts
 
