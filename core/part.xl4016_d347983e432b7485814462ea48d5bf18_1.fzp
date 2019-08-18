@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="xl4016_d347983e432b7485814462ea48d5bf18_1" fritzingVersion="0.9.3b" referenceFile="xl4015_6b5078816154b8728cafe03e7fce04a5_1.fzp">
+ <version>4</version>
+ <author>Daniël Mantione</author>
+ <title>XL4016</title>
+ <label>VR</label>
+ <date>za aug. 17 2019</date>
+ <tags>
+  <tag>to220</tag>
+  <tag>xlsemi</tag>
+  <tag>buck regulator</tag>
+  <tag>XL4016</tag>
+ </tags>
+ <properties>
+  <property name="family">voltage regulator</property>
+  <property name="variant">XL4016_TO220</property>
+  <property name="layer"></property>
+  <property name="max current">8A</property>
+  <property name="package">TO220 [THT]</property>
+  <property name="subfamily">switched buck regulator</property>
+  <property name="input voltage">8V-40V</property>
+  <property name="part number">XL4016</property>
+  <property name="oscillator frequency">180 KHz</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'.SF NS Text'; font-size:13pt;">XL4016 &lt;/span>&lt;span style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt;">5A 180KHz 40V Buck DC to  DC Converter in TO220-5L package.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt;">XL Semi manufacture a series of switched voltage regulators that are price competitive with industrial standard regulators, but have specifications that compete with more advanced proprietary regulators. They are commonly found on voltage converter modules sold on Chinese e-commerce websites. Makers commonly use these modules and as result it is convenient for makers to use these regulators in their own PCB designs.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt;">The XL4016 is a high efficiency buck converter with a relatively high output power. Use the XL4016 if you prefer the through hole TO220 package over the surface mount TO263 package used by the XL4005/XL4015, or if you need the 8A current capability (you may want to mount it to a dedicatd heat sink in that case).&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/xl4016_a9e75dcaefc8bacd8ee095a696df6c91_1_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/xl4016_a9e75dcaefc8bacd8ee095a696df6c91_1_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/xl4016_a9e75dcaefc8bacd8ee095a696df6c91_1_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/xl4016_a9e75dcaefc8bacd8ee095a696df6c91_1_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector name="Pin 1" type="male" id="connector0">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector0terminal" svgId="connector0pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector0pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="Pin 2" type="male" id="connector1">
+   <description>FB</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector1terminal" svgId="connector1pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector1pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="Pin 3" type="male" id="connector2">
+   <description>SW</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector2terminal" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector2pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="pin 4" type="male" id="connector3">
+   <description>VC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector3terminal" svgId="connector3pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector3pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="Pin 5" type="male" id="connector4">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector4terminal" svgId="connector4pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector4pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="Tab" type="pad" id="connector6">
+   <description>SW</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector6terminal" svgId="connector6pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector6pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>http://www.xlsemi.com/datasheet/XL4016%20datasheet.pdf</url>
+ <buses>
+  <bus id="internal1"/>
+  <bus id="internal2">
+   <nodeMember connectorId="connector2"/>
+   <nodeMember connectorId="connector6"/>
+  </bus>
+ </buses>
+</module>
