@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="TalonSRX_1" referenceFile="TalonSRX_1.fzp" fritzingVersion="fritzingVersion=0.9.3b">
+  <version>4</version>
+  <author>Nitay Megides (modified by vanepp july 2019)</author>
+  <title>Talon SRX</title>
+  <label>Mod</label>
+  <date>Fri Jan 11 2019</date>
+  <url>http://www.ctr-electronics.com/Talon%20SRX%20User's%20Guide.pdf</url>
+  <tags>
+    <tag>Talon</tag>
+    <tag>TalonSRX</tag>
+    <tag>FRC</tag>
+  </tags>
+  <properties>
+    <property name="variant">variant 1</property>
+    <property name="family">FRC</property>
+    <property name="pins">18</property>
+    <property name="part number"/>
+    <property name="layer"/>
+  </properties>
+  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Cross The Road Electronics Talon SRX Motor controller. Input voltage nominal 12 V (6 - 26V) at up to 60A. Drives one motor, and is controlled from the CAN bus.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <views>
+    <iconView>
+      <layers image="icon/TalonSRX_1_icon.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/TalonSRX_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/TalonSRX_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+  </views>
+  <connectors>
+    <connector name="V+" type="male" id="connector0">
+      <description>Input Voltage (6 - 28V) up to 60A</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector0pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector name="GND" type="male" id="connector1">
+      <description>Input Ground</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector1pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector name="M-" type="male" id="connector2">
+      <description>Motor Output -</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector2pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector name="M+" type="male" id="connector3">
+      <description>Motor Output +</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector3pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector name="CAN0 Y" type="male" id="connector4">
+      <description>CAN0 High (Yel)</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector4pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector name="CAN0 G" type="male" id="connector5">
+      <description>CAN0 Low (Grn)</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector5pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector name="CAN1 Y" type="male" id="connector6">
+      <description>CAN 1 High (Yel)</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector6pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector name="CAN1 G" type="male" id="connector7">
+      <description>CAN 1 Low (Grn)</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector7pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector8" type="male" name="Pin 1">
+      <description>Data Port +3.3V</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector8pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector8pin" layer="schematic" terminalId="connector8terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector9" type="male" name="Pin 2">
+      <description>Data Port +5V</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector9pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector9pin" layer="schematic" terminalId="connector9terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector10" type="male" name="Pin 3">
+      <description>Data Port Analog Input</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector10pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector10pin" layer="schematic" terminalId="connector10terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector11" type="male" name="Pin 4">
+      <description>Data Port Forward Limit</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector11pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector11pin" layer="schematic" terminalId="connector11terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector12" type="male" name="Pin 5">
+      <description>Data Port Quadrature B</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector12pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector12pin" layer="schematic" terminalId="connector12terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector13" type="male" name="Pin 6">
+      <description>Data Port DO NOT CONNECT</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector13pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector13pin" layer="schematic" terminalId="connector13terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector14" type="male" name="Pin 7">
+      <description>Data Port Quadrature A</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector14pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector14pin" layer="schematic" terminalId="connector14terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector15" type="male" name="Pin 8">
+      <description>Data Port Reverse Limit</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector15pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector15pin" layer="schematic" terminalId="connector15terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector16" type="male" name="Pin 9">
+      <description>Data Port Quadriture Index X</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector16pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector16pin" layer="schematic" terminalId="connector16terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector17" type="male" name="Pin 10">
+      <description>Data Port Ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector17pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector17pin" layer="schematic" terminalId="connector17terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+  </connectors>
+  <buses>
+    <bus id="gnd">
+      <nodeMember connectorId="connector1"/>
+      <nodeMember connectorId="connector17"/>
+    </bus>
+  </buses>
+</module>
