@@ -1,8 +1,8 @@
 [![Build Status master](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=master)](https://travis-ci.org/fritzing/fritzing-parts)
 *master*
 
-[![Build Status nightlyParts](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=nightlyParts)](https://travis-ci.org/fritzing/fritzing-parts)
-*nightlyParts*
+[![Build Status develop](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=develop)](https://travis-ci.org/fritzing/fritzing-parts)
+*develop*
 
 
 This repository contains all part definitions that are shipped with the [fritzing app](https://github.com/fritzing/fritzing-app). Every fritzing installation contains a clone of this repository and is continuously updated through github, so take great care when making changes.
@@ -20,3 +20,5 @@ Because a master-pull request results in a parts-update for all fritzing users, 
 ## Creating parts
 
 Learn [how to create custom parts](http://fritzing.org/learning/tutorials/creating-custom-parts/)
+
+
