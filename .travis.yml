@@ -14,7 +14,7 @@ install:
 
 script:
   - echo "run fzp validation tool in fritzing-parts/core"
-  - fzp validate -d $HOME/gopath/src/github.com/fritzing/fritzing-parts/core
+  - fzp validate --dir $HOME/gopath/src/github.com/fritzing/fritzing-parts/core
   # Disabled because some of the parts refer to invalid icons
   # - echo "validate core bin"
   # - fzb -f $HOME/gopath/src/github.com/fritzing/fritzing-parts/bins/core.fzb
