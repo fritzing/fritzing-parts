@@ -5,20 +5,20 @@
 import getopt, sys, os, os.path, re, xml.dom.minidom, xml.dom
     
 def usage():
-        print """
+        print("""
 usage:
     connectors_misnumbered.py -d [fzp folder]
     checks that connectors with integer names are correctly mapped to connector numbers
-"""
+""")
     
         
            
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         return
         
@@ -50,8 +50,8 @@ def main():
             fzpFilename = os.path.join(root, filename)
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
-            except xml.parsers.expat.ExpatError, err:
-                print str(err), fzpFilename
+            except xml.parsers.expat.ExpatError as err:
+                print(str(err), fzpFilename)
                 continue
                 
             fzp = dom.documentElement
@@ -117,11 +117,11 @@ def main():
                     mismatches.append(connector)
             
             if len(mismatches) > 0:
-                print fzpFilename, nameZero, idZero
+                print(fzpFilename, nameZero, idZero)
                 for connector in mismatches:
                     strings = connector.toxml().split("\n")
-                    print strings[0]
-                print
+                    print(strings[0])
+                print()
                     
             
 if __name__ == "__main__":
