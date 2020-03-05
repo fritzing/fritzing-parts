@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module moduleId="red_led_matrix8x8" fritzingVersion="0.2.2.b.03.04.2550" referenceFile="LBT2088AH.fzp">
- <version>4</version>
+ <version replacedby="60mm_8x8_dot_matrix_column_cathode_led_display">4</version>
  <author>Stefan Hermann</author>
  <title>LBT2088AH</title>
  <label>Disp</label>
@@ -13,7 +13,7 @@
   <tag>8x8</tag>
  </tags>
  <properties>
-  <property name="family">Matrix Display</property>
+  <property name="family">//obsolete//Matrix Display</property>
   <property name="variant">variant 1</property>
   <property name="Size">60.5mm</property>
   <property name="part number">LBT2088AH</property>
@@ -49,7 +49,7 @@ p, li { white-space: pre-wrap; }
   </pcbView>
  </views>
  <connectors>
-  <connector name="pin1" id="connector0" type="male">
+  <connector name="pin1" id="connector0" type="male" replacedby="pin 1">
    <description>pin 1</description>
    <views>
     <breadboardView>
@@ -64,7 +64,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin2" id="connector1" type="male">
+  <connector name="pin2" id="connector1" type="male" replacedby="pin 2">
    <description>pin 2</description>
    <views>
     <breadboardView>
@@ -79,7 +79,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 3" id="connector2" type="male">
+  <connector name="pin 3" id="connector2" type="male" replacedby="pin 3">
    <description>pin 3</description>
    <views>
     <breadboardView>
@@ -94,7 +94,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 4" id="connector3" type="male">
+  <connector name="pin 4" id="connector3" type="male" replacedby="pin 4">
    <description>pin 4</description>
    <views>
     <breadboardView>
@@ -109,7 +109,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 5" id="connector4" type="male">
+  <connector name="pin 5" id="connector4" type="male" replacedby="pin 5">
    <description>pin 5</description>
    <views>
     <breadboardView>
@@ -124,7 +124,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 6" id="connector6" type="male">
+  <connector name="pin 6" id="connector6" type="male" replacedby="pin 6">
    <description>pin 6</description>
    <views>
     <breadboardView>
@@ -139,7 +139,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 7" id="connector7" type="male">
+  <connector name="pin 7" id="connector7" type="male" replacedby="pin 7">
    <description>pin 7</description>
    <views>
     <breadboardView>
@@ -154,7 +154,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 8" id="connector8" type="male">
+  <connector name="pin 8" id="connector8" type="male" replacedby="pin 8">
    <description>pin 8</description>
    <views>
     <breadboardView>
@@ -169,7 +169,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 9" id="connector9" type="male">
+  <connector name="pin 9" id="connector9" type="male" replacedby="pin 9">
    <description>pin 9</description>
    <views>
     <breadboardView>
@@ -184,7 +184,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 10" id="connector10" type="male">
+  <connector name="pin 10" id="connector10" type="male" replacedby="pin 10">
    <description>pin 10</description>
    <views>
     <breadboardView>
@@ -199,7 +199,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 11" id="connector11" type="male">
+  <connector name="pin 11" id="connector11" type="male" replacedby="pin 11">
    <description>pin 11</description>
    <views>
     <breadboardView>
@@ -214,7 +214,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 12" id="connector12" type="male">
+  <connector name="pin 12" id="connector12" type="male" replacedby="pin 12">
    <description>pin 12</description>
    <views>
     <breadboardView>
@@ -229,7 +229,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 13" id="connector13" type="male">
+  <connector name="pin 13" id="connector13" type="male" replacedby="pin 13">
    <description>pin 13</description>
    <views>
     <breadboardView>
@@ -244,7 +244,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 14" id="connector14" type="male">
+  <connector name="pin 14" id="connector14" type="male" replacedby="pin 14">
    <description>pin 14</description>
    <views>
     <breadboardView>
@@ -259,7 +259,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 15" id="connector15" type="male">
+  <connector name="pin 15" id="connector15" type="male" replacedby="pin 15">
    <description>pin 15</description>
    <views>
     <breadboardView>
@@ -274,7 +274,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector name="pin 16" id="connector16" type="male">
+  <connector name="pin 16" id="connector16" type="male" replacedby="pin 16">
    <description>pin 16</description>
    <views>
     <breadboardView>
