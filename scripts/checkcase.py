@@ -2,11 +2,11 @@
 import sys, os, os.path, re, xml.dom.minidom, xml.dom,  optparse
     
 def usage():
-        print """
+        print("""
 usage:
     checkcase.py -f [fzp folder] -s [svg folder]
     ensure all fzp files case-sensitively match svg file names
-"""
+""")
     
         
            
@@ -44,8 +44,8 @@ def main():
             fzpFilename = os.path.join(root, filename)
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
-            except xml.parsers.expat.ExpatError, err:
-                print str(err), fzpFilename
+            except xml.parsers.expat.ExpatError as err:
+                print(str(err), fzpFilename)
                 continue
              
             doUpdate = False
@@ -81,9 +81,9 @@ def main():
                         try:
                             handle = open(path)
                             if not path in allsvgs:
-                                print "mismatch", fzpFilename
-                                print "\t", path
-                                print
+                                print("mismatch", fzpFilename)
+                                print("\t", path)
+                                print()
                                 thing = layers.getAttribute("image").split("/")
                                 thing[1] = lowersvgs[path.lower()]
                                 layers.setAttribute("image", "/".join(thing))
@@ -92,7 +92,7 @@ def main():
                         except:
                             pass
                 else:
-                    print "missing", fzpFilename, image
+                    print("missing", fzpFilename, image)
                 
             
             if doUpdate:
