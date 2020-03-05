@@ -7,23 +7,23 @@
 import getopt, sys, os, re
     
 def usage():
-    print """
+    print("""
 usage:
     droid.py -d [directory]
     
     directory is a folder containing .svg files.  
     In each svg file in the directory or its subfolders,
     replace 'Droid Sans' with DroidSans.
-    """
+    """)
     
   	
 	   
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
     outputDir = None
@@ -58,7 +58,7 @@ def main():
                     outfile = open(os.path.join(root, filename), "w")
                     outfile.write(svg3);
                     outfile.close()
-                    print "{0}".format(os.path.join(root, filename))
+                    print("{0}".format(os.path.join(root, filename)))
 
                 
   
