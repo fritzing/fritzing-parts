@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.2"
+  baseProfile="tiny"
+  x="0"
+  y="0"
+  width="2.4in"
+  height="2.4in"
+  viewBox="0 0 216 216"
+  xml:space="preserve">
+  <desc>60.5mm (2.4 inch) 8x8 LED matrix 1800mil pin row spacing</desc>
+  <g
+    id="breadboard"
+    stroke="none"
+    stroke-width="0.6"
+    stroke-linecap="butt"
+    stroke-linejoin="miter">
+    <g
+      fill="#111111" stroke="none">
+      <!-- plastic body, full matrix -->
+      <path
+        d="M1.7,0
+        v 35h-1.7v 35h 1.7v 74h-1.7v 35h 1.7v 35
+        h 35v 1.7h 35v-1.7h 74v 1.7h 35v-1.7h 35
+        v-35h-1.7v-35h 1.7v-74h-1.7v-35h 1.7v-35
+        h-35v 1.7h-35v-1.7h-74v 1.7h-35v-1.7
+        z"/>
+    </g>
+    <!-- offset origin to the center of the top, left led -->
+    <g
+      transform="translate(13.85,12.15)"
+      fill="white" stroke="none">
+      <!-- circles for the matrix of LEDs -->
+      <!-- top row -->
+      <circle cx="0" cy="0" r="9" />
+      <circle cx="27" cy="0" r="9" />
+      <circle cx="54" cy="0" r="9" />
+      <circle cx="81" cy="0" r="9" />
+      <circle cx="108" cy="0" r="9" />
+      <circle cx="135" cy="0" r="9" />
+      <circle cx="162" cy="0" r="9" />
+      <circle cx="189" cy="0" r="9" />
+      <circle cx="0" cy="27" r="9" />
+      <circle cx="27" cy="27" r="9" />
+      <circle cx="54" cy="27" r="9" />
+      <circle cx="81" cy="27" r="9" />
+      <circle cx="108" cy="27" r="9" />
+      <circle cx="135" cy="27" r="9" />
+      <circle cx="162" cy="27" r="9" />
+      <circle cx="189" cy="27" r="9" />
+      <circle cx="0" cy="54" r="9" />
+      <circle cx="27" cy="54" r="9" />
+      <circle cx="54" cy="54" r="9" />
+      <circle cx="81" cy="54" r="9" />
+      <circle cx="108" cy="54" r="9" />
+      <circle cx="135" cy="54" r="9" />
+      <circle cx="162" cy="54" r="9" />
+      <circle cx="189" cy="54" r="9" />
+      <circle cx="0" cy="81" r="9" />
+      <circle cx="27" cy="81" r="9" />
+      <circle cx="54" cy="81" r="9" />
+      <circle cx="81" cy="81" r="9" />
+      <circle cx="108" cy="81" r="9" />
+      <circle cx="135" cy="81" r="9" />
+      <circle cx="162" cy="81" r="9" />
+      <circle cx="189" cy="81" r="9" />
+      <circle cx="0" cy="108" r="9" />
+      <circle cx="27" cy="108" r="9" />
+      <circle cx="54" cy="108" r="9" />
+      <circle cx="81" cy="108" r="9" />
+      <circle cx="108" cy="108" r="9" />
+      <circle cx="135" cy="108" r="9" />
+      <circle cx="162" cy="108" r="9" />
+      <circle cx="189" cy="108" r="9" />
+      <circle cx="0" cy="135" r="9" />
+      <circle cx="27" cy="135" r="9" />
+      <circle cx="54" cy="135" r="9" />
+      <circle cx="81" cy="135" r="9" />
+      <circle cx="108" cy="135" r="9" />
+      <circle cx="135" cy="135" r="9" />
+      <circle cx="162" cy="135" r="9" />
+      <circle cx="189" cy="135" r="9" />
+      <circle cx="0" cy="162" r="9" />
+      <circle cx="27" cy="162" r="9" />
+      <circle cx="54" cy="162" r="9" />
+      <circle cx="81" cy="162" r="9" />
+      <circle cx="108" cy="162" r="9" />
+      <circle cx="135" cy="162" r="9" />
+      <circle cx="162" cy="162" r="9" />
+      <circle cx="189" cy="162" r="9" />
+      <circle cx="0" cy="189" r="9" />
+      <circle cx="27" cy="189" r="9" />
+      <circle cx="54" cy="189" r="9" />
+      <circle cx="81" cy="189" r="9" />
+      <circle cx="108" cy="189" r="9" />
+      <circle cx="135" cy="189" r="9" />
+      <circle cx="162" cy="189" r="9" />
+      <circle cx="189" cy="189" r="9" />
+    </g>
+    <!-- offset origin to the top left of the top, left connection pin (16) -->
+    <g transform="translate(75.35,24.15)"
+      fill="#A0A0A0" stoke="none">
+      <rect id="connector15pin" x="0" y="0" width="3" height="3" />
+      <rect id="connector14pin" x="9" y="0" width="3" height="3" />
+      <rect id="connector13pin" x="18" y="0" width="3" height="3" />
+      <rect id="connector12pin" x="27" y="0" width="3" height="3" />
+      <rect id="connector11pin" x="36" y="0" width="3" height="3" />
+      <rect id="connector10pin" x="45" y="0" width="3" height="3" />
+      <rect id="connector9pin" x="54" y="0" width="3" height="3" />
+      <rect id="connector8pin" x="63" y="0" width="3" height="3" />
+      <!-- 1800mils -->
+      <g transform="translate(0,162)">
+        <rect id="connector0pin" x="00" y="0" width="3" height="3" />
+        <rect id="connector1pin" x="09" y="0" width="3" height="3" />
+        <rect id="connector2pin" x="18" y="0" width="3" height="3" />
+        <rect id="connector3pin" x="27" y="0" width="3" height="3" />
+        <rect id="connector4pin" x="36" y="0" width="3" height="3" />
+        <rect id="connector5pin" x="45" y="0" width="3" height="3" />
+        <rect id="connector6pin" x="54" y="0" width="3" height="3" />
+        <rect id="connector7pin" x="63" y="0" width="3" height="3" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -6,18 +6,18 @@
 import getopt, sys, os, os.path, re, xml.dom.minidom, xml.dom
     
 def usage():
-        print """
+        print("""
 usage:
     coppersvgparent.py -d [svg folder]
     looks for files where copper0/copper1 are not parent/child or child/parent
-"""
+""")
            
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
         
@@ -37,7 +37,9 @@ def main():
     if(not(dir)):
         usage()
         sys.exit(2)            
-            
+        
+
+    hasErrors = 0    
     for root, dirs, files in os.walk(dir, topdown=False):
         for filename in files:
             if not filename.endswith(".svg"): 
@@ -46,8 +48,8 @@ def main():
             svgFilename = os.path.join(root, filename)
             try:
                 dom = xml.dom.minidom.parse(svgFilename)
-            except xml.parsers.expat.ExpatError, err:
-                print str(err), svgFilename
+            except xml.parsers.expat.ExpatError as err:
+                print(str(err), svgFilename)
                 continue
                 
             svg = dom.documentElement
@@ -72,7 +74,11 @@ def main():
             if copper0.parentNode == copper1:
                 continue
                 
-            print "not parents", svgFilename
+            print("not parents", svgFilename)
+            hasErrors += 1
+
+    if (hasErrors > 0):
+        sys.exit(127)
             
 if __name__ == "__main__":
         main()
