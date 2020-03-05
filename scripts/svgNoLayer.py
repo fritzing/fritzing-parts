@@ -7,21 +7,21 @@
 import getopt, sys, os, re, xml.dom.minidom, xml.dom
     
 def usage():
-    print """
+    print("""
 usage:
     svgNoLayer.py -d [directory]
     
     <directory> is a folder, with subfolders, containing .svg files.  In each svg file in the directory or its children 
     look for id='[layer]' where layer is the set of all layers in fritzing
-    """
+    """)
 layers = ["icon","breadboardbreadboard", "breadboard", "breadboardWire", "breadboardLabel", "breadboardNote", "breadboardRuler", "schematic", "schematicWire","schematicTrace","schematicLabel", "schematicRuler", "board", "ratsnest", "silkscreen", "silkscreenLabel", "groundplane", "copper0", "copper0trace", "groundplane1", "copper1", "copper1trace", "silkscreen0", "silkscreen0Label", "soldermask",  "outline",  "keepout", "partimage", "pcbNote", "pcbRuler"]
 
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
     outputDir = None
@@ -55,18 +55,18 @@ def main():
                         break
                         
                 if match == None:
-                    print "{0} {1}".format(os.path.join(root, filename), "has no layer ids")
+                    print("{0} {1}".format(os.path.join(root, filename), "has no layer ids"))
                 else:
         
                    msg = parseIDs(svg)
                    if (msg != None):
-                        print "{0} {1}".format(os.path.join(root, filename), msg)
+                        print("{0} {1}".format(os.path.join(root, filename), msg))
                         
 
 def parseIDs(svg):
     try:
         dom = xml.dom.minidom.parseString(svg)
-    except xml.parsers.expat.ExpatError, err:
+    except xml.parsers.expat.ExpatError as err:
         return "xml error " + str(err)
     
     root = dom.documentElement

@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.2"
+  baseProfile="tiny"
+  x="0"
+  y="0"
+  width="1.5in"
+  height="1.5in"
+  viewBox="0 0 136 136"
+  xml:space="preserve">
+  <desc>38mm (1.5 inch) 8x8 LED matrix 1100mil pin row spacing</desc>
+  <g
+    id="breadboard"
+    stroke="none"
+    stroke-width="0.6"
+    stroke-linecap="butt"
+    stroke-linejoin="miter">
+    <g
+      fill="#111111" stroke="none">
+      <!-- plastic body, full matrix -->
+      <path
+        d="M1,0
+          v 65h-1v 5h 1v 65
+          h 65v 1h 5v-1h 65
+          v-65h-1v-5h 1v-65
+          h-65v 1h-5v-1z"/>
+    </g>
+    <!-- offset origin to the center of the top, left led -->
+    <!-- 135/(8*2) = 8.4375 ¦ 90*(((38-33.25)/2)/25.4) = 8.4154 «+1 horizontal» -->
+    <g
+      transform="translate(9.44,8.44)"
+      fill="white" stroke="none">
+      <!-- 135/8 = 16.875 * [0…7] ¦ 90*(4.75/25.4) = 16.831, r = 90*0.146/2 = 6.57 -->
+      <!-- circles for the matrix of LEDs -->
+      <!-- top row -->
+      <circle cx="000.00" cy="00.00" r="6.57" />
+      <circle cx="016.88" cy="00.00" r="6.57" />
+      <circle cx="033.75" cy="00.00" r="6.57" />
+      <circle cx="050.63" cy="00.00" r="6.57" />
+      <circle cx="067.50" cy="00.00" r="6.57" />
+      <circle cx="084.38" cy="00.00" r="6.57" />
+      <circle cx="101.25" cy="00.00" r="6.57" />
+      <circle cx="118.13" cy="00.00" r="6.57" />
+
+      <circle cx="000.00" cy="16.88" r="6.57" />
+      <circle cx="016.88" cy="16.88" r="6.57" />
+      <circle cx="033.75" cy="16.88" r="6.57" />
+      <circle cx="050.63" cy="16.88" r="6.57" />
+      <circle cx="067.50" cy="16.88" r="6.57" />
+      <circle cx="084.38" cy="16.88" r="6.57" />
+      <circle cx="101.25" cy="16.88" r="6.57" />
+      <circle cx="118.13" cy="16.88" r="6.57" />
+
+      <circle cx="000.00" cy="33.75" r="6.57" />
+      <circle cx="016.88" cy="33.75" r="6.57" />
+      <circle cx="033.75" cy="33.75" r="6.57" />
+      <circle cx="050.63" cy="33.75" r="6.57" />
+      <circle cx="067.50" cy="33.75" r="6.57" />
+      <circle cx="084.38" cy="33.75" r="6.57" />
+      <circle cx="101.25" cy="33.75" r="6.57" />
+      <circle cx="118.13" cy="33.75" r="6.57" />
+
+      <circle cx="000.00" cy="50.63" r="6.57" />
+      <circle cx="016.88" cy="50.63" r="6.57" />
+      <circle cx="033.75" cy="50.63" r="6.57" />
+      <circle cx="050.63" cy="50.63" r="6.57" />
+      <circle cx="067.50" cy="50.63" r="6.57" />
+      <circle cx="084.38" cy="50.63" r="6.57" />
+      <circle cx="101.25" cy="50.63" r="6.57" />
+      <circle cx="118.13" cy="50.63" r="6.57" />
+
+      <circle cx="000.00" cy="67.50" r="6.57" />
+      <circle cx="016.88" cy="67.50" r="6.57" />
+      <circle cx="033.75" cy="67.50" r="6.57" />
+      <circle cx="050.63" cy="67.50" r="6.57" />
+      <circle cx="067.50" cy="67.50" r="6.57" />
+      <circle cx="084.38" cy="67.50" r="6.57" />
+      <circle cx="101.25" cy="67.50" r="6.57" />
+      <circle cx="118.13" cy="67.50" r="6.57" />
+
+      <circle cx="000.00" cy="84.38" r="6.57" />
+      <circle cx="016.88" cy="84.38" r="6.57" />
+      <circle cx="033.75" cy="84.38" r="6.57" />
+      <circle cx="050.63" cy="84.38" r="6.57" />
+      <circle cx="067.50" cy="84.38" r="6.57" />
+      <circle cx="084.38" cy="84.38" r="6.57" />
+      <circle cx="101.25" cy="84.38" r="6.57" />
+      <circle cx="118.13" cy="84.38" r="6.57" />
+
+      <circle cx="000.00" cy="101.25" r="6.57" />
+      <circle cx="016.88" cy="101.25" r="6.57" />
+      <circle cx="033.75" cy="101.25" r="6.57" />
+      <circle cx="050.63" cy="101.25" r="6.57" />
+      <circle cx="067.50" cy="101.25" r="6.57" />
+      <circle cx="084.38" cy="101.25" r="6.57" />
+      <circle cx="101.25" cy="101.25" r="6.57" />
+      <circle cx="118.13" cy="101.25" r="6.57" />
+
+      <circle cx="000.00" cy="118.13" r="6.57" />
+      <circle cx="016.88" cy="118.13" r="6.57" />
+      <circle cx="033.75" cy="118.13" r="6.57" />
+      <circle cx="050.63" cy="118.13" r="6.57" />
+      <circle cx="067.50" cy="118.13" r="6.57" />
+      <circle cx="084.38" cy="118.13" r="6.57" />
+      <circle cx="101.25" cy="118.13" r="6.57" />
+      <circle cx="118.13" cy="118.13" r="6.57" />
+    </g>
+    <!-- offset origin to the top left of the top, left connection pin (16) -->
+    <!-- (135-(7*9))/2 = 36 , 135*(38-27.94)/(38*2) = 17.87 «+1 horizontal» «-(3/2)» -->
+    <!-- 90*(1.5-0.7)/2 = 36, 135*(1.5-1.1)/(1.5*2) = 18 -->
+    <!--                    , 90*(1.5-1.1)/2 = 18 -->
+    <g transform="translate(35.5,16.5)"
+      fill="#A0A0A0" stoke="none">
+      <rect id="connector15pin" x="00" y="0" width="3" height="3" />
+      <rect id="connector14pin" x="09" y="0" width="3" height="3" />
+      <rect id="connector13pin" x="18" y="0" width="3" height="3" />
+      <rect id="connector12pin" x="27" y="0" width="3" height="3" />
+      <rect id="connector11pin" x="36" y="0" width="3" height="3" />
+      <rect id="connector10pin" x="45" y="0" width="3" height="3" />
+      <rect id="connector9pin"  x="54" y="0" width="3" height="3" />
+      <rect id="connector8pin"  x="63" y="0" width="3" height="3" />
+      <!-- 1100mils -->
+      <g transform="translate(0,99)">
+        <rect id="connector0pin" x="00" y="0" width="3" height="3" />
+        <rect id="connector1pin" x="09" y="0" width="3" height="3" />
+        <rect id="connector2pin" x="18" y="0" width="3" height="3" />
+        <rect id="connector3pin" x="27" y="0" width="3" height="3" />
+        <rect id="connector4pin" x="36" y="0" width="3" height="3" />
+        <rect id="connector5pin" x="45" y="0" width="3" height="3" />
+        <rect id="connector6pin" x="54" y="0" width="3" height="3" />
+        <rect id="connector7pin" x="63" y="0" width="3" height="3" />
+      </g>
+    </g>
+  </g>
+</svg>
