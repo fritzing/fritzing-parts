@@ -6,18 +6,18 @@
 import getopt, sys, os, os.path, re, xml.dom.minidom, xml.dom
     
 def usage():
-        print """
+        print("""
 usage:
     invisibleconnectors.py -d [svg folder] 
     looks for connector-like svg elements with no fill or stroke
-"""
+""")
            
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
         
@@ -46,8 +46,8 @@ def main():
             svgFilename = os.path.join(root, filename)
             try:
                 dom = xml.dom.minidom.parse(svgFilename)
-            except xml.parsers.expat.ExpatError, err:
-                print str(err), svgFilename
+            except xml.parsers.expat.ExpatError as err:
+                print(str(err), svgFilename)
                 continue
                
             changed = 0
@@ -84,7 +84,7 @@ def main():
                     continue
                     
 
-                print "invisible connector", svgFilename  
+                print("invisible connector", svgFilename)
                         
                      
                
