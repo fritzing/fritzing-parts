@@ -7,23 +7,23 @@
 import getopt, sys, os, re
     
 def usage():
-    print """
+    print("""
 usage:
     copperNoSilkscreen.py -d [directory]
     
     directory is a folder containing .fzp files.  
     In each fzp file in the directory or its subfolders,
     look for "copper" and "silkscreen".
-    """
+    """)
     
     
        
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
     outputDir = None
@@ -42,7 +42,8 @@ def main():
     if(not(outputDir)):
         usage()
         sys.exit(2)
-        
+     
+    hasError = 0   
     
     for root, dirs, files in os.walk(outputDir, topdown=False):
         for filename in files:
@@ -54,12 +55,16 @@ def main():
                 silkscreenMatch = re.search('silkscreen', fzp)
                 
                 if (copperMatch == None):
-                    print "{0} {1}".format(os.path.join(root, filename), "no copper")
+                    print("{0} {1}".format(os.path.join(root, filename), "no copper"))
+                    hasError += 1
                 elif (silkscreenMatch == None):
-                    print "{0} {1}".format(os.path.join(root, filename), "no silkscreen")
-
+                    print("{0} {1}".format(os.path.join(root, filename), "no silkscreen"))
+                    hasError += 1
+                else:
+                    print("{0} {1}".format(os.path.join(root, filename), "ok"))
                 
-  
+    if (hasError > 0):
+        sys.exit(127)
     
 if __name__ == "__main__":
     main()
