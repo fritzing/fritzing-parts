@@ -30,8 +30,8 @@ def main():
             fzpFilename = os.path.join(root, filename)
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
-            except xml.parsers.expat.ExpatError, err:
-                print str(err), fzpFilename
+            except xml.parsers.expat.ExpatError as err:
+                print(str(err), fzpFilename)
                 continue
                 
             fzp = dom.documentElement
@@ -57,7 +57,7 @@ def main():
                     
     names.sort()
     for name in names:
-        print name
+        print(name)
 
                 
 def getText(nodelist):

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.2"
+  baseProfile="tiny"
+  x="0"
+  y="0"
+  width="1.248in"
+  height="1.248in"
+  viewBox="0 0 125 125"
+  xml:space="preserve">
+  <desc>32mm (1.2 inch) 8x8 LED matrix footprint with standard connection pads</desc>
+  <g
+    id="silkscreen"
+    style="stroke:black;stroke-width:2;fill:none;stroke-dasharray:none">
+    <rect x="1" y="1" width="123" height="123" />
+  </g>
+  <!-- offset origin to the center of the top, left pin (16) -->
+  <!-- (100*((31.7/25.4)-0.7)/2) = 27.4016 , (100*((31.7-24)/25.4)/2) = 15.1575 -->
+  <g
+    transform="translate(27.4,15.16)"
+    id="copper1">
+    <g
+      id="copper0">
+      <!-- standard (recommended minimum) through hole connection pads -->
+      <g
+        style="fill:none;stroke:#f7bd13;stroke-width:2" >
+        <circle id="connector15pad" r="3" cx="0" cy="0" />
+        <circle id="connector14pad" r="3" cx="10" cy="0" />
+        <circle id="connector13pad" r="3" cx="20" cy="0" />
+        <circle id="connector12pad" r="3" cx="30" cy="0" />
+        <circle id="connector11pad" r="3" cx="40" cy="0" />
+        <circle id="connector10pad" r="3" cx="50" cy="0" />
+        <circle id="connector9pad" r="3" cx="60" cy="0" />
+        <circle id="connector8pad" r="3" cx="70" cy="0" />
+        <!-- 100*24/25.4 = 94.4882 = 944.88 mils -->
+        <g
+          transform="translate(0,94.49)">
+          <circle id="connector0pad" r="3" cx="0"  cy="0" />
+          <!-- pin 1 special marker pad -->
+          <rect x="-3" y="-3" width="6" height="6" />
+          <circle id="connector1pad" r="3" cx="10" cy="0" />
+          <circle id="connector2pad" r="3" cx="20" cy="0" />
+          <circle id="connector3pad" r="3" cx="30" cy="0" />
+          <circle id="connector4pad" r="3" cx="40" cy="0" />
+          <circle id="connector5pad" r="3" cx="50" cy="0" />
+          <circle id="connector6pad" r="3" cx="60" cy="0" />
+          <circle id="connector7pad" r="3" cx="70" cy="0" />
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g id="keepout"/>
+  <g id="soldermask"/>
+  <g id="outline"/>
+</svg>
