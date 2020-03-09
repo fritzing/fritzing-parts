@@ -7,23 +7,23 @@
 import getopt, sys, os, re
     
 def usage():
-    print """
+    print("""
 usage:
     droid.py -d [directory] -f [font1] -f [font2] ...
     
     directory is a folder containing .svg files.  
     In each svg file in the directory or its subfolders,
     look for fonts that aren't in the list
-    """
+    """)
     
   	
 	   
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:f:", ["help", "directory", "font"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
     outputDir = None
@@ -69,7 +69,7 @@ def listMatches(matches, fonts, root, filename):
                 gotone = 1;
                 break;
         if not gotone:
-            print "{0}::{1}".format(os.path.join(root, filename), m)
+            print("{0}::{1}".format(os.path.join(root, filename), m))
                
   
     
