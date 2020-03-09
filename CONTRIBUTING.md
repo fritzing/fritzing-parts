@@ -25,7 +25,7 @@
 
 
 4. Then test and push!  
-   *please commit your pull-requests to the nightlyParts branch*
+   *please commit your pull-requests to the develop branch*
 
     In order to make Fritzing recognize the new part, run Fritzing and select _Part > Rebuild parts database..._. The part will now be included in the database/index, and become available in the library window.
 
