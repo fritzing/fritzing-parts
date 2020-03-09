@@ -1,36 +1,48 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<module fritzingVersion="0.9.4" moduleId="Heltec_Wireless_Stick" referenceFile="Heltec_Wireless_Stick.fzp">
+<module fritzingVersion="0.9.4" moduleId="Heltec_Wireless_Stick">
   <version>1</version>
   <author>Peter Harrison</author>
   <title>Heltec Wireless Stick</title>
-  <label>Heltec Wireless Stick</label>
-  <date>Tue Mar 3 2020</date>
+  <label>Mod</label>
+  <date>Mon Mar 9 2020</date>
   <tags>
     <tag>Heltec</tag>
-    <tag>Bluetooth</tag>
-    <tag>Wirelss Stick</tag>
-    <tag>Gecko</tag>
     <tag>ESP32</tag>
-    <tag>BLE</tag>
+    <tag>SX127x</tag>
+    <tag>CP2102</tag>
+    <tag>Wireless Stick</tag>
+    <tag>Gecko</tag>
     <tag>WiFi</tag>
+    <tag>Bluetooth</tag>
+    <tag>BLE</tag>
     <tag>LoRa</tag>
     <tag>LoRaWAN</tag>
     <tag>OLED</tag>
   </tags>
   <properties>
-    <property name="variant">variant 1</property>
-    <property name="family">Heltec LoRa</property>
-    <property name="module">Wireless Stick</property>
+	<property name="family">Microcontroller Board (ESP32)</property>
+    <property name="type">Heltec LoRa</property>
+    <property name="model">Wireless Stick</property>
     <property name="part number">HTIT-WS</property>
     <property name="pins">34</property>
-    <property name="layer"/>
+	<property name="revision"/>
   </properties>
   <taxonomy>part.devmod.34.pins</taxonomy>
-  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Wireless Stick is a part of the Heltec LoRa series and incorporates an ESP32 processor, WiFi, SX1276 LoRa and Bluetooth with an integrated CP2102 USB to serial port interface and onboard SHT1.25 battery interface with integrated lithium battery management system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <description>
+	 &lt;p&gt;
+		Wireless Stick (Gecko Board) is a part of the Heltec LoRa series and incorporates an ESP32 processor, WiFi, SX1276 LoRa and Bluetooth with an integrated CP2102 USB to serial port interface and onboard SHT1.25 battery interface with integrated lithium battery management system.
+	 &lt;/p&gt;&lt;
+	 &lt;strong&gt;Links: &lt;/strong&gt;&lt;/p&gt;
+	 
+	 &lt;ul&gt;
+	   &lt;li&gt;
+		 &lt;a href=&quot;https://heltec.org/project/wireless-stick/&quot; target=&quot;_blank&quot;&gt; Heltec Wireless Stick product page&lt;/a&gt;
+	   &lt;/li&gt;
+	   &lt;li&gt;
+		 &lt;a href=&quot;https://github.com/HelTecAutomation&quot; target=&quot;_blank&quot;&gt;Github &lt;/a&gt;&lt;/li&gt;
+	   &lt;/li&gt;
+	 &lt;/ul&gt;
+  </description>
   <views>
     <iconView>
       <layers image="icon/Heltec_Wireless_Stick_icon.svg">
