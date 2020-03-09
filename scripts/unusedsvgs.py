@@ -2,20 +2,20 @@
 import getopt, sys, os, os.path, re, xml.dom.minidom, xml.dom
     
 def usage():
-        print """
+        print("""
 usage:
     unusedsvgs.py -f [fzp folder] -s [svg folder]
     lists orphan svgs
-"""
+""")
     
         
            
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hf:s:", ["help", "fzp", "svg"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         return
         
@@ -33,16 +33,16 @@ def main():
             usage()
             return
         else:
-            print "unhandled option", o
+            print("unhandled option", o)
             return
             
     if not fzpdir:
-        print "missing fzp folder argument"
+        print("missing fzp folder argument")
         usage()
         return           
             
     if not svgdir:
-        print "missing svg folder argument"
+        print("missing svg folder argument")
         usage()
         return  
 
@@ -68,8 +68,8 @@ def main():
             fzpFilename = os.path.join(root, filename)
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
-            except xml.parsers.expat.ExpatError, err:
-                print str(err), fzpFilename
+            except xml.parsers.expat.ExpatError as err:
+                print(str(err), fzpFilename)
                 continue
                 
             fzp = dom.documentElement
@@ -85,7 +85,7 @@ def main():
                             fn = os.path.basename(image)
                             try:
                                 if fn in viewFiles:
-                                    print "{0} uses {1}/{2}".format(os.path.basename(root), dn, fn)
+                                    print("{0} uses {1}/{2}".format(os.path.basename(root), dn, fn))
                                     viewFiles.remove(fn)
                             except:
                                 pass
@@ -93,7 +93,7 @@ def main():
                         
     for key in svgfiles.keys():
         for name in svgfiles.get(key):
-            print "unused {0}/{1}".format(key, name)
+            print("unused {0}/{1}".format(key, name))
 
             
 if __name__ == "__main__":

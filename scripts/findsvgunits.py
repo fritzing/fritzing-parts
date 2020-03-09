@@ -6,18 +6,18 @@
 import getopt, sys, os, os.path, re, xml.dom.minidom, xml.dom
     
 def usage():
-        print """
+        print("""
 usage:
     findsvgunits.py -d [svg folder]
     looks for <svg> width and height attributes with no units or px units
-"""
+""")
            
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
         
@@ -37,7 +37,8 @@ def main():
     if(not(dir)):
         usage()
         sys.exit(2)            
-            
+           
+    hasErrors = 0 
     for root, dirs, files in os.walk(dir, topdown=False):
         for filename in files:
             if not filename.endswith(".svg"): 
@@ -50,8 +51,8 @@ def main():
             
             try:
                 dom = xml.dom.minidom.parse(svgFilename)
-            except xml.parsers.expat.ExpatError, err:
-                print str(err), svgFilename
+            except xml.parsers.expat.ExpatError as err:
+                print(str(err), svgFilename)
                 continue
                 
             svg = dom.documentElement
@@ -70,16 +71,20 @@ def main():
                 
             descr = noIllustratorString
             s = dom.toxml("UTF-8")
-            if "Generator: Adobe Illustrator" in s:
+            if b"Generator: Adobe Illustrator" in s:
                 descr = illustratorString
             
             if not (w.endswith("px") or h.endswith("px")):
-                print "no units {0} {1}".format(descr, printFilename)  
+                print("no units {0} {1}".format(descr, printFilename))
+                hasErrors +=  1
                 continue
                 
-            print "px units {0} {1}".format(descr, printFilename)  
+            print("px units {0} {1}".format(descr, printFilename))
                                                     
             
+    if (hasErrors > 0):
+        sys.exit(127)
+    
 if __name__ == "__main__":
         main()
 
