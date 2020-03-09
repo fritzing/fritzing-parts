@@ -1,32 +1,42 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<module fritzingVersion="0.9.4" moduleId="Heltec_WiFi_LoRa_32_V1" referenceFile="Heltec_WiFi_LoRa_32_V1.fzp">
+<module fritzingVersion="0.9.4" moduleId="Heltec_WiFi_LoRa_32_V1">
   <version>1</version>
   <author>Peter Harrison</author>
-  <title>Heltec WiFi LoRa 32</title>
-  <label>Heltec WiFi LoRa 32</label>
-  <date>Tue Mar 3 2020</date>
+  <title>Heltec WiFi LoRa 32 V1</title>
+  <label>Mod</label>
+  <date>Mon Mar 9 2020</date>
   <tags>
     <tag>Heltec</tag>
+    <tag>ESP32</tag>
+    <tag>SX1276</tag>
     <tag>WiFi</tag>
     <tag>LoRa</tag>
+    <tag>Bluetooth</tag>
     <tag>BLE</tag>
-    <tag>ESP32</tag>
   </tags>
   <properties>
-    <property name="variant">variant 1</property>
-    <property name="family">Heltec LoRa</property>
+	<property name="family">Microcontroller Board (ESP32)</property>
+    <property name="type">Heltec LoRa</property>
     <property name="part number">HTIT-WB32LA</property>
-    <property name="module">WiFi LoRa 32 V1.0</property>
     <property name="pins">36</property>
-    <property name="layer"/>
+	<property name="revision">V1</property>
   </properties>
   <taxonomy>part.devmod.36.pins</taxonomy>
-  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Heltec WiFi LoRa 32&lt;/p&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;WiFi LoRa 32 is a classic IoT dev-board designed &amp;amp; produced by Heltec Automation(TM). It’s a highly integrated product based on ESP32 + SX127x, it has Wi-Fi, BLE, LoRa functions, also Li-Po battery management system, 0.96″ OLED are also included. It’s the best choice for smart cities, smart farms, smart home, and IoT makers.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <description>
+	&lt;p&gt;
+		 The Heltec WiFi LoRa 32 is an IoT development board designed & produced by Heltec Automation. It’s a highly integrated product based on the Espressif ESP32 and Semtech SX127x modules. The board includes WiFi, Bluetooth and LoRa functions, as well as a 0.96″ OLED display and a Li-Po battery management system.
+	 &lt;/p&gt;
+	 &lt;strong&gt;Links: &lt;/strong&gt;&lt;/p&gt;
+
+	 &lt;ul&gt;
+	   &lt;li&gt;
+		 &lt;a href=&quot;https://heltec.org/project/wifi-lora-32/&quot; target=&quot;_blank&quot;&gt; Heltec WiFi LoRa 32 product page&lt;/a&gt;
+	   &lt;/li&gt;
+	   &lt;li&gt;
+		 &lt;a href=&quot;https://github.com/HelTecAutomation&quot; target=&quot;_blank&quot;&gt;Github &lt;/a&gt;&lt;/li&gt;
+	   &lt;/li&gt;
+	 &lt;/ul&gt;
+  </description>
   <views>
     <iconView>
       <layers image="icon/Heltec_WiFi_LoRa_32_V1_icon.svg">
