@@ -2,18 +2,20 @@
 import getopt, sys, os, os.path, re, xml.dom.minidom, xml.dom
     
 def usage():
-        print """
+        print("""
 usage:
     listModuleIDs.py -f { fz file }
     looks for files where copper0/copper1 are not parent/child or child/parent
-"""
+
+    Warning: This script is incomplete, no reference to copper0 or copper1 is done below.
+""")
            
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hf:", ["help", "file"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         return
         
@@ -36,8 +38,8 @@ def main():
             
     try:
         dom = xml.dom.minidom.parse(filename)
-    except xml.parsers.expat.ExpatError, err:
-        print str(err), filename
+    except xml.parsers.expat.ExpatError as err:
+        print(str(err), filename)
         return
         
     moduleIDs = {}
@@ -51,8 +53,8 @@ def main():
             moduleIDs[moduleID] = path
         
     for moduleID in moduleIDs.keys():
-        print moduleID
-        print "    ",moduleIDs[moduleID]
+        print(moduleID)
+        print("    ",moduleIDs[moduleID])
 
 
 if __name__ == "__main__":
