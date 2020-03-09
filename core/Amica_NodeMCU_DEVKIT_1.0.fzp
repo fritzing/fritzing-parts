@@ -1,32 +1,39 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<module fritzingVersion="0.9.4" referenceFile="Amica_NodeMCU_DEVKIT_1.0.fzp" moduleId="Amica_NodeMCU_DEVKIT_1.0">
+<module fritzingVersion="0.9.4" moduleId="Amica_NodeMCU_DEVKIT_1.0">
   <version>1</version>
   <author>Peter Harrison</author>
   <title>Amica NodeMCU DEVKIT 1.0</title>
-  <label>Amica NodeMCU DEVKIT 1.0</label>
-  <date>Mon Jan 6 2020</date>
+  <label>Mod</label>
+  <date>Mon Mar 9 2020</date>
   <tags>
     <tag>Amica</tag>
+    <tag>NodeMCU</tag>
     <tag>ESP-12E</tag>
     <tag>ESP8266</tag>
     <tag>DEVKIT</tag>
-    <tag>NodeMCU</tag>
   </tags>
   <properties>
-    <property name="variant">variant 1</property>
-    <property name="family">ESP8266 NodeMCU</property>
-    <property name="label">Amica NodeMCU 1.0</property>
+    <property name="family">Microcontroller Board (ESP8266)</property>
+    <property name="type">NodeMCU</property>
+    <property name="model">Amica</property>
     <property name="part number"/>
     <property name="pins">30</property>
-    <property name="layer"/>
+    <property name="variant"/>
   </properties>
   <taxonomy>part.devmod.30.pins</taxonomy>
-  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Amica NodeMCU DEVKIT 1.0&lt;/p&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Development Kit based on ESP8266 ESP-12E, integating GPIO, PWM, IIC, 1-Wire and ADC all in one board.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <description>	&lt;p&gt;Amica NodeMCU DEVKIT 1.0&lt;/p&gt;
+	  &lt;p&gt;Development Kit based on ESP8266 ESP-12E, integating GPIO, PWM, IIC, 1-Wire and ADC all in one board.&lt;/p&gt;
+	 &lt;strong&gt;Links: &lt;/strong&gt;&lt;/p&gt;
+
+	 &lt;ul&gt;
+	   &lt;li&gt;
+		 &lt;a href=&quot;https://www.nodemcu.com/&quot; target=&quot;_blank&quot;&gt; NodeMCU information page&lt;/a&gt;
+	   &lt;/li&gt;
+	   &lt;li&gt;
+		 &lt;a href=&quot;https://github.com/nodemcu&quot; target=&quot;_blank&quot;&gt;Github &lt;/a&gt;&lt;/li&gt;
+	   &lt;/li&gt;
+	 &lt;/ul&gt;
+  </description>
   <views>
     <iconView>
       <layers image="icon/Amica_NodeMCU_DEVKIT_1.0_icon.svg">
