@@ -15,6 +15,7 @@
         <property name="voltage">4.8V</property>
     </properties>
     <description>A 4 x AAA battery pack (4.8 Volts with recharables)</description>
+    <spice><line>V{instanceTitle} {net connector1} {net connector0} DC {voltage}</line></spice>
     <views>
         <iconView>
             <layers image="icon/batterypack_2xAA.svg">

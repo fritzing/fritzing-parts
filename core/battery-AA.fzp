@@ -14,6 +14,7 @@
         <property name="voltage" showInLabel="yes">3V</property>
     </properties>
     <description>Your standard 2x AA battery pack (3 Volts)</description>
+    <spice><line>V{instanceTitle} {net connector1} {net connector0} DC {voltage}</line></spice>
     <views>
         <iconView>
             <layers image="icon/batterypack_2xAA.svg">
