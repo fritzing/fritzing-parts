@@ -1,33 +1,24 @@
 
-import sys, os, os.path, re, optparse
-    
-def usage():
-        print("""
-usage:
-    checkascii.py -f [folder] 
-    recursively checks that all filenames in folder are ascii
-""")
-    
+import sys
+import os
+import os.path
+import re
+import argparse
+
 def main():
-    parser = optparse.OptionParser()
-    parser.add_option('-f', '--folder', dest="folder" )
-    (options, args) = parser.parse_args()
-        
-    if not options.folder:
-        usage()
-        parser.error("folder argument not given")
-        return       
-            
-    for root, dirs, files in os.walk(options.folder, topdown=False):
+    parser = argparse.ArgumentParser(description="recursively checks that all filenames in folder are ascii")
+    parser.add_argument('folder')
+    args = parser.parse_args()
+
+    ret = 0
+    for root, dirs, files in os.walk(args.folder, topdown=False):
         for filename in files:
             remainder = re.sub('[ -~]', '', filename)
-            if len(remainder) > 0:
+            if remainder:
                 print("not ascii", os.path.join(root, filename))
+                ret = -1
             
-                
+    sys.exit(ret)
 
 if __name__ == "__main__":
         main()
-
-
-
