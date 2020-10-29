@@ -7,3 +7,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: python scripts/checkascii.py .
       - run: python scripts/checkcase.py
+      - run: python scripts/connectors_misnumbered.py -d .

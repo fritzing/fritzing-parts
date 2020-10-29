@@ -14,6 +14,82 @@ usage:
     checks that connectors with integer names are correctly mapped to connector numbers
 """)
 
+def skip(filename):
+    skip_files = [
+        "./core/AlphaNumericDisplay-v13.fzp",
+        "./core/Arduino_Esplora.fzp",
+        "./core/arduinoXbeere.fzp",
+        "./core/ArduPilotMega_v15.fzp",
+        "./core/Bean_revE.fzp",
+        "./core/CAR_RELE_NVF4-2.fzp",
+        "./core/din-5_midi_connector.fzp",
+        "./core/electromechanical-battery-2-aaa.fzp",
+        "./core/electromechanical-battery-2-aa.fzp",
+        "./core/ESP8266-Thing-Dev.fzp",
+        "./core/HiFive1.fzp",
+        "./core/jlpcb-089.fzp",
+        "./core/LilyPad-XBee-v15.fzp",
+        "./core/ludusProtoShieldWireless.fzp",
+        "./core/monacor_ltr_110_linetransformer.fzp",
+        "./core/MyoWare_Proto_Shield.fzp",
+        "./core/pinoccio-proto.fzp",
+        "./core/Power Screwshield 1.0a.fzp",
+        "./core/ProtoShield-Mini-v12.fzp",
+        "./core/RN41-v14.fzp",
+        "./core/Rotoshield-1.0a.fzp",
+        "./core/SMD_BC847.fzp",
+        "./core/SMD_BC857.fzp",
+        "./core/Sony_Spresense_ext_board_1.fzp",
+        "./core/sparkfun-connectors-db25-hp.fzp",
+        "./core/sparkfun-connectors-db25-vp.fzp",
+        "./core/sparkfun-connectors-db9-female.fzp",
+        "./core/sparkfun-connectors-db9-male.fzp",
+        "./core/sparkfun-connectors-din7-.fzp",
+        "./core/sparkfun-connectors-f25-hp.fzp",
+        "./core/sparkfun-connectors-f25-vp.fzp",
+        "./core/sparkfun-connectors-ftdi_basic-pth.fzp",
+        "./core/sparkfun-connectors-m02-4ucon-15767.fzp",
+        "./core/sparkfun-connectors-m02--jst-2mm-smt.fzp",
+        "./core/sparkfun-connectors-m02-rocker.fzp",
+        "./core/sparkfun-connectors-m03-.fzp",
+        "./core/sparkfun-connectors-m03-smd.fzp",
+        "./core/sparkfun-connectors-m04-smd2.fzp",
+        "./core/sparkfun-connectors-m05-smd2.fzp",
+        "./core/sparkfun-connectors-m05-smd.fzp",
+        "./core/sparkfun-connectors-m06-em406.fzp",
+        "./core/sparkfun-connectors-m06-smdf.fzp",
+        "./core/sparkfun-connectors-m06-smd-straight-combo.fzp",
+        "./core/sparkfun-connectors-m08-smd-combo.fzp",
+        "./core/sparkfun-displays-7-segment-4digit-for_pogobed_only.fzp",
+        "./core/sparkfun-displays-7-segment-4digit-pth.fzp",
+        "./core/sparkfun-electromechanical-ayz0202-.fzp",
+        "./core/sparkfun-electromechanical-relay-2-g5q.fzp",
+        "./core/sparkfun-electromechanical-switch-dpdt-eg2211.fzp",
+        "./core/sparkfun-electromechanical-switch-dpdt-es.fzp",
+        "./core/sparkfun-electromechanical-switch-dpdt-gpi.fzp",
+        "./core/sparkfun-electromechanical-switch-dpdt-pth.fzp",
+        "./core/sparkfun-electromechanical-switch-momentary-2-12mm.fzp",
+        "./core/sparkfun-electromechanical-switch-momentary-2-.fzp",
+        "./core/sparkfun-electromechanical-switch-momentary-2-pth.fzp",
+        "./core/sparkfun-electromechanical-switch-momentary-2-smd-2.fzp",
+        "./core/sparkfun-electromechanical-switch-momentary-2-smd.fzp",
+        "./core/sparkfun-electromechanical-switch-sp3t-.fzp",
+        "./core/sparkfun-freqctrl-crystal-5x3.fzp",
+        "./core/sparkfun-freqctrl-crystal-epsonmc146.fzp",
+        "./core/sparkfun-freqctrl-resonator_nocap-.fzp",
+        "./core/sparkfun-led-led_ring-.fzp",
+        "./core/SparkFun Load Sensor Combinator.fzp",
+        "./core/sparkfun-passives-cap_adj-smd.fzp",
+        "./core/sparkfun-passives-fuse-x20mm.fzp",
+        "./core/sparkfun-passives-inductor-sru5028.fzp",
+        "./core/sparkfun-poweric-transformer-smd.fzp",
+        "./core/sparkfun-rf-mirf-.fzp",
+        "./core/sx1509-breakout.fzp",
+        "./core/Wireless_SD_v3.fzp",
+        "./obsolete/sparkfun-electromechanical-battery-2-aaa.fzp",
+        "./obsolete/sparkfun-electromechanical-battery-2-aa.fzp",
+    ]
+    return filename in skip_files
 
 def main():
     try:
@@ -44,12 +120,19 @@ def main():
     pattern = r'(\d+)'
     numberFinder = re.compile(pattern, re.IGNORECASE)
 
+    ret = 0
+    count = 0
     for root, dirs, files in os.walk(dir, topdown=False):
         for filename in files:
             if not filename.endswith(".fzp"):
                 continue
 
             fzpFilename = os.path.join(root, filename)
+            if skip(fzpFilename):
+                continue
+
+            count += 1
+
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
             except xml.parsers.expat.ExpatError as err:
@@ -118,12 +201,21 @@ def main():
                     mismatches.append(connector)
 
             if len(mismatches) > 0:
+                ret = -1
                 print(fzpFilename, nameZero, idZero)
                 for connector in mismatches:
                     strings = connector.toxml().split("\n")
                     print(strings[0])
                 print()
 
+    if count == 0:
+        print("No files checked in ", dir)
+        ret = -2
+    else:
+        print("%s files checked" % count)
+
+    return ret
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
