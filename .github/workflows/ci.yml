@@ -8,3 +8,4 @@ jobs:
       - run: python scripts/checkascii.py .
       - run: python scripts/checkcase.py
       - run: python scripts/connectors_misnumbered.py -d .
+      - run: python scripts/checkcopies.py -d svg
