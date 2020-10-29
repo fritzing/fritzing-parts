@@ -14,8 +14,6 @@ install:
 
 script:
   - fzp validate --dir $HOME/gopath/src/github.com/fritzing/fritzing-parts/core
-  - python scripts/checkascii.py .
-  - python scripts/checkcase.py
   # Disabled because some of the parts refer to invalid icons
   # - echo "validate core bin"
   # - fzb -f $HOME/gopath/src/github.com/fritzing/fritzing-parts/bins/core.fzb
