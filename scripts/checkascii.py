@@ -2,11 +2,11 @@
 import sys, os, os.path, re, optparse
     
 def usage():
-        print """
+        print("""
 usage:
     checkascii.py -f [folder] 
     recursively checks that all filenames in folder are ascii
-"""
+""")
     
 def main():
     parser = optparse.OptionParser()
@@ -22,7 +22,7 @@ def main():
         for filename in files:
             remainder = re.sub('[ -~]', '', filename)
             if len(remainder) > 0:
-                print "not ascii", os.path.join(root, filename)
+                print("not ascii", os.path.join(root, filename))
             
                 
 
