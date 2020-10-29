@@ -6,28 +6,30 @@ import re
 import xml.dom.minidom
 import xml.dom
 import argparse
-    
+
+
 def usage():
-        print("""
+    print("""
 usage:
     checkcase.py -f [fzp folder] -s [svg folder]
     ensure all fzp files case-sensitively match svg file names
     This will modify fzp files
 """)
-    
-        
-           
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-f', '--fzp', dest='fzpdir', help="fzp directory", default='.' )
-    parser.add_argument('-s', '--svg', dest='svgdir', help="svg directort", default='svg' )
+    parser.add_argument('-f', '--fzp', dest='fzpdir',
+                        help="fzp directory", default='.')
+    parser.add_argument('-s', '--svg', dest='svgdir',
+                        help="svg directort", default='svg')
     args = parser.parse_args()
-        
+
     if not args.fzpdir:
         usage()
         parser.error("fzp dir argument not given")
         return -1
-            
+
     if not args.svgdir:
         usage()
         parser.error("svg dir argument not given")
@@ -40,24 +42,24 @@ def main():
     lowersvgs = {}
     for root, dirs, files in os.walk(svgdir, topdown=False):
         for filename in files:
-            if not filename.endswith(".svg"): 
+            if not filename.endswith(".svg"):
                 continue
             path = os.path.join(root, filename)
             allsvgs.append(path)
             lowersvgs[path.lower()] = filename
-            
+
     for root, dirs, files in os.walk(fzpdir, topdown=False):
         for filename in files:
-            if not filename.endswith(".fzp"): 
+            if not filename.endswith(".fzp"):
                 continue
-                
+
             fzpFilename = os.path.join(root, filename)
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
             except xml.parsers.expat.ExpatError as err:
                 print(str(err), fzpFilename)
                 continue
-             
+
             doUpdate = False
             fzp = dom.documentElement
             layerss = fzp.getElementsByTagName("layers")
@@ -99,24 +101,21 @@ def main():
                                 thing[1] = lowersvgs[path.lower()]
                                 layers.setAttribute("image", "/".join(thing))
                                 doUpdate = True
-                                
+
                         except:
                             pass
                 else:
                     # TODO: Fix missing files in fritzing-parts repo, so we can treat this as error
                     print("Warning: missing", fzpFilename, image)
-                
-            
+
             if doUpdate:
                 outfile = open(fzpFilename, 'wb')
                 s = dom.toxml("UTF-8")
                 outfile.write(s)
-                outfile.close()                    
+                outfile.close()
                 ret = -1
     return ret
 
+
 if __name__ == "__main__":
-        sys.exit(main())
-
-
-
+    sys.exit(main())
