@@ -3,23 +3,23 @@
 import getopt, sys, os, re, time
     
 def usage():
-    print """
+    print("""
 usage:
     checkcopies.py -d <directory> 
     
     <directory> is a folder containing svg files.  
     looks for files that have the same content but different names
     
-    """
+    """)
     
     
        
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err)) # will print something like "option -a not recognized"
         usage()
         return
     
@@ -38,7 +38,7 @@ def main():
             assert False, "unhandled option"
     
     if(not(outputDir)):
-        print "missing -d {directory} parameter"
+        print("missing -d {directory} parameter")
         usage()
         return
      
@@ -74,7 +74,7 @@ def main():
             txt1 = infile.read()
             infile.close()
         except:
-            print "failure", f1
+            print("failure", f1)
             
         if txt1 == None:
             continue
@@ -97,7 +97,7 @@ def main():
                 txt2 = infile.read()
                 infile.close()
             except:
-                print "failure", f2
+                print("failure", f2)
                 continue
                 
             if txt2 == None:
@@ -105,7 +105,7 @@ def main():
                 
             if txt1 == txt2:
                 matches.append(j)
-                print "<map package='{0}' to='{1}' />".format(f1, f2) 
+                print("<map package='{0}' to='{1}' />".format(f1, f2)) 
     
 if __name__ == "__main__":
     main()
