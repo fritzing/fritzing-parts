@@ -1,34 +1,44 @@
 
-import sys, os, os.path, re, xml.dom.minidom, xml.dom,  optparse
+import sys
+import os
+import os.path
+import re
+import xml.dom.minidom
+import xml.dom
+import argparse
     
 def usage():
         print("""
 usage:
     checkcase.py -f [fzp folder] -s [svg folder]
     ensure all fzp files case-sensitively match svg file names
+    This will modify fzp files
 """)
     
         
            
 def main():
-    parser = optparse.OptionParser()
-    parser.add_option('-f', '--fzp', dest="fzpdir" )
-    parser.add_option('-s', '--svg', dest="svgdir" )
-    (options, args) = parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '--fzp', dest='fzpdir', help="fzp directory", default='.' )
+    parser.add_argument('-s', '--svg', dest='svgdir', help="svg directort", default='svg' )
+    args = parser.parse_args()
         
-    if not options.fzpdir:
+    if not args.fzpdir:
         usage()
         parser.error("fzp dir argument not given")
-        return       
+        return -1
             
-    if not options.svgdir:
+    if not args.svgdir:
         usage()
         parser.error("svg dir argument not given")
-        return   
+        return -1
 
+    ret = 0
+    svgdir = args.svgdir
+    fzpdir = args.fzpdir
     allsvgs = []
     lowersvgs = {}
-    for root, dirs, files in os.walk(options.svgdir, topdown=False):
+    for root, dirs, files in os.walk(svgdir, topdown=False):
         for filename in files:
             if not filename.endswith(".svg"): 
                 continue
@@ -36,7 +46,7 @@ def main():
             allsvgs.append(path)
             lowersvgs[path.lower()] = filename
             
-    for root, dirs, files in os.walk(options.fzpdir, topdown=False):
+    for root, dirs, files in os.walk(fzpdir, topdown=False):
         for filename in files:
             if not filename.endswith(".fzp"): 
                 continue
@@ -52,7 +62,7 @@ def main():
             fzp = dom.documentElement
             layerss = fzp.getElementsByTagName("layers")
             for layers in layerss:
-                image = layers.getAttribute("image").replace("/", "\\")
+                image = os.path.normpath(layers.getAttribute("image"))
                 if ("dip_" in image) and ("mil_" in image):
                     continue
                 if ("sip_" in image) and ("mil_" in image):
@@ -73,9 +83,10 @@ def main():
                     continue
                 if ("generic" in image) and ("header" in image):
                     continue
-                path1 = os.path.join(options.svgdir, "core", image)
-                path2 = os.path.join(options.svgdir, "contrib", image)
-                path3 = os.path.join(options.svgdir, "obsolete", image)
+                path1 = os.path.join(svgdir, "core", image)
+                path2 = os.path.join(svgdir, "contrib", image)
+                path3 = os.path.join(svgdir, "obsolete", image)
+
                 if os.path.isfile(path1) or os.path.isfile(path2) or os.path.isfile(path3):
                     for path in [path1, path2, path3]:
                         try:
@@ -92,7 +103,8 @@ def main():
                         except:
                             pass
                 else:
-                    print("missing", fzpFilename, image)
+                    # TODO: Fix missing files in fritzing-parts repo, so we can treat this as error
+                    print("Warning: missing", fzpFilename, image)
                 
             
             if doUpdate:
@@ -100,10 +112,11 @@ def main():
                 s = dom.toxml("UTF-8")
                 outfile.write(s)
                 outfile.close()                    
-                
+                ret = -1
+    return ret
 
 if __name__ == "__main__":
-        main()
+        sys.exit(main())
 
 
 
