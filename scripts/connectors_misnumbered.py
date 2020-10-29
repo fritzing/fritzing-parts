@@ -14,6 +14,7 @@ usage:
     checks that connectors with integer names are correctly mapped to connector numbers
 """)
 
+
 def skip(filename):
     skip_files = [
         "./core/AlphaNumericDisplay-v13.fzp",
@@ -91,6 +92,7 @@ def skip(filename):
     ]
     return filename in skip_files
 
+
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
@@ -98,7 +100,7 @@ def main():
         # print help information and exit:
         print(str(err))  # will print something like "option -a not recognized"
         usage()
-        return
+        return -1
 
     dir = None
 
@@ -109,13 +111,13 @@ def main():
             dir = a
         elif o in ("-h", "--help"):
             usage()
-            return
+            return 0
         else:
             assert False, "unhandled option"
 
     if(not(dir)):
         usage()
-        return
+        return -1
 
     pattern = r'(\d+)'
     numberFinder = re.compile(pattern, re.IGNORECASE)
