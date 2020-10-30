@@ -9,11 +9,11 @@ import optparse
 
 
 def usage():
-    print """
+    print("""
 usage:
     listfamilies.py -d [fzp folder] {-p [prefix] }
     lists families and optionally provides a prefix
-"""
+""")
 
 
 def main():
@@ -37,7 +37,7 @@ def main():
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
             except xml.parsers.expat.ExpatError as err:
-                print(str(err), fzpFilename)
+                print((str(err), fzpFilename))
                 continue
 
             fzp = dom.documentElement
