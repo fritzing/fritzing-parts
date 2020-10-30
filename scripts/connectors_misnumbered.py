@@ -90,8 +90,9 @@ def skip(filename):
         "./obsolete/sparkfun-electromechanical-battery-2-aaa.fzp",
         "./obsolete/sparkfun-electromechanical-battery-2-aa.fzp",
     ]
-    return filename in skip_files
-
+    for i, item in enumerate(skip_files):
+        skip_files[i] = os.path.normpath(item)
+    return os.path.normpath(filename) in skip_files
 
 def main():
     try:
