@@ -52,7 +52,9 @@ def skip(filename):
         "./core/sparkfun-digitalic-pic16f913-soic28.fzp",
         "./user/74xx08.fzp",
     ]
-    return filename in skip_files
+    for i, item in enumerate(skip_files):
+        skip_files[i] = os.path.normpath(item)
+    return os.path.normpath(filename) in skip_files
 
 
 def main():
