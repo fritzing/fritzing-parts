@@ -17,6 +17,44 @@ usage:
 """)
 
 
+def skip(filename):
+    skip_files = [
+        "./obsolete/Raspberry Pi Zero.fzp",
+        "./obsolete/basic-diode.fzp",
+        "./obsolete/NRF24L01modif_0e60743881e2091e0761dc302a66f72e_4.fzp",
+        "./obsolete/zero_RPi_1.fzp",
+        "./obsolete/prefix0000_c370f033d3f6e718f3cd68009db820d9_5.fzp",
+        "./core/SM130_fix_c427b6f6464a187fb8ed11ae2f2868fc_2.fzp",
+        "./core/SMD_SO16w.fzp",
+        "./core/Dagu DGServo 9g (End view).fzp",
+        "./core/sparkfun-connectors-m03-jst-pth.fzp",
+        "./core/SMD_SO14w.fzp",
+        "./core/SMD_SO-24x.fzp",
+        "./core/sparkfun-connectors-m03-smd.fzp",
+        "./core/sparkfun-digitalic-pic18f2455-smd.fzp",
+        "./core/SMD_SO-28W.fzp",
+        "./core/SMD_SO-36x.fzp",
+        "./core/Dagu DGServo 9g (Pan and tilt).fzp",
+        "./core/Raspberry_Pi_B+.fzp",
+        "./core/sparkfun-connectors-m02-jst-pth-2-kit.fzp",
+        "./core/sparkfun-connectors-m03-.fzp",
+        "./core/SMD_SO-36w.fzp",
+        "./core/sparkfun-digitalic-pic16f883-.fzp",
+        "./core/linino_dogUSB(01).fzp",
+        "./core/sparkfun-digitalic-isd1900-isd1932.fzp",
+        "./core/SMD_SO-32w.fzp",
+        "./core/sparkfun-digitalic-pic24hj32gp202-smd.fzp",
+        "./core/SMD_SO08w.fzp",
+        "./core/aisler_cloud.fzp",
+        "./core/SMD_SO14.fzp",
+        "./core/sparkfun-connectors-pic-icsp-pth.fzp",
+        "./core/sparkfun-connectors-m02--jst-2-pth-no_silk.fzp",
+        "./core/sparkfun-digitalic-pic16f913-soic28.fzp",
+        "./user/74xx08.fzp",
+    ]
+    return filename in skip_files
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--fzp', dest='fzpdir',
@@ -51,6 +89,7 @@ def main():
     count_checks = 0
     count_fixes = 0
     count_missing = 0
+    count_skips = 0
     for root, dirs, files in os.walk(fzpdir, topdown=False):
         for filename in files:
             if not filename.endswith(".fzp"):
@@ -58,8 +97,9 @@ def main():
 
             count_checks += 1
             fzpFilename = os.path.join(root, filename)
-            # if fzpFilename != "./core/SMD_SO14.fzp":
-            #     continue
+            if skip(fzpFilename):
+                count_skips += 1
+                continue
 
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
@@ -107,9 +147,9 @@ def main():
                             doUpdate = True
                         break
                 else: # yes, for ... else
-                    # TODO: Fix missing files in fritzing-parts repo, so we can treat this as error
                     print("Warning: missing", fzpFilename, image)
                     count_missing += 1
+                    ret = -1
 
             if doUpdate:
                 count_fixes += 1
@@ -121,6 +161,7 @@ def main():
                 ret = -1
 
     print("%s fzp files checked." % count_checks)
+    print("%s fzp files skipped." % count_skips)
     print("%s fzp case-sensitivity errors found." % count_fixes)
     if count_fixes > 0 and sys.version_info < (3,8,0):
         print("Fixes not applied. Please use at least python 3.8 to preserve attributes order. This is important for human readability of xml files.")
