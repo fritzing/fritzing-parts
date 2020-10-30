@@ -91,7 +91,7 @@ def main():
                 if len(strokewidth) > 0 and strokewidth != "0":
                     continue
 
-                print("invisible connector", svgFilename)
+                print("invisible connector", svgFilename, id)
 
 
 if __name__ == "__main__":

@@ -9,19 +9,19 @@ import xml.dom
 
 
 def usage():
-    print """
+    print("""
 usage:
     unzeroradius.py -d [svg folder]
     if a file has <circle r='0' replace with r='.00000000001'
-"""
+""")
 
 
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err)  # will print something like "option -a not recognized"
+        print(str(err))  # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
 
@@ -50,8 +50,8 @@ def main():
             svgFilename = os.path.join(root, filename)
             try:
                 dom = xml.dom.minidom.parse(svgFilename)
-            except xml.parsers.expat.ExpatError, err:
-                print str(err), svgFilename
+            except xml.parsers.expat.ExpatError as err:
+                print(str(err), svgFilename)
                 continue
 
             svg = dom.documentElement
@@ -68,7 +68,7 @@ def main():
                 # print ".",
                 continue
 
-            print "got zero", svgFilename
+            print("got zero", svgFilename)
             outfile = open(svgFilename, 'wb')
             s = dom.toxml("UTF-8")
             outfile.write(s)

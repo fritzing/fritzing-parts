@@ -11,22 +11,22 @@ import re
 
 
 def usage():
-    print """
+    print("""
 usage:
     pathNoText.py -d [directory]
     
     directory is a folder containing .svg files.  
     In each fzp file in the directory or its subfolders,
     look for "<path>" and no "<text>".
-    """
+    """)
 
 
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err)  # will print something like "option -a not recognized"
+        print(str(err))  # will print something like "option -a not recognized"
         usage()
         return
     outputDir = None
@@ -56,7 +56,7 @@ def main():
                 pathMatch = '<path' in svg
 
                 if not(textMatch) and pathMatch:
-                    print "{0} {1}".format(os.path.join(root, filename), "path no text")
+                    print("{0} {1}".format(os.path.join(root, filename), "path no text"))
 
 
 if __name__ == "__main__":

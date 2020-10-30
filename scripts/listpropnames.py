@@ -12,22 +12,22 @@ import re
 
 
 def usage():
-    print """
+    print("""
 usage:
     listpropnames.py -d [directory]
     
     directory is a folder containing .fzp files.  
     In each fzp file in the directory containing a <property> element:
     list each different name attribute. 
-    """
+    """)
 
 
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err)  # will print something like "option -a not recognized"
+        print(str(err))  # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
     outputDir = None
@@ -57,7 +57,7 @@ def main():
             if (match != None):
                 if not (match.group(1) in names):
                     names.append(match.group(1))
-                    print "{0}".format(match.group(1))
+                    print("{0}".format(match.group(1)))
 
 
 if __name__ == "__main__":
