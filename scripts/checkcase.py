@@ -46,14 +46,21 @@ def main():
                 continue
             path = os.path.join(root, filename)
             allsvgs.append(path)
-            lowersvgs[path.lower()] = filename
+            lowersvgs[path.lower()] = path
 
+    count_checks = 0
+    count_fixes = 0
+    count_missing = 0
     for root, dirs, files in os.walk(fzpdir, topdown=False):
         for filename in files:
             if not filename.endswith(".fzp"):
                 continue
 
+            count_checks += 1
             fzpFilename = os.path.join(root, filename)
+            # if fzpFilename != "./core/SMD_SO14.fzp":
+            #     continue
+
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
             except xml.parsers.expat.ExpatError as err:
@@ -85,35 +92,40 @@ def main():
                     continue
                 if ("generic" in image) and ("header" in image):
                     continue
-                path1 = os.path.join(svgdir, "core", image)
-                path2 = os.path.join(svgdir, "contrib", image)
-                path3 = os.path.join(svgdir, "obsolete", image)
 
-                if os.path.isfile(path1) or os.path.isfile(path2) or os.path.isfile(path3):
-                    for path in [path1, path2, path3]:
-                        try:
-                            handle = open(path)
-                            if not path in allsvgs:
-                                print("mismatch", fzpFilename)
-                                print("\t", path)
-                                print()
-                                thing = layers.getAttribute("image").split("/")
-                                thing[1] = lowersvgs[path.lower()]
-                                layers.setAttribute("image", "/".join(thing))
-                                doUpdate = True
-
-                        except:
-                            pass
-                else:
+                for subpath in ['core', 'contrib', 'obsolete']:
+                    path = os.path.join(svgdir, subpath, image)
+                    if not lowersvgs.get(path.lower()) is None:
+                        if not path in allsvgs:
+                            print("mismatch", fzpFilename)
+                            print("\t", path)
+                            print("\t", lowersvgs.get(path.lower()))
+                            print()
+                            thing = layers.getAttribute("image").split("/")
+                            thing[1] = os.path.basename(lowersvgs[path.lower()])
+                            layers.setAttribute("image", "/".join(thing))
+                            doUpdate = True
+                        break
+                else: # yes, for ... else
                     # TODO: Fix missing files in fritzing-parts repo, so we can treat this as error
                     print("Warning: missing", fzpFilename, image)
+                    count_missing += 1
 
             if doUpdate:
-                outfile = open(fzpFilename, 'wb')
-                s = dom.toxml("UTF-8")
-                outfile.write(s)
-                outfile.close()
+                count_fixes += 1
+                if sys.version_info >= (3,8,0):
+                    outfile = open(fzpFilename, 'wb')
+                    s = dom.toxml("UTF-8")
+                    outfile.write(s)
+                    outfile.close()
                 ret = -1
+
+    print("%s fzp files checked." % count_checks)
+    print("%s fzp case-sensitivity errors found." % count_fixes)
+    if count_fixes > 0 and sys.version_info < (3,8,0):
+        print("Fixes not applied. Please use at least python 3.8 to preserve attributes order. This is important for human readability of xml files.")
+
+    print("%s svg file references broken." % count_missing )
     return ret
 
 
