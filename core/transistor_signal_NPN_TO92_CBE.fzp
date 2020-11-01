@@ -17,6 +17,11 @@
   <property name="type">NPN (CBE)</property>
  </properties>
  <description>A standard NPN-transistor</description>
+ <spice>
+  <line>*Typical bipolar transistor </line>
+  <line>.MODEL NPN_GENERIC NPN ()</line>
+  <line>Q{instanceTitle} {net connector2} {net connector1} {net connector0} NPN_GENERIC</line>
+  </spice> 
  <views>
   <iconView>
    <layers image="icon/basic_transistor_npnicon.svg">

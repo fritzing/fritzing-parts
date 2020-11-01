@@ -14,10 +14,15 @@
   <property name="package">3 mm [THT]</property>
   <property name="family">LED</property>
   <property name="color" showInLabel="yes">Red (633nm)</property>
-  <property name="current" showInLabel="yes"></property>
+  <property name="current" showInLabel="yes">0.030</property>
   <property name="leg" >yes</property>
  </properties>
  <description>A generic red LED (~1.8V)</description>
+ <spice>
+  <line>*Typ RED,GREEN,YELLOW,AMBER GaAs LED: Vf=2.1V Vr=4V If=40mA trr=3uS</line>
+  <line>.MODEL LED_GENERIC D (IS=93.1P RS=42M N=4.61 BV=4 IBV=10U CJO=2.97P VJ=.75 M=.333 TT=4.32U)</line>
+  <line>D{instanceTitle} {net connector1} {net connector0} LED_GENERIC</line>
+ </spice>
  <views>
   <iconView>
    <layers image="icon/LED-red-5mmicon.svg">
