@@ -2,7 +2,6 @@ name: check-all-parts
 on: [push]
 jobs:
   python-scripts:
-    #runs-on: ubuntu-latest
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
