@@ -3,7 +3,6 @@ import getopt
 import sys
 import os
 import os.path
-import re
 import xml.dom.minidom
 import xml.dom
 
@@ -25,24 +24,24 @@ def main():
         usage()
         sys.exit(2)
 
-    dir = None
+    svg_dir = None
 
     for o, a in opts:
         # print o
         # print a
         if o in ("-d", "--directory"):
-            dir = a
+            svg_dir = a
         elif o in ("-h", "--help"):
             usage()
             sys.exit(2)
         else:
             assert False, "unhandled option"
 
-    if(not(dir)):
+    if not svg_dir:
         usage()
         sys.exit(2)
 
-    for root, dirs, files in os.walk(dir, topdown=False):
+    for root, dirs, files in os.walk(svg_dir, topdown=False):
         for filename in files:
             if not filename.endswith(".svg"):
                 continue

@@ -31,7 +31,7 @@ def main():
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
     except getopt.GetoptError as err:
         # print help information and exit:
-        print((str(err)))  # will print something like "option -a not recognized"
+        print(str(err))  # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
     outputDir = None
@@ -64,14 +64,14 @@ def main():
                         break
 
                 if match == None:
-                    print(("{0} {1}".format(os.path.join(
-                        root, filename), "has no layer ids")))
+                    print("{0} {1}".format(os.path.join(
+                        root, filename), "has no layer ids"))
                 else:
 
                     msg = parseIDs(svg)
-                    if (msg != None):
-                        print(("{0} {1}".format(
-                            os.path.join(root, filename), msg)))
+                    if msg:
+                        print("{0} {1}".format(
+                            os.path.join(root, filename), msg))
 
 
 def parseIDs(svg):

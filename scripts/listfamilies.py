@@ -1,8 +1,5 @@
-
-import sys
 import os
 import os.path
-import re
 import xml.dom.minidom
 import xml.dom
 import optparse
@@ -37,21 +34,21 @@ def main():
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
             except xml.parsers.expat.ExpatError as err:
-                print((str(err), fzpFilename))
+                print(str(err), fzpFilename)
                 continue
 
             fzp = dom.documentElement
             properties = fzp.getElementsByTagName("property")
-            for property in properties:
-                if property.getAttribute("name") == 'family':
-                    value = getText(property.childNodes)
-                    if not value in names:
+            for part_property in properties:
+                if part_property.getAttribute("name") == 'family':
+                    value = getText(part_property.childNodes)
+                    if value not in names:
                         names.append(value)
 
-                    if options.prefix != None:
-                        for node in property.childNodes:
+                    if options.prefix:
+                        for node in part_property.childNodes:
                             if node.nodeType == node.TEXT_NODE:
-                                if not (options.prefix.lower() in node.data.lower()):
+                                if options.prefix.lower() not in node.data.lower():
                                     node.data = options.prefix + " " + node.data
                                     outfile = open(fzpFilename, 'wb')
                                     s = dom.toxml("UTF-8")
