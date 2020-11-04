@@ -6,6 +6,7 @@ import argparse
 import textwrap
 import sys
 import subprocess
+import shlex
 import xml.dom.minidom
 import os
 import random
@@ -32,16 +33,18 @@ def set_module_id(dom, name):
     return newModuleID
 
 
-def command(c):
+def command(*args):
     global simulate
-    print(c, flush=True)
+    # shargs = [shlex.quote(a) for a in args]
+    print(args, flush=True)
     if not simulate:
         result = subprocess.run(
-            c, shell=True, capture_output=True, text=True
+            args, capture_output=True, text=True
         )
         if result.returncode != 0:
             print("stdout:", result.stdout)
             print("stderr:", result.stderr)
+            raise Exception("command error")
 
 
 def main():
@@ -103,6 +106,11 @@ def main():
     topdir = os.path.dirname(fzpdir)
     obsolete_fzp = os.path.join(
         topdir, 'obsolete', os.path.basename(fzpFilename))
+
+    if re.search(r"/|\.fzp", args.name):
+        print("<name> should be a name, not a filename. Got: '%s' " % args.name)
+        return -1
+
     name = args.name
     if args.revision:
         revision = "%03d" % args.revision
@@ -110,7 +118,7 @@ def main():
         revision = "%03d" % 2
 
     if args.hash:
-        part_hash = "%07x" % args.hash
+        part_hash = "%07x" % int(args.hash, 0)
     else:
         part_hash = "%07x" % random.randint(1, 268435454)
         
@@ -122,7 +130,7 @@ def main():
 
     if os.path.isfile(obsolete_fzp):
         raise Exception("Error: destination already exists %s " % obsolete_fzp)
-    command("git mv %s %s" % (fzpFilename, obsolete_fzp))
+    command("git", "mv", fzpFilename, obsolete_fzp)
 
     new_fzp_dom = deepcopy(obsolete_fzp_dom)
 
@@ -139,7 +147,8 @@ def main():
             continue
 
         new_svg = os.path.join(os.path.dirname(path), new_svg_filename)
-        command("cp %s %s" % (path, new_svg))
+
+        command("cp", path, new_svg)
 
         # 2 mv from core to obsolete
         dest = os.path.join(topdir, "svg", "obsolete", os.path.basename(
@@ -147,9 +156,9 @@ def main():
         if os.path.isfile(dest):
             raise Exception("Error: destination already exists %s " % dest)
 
-        command("git mv %s %s" % (path, dest))
+        command("git", "mv", path, dest)
 
-        command("git add %s" % new_svg)
+        command("git", "add", new_svg)
 
         # 3 set new name in dom
         new_image = os.path.join(os.path.basename(
@@ -188,8 +197,8 @@ def main():
 
     # s = obsolete_fzp_dom.toxml("UTF-8")
     # print(s)
-    command("git add %s" % (new_fzp))
-    command("git add %s" % (obsolete_fzp))
+    command("git", "add", new_fzp)
+    command("git", "add", obsolete_fzp)
 
     return 0
 
