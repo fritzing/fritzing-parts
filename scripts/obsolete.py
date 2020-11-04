@@ -110,12 +110,12 @@ def main():
         revision = "%03d" % 2
 
     if args.hash:
-        hash = "%07x" % args.hash
+        part_hash = "%07x" % args.hash
     else:
-        hash = "%07x" % random.randint(1, 268435454)
+        part_hash = "%07x" % random.randint(1, 268435454)
         
-    new_fzp_filename = "_".join([name, hash, revision]) + ".fzp"
-    new_svg_filename = "_".join([name, hash, revision]) + ".svg"
+    new_fzp_filename = "_".join([name, part_hash, revision]) + ".fzp"
+    new_svg_filename = "_".join([name, part_hash, revision]) + ".svg"
 
     new_fzp = os.path.join(fzpdir, new_fzp_filename)
     obsolete_fzp_dom = get_dom(fzpFilename)

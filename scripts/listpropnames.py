@@ -43,19 +43,19 @@ def main():
         else:
             assert False, "unhandled option"
 
-    if(not(outputDir)):
+    if not outputDir:
         usage()
         sys.exit(2)
 
     names = []
     for filename in os.listdir(outputDir):
-        if (filename.endswith(".fzp")):
+        if filename.endswith(".fzp"):
             infile = open(os.path.join(outputDir, filename), "r")
             fzp = infile.read()
             infile.close()
             match = re.search('<property.+name=\"(.+)\".*>.+</property>', fzp)
-            if (match != None):
-                if not (match.group(1) in names):
+            if match:
+                if not match.group(1) in names:
                     names.append(match.group(1))
                     print("{0}".format(match.group(1)))
 

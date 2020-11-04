@@ -7,7 +7,6 @@
 import getopt
 import sys
 import os
-import re
 
 
 def usage():
@@ -42,7 +41,7 @@ def main():
         else:
             assert False, "unhandled option"
 
-    if not(outputDir):
+    if not outputDir:
         usage()
         return
 

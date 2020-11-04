@@ -15,10 +15,16 @@ jobs:
           python-version: '3.8'
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
-      - run: python scripts/checkascii.py .
-      - run: python scripts/checkcase.py
-      - run: python scripts/connectors_misnumbered.py -d .
-      - run: python scripts/checkcopies.py -d svg
+      - name: Avoid non acsii in part and svg filenames
+        run: python scripts/checkascii.py .
+      - name: Check that image filenames use same case
+        run: python scripts/checkcase.py
+      - name: Look for suspicios connector numbering
+        run: python scripts/connectors_misnumbered.py -d .
+      - name: Avoid duplicate files
+        run: python scripts/checkcopies.py -d svg
+      - name: Dry run script to test the script itself
+        run: python scripts/obsolete.py core/sparkfun-connectors-rca-.fzp dummy -s
 
   golang-scripts:
     runs-on: ubuntu-latest
