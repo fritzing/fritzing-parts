@@ -6,7 +6,6 @@ import argparse
 import textwrap
 import sys
 import subprocess
-import shlex
 import xml.dom.minidom
 import os
 import random
@@ -35,7 +34,6 @@ def set_module_id(dom, name):
 
 def command(*args):
     global simulate
-    # shargs = [shlex.quote(a) for a in args]
     print(args, flush=True)
     if not simulate:
         result = subprocess.run(
