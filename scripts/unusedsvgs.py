@@ -98,10 +98,16 @@ def main():
                             except:
                                 pass
 
+    count_unsued = 0
     for key in svgfiles.keys():
         for name in svgfiles.get(key):
             print("unused {0}/{1}".format(key, name))
+            count_unsued += 1
 
+    print("Unused svg files found: %d" % count_unsued)
+    if count_unused>2318:
+        return -1
+    return 0
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
