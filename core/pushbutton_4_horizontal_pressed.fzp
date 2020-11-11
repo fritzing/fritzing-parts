@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.b.1486" moduleId="20A9BBEE34_ST">
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.b.1486" moduleId="20A9BBEE34_ST_pressed">
  <version>4</version>
  <title>Pushbutton</title>
  <label>S</label>
@@ -11,12 +11,12 @@
  <properties>
   <property name="family">Switch</property>
   <property name="package">[THT]</property>
-  <property name="switch_status">Released</property>
-  <property name="control_voltage" showInLabel="no">0</property>
+  <property name="switch_status">Pressed</property>
+  <property name="control_voltage" showInLabel="no">5</property>
 </properties>
  <description>A generic pushbutton.</description>
  <spice>
-  <line>S{instanceTitle} {net connector0} {net connector2} control_{instanceTitle} 0 generic_switch OFF</line>
+  <line>S{instanceTitle} {net connector0} {net connector2} control_{instanceTitle} 0 generic_switch ON</line>
   <line>V{instanceTitle} control_{instanceTitle} 0 DC {control_voltage}</line>
   <model>.MODEL generic_switch SW(Ron=1m Roff=1Meg Vt=2.5)</model>
  </spice>
@@ -27,12 +27,12 @@
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="breadboard/basic_pbutton.svg">
+   <layers image="breadboard/basic_pbutton_pressed.svg">
     <layer layerId="breadboard"/>
    </layers>
   </breadboardView>
    <schematicView fliphorizontal="true" flipvertical="true">
-   <layers image="schematic/pushbutton4lead.svg">
+   <layers image="schematic/pushbutton4lead_pressed.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
