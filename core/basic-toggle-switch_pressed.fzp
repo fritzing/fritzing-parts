@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1255" moduleId="1238DBDC00-toggle-switch">
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1255" moduleId="1238DBDC00-toggle-switch_pressed">
  <version>4</version>
  <author>Jenny</author>
  <title>Toggle Switch</title>
@@ -12,8 +12,8 @@
   <property name="family">Switch - 3 pin</property>
   <property name="switching circuit">SPDT</property>
   <property name="package">THT</property>
-  <property name="switch_status">Released</property>
-  <property name="control_voltage" showInLabel="no">0</property>
+  <property name="switch_status">Pressed</property>
+  <property name="control_voltage" showInLabel="no">5</property>
  </properties>
  <description>Toggle Switch</description>
  <spice>
@@ -30,12 +30,12 @@
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="breadboard/basic_toggle_switch.svg">
+   <layers image="breadboard/basic_toggle_switch_pressed.svg">
     <layer layerId="breadboard"/>
    </layers>
   </breadboardView>
   <schematicView fliphorizontal="true" flipvertical="true">
-   <layers image="schematic/spdt-switch.svg">
+   <layers image="schematic/spdt-switch_pressed.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>

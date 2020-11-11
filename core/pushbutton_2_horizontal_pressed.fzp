@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1201" moduleId="20A9BBEE34_ST-2leadbutton-horizon">
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1201" moduleId="20A9BBEE34_ST-2leadbutton-horizon_pressed">
  <version>4</version>
  <title>Pushbutton</title>
  <date>2008-09-16</date>
@@ -13,8 +13,8 @@
   <property name="family">Switch - 2 pin</property>
   <property name="Switching Circuit">SPST</property>
   <property name="package">THT</property>
-  <property name="switch_status">Released</property>
-  <property name="control_voltage" showInLabel="no">0</property>
+  <property name="switch_status">Pressed</property>
+  <property name="control_voltage" showInLabel="no">5</property>
  </properties>
  <taxonomy>discreteParts.switches.pushbutton</taxonomy>
  <description>A generic pushbutton.</description>
@@ -30,12 +30,12 @@
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="breadboard/basic_pbutton_2leg_horizon.svg">
+   <layers image="breadboard/basic_pbutton_2leg_horizon_pressed.svg">
     <layer layerId="breadboard"/>
    </layers>
   </breadboardView>
    <schematicView fliphorizontal="true" flipvertical="true">
-   <layers image="schematic/pushbutton.svg">
+   <layers image="schematic/pushbutton_pressed.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
