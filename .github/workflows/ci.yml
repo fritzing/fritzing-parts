@@ -1,5 +1,5 @@
 name: check-all-parts
-on: [push]
+on: [push, pull_request]
 jobs:
   python-scripts:
     runs-on: ${{ matrix.os }}
