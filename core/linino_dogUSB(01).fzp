@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.9.0b" moduleId="linino_dogUSB">
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.9.0b" moduleId="linino_dogUSB">
     <author>fabian_atlthaus</author>
     <title>linino dogUSB</title>
     <label>linino dogUSB</label>
@@ -13,7 +12,7 @@
     </tags>
     <properties>
         <property name="family">Microcontroller Board (linino)</property>
-        <property name="processor"></property>
+        <property name="processor"/>
         <property name="variant">linino dogUSB</property>
     </properties>
     <description>A type USB connector.
@@ -35,7 +34,7 @@ Supports port-to-slot and read/write operation.</description>
             </layers>
         </breadboardView>
         <schematicView>
-            <layers image="schematic/linino_dogUSB_schematic.svg">
+            <layers image="schematic/linino_dogusb_schematic.svg">
                 <layer layerId="schematic"/>
             </layers>
         </schematicView>
