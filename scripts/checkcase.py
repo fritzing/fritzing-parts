@@ -24,6 +24,11 @@ def skip(filename):
         "./obsolete/NRF24L01modif_0e60743881e2091e0761dc302a66f72e_4.fzp",
         "./obsolete/zero_RPi_1.fzp",
         "./obsolete/prefix0000_c370f033d3f6e718f3cd68009db820d9_5.fzp",
+        "./core/SM130_fix_c427b6f6464a187fb8ed11ae2f2868fc_2.fzp",
+        "./core/SMD_SO14w.fzp",
+        "./core/SMD_SO-24x.fzp",
+        "./core/aisler_cloud.fzp",
+        "./core/sparkfun-connectors-pic-icsp-pth.fzp",
         "./user/74xx08.fzp",
     ]
     for i, item in enumerate(skip_files):
