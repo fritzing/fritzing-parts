@@ -39,7 +39,7 @@ p, li { white-space: pre-wrap; }
   <model>.MODEL PNP_GENERIC PNP ()</model>
   <line>R{instanceTitle}a {net connector1} {net connector2} 130</line>
   <line>Q{instanceTitle} {net connector0} base_Q_{instanceTitle} {net connector2} PNP_GENERIC off</line>
-  <line>R{instanceTitle} base_Q_{instanceTitle} {net connector1} 200</line>
+  <line>R{instanceTitle}b base_Q_{instanceTitle} {net connector1} 200</line>
  </spice>
  <views>
   <iconView>
