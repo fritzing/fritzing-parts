@@ -29,6 +29,7 @@ def skip(filename):
         "./core/ESP8266-Thing-Dev.fzp",
         "./core/HiFive1.fzp",
         "./core/jlpcb-089.fzp",
+        "./core/kameleon.fzp",
         "./core/LilyPad-XBee-v15.fzp",
         "./core/ludusProtoShieldWireless.fzp",
         "./core/monacor_ltr_110_linetransformer.fzp",
