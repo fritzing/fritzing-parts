@@ -13,14 +13,13 @@
   <property name="family">Switch - 2 pin</property>
   <property name="Switching Circuit">SPST</property>
   <property name="package">THT</property>
-  <property name="switch_status">Released</property>
-  <property name="control_voltage" showInLabel="no">0</property>
+  <property name="switch status">Released</property>
  </properties>
  <taxonomy>discreteParts.switches.pushbutton</taxonomy>
  <description>A generic pushbutton.</description>
  <spice>
   <line>S{instanceTitle} {net connector0} {net connector1} control_{instanceTitle} 0 generic_switch ON</line>
-  <line>V{instanceTitle} control_{instanceTitle} 0 DC {control_voltage}</line>
+  <line>V{instanceTitle} control_{instanceTitle} 0 DC 0</line>
   <model>.MODEL generic_switch SW(Ron=1m Roff=1Meg Vt=2.5)</model>
  </spice>
  <views>
