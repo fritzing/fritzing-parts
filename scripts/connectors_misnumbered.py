@@ -6,6 +6,7 @@ import re
 import xml.dom.minidom
 import xml.dom
 
+# Part of CI tests
 
 def usage():
     print("""

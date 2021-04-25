@@ -1,10 +1,10 @@
-
 import sys
 import os
 import os.path
 import re
 import argparse
 
+# Part of CI tests
 
 def main():
     parser = argparse.ArgumentParser(
