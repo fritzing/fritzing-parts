@@ -5,7 +5,7 @@
   baseProfile="tiny"
   width="0.7in"
   height="0.6in"
-  viewBox="0 0 700 600"
+  viewBox="0 0 700 500"
 >
   <g
     id="schematic"
@@ -15,23 +15,27 @@
     stroke-linecap="round"
     font-family="DroidSans"
   >
-    <rect x="100" y="100" width="500" height="400" stroke="#000" />
-    <text x="350" y="320" font-size="59" fill="#000" text-anchor="middle">
+    <rect x="100" y="100" width="500" height="300" stroke="#000" />
+    <text x="350" y="270" font-size="59" fill="#000" text-anchor="middle">
       US-100
     </text>
     <g transform="translate(0,200)">
+      <path d="m0,0 h1" id="connector0terminal" stroke="#555" />
       <path d="m0,0 h100" id="connector0pin" stroke="#555" />
       <text x="120" y="15" font-size="49" fill="#555">VCC</text>
     </g>
     <g transform="translate(700,200)" text-anchor="end">
+      <path d="m0,0 h-1" id="connector1terminal" stroke="#555" />
       <path d="m0,0 h-100" id="connector1pin" stroke="#555" />
       <text x="-120" y="15" font-size="49" fill="#555">Trig/Tx</text>
     </g>
-    <g transform="translate(700,400)" text-anchor="end">
+    <g transform="translate(700,300)" text-anchor="end">
+      <path d="m0,0 h-1" id="connector2terminal" stroke="#555" />
       <path d="m0,0 h-100" id="connector2pin" stroke="#555" />
       <text x="-120" y="15" font-size="49" fill="#555">Echo/Rx</text>
     </g>
-    <g transform="translate(0,400)">
+    <g transform="translate(0,300)">
+      <path d="m0,0 h1" id="connector3terminal" stroke="#555" />
       <path d="m0,0 h100" id="connector3pin" stroke="#555" />
       <text x="120" y="15" font-size="49" fill="#555">GND</text>
     </g>
