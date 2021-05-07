@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.2"
+  baseProfile="tiny"
+  width="44mm"
+  height="26mm"
+  viewBox="-22 0 44 26"
+>
+  <defs>
+    <mask id="holes">
+      <rect x="-50%" width="100%" height="100%" fill="white" />
+      <circle r="0.75" cx="20.75" cy="1.25" fill="black" />
+      <circle r="0.75" cx="-20.75" cy="18.75" fill="black" />
+    </mask>
+    <pattern id="grid" width="0.5" height="0.5" patternUnits="userSpaceOnUse">
+      <path
+        d="M0.5,0 L0,0 L0,0.5"
+        fill="none"
+        stroke="#000"
+        stroke-width="0.05"
+      />
+    </pattern>
+    <radialGradient id="membraneGradient">
+      <stop stop-color="#ccc" offset="0.0" />
+      <stop stop-color="#ddd" offset="0.5" />
+      <stop stop-color="#bbb" offset="1.0" />
+    </radialGradient>
+    <radialGradient id="tubeGradient">
+      <stop stop-color="#ccc" offset="0.8" />
+      <stop stop-color="#fff" offset="0.9" />
+      <stop stop-color="#ccc" offset="1.0" />
+    </radialGradient>
+    <g id="us_tube" stroke="none" fill="none">
+      <circle cx="0" cy="0" r="8.5" stroke="#fff" stroke-width="0.2" />
+      <circle cx="0" cy="0" r="8" fill="url(#tubeGradient)" />
+      <circle cx="0" cy="0" r="6.5" fill="#404040" />
+      <circle cx="0" cy="0" r="5" fill="#999999" />
+      <circle cx="0" cy="0" r="3.5" fill="url(#membraneGradient)" />
+      <circle cx="0" cy="0" r="6.5" fill="url(#grid)" />
+    </g>
+  </defs>
+  <g id="breadboard">
+    <path
+      d="
+        M-22,0 L22,0 L22,20 L-22,20
+        M 20, 1.25 a 0.75,0.75 0 1,0 1.5,0 a 0.75,0.75 0 1,0 -1.5,0
+        M -21.5, 18.75 a 0.75,0.75 0 1,0 1.5,0 a 0.75,0.75 0 1,0 -1.5,0
+      "
+      fill="#00A63D"
+    />
+
+    <g font-family="Droid Sans" fill="#fff" text-anchor="middle">
+      <text x="-21.5" y="2" font-size="2" text-anchor="start">US-100</text>
+      <text font-family="OCRA" x="0" y="6.5" font-size="2.7">
+        Y401
+      </text>
+      <text x="-19.5" y="19" font-size="4">T</text>
+      <text x="19.5" y="19" font-size="4">R</text>
+    </g>
+
+    <g transform="translate(0, 0.75)">
+      <rect
+        x="-5"
+        y="0"
+        rx="1.5"
+        width="10"
+        height="3"
+        fill="#ccc"
+        stroke="#aaa"
+        stroke-width="0.5"
+      />
+      <text
+        font-family="OCRA"
+        x="0"
+        y="2.3"
+        font-size="2"
+        fill="#aaa"
+        text-anchor="middle"
+      >
+        3.200
+      </text>
+    </g>
+
+    <use href="#us_tube" transform="translate(-11.5, 10)" />
+    <use href="#us_tube" transform="translate(11.5, 10)" />
+
+    <g
+      fill="#8C8C8C"
+      transform="translate(-5.08,20)"
+      font-family="OCRA"
+      font-size="1"
+    >
+      <rect x="-0.75" y="-2" rx="0.25" width="1.5" height="1.5" />
+      <rect x="-0.375" y="0" width="0.75" height="6" />
+      <rect x="-0.375" y="5.25" width="0.75" height="0.75" id="connector0pin" />
+      <text fill="#fff" transform="translate(0.4,-2.2) rotate(-90)">
+        VCC
+      </text>
+    </g>
+    <g
+      fill="#8C8C8C"
+      transform="translate(-2.54,20)"
+      font-family="OCRA"
+      font-size="1"
+    >
+      <rect x="-0.75" y="-2" rx="0.25" width="1.5" height="1.5" />
+      <rect x="-0.375" y="0" width="0.75" height="6" />
+      <rect x="-0.375" y="5.25" width="0.75" height="0.75" id="connector1pin" />
+      <text fill="#fff" transform="translate(0.4,-2.2) rotate(-90)">
+        Trig/Tx
+      </text>
+    </g>
+    <g
+      fill="#8C8C8C"
+      transform="translate(0,20)"
+      font-family="OCRA"
+      font-size="1"
+    >
+      <rect x="-0.75" y="-2" rx="0.25" width="1.5" height="1.5" />
+      <rect x="-0.375" y="0" width="0.75" height="6" />
+      <rect x="-0.375" y="5.25" width="0.75" height="0.75" id="connector2pin" />
+      <text fill="#fff" transform="translate(0.4,-2.2) rotate(-90)">
+        Echo/Rx
+      </text>
+    </g>
+    <g
+      fill="#8C8C8C"
+      transform="translate(2.54,20)"
+      font-family="OCRA"
+      font-size="1"
+    >
+      <rect x="-0.75" y="-2" rx="0.25" width="1.5" height="1.5" />
+      <rect x="-0.375" y="0" width="0.75" height="6" />
+      <rect x="-0.375" y="5.25" width="0.75" height="0.75" id="connector3pin" />
+      <text fill="#fff" transform="translate(0.4,-2.2) rotate(-90)">
+        GND
+      </text>
+    </g>
+    <g
+      fill="#8C8C8C"
+      transform="translate(5.08,20)"
+      font-family="OCRA"
+      font-size="1"
+    >
+      <rect x="-0.75" y="-2" rx="0.25" width="1.5" height="1.5" />
+      <rect x="-0.375" y="0" width="0.75" height="6" />
+      <rect x="-0.375" y="5.25" width="0.75" height="0.75" id="connector4pin" />
+      <text fill="#fff" transform="translate(0.4,-2.2) rotate(-90)">
+        GND
+      </text>
+    </g>
+  </g>
+</svg>
