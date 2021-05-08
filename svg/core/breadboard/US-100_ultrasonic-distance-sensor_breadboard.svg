@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   version="1.2"
@@ -8,11 +8,6 @@
   viewBox="-22 0 44 26"
 >
   <defs>
-    <mask id="holes">
-      <rect x="-50%" width="100%" height="100%" fill="white" />
-      <circle r="0.75" cx="20.75" cy="1.25" fill="black" />
-      <circle r="0.75" cx="-20.75" cy="18.75" fill="black" />
-    </mask>
     <radialGradient id="membraneGradient">
       <stop stop-color="#ccc" offset="0.0" />
       <stop stop-color="#ddd" offset="0.5" />
