@@ -5,7 +5,7 @@
   baseProfile="tiny"
   width="0.71in"
   height="0.31in"
-  viewBox="-105 -5 710 310"
+  viewBox="0 0 710 310"
 >
   <g
     id="schematic"
@@ -14,6 +14,7 @@
     stroke-width="10"
     stroke-linecap="round"
     font-family="DroidSans"
+    transform="translate(105, 5)"
   >
     <rect x="0" y="0" width="500" height="300" stroke="#000" />
     <text x="250" y="170" font-size="59" fill="#000" text-anchor="middle">
@@ -22,7 +23,7 @@
     <g transform="translate(0,100)">
       <path d="m0,0 h-100" id="connector0pin" stroke="#555" />
       <rect
-        x="-1"
+        x="-101"
         y="-1"
         width="2"
         height="2"
@@ -54,7 +55,7 @@
     <g transform="translate(500,100)">
       <path d="m0,0 h100" id="connector1pin" stroke="#555" />
       <rect
-        x="-1"
+        x="99"
         y="-1"
         width="2"
         height="2"
@@ -86,7 +87,7 @@
     <g transform="translate(500,200)">
       <path d="m0,0 h100" id="connector2pin" stroke="#555" />
       <rect
-        x="-1"
+        x="99"
         y="-1"
         width="2"
         height="2"
@@ -118,7 +119,7 @@
     <g transform="translate(0,200)">
       <path d="m0,0 h-100" id="connector3pin" stroke="#555" />
       <rect
-        x="-1"
+        x="-101"
         y="-1"
         width="2"
         height="2"
@@ -147,6 +148,14 @@
         4
       </text>
     </g>
-    <rect id="connector4pin" fill="none" stroke="none" />
+    <rect
+      x="-1000"
+      y="-1000"
+      width="1"
+      height="1"
+      id="connector4pin"
+      fill="none"
+      stroke="none"
+    />
   </g>
 </svg>
