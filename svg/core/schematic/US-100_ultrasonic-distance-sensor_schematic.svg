@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.2"
+  baseProfile="tiny"
+  width="0.7in"
+  height="0.31in"
+  viewBox="-5 -5 710 310"
+>
+  <g
+    id="schematic"
+    fill="none"
+    stroke="none"
+    stroke-width="10"
+    stroke-linecap="round"
+    font-family="DroidSans"
+  >
+    <rect x="100" y="0" width="500" height="300" stroke="#000" />
+    <text x="350" y="170" font-size="59" fill="#000" text-anchor="middle">
+      US-100
+    </text>
+    <g transform="translate(0,100)">
+      <path d="m0,0 h100" id="connector0pin" stroke="#555" />
+      <rect
+        x="-1"
+        y="-1"
+        width="2"
+        height="2"
+        id="connector0terminal"
+        fill="none"
+        stroke="none"
+      />
+      <text x="120" y="15" font-size="49" fill="#555">VCC</text>
+    </g>
+    <g transform="translate(700,100)" text-anchor="end">
+      <path d="m0,0 h-100" id="connector1pin" stroke="#555" />
+      <rect
+        x="-1"
+        y="-1"
+        width="2"
+        height="2"
+        id="connector1terminal"
+        fill="none"
+        stroke="none"
+      />
+      <text x="-120" y="15" font-size="49" fill="#555">Trig/Tx</text>
+    </g>
+    <g transform="translate(700,200)" text-anchor="end">
+      <path d="m0,0 h-100" id="connector2pin" stroke="#555" />
+      <rect
+        x="-1"
+        y="-1"
+        width="2"
+        height="2"
+        id="connector2terminal"
+        fill="none"
+        stroke="none"
+      />
+      <text x="-120" y="15" font-size="49" fill="#555">Echo/Rx</text>
+    </g>
+    <g transform="translate(0,200)">
+      <path d="m0,0 h100" id="connector3pin" stroke="#555" />
+      <rect
+        x="-1"
+        y="-1"
+        width="2"
+        height="2"
+        id="connector3terminal"
+        fill="none"
+        stroke="none"
+      />
+      <text x="120" y="15" font-size="49" fill="#555">GND</text>
+    </g>
+    <rect id="connector4pin" fill="none" stroke="none" />
+  </g>
+</svg>

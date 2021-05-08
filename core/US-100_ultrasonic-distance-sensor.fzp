@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <module referenceFile="US-100.fzp" moduleId="US-100" fritzingVersion="0.9.6">
   <author>Moritz Kanemeier</author>
   <version>1</version>
@@ -6,7 +6,10 @@
   <url>https://www.adafruit.com/product/4019</url>
   <label>SEN</label>
   <date>2021-05-06</date>
-  <description>Ultrasonic distance sensor with a detection range of 2cm to 450cm and an operating voltage range of 2.4V to 5V.</description>
+  <description>
+    Ultrasonic distance sensor with a detection range of 2cm to 450cm and an
+    operating voltage range of 2.4V to 5V.
+  </description>
   <tags>
     <tag>us-100</tag>
     <tag>ultrasonic</tag>
@@ -21,37 +24,43 @@
   </properties>
   <views>
     <iconView>
-      <layers image="icon/US-100_icon.svg">
-        <layer layerId="icon"/>
+      <layers image="icon/US-100_ultrasonic-distance-sensor_icon.svg">
+        <layer layerId="icon" />
       </layers>
     </iconView>
     <breadboardView>
-      <layers image="breadboard/US-100_breadboard.svg">
-        <layer layerId="breadboard"/>
+      <layers
+        image="breadboard/US-100_ultrasonic-distance-sensor_breadboard.svg"
+      >
+        <layer layerId="breadboard" />
       </layers>
     </breadboardView>
     <schematicView>
-      <layers image="schematic/US-100_schematic.svg">
-        <layer layerId="schematic"/>
+      <layers image="schematic/US-100_ultrasonic-distance-sensor_schematic.svg">
+        <layer layerId="schematic" />
       </layers>
     </schematicView>
     <pcbView>
-      <layers image="pcb/US-100_pcb.svg">
-        <layer layerId="copper0"/>
-        <layer layerId="copper1"/>
-        <layer layerId="silkscreen"/>
+      <layers image="pcb/US-100_ultrasonic-distance-sensor_pcb.svg">
+        <layer layerId="copper0" />
+        <layer layerId="copper1" />
+        <layer layerId="silkscreen" />
       </layers>
     </pcbView>
   </views>
   <connectors>
-    <connector type="male" id="connector0" name="VCC" >
+    <connector type="male" id="connector0" name="VCC">
       <description>VCC</description>
       <views>
         <breadboardView>
-           <p svgId="connector0pin" layer="breadboard" />
+          <p svgId="connector0pin" layer="breadboard" />
         </breadboardView>
         <schematicView>
-          <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal" />
+          <p
+            svgId="connector0pin"
+            layer="schematic"
+            terminalId="connector0terminal"
+          />
         </schematicView>
         <pcbView>
           <p svgId="connector0pad" layer="copper0" />
@@ -59,14 +68,18 @@
         </pcbView>
       </views>
     </connector>
-    <connector type="male" id="connector1" name="TRIG" >
+    <connector type="male" id="connector1" name="TRIG">
       <description>Trig/Tx</description>
       <views>
         <breadboardView>
-           <p svgId="connector1pin" layer="breadboard" />
+          <p svgId="connector1pin" layer="breadboard" />
         </breadboardView>
         <schematicView>
-          <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal" />
+          <p
+            svgId="connector1pin"
+            layer="schematic"
+            terminalId="connector1terminal"
+          />
         </schematicView>
         <pcbView>
           <p svgId="connector1pad" layer="copper0" />
@@ -74,14 +87,18 @@
         </pcbView>
       </views>
     </connector>
-    <connector type="male" id="connector2" name="ECHO" >
+    <connector type="male" id="connector2" name="ECHO">
       <description>Echo/Rx</description>
       <views>
         <breadboardView>
-           <p svgId="connector2pin" layer="breadboard" />
+          <p svgId="connector2pin" layer="breadboard" />
         </breadboardView>
         <schematicView>
-          <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal" />
+          <p
+            svgId="connector2pin"
+            layer="schematic"
+            terminalId="connector2terminal"
+          />
         </schematicView>
         <pcbView>
           <p svgId="connector2pad" layer="copper0" />
@@ -89,14 +106,18 @@
         </pcbView>
       </views>
     </connector>
-    <connector type="male" id="connector3" name="GND" >
+    <connector type="male" id="connector3" name="GND">
       <description>GND</description>
       <views>
         <breadboardView>
-           <p svgId="connector3pin" layer="breadboard" />
+          <p svgId="connector3pin" layer="breadboard" />
         </breadboardView>
         <schematicView>
-          <p svgId="connector3pin" layer="schematic" terminalId="connector3terminal" />
+          <p
+            svgId="connector3pin"
+            layer="schematic"
+            terminalId="connector3terminal"
+          />
         </schematicView>
         <pcbView>
           <p svgId="connector3pad" layer="copper0" />
@@ -104,11 +125,11 @@
         </pcbView>
       </views>
     </connector>
-    <connector type="male" id="connector4" name="GND-2" >
+    <connector type="male" id="connector4" name="GND-2">
       <description>GND</description>
       <views>
         <breadboardView>
-           <p svgId="connector4pin" layer="breadboard" />
+          <p svgId="connector4pin" layer="breadboard" />
         </breadboardView>
         <schematicView>
           <p svgId="connector4pin" layer="schematic" hybrid="yes" />
@@ -121,9 +142,9 @@
     </connector>
   </connectors>
   <buses>
-    <bus id="bus0" >
+    <bus id="bus0">
       <nodeMember connectorId="connector3" />
       <nodeMember connectorId="connector4" />
     </bus>
-</buses>
+  </buses>
 </module>
