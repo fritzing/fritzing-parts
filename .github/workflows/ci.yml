@@ -1,0 +1,44 @@
+name: check-all-parts
+on: [push, pull_request]
+jobs:
+  python-scripts:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+      - name: Avoid non acsii in part and svg filenames
+        run: python scripts/checkascii.py .
+      - name: Check that image filenames use same case
+        run: python scripts/checkcase.py
+      - name: Look for suspicios connector numbering
+        run: python scripts/connectors_misnumbered.py -d .
+      - name: Avoid duplicate files
+        run: python scripts/checkcopies.py -d svg
+      - name: Dry run script to test the script itself
+        run: python scripts/obsolete.py core/sparkfun-connectors-rca-.fzp dummy -s
+
+  golang-scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.15.x
+      - name: Install fzp tool
+        run: |
+          go get github.com/fritzing/fzp/bin/fzp
+          fzp -v
+          go get github.com/fritzing/fzb/bin/fzb
+          fzb -version
+      - name: Fzp validate
+        run: fzp validate --dir ./core

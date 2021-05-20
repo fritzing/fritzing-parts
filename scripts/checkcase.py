@@ -1,58 +1,98 @@
 
-import sys, os, os.path, re, xml.dom.minidom, xml.dom,  optparse
-    
+import sys
+import os
+import os.path
+import re
+import xml.dom.minidom
+import xml.dom
+import argparse
+
+
 def usage():
-        print("""
+    print("""
 usage:
     checkcase.py -f [fzp folder] -s [svg folder]
     ensure all fzp files case-sensitively match svg file names
+    This will modify fzp files
 """)
-    
-        
-           
+
+
+def skip(filename):
+    skip_files = [
+        "./obsolete/Raspberry Pi Zero.fzp",
+        "./obsolete/basic-diode.fzp",
+        "./obsolete/NRF24L01modif_0e60743881e2091e0761dc302a66f72e_4.fzp",
+        "./obsolete/zero_RPi_1.fzp",
+        "./obsolete/prefix0000_c370f033d3f6e718f3cd68009db820d9_5.fzp",
+        "./core/SM130_fix_c427b6f6464a187fb8ed11ae2f2868fc_2.fzp",
+        "./core/SMD_SO14w.fzp",
+        "./core/SMD_SO-24x.fzp",
+        "./core/aisler_cloud.fzp",
+        "./core/sparkfun-connectors-pic-icsp-pth.fzp",
+        "./user/74xx08.fzp",
+    ]
+    for i, item in enumerate(skip_files):
+        skip_files[i] = os.path.normpath(item)
+    return os.path.normpath(filename) in skip_files
+
+
 def main():
-    parser = optparse.OptionParser()
-    parser.add_option('-f', '--fzp', dest="fzpdir" )
-    parser.add_option('-s', '--svg', dest="svgdir" )
-    (options, args) = parser.parse_args()
-        
-    if not options.fzpdir:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '--fzp', dest='fzpdir',
+                        help="fzp directory", default='.')
+    parser.add_argument('-s', '--svg', dest='svgdir',
+                        help="svg directort", default='svg')
+    args = parser.parse_args()
+
+    if not args.fzpdir:
         usage()
         parser.error("fzp dir argument not given")
-        return       
-            
-    if not options.svgdir:
+        return -1
+
+    if not args.svgdir:
         usage()
         parser.error("svg dir argument not given")
-        return   
+        return -1
 
+    ret = 0
+    svgdir = args.svgdir
+    fzpdir = args.fzpdir
     allsvgs = []
     lowersvgs = {}
-    for root, dirs, files in os.walk(options.svgdir, topdown=False):
+    for root, dirs, files in os.walk(svgdir, topdown=False):
         for filename in files:
-            if not filename.endswith(".svg"): 
+            if not filename.endswith(".svg"):
                 continue
             path = os.path.join(root, filename)
             allsvgs.append(path)
-            lowersvgs[path.lower()] = filename
-            
-    for root, dirs, files in os.walk(options.fzpdir, topdown=False):
+            lowersvgs[path.lower()] = path
+
+    count_checks = 0
+    count_fixes = 0
+    count_missing = 0
+    count_skips = 0
+    for root, dirs, files in os.walk(fzpdir, topdown=False):
         for filename in files:
-            if not filename.endswith(".fzp"): 
+            if not filename.endswith(".fzp"):
                 continue
-                
+
+            count_checks += 1
             fzpFilename = os.path.join(root, filename)
+            if skip(fzpFilename):
+                count_skips += 1
+                continue
+
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
             except xml.parsers.expat.ExpatError as err:
                 print(str(err), fzpFilename)
                 continue
-             
+
             doUpdate = False
             fzp = dom.documentElement
             layerss = fzp.getElementsByTagName("layers")
             for layers in layerss:
-                image = layers.getAttribute("image").replace("/", "\\")
+                image = os.path.normpath(layers.getAttribute("image"))
                 if ("dip_" in image) and ("mil_" in image):
                     continue
                 if ("sip_" in image) and ("mil_" in image):
@@ -73,37 +113,43 @@ def main():
                     continue
                 if ("generic" in image) and ("header" in image):
                     continue
-                path1 = os.path.join(options.svgdir, "core", image)
-                path2 = os.path.join(options.svgdir, "contrib", image)
-                path3 = os.path.join(options.svgdir, "obsolete", image)
-                if os.path.isfile(path1) or os.path.isfile(path2) or os.path.isfile(path3):
-                    for path in [path1, path2, path3]:
-                        try:
-                            handle = open(path)
-                            if not path in allsvgs:
-                                print("mismatch", fzpFilename)
-                                print("\t", path)
-                                print()
-                                thing = layers.getAttribute("image").split("/")
-                                thing[1] = lowersvgs[path.lower()]
-                                layers.setAttribute("image", "/".join(thing))
-                                doUpdate = True
-                                
-                        except:
-                            pass
-                else:
-                    print("missing", fzpFilename, image)
-                
-            
+
+                for subpath in ['core', 'contrib', 'obsolete']:
+                    path = os.path.join(svgdir, subpath, image)
+                    if not lowersvgs.get(path.lower()) is None:
+                        if not path in allsvgs:
+                            print("mismatch", fzpFilename)
+                            print("\t", path)
+                            print("\t", lowersvgs.get(path.lower()))
+                            print()
+                            thing = layers.getAttribute("image").split("/")
+                            thing[1] = os.path.basename(lowersvgs[path.lower()])
+                            layers.setAttribute("image", "/".join(thing))
+                            doUpdate = True
+                        break
+                else: # yes, for ... else
+                    print("Warning: missing", fzpFilename, image)
+                    count_missing += 1
+                    ret = -1
+
             if doUpdate:
-                outfile = open(fzpFilename, 'wb')
-                s = dom.toxml("UTF-8")
-                outfile.write(s)
-                outfile.close()                    
-                
+                count_fixes += 1
+                if sys.version_info >= (3,8,0):
+                    outfile = open(fzpFilename, 'wb')
+                    s = dom.toxml("UTF-8")
+                    outfile.write(s)
+                    outfile.close()
+                ret = -1
+
+    print("%s fzp files checked." % count_checks)
+    print("%s fzp files skipped." % count_skips)
+    print("%s fzp case-sensitivity errors found." % count_fixes)
+    if count_fixes > 0 and sys.version_info < (3,8,0):
+        print("Fixes not applied. Please use at least python 3.8 to preserve attributes order. This is important for human readability of xml files.")
+
+    print("%s svg file references broken." % count_missing )
+    return ret
+
 
 if __name__ == "__main__":
-        main()
-
-
-
+    sys.exit(main())
