@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.2"
+  baseProfile="tiny"
+  width="0.71in"
+  height="0.31in"
+  viewBox="0 0 710 310"
+>
+  <g
+    id="schematic"
+    fill="none"
+    stroke="none"
+    stroke-width="10"
+    stroke-linecap="round"
+    font-family="DroidSans"
+    transform="translate(105, 5)"
+  >
+    <rect x="0" y="0" width="500" height="300" stroke="#000" />
+    <text x="250" y="170" font-size="59" fill="#000" text-anchor="middle">
+      US-100
+    </text>
+    <g transform="translate(0,100)">
+      <path d="m0,0 h-100" id="connector0pin" stroke="#555" />
+      <rect
+        x="-101"
+        y="-1"
+        width="2"
+        height="2"
+        id="connector0terminal"
+        fill="none"
+        stroke="none"
+      />
+      <text
+        transform=""
+        x="20"
+        y="15"
+        font-size="49"
+        fill="#555"
+        text-anchor="start"
+      >
+        VCC
+      </text>
+      <text
+        transform=""
+        x="-50"
+        y="-15"
+        font-size="35"
+        fill="#555"
+        text-anchor="middle"
+      >
+        1
+      </text>
+    </g>
+    <g transform="translate(500,100)">
+      <path d="m0,0 h100" id="connector1pin" stroke="#555" />
+      <rect
+        x="99"
+        y="-1"
+        width="2"
+        height="2"
+        id="connector1terminal"
+        fill="none"
+        stroke="none"
+      />
+      <text
+        transform=""
+        x="-20"
+        y="15"
+        font-size="49"
+        fill="#555"
+        text-anchor="end"
+      >
+        Trig/Tx
+      </text>
+      <text
+        transform=""
+        x="50"
+        y="-15"
+        font-size="35"
+        fill="#555"
+        text-anchor="middle"
+      >
+        2
+      </text>
+    </g>
+    <g transform="translate(500,200)">
+      <path d="m0,0 h100" id="connector2pin" stroke="#555" />
+      <rect
+        x="99"
+        y="-1"
+        width="2"
+        height="2"
+        id="connector2terminal"
+        fill="none"
+        stroke="none"
+      />
+      <text
+        transform=""
+        x="-20"
+        y="15"
+        font-size="49"
+        fill="#555"
+        text-anchor="end"
+      >
+        Echo/Rx
+      </text>
+      <text
+        transform=""
+        x="50"
+        y="-15"
+        font-size="35"
+        fill="#555"
+        text-anchor="middle"
+      >
+        3
+      </text>
+    </g>
+    <g transform="translate(0,200)">
+      <path d="m0,0 h-100" id="connector3pin" stroke="#555" />
+      <rect
+        x="-101"
+        y="-1"
+        width="2"
+        height="2"
+        id="connector3terminal"
+        fill="none"
+        stroke="none"
+      />
+      <text
+        transform=""
+        x="20"
+        y="15"
+        font-size="49"
+        fill="#555"
+        text-anchor="start"
+      >
+        GND
+      </text>
+      <text
+        transform=""
+        x="-50"
+        y="-15"
+        font-size="35"
+        fill="#555"
+        text-anchor="middle"
+      >
+        4
+      </text>
+    </g>
+    <rect
+      x="-1000"
+      y="-1000"
+      width="1"
+      height="1"
+      id="connector4pin"
+      fill="none"
+      stroke="none"
+    />
+  </g>
+</svg>
