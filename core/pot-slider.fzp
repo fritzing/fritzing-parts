@@ -16,9 +16,9 @@
         <property name="family">Potentiometer</property>
         <property name="track">Linear</property>
         <property name="type">Slide Potentiometer</property>
-	<property name="power" showInLabel="yes"></property>
+	<property name="power">0.5W</property>
 	<property name="maximum resistance" showInLabel="yes">100k&#937;</property>
-	<property name="knob status" showInLabel="yes">50%</property>
+	<property name="knob status">50%</property>
     </properties>
     <description>A sliding adjustable resistor (potentiometer).</description>
     <spice>
