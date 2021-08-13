@@ -65,8 +65,13 @@
                 </iconView>
             </views>
         </instance>
-        <!--TODO:
-        <instance moduleIdRef="1001ABDC27" modelIndex="12" path="basic_fet_p.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance>-->
+        <instance moduleIdRef="1001ABDC27" modelIndex="12" path="basic_fet_p.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
         <instance modelIndex="3" moduleIdRef="__spacer__" path="Input">
             <views>
                 <iconView layer="icon">
