@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.9.9" moduleId="UltrasonicSensorModule_a146ecc5">
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.9.9" moduleId="UltrasonicSensorModuleWithCable_a146ecc6">
 <version>4</version>
     <author>Kjell Morgenstern</author>
-    <title>Ultrasonic Sensor Module</title>
+    <title>Ultrasonic Sensor Module with cable</title>
     <label>USSM</label>
-    <date>2021-10-11</date>
+    <date>2021-12-01</date>
     <properties>
         <property name="family">distance sensor</property>
         <property name="type">ultrasonic distance sensor</property>
@@ -20,7 +20,7 @@
     <description>&lt;b>TDK Ultrasonic distance sensor B59150X0754P030&lt;/b>&lt;br/>
  B59150X0754P030 is an ultrasonic time of flight sensor with an integrated driving unit (X150P0754). It has a Harwin M40-3010346 sensor connector at the back. Do not touch the 3-pin connector or PCB without ESD protection. See the documentation &lt;a href="https://product.tdk.com/de/search/sensor/ultrasonic/tof/info?part_no=B59150X0754P030&amp;utm_source=fritzing"&gt;here&lt;/a>.
 &lt;br/>&lt;br/>
-&lt;b>Tip &lt;/b> To connect the sensor in Fritzing breadboard view, use the M40-1100300 part. 
+&lt;b>Tip &lt;/b> To connect the sensor in like in the Fritzing breadboard view, use a M40-1100300 connector. 
 &lt;b>Do not directly connect wires to the sensor. Heat and static discharge will damage the sensor. &lt;/b>
 </description>
     <views>
@@ -47,11 +47,11 @@
         </schematicView>
     </views>
     <connectors>
-        <connector id="connector10" name="GND" type="female">
+        <connector id="connector0" name="GND" type="male">
             <description>GND</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector10pin" terminalId="connector10terminal"/>
+                    <p layer="breadboard" svgId="connector0leg" terminalId="connector0terminal"/>
                 </breadboardView>
                 <schematicView>
                     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
@@ -61,11 +61,11 @@
                 <p layer="copper1" svgId="connector0pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector1" name="IO" type="female">
+        <connector id="connector1" name="IO" type="male">
             <description>IO</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal" />
+                    <p layer="breadboard" svgId="connector1leg" terminalId="connector1terminal" />
                 </breadboardView>
                 <schematicView>
                     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
@@ -75,11 +75,11 @@
                 <p layer="copper1" svgId="connector1pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector2" name="Vsup" type="female">
+        <connector id="connector2" name="Vsup" type="male">
             <description>Vsup</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal" />
+                    <p layer="breadboard" svgId="connector2leg" terminalId="connector2terminal" />
                 </breadboardView>
                 <schematicView>
                     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
