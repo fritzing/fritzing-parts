@@ -15,6 +15,7 @@ from copy import deepcopy
 
 simulate = None
 
+# Part of CI tests
 
 def get_dom(filename):
     try:

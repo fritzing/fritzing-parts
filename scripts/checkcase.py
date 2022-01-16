@@ -7,6 +7,7 @@ import xml.dom.minidom
 import xml.dom
 import argparse
 
+# Part of CI tests
 
 def usage():
     print("""
