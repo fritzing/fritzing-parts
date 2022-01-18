@@ -42,7 +42,7 @@ def main():
     parser.add_argument('-f', '--fzp', dest='fzpdir',
                         help="fzp directory", default='.')
     parser.add_argument('-s', '--svg', dest='svgdir',
-                        help="svg directort", default='svg')
+                        help="svg directory", default='svg')
     args = parser.parse_args()
 
     if not args.fzpdir:
