@@ -26,7 +26,7 @@ jobs:
       - name: Dry run script to test the script itself
         run: python scripts/obsolete.py core/sparkfun-connectors-rca-.fzp dummy -s
       - name: Check that svgs have proper layer ids
-        run: python scripts/svgNoLayer.py -d svg -s scripts/nolayeridcheck.txt
+        run: python scripts/svgNoLayer.py -d svg/core -s scripts/nolayeridcheck.txt
 
   golang-scripts:
     runs-on: ubuntu-latest
