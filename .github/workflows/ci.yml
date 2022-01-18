@@ -19,7 +19,7 @@ jobs:
         run: python scripts/checkascii.py .
       - name: Check that image filenames use same case
         run: python scripts/checkcase.py
-      - name: Look for suspicios connector numbering
+      - name: Look for suspicious connector numbering
         run: python scripts/connectors_misnumbered.py -d .
       - name: Avoid duplicate files
         run: python scripts/checkcopies.py -d svg
