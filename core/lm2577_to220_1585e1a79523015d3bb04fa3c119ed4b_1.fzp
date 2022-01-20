@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<module referenceFile="xl6009.fzp" fritzingVersion="0.9.3b" moduleId="lm2577_to220_1585e1a79523015d3bb04fa3c119ed4b_1">
+<module referenceFile="xl6009.fzp" fritzingVersion="0.9.3b" moduleId="lm2577_to220_15854342">
  <version>4</version>
  <author>Daniël Mantione</author>
  <title>LM2577 (TO220)</title>
@@ -54,8 +54,8 @@ p, li { white-space: pre-wrap; }
   </pcbView>
  </views>
  <connectors>
-  <connector type="male" id="connector0" name="Pin 1">
-   <description>GND</description>
+  <connector type="male" id="connector0" name="COMP">
+   <description>COMP</description>
    <views>
     <breadboardView>
      <p terminalId="connector0terminal" layer="breadboard" svgId="connector0pin"/>
@@ -68,8 +68,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector1" name="Pin 2">
-   <description>EN</description>
+  <connector type="male" id="connector1" name="FB">
+   <description>Feedback</description>
    <views>
     <breadboardView>
      <p terminalId="connector1terminal" layer="breadboard" svgId="connector1pin"/>
@@ -82,8 +82,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector2" name="Pin 3">
-   <description>SW</description>
+  <connector type="male" id="connector2" name="GND">
+   <description>GND</description>
    <views>
     <breadboardView>
      <p terminalId="connector2terminal" layer="breadboard" svgId="connector2pin"/>
@@ -96,8 +96,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector3" name="pin 4">
-   <description>VIN</description>
+  <connector type="male" id="connector3" name="SW">
+   <description>Switch</description>
    <views>
     <breadboardView>
      <p terminalId="connector3terminal" layer="breadboard" svgId="connector3pin"/>
@@ -110,8 +110,8 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector4" name="Pin 5">
-   <description>FB</description>
+  <connector type="male" id="connector4" name="VIN">
+   <description>VIN</description>
    <views>
     <breadboardView>
      <p terminalId="connector4terminal" layer="breadboard" svgId="connector4pin"/>
@@ -142,7 +142,7 @@ p, li { white-space: pre-wrap; }
  <url>http://www.ti.com/lit/gpn/LM2577</url>
  <buses>
   <bus id="internal1">
-   <nodeMember connectorId="connector0"/>
+   <nodeMember connectorId="connector2"/>
    <nodeMember connectorId="connector6"/>
   </bus>
  </buses>
