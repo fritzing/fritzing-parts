@@ -60,8 +60,8 @@ p, li { white-space: pre-wrap; }
   </pcbView>
  </views>
  <connectors>
-  <connector type="male" id="connector1" name="pin 2">
-   <description>C+</description>
+  <connector type="male" id="connector1" name="C+">
+   <description>CAP+</description>
    <views>
     <breadboardView>
      <p terminalId="connector1terminal" layer="breadboard" svgId="connector1pin"/>
@@ -70,12 +70,11 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector1terminal" layer="schematic" svgId="connector1pin"/>
     </schematicView>
     <pcbView>
-     <p layer="copper0" svgId="connector1pin"/>
      <p layer="copper1" svgId="connector1pin"/>
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector2" name="pin 3">
+  <connector type="male" id="connector2" name="GND">
    <description>GND</description>
    <views>
     <breadboardView>
@@ -85,13 +84,12 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector2terminal" layer="schematic" svgId="connector2pin"/>
     </schematicView>
     <pcbView>
-     <p layer="copper0" svgId="connector2pin"/>
      <p layer="copper1" svgId="connector2pin"/>
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector3" name="pin4">
-   <description>C-</description>
+  <connector type="male" id="connector3" name="C-">
+   <description>CAP-</description>
    <views>
     <breadboardView>
      <p terminalId="connector3terminal" layer="breadboard" svgId="connector3pin"/>
@@ -100,12 +98,11 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector3terminal" layer="schematic" svgId="connector3pin"/>
     </schematicView>
     <pcbView>
-     <p layer="copper0" svgId="connector3pin"/>
-     <p layer="copper1" svgId="connector3pin"/>
+       <p layer="copper1" svgId="connector3pin"/>
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector4" name="pin 5">
+  <connector type="male" id="connector4" name="VOUT">
    <description>VOUT</description>
    <views>
     <breadboardView>
@@ -115,13 +112,12 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector4terminal" layer="schematic" svgId="connector4pin"/>
     </schematicView>
     <pcbView>
-     <p layer="copper0" svgId="connector4pin"/>
-     <p layer="copper1" svgId="connector4pin"/>
+      <p layer="copper1" svgId="connector4pin"/>
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector5" name="pin 6">
-   <description>VOUT</description>
+  <connector type="male" id="connector5" name="LV">
+   <description>LV</description>
    <views>
     <breadboardView>
      <p terminalId="connector5terminal" layer="breadboard" svgId="connector5pin"/>
@@ -130,12 +126,11 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector5terminal" layer="schematic" svgId="connector5pin"/>
     </schematicView>
     <pcbView>
-     <p layer="copper0" svgId="connector5pin"/>
      <p layer="copper1" svgId="connector5pin"/>
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector6" name="pin 7">
+  <connector type="male" id="connector6" name="OSC">
    <description>OSC</description>
    <views>
     <breadboardView>
@@ -145,12 +140,11 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector6terminal" layer="schematic" svgId="connector6pin"/>
     </schematicView>
     <pcbView>
-     <p layer="copper0" svgId="connector6pin"/>
-     <p layer="copper1" svgId="connector6pin"/>
+       <p layer="copper1" svgId="connector6pin"/>
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector7" name="pin 8">
+  <connector type="male" id="connector7" name="V+">
    <description>VIN</description>
    <views>
     <breadboardView>
@@ -160,7 +154,6 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector7terminal" layer="schematic" svgId="connector7pin"/>
     </schematicView>
     <pcbView>
-     <p layer="copper0" svgId="connector7pin"/>
      <p layer="copper1" svgId="connector7pin"/>
     </pcbView>
    </views>
