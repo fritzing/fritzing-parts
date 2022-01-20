@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module referenceFile="xl4015_6b5078816154b8728cafe03e7fce04a5_1.fzp" fritzingVersion="0.9.3b" moduleId="lm2576_af865fdbce219b6e1655050c6b30f5cb_10">
+ <version>4</version>
+ <author>Daniël Mantione</author>
+ <title>LM2576</title>
+ <label>VR</label>
+ <date>za aug. 17 2019</date>
+ <tags>
+  <tag>smd</tag>
+  <tag>multi-vendor</tag>
+  <tag>buck regulator</tag>
+  <tag>LM2576</tag>
+  <tag>to263</tag>
+ </tags>
+ <properties>
+  <property name="family">voltage regulator</property>
+  <property name="variant">LM2576_TO263</property>
+  <property name="max current">3A</property>
+  <property name="package">TO263-5L</property>
+  <property name="input voltage">4.5V-40V</property>
+  <property name="part number">LM2576</property>
+  <property name="oscillator frequency">52 KHz</property>
+  <property name="layer"></property>
+  <property name="subfamily">switched buck regulator</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'.SF NS Text'; font-size:13pt;">LM2576 &lt;/span>3A 52KHz 40V Buck DC to DC&lt;span style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt;"> in TO2635L package.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt;">Allthough the specifications of the LM2575 (1A) and LM2576 (3A) are far from impressive today, they are still acceptable in many situations. The main advantage of the LM2575/LM2576 is that it is available from many vendors and therefore low-cost and easy to find. Many vendors offer more advanced regulators that are pinout compatible with the LM2576, therefore designing your PCB for the LM2575/LM2576 keeps your options wide open.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt;">Manufacturs of the LM2576 are: Texax Instruments, Microchip, XLSemi (XL2576), HM Semi (HM2576), ON Semi, TAEJin, Huagao Semi.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/lm2576_3f752a7671beb498c6e8b42ac57f6abc_1_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/lm2576_3f752a7671beb498c6e8b42ac57f6abc_1_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/lm2576_3f752a7671beb498c6e8b42ac57f6abc_1_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/lm2576_3f752a7671beb498c6e8b42ac57f6abc_1_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="Pin 1">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector0terminal" layer="schematic" svgId="connector0pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector0pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector1" name="Pin 2">
+   <description>SW</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector1terminal" layer="schematic" svgId="connector1pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector1pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector2" name="Pin 3">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector2terminal" layer="schematic" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector2pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector3" name="pin 4">
+   <description>FB</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector3terminal" layer="schematic" svgId="connector3pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector3pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector4" name="Pin 5">
+   <description>EN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector4terminal" layer="schematic" svgId="connector4pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector4pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector6" name="Tab">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector6terminal" layer="schematic" svgId="connector6pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector6pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>http://www.microchip.com/downloads/en/DeviceDoc/lm2576.pdf</url>
+ <buses>
+  <bus id="internal1"/>
+  <bus id="internal2">
+   <nodeMember connectorId="connector2"/>
+   <nodeMember connectorId="connector6"/>
+  </bus>
+ </buses>
+</module>

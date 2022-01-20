@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg"  x="0in" viewBox="0 0 42000 84500" height="0.845in" width="0.42in" y="0in" version="1.2" baseProfile="tiny">
+    <desc >
+        <referenceFile >TO220-5.svg</referenceFile>
+    </desc>
+    <title >TO220.fp</title>
+    <desc >Geda footprint file 'TO220.fp' converted by Fritzing</desc>
+    <metadata >
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+            <rdf:Description rdf:about="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <fz:attr xmlns:fz="http://fritzing.org/gedametadata/1.0/" name="geda filename">TO220.fp</fz:attr>
+                <fz:attr xmlns:fz="http://fritzing.org/gedametadata/1.0/" name="fritzing version">0.4.0b.06.21.4282</fz:attr>
+                <fz:attr xmlns:fz="http://fritzing.org/gedametadata/1.0/" name="conversion date">27/06/2010 07:16:38</fz:attr>
+                <fz:attr xmlns:fz="http://fritzing.org/gedametadata/1.0/" name="dist-license">GPL</fz:attr>
+                <fz:attr xmlns:fz="http://fritzing.org/gedametadata/1.0/" name="use-license">unlimited</fz:attr>
+                <fz:attr xmlns:fz="http://fritzing.org/gedametadata/1.0/" name="author">gEDA project</fz:attr>
+                <fz:attr xmlns:fz="http://fritzing.org/gedametadata/1.0/" name="license-url">http://www.gnu.org/licenses/gpl.html</fz:attr>
+            </rdf:Description>
+        </rdf:RDF>
+    </metadata>
+    <g  id="silkscreen" gorn="0.4">
+        <line fill="none"  y1="60000" y2="60000" x1="1000" x2="41000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="60000" y2="24500" x1="41000" x2="41000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="24500" y2="24500" x1="41000" x2="1000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="24500" y2="60000" x1="1000" x2="1000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="24500" y2="24500" x1="1000" x2="41000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="24500" y2="12000" x1="41000" x2="41000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="12000" y2="12000" x1="41000" x2="39500" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="12000" y2="5000" x1="39500" x2="39500" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="5000" y2="5000" x1="39500" x2="41000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="5000" y2="1000" x1="41000" x2="41000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="1000" y2="1000" x1="41000" x2="1000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="1000" y2="5000" x1="1000" x2="1000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="5000" y2="5000" x1="1000" x2="2500" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="5000" y2="12000" x1="2500" x2="2500" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="12000" y2="12000" x1="2500" x2="1000" stroke="black" stroke-width="2000"/>
+        <line fill="none"  y1="12000" y2="24500" x1="1000" x2="1000" stroke="black" stroke-width="2000"/>
+    </g>
+    <g  id="copper1" gorn="0.5">
+        <path d="M2000,2000 40000,2000 40000,59000 2000,59000 M14000,13000 a7000,7000 0 1,0 14000,0 a7000,7000 0 1,0 -14000,0" fill="#ff9400"  id="connector6pin" fill-rule="evenodd" gorn="0.5.0"/>
+        <circle cy="13000" fill="#000000"  id="nonconn0" gorn="0.5.1" cx="21000" r="7000"/>
+        <g  id="copper0" gorn="0.5.2">
+            <path d="M5417,70000a2250,4500 0 1,0 4500,0a2250,4500 0 1,0 -4500,0 Z M5417,70000a2250,2250 0 1,0 4500,0a2250,2250 0 1,0 -4500,0 Z" fill="#ff9400"  fill-rule="evenodd"/>
+            <circle cy="70000" fill="none"  id="connector0pad" gorn="0.5.2.1" cx="7667" stroke="#ff9400" connectorname="1" r="2250" stroke-width="1000"/>
+            <path d="M12083,70000a2250,4500 0 1,0 4500,0a2250,4500 0 1,0 -4500,0 Z M12083,70000a2250,2250 0 1,0 4500,0a2250,2250 0 1,0 -4500,0 Z" fill="#ff9400"  fill-rule="evenodd"/>
+            <circle cy="70000" fill="none"  id="connector1pad" gorn="0.5.2.3" cx="14333" stroke="#ff9400" connectorname="2" r="2250" stroke-width="1000"/>
+            <path d="M18750,70000a2250,4500 0 1,0 4500,0a2250,4500 0 1,0 -4500,0 Z M18750,70000a2250,2250 0 1,0 4500,0a2250,2250 0 1,0 -4500,0 Z" fill="#ff9400"  fill-rule="evenodd"/>
+            <circle cy="70000" fill="none"  id="connector2pad" gorn="0.5.2.5" cx="21000" stroke="#ff9400" connectorname="3" r="2250" stroke-width="1000"/>
+            <path d="M25417,70000a2250,4500 0 1,0 4500,0a2250,4500 0 1,0 -4500,0 Z M25417,70000a2250,2250 0 1,0 4500,0a2250,2250 0 1,0 -4500,0 Z" fill="#ff9400"  fill-rule="evenodd"/>
+            <circle cy="70000" fill="none"  id="connector3pad" gorn="0.5.2.7" cx="27667" stroke="#ff9400" connectorname="4" r="2250" stroke-width="1000"/>
+            <path d="M32083,70000a2250,4500 0 1,0 4500,0a2250,4500 0 1,0 -4500,0 Z M32083,70000a2250,2250 0 1,0 4500,0a2250,2250 0 1,0 -4500,0 Z" fill="#ff9400"  fill-rule="evenodd"/>
+            <circle cy="70000" fill="none"  id="connector4pad" gorn="0.5.2.9" cx="34333" stroke="#ff9400" connectorname="5" r="2250" stroke-width="1000"/>
+        </g>
+    </g>
+</svg>
