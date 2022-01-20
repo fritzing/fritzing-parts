@@ -33,22 +33,22 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt;">The XL4016 is a high efficiency buck converter with a relatively high output power. Use the XL4016 if you prefer the through hole TO220 package over the surface mount TO263 package used by the XL4005/XL4015, or if you need the 8A current capability (you may want to mount it to a dedicatd heat sink in that case).&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
  <views>
   <iconView>
-   <layers image="icon/xl4016_a9e75dcaefc8bacd8ee095a696df6c91_1_icon.svg">
+   <layers image="icon/xl4016_da39401d3aec6aea0d50ab1b250a8cbe_1_icon.svg">
     <layer layerId="icon"/>
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="breadboard/xl4016_a9e75dcaefc8bacd8ee095a696df6c91_1_breadboard.svg">
+   <layers image="breadboard/xl4016_da39401d3aec6aea0d50ab1b250a8cbe_1_breadboard.svg">
     <layer layerId="breadboard"/>
    </layers>
   </breadboardView>
   <schematicView>
-   <layers image="schematic/xl4016_a9e75dcaefc8bacd8ee095a696df6c91_1_schematic.svg">
+   <layers image="schematic/xl4016_da39401d3aec6aea0d50ab1b250a8cbe_1_schematic.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="pcb/xl4016_a9e75dcaefc8bacd8ee095a696df6c91_1_pcb.svg">
+   <layers image="pcb/xl4016_da39401d3aec6aea0d50ab1b250a8cbe_1_pcb.svg">
     <layer layerId="silkscreen"/>
     <layer layerId="copper1"/>
    </layers>
@@ -142,8 +142,7 @@ p, li { white-space: pre-wrap; }
  </connectors>
  <url>http://www.xlsemi.com/datasheet/XL4016%20datasheet.pdf</url>
  <buses>
-  <bus id="internal1"/>
-  <bus id="internal2">
+  <bus id="internal1">
    <nodeMember connectorId="connector2"/>
    <nodeMember connectorId="connector6"/>
   </bus>
