@@ -66,23 +66,12 @@ def main():
                 infile = open(os.path.join(root, filename), "r")
                 svg = infile.read()
                 infile.close()
-                match = None
-                for layer in layers:
-                    match = re.search('id=[\'\"]' + layer, svg)
-                    if (match != None):
-                        break
 
-                if match == None:
-                    print("{0} {1}".format(os.path.join(
-                        root, filename), "has no layer ids"))
+                msg = parseIDs(svg)
+                if msg:
+                    print("{0} {1}".format(
+                        os.path.join(root, filename), msg))
                     count_errors += 1
-                else:
-
-                    msg = parseIDs(svg)
-                    if msg:
-                        print("{0} {1}".format(
-                            os.path.join(root, filename), msg))
-                        count_errors += 1
 
     print("%s svg files checked." % count_checks)
     print("%s svg files skipped." % count_skips)
@@ -90,6 +79,25 @@ def main():
 
     return count_errors
 
+def parseElement(element):
+    for c in element.childNodes:
+        if c.nodeType != c.ELEMENT_NODE:
+            continue
+
+        tag = c.tagName
+        if tag in ["metadata", "title", "desc", "defs", "sodipodi:namedview"]:
+            continue
+
+        id = c.getAttribute("id")
+        if id in layers:
+            continue
+
+        if tag == 'g':
+            return parseElement(c)
+
+        return "child element '" + tag + "' with no layer id"
+
+    return None
 
 def parseIDs(svg):
     try:
@@ -99,42 +107,13 @@ def parseIDs(svg):
 
     root = dom.documentElement
     id = root.getAttribute("id")
-    if id != None:
-        for layer in layers:
-            if (layer == id):
-                # Note: This is an error, Fritzing has problems with
-                # layer ids in the root element at least until
-                # version 0.9.9
-                return "svg contains layer id " + id
+    if id in layers:
+        # Note: This is an error, Fritzing has problems with
+        # layer ids in the root element at least until
+        # version 0.9.9
+        return "svg contains layer id " + id
+    return parseElement(root)
 
-    for c in root.childNodes:
-        if c.nodeType != c.ELEMENT_NODE:
-            continue
-
-        tag = c.tagName
-        if tag == "metadata":
-            continue
-        if tag == "title":
-            continue
-        if tag == "desc":
-            continue
-        if tag == "defs":
-            continue
-        if tag == "sodipodi:namedview":
-            continue
-
-        gotOne = 0
-        id = c.getAttribute("id")
-        if (id != None):
-            for layer in layers:
-                if (layer == id):
-                    gotOne = 1
-                    break
-
-        if gotOne == 0:
-            return "child element '" + tag + "' with no layer id"
-
-    return None
 
 def readSkip(skipfile):
     skip_files = []
