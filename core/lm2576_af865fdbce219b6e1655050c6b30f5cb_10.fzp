@@ -20,7 +20,6 @@
   <property name="input voltage">4.5V-40V</property>
   <property name="part number">LM2576</property>
   <property name="oscillator frequency">52 KHz</property>
-  <property name="layer"></property>
   <property name="subfamily">switched buck regulator</property>
  </properties>
  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
@@ -71,7 +70,7 @@ p, li { white-space: pre-wrap; }
    </views>
   </connector>
   <connector type="male" id="connector1" name="Pin 2">
-   <description>SW</description>
+   <description>OUTPUT</description>
    <views>
     <breadboardView>
      <p layer="breadboard" svgId="connector1pin"/>
@@ -141,10 +140,9 @@ p, li { white-space: pre-wrap; }
    </views>
   </connector>
  </connectors>
- <url>http://www.microchip.com/downloads/en/DeviceDoc/lm2576.pdf</url>
+ <url>https://ww1.microchip.com/downloads/en/DeviceDoc/lm2576.pdf</url>
  <buses>
-  <bus id="internal1"/>
-  <bus id="internal2">
+  <bus id="internal1">
    <nodeMember connectorId="connector2"/>
    <nodeMember connectorId="connector6"/>
   </bus>

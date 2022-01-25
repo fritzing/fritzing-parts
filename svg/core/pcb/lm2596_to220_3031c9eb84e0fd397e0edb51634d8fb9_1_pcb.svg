@@ -18,7 +18,7 @@
             </rdf:Description>
         </rdf:RDF>
     </metadata>
-    <g  gorn="0.4" id="silkscreen">
+    <g id="silkscreen">
         <line y2="60000"  x1="1000" stroke="black" x2="41000" stroke-width="2000" fill="none" y1="60000"/>
         <line y2="24500"  x1="41000" stroke="black" x2="41000" stroke-width="2000" fill="none" y1="60000"/>
         <line y2="24500"  x1="41000" stroke="black" x2="1000" stroke-width="2000" fill="none" y1="24500"/>
@@ -36,20 +36,20 @@
         <line y2="12000"  x1="2500" stroke="black" x2="1000" stroke-width="2000" fill="none" y1="12000"/>
         <line y2="24500"  x1="1000" stroke="black" x2="1000" stroke-width="2000" fill="none" y1="12000"/>
     </g>
-    <g  gorn="0.5" id="copper1">
-        <path  fill-rule="evenodd" gorn="0.5.0" d="M2000,2000 40000,2000 40000,59000 2000,59000 M14000,13000 a7000,7000 0 1,0 14000,0 a7000,7000 0 1,0 -14000,0" id="connector6pin" fill="#ff9400"/>
-        <circle cx="21000"  gorn="0.5.1" cy="13000" id="nonconn0" fill="#000000" r="7000"/>
-        <g  gorn="0.5.2" id="copper0">
+    <g id="copper1">
+        <path  fill-rule="evenodd" d="M2000,2000 40000,2000 40000,59000 2000,59000 M14000,13000 a7000,7000 0 1,0 14000,0 a7000,7000 0 1,0 -14000,0" id="connector6pin" fill="#ff9400"/>
+        <circle cx="21000" cy="13000" id="nonconn0" fill="#000000" r="7000"/>
+        <g id="copper0">
             <path  fill-rule="evenodd" d="M5417,70000a2250,4500 0 1,0 4500,0a2250,4500 0 1,0 -4500,0 Z M5417,70000a2250,2250 0 1,0 4500,0a2250,2250 0 1,0 -4500,0 Z" fill="#ff9400"/>
-            <circle cx="7667"  gorn="0.5.2.1" stroke="#ff9400" cy="70000" stroke-width="1000" id="connector0pad" fill="none" connectorname="1" r="2250"/>
+            <circle cx="7667" stroke="#ff9400" cy="70000" stroke-width="1000" id="connector0pad" fill="none" connectorname="1" r="2250"/>
             <path  fill-rule="evenodd" d="M12083,70000a2250,4500 0 1,0 4500,0a2250,4500 0 1,0 -4500,0 Z M12083,70000a2250,2250 0 1,0 4500,0a2250,2250 0 1,0 -4500,0 Z" fill="#ff9400"/>
-            <circle cx="14333"  gorn="0.5.2.3" stroke="#ff9400" cy="70000" stroke-width="1000" id="connector1pad" fill="none" connectorname="2" r="2250"/>
+            <circle cx="14333" stroke="#ff9400" cy="70000" stroke-width="1000" id="connector1pad" fill="none" connectorname="2" r="2250"/>
             <path  fill-rule="evenodd" d="M18750,70000a2250,4500 0 1,0 4500,0a2250,4500 0 1,0 -4500,0 Z M18750,70000a2250,2250 0 1,0 4500,0a2250,2250 0 1,0 -4500,0 Z" fill="#ff9400"/>
-            <circle cx="21000"  gorn="0.5.2.5" stroke="#ff9400" cy="70000" stroke-width="1000" id="connector2pad" fill="none" connectorname="3" r="2250"/>
+            <circle cx="21000" stroke="#ff9400" cy="70000" stroke-width="1000" id="connector2pad" fill="none" connectorname="3" r="2250"/>
             <path  fill-rule="evenodd" d="M25417,70000a2250,4500 0 1,0 4500,0a2250,4500 0 1,0 -4500,0 Z M25417,70000a2250,2250 0 1,0 4500,0a2250,2250 0 1,0 -4500,0 Z" fill="#ff9400"/>
-            <circle cx="27667"  gorn="0.5.2.7" stroke="#ff9400" cy="70000" stroke-width="1000" id="connector3pad" fill="none" connectorname="4" r="2250"/>
+            <circle cx="27667" stroke="#ff9400" cy="70000" stroke-width="1000" id="connector3pad" fill="none" connectorname="4" r="2250"/>
             <path  fill-rule="evenodd" d="M32083,70000a2250,4500 0 1,0 4500,0a2250,4500 0 1,0 -4500,0 Z M32083,70000a2250,2250 0 1,0 4500,0a2250,2250 0 1,0 -4500,0 Z" fill="#ff9400"/>
-            <circle cx="34333"  gorn="0.5.2.9" stroke="#ff9400" cy="70000" stroke-width="1000" id="connector4pad" fill="none" connectorname="5" r="2250"/>
+            <circle cx="34333" stroke="#ff9400" cy="70000" stroke-width="1000" id="connector4pad" fill="none" connectorname="5" r="2250"/>
         </g>
     </g>
 </svg>
