@@ -143,8 +143,7 @@ p, li { white-space: pre-wrap; }
  </connectors>
  <url>http://www.xlsemi.com/datasheet/XL4015%20datasheet.pdf</url>
  <buses>
-  <bus id="internal1"/>
-  <bus id="internal2">
+  <bus id="internal1">
    <nodeMember connectorId="connector2"/>
    <nodeMember connectorId="connector6"/>
   </bus>

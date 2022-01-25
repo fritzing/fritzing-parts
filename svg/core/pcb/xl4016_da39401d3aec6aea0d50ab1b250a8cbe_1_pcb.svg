@@ -4,20 +4,7 @@
  </desc>
  <title>TO220.fp</title>
  <desc>Geda footprint file 'TO220.fp' converted by Fritzing</desc>
- <metadata>
-  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-   <rdf:Description rdf:about="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <fz:attr name="geda filename" xmlns:fz="http://fritzing.org/gedametadata/1.0/">TO220.fp</fz:attr>
-    <fz:attr name="fritzing version" xmlns:fz="http://fritzing.org/gedametadata/1.0/">0.4.0b.06.21.4282</fz:attr>
-    <fz:attr name="conversion date" xmlns:fz="http://fritzing.org/gedametadata/1.0/">27/06/2010 07:16:38</fz:attr>
-    <fz:attr name="dist-license" xmlns:fz="http://fritzing.org/gedametadata/1.0/">GPL</fz:attr>
-    <fz:attr name="use-license" xmlns:fz="http://fritzing.org/gedametadata/1.0/">unlimited</fz:attr>
-    <fz:attr name="author" xmlns:fz="http://fritzing.org/gedametadata/1.0/">gEDA project</fz:attr>
-    <fz:attr name="license-url" xmlns:fz="http://fritzing.org/gedametadata/1.0/">http://www.gnu.org/licenses/gpl.html</fz:attr>
-   </rdf:Description>
-  </rdf:RDF>
- </metadata>
- <g id="silkscreen" fill="none" stroke="#000" stroke-width="2e3" gorn="0.4">
+ <g id="silkscreen" fill="none" stroke="#000" stroke-width="2e3" >
   <line x1="1e3" x2="41000" y1="6e4" y2="6e4"/>
   <line x1="41000" x2="41000" y1="6e4" y2="24500"/>
   <line x1="41000" x2="1e3" y1="24500" y2="24500"/>
@@ -35,20 +22,20 @@
   <line x1="2500" x2="1e3" y1="12000" y2="12000"/>
   <line x1="1e3" x2="1e3" y1="12000" y2="24500"/>
  </g>
- <g id="copper1" gorn="0.5">
-  <path id="connector6pin" d="m2e3 2e3h38000v57000h-38000m12000-46000a7e3 7e3 0 1 0 14000 0 7e3 7e3 0 1 0-14000 0" fill="#F7BD13" fill-rule="evenodd" gorn="0.5.0"/>
-  <circle id="nonconn0" cx="21000" cy="13000" r="7e3" gorn="0.5.1"/>
-  <g id="copper0" gorn="0.5.2">
+ <g id="copper1" >
+  <path id="connector6pin" d="m2e3 2e3h38000v57000h-38000m12000-46000a7e3 7e3 0 1 0 14000 0 7e3 7e3 0 1 0-14000 0" fill="#F7BD13" fill-rule="evenodd" />
+  <circle id="nonconn0" cx="21000" cy="13000" r="7e3" />
+  <g id="copper0" >
    <path d="m5417 7e4a2250 4500 0 1 0 4500 0 2250 4500 0 1 0-4500 0zm0 0a2250 2250 0 1 0 4500 0 2250 2250 0 1 0-4500 0z" fill="#F7BD13" fill-rule="evenodd"/>
-   <circle id="connector0pad" cx="7667" cy="7e4" r="2250" fill="none" stroke="#F7BD13" stroke-width="1e3" connectorname="1" gorn="0.5.2.1"/>
+   <circle id="connector0pad" cx="7667" cy="7e4" r="2250" fill="none" stroke="#F7BD13" stroke-width="1e3" connectorname="1" />
    <path d="m12083 7e4a2250 4500 0 1 0 4500 0 2250 4500 0 1 0-4500 0zm0 0a2250 2250 0 1 0 4500 0 2250 2250 0 1 0-4500 0z" fill="#F7BD13" fill-rule="evenodd"/>
-   <circle id="connector1pad" cx="14333" cy="7e4" r="2250" fill="none" stroke="#F7BD13" stroke-width="1e3" connectorname="2" gorn="0.5.2.3"/>
+   <circle id="connector1pad" cx="14333" cy="7e4" r="2250" fill="none" stroke="#F7BD13" stroke-width="1e3" connectorname="2" />
    <path d="m18750 7e4a2250 4500 0 1 0 4500 0 2250 4500 0 1 0-4500 0zm0 0a2250 2250 0 1 0 4500 0 2250 2250 0 1 0-4500 0z" fill="#F7BD13" fill-rule="evenodd"/>
-   <circle id="connector2pad" cx="21000" cy="7e4" r="2250" fill="none" stroke="#F7BD13" stroke-width="1e3" connectorname="3" gorn="0.5.2.5"/>
+   <circle id="connector2pad" cx="21000" cy="7e4" r="2250" fill="none" stroke="#F7BD13" stroke-width="1e3" connectorname="3" />
    <path d="m25417 7e4a2250 4500 0 1 0 4500 0 2250 4500 0 1 0-4500 0zm0 0a2250 2250 0 1 0 4500 0 2250 2250 0 1 0-4500 0z" fill="#F7BD13" fill-rule="evenodd"/>
-   <circle id="connector3pad" cx="27667" cy="7e4" r="2250" fill="none" stroke="#F7BD13" stroke-width="1e3" connectorname="4" gorn="0.5.2.7"/>
+   <circle id="connector3pad" cx="27667" cy="7e4" r="2250" fill="none" stroke="#F7BD13" stroke-width="1e3" connectorname="4" />
    <path d="m32083 7e4a2250 4500 0 1 0 4500 0 2250 4500 0 1 0-4500 0zm0 0a2250 2250 0 1 0 4500 0 2250 2250 0 1 0-4500 0z" fill="#F7BD13" fill-rule="evenodd"/>
-   <circle id="connector4pad" cx="34333" cy="7e4" r="2250" fill="none" stroke="#F7BD13" stroke-width="1e3" connectorname="5" gorn="0.5.2.9"/>
+   <circle id="connector4pad" cx="34333" cy="7e4" r="2250" fill="none" stroke="#F7BD13" stroke-width="1e3" connectorname="5" />
   </g>
  </g>
 </svg>

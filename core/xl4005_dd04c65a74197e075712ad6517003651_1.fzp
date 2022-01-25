@@ -98,7 +98,7 @@ p, li { white-space: pre-wrap; }
    </views>
   </connector>
   <connector type="male" id="connector3" name="pin 4">
-   <description>VC</description>
+   <description>EN</description>
    <views>
     <breadboardView>
      <p layer="breadboard" svgId="connector3pin"/>
@@ -142,8 +142,7 @@ p, li { white-space: pre-wrap; }
  </connectors>
  <url>http://www.xlsemi.com/datasheet/XL4005%20datasheet.pdf</url>
  <buses>
-  <bus id="internal1"/>
-  <bus id="internal2">
+  <bus id="internal1">
    <nodeMember connectorId="connector2"/>
    <nodeMember connectorId="connector6"/>
   </bus>
