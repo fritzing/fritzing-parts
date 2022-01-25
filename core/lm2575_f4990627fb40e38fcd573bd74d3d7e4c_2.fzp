@@ -7,7 +7,6 @@
  <date>vr aug. 16 2019</date>
  <tags>
   <tag>TO220</tag>
-  <tag>fritzing user</tag>
   <tag>buck regulator</tag>
   <tag>LM2575</tag>
  </tags>
@@ -66,7 +65,7 @@ p, li { white-space: pre-wrap; }
    </views>
   </connector>
   <connector type="male" id="connector1" name="Pin 2">
-   <description>SW</description>
+   <description>OUT</description>
    <views>
     <breadboardView>
      <p svgId="connector1pin" layer="breadboard"/>
@@ -138,7 +137,6 @@ p, li { white-space: pre-wrap; }
  </connectors>
  <url>http://www.microchip.com/downloads/en/DeviceDoc/lm2575.pdf</url>
  <buses>
-  <bus id="internal1"/>
   <bus id="internal2">
    <nodeMember connectorId="connector2"/>
    <nodeMember connectorId="connector6"/>
