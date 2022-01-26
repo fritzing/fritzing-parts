@@ -15,9 +15,15 @@
         <property name="family">SuperFlux LED</property>
         <property name="color" showInLabel="yes">Blue</property>
         <property name="type">single color</property> 
-        <property name="polarity">common anode</property>
+	<property name="polarity">common anode</property>
+	<property name="current">0.030A</property>
     </properties>
     <description>A SuperFlux LED.</description>
+    <spice>
+        <model>*Typ RED,GREEN,YELLOW,AMBER GaAs LED: Vf=2.1V Vr=4V If=40mA trr=3uS</model>
+        <model>.MODEL LED_GENERIC D (IS=93.1P RS=42M N=4.61 BV=9 IBV=10U CJO=2.97P VJ=.75 M=.333 TT=4.32U)</model>
+        <line>D{instanceTitle} {net connector0} {net connector1} LED_GENERIC</line>
+    </spice>
     <views>
         <iconView>
             <layers image="icon/LED-SuperFlux-blue.svg">

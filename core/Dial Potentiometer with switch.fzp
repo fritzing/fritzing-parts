@@ -19,9 +19,15 @@
         <property name="family">Potentiometer</property>
         <property name="track">Logarithmic</property>
         <property name="type">Thumb Wheel Potentiometer with switch</property>
-        <property name="maximum resistance">10kΩ</property>
+		<property name="power">0.5W</property>
+		<property name="maximum resistance" showInLabel="yes">10k&#937;</property>
+		<property name="knob status">50%</property>
     </properties>
     <description>A thumb wheel adjustable resistor (potentiometer) with internal swith.</description>
+	<spice>
+		<line>R{instanceTitle}A {net connector0} {net connector1} {{knob status}/100*{maximum resistance}}</line>
+		<line>R{instanceTitle}B {net connector2} {net connector1} {{maximum resistance}-{knob status}/100*{maximum resistance}}</line>
+	</spice>
     <views>
         <iconView>
             <layers image="icon/Dial_Potentiometer_with_switch.svg">
