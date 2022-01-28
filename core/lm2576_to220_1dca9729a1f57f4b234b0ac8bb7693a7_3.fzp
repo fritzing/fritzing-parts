@@ -52,6 +52,7 @@ p, li { white-space: pre-wrap; }
     <layer layerId="silkscreen"/>
     <layer layerId="copper0"/>
     <layer layerId="copper1"/>
+
    </layers>
   </pcbView>
  </views>
@@ -66,6 +67,7 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector0terminal" layer="schematic" svgId="connector0pin"/>
     </schematicView>
     <pcbView>
+     <p layer="copper0" svgId="connector0pad"/>
      <p layer="copper1" svgId="connector0pad"/>
     </pcbView>
    </views>
@@ -80,6 +82,7 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector1terminal" layer="schematic" svgId="connector1pin"/>
     </schematicView>
     <pcbView>
+     <p layer="copper0" svgId="connector1pad"/>
      <p layer="copper1" svgId="connector1pad"/>
     </pcbView>
    </views>
@@ -94,6 +97,7 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector2terminal" layer="schematic" svgId="connector2pin"/>
     </schematicView>
     <pcbView>
+     <p layer="copper0" svgId="connector2pad"/>
      <p layer="copper1" svgId="connector2pad"/>
     </pcbView>
    </views>
@@ -108,6 +112,7 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector3terminal" layer="schematic" svgId="connector3pin"/>
     </schematicView>
     <pcbView>
+     <p layer="copper0" svgId="connector3pad"/>
      <p layer="copper1" svgId="connector3pad"/>
     </pcbView>
    </views>
@@ -122,6 +127,7 @@ p, li { white-space: pre-wrap; }
      <p terminalId="connector4terminal" layer="schematic" svgId="connector4pin"/>
     </schematicView>
     <pcbView>
+     <p layer="copper0" svgId="connector4pad"/>
      <p layer="copper1" svgId="connector4pad"/>
     </pcbView>
    </views>

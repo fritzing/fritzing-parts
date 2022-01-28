@@ -173,13 +173,13 @@ p, li { white-space: pre-wrap; }
    <description>LX</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="padpin"/>
+     <p layer="breadboard" svgId="connectorpad"/>
     </breadboardView>
     <schematicView>
-     <p terminalId="padterminal" layer="schematic" svgId="padpin"/>
+     <p terminalId="connectorpadterminal" layer="schematic" svgId="connectorpad"/>
     </schematicView>
     <pcbView>
-     <p layer="copper1" svgId="padpin"/>
+     <p layer="copper1" svgId="connectorpad"/>
     </pcbView>
    </views>
   </connector>
