@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.9.9" moduleId="grove_beginner_kit_complete_ae1ff">
+<module fritzingVersion="0.9.9" moduleId="grove_beginner_kit_complete_ae200">
     <version>5</version>
     <date>Feb 12 2022</date>
     <author>Kjell Morgenstern</author>
@@ -893,41 +893,8 @@ with this Grove Beginner Kit For Arduino.</description>
                 </breadboardView>
             </views>
         </connector>
-
-	<connector type="female" id="connectorD60" name="GND">
-            <description>GND</description>
-            <views>
-                <breadboardView>
-                    <p svgId="connectorD60pin" layer="breadboard"/>
-                </breadboardView>
-            </views>
-        </connector>
-        <connector type="female" id="connectorD61" name="VCC">
-            <description>VCC</description>
-            <views>
-                <breadboardView>
-                    <p svgId="connectorD61pin" layer="breadboard"/>
-                </breadboardView>
-            </views>
-        </connector>
-        <connector type="female" id="connectorD62" name="D7">
-            <description>D7</description>
-            <views>
-                <breadboardView>
-                    <p svgId="connectorD62pin" layer="breadboard"/>
-                </breadboardView>
-            </views>
-        </connector>
-        <connector type="female" id="connectorD63" name="D6">
-            <description>D6</description>
-            <views>
-                <breadboardView>
-                    <p svgId="connectorD63pin" layer="breadboard"/>
-                </breadboardView>
-            </views>
-        </connector>
-
-	<connector type="female" id="connectorI2C10" name="GND">
+	
+       <connector type="female" id="connectorI2C10" name="GND">
             <description>GND</description>
             <views>
                 <breadboardView>
