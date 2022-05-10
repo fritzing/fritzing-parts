@@ -1,30 +1,37 @@
 
-import getopt, sys, os, os.path, re, xml.dom.minidom, xml.dom
-    
+import getopt
+import sys
+import os
+import os.path
+import re
+import xml.dom.minidom
+import xml.dom
+
+
 def usage():
-        print("""
+    print("""
 usage:
     unusedsvgs.py -f [fzp folder] -s [svg folder]
     lists orphan svgs
 """)
-    
-        
-           
+
+
 def main():
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "hf:s:", ["help", "fzp", "svg"])
+        opts, args = getopt.getopt(sys.argv[1:], "hf:s:", [
+                                   "help", "fzp", "svg"])
     except getopt.GetoptError as err:
         # print help information and exit:
-        print(str(err)) # will print something like "option -a not recognized"
+        print(str(err))  # will print something like "option -a not recognized"
         usage()
         return
-        
+
     fzpdir = None
     svgdir = None
-            
+
     for o, a in opts:
-        #print o
-        #print a
+        # print o
+        # print a
         if o in ("-f", "--fzp"):
             fzpdir = a
         elif o in ("-s", "--svg"):
@@ -35,43 +42,43 @@ def main():
         else:
             print("unhandled option", o)
             return
-            
+
     if not fzpdir:
         print("missing fzp folder argument")
         usage()
-        return           
-            
+        return
+
     if not svgdir:
         print("missing svg folder argument")
         usage()
-        return  
+        return
 
     svgfiles = {}
     for root, dirs, files in os.walk(svgdir, topdown=False):
         for filename in files:
-            if not filename.endswith(".svg"): 
+            if not filename.endswith(".svg"):
                 continue
-            
+
             basename = os.path.basename(root)
             if svgfiles.get(basename) == None:
                 svgfiles[basename] = []
-                
+
             svgfiles[basename].append(filename)
-            
+
     viewnames = ["iconView", "breadboardView", "schematicView", "pcbView"]
-            
+
     for root, dirs, files in os.walk(fzpdir, topdown=False):
         for filename in files:
-            if not filename.endswith(".fzp"): 
+            if not filename.endswith(".fzp"):
                 continue
-                
+
             fzpFilename = os.path.join(root, filename)
             try:
                 dom = xml.dom.minidom.parse(fzpFilename)
             except xml.parsers.expat.ExpatError as err:
                 print(str(err), fzpFilename)
                 continue
-                
+
             fzp = dom.documentElement
             for viewname in viewnames:
                 viewNodes = fzp.getElementsByTagName(viewname)
@@ -85,19 +92,22 @@ def main():
                             fn = os.path.basename(image)
                             try:
                                 if fn in viewFiles:
-                                    print("{0} uses {1}/{2}".format(os.path.basename(root), dn, fn))
+                                    print(
+                                        "{0} uses {1}/{2}".format(os.path.basename(root), dn, fn))
                                     viewFiles.remove(fn)
                             except:
                                 pass
-                        
-                        
+
+    count_unsued = 0
     for key in svgfiles.keys():
         for name in svgfiles.get(key):
             print("unused {0}/{1}".format(key, name))
+            count_unsued += 1
 
-            
+    print("Unused svg files found: %d" % count_unsued)
+    if count_unused>2318:
+        return -1
+    return 0
+
 if __name__ == "__main__":
-        main()
-
-
-
+    sys.exit(main())

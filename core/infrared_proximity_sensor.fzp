@@ -6,7 +6,17 @@
     <tags>sensor, input, proximity, distance</tags>
     <properties>
         <property name="family">Distance Sensor</property>
+        <property name="distance to obstacle">50%</property>
+        <property name="voltage (max)">5.5V</property>
+        <property name="voltage (min)">4.5V</property>
+        <property name="max output current">0.030A</property>
     </properties>
+    <spice>
+        <!-->Very simple model<-->
+        <line>R{instanceTitle}a {net connector1}_aux {net connector0} 50</line>
+        <line>V{instanceTitle} {net connector1}_aux {net connector1} DC {{distance to obstacle}&#60;5&#63;3.3*({distance to obstacle}/5):-1*ln({distance to obstacle}/100)+0.5}</line>
+        <line>R{instanceTitle}b {net connector1} {net connector2} 130</line>
+    </spice>
     <views>
         <iconView>
             <layers image="icon/infrared proximity sensor.svg">

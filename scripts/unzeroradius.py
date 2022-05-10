@@ -1,53 +1,58 @@
 
-import getopt, sys, os, os.path, re, xml.dom.minidom, xml.dom
-    
+import getopt
+import sys
+import os
+import os.path
+import xml.dom.minidom
+import xml.dom
+
+
 def usage():
-        print """
+    print("""
 usage:
     unzeroradius.py -d [svg folder]
     if a file has <circle r='0' replace with r='.00000000001'
-"""
-    
-        
-           
+""")
+
+
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err))  # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
-        
-    dir = None
-            
+
+    svg_dir = None
+
     for o, a in opts:
-        #print o
-        #print a
+        # print o
+        # print a
         if o in ("-d", "--directory"):
-            dir = a
+            svg_dir = a
         elif o in ("-h", "--help"):
             usage()
             sys.exit(2)
         else:
             assert False, "unhandled option"
-            
-    if(not(dir)):
+
+    if not svg_dir:
         usage()
-        sys.exit(2)            
-            
-    for root, dirs, files in os.walk(dir, topdown=False):
+        sys.exit(2)
+
+    for root, dirs, files in os.walk(svg_dir, topdown=False):
         for filename in files:
-            if not filename.endswith(".svg"): 
+            if not filename.endswith(".svg"):
                 continue
-                
+
             svgFilename = os.path.join(root, filename)
             try:
                 dom = xml.dom.minidom.parse(svgFilename)
-            except xml.parsers.expat.ExpatError, err:
-                print str(err), svgFilename
+            except xml.parsers.expat.ExpatError as err:
+                print(str(err), svgFilename)
                 continue
-                
+
             svg = dom.documentElement
             circleNodes = svg.getElementsByTagName("circle")
 
@@ -57,20 +62,18 @@ def main():
                 if r == "0":
                     circle.setAttribute("r", "0.00000000001")
                     count += 1
-                    
+
             if count == 0:
-                #print ".",
+                # print ".",
                 continue
-                
-            print "got zero", svgFilename
+
+            print("got zero", svgFilename)
             outfile = open(svgFilename, 'wb')
             s = dom.toxml("UTF-8")
             outfile.write(s)
             outfile.flush()
-            outfile.close()                        
-            
+            outfile.close()
+
+
 if __name__ == "__main__":
-        main()
-
-
-
+    main()

@@ -1,34 +1,51 @@
+import getopt
+import sys
+import os
 
-
-import getopt, sys, os, re, time
-    
 def usage():
-    print """
+    print("""
 usage:
     checkcopies.py -d <directory> 
     
     <directory> is a folder containing svg files.  
     looks for files that have the same content but different names
     
-    """
-    
-    
-       
+    Part of CI tests
+    """)
+
+
+def run_fast_scandir(scan_dir, ext):    # scan_dir: str, ext: list
+    subfolders, files = [], []
+
+    for f in os.scandir(scan_dir):
+        if f.is_dir():
+            subfolders.append(f.path)
+        if f.is_file():
+            if os.path.splitext(f.name)[1].lower() in ext:
+                files.append(f.path)
+
+    for d in list(subfolders):
+        sf, f = run_fast_scandir(d, ext)
+        subfolders.extend(sf)
+        files.extend(f)
+    return subfolders, files
+
+
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
+        print(str(err))  # will print something like "option -a not recognized"
         usage()
         return
-    
+
     outputDir = None
     gotnot = 0
-    
+
     for o, a in opts:
-        #print o
-        #print a
+        # print o
+        # print a
         if o in ("-d", "--directory"):
             outputDir = a
         elif o in ("-h", "--help"):
@@ -36,77 +53,52 @@ def main():
             return
         else:
             assert False, "unhandled option"
-    
-    if(not(outputDir)):
-        print "missing -d {directory} parameter"
+
+    if not outputDir:
+        print("missing -d {directory} parameter")
         usage()
         return
-     
-    fs = []
-    for f in os.listdir(outputDir):
-        if f.endswith(".svg"):
-            fs.append(os.path.splitext(f)[0])
-            #print "appending", f, os.path.splitext(f)[0]
-    fs.sort(key=str.lower)                                               # remove the .svg so the sort works better
-    dirs = []
-    for f in fs:
-        dirs.append(f + ".svg")
-        
-    dirlen = len(dirs)
+
+    subfolders, files = run_fast_scandir(outputDir, [".svg"])
+    print("Checking %d files for duplicates" % len(files))
+    files.sort(key=lambda f: os.stat(f).st_size, reverse=True)
     matches = []
-    for i in range(dirlen):
-        if i in matches:
-            continue
-            
-        f1 = dirs[i]
-        path = os.path.join(outputDir, f1)
-        if not os.path.isfile(path):
-            continue
-            
-        if not f1.endswith(".svg"): 
-            continue
-            
-        # print "testing", f1
-            
-        txt1 = None
-        try:
-            infile = open(path, "r")
-            txt1 = infile.read()
-            infile.close()
-        except:
-            print "failure", f1
-            
-        if txt1 == None:
-            continue
-             
-        for j in range(i + 1, dirlen):
-            f2 = dirs[j]
-            path = os.path.join(outputDir,f2)
-            if not os.path.isfile(path):
+    for i in range(0, len(files)-1):
+        f1 = files[i]
+        s = os.stat(f1).st_size
+        # print("Check candidate %s , %d" % (files[i], s))
+        j = i + 1
+        while s == os.stat(files[j]).st_size:            
+            f2 = files[j]
+            # print("          other %s , %d" % (files[j], s))
+            j += 1
+            txt1 = None
+            try:
+                infile = open(f1, "r")
+                txt1 = infile.read()
+                infile.close()
+            except IOError:
+                print("failure", f1)
+            if txt1 is None:
                 continue
-                
-            if not f2.endswith(".svg"): 
-                continue
-                
-            if f1 == f2:
-                continue
-                
+
             txt2 = None
             try:
-                infile = open(path, "r")
+                infile = open(f2, "r")
                 txt2 = infile.read()
                 infile.close()
-            except:
-                print "failure", f2
+            except IOError:
+                print("failure", f2)
                 continue
-                
-            if txt2 == None:
+            if txt2 is None:
                 continue
-                
+
             if txt1 == txt2:
-                matches.append(j)
-                print "<map package='{0}' to='{1}' />".format(f1, f2) 
-    
+                matches.append(
+                    "<map package='{0}' to='{1}' />".format(f1, f2))
+
+    print("%d duplicate pairs found" % len(matches))
+
+
 if __name__ == "__main__":
     main()
-
