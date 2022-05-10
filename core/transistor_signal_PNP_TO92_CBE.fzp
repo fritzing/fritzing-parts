@@ -17,6 +17,11 @@
   <property name="type">PNP (CBE)</property>
  </properties>
  <description>A standard PNP signal transistor</description>
+ <spice>
+  <model>*Typical bipolar transistor </model>
+  <model>.MODEL PNP_GENERIC PNP ()</model>
+  <line>Q{instanceTitle} {net connector2} {net connector1} {net connector0} PNP_GENERIC</line>
+ </spice>
  <views>
   <iconView>
    <layers image="icon/basic_transistor_pnpicon.svg">

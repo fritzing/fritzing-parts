@@ -14,7 +14,14 @@
 <property name="package">pot_pth</property>
 <property name="family">sparkfun Potentiometer</property>
 <property name="variant">pot_pth</property>
+<property name="power">0.5W</property>
+<property name="maximum resistance" showInLabel="yes">10k&#937;</property>
+<property name="knob status">50%</property>
 </properties>
+<spice>
+<line>R{instanceTitle}A {net connector0} {net connector4} {{knob status}/100*{maximum resistance}}</line>
+<line>R{instanceTitle}B {net connector2} {net connector4} {{maximum resistance}-{knob status}/100*{maximum resistance}}</line>
+</spice>
 <views>
 <breadboardView>
 <layers image="breadboard/sparkfun-electromechanical_pot_pth_switch_breadboard.svg">
