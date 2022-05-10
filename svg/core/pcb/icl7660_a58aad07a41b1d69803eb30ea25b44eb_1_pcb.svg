@@ -1,0 +1,53 @@
+<svg width=".32in" height=".225in" baseProfile="tiny" version="1.2" viewBox="0 0 32000 22500" xmlns="http://www.w3.org/2000/svg">
+	<desc>
+		<referenceFile>SO8.svg</referenceFile>
+	</desc>
+	<title>SO8.fp</title>
+	<desc>Geda footprint file 'SO8.fp' converted by Fritzing</desc>
+	<metadata>
+		<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+			<rdf:Description rdf:about="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+				<fz:attr name="geda filename" xmlns:fz="http://fritzing.org/gedametadata/1.0/">SO8.fp</fz:attr>
+				<fz:attr name="fritzing version" xmlns:fz="http://fritzing.org/gedametadata/1.0/">0.4.0b.06.21.4282</fz:attr>
+				<fz:attr name="conversion date" xmlns:fz="http://fritzing.org/gedametadata/1.0/">27/06/2010 07:16:32</fz:attr>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">number of pads</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">pad width in 1/1000 mil</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">pad length in 1/1000 mil</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">pad pitch 1/1000 mil</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">seperation between pads on opposite sides 1/1000 mil</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">X coordinates for the right hand column of pads (1/100 mils)</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">pad clearance to plane layer in 1/100 mil</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">pad soldermask width in 1/100 mil</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">silk screen width (1/100 mils)</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">figure out if we have an even or odd number of pins per side</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">silk bounding box is -XMAX,-YMAX, XMAX,YMAX (1/100 mils)</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">element_flags, description, pcb-name, value, mark_x, mark_y,</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">text_x, text_y, text_direction, text_scale, text_flags</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">Pad[x1, y1, x2, y2, thickness, clearance, mask, name , pad number, flags]</fz:comment>
+				<fz:comment xmlns:fz="http://fritzing.org/gedametadata/1.0/">punt on the arc on small parts as it can cover the pads</fz:comment>
+				<fz:attr name="dist-license" xmlns:fz="http://fritzing.org/gedametadata/1.0/">GPL</fz:attr>
+				<fz:attr name="use-license" xmlns:fz="http://fritzing.org/gedametadata/1.0/">unlimited</fz:attr>
+				<fz:attr name="author" xmlns:fz="http://fritzing.org/gedametadata/1.0/">gEDA project</fz:attr>
+				<fz:attr name="license-url" xmlns:fz="http://fritzing.org/gedametadata/1.0/">http://www.gnu.org/licenses/gpl.html</fz:attr>
+			</rdf:Description>
+		</rdf:RDF>
+	</metadata>
+	<g id="copper1" fill="none" stroke="#ffbf00" stroke-linecap="square" stroke-width="2e3">
+		<line id="connector0pin" x1="2500" x2="9e3" y1="5e3" y2="5e3" connectorname="1"/>
+		<line id="connector1pin" x1="2500" x2="9e3" y1="1e4" y2="1e4" connectorname="2"/>
+		<line id="connector2pin" x1="2500" x2="9e3" y1="15000" y2="15000" connectorname="3"/>
+		<line id="connector3pin" x1="2500" x2="9e3" y1="2e4" y2="2e4" connectorname="4"/>
+		<line id="connector4pin" x1="29500" x2="23000" y1="2e4" y2="2e4" connectorname="5"/>
+		<line id="connector5pin" x1="29500" x2="23000" y1="15000" y2="15000" connectorname="6"/>
+		<line id="connector6pin" x1="29500" x2="23000" y1="1e4" y2="1e4" connectorname="7"/>
+		<line id="connector7pin" x1="29500" x2="23000" y1="5e3" y2="5e3" connectorname="8"/>
+	</g>
+	<g id="silkscreen" fill="none" stroke="#fff" stroke-width="1e3">
+		<line x1="500" x2="500" y1="3e3" y2="22000"/>
+		<line x1="500" x2="31500" y1="22000" y2="22000"/>
+		<line x1="31500" x2="31500" y1="22000" y2="3e3"/>
+		<line x1="500" x2="13500" y1="3e3" y2="3e3"/>
+		<line x1="31500" x2="18500" y1="3e3" y2="3e3"/>
+		<path d="m13500 3e3a2500 2500 0 1 0 5e3 0"/>
+	</g>
+</svg>

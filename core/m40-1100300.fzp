@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.9.9" moduleId="UltrasonicMiniModule_a146ec24">
+<version>4</version>
+    <author>Kjell Morgenstern</author>
+    <title>Connector M40-1100300</title>
+    <label>Harwin M40-3</label>
+    <date>2021-10-12</date>
+    <tags>
+        <tag>m40</tag>
+        <tag>connector</tag>
+        <tag>1x03</tag>
+        <tag>1mm</tag>
+        <tag>Harwin</tag>
+    </tags>
+    <properties>
+        <property name="pin spacing">1mm</property>
+        <property name="family">pin header</property>
+        <property name="type">connector</property>	
+    </properties>
+    <description>
+Connector M40-1100300, Rating 1A 50V, Triangle marks circuit 1. Matches M40-3010346
+</description>
+    <views>
+        <iconView>
+            <layers image="icon/m40-1100300.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/m40-1100300.min.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <pcbView>
+           
+        </pcbView>
+        <schematicView>
+           
+        </schematicView>
+    </views>
+    <connectors>
+        <connector id="connector10" name="Circuit 1" type="male">
+            <description>Circuit 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector10pin" terminalId="connector10terminal"/>
+                </breadboardView>               
+            </views>
+        </connector>
+        <connector id="connector1" name="pin2" type="male">
+            <description>pin2</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal" />
+                </breadboardView>               
+            </views>
+        </connector>
+        <connector id="connector2" name="pin3" type="male">
+            <description>pin3</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal" />
+                </breadboardView>             
+            </views>
+        </connector>
+
+        <connector id="connector0" name="Circuit 1" type="male">
+            <description>Circuit 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
+                </breadboardView>
+            </views>
+        </connector>
+        <connector id="connector11" name="pin2" type="male">
+            <description>pin2</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector11pin" legId="connector11leg" />
+                </breadboardView>
+            </views>
+        </connector>
+        <connector id="connector12" name="pin3" type="male">
+            <description>pin3</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector12pin" legId="connector12leg" />
+                </breadboardView>            
+            </views>
+        </connector>
+
+    </connectors>
+<buses>
+<bus id="Circuit 1">
+	<nodeMember connectorId="connector0"/>
+            	<nodeMember connectorId="connector10"/>
+</bus>
+<bus id="pin2">
+	<nodeMember connectorId="connector1"/>
+            	<nodeMember connectorId="connector11"/>
+</bus>
+<bus id="pin3">
+	<nodeMember connectorId="connector2"/>
+            	<nodeMember connectorId="connector12"/>
+</bus>
+</buses>
+</module>

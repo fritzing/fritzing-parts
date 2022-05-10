@@ -205,6 +205,13 @@
                 </iconView>
             </views>
         </instance>
+        <instance moduleIdRef="UltrasonicSensorModuleWithCable_a146ecc6" modelIndex="20" path="tdk_ussm.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
         <instance moduleIdRef="ADXL335_v13" modelIndex="20" path="ADXL335_v13.fzp">
             <views>
                 <iconView layer="icon">
@@ -683,6 +690,7 @@
         </views>
       </instance>
 
+
         <instance moduleIdRef="arduino_Uno_Rev3(fix)" modelIndex="48" path="Arduino_UNO_R3(fix).fzp">
             <views>
                 <iconView layer="icon">
@@ -837,7 +845,7 @@
                 </iconView>
             </views>
         </instance>
-                <instance moduleIdRef="SparkFun_Stepoko" modelIndex="48">
+        <instance moduleIdRef="SparkFun_Stepoko" modelIndex="48">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -853,6 +861,15 @@
           </iconView>
         </views>
       </instance>
+
+
+        <instance moduleIdRef="raspberry-pi-4B_1" modelIndex="48" path="raspberry_pi_3_rev-1.2.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
 
         <instance moduleIdRef="raspberry_pi_3_rev-1.2" modelIndex="48" path="raspberry_pi_3_rev-1.2.fzp">
             <views>
@@ -1292,5 +1309,71 @@
                 </iconView>
             </views>
         </instance>
+
+        <instance moduleIdRef="__spacer__" modelIndex="3" path="Measuring Tools">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+
+        <instance moduleIdRef="multimeter_v_dc_1" modelIndex="61" path=":/resources/parts/core/multimeter_v_dc_1.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+
+        <instance moduleIdRef="multimeter_c_dc_1" modelIndex="61" path=":/resources/parts/core/multimeter_c_dc_1.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+
+                <instance moduleIdRef="multimeter_v_ac_1" modelIndex="61" path=":/resources/parts/core/multimeter_v_ac_1.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+
+        <instance moduleIdRef="multimeter_c_ac_1" modelIndex="61" path=":/resources/parts/core/multimeter_c_ac_1.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+
+
+        <instance moduleIdRef="multimeter_r_1" modelIndex="61" path=":/resources/parts/core/multimeter_r_1.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+      
+        <instance moduleIdRef="multimeter_straight-red-probe_1" modelIndex="61" path=":/resources/parts/core/multimeter_straight-red-probe_1.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+
+        <instance moduleIdRef="multimeter_straight-black-probe_1" modelIndex="61" path=":/resources/parts/core/multimeter_straight-black-probe_1.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+
     </instances>
 </module>

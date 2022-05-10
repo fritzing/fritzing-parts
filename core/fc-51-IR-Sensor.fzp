@@ -16,6 +16,10 @@
  <properties>
   <property name="variant">variant 1</property>
   <property name="family">Line sensor</property>
+  <property name="obstacle status">Not Detected</property>
+  <property name="voltage (max)">6V</property>
+  <property name="voltage (min)">3V</property>
+  <property name="max output current">0.030A</property>
   <property name="editable pin labels">false</property>
   <property name="part number"></property>
   <property name="pins">3</property>
@@ -30,6 +34,13 @@
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Fc-51 Infrared Obstacle Avoidance Proximity Sensor module. IR transmitter led, receiver LED, lm393 compaitor and a pot. 3.3 V to 5V power.&lt;/p>&lt;/body>&lt;/html></description>
+ <spice>
+   <!-->Very simple transitor output (Not Detected=5V in OUT pin).<-->
+  <model>.MODEL PNP_GENERIC PNP ()</model>
+  <line>R{instanceTitle}a {net connector1} {net connector2} 130</line>
+  <line>Q{instanceTitle} {net connector0} base_Q_{instanceTitle} {net connector2} PNP_GENERIC off</line>
+  <line>R{instanceTitle}b base_Q_{instanceTitle} {net connector1} 200</line>
+ </spice>
  <views>
   <iconView>
    <layers image="icon/fc-51_2.svg">
