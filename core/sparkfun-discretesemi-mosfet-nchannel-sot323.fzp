@@ -15,6 +15,11 @@
 <property name="family">sparkfun Transistor (Mosfet)</property>
 <property name="variant">sot323</property>
 </properties>
+<spice>
+<model>*Typical N-Channel MOSFET transistor </model>
+<model>.MODEL N_MOSFET_GENERIC NMOS (level=1 W=50u L=5u LEVEL=1 VTO=3.6 PHI=0.8 JS=0 KP=10.1)</model>
+<line>M{instanceTitle} {net connector2} {net connector0} {net connector1} {net connector1} N_MOSFET_GENERIC</line>
+</spice>
 <views>
 <breadboardView>
 <layers image="breadboard/sparkfun-discretesemi_sot323_breadboard.svg">
