@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.9.9" moduleId="UltrasonicSensorModuleWithCable_a146ecc6">
+<version>4</version>
+    <author>Kjell Morgenstern</author>
+    <title>Ultrasonic Sensor Module with cable</title>
+    <label>USSM</label>
+    <date>2021-12-01</date>
+    <properties>
+        <property name="family">distance sensor</property>
+        <property name="type">ultrasonic distance sensor</property>
+        <property name="view">top-view</property>
+    </properties>
+    <tags>
+        <tag>sensor</tag>
+        <tag>range</tag>
+        <tag>distance</tag>
+        <tag>ultrasonic</tag>
+        <tag>piezo</tag>
+
+    </tags>
+    <description>&lt;b>TDK Ultrasonic distance sensor B59150X0754P030&lt;/b>&lt;br/>
+ B59150X0754P030 is an ultrasonic time of flight sensor with an integrated driving unit (X150P0754). It has a Harwin M40-3010346 sensor connector at the back. Do not touch the 3-pin connector or PCB without ESD protection. See the documentation &lt;a href="https://product.tdk.com/de/search/sensor/ultrasonic/tof/info?part_no=B59150X0754P030&amp;utm_source=fritzing"&gt;here&lt;/a>.
+&lt;br/>&lt;br/>
+&lt;b>Tip &lt;/b> To connect the sensor in like in the Fritzing breadboard view, use a M40-1100300 connector. 
+&lt;b>Do not directly connect wires to the sensor. Heat and static discharge will damage the sensor. &lt;/b>
+</description>
+    <views>
+        <iconView>
+            <layers image="icon/tdk_ussm_icon.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/tdk_ussm_breadboard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <pcbView>
+            <layers image="pcb/jumper_3_100mil_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+        <schematicView>
+            <layers image="schematic/tdk_ussm_schematic.min.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+    </views>
+    <connectors>
+        <connector id="connector0" name="GND" type="male">
+            <description>GND</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0leg" terminalId="connector0terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="IO" type="male">
+            <description>IO</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1leg" terminalId="connector1terminal" />
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" name="Vsup" type="male">
+            <description>Vsup</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2leg" terminalId="connector2terminal" />
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                <p layer="copper1" svgId="connector2pin"/></pcbView>
+            </views>
+        </connector>
+
+    </connectors>
+</module>

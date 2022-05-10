@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module referenceFile="xl6009.fzp" fritzingVersion="0.9.3b" moduleId="mic2171_to263_428b5a4f1a2a4e9650fa890d6eadc123_1">
+ <version>4</version>
+ <author>Daniël Mantione</author>
+ <title>MIC2171 (TO263)</title>
+ <label>VR</label>
+ <date>za aug. 17 2019</date>
+ <tags>
+  <tag>boost regulator</tag>
+  <tag>smd</tag>
+  <tag>to263</tag>
+ </tags>
+ <properties>
+  <property name="family">voltage regulator</property>
+  <property name="variant">MIC2171_TO263</property>
+  <property name="max current">2.5A</property>
+  <property name="package">TO263</property>
+  <property name="input voltage">3.5V-40V</property>
+  <property name="part number">MIC2171</property>
+  <property name="oscillator frequency">100 KHz</property>
+  <property name="layer"></property>
+  <property name="subfamily">switched boost/buck-boost/inverting</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'.SF NS Text'; font-size:13pt;">MIC2171 &lt;/span>&lt;span style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt;">3A 100KHz 40V Switching Current Boost / Buck Boost / Inverting DC-DC converter in TO2635L package.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt;">The MIC2171 is a pin and electrically compatible upgrade to the LM2577 that increases the switching frequency to 100KHz.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/mic2171_to263_0c77fd162597c27c046109dab87d38a6_1_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/mic2171_to263_0c77fd162597c27c046109dab87d38a6_1_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/mic2171_to263_0c77fd162597c27c046109dab87d38a6_1_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/mic2171_to263_0c77fd162597c27c046109dab87d38a6_1_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="Pin 1">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector0terminal" layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector0terminal" layer="schematic" svgId="connector0pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector0pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector1" name="Pin 2">
+   <description>EN</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector1terminal" layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector1terminal" layer="schematic" svgId="connector1pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector1pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector2" name="Pin 3">
+   <description>SW</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector2terminal" layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector2terminal" layer="schematic" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector2pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector3" name="pin 4">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector3terminal" layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector3terminal" layer="schematic" svgId="connector3pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector3pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector4" name="Pin 5">
+   <description>FB</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector4terminal" layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector4terminal" layer="schematic" svgId="connector4pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector4pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector6" name="Tab">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector6terminal" layer="schematic" svgId="connector6pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector6pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>http://www.microchip.com/downloads/en/DeviceDoc/mic2171.pdf</url>
+ <buses>
+  <bus id="internal1">
+   <nodeMember connectorId="connector0"/>
+   <nodeMember connectorId="connector6"/>
+  </bus>
+ </buses>
+</module>

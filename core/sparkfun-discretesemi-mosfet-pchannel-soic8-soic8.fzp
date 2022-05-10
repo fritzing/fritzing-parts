@@ -16,6 +16,11 @@
 <property name="family">sparkfun Mosfet (P Channel)</property>
 <property name="variant">soic8</property>
 </properties>
+<spice>
+<model>*Typical P-Channel MOSFET transistor </model>
+<model>.MODEL P_MOSFET_GENERIC PMOS (level=1 W=50u L=5u LEVEL=1 VTO=3.6 PHI=0.8 JS=0 KP=10.1)</model>
+<line>M{instanceTitle} {net connector4} {net connector3} {net connector0} {net connector0} P_MOSFET_GENERIC</line>
+</spice>
 <views>
 <breadboardView>
 <layers image="breadboard/SO08_breadboard.svg">

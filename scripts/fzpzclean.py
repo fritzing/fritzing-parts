@@ -1,7 +1,8 @@
-#	TODO:
-#		check for incomplete parts (missing views)
-#       check if svgs are plain copies of already existing ones and link them instead?
-#       check for conflicting names
+
+# TODO:
+#   check for incomplete parts (missing views)
+#   check if svgs are plain copies of already existing ones and link them instead?
+#   check for conflicting names
 
 # lots of borrowing from http://code.activestate.com/recipes/252508-file-unzip/
 
@@ -14,7 +15,7 @@ import zipfile
 
 
 def usage():
-    print """
+    print("""
 usage:
     fzpzclean.py -f [fzpz directory] -d [output directory] -o [core | contrib | user] (-r)
 
@@ -24,16 +25,16 @@ usage:
     -r   optional: take the fzpz filename to rename the fzp filename
 
 Unzips fzpz files into the output directory and cleans up file names and references.
-"""
+""")
 
 
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hf:d:o:r", [
                                    "help", "fzpzs", "directory", "output", "rename"])
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         # print help information and exit:
-        print str(err)  # will print something like "option -a not recognized"
+        print(str(err))  # will print something like "option -a not recognized"
         usage()
         sys.exit(2)
     inputdir = None
@@ -75,7 +76,7 @@ def main():
 
     for fn in os.listdir(inputdir):
         if fn.endswith('.fzpz'):
-            print fn
+            print(fn)
             file = os.path.join(inputdir, fn)
             zf = zipfile.ZipFile(file)
 
@@ -97,7 +98,7 @@ def main():
                     elif ending == 'fzp':
                         pass
                     else:
-                        print "WARNING wrong file type:", name
+                        print("WARNING wrong file type:", name)
                         return
 
                     # sort files into subdirectories
@@ -152,13 +153,14 @@ def main():
             s = fzpfile.read()
             for svgre in svgrenames:
                 if s.find(svgre[0]) == -1:
-                    print "WARNING reference could not be found:", svgre[0]
+                    print("WARNING reference could not be found:", svgre[0])
                 s = s.replace(svgre[0], svgre[1])
             fzpfile.seek(0)
             fzpfile.truncate()
             fzpfile.write(s)
             fzpfile.flush()
             fzpfile.close()
+            zf.close()
 
 
 def createstructure(file, dir, outputPrefix):
@@ -188,6 +190,7 @@ def listdirs(file):
         if name.endswith('/'):
             dirs.append(name)
 
+    zf.close()
     dirs.sort()
     return dirs
 

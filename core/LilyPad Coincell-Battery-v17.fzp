@@ -18,7 +18,13 @@ Note: The LilyPad Coin Cell Battery Holder is a design conceived by Felicia Will
 <property name='family'>microcontroller board (lilypad)</property>
 <property name='type'>Power Connector</property>
 <property name='Connector'>20mm Coin Cell Holder</property>
+<property name="voltage">3.0V</property>
+<property name="internal resistance">0.1&#937;</property>
 </properties>
+<spice>
+    <line>V{instanceTitle} {net connector6}_aux {net connector5} DC {voltage}</line>
+    <line>R{instanceTitle} {net connector6}_aux {net connector6} {internal resistance}</line>
+</spice>
 <views>
 <breadboardView>
 <layers image='breadboard/LilyPad Coincell-Battery-v17_breadboard.svg'>
