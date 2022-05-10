@@ -16,7 +16,13 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.</description>
 <property name="package">battery_20mm_pth_compact</property>
 <property name="family">sparkfun Battery Holder</property>
 <property name="variant">fob</property>
+<property name="voltage">3.0V</property>
+<property name="internal resistance">0.1&#937;</property>
 </properties>
+<spice>
+    <line>V{instanceTitle} {net connector0}_aux {net connector2} DC {voltage}</line>
+    <line>R{instanceTitle} {net connector0}_aux {net connector0} {internal resistance}</line>
+</spice>
 <views>
 <breadboardView>
 <layers image="breadboard/sparkfun-electromechanical_battery_20mm_pth_compact_breadboard.svg">

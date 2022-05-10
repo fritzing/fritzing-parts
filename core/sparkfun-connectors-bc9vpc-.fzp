@@ -13,7 +13,13 @@
 <property name="package">bc9vpc</property>
 <property name="family">sparkfun 9V Battery Cradle</property>
 <property name="variant">pth</property>
+<property name="voltage">9V</property>
+<property name="internal resistance">0.1&#937;</property>
 </properties>
+<spice>
+    <line>V{instanceTitle} {net connector0}_aux {net connector1} DC {voltage}</line>
+    <line>R{instanceTitle} {net connector0}_aux {net connector0} {internal resistance}</line>
+</spice>
 <views>
 <breadboardView>
 <layers image="breadboard/sparkfun-connectors_bc9vpc_breadboard.svg">

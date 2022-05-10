@@ -1,0 +1,55 @@
+<svg id="Ebene_1" width=".8in" height=".6in" version="1.2" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+	<desc>
+		<referenceFile>icl7662_schematic.svg</referenceFile>
+	</desc>
+	<metadata id="metadata684">
+		<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+			<cc:Work rdf:about="" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+				<dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+	<g id="schematic">
+		<rect id="rect4" x="105" y="105" width="600" height="400" fill="#fff" stroke="#000" stroke-linecap="round" stroke-width="10"/>
+		<g fill="none">
+			<rect x="395" y="595" width="10" height="10" stroke-width="14"/>
+			<line id="connector3pin" x1="200" x2="200" y1="5" y2="100" stroke="#787878" stroke-linecap="round" stroke-width="10"/>
+			<rect id="connector3terminal" x="200" y="-.1" width=".02" height=".21" stroke-width="0"/>
+		</g>
+		<text x="170" y="45" fill="#8c8c8c" font-family="Droid Sans" font-size="28" stroke-width="14">4</text>
+		<text x="180" y="150" fill="#8c8c8c" font-family="Droid Sans" font-size="28" stroke-width="14">C-</text>
+		<line id="connector1pin" x1="600" x2="600" y1="5" y2="100" fill="none" stroke="#787878" stroke-linecap="round" stroke-width="10"/>
+		<rect id="connector1terminal" x="600" y="-.1" width=".02" height=".21" fill="none" stroke-width="0"/>
+		<text x="570" y="45" fill="#8c8c8c" font-family="Droid Sans" font-size="28" stroke-width="14">2</text>
+		<text x="580" y="150" fill="#8c8c8c" font-family="Droid Sans" font-size="28" stroke-width="14">C+</text>
+		<line id="connector7pin" x1="5" x2="100" y1="200" y2="200" fill="none" stroke="#787878" stroke-linecap="round" stroke-width="10"/>
+		<rect id="connector7terminal" x="-.1" y="200" width=".21" height=".02" fill="none" stroke-width="0"/>
+		<text id="text42" x="60.377529" y="182.338989" fill="#8c8c8c" font-family="Droid Sans" font-size="28" stroke-width="14">8</text>
+		<text id="text58" x="125" y="209.18928" fill="#8c8c8c" font-family="Droid Sans" font-size="32" stroke-width="14">VIN</text>
+		<line id="connector4pin" x1="795" x2="710" y1="200" y2="200" fill="none" stroke="#787878" stroke-linecap="round" stroke-width="10"/>
+		<rect id="connector4terminal" x="800" y="200" width=".19" height=".02" fill="none" stroke-width="0"/>
+		<text id="text141" x="730" y="180" fill="#8c8c8c" font-family="Droid Sans" font-size="28" stroke-width="14">5</text>
+		<text id="text176" x="600" y="215" fill="#8c8c8c" font-family="Droid Sans" font-size="32" stroke-width="14">VOUT</text>
+		<line id="connector5pin" x1="795" x2="710" y1="400" y2="400" fill="none" stroke="#787878" stroke-linecap="round" stroke-width="10"/>
+		<rect id="connector5terminal" x="800" y="400" width=".19" height=".02" fill="none" stroke-width="0"/>
+		<text id="text141" x="730" y="380" fill="#8c8c8c" font-family="Droid Sans" font-size="28" stroke-width="14">6</text>
+		<text id="text176" x="645" y="415" fill="#8c8c8c" font-family="Droid Sans" font-size="32" stroke-width="14">LV</text>
+		<line id="connector2pin" x1="400" x2="400" y1="510" y2="595" fill="none" stroke="#787878" stroke-linecap="round" stroke-width="10"/>
+		<rect id="connector2terminal" x="400" y="600" width=".02" height=".19" fill="none" stroke-width="0"/>
+		<text id="text293" x="370" y="544.74219" fill="#8c8c8c" font-family="Droid Sans" font-size="28" stroke-width="14">3</text>
+		<text id="text345" x="360" y="485" fill="#8c8c8c" font-family="Droid Sans" font-size="32" stroke-width="14">GND</text>
+		<line id="connector6pin" x1="100" x2="5" y1="400" y2="400" fill="none" stroke="#787878" stroke-linecap="round" stroke-width="10"/>
+		<rect id="connector6terminal" x="-.1" y="400" width=".21" height=".02" fill="none" stroke-width="0"/>
+		<g font-family="Droid Sans" stroke-width="14">
+			<text id="text398" x="52.275753" y="373.39169" fill="#8c8c8c" font-size="28">7</text>
+			<text id="text127" x="125" y="410" fill="#8c8c8c" font-size="32">OSC</text>
+			<g font-size="47">
+				<text id="label_3_" x="335" y="255">ICL7662</text>
+				<text id="text125" x="260" y="315">Charge Pump</text>
+				<text id="label_1_" x="240" y="375">DC-DC Converter</text>
+			</g>
+		</g>
+	</g>
+</svg>
