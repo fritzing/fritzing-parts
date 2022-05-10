@@ -6,6 +6,7 @@ import re
 import xml.dom.minidom
 import xml.dom
 
+# Part of CI tests
 
 def usage():
     print("""
@@ -27,9 +28,10 @@ def skip(filename):
         "./core/electromechanical-battery-2-aaa.fzp",
         "./core/electromechanical-battery-2-aa.fzp",
         "./core/ESP8266-Thing-Dev.fzp",
+        "./core/grove_beginner_kit.fzp",
         "./core/HiFive1.fzp",
         "./core/jlpcb-089.fzp",
-        "./core/kameleon.fzp",
+        "./obsolete/kameleon.fzp",
         "./core/LilyPad-XBee-v15.fzp",
         "./core/ludusProtoShieldWireless.fzp",
         "./core/monacor_ltr_110_linetransformer.fzp",
@@ -42,6 +44,7 @@ def skip(filename):
         "./core/SMD_BC847.fzp",
         "./core/SMD_BC857.fzp",
         "./core/Sony_Spresense_ext_board_1.fzp",
+        "./core/SonySpresenseExtension_CXD5602PWBEXT1.fzp",
         "./core/sparkfun-connectors-db25-hp.fzp",
         "./core/sparkfun-connectors-db25-vp.fzp",
         "./core/sparkfun-connectors-db9-female.fzp",
