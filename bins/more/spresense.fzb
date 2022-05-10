@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.9.7" icon="spresense_symbol.png">
+	<title>Spresense</title>
+	<instances>
+ 		<instance moduleIdRef="__spacer__" modelIndex="3" path="Main Board">
+			<views>
+				<iconView layer="icon">
+					<geometry z="-1" x="-1" y="-1"></geometry>
+				</iconView>
+			</views>
+		</instance>
+
+		<instance moduleIdRef="Sony_Spresense_CXD5602PWDMAIN1_003" path="SonySpresense_CXD5602PWDMAIN1.fzp">
+			<views>
+				<iconView layer="icon">
+					<geometry z="-1" x="-1" y="-1"></geometry>
+				</iconView>
+			</views>
+		</instance>
+
+
+ 		<instance moduleIdRef="__spacer__" modelIndex="3" path="Extension Boards">
+			<views>
+				<iconView layer="icon">
+					<geometry z="-1" x="-1" y="-1"></geometry>
+				</iconView>
+			</views>
+		</instance>
+
+
+		<instance moduleIdRef="Sony_Spresense_Extension_CXD5602PWBEXT1_002" path="SonySpresenseExtension_CXD5602PWBEXT1.fzp">
+			<views>
+				<iconView layer="icon">
+					<geometry z="-1" x="-1" y="-1"></geometry>
+				</iconView>
+			</views>
+		</instance>
+
+		<instance moduleIdRef="SonySpresense_CXD5602PWBLM1_003" path="SonySpresense_CXD5602PWBLM1.fzp">
+			<views>
+				<iconView layer="icon">
+					<geometry z="-1" x="-1" y="-1"></geometry>
+				</iconView>
+			</views>
+		</instance>
+
+ 		<instance moduleIdRef="__spacer__" modelIndex="3" path="Camera Board">
+			<views>
+				<iconView layer="icon">
+					<geometry z="-1" x="-1" y="-1"></geometry>
+				</iconView>
+			</views>
+		</instance>
+
+		<instance moduleIdRef="Sony_Spresense_CXD5602PWDCAM1_002" path="SonySpresense_CXD5602PWBCAM1.fzp">
+			<views>
+				<iconView layer="icon">
+					<geometry z="-1" x="-1" y="-1"></geometry>
+				</iconView>
+			</views>
+		</instance>
+
+
+	</instances>
+</module>

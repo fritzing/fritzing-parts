@@ -12,8 +12,13 @@
     <properties>
         <property name="family">Battery</property>
         <property name="voltage" showInLabel="yes">9V</property>
+        <property name="internal resistance">0.1&#937;</property>
     </properties>
     <description>Your standard 9 Volts battery block</description>
+    <spice>
+        <line>V{instanceTitle} {net connector1}_aux {net connector0} DC {voltage}</line>
+        <line>R{instanceTitle} {net connector1}_aux {net connector1} {internal resistance}</line>
+    </spice>
     <views>
         <iconView>
             <layers image="icon/Battery_block_9V82.svg">
