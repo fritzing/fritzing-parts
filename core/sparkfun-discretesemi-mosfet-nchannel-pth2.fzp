@@ -16,6 +16,11 @@
 <property name="family">sparkfun Mosfet (N Channel)</property>
 <property name="variant">pth2</property>
 </properties>
+<spice>
+<model>*Typical N-Channel MOSFET transistor </model>
+<model>.MODEL N_MOSFET_GENERIC NMOS (level=1 W=50u L=5u LEVEL=1 VTO=3.6 PHI=0.8 JS=0 KP=10.1)</model>
+<line>M{instanceTitle} {net connector1} {net connector0} {net connector2} {net connector2} N_MOSFET_GENERIC</line>
+</spice>
 <views>
 <breadboardView>
 <layers image="breadboard/powertransistor_npn.svg">

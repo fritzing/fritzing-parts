@@ -28,6 +28,7 @@ def skip(filename):
         "./core/electromechanical-battery-2-aaa.fzp",
         "./core/electromechanical-battery-2-aa.fzp",
         "./core/ESP8266-Thing-Dev.fzp",
+        "./core/grove_beginner_kit.fzp",
         "./core/HiFive1.fzp",
         "./core/jlpcb-089.fzp",
         "./obsolete/kameleon.fzp",

@@ -15,7 +15,14 @@
 <property name="package">trimpot_tc33</property>
 <property name="family">sparkfun Trimpot</property>
 <property name="variant">-2</property>
+<property name="power">0.5W</property>
+<property name="maximum resistance" showInLabel="yes">10k&#937;</property>
+<property name="knob status">50%</property>
 </properties>
+<spice>
+<line>R{instanceTitle}A {net connector0} {net connector1} {{knob status}/100*{maximum resistance}}</line>
+<line>R{instanceTitle}B {net connector2} {net connector1} {{maximum resistance}-{knob status}/100*{maximum resistance}}</line>
+</spice>
 <views>
 <breadboardView>
 <layers image="breadboard/sparkfun-electromechanical_trimpot_tc33_breadboard.svg">
