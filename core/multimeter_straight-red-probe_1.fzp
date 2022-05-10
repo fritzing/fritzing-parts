@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="multimeter_straight-red-probe_1" fritzingVersion="0.9.4" referenceFile="multimeter_straight-red-probe_1.fzp">
+  <version>4</version>
+  <author>Peter Van Epp (vanepp in forums)</author>
+  <title>Multimeter straight red probe</title>
+  <label>P</label>
+  <date>fr okt 30 2020</date>
+  <tags>
+    <tag>Multimeter straight red probe</tag>
+  </tags>
+  <properties>
+    <property name="family">Multimeter</property>
+    <property name="variant">straight red probe</property>
+  </properties>
+  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;A standard multimeter straight red probe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <views>
+    <iconView>
+      <layers image="breadboard/multimeter_straight-red-probe_1_breadboard.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/multimeter_straight-red-probe_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/multimeter_straight-red-probe_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="pcb/multimeter_straight-red-probe_1_pcb.svg">
+        <layer layerId="partimage"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector name="Probe tip" type="male" id="connector0">
+      <description>Red probe tip</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pin" layer="partimage"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="Probe meter end" type="male" id="connector1">
+      <description>Probe meter end</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector1pin" layer="partimage"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="Probe tip 2" type="female" id="connector2">
+      <description>Red probe tip</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pin" layer="partimage"/>
+        </pcbView>
+      </views>
+    </connector>
+  </connectors>
+  <buses>
+    <bus id="bus0">
+      <nodeMember connectorId="connector0"/>
+      <nodeMember connectorId="connector1"/>
+      <nodeMember connectorId="connector2"/>
+    </bus>
+  </buses>
+</module>

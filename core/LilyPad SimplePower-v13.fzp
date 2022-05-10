@@ -17,7 +17,14 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <property name='family'>microcontroller board (lilypad)</property>
 <property name='type'>Power Connector</property>
 <property name='Connector'>JST</property>
+<property name='status'>On</property>
+<property name="voltage">3.3V</property>
+<property name="internal resistance">0.1&#937;</property>
 </properties>
+<spice>
+    <line>V{instanceTitle} {net connector17}_aux {net connector16} DC {voltage}</line>
+    <line>R{instanceTitle} {net connector17}_aux {net connector17} {internal resistance}</line>
+</spice>
 <views>
 <breadboardView>
 <layers image='breadboard/LilyPad SimplePower-v13_breadboard.svg'>

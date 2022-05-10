@@ -17,6 +17,11 @@
      <property name="current" showInLabel="yes"/>
      </properties>
  <description>A generic blue LED (~1.8V)</description>
+ <spice>
+  <model>*Typ RED,GREEN,YELLOW,AMBER GaAs LED: Vf=2.1V Vr=4V If=40mA trr=3uS</model>
+  <model>.MODEL LED_GENERIC D (IS=93.1P RS=42M N=4.61 BV=9 IBV=10U CJO=2.97P VJ=.75 M=.333 TT=4.32U)</model>
+  <line>D{instanceTitle} {net connector1} {net connector0} LED_GENERIC</line>
+ </spice>
  <views>
   <iconView>
    <layers image="icon/LED-red-5mmicon.svg">
