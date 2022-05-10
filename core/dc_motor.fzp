@@ -12,8 +12,17 @@
     </tags>
     <properties>
         <property name="family">DC Motor</property>
+        <property name="voltage (min)">3V</property>
+        <property name="voltage (max)">6V</property>
+        <property name="resistace">1.5</property>
+        <property name="inductance">5u</property>
     </properties>
     <description>Your standard DC Motor</description>
+    <spice>
+        <!-->Very simple dc motor model, does not take into account back EMF!<-->
+        <line>R{instanceTitle} {net connector0} {net connector0}_{instanceTitle}_aux {resistace}</line>
+        <line>L{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} {inductance}</line>
+    </spice>
     <views>
         <iconView>
             <layers image="icon/dc_motor.svg">

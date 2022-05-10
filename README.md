@@ -1,7 +1,6 @@
-[![Build Status master](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=master)](https://travis-ci.org/fritzing/fritzing-parts)
+[![Actions Status](https://github.com/fritzing/fritzing-parts/workflows/check-all-parts/badge.svg?branch=master)](https://github.com/fritzing/fritzing-parts/actions)
 *master*
-
-[![Build Status develop](https://travis-ci.org/fritzing/fritzing-parts.svg?branch=develop)](https://travis-ci.org/fritzing/fritzing-parts)
+[![Actions Status](https://github.com/fritzing/fritzing-parts/workflows/check-all-parts/badge.svg?branch=develop)](https://github.com/fritzing/fritzing-parts/actions)
 *develop*
 
 

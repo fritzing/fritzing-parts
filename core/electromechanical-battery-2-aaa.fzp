@@ -15,7 +15,13 @@
 <property name="package">battery-aaa</property>
 <property name="family">sparkfun Battery Holder</property>
 <property name="variant">aaa</property>
+<property name="voltage">2.4V</property>
+<property name="internal resistance">0.1&#937;</property>
 </properties>
+<spice>
+	<line>V{instanceTitle} {net connector1}_aux {net connector0} DC {voltage}</line>
+	<line>R{instanceTitle} {net connector1}_aux {net connector1} {internal resistance}</line>
+</spice>
 <views>
 <breadboardView>
 <layers image="breadboard/sparkfun-electromechanical_battery-aaa_breadboard.svg">
