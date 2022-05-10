@@ -13,8 +13,13 @@
     <properties>
         <property name="family">Battery</property>
         <property name="voltage">4.8V</property>
+        <property name="internal resistance">0.1&#937;</property>
     </properties>
     <description>A 4 x AAA battery pack (4.8 Volts with recharables)</description>
+    <spice>
+        <line>V{instanceTitle} {net connector1}_aux {net connector0} DC {voltage}</line>
+        <line>R{instanceTitle} {net connector1}_aux {net connector1} {internal resistance}</line>
+    </spice>
     <views>
         <iconView>
             <layers image="icon/batterypack_2xAA.svg">
