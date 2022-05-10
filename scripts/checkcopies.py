@@ -10,6 +10,7 @@ usage:
     <directory> is a folder containing svg files.  
     looks for files that have the same content but different names
     
+    Part of CI tests
     """)
 
 

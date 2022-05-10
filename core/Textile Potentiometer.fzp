@@ -16,12 +16,18 @@
  <properties>
   <property name="family">Textile Sensor</property>
   <property name="type">Soft Potentiometer</property>
-  <property name="Maximum Resistance">15kΩ</property>
   <property name="size">Length - 1m (39")</property>
   <property name="track">Linear</property>
   <property name="part number">PW064</property>
+  <property name="power">0.5W</property>
+  <property name="maximum resistance" showInLabel="yes">15k&#937;</property>
+  <property name="knob status">50%</property>
  </properties>
  <description>A textile adjustable resistor (potentiometer).</description>
+ <spice>
+  <line>R{instanceTitle}A {net connector0} {net connector1} {{knob status}/100*{maximum resistance}}</line>
+  <line>R{instanceTitle}B {net connector2} {net connector1} {{maximum resistance}-{knob status}/100*{maximum resistance}}</line>
+ </spice>
  <views>
   <iconView>
    <layers image="icon/Textile_potentiometer.svg">
