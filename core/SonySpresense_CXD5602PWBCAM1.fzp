@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.9.7" moduleId="Sony_Spresense_CXD5602PWDCAM1_002">
+    <version>4</version>
+    <author>Kjell Morgenstern</author>
+    <title>Sony's Spresense Camera Board</title>
+    <label></label>
+    <date>2021-05-14</date>
+    <properties>
+    <property name="family">Spresense</property>
+    <property name="variant">CXD5602PWBCAM1</property>
+    <property name="type">Camera board</property>
+    <property name="view">top-view</property>
+    </properties>
+    <tags>
+    <tag>CXD5602</tag>
+    <tag>Sony</tag>
+    <tag>Audio</tag>
+    <tag>ARM Cortex-M4F</tag>
+    <tag>GPS</tag>
+    <tag>Camera</tag>
+    </tags>
+    <description>The Spresense camera board is an accessory that extends the Spresense main board with a Sony ISX012 image sensor. See the documentation &lt;a href="https://developer.sony.com/spresense?utm_source=fritzing"&gt;here&lt;/a&gt;.
+<!--Sony Spresense CXD 5602PWBCAM<br/> The Spresense camera board features a Sony 5 Mpixel image sensor with an onboard encoder for pictures in JPEG, RAW, Y/C or RGB format. It connects directly to the main board through a dedicated parallel interface. --></description>
+ <url>https://developer.sony.com/spresense</url>
+    <views>
+        <iconView>
+            <layers image="icon/CXD5602PWBCAM1_icon.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/CXD5602PWBCAM1_breadboard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <pcbView>
+            <layers image="pcb/CXD5602PWBCAM1_pcb.svg">
+                <layer layerId="silkscreen"/>
+           </layers>
+        </pcbView>
+    </views>
+</module>

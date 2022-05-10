@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.1.beta.1396" moduleId="diac_db3_d93f6c1a94ffd52562268be2e62b9775_9" referenceFile="diode_1N4001_300mil.fzp">
+ <version>4</version>
+ <author>KingDarBoja</author>
+ <title>DIAC Diode</title>
+ <label>DB</label>
+ <date>mar. mar. 20 2018</date>
+ <tags>
+  <tag>diode</tag>
+  <tag>semiconductor</tag>
+  <tag>fritzing contrib</tag>
+  <tag>diac</tag>
+  <tag>switch</tag>
+ </tags>
+ <properties>
+  <property name="family">diode</property>
+  <property name="variant">variant 1</property>
+  <property name="type">DIAC</property>
+  <property name="package">DO-35</property>
+  <property name="layer"></property>
+  <property name="part number">DB3</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Standard DIAC (Diode AC) which acts as bi-direccional semiconductor switch based on DB3 STMicroelectronics.&lt;/p>&lt;/body>&lt;/html></description>
+ <spice>
+  <line>D{instanceTitle} {net connector1} {net connector0} DI_1N4001</line>
+  <model>*SRC=1N4001;DI_1N4001;Diodes;Si;  50.0V  1.00A  3.00us   Diodes, Inc. diode</model>
+  <model>.MODEL DI_1N4001 D  ( IS=76.9p RS=42.0m BV=50.0 IBV=5.00u CJO=39.8p  M=0.333 N=1.45 TT=4.32u )</model>
+ </spice>
+ <views>
+  <iconView>
+   <layers image="icon/diac_db3_1.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView fliphorizontal="true" flipvertical="true">
+   <layers image="breadboard/diac_db3_1.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/diac_db3_1.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/diac_db3_1.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector name="Anode 1" id="connector0" type="male">
+   <description>Anode 1 Pin</description>
+   <views>
+    <breadboardView>
+     <p legId="connector0leg" layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+     <p layer="copper1" svgId="connector0pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="Anode 2" id="connector1" type="male">
+   <description>Anode 2 Pin</description>
+   <views>
+    <breadboardView>
+     <p legId="connector1leg" layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+     <p layer="copper1" svgId="connector1pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>

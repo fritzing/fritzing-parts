@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><module moduleId="3234DFDC00PotentiometerModuleID">
+<?xml version="1.0" encoding="UTF-8"?><module moduleId="3234DFDC00PotentiometerModuleID" fritzingVersion="0.12.34">
  <version>4</version>
  <author>Brendan Howell</author>
  <title>Rotary Potentiometer (Large)</title>
@@ -15,13 +15,18 @@
   <property name="family">Potentiometer</property>
   <property name="type">Rotary Shaft Potentiometer</property>
   <property name="size">Rotary - 16mm</property>
-  <property name="Maximum Resistance" showInLabel="yes">100k&#937;</property>
-  <property name="power" showInLabel="yes"></property>
+  <property name="maximum resistance" showInLabel="yes">100k&#937;</property>
+  <property name="knob status">50%</property>
+  <property name="power">0.5W</property>
   <property name="Track">Linear</property>
  <property name="package">THT</property></properties>
 
  <taxonomy>discreteParts.resistors.adjustable.potentiometer</taxonomy>
  <description>A rotary adjustable resistor (potentiometer).</description>
+ <spice>
+  <line>R{instanceTitle}A {net connector0} {net connector1} {{knob status}/100*{maximum resistance}}</line>
+  <line>R{instanceTitle}B {net connector2} {net connector1} {{maximum resistance}-{knob status}/100*{maximum resistance}}</line>
+ </spice>
  <views>
   <iconView>
    <layers image="icon/potentiometer.svg">

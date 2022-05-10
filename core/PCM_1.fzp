@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="PCM_1" referenceFile="PCM_1.fzp" fritzingVersion="0.9.3b">
+  <version>4</version>
+  <author>Nitay Megides(Modified by vanepp July 2019)</author>
+  <title>PCM</title>
+  <label>PCM</label>
+  <date>Thu Mar 15 2018</date>
+  <url>https://www.vexrobotics.com/217-4243.html</url>
+  <tags>
+    <tag>PCM</tag>
+    <tag>FRC</tag>
+  </tags>
+  <properties>
+    <property name="variant">variant 1</property>
+    <property name="family">FRC PCM</property>
+    <property name="editable pin labels">false</property>
+    <property name="chip label">PCM</property>
+    <property name="pins">26</property>
+    <property name="part number"/>
+    <property name="layer"/>
+  </properties>
+  <description>VEX Pneumatic Control Module CAN bus control of pneumatic valves for the First Robotics. As all connections are to connectors PCB view has been supressed as unneeded.</description>
+  <views>
+    <iconView>
+      <layers image="icon/PCM_1_icon.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/PCM_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/PCM_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+  </views>
+  <connectors>
+    <connector type="male" id="connector0" name="pin1">
+      <description>Solenoid 0 Positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" terminalId="connector0terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector1" name="pin2">
+      <description>Solenoid 0 Negative</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector2" name="pin3">
+      <description>Solenoid 1 Positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector2pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector2pin" terminalId="connector2terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector3" name="pin4">
+      <description>Solenoid 1 Negative</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector3pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector3pin" terminalId="connector3terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector4" name="pin5">
+      <description>Solenoid 2 Positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector4pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector4pin" terminalId="connector4terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector5" name="pin6">
+      <description>Solenoid 2 Negative</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector5pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector5pin" terminalId="connector5terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector6" name="pin7">
+      <description>Solenoid 3 Positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector6pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector6pin" terminalId="connector6terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector7" name="pin8">
+      <description>Solenoid 3 Negative</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector7pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector7pin" terminalId="connector7terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector8" name="pin9">
+      <description>Solenoid 4 Positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector8pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector8pin" terminalId="connector8terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector9" name="pin10">
+      <description>Solenoid 4 Negative</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector9pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector9pin" terminalId="connector9terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector10" name="pin11">
+      <description>Solenoid 5 Positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector10pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector10pin" terminalId="connector10terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector11" name="pin12">
+      <description>Solenoid 5 Negative</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector11pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector11pin" terminalId="connector11terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector12" name="pin13">
+      <description>Solenoid 6 Positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector12pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector12pin" terminalId="connector12terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector13" name="pin14">
+      <description>Solenoid 6 Negative</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector13pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector13pin" terminalId="connector13terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector14" name="pin15">
+      <description>Solenoid 7 Positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector14pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector14pin" terminalId="connector14terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector15" name="pin16">
+      <description>Solenoid 7 Negative</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector15pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector15pin" terminalId="connector15terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector16" name="pin17">
+      <description>12V Power Input Positive </description>
+      <views>
+        <breadboardView>
+          <p svgId="connector16pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector16pin" terminalId="connector16terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector17" name="pin18">
+      <description>12V Power Input Negative</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector17pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector17pin" terminalId="connector17terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector18" name="pin19">
+      <description>Can Bus High</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector18pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector18pin" terminalId="connector18terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector19" name="pin20">
+      <description>Can Bus Low</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector19pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector19pin" terminalId="connector19terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector20" name="pin21">
+      <description>Can Bus High</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector20pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector20pin" terminalId="connector20terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector21" name="pin22">
+      <description>Can Bus Low</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector21pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector21pin" terminalId="connector21terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector22" name="pin23">
+      <description>Pressure Switch 1 Input</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector22pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector22pin" terminalId="connector22terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector23" name="pin24">
+      <description>Pressure Switch 2 Input</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector23pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector23pin" terminalId="connector23terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector24" name="pin25">
+      <description>Compressor Output Negative</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector24pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector24pin" terminalId="connector24terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector25" name="pin26">
+      <description>Compressor Output Positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector25pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector25pin" terminalId="connector25terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+  </connectors>
+  <buses>
+    <bus id="can-high">
+      <nodeMember connectorId="connector18"/>
+      <nodeMember connectorId="connector20"/>
+    </bus>
+    <bus id="can-low">
+      <nodeMember connectorId="connector19"/>
+      <nodeMember connectorId="connector21"/>
+    </bus>
+  </buses>
+</module>

@@ -25,7 +25,12 @@ Thin 0.8mm PCB</description>
 <property name='type'>Power Conditioning</property>
 <property name='Output Voltage'>5V</property>
 <property name='Connector'>AA Clip</property>
+<property name="internal resistance">0.1&#937;</property>
 </properties>
+<spice>
+    <line>V{instanceTitle} {net connector27}_aux {net connector28} DC {Output Voltage}</line>
+    <line>R{instanceTitle} {net connector27}_aux {net connector27} {internal resistance}</line>
+</spice>
 <views>
 <breadboardView>
 <layers image='breadboard/Lilypad_PowerSupply-v18_breadboard.svg'>

@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module fritzingVersion="0.9.3b" referenceFile="yl99_1.fzp" moduleId="yl99_1">
+  <version>1</version>
+  <author>Florian (modified by vanepp sep 2019)</author>
+  <title>YL-99 Limit switch and LED</title>
+  <label>Mod</label>
+  <date>Mo Sep 16 2019</date>
+  <url>https://www.ebay.com/itm/2PCS-YL-99-Collision-Switch-Sensor-Module-for-Arduino-Robot-Car-Raspberry-pi-/222676527440</url>
+  <tags>
+    <tag>Switch</tag>
+    <tag>collision</tag>
+    <tag>limit switch</tag>
+    <tag>module</tag>
+    <tag>YL-99</tag>
+  </tags>
+  <properties>
+    <property name="variant">variant 1</property>
+    <property name="family">limit switch</property>
+    <property name="layer"/>
+  </properties>
+  <description>YL-99 limit switch with pullup and LED module.</description>
+  <views>
+    <iconView>
+      <layers image="icon/yl99_1_icon.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/yl99_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/yl99_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="pcb/yl99_1_pcb.svg">
+        <layer layerId="silkscreen"/>
+        <layer layerId="copper0"/>
+        <layer layerId="copper1"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector id="connector0" type="male" name="VCC">
+      <description>VCC</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pin" layer="copper0"/>
+          <p svgId="connector0pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector id="connector1" type="male" name="GND">
+      <description>GND</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector1pin" layer="copper0"/>
+          <p svgId="connector1pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector id="connector2" type="male" name="OUT">
+      <description>OUT</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector2pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector2pin" layer="copper0"/>
+          <p svgId="connector2pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+  </connectors>
+</module>

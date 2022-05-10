@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="VRM_1" referenceFile="VRM_1.fzp" fritzingVersion="0.9.3b">
+  <version>4</version>
+  <author>Nitay Megides (modified by vanepp july 2019)</author>
+  <title>VRM</title>
+  <label>Mod</label>
+  <date>Wed Mar 14 2018</date>
+  <url>https://www.andymark.com/products/voltage-regulator-module</url>
+  <tags>
+    <tag>VRM</tag>
+    <tag>FRC</tag>
+  </tags>
+  <properties>
+    <property name="family">frc</property>
+    <property name="chip label">VRM</property>
+    <property name="editable pin labels">false</property>
+    <property name="part number"/>
+    <property name="layer"/>
+    <property name="variant">variant 1</property>
+  </properties>
+  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Voltage Regulator Module. Provides +5V and +12V regulated power for logic modules.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <views>
+    <iconView>
+      <layers image="icon/VRM_1_icon.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/VRM_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/VRM_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+  </views>
+  <connectors>
+    <connector type="male" id="connector0" name="5V_2A_GND0">
+      <description>5V_2A_GND0</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector0terminal" svgId="connector0pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector1" name="5V_2A_5V0">
+      <description>5V_2A_5V0</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector1terminal" svgId="connector1pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector2" name="5V_2A_GND1">
+      <description>5V_2A_GND1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector2pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector2terminal" svgId="connector2pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector3" name="5V_2A_5V1">
+      <description>5V_2A_5V1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector3pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector3terminal" svgId="connector3pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector4" name="5V_500mA_GND0">
+      <description>5V_500mA_GND0</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector4pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector4terminal" svgId="connector4pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector5" name="5V_500mA_5V0">
+      <description>5V_500mA_5V0</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector5pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector5terminal" svgId="connector5pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector6" name="5V_500mA_GND1">
+      <description>5V_500mA_GND1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector6pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector6terminal" svgId="connector6pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector7" name="5V_500mA_5V1">
+      <description>5V_500mA_5V1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector7pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector7terminal" svgId="connector7pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector8" name="12V_2A_GND0">
+      <description>12V_2A_GND0</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector8pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector8terminal" svgId="connector8pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector9" name="12V_2A_12v0">
+      <description>12V_2A_12v0</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector9pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector9terminal" svgId="connector9pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector10" name="12V_2A_GND1">
+      <description>12V_2A_GND1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector10pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector10terminal" svgId="connector10pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector11" name="12V_2A_12v1">
+      <description>12V_2A_12v1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector11pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector11terminal" svgId="connector11pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector12" name="12V_500mA_GND0">
+      <description>12V_500mA_GND0</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector12pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector12terminal" svgId="connector12pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector13" name="12V_500mA_12v0">
+      <description>12V_500mA_12v0</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector13pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector13terminal" svgId="connector13pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector14" name="12V_500mA_GND1">
+      <description>12V_500mA_GND1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector14pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector14terminal" svgId="connector14pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector15" name="12V_500mA_12v1">
+      <description>12V_500mA_12v1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector15pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector15terminal" svgId="connector15pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector16" name="In12V">
+      <description>In12V</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector16pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector16terminal" svgId="connector16pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector17" name="InGnd">
+      <description>InGnd</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector17pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector17terminal" svgId="connector17pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+  </connectors>
+  <buses>
+    <bus id="bus0">
+      <nodeMember connectorId="connector0"/>
+      <nodeMember connectorId="connector2"/>
+      <nodeMember connectorId="connector4"/>
+      <nodeMember connectorId="connector6"/>
+      <nodeMember connectorId="connector8"/>
+      <nodeMember connectorId="connector10"/>
+      <nodeMember connectorId="connector12"/>
+      <nodeMember connectorId="connector14"/>
+      <nodeMember connectorId="connector17"/>
+    </bus>
+  </buses>
+</module>

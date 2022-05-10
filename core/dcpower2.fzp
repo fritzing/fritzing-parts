@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module moduleId="DC2PowerModuleID" >
+<module moduleId="DC2PowerModuleID" fritzingVersion="0.12.34">
  <version>4</version>
  <author>Brendan Howell</author>
  <title>DC Power</title>
@@ -15,10 +15,14 @@
    <property name="family">voltage source</property>
    <property name="type">dc power supply</property>
    <property name="voltage" showInLabel="yes">5</property>
+   <property name="internal resistance">0.1&#937;</property>
  </properties>
  <taxonomy>discreteParts.power.power.dcpower</taxonomy>
  <description>A generic dc power symbol</description>
- <spice><line>V{instanceTitle} {net connector0} {net connector1} DC {voltage}</line></spice>
+ <spice>
+   <line>V{instanceTitle} {net connector0}_aux {net connector1} DC {voltage}</line>
+   <line>R{instanceTitle} {net connector0}_aux {net connector0} {internal resistance}</line>
+ </spice>
  <views>
   <defaultUnits>cmil</defaultUnits>
   <iconView>

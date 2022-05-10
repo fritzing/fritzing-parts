@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="ky_006_1" fritzingVersion="0.9.3b" referenceFile="ky_006_1.fzp">
+  <version>1</version>
+  <date>So Sep 15 2019</date>
+  <author>Florian (modified by vanepp sep 2019)</author>
+  <description>Keyes KY-006 passive buzzer. Note there are two versions of this part which have opposite connections. This is the less common varient, the other reverses the - and S connections (the middle connection is NC in both I think).</description>
+  <title>Passive Buzzer</title>
+  <label>Mod</label>
+  <url>https://www.ebay.ca/itm/KEYES-KY-006-Passive-Buzzer-Module-For-Arduino-AVR-PIC/312770016773?hash=item48d28bb605:g:KzQAAOSwrYJdftew</url>
+  <tags>
+    <tag>Buzzer</tag>
+    <tag>KY-006</tag>
+    <tag>passive buzzer module</tag>
+  </tags>
+  <properties>
+    <property name="family">passive buzzer</property>
+    <property name="variant">variant 1</property>
+    <property name="part number"/>
+  </properties>
+  <views>
+    <breadboardView>
+      <layers image="breadboard/ky_006_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <iconView>
+      <layers image="icon/ky_006_1_icon.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <schematicView>
+      <layers image="schematic/ky_006_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="pcb/ky_006_1_pcb.svg">
+        <layer layerId="copper1"/>
+        <layer layerId="silkscreen"/>
+        <layer layerId="copper0"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector id="connector0" type="male" name="S">
+      <description>Signal</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard" terminalId="connector0terminal"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pin" layer="copper0"/>
+          <p svgId="connector0pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector id="connector1" type="male" name="NC">
+      <description>NC</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard" terminalId="connector1terminal"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector1pin" layer="copper0"/>
+          <p svgId="connector1pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector id="connector2" type="male" name="-">
+      <description>Ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector2pin" layer="breadboard" terminalId="connector2terminal"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector2pin" layer="copper0"/>
+          <p svgId="connector2pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+  </connectors>
+  <buses/>
+</module>

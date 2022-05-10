@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="IFR520_MOS_module.fzp" moduleId="IRF520_mos_module_7115327c8b8b62b1ba195a98bd66e077_5" fritzingVersion="0.12.34">
+ <version>4</version>
+ <author>KingDarBoja</author>
+ <title>IFR520 MOS module</title>
+ <label/>
+ <date>dom. mar. 11 2018</date>
+ <tags>
+  <tag>IFR520</tag>
+  <tag>mosfet</tag>
+  <tag>contrib</tag>
+  <tag>Fritzing user</tag>
+ </tags>
+ <properties>
+  <property name="family">mosfet driver module</property>
+  <property name="variant">variant 2</property>
+  <property name="editable pin labels">false</property>
+  <property name="pins">3</property>
+  <property name="layout">Single Row</property>
+  <property name="layer"/>
+  <property name="package">THT</property>
+  <property name="pin spacing">100mil</property>
+  <property name="part number"/>
+  <property name="hole size"/>
+ </properties>
+ <taxonomy>part.dip.8.pins</taxonomy>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Breakout board for the IFR520 MOSFET transistor. The module is designed to switch heavy DC loads from a single digital pin of your microcontroller. Its main purpose is to provide a low cost way to drive a DC motor for robotics applications, but the module can be used to control most high current DC loads. Screw terminals are provided to interface to your load and external power source. An LED indicator provides a visual indication of when your load is being switched.&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/IRF520_mos_module_5.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/IRF520_mos_module_5.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/IRF520_mos_module_5.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/IRF520_mos_module_5.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="male" name="SIG" id="connector0">
+   <description>SIG</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+     <p layer="copper1" svgId="connector0pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="VCC" id="connector1">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+     <p layer="copper1" svgId="connector1pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="GND" id="connector2">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+	 <p layer="copper0" svgId="connector2pin"/>
+     <p layer="copper1" svgId="connector2pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="V+" id="connector3">
+   <description>V+</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+    </schematicView>
+    <pcbView>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="V-" id="connector4">
+   <description>V-</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin" terminalId="connector4terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+    </schematicView>
+    <pcbView>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="VIN" id="connector5">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin" terminalId="connector5terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+    </schematicView>
+    <pcbView>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="GND" id="connector6">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin" terminalId="connector6terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+    </schematicView>
+    <pcbView>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+	<bus id="GND">
+		<nodeMember connectorId="connector6"/>
+		<nodeMember connectorId="connector2"/>
+	</bus>
+ </buses>
+</module>

@@ -1,0 +1,558 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="PDP_1" referenceFile="PDP_1.fzp" fritzingVersion="0.9.3b">
+  <version>4</version>
+  <author>Nitay Megides ( Modified by vanepp July 2019)</author>
+  <title>PDP</title>
+  <label>PDP</label>
+  <date>Fri Mar 16 2018</date>
+  <url>https://www.vexrobotics.com/217-4244.html</url>
+  <tags>
+    <tag>PDP</tag>
+    <tag>Power Distibution Panel</tag>
+    <tag>FIRST robotics</tag>
+    <tag>FRC</tag>
+  </tags>
+  <properties>
+    <property name="variant">variant 1</property>
+    <property name="family">FRC PDP</property>
+    <property name="editable pin labels">false</property>
+    <property name="part number"/>
+    <property name="layer"/>
+  </properties>
+  <description>Power Distibution Panel (PDP). Uses CAN to connect to roboRIO controller and provides 16 channels of power with current sensing at up to 30A or 40A (depending on port).</description>
+  <views>
+    <iconView>
+      <layers image="icon/PDP_1_icon.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/PDP_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/PDP_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+  </views>
+  <connectors>
+    <connector type="male" id="connector0" name="0_-">
+      <description>Channel 0  common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" terminalId="connector0terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector1" name="0_+">
+      <description>Channel 0 positive (40A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector2" name="1_+">
+      <description>Channel 1 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector2pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector2pin" terminalId="connector2terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector3" name="1_-">
+      <description>Channel 1 positive (40A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector3pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector3pin" terminalId="connector3terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector4" name="2_+">
+      <description>Channel 2common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector4pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector4pin" terminalId="connector4terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector5" name="2_-">
+      <description>Channel 2 positive (40A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector5pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector5pin" terminalId="connector5terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector6" name="3_+">
+      <description>Channel 3common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector6pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector6pin" terminalId="connector6terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector7" name="3_-">
+      <description>Channel 3 positive (40A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector7pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector7pin" terminalId="connector7terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector8" name="4_+">
+      <description>Channel 4 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector8pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector8pin" terminalId="connector8terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector9" name="4_-">
+      <description>Channel 4 positive (30A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector9pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector9pin" terminalId="connector9terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector10" name="5_+">
+      <description>Channel 5 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector10pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector10pin" terminalId="connector10terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector11" name="5_-">
+      <description>Channel 5 positive (30A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector11pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector11pin" terminalId="connector11terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector12" name="6_+">
+      <description>Channel 6 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector12pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector12pin" terminalId="connector12terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector13" name="6_-">
+      <description>Channel 6 positive (30A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector13pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector13pin" terminalId="connector13terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector14" name="7_+">
+      <description>Channel 7 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector14pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector14pin" terminalId="connector14terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector15" name="7_-">
+      <description>Channel 7 positive (30A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector15pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector15pin" terminalId="connector15terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector16" name="VRM_PCM_0+">
+      <description>VRM PCM 0 positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector16pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector16pin" terminalId="connector16terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector17" name="VRM_PCM_0-">
+      <description>VRM PCM 0 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector17pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector17pin" terminalId="connector17terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector18" name="VRM_PCM_1+">
+      <description>VRM PCM 1 positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector18pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector18pin" terminalId="connector18terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector19" name="VRM_PCM_1-">
+      <description>VRM PCM 1 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector19pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector19pin" terminalId="connector19terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector20" name="CONT_+">
+      <description>roboREO supply positive (10A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector20pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector20pin" terminalId="connector20terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector21" name="CONT_-">
+      <description>roboREO supply common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector21pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector21pin" terminalId="connector21terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector22" name="8_-">
+      <description>Channel 8 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector22pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector22pin" terminalId="connector22terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector23" name="8_+">
+      <description>Channel 8 positive (30A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector23pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector23pin" terminalId="connector23terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector24" name="9_-">
+      <description>Channel 9 common ground)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector24pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector24pin" terminalId="connector24terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector25" name="9_+">
+      <description>Channel 9 positive (30A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector25pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector25pin" terminalId="connector25terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector26" name="10_-">
+      <description>Channel 10 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector26pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector26pin" terminalId="connector26terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector27" name="10_+">
+      <description>Channel 10 positive (30A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector27pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector27pin" terminalId="connector27terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector28" name="11_-">
+      <description>Channel 11 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector28pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector28pin" terminalId="connector28terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector29" name="11_+">
+      <description>Channel 11 positive (30A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector29pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector29pin" terminalId="connector29terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector30" name="12_-">
+      <description>Channel 12 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector30pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector30pin" terminalId="connector30terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector31" name="12_+">
+      <description>Channel 12 positive (40A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector31pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector31pin" terminalId="connector31terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector32" name="13_-">
+      <description>Channel 13 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector32pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector32pin" terminalId="connector32terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector33" name="13_+">
+      <description>Channel 14 positive (40A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector33pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector33pin" terminalId="connector33terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector34" name="14_-">
+      <description>Channel 14 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector34pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector34pin" terminalId="connector34terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector35" name="14_+">
+      <description>Channel 15 positive (40A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector35pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector35pin" terminalId="connector35terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector36" name="15_-">
+      <description>Channel 15 common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector36pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector36pin" terminalId="connector36terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector37" name="15_+">
+      <description>Channel 15 positive (40A)</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector37pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector37pin" terminalId="connector37terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector38" name="BAT-">
+      <description>Battery input negative, common ground</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector38pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector38pin" terminalId="connector38terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector39" name="BAT+">
+      <description>Battery input positive</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector39pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector39pin" terminalId="connector39terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector40" name="CAN_G_0">
+      <description>CAN low 0</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector40pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector40pin" terminalId="connector40terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector41" name="CAN_Y_0">
+      <description>CAN high 0</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector41pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector41pin" terminalId="connector41terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector42" name="CAN_G_1">
+      <description>CAN low 1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector42pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector42pin" terminalId="connector42terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector43" name="CAN_Y_1">
+      <description>CAN high 1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector43pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector43pin" terminalId="connector43terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+  </connectors>
+  <buses>
+    <bus id="can-high">
+      <nodeMember connectorId="connector41"/>
+      <nodeMember connectorId="connector43"/>
+    </bus>
+    <bus id="can-low">
+      <nodeMember connectorId="connector40"/>
+      <nodeMember connectorId="connector42"/>
+    </bus>
+    <bus id="ground">
+      <nodeMember connectorId="connector0"/>
+      <nodeMember connectorId="connector2"/>
+      <nodeMember connectorId="connector4"/>
+      <nodeMember connectorId="connector6"/>
+      <nodeMember connectorId="connector8"/>
+      <nodeMember connectorId="connector10"/>
+      <nodeMember connectorId="connector12"/>
+      <nodeMember connectorId="connector14"/>
+      <nodeMember connectorId="connector17"/>
+      <nodeMember connectorId="connector19"/>
+      <nodeMember connectorId="connector21"/>
+      <nodeMember connectorId="connector22"/>
+      <nodeMember connectorId="connector24"/>
+      <nodeMember connectorId="connector26"/>
+      <nodeMember connectorId="connector28"/>
+      <nodeMember connectorId="connector30"/>
+      <nodeMember connectorId="connector32"/>
+      <nodeMember connectorId="connector34"/>
+      <nodeMember connectorId="connector36"/>
+      <nodeMember connectorId="connector38"/>
+    </bus>
+  </buses>
+</module>

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module referenceFile="router_1.fzp" moduleId="router_1" fritzingVersion="0.9.3b">
+  <version>4</version>
+  <author>Nitay Megides (modified by vanepp July 2019)</author>
+  <title>Rounter OpenMesh</title>
+  <label>Router</label>
+  <date>Sat Jan 12 2019</date>
+  <url>https://www.andymark.com/products/open-mesh-om5p-ac-dual-band-1-17-gbps-access-point-radio</url>
+  <tags>
+    <tag>Router</tag>
+    <tag>OpenMesh</tag>
+    <tag>FRC</tag>
+  </tags>
+  <properties>
+    <property name="family">FRC</property>
+    <property name="editable pin labels">false</property>
+    <property name="layer"/>
+    <property name="part number"/>
+    <property name="variant">variant 1</property>
+  </properties>
+  <description>Open-Mesh OM5P-AC Dual Band 1.17 Gbps Access Point aka: FRC Radio. Note pcb view is supressed as this device will not fit on a pcb.</description>
+  <views>
+    <iconView>
+      <layers image="icon/router_1_icon.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/router_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/router_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+  </views>
+  <connectors>
+    <connector type="male" id="connector0" name="V_neg">
+      <description>Negative 12V power connection</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" terminalId="connector0terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector1" name="V_pos">
+      <description>Positive 12V power connection</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector2" name="ETH_right">
+      <description>Right Ethernet connection 18-24V POE</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector2pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector2pin" terminalId="connector2terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector type="male" id="connector3" name="ETH_left">
+      <description>Left Ethernet connection 802.3af POE</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector3pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector3pin" terminalId="connector3terminal" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+  </connectors>
+</module>

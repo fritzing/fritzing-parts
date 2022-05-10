@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module fritzingVersion="0.9.3b" moduleId="shaft-encoder_1" referenceFile="shaft-encoder_1.fzp">
+  <version>1</version>
+  <date>Sa Aug 31 2019</date>
+  <author>Florian (modfied by vanepp sep 2019)</author>
+  <description>Optical interrupter type optical shaft encoder.</description>
+  <title>shaft encoder</title>
+  <label>Enc</label>
+  <url/>
+  <tags>
+    <tag>Speed</tag>
+    <tag>Speed sensor</tag>
+    <tag>optical interrupter</tag>
+    <tag>shaft encoder</tag>
+    <tag>Slot</tag>
+    <tag>IR Fork </tag>
+  </tags>
+  <properties>
+    <property name="variant">variant 1</property>
+    <property name="family">shaft encoder</property>
+  </properties>
+  <views>
+    <breadboardView>
+      <layers image="breadboard/shaft-encoder_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <iconView>
+      <layers image="icon/shaft-encoder_1_icon.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <schematicView>
+      <layers image="schematic/shaft-encoder_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="pcb/shaft-encoder_1_pcb.svg">
+        <layer layerId="silkscreen"/>
+        <layer layerId="copper0"/>
+        <layer layerId="copper1"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector type="male" name="VCC" id="connector0">
+      <description>VCC</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector0pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+        </schematicView>
+        <pcbView>
+          <p layer="copper0" svgId="connector0pin"/>
+          <p layer="copper1" svgId="connector0pin"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector type="male" name="GND" id="connector1">
+      <description>GND</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector1pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+        </schematicView>
+        <pcbView>
+          <p layer="copper0" svgId="connector1pin"/>
+          <p layer="copper1" svgId="connector1pin"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector type="male" name="OUT" id="connector2">
+      <description>OUT</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector2pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+        </schematicView>
+        <pcbView>
+          <p layer="copper0" svgId="connector2pin"/>
+          <p layer="copper1" svgId="connector2pin"/>
+        </pcbView>
+      </views>
+    </connector>
+  </connectors>
+  <buses/>
+</module>
