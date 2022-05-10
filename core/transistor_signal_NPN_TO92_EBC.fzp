@@ -18,8 +18,8 @@
  </properties>
  <description>A standard NPN-transistor</description>
  <spice>
-  <line>*Typical bipolar transistor </line>
-  <line>.MODEL NPN_GENERIC NPN ()</line>
+  <model>*Typical bipolar transistor </model>
+  <model>.MODEL NPN_GENERIC NPN ()</model>
   <line>Q{instanceTitle} {net connector2} {net connector1} {net connector0} NPN_GENERIC</line>
  </spice>
  <views>

@@ -14,13 +14,19 @@
  <properties>
    <property name="family">Potentiometer</property>
    <property name="type">Trimmer Potentiometer</property>
-   <property name="Maximum Resistance" showInLabel="yes">10k&#937;</property>
+   <property name="maximum resistance" showInLabel="yes">10k&#937;</property>
+   <property name="knob status">50%</property>
    <property name="Track">Linear</property>
-      <property name="power" showInLabel="yes"></property>
+   <property name="power">0.5W</property>
    <property name="Size">Trimmer - 6mm</property>
- <property name="package">THT</property></properties>
+   <property name="package">THT</property>
+ </properties>
  <taxonomy>discreteParts.resistors.adjustable.potentiometer</taxonomy>
  <description>A standard 6mm trimmer potentiometer.</description>
+ <spice>
+  <line>R{instanceTitle}A {net connector0} {net connector1} {{knob status}/100*{maximum resistance}}</line>
+  <line>R{instanceTitle}B {net connector2} {net connector1} {{maximum resistance}-{knob status}/100*{maximum resistance}}</line>
+ </spice>
  <views>
   <iconView>
    <layers image="icon/basic_poti_icon.svg">

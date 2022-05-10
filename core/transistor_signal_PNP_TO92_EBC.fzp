@@ -18,8 +18,8 @@
  </properties>
  <description>A standard PNP signal transistor</description>
  <spice>
-  <line>*Typical bipolar transistor </line>
-  <line>.MODEL PNP_GENERIC PNP ()</line>
+  <model>*Typical bipolar transistor </model>
+  <model>.MODEL PNP_GENERIC PNP ()</model>
   <line>Q{instanceTitle} {net connector2} {net connector1} {net connector0} PNP_GENERIC</line>
  </spice>
  <views>

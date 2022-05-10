@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51px" height="29.7px" baseProfile="tiny" version="1.2" viewBox="0 0 51 29.7" xmlns="http://www.w3.org/2000/svg">
+	<g id="schematic" transform="translate(0 -6.7)">
+		<g id="diagram" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".9">
+			<circle cx="28.8" cy="21.6" r="7.2"/>
+			<line x1="21.6" x2="21.6" y1="14.4" y2="28.8"/>
+			<path d="m38 16.4 a12 12 0 0 1 0 10.4"/>
+			<path d="m41 15.4 a15 15 0 0 1 0 12.4"/>
+			<path d="m44 14.4 a17 17 0 0 1 0 14.4"/>
+
+		<rect x="7.2" y="7.2" width="43.2" height="28.8" stroke="#000" stroke-width=".9"/>
+		<line x1="7.2" y1="28.8" y2="28.8" stroke="#787878" stroke-width=".7"/>
+		<line x2="7.2" y1="14.4" y2="14.4" stroke="#787878" stroke-width=".7"/>
+		<line x2="7.2" y1="21.6" y2="21.6" stroke="#787878" stroke-width=".7"/>
+
+		</g>
+
+	<rect id="connector0pin" y="14.062" width="4.063" height=".677" fill="none"/>
+	<rect id="connector1pin" y="21.262" width="4.063" height=".677" fill="none"/>
+	<rect id="connector2pin" y="28.461" width="4.063" height=".677" fill="none"/>
+	<rect id="connector0terminal" y="14.062" width=".338" height=".677" fill="none"/>
+	<rect id="connector1terminal" y="21.262" width=".338" height=".677" fill="none"/>
+	<rect id="connector2terminal" y="28.461" width=".338" height=".677" fill="none"/>
+
+	<g transform="translate(3.429,1.3462)">
+		<g transform="rotate(270)" fill="#787878" font-family="'Droid Sans'" font-size="2">
+			<text transform="matrix(0 1 -1 0 -11.539 .634)">1</text>
+			<text transform="matrix(0 1 -1 0 -18.739 .634)">2</text>
+			<text transform="matrix(0 1 -1 0 -25.938 .634)">3</text>
+		</g>
+	</g>
+	<text transform="translate(9.2598 15.492)" fill="#787878" font-family="'Droid Sans'" font-size="4.5">GND</text>
+	<text transform="translate(9.2202 22.794)" fill="#787878" font-family="'Droid Sans'" font-size="4.5">IO</text>
+	<text transform="translate(9.2598 29.876)" fill="#787878" font-family="'Droid Sans'" font-size="4.5">V</text>
+	<text transform="translate(11.4 30.5)" fill="#787878" font-family="'Droid Sans'" font-size="3">sup</text>
+<!--	<text transform="translate(21 12.332)" font-family="'Droid Sans'" font-size="5.5">Sonic ToF</text> -->
+	</g>
+</svg>
