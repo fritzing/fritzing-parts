@@ -65,10 +65,10 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="1001ABDC27" modelIndex="12" path="basic_fet_p.fzp">
+        <instance modelIndex="12" moduleIdRef="1001ABDC27" path="basic_fet_p.fzp">
             <views>
                 <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
+                    <geometry x="-1" y="-1" z="-1"/>
                 </iconView>
             </views>
         </instance>
@@ -132,7 +132,6 @@
                 </iconView>
             </views>
         </instance>
-
         <instance modelIndex="21" moduleIdRef="fc-51_85d98481ce3be6f2e9b641181c0f798b_1" path="fc-51-IR-Sensor.fzp">
             <views>
                 <iconView layer="icon">
@@ -158,12 +157,20 @@
         </instance>´
         
         
-        <!--
-        <instance moduleIdRef="d4d5af9700923b8a114f57961f29a8a0" modelIndex="24" path="led-rgb-4pin-cathode.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="AnodeLEDSuperfluxModuleID" modelIndex="24" path="led_flux_blue_anode.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="Prolight RGB 3 Watt Star" modelIndex="24" path="LED_Prolight_RGB.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="7segment10an" modelIndex="24" path="7segment_9,9_an.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="LED_Matrix_Kingbright_TA07-11" modelIndex="24" path="LED_Matrix_Kingbright_TA07-11.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance>-->
-        <instance modelIndex="26" moduleIdRef="1000FADF10011leg" path="dc_motor.fzp">
+        
+        
+        <instance modelIndex="24" moduleIdRef="d4d5af9700923b8a114f57961f29a8a0ColorLEDModuleID" path="led-rgb-4pin-cathode_v5.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry x="-1" y="-1" z="-1"/></iconView>
+            </views>
+        </instance>
+        <!--<instance moduleIdRef="AnodeLEDSuperfluxModuleID" modelIndex="24" path="led_flux_blue_anode.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="Prolight RGB 3 Watt Star" modelIndex="24" path="LED_Prolight_RGB.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="7segment10an" modelIndex="24" path="7segment_9,9_an.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="LED_Matrix_Kingbright_TA07-11" modelIndex="24" path="LED_Matrix_Kingbright_TA07-11.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance>-->
+        <instance modelIndex="26" moduleIdRef="1000FADF10011leg" path="dc_motor.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry x="-1" y="-1" z="-1"/>
+                </iconView>
             </views>
         </instance>
         <!--
@@ -176,91 +183,7 @@
             </views>
         </instance>
         <!-- 
-        <instance modelIndex="33" moduleIdRef="a59353bd0db0225dc22770e292c622f3" path="lm358.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="34" moduleIdRef="1001AAAB555Timer" path="555timer.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="35" moduleIdRef="1001AAACOptocoupler" path="optocoupler.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="36" moduleIdRef="a4f38a10-dd92-11dd-a3e2-001f5b3a17a4" path="h-bridge.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="36" moduleIdRef="1a7828b6466fac9fd042221e931124c4" path="74HC595.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="36" moduleIdRef="HEF4094" path="HEF4094.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="RevEd_FRM050">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="RevEd_ULN2003A">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="38" moduleIdRef="CrystalModuleID" path="crystal.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="38" moduleIdRef="37asdf3c843a2127a0e499f8a0b3ef6aCrystalModuleID" path="resonator-3pin.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="38" moduleIdRef="4001_4_x_2_input_NOR_gate_single">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="38" moduleIdRef="4001_4_x_2_input_NOR_gate_multipart">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        -->
+        <instance modelIndex="33" moduleIdRef="a59353bd0db0225dc22770e292c622f3" path="lm358.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="34" moduleIdRef="1001AAAB555Timer" path="555timer.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="35" moduleIdRef="1001AAACOptocoupler" path="optocoupler.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="36" moduleIdRef="a4f38a10-dd92-11dd-a3e2-001f5b3a17a4" path="h-bridge.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="36" moduleIdRef="1a7828b6466fac9fd042221e931124c4" path="74HC595.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="36" moduleIdRef="HEF4094" path="HEF4094.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance moduleIdRef="RevEd_FRM050"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance moduleIdRef="RevEd_ULN2003A"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="CrystalModuleID" path="crystal.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="37asdf3c843a2127a0e499f8a0b3ef6aCrystalModuleID" path="resonator-3pin.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="4001_4_x_2_input_NOR_gate_single"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="4001_4_x_2_input_NOR_gate_multipart"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance>-->
         <instance modelIndex="38" moduleIdRef="4011_4_x_2_input_NAND_gate_multipart">
             <views>
                 <iconView layer="icon">
@@ -269,35 +192,7 @@
             </views>
         </instance>
         <!--
-        <instance modelIndex="38" moduleIdRef="4070_4_x_2_input_XOR_gate_multipart">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="38" moduleIdRef="4071_4_x_2_input_OR_gate_multipart">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="38" moduleIdRef="4077_4_x_2_input_XNOR_gate_multipart">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="38" moduleIdRef="4081_4_x_2_input_AND_gate_multipart">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        -->
+        <instance modelIndex="38" moduleIdRef="4070_4_x_2_input_XOR_gate_multipart"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="4071_4_x_2_input_OR_gate_multipart"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="4077_4_x_2_input_XNOR_gate_multipart"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="4081_4_x_2_input_AND_gate_multipart"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance>-->
         <instance modelIndex="3" moduleIdRef="__spacer__" path="Power">
             <views>
                 <iconView layer="icon">

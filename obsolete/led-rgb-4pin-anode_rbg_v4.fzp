@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module fritzingVersion="0.5.4b.05.18.4914" moduleId="74f3591ccbd4ba20730577a93d0aeda9">
-    <version>4</version>
+<module fritzingVersion="0.5.4b.05.18.4914" moduleId="0d35715c371dab9d8b52b3c09444f755">
+    <version replacedby="0d35715c371dab9d8b52b3c09444f755ColorLEDModuleID">4</version>
     <author>stefanhermann</author>
-    <title>RGB LED (com. cathode, rbg)</title>
+    <title>RGB LED (com. anode, rbg)</title>
     <label>LED</label>
     <date>2009-06-22</date>
     <tags>
@@ -12,15 +12,15 @@
     </tags>
     <properties>
         <property name="package">5 mm [THT]</property>
-        <property name="family">LED</property>
+        <property name="family">//obsolete//LED</property>
         <property name="pin order">rbg</property>
-        <property name="polarity">common cathode</property>
+        <property name="polarity">common anode</property>
         <property name="current"></property>
         <property name="rgb">RGB</property>
         <property name="part number"></property>
     </properties>
-    <description>A 5mm tri-color LED with red, green and blue inside.
-Pin order: red - com. cathode - blue - green</description>
+    <description>A 5mm tri-color LED with red, green and blue inside. 
+Pin order: red - com. anode - blue - green</description>
     <views>
         <iconView>
             <layers image="icon/led-rgb-4pin-anode.svg">
@@ -33,7 +33,7 @@ Pin order: red - com. cathode - blue - green</description>
             </layers>
         </breadboardView>
         <schematicView>
-            <layers image="schematic/led-rbg-4pin-cathode.svg">
+            <layers image="schematic/led-rbg-4pin-anode.svg">
                 <layer layerId="schematic"/>
             </layers>
         </schematicView>
@@ -46,8 +46,8 @@ Pin order: red - com. cathode - blue - green</description>
         </pcbView>
     </views>
     <connectors>
-        <connector id="connector0" type="male" name="red anode">
-            <description>anode pin for red LED</description>
+        <connector id="connector0" type="male" name="red cathode">
+            <description>cathode pin for red LED</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector0pin"  legId="connector0leg"/>
@@ -61,11 +61,11 @@ Pin order: red - com. cathode - blue - green</description>
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector1" type="male" name="common cathode">
-            <description>cathode pin for every color, supply +voltage</description>
+        <connector id="connector1" type="male" name="common anode">
+            <description>anode pin for every color, supply +voltage</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector1pin"  legId="connector1leg"/>
+                    <p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>
                 </breadboardView>
                 <schematicView>
                     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
@@ -76,11 +76,11 @@ Pin order: red - com. cathode - blue - green</description>
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector2" type="male" name="blue anode">
-            <description>anode pin for blue LED</description>
+        <connector id="connector2" type="male" name="blue cathode">
+            <description>cathode pin for blue LED</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector2pin" legId="connector2leg"/>
+                    <p layer="breadboard" svgId="connector2pin"  legId="connector2leg"/>
                 </breadboardView>
                 <schematicView>
                     <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
@@ -91,8 +91,8 @@ Pin order: red - com. cathode - blue - green</description>
                 </pcbView>
             </views>
         </connector>
-         <connector id="connector3" type="male" name="green anode">
-            <description>anode pin for green LED</description>
+         <connector id="connector3" type="male" name="green cathode">
+            <description>cathode pin for green LED</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector3pin"  legId="connector3leg"/>
