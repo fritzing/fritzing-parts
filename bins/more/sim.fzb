@@ -124,7 +124,14 @@
             </views>
         </instance>
         <!--
-        <instance moduleIdRef="Taiway-100-SP-X-T1-X-X-B1-M1_SPDT_miniature_toggle_switch" modelIndex="17"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="d206ca0d70364191f0b3fd30d5e53c5d" modelIndex="18" path="Tilt switch.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="1000ABDD10011" modelIndex="19" path="basic_fsr.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="fa3e296736059e8c25d88ac262af999a" modelIndex="19" path="Basic Force Sensing Resistor (FSR).fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="2010BBCD20113" modelIndex="20" path="LDR_photocell_300mil.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance>-->
+        <instance moduleIdRef="Taiway-100-SP-X-T1-X-X-B1-M1_SPDT_miniature_toggle_switch" modelIndex="17"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="d206ca0d70364191f0b3fd30d5e53c5d" modelIndex="18" path="Tilt switch.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="1000ABDD10011" modelIndex="19" path="basic_fsr.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="fa3e296736059e8c25d88ac262af999a" modelIndex="19" path="Basic Force Sensing Resistor (FSR).fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance>-->
+        <instance modelIndex="20" moduleIdRef="2010BBCD20113PhotocellModuleID" path="LDR_photocell_300mil_v5.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry x="-1" y="-1" z="-1"/>
+                </iconView>
+            </views>
+        </instance>
         <instance modelIndex="20" moduleIdRef="beab33bd7feee277622ef76dd6e79e4d" path="infrared_proximity_sensor.fzp">
             <views>
                 <iconView layer="icon">
@@ -155,6 +162,7 @@
                 </iconView>
             </views>
         </instance>´
+        
         
         
         
