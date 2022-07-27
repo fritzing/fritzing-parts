@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.1.1201" moduleId="4f6dc41d6d2f66341ea506cdaf0e797e_2" referenceFile="thermistor_300mil.fzp">
- <version>4</version>
- <author>Riccardo Marchesi</author>
+<module fritzingVersion="0.1.1201" moduleId="textile_analog_pressure_sensor_005_pn07t5u_FsrModuleID" referenceFile="thermistor_300mil.fzp">
+ <version>5</version>
+ <author>Riccardo Marchesi (modified by A. Faina)</author>
  <title>Textile Analog Pressure Sensor </title>
  <label>R</label>
- <date>mer mar 13 2013</date>
+ <date>2022-01-16</date>
  <tags>
   <tag>plugandwear</tag>
   <tag>Pressure Sensor</tag>
@@ -16,21 +16,21 @@
   <property name="type">Analog Pressure</property>
   <property name="part number">PW073</property>
  </properties>
- <taxonomy>discreteParts.sensor.heat.thermistor</taxonomy>
+ <taxonomy>discreteParts.sensor.force.rheostat</taxonomy>
  <description>A Knitted Analog Pressure Sensor</description>
  <views>
   <iconView>
-   <layers image="icon/Textile_analog_sensor.svg">
+   <layers image="icon/textile_analog_pressure_sensor_005.svg">
     <layer layerId="icon"/>
    </layers>
   </iconView>
   <breadboardView fliphorizontal="true" flipvertical="true">
-   <layers image="breadboard/Textile_analog_sensor.svg">
+   <layers image="breadboard/textile_analog_pressure_sensor_005.svg">
     <layer layerId="breadboard"/>
    </layers>
   </breadboardView>
   <schematicView>
-   <layers image="schematic/thermistor.svg">
+   <layers image="schematic/rheostat_1_schematic.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
