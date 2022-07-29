@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <svg
-  xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:cc="http://creativecommons.org/ns#"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  xmlns:svg="http://www.w3.org/2000/svg"
   xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
   version="1.1"
   id="svg2"
   x="0px"
@@ -23,7 +23,6 @@
         <dc:type
           rdf:resource="http://purl.org/dc/dcmitype/StillImage"
         />
-        <dc:title/>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -44,7 +43,7 @@
       y2="205.00006"
     />
     <polygon
-      points="9.4,21.6 13.6,23.1 13.6,20.1 "
+      points="13.6,23.1 13.6,20.1 9.4,21.6 "
       id="polygon4"
       transform="matrix(10.39145,0,0,10.416756,-9.4160533,-20.006658)"
       stroke-width="1.00122"
@@ -231,6 +230,27 @@
       height="10"
       x="40.263561"
       y="1.4210855e-14"
+      fill="none"
+      stroke="none"
+      stroke-width="0"
+    />
+    <line
+      id="connector3pin"
+      fill="none"
+      stroke="none"
+      stroke-width="10"
+      stroke-linecap="round"
+      x1="150.2636"
+      y1="205.00003"
+      x2="245.09915"
+      y2="205.00003"
+    />
+    <rect
+      id="connector3terminal"
+      width="10.000003"
+      height="10.000003"
+      x="240.26361"
+      y="200.00006"
       fill="none"
       stroke="none"
       stroke-width="0"
