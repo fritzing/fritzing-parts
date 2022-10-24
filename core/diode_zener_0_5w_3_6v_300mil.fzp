@@ -19,7 +19,7 @@
     <property name="package">300 mil [THT]</property></properties>
     <description>A standard zener diode</description>
 <spice>
- <line>D{instanceTitle} {net connector1} {net connector0} DI_1N4732A</line>
+ <line>X{instanceTitle} {net connector1} {net connector0} DI_1N4732A</line>
  <model>*SRC=1N4732A;DI_1N4732A;Diodes;Zener &lt;=10V; 4.70V  1.00W   Diodes Inc.</model>
  <model>*SYM=HZEN</model>
  <model>.SUBCKT DI_1N4732A  1 2</model>
