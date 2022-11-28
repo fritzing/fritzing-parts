@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.5.2b.02.18.4756" moduleId="MY_IOT_ADAPTER_bf05966cdc375e3a37c87b693260b730_1" referenceFile="Arduino_ADK_MEGA_2560-Rev3(fix).fzp">
+<module fritzingVersion="0.5.2b.02.18.4756" referenceFile="Arduino_ADK_MEGA_2560-Rev3(fix).fzp" moduleId="Infineon_MY_IOT_ADAPTER">
  <version>4</version>
- <date>Tue Jul 26 2022</date>
+ <date>Mon Nov 28 2022</date>
  <author>Kannan Subramani, Janarthanan Nagarajan</author>
  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
@@ -22,7 +22,7 @@ p, li { white-space: pre-wrap; }
   <tag>Industrial</tag>
  </tags>
  <properties>
-  <property name="variant">variant 1</property>
+  <property name="variant">variant 2</property>
   <property name="family">Security</property>
   <property name="type">Evaluation Board</property>
   <property name="layer"></property>
@@ -53,7 +53,7 @@ p, li { white-space: pre-wrap; }
   </iconView>
  </views>
  <connectors>
-  <connector type="female" name="GND" id="connector0">
+  <connector id="connector0" type="female" name="GND">
    <description>GND</description>
    <views>
     <breadboardView>
@@ -68,7 +68,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="5V" id="connector1">
+  <connector id="connector1" type="female" name="5V">
    <description>5V</description>
    <views>
     <breadboardView>
@@ -83,7 +83,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_AN1" id="connector2">
+  <connector id="connector2" type="female" name="S1_AN1">
    <description>S1_AN1</description>
    <views>
     <breadboardView>
@@ -98,7 +98,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_AN2" id="connector3">
+  <connector id="connector3" type="female" name="S1_AN2">
    <description>S1_AN2</description>
    <views>
     <breadboardView>
@@ -113,7 +113,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_SDA" id="connector4">
+  <connector id="connector4" type="female" name="S1_SDA">
    <description>S1_SDA</description>
    <views>
     <breadboardView>
@@ -128,7 +128,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_SCL" id="connector5">
+  <connector id="connector5" type="female" name="S1_SCL">
    <description>S1_SCL</description>
    <views>
     <breadboardView>
@@ -143,7 +143,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="GND" id="connector6">
+  <connector id="connector6" type="female" name="GND">
    <description>GND</description>
    <views>
     <breadboardView>
@@ -158,7 +158,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="3V3" id="connector7">
+  <connector id="connector7" type="female" name="3V3">
    <description>3V3</description>
    <views>
     <breadboardView>
@@ -173,7 +173,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_INT_GPIO3" id="connector8">
+  <connector id="connector8" type="female" name="S1_INT_GPIO3">
    <description>S1_INT_GPIO3</description>
    <views>
     <breadboardView>
@@ -188,7 +188,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_PWM_GPIO4" id="connector9">
+  <connector id="connector9" type="female" name="S1_PWM_GPIO4">
    <description>S1_PWM_GPIO4</description>
    <views>
     <breadboardView>
@@ -203,7 +203,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_MISO" id="connector10">
+  <connector id="connector10" type="female" name="S1_MISO">
    <description>S1_MISO</description>
    <views>
     <breadboardView>
@@ -218,7 +218,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_MOSI" id="connector11">
+  <connector id="connector11" type="female" name="S1_MOSI">
    <description>S1_MOSI</description>
    <views>
     <breadboardView>
@@ -233,7 +233,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_SCLK" id="connector12">
+  <connector id="connector12" type="female" name="S1_SCLK">
    <description>S1_SCLK</description>
    <views>
     <breadboardView>
@@ -248,7 +248,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_CS" id="connector13">
+  <connector id="connector13" type="female" name="S1_CS">
    <description>S1_CS</description>
    <views>
     <breadboardView>
@@ -263,7 +263,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_GPIO1" id="connector14">
+  <connector id="connector14" type="female" name="S1_GPIO1">
    <description>S1_GPIO1</description>
    <views>
     <breadboardView>
@@ -278,7 +278,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_RST/GPIO2" id="connector15">
+  <connector id="connector15" type="female" name="S1_RST/GPIO2">
    <description>S1_RST/GPIO2</description>
    <views>
     <breadboardView>
@@ -293,7 +293,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_TX" id="connector16">
+  <connector id="connector16" type="female" name="S1_TX">
    <description>S1_TX</description>
    <views>
     <breadboardView>
@@ -308,7 +308,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S1_RX" id="connector17">
+  <connector id="connector17" type="female" name="S1_RX">
    <description>S1_RX</description>
    <views>
     <breadboardView>
@@ -323,7 +323,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="5V" id="connector18">
+  <connector id="connector18" type="female" name="5V">
    <description>5V</description>
    <views>
     <breadboardView>
@@ -338,7 +338,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_AN1" id="connector19">
+  <connector id="connector19" type="female" name="S2_AN1">
    <description>S2_AN1</description>
    <views>
     <breadboardView>
@@ -353,7 +353,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_AN2" id="connector20">
+  <connector id="connector20" type="female" name="S2_AN2">
    <description>S2_AN2</description>
    <views>
     <breadboardView>
@@ -368,7 +368,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_SDA" id="connector21">
+  <connector id="connector21" type="female" name="S2_SDA">
    <description>S2_SDA</description>
    <views>
     <breadboardView>
@@ -383,7 +383,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_SCL" id="connector22">
+  <connector id="connector22" type="female" name="S2_SCL">
    <description>S2_SCL</description>
    <views>
     <breadboardView>
@@ -398,7 +398,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="GND" id="connector23">
+  <connector id="connector23" type="female" name="GND">
    <description>GND</description>
    <views>
     <breadboardView>
@@ -413,7 +413,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="3V3" id="connector24">
+  <connector id="connector24" type="female" name="3V3">
    <description>3V3</description>
    <views>
     <breadboardView>
@@ -428,7 +428,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_INT_GPIO3" id="connector25">
+  <connector id="connector25" type="female" name="S2_INT_GPIO3">
    <description>S2_INT_GPIO3</description>
    <views>
     <breadboardView>
@@ -443,7 +443,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_PWM_GPIO4" id="connector26">
+  <connector id="connector26" type="female" name="S2_PWM_GPIO4">
    <description>S2_PWM_GPIO4</description>
    <views>
     <breadboardView>
@@ -458,7 +458,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_MISO" id="connector27">
+  <connector id="connector27" type="female" name="S2_MISO">
    <description>S2_MISO</description>
    <views>
     <breadboardView>
@@ -473,7 +473,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_MOSI" id="connector28">
+  <connector id="connector28" type="female" name="S2_MOSI">
    <description>S2_MOSI</description>
    <views>
     <breadboardView>
@@ -488,7 +488,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_SCLK" id="connector29">
+  <connector id="connector29" type="female" name="S2_SCLK">
    <description>S2_SCLK</description>
    <views>
     <breadboardView>
@@ -503,7 +503,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_CS" id="connector30">
+  <connector id="connector30" type="female" name="S2_CS">
    <description>S2_CS</description>
    <views>
     <breadboardView>
@@ -518,7 +518,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_GPIO1" id="connector31">
+  <connector id="connector31" type="female" name="S2_GPIO1">
    <description>S2_GPIO1</description>
    <views>
     <breadboardView>
@@ -533,7 +533,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_RST/GPIO2" id="connector32">
+  <connector id="connector32" type="female" name="S2_RST/GPIO2">
    <description>S2_RST/GPIO2</description>
    <views>
     <breadboardView>
@@ -548,7 +548,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_TX" id="connector33">
+  <connector id="connector33" type="female" name="S2_TX">
    <description>S2_TX</description>
    <views>
     <breadboardView>
@@ -563,7 +563,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S2_RX" id="connector34">
+  <connector id="connector34" type="female" name="S2_RX">
    <description>S2_RX</description>
    <views>
     <breadboardView>
@@ -578,7 +578,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="5V" id="connector35">
+  <connector id="connector35" type="female" name="5V">
    <description>5V</description>
    <views>
     <breadboardView>
@@ -593,7 +593,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_AN1" id="connector36">
+  <connector id="connector36" type="female" name="S3_AN1">
    <description>S3_AN1</description>
    <views>
     <breadboardView>
@@ -608,7 +608,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_AN2" id="connector37">
+  <connector id="connector37" type="female" name="S3_AN2">
    <description>S3_AN2</description>
    <views>
     <breadboardView>
@@ -623,7 +623,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_SDA" id="connector38">
+  <connector id="connector38" type="female" name="S3_SDA">
    <description>S3_SDA</description>
    <views>
     <breadboardView>
@@ -638,7 +638,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_SCL" id="connector39">
+  <connector id="connector39" type="female" name="S3_SCL">
    <description>S3_SCL</description>
    <views>
     <breadboardView>
@@ -653,7 +653,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="GND" id="connector40">
+  <connector id="connector40" type="female" name="GND">
    <description>GND</description>
    <views>
     <breadboardView>
@@ -668,7 +668,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="3V3" id="connector41">
+  <connector id="connector41" type="female" name="3V3">
    <description>3V3</description>
    <views>
     <breadboardView>
@@ -683,7 +683,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_INT_GPIO3" id="connector42">
+  <connector id="connector42" type="female" name="S3_INT_GPIO3">
    <description>S3_INT_GPIO3</description>
    <views>
     <breadboardView>
@@ -698,7 +698,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_PWM_GPIO4" id="connector43">
+  <connector id="connector43" type="female" name="S3_PWM_GPIO4">
    <description>S3_PWM_GPIO4</description>
    <views>
     <breadboardView>
@@ -713,7 +713,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_MISO" id="connector44">
+  <connector id="connector44" type="female" name="S3_MISO">
    <description>S3_MISO</description>
    <views>
     <breadboardView>
@@ -728,7 +728,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_MOSI" id="connector45">
+  <connector id="connector45" type="female" name="S3_MOSI">
    <description>S3_MOSI</description>
    <views>
     <breadboardView>
@@ -743,7 +743,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_SCLK" id="connector46">
+  <connector id="connector46" type="female" name="S3_SCLK">
    <description>S3_SCLK</description>
    <views>
     <breadboardView>
@@ -758,7 +758,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_CS" id="connector47">
+  <connector id="connector47" type="female" name="S3_CS">
    <description>S3_CS</description>
    <views>
     <breadboardView>
@@ -773,7 +773,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_GPIO1" id="connector48">
+  <connector id="connector48" type="female" name="S3_GPIO1">
    <description>S3_GPIO1</description>
    <views>
     <breadboardView>
@@ -788,7 +788,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_RST/GPIO2" id="connector49">
+  <connector id="connector49" type="female" name="S3_RST/GPIO2">
    <description>S3_RST/GPIO2</description>
    <views>
     <breadboardView>
@@ -803,7 +803,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_TX" id="connector50">
+  <connector id="connector50" type="female" name="S3_TX">
    <description>S3_TX</description>
    <views>
     <breadboardView>
@@ -818,7 +818,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="S3_RX" id="connector51">
+  <connector id="connector51" type="female" name="S3_RX">
    <description>S3_RX</description>
    <views>
     <breadboardView>
@@ -833,7 +833,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="VREF_A" id="connector52">
+  <connector id="connector52" type="female" name="VREF_A">
    <description>VREF_A</description>
    <views>
     <breadboardView>
@@ -848,7 +848,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X4_SCL" id="connector53">
+  <connector id="connector53" type="female" name="X4_SCL">
    <description>X4_SCL</description>
    <views>
     <breadboardView>
@@ -863,7 +863,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X4_SDA" id="connector54">
+  <connector id="connector54" type="female" name="X4_SDA">
    <description>X4_SDA</description>
    <views>
     <breadboardView>
@@ -878,7 +878,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="AREF" id="connector55">
+  <connector id="connector55" type="female" name="AREF">
    <description>AREF</description>
    <views>
     <breadboardView>
@@ -893,7 +893,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="GND" id="connector56">
+  <connector id="connector56" type="female" name="GND">
    <description>GND</description>
    <views>
     <breadboardView>
@@ -908,7 +908,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X4_SCK" id="connector57">
+  <connector id="connector57" type="female" name="X4_SCK">
    <description>X4_SCK</description>
    <views>
     <breadboardView>
@@ -923,7 +923,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X4_MISO" id="connector58">
+  <connector id="connector58" type="female" name="X4_MISO">
    <description>X4_MISO</description>
    <views>
     <breadboardView>
@@ -938,7 +938,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X4_MOSI" id="connector59">
+  <connector id="connector59" type="female" name="X4_MOSI">
    <description>X4_MOSI</description>
    <views>
     <breadboardView>
@@ -953,7 +953,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X4_CS1" id="connector60">
+  <connector id="connector60" type="female" name="X4_CS1">
    <description>X4_CS1</description>
    <views>
     <breadboardView>
@@ -968,7 +968,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X4_RST1" id="connector61">
+  <connector id="connector61" type="female" name="X4_RST1">
    <description>X4_RST1</description>
    <views>
     <breadboardView>
@@ -983,7 +983,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X4_CS2/3" id="connector62">
+  <connector id="connector62" type="female" name="X4_CS2/3">
    <description>X4_CS2/3</description>
    <views>
     <breadboardView>
@@ -998,7 +998,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X5_GPIO2/3" id="connector63">
+  <connector id="connector63" type="female" name="X5_GPIO2/3">
    <description>X5_GPIO2/3</description>
    <views>
     <breadboardView>
@@ -1013,7 +1013,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X5_PWM2/3" id="connector64">
+  <connector id="connector64" type="female" name="X5_PWM2/3">
    <description>X5_PWM2/3</description>
    <views>
     <breadboardView>
@@ -1028,7 +1028,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X5_PWM1" id="connector65">
+  <connector id="connector65" type="female" name="X5_PWM1">
    <description>X5_PWM1</description>
    <views>
     <breadboardView>
@@ -1043,7 +1043,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X5_RST2/3" id="connector66">
+  <connector id="connector66" type="female" name="X5_RST2/3">
    <description>X5_RST2/3</description>
    <views>
     <breadboardView>
@@ -1058,7 +1058,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X5_INT2/3" id="connector67">
+  <connector id="connector67" type="female" name="X5_INT2/3">
    <description>X5_INT2/3</description>
    <views>
     <breadboardView>
@@ -1073,7 +1073,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X5_INT1" id="connector68">
+  <connector id="connector68" type="female" name="X5_INT1">
    <description>X5_INT1</description>
    <views>
     <breadboardView>
@@ -1088,7 +1088,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="UART_TX" id="connector69">
+  <connector id="connector69" type="female" name="UART_TX">
    <description>UART_TX</description>
    <views>
     <breadboardView>
@@ -1103,7 +1103,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="UART_RX" id="connector70">
+  <connector id="connector70" type="female" name="UART_RX">
    <description>UART_RX</description>
    <views>
     <breadboardView>
@@ -1118,7 +1118,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="5V" id="connector71">
+  <connector id="connector71" type="female" name="5V">
    <description>5V</description>
    <views>
     <breadboardView>
@@ -1133,7 +1133,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="AREF" id="connector72">
+  <connector id="connector72" type="female" name="AREF">
    <description>AREF</description>
    <views>
     <breadboardView>
@@ -1148,7 +1148,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="3V3" id="connector73">
+  <connector id="connector73" type="female" name="3V3">
    <description>3V3</description>
    <views>
     <breadboardView>
@@ -1163,7 +1163,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="VREF_B" id="connector74">
+  <connector id="connector74" type="female" name="VREF_B">
    <description>VREF_B</description>
    <views>
     <breadboardView>
@@ -1178,7 +1178,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="5V" id="connector75">
+  <connector id="connector75" type="female" name="5V">
    <description>5V</description>
    <views>
     <breadboardView>
@@ -1193,7 +1193,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="IOREF" id="connector76">
+  <connector id="connector76" type="female" name="IOREF">
    <description>IOREF</description>
    <views>
     <breadboardView>
@@ -1208,7 +1208,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="3V3" id="connector77">
+  <connector id="connector77" type="female" name="3V3">
    <description>3V3</description>
    <views>
     <breadboardView>
@@ -1223,7 +1223,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="NC" id="connector78">
+  <connector id="connector78" type="female" name="NC">
    <description>NC</description>
    <views>
     <breadboardView>
@@ -1238,7 +1238,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="IOREF" id="connector79">
+  <connector id="connector79" type="female" name="IOREF">
    <description>IOREF</description>
    <views>
     <breadboardView>
@@ -1253,7 +1253,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="NC" id="connector80">
+  <connector id="connector80" type="female" name="NC">
    <description>NC</description>
    <views>
     <breadboardView>
@@ -1268,7 +1268,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="3V3" id="connector81">
+  <connector id="connector81" type="female" name="3V3">
    <description>3V3</description>
    <views>
     <breadboardView>
@@ -1283,7 +1283,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="5V" id="connector82">
+  <connector id="connector82" type="female" name="5V">
    <description>5V</description>
    <views>
     <breadboardView>
@@ -1298,7 +1298,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="GND" id="connector83">
+  <connector id="connector83" type="female" name="GND">
    <description>GND</description>
    <views>
     <breadboardView>
@@ -1313,7 +1313,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="GND" id="connector84">
+  <connector id="connector84" type="female" name="GND">
    <description>GND</description>
    <views>
     <breadboardView>
@@ -1328,7 +1328,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="VIN" id="connector85">
+  <connector id="connector85" type="female" name="VIN">
    <description>VIN</description>
    <views>
     <breadboardView>
@@ -1343,7 +1343,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="AN1.2" id="connector86">
+  <connector id="connector86" type="female" name="AN1.2">
    <description>AN1.2</description>
    <views>
     <breadboardView>
@@ -1358,7 +1358,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="AN1.1" id="connector87">
+  <connector id="connector87" type="female" name="AN1.1">
    <description>AN1.1</description>
    <views>
     <breadboardView>
@@ -1373,7 +1373,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="AN2/3" id="connector88">
+  <connector id="connector88" type="female" name="AN2/3">
    <description>AN2/3</description>
    <views>
     <breadboardView>
@@ -1388,7 +1388,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X6_GPIO1" id="connector89">
+  <connector id="connector89" type="female" name="X6_GPIO1">
    <description>X6_GPIO1</description>
    <views>
     <breadboardView>
@@ -1403,7 +1403,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X6_SDA" id="connector90">
+  <connector id="connector90" type="female" name="X6_SDA">
    <description>X6_SDA</description>
    <views>
     <breadboardView>
@@ -1418,7 +1418,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" name="X6_SDA" id="connector91">
+  <connector id="connector91" type="female" name="X6_SDA">
    <description>X6_SDA</description>
    <views>
     <breadboardView>
