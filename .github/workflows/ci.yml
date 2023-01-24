@@ -12,20 +12,20 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          python-version: '3.11'
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
       - name: Avoid non acsii in part and svg filenames
         run: python scripts/checkascii.py .
       - name: Check that image filenames use same case
         run: python scripts/checkcase.py
-      - name: Look for suspicios connector numbering
+      - name: Look for suspicious connector numbering
         run: python scripts/connectors_misnumbered.py -d .
       - name: Avoid duplicate files
         run: python scripts/checkcopies.py -d svg
       - name: Dry run script to test the script itself
         run: python scripts/obsolete.py core/sparkfun-connectors-rca-.fzp dummy -s
-      - name: Check that svgs have proper layer ids
+      - name: Check that SVGs have proper layer ids
         run: python scripts/svgNoLayer.py -d svg/core -s scripts/nolayeridcheck.txt
 
   golang-scripts:
