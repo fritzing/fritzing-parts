@@ -8,6 +8,11 @@
 
         git branch your-part
         git checkout your-part
+   
+   * The branchname "your-part" should reflect the part you are adding or fixing. Please use a **separate branch for each part**.
+   Large commits tend to get stuck, since they can only be accepted once *all* parts within are reviewed and fixed. 
+   
+   * Link the pull request to a ticket by mentioning the github issue, see here how to do this: https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue
 
 3. Place the `.fzp` file in the core folder and the related `.svg` in the view-specific folders:
 
@@ -25,7 +30,7 @@
 
 
 4. Then test and push!  
-   *please commit your pull-requests to the nightlyParts branch*
+   *please commit your pull-requests to the develop branch*
 
     In order to make Fritzing recognize the new part, run Fritzing and select _Part > Rebuild parts database..._. The part will now be included in the database/index, and become available in the library window.
 
