@@ -1,0 +1,43 @@
+<svg width="180mm" height="110mm" viewBox="0 0 180 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="breadboard">
+    <rect x="1" y="1" width="178" height="108" rx="5" style="stroke:black;stroke-width:1"/>
+    <rect x="5" y="5" width="125" height="100" style="stroke:black;stroke-width:1"/>
+  
+    <!--horizontal lines-->
+    <line x1="5" y1="17.5" x2="130" y2="17.5" stroke="grey" stroke-width="0.2"/>
+    <line x1="5" y1="30" x2="130" y2="30" stroke="grey" stroke-width="0.2"/>
+    <line x1="5" y1="42.5" x2="130" y2="42.5" stroke="grey" stroke-width="0.2"/>
+    <line x1="5" y1="55" x2="130" y2="55" stroke="grey" stroke-width="0.6"/>
+    <line x1="5" y1="67.5" x2="130" y2="67.5" stroke="grey" stroke-width="0.2"/>
+    <line x1="5" y1="80" x2="130" y2="80" stroke="grey" stroke-width="0.2"/>
+    <line x1="5" y1="92.5" x2="130" y2="92.5" stroke="grey" stroke-width="0.2"/>
+  
+    <!--horizontal lines-->
+    <line y1="5" x1="17.5" y2="105" x2="17.5" stroke="grey" stroke-width="0.2"/>
+    <line y1="5" x1="30" y2="105" x2="30" stroke="grey" stroke-width="0.2"/>
+    <line y1="5" x1="42.5" y2="105" x2="42.5" stroke="grey" stroke-width="0.2"/>
+    <line y1="5" x1="55" y2="105" x2="55" stroke="grey" stroke-width="0.2"/>
+    <line y1="5" x1="67.5" y2="105" x2="67.5" stroke="grey" stroke-width="0.6"/>
+    <line y1="5" x1="80" y2="105" x2="80" stroke="grey" stroke-width="0.2"/>
+    <line y1="5" x1="92.5" y2="105" x2="92.5" stroke="grey" stroke-width="0.2"/>
+    <line y1="5" x1="105" y2="105" x2="105" stroke="grey" stroke-width="0.2"/>
+    <line y1="5" x1="117.5" y2="105" x2="117.5" stroke="grey" stroke-width="0.2"/>
+  
+    <!--Probe connectors-->
+    <text x="134" y="96" fill="#787878" font-family="'Droid Sans'" font-size="3">1</text>
+    <circle cx="135" cy="100" r="2.7" fill="#808080"/>
+    <text x="144" y="96" fill="#787878" font-family="'Droid Sans'" font-size="3">2</text>
+    <circle cx="145" cy="100" r="2.7" fill="#808080"/>
+    <text x="154" y="96" fill="#787878" font-family="'Droid Sans'" font-size="3">3</text>
+    <circle cx="155" cy="100" r="2.7" fill="#808080"/>
+    <text x="164" y="96" fill="#787878" font-family="'Droid Sans'" font-size="3">4</text>
+    <circle cx="165" cy="100" r="2.7" fill="#808080"/>
+    <text x="171" y="96" fill="#787878" font-family="'Droid Sans'" font-size="3">COM</text>
+    <circle cx="175" cy="100" r="2.7" fill="#808080"/>
+    <circle id="connector1pin" cx="135" cy="100" r="1" fill="#303030"/>
+    <circle id="connector2pin" cx="145" cy="100" r="1" fill="#303030"/>
+    <circle id="connector3pin" cx="155" cy="100" r="1" fill="#303030"/>
+    <circle id="connector4pin" cx="165" cy="100" r="1" fill="#303030"/>
+    <circle id="connector0pin" cx="175" cy="100" r="1" fill="#303030"/>
+  </g>
+</svg>
