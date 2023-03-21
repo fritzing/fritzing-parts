@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<module moduleId="oscilloscope_4channel_v1" fritzingVersion="0.9.10" referenceFile="oscilloscope_4channel_v1.fzp">
+<module moduleId="4ChannelV1OscilloscopeModuleID" fritzingVersion="0.9.10" referenceFile="oscilloscope_4channel_v1.fzp">
   <version>1</version>
   <author>Andres Faina</author>
   <title>Oscilloscope</title>
@@ -65,13 +65,13 @@ p, li { white-space: pre-wrap; }
       </views>
     </connector>
     <connector name="V1 Probe" type="female" id="connector1">
-      <description>Voltage probe</description>
+      <description>Voltage 1 probe</description>
       <views>
         <breadboardView>
           <p svgId="connector1pin" layer="breadboard"/>
         </breadboardView>
         <schematicView>
-          <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic" hybrid="yes"/>
+          <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic"/>
         </schematicView>
         <pcbView>
           <p svgId="connector1pin" layer="partimage"/>
@@ -79,7 +79,7 @@ p, li { white-space: pre-wrap; }
       </views>
     </connector>
     <connector name="V2 Probe" type="female" id="connector2">
-      <description>Current probe</description>
+      <description>Voltage 2 probe</description>
       <views>
         <breadboardView>
           <p svgId="connector2pin" layer="breadboard"/>
@@ -93,7 +93,7 @@ p, li { white-space: pre-wrap; }
       </views>
     </connector>
     <connector name="V3 Probe" type="female" id="connector3">
-      <description>Current probe</description>
+      <description>Voltage 3 probe</description>
       <views>
         <breadboardView>
           <p svgId="connector3pin" layer="breadboard"/>
@@ -107,7 +107,7 @@ p, li { white-space: pre-wrap; }
       </views>
     </connector>
     <connector name="V4 Probe" type="female" id="connector4">
-      <description>Current probe</description>
+      <description>Voltage 4 probe</description>
       <views>
         <breadboardView>
           <p svgId="connector4pin" layer="breadboard"/>
