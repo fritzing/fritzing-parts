@@ -26,28 +26,28 @@
  <taxonomy>discreteParts.power.power.dcpower</taxonomy>
  <description>A generic dc power symbol</description>
  <spice>
-   <line>V{instanceTitle} {net connector0}_aux {net connector1} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} 0)</line>
-   <line>R{instanceTitle} {net connector0}_aux {net connector0} {internal resistance}</line>
+   <line>V{instanceTitle} {net connector1}_aux {net connector0} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} 0)</line>
+   <line>R{instanceTitle} {net connector1}_aux {net connector1} {internal resistance}</line>
  </spice>
  <views>
   <defaultUnits>cmil</defaultUnits>
   <iconView>
-   <layers image="schematic/dcpower.svg" >
+   <layers image="schematic/dcpower_pulse.svg" >
     <layer layerId="icon" />
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="schematic/dcpower.svg" >
+   <layers image="schematic/dcpower_pulse.svg" >
     <layer layerId="schematic" />
    </layers>
   </breadboardView>
    <schematicView flipvertical="true">
-   <layers image="schematic/dcpower.svg" >
+   <layers image="schematic/dcpower_pulse.svg" >
      <layer layerId="schematic" />
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="schematic/dcpower.svg" >
+   <layers image="schematic/dcpower_pulse.svg" >
     <layer layerId="schematic" />
    </layers>
   </pcbView>
