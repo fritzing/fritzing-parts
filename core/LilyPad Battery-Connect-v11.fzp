@@ -22,8 +22,8 @@ Note: The LilyPad Coin Cell Battery Holder is a design conceived by Felicia Will
 <property name="internal resistance">0.1&#937;</property>
 </properties>
 <spice>
-    <line>V{instanceTitle} {net connector5}_aux {net connector4} DC {voltage}</line>
-    <line>R{instanceTitle} {net connector5}_aux {net connector5} {internal resistance}</line>
+    <line>V{instanceTitle} {net connector5}_{instanceTitle}_aux {net connector4} DC {voltage}</line>
+    <line>R{instanceTitle} {net connector5}_{instanceTitle}_aux {net connector5} {internal resistance}</line>
 </spice>
 <views>
 <breadboardView>

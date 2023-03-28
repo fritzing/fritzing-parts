@@ -17,8 +17,8 @@
     </properties>
     <description>A 4 x AAA battery pack (4.8 Volts with recharables)</description>
     <spice>
-        <line>V{instanceTitle} {net connector1}_aux {net connector0} DC {voltage}</line>
-        <line>R{instanceTitle} {net connector1}_aux {net connector1} {internal resistance}</line>
+        <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector0} DC {voltage}</line>
+        <line>R{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector1} {internal resistance}</line>
     </spice>
     <views>
         <iconView>
