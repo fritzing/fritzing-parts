@@ -25,8 +25,8 @@
  <taxonomy>discreteParts.power.power.acpower</taxonomy>
  <description>A generic ac power symbol</description>
  <spice>
-   <line>V{instanceTitle} {net connector0}_aux {net connector1} SIN({offset voltage} {voltage} {frequency} {delay time} {damping factor} {phase})</line>
-   <line>R{instanceTitle} {net connector0}_aux {net connector0} {internal resistance}</line>
+   <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} SIN({offset voltage} {voltage} {frequency} {delay time} {damping factor} {phase})</line>
+   <line>R{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector0} {internal resistance}</line>
  </spice>
  <views>
   <defaultUnits>cmil</defaultUnits>
