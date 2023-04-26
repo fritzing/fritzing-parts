@@ -21,7 +21,7 @@
     </properties>
     <description>A generic light dependent resistor (LDR)</description>
     <spice>
-        <line>R{instanceTitle} {net connector0} {net connector1} {(({luminance}/0.01)**(log({light resistance @100lx}/{dark resistance @0.01lx})/ln(10)/4))*{dark resistance @0.01lx}}</line>
+        <line>R{instanceTitle} {net connector0} {net connector1} {{luminance}>0.01?(({luminance}/0.01)**(log({light resistance @100lx}/{dark resistance @0.01lx})/ln(10)/4))*{dark resistance @0.01lx}:{dark resistance @0.01lx}}</line>
     </spice>
     <views>
         <iconView>
