@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.15b.02.03.3943" moduleId="e89358121bacffbe9b6372e42e4799f4LEDModuleID">
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.15b.02.03.3943" moduleId="e89358121bacffbe9b6372e42e4799f4ColorLEDModuleID">
     <version>4</version>
     <author>Lionel Michel</author>
     <title>RGB LED (6 legs)</title>
@@ -14,7 +14,7 @@
 	<property name="package">5 mm [THT]</property>
 	<property name="family">LED</property>
 	<property name="rgb" showInLabel="yes">RGBB</property>
-  <property name="current" showInLabel="yes"></property>
+  <property name="current" showInLabel="yes">0.030A</property>
     </properties>
     <description>A full-color LED, combined from four colors RGBB.</description>
     <views>

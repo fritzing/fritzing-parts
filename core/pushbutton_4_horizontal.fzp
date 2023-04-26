@@ -12,12 +12,11 @@
   <property name="family">Switch</property>
   <property name="package">[THT]</property>
   <property name="switch status">Released</property>
+  <property name="contact resistance">0.1&#937;</property>
 </properties>
  <description>A generic pushbutton.</description>
  <spice>
-  <line>S{instanceTitle} {net connector0} {net connector2} control_{instanceTitle} 0 generic_switch OFF</line>
-  <line>V{instanceTitle} control_{instanceTitle} 0 DC 0</line>
-  <model>.MODEL generic_switch SW(Ron=1m Roff=1Meg Vt=2.5)</model>
+  <line> * Open switch {instanceTitle} between nets {net connector0} and {net connector2}</line>
  </spice>
  <views>
   <iconView>
