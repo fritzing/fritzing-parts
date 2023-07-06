@@ -35,29 +35,6 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;span style=" font-family:'Oxygen-Sans'; font-size:10pt;"&gt;4011 4 x 2 Input NAND Gate with sub-parts&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
-  <spice>
-    <line>x{instanceTitle}A {net connector0} {net connector1} {net connector2} {net connector13} {net connector6} NAND</line>
-    <line>x{instanceTitle}B {net connector4} {net connector5} {net connector3} {net connector13} {net connector6} NAND</line>
-    <line>x{instanceTitle}C {net connector7} {net connector8} {net connector9} {net connector13} {net connector6} NAND</line>
-    <line>x{instanceTitle}D {net connector11} {net connector12} {net connector10} {net connector13} {net connector6} NAND</line>
-    <model>.SUBCKT NAND 1 2 3 4 11
-    * NODES : INPUT (2) , OUTPUT , VCC , GND
-    Q1 9 5 1 QMOD
-    D1CLAMP 11 1 DMOD
-    Q2 9 5 2 QMOD
-    D2CLAMP 11 2 DMOD
-    RB 4 5 4K
-    R1 4 6 1.6K
-    Q3 6 9 8 QMOD
-    R2 8 11 1K
-    RC 4 7 130
-    Q4 7 6 10 QMOD
-    DVBEDROP 10 3 DMOD
-    Q5 3 8 11 QMOD
-    .MODEL DMOD D
-    .MODEL QMOD NPN (BF=75 RB=100 CJE=1PF CJC=3PF)
-    .ENDS NAND</model>
-  </spice>
   <views>
     <iconView>
       <layers image="icon/40xx_series_DIP14_multipart_icon.svg">

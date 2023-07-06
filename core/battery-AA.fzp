@@ -16,8 +16,8 @@
     </properties>
     <description>Your standard 2x AA battery pack (3 Volts)</description>
     <spice>
-        <line>V{instanceTitle} {net connector1}_aux {net connector0} DC {voltage}</line>
-        <line>R{instanceTitle} {net connector1}_aux {net connector1} {internal resistance}</line>
+        <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector0} DC {voltage}</line>
+        <line>R{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector1} {internal resistance}</line>
     </spice>
     <views>
         <iconView>

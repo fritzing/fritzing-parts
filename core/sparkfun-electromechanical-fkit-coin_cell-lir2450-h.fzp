@@ -20,8 +20,8 @@ Coin cell holder for 24.5mm rechargable coin cell</description>
 <property name="internal resistance">0.1&#937;</property>
 </properties>
 <spice>
-    <line>V{instanceTitle} {net connector1}_aux {net connector0} DC {voltage}</line>
-    <line>R{instanceTitle} {net connector1}_aux {net connector1} {internal resistance}</line>
+    <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector0} DC {voltage}</line>
+    <line>R{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector1} {internal resistance}</line>
 </spice>
 <views>
 <breadboardView>

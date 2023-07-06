@@ -13,14 +13,11 @@
   <property name="switching circuit">SPDT</property>
   <property name="package">THT</property>
   <property name="switch status">Pressed</property>
+  <property name="contact resistance">0.1&#937;</property>
  </properties>
  <description>Toggle Switch</description>
  <spice>
-  <line>S{instanceTitle}_1 {net connector2} {net connector1} control_{instanceTitle}_1 0 generic_switch OFF</line>
-  <line>S{instanceTitle}_2 {net connector0} {net connector1} control_{instanceTitle}_2 0 generic_switch ON</line>
-  <line>V{instanceTitle}_1 control_{instanceTitle}_1 0 DC 5</line>
-  <line>V{instanceTitle}_2 control_{instanceTitle}_2 0 DC 0</line>
-  <model>.MODEL generic_switch SW(Ron=1m Roff=1Meg Vt=2.5)</model>
+  <line>R{instanceTitle} {net connector2} {net connector1} {contact resistance}</line>
  </spice>
  <views>
   <iconView>

@@ -13,8 +13,8 @@
     </properties>
     <spice>
         <!-->Very simple model<-->
-        <line>R{instanceTitle}a {net connector1}_aux {net connector0} 50</line>
-        <line>V{instanceTitle} {net connector1}_aux {net connector1} DC {{distance to obstacle}&#60;5&#63;3.3*({distance to obstacle}/5):-1*ln({distance to obstacle}/100)+0.5}</line>
+        <line>R{instanceTitle}a {net connector1}_{instanceTitle}_aux {net connector0} 50</line>
+        <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector1} DC {{distance to obstacle}&#60;5&#63;3.3*({distance to obstacle}/5):-1*ln({distance to obstacle}/100)+0.5}</line>
         <line>R{instanceTitle}b {net connector1} {net connector2} 130</line>
     </spice>
     <views>
