@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><module moduleId="pcb-arduino-r4wifi-shield" fritzingVersion="1.0.1">
+ <version>1</version>
+ <author>Kjell Morgenstern</author>
+ <title>Arduino R4 Shield PCB</title>
+ <date>2023-07-22</date>
+ <label>PCB</label>
+ <tags>
+  <tag>pcb</tag>
+  <tag>board</tag>
+  <tag>arduino</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="layers">2</property>
+  <property name="Shape">Arduino Shield w. R4 Cut </property>
+  <property name="family">Plain Vanilla PCB</property>
+  <property name="filename" ></property>
+ </properties>
+ <taxonomy>discreteParts.pcb.plain.arduino_shield</taxonomy>
+ <description>Arduino shield with cutout for the R4 LED Matrix</description>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/pcb-arduino-shield-r4wifi.svg">
+    <layer layerId="silkscreen" sticky="true"/>
+    <layer layerId="silkscreen0" sticky="true"/>
+    <layer layerId="board" sticky="true"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>
