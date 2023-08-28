@@ -30,7 +30,7 @@ jobs:
       - name: Check that SVGs have proper layer ids
         run: python scripts/svgNoLayer.py -d svg/core -s scripts/nolayeridcheck.txt
       - name: Check that SVGs and FZPs are ASCII or UTF-8
-        run: python scripts/utf8stats.py .
+        run: python scripts/utf8stats.py . --verbose
 
 
   golang-scripts:
