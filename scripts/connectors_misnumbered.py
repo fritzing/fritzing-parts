@@ -144,6 +144,7 @@ def main():
                 dom = xml.dom.minidom.parse(fzpFilename)
             except xml.parsers.expat.ExpatError as err:
                 print(str(err), fzpFilename)
+                ret = -3
                 continue
 
             fzp = dom.documentElement
