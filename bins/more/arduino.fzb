@@ -152,10 +152,8 @@
             </views>
         </instance>	
 		
-
-						
-		
-						<instance moduleIdRef="Arduino-Fio-v22(fix)" modelIndex="5584" path="Arduino-Fio-v22(fix).fzp">
+        
+        <instance moduleIdRef="Arduino-Fio-v22(fix)" modelIndex="5584" path="Arduino-Fio-v22(fix).fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -164,8 +162,22 @@
                     <geometry z="0" x="-1" y="-1"/>
                 </iconView>
             </views>
-        </instance>	
-		
+        </instance> 
+        
+        
+        <instance moduleIdRef="02_Arduino-nano-rp2040-tht_1" modelIndex="5584">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance> 
+        
+
+
 
 		
 		    <instance moduleIdRef="__spacer__" modelIndex="3" path="Arduino Shields">
@@ -238,6 +250,17 @@
                 </iconView>
             </views>
         </instance>
+        <instance moduleIdRef="pcb-arduino-r4wifi-shield" modelIndex="5584" >
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+
 	
     </instances>
 </module>
