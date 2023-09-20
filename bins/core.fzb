@@ -1169,7 +1169,21 @@
           </iconView>
         </views>
       </instance>
-      <instance moduleIdRef="DC2PowerModuleID" modelIndex="52" path=":/resources/parts/core/dcpower2.fzp">
+      <instance moduleIdRef="5_DCPowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_dc_5.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="1_ACPowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_ac_1.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="1_PulsePowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_pulse_1.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"/>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="5_DCPowerSupplyModuleID" fritzingVersion="0.9.10">
+  <version>5</version>
+  <author>Brendan Howell (modified by vanepp Apr 2023 and A. Faina)</author>
+  <title>DC Power</title>
+  <date>2008-07-28</date>
+  <label>V</label>
+  <tags>
+    <tag>voltage source</tag>
+    <tag>dc power</tag>
+    <tag>symbol</tag>
+    <tag>fritzing core</tag>
+  </tags>
+  <properties>
+    <property name="family">voltage source</property>
+   <property name="type">dc power supply</property>
+   <property name="voltage" showInLabel="yes">5V</property>
+   <property name="internal resistance">0.1&#937;</property>
+  </properties>
+  <taxonomy>discreteParts.power.power.dcpower</taxonomy>
+  <description>A generic dc power symbol</description>
+  <spice>
+    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} DC {voltage}</line>
+    <line>R{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector0} {internal resistance}</line>
+  </spice>
+  <views>
+    <defaultUnits>cmil</defaultUnits>
+    <iconView>
+      <layers image="schematic/power_supply_dc_5_schematic.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="schematic/power_supply_dc_5_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </breadboardView>
+    <schematicView flipvertical="true">
+      <layers image="schematic/power_supply_dc_5_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="schematic/power_supply_dc_5_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector type="male" id="connector1" name="V+">
+      <description>Positive Supply Voltage</description>
+      <erc etype="VCC">
+        <voltage value="5.0"/>
+        <current flow="source" valueMax="0"/>
+      </erc>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="schematic"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector1pin" layer="schematic"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector type="male" id="connector0" name="V-">
+      <description>Negative Supply Voltage</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="schematic"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pin" layer="schematic"/>
+        </pcbView>
+      </views>
+    </connector>
+  </connectors>
+  <buses>
+    <bus id="powerbus">
+      <nodeMember connectorId="connector1"/>
+    </bus>
+    <bus id="groundbus">
+      <nodeMember connectorId="connector0"/>
+    </bus>
+  </buses>
+</module>
