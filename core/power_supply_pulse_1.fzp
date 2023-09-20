@@ -14,13 +14,20 @@
   <properties>
     <property name="family">voltage source</property>
     <property name="type">pulse power supply</property>
-    <property name="voltage" showInLabel="yes">5V</property>
-    <property name="frequency">60</property>
+    <property name="initial voltage">0V</property>
+    <property name="pulsed voltage">5V</property>
+    <property name="period">100ms</property>
+    <property name="pulse width">10ms</property>
+    <property name="delay time">0s</property>
+    <property name="rise time">0s</property>
+    <property name="fall time">0s</property>
+    <property name="nuber of cyles">0</property>
+    
   </properties>
   <taxonomy>discreteParts.power.power.acpower</taxonomy>
   <description>A generic pulse power symbol</description>
   <spice>
-    <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector0} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} 0)</line>
+    <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector0} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} {nuber of cyles})</line>
     <line>R{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector1} {internal resistance}</line>
   </spice>
   <views>
