@@ -336,27 +336,27 @@
                 </iconView>
             </views>
         </instance>
-        <instance modelIndex="52" moduleIdRef="DC2PowerModuleID" path=":/resources/parts/core/dcpower2.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="52" moduleIdRef="DCPulseSourceModuleID" path=":/resources/parts/core/dcpower_pulse.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance modelIndex="52" moduleIdRef="AC2PowerModuleID" path=":/resources/parts/core/acpower.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
+        <instance moduleIdRef="5_DCPowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_dc_5.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="1_ACPowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_ac_1.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="1_PulsePowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_pulse_1.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
         <instance modelIndex="53" moduleIdRef="PowerLabelModuleID" path=":/resources/parts/core/power_label.fzp">
             <views>
                 <iconView layer="icon">
