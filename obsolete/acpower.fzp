@@ -1,47 +1,52 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module moduleId="DC2PowerModuleID" fritzingVersion="0.12.34">
+<module moduleId="AC2PowerModuleID" fritzingVersion="0.12.34">
  <version>4</version>
  <author>Brendan Howell</author>
- <title>DC Power</title>
+ <title>AC Power</title>
  <date>2008-07-28</date>
  <label>V</label>
  <tags>
-   <tag>voltage source</tag>
-   <tag>dc power</tag>
+   <tag>ac power</tag>
    <tag>symbol</tag>
    <tag>fritzing core</tag>
+   <tag>voltage source</tag>
  </tags>
  <properties>
-   <property name="family">voltage source</property>
-   <property name="type">dc power supply</property>
+   <property name="family">//obsolete//voltage source</property>
+   <property name="type">ac power supply</property>
+   <property name="offset voltage">0V</property>
    <property name="voltage" showInLabel="yes">5V</property>
+   <property name="frequency">60Hz</property>
+   <property name="delay time">0s</property>
+   <property name="damping factor">0s-1</property>
+   <property name="phase">0degrees</property>
    <property name="internal resistance">0.1&#937;</property>
  </properties>
- <taxonomy>discreteParts.power.power.dcpower</taxonomy>
- <description>A generic dc power symbol</description>
+ <taxonomy>discreteParts.power.power.acpower</taxonomy>
+ <description>A generic ac power symbol</description>
  <spice>
-   <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} DC {voltage}</line>
+   <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} SIN({offset voltage} {voltage} {frequency} {delay time} {damping factor} {phase})</line>
    <line>R{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector0} {internal resistance}</line>
  </spice>
  <views>
   <defaultUnits>cmil</defaultUnits>
   <iconView>
-   <layers image="schematic/dcpower.svg" >
+   <layers image="schematic/acpower.svg" >
     <layer layerId="icon" />
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="schematic/dcpower.svg" >
+   <layers image="schematic/acpower.svg" >
     <layer layerId="schematic" />
    </layers>
   </breadboardView>
    <schematicView flipvertical="true">
-   <layers image="schematic/dcpower.svg" >
+   <layers image="schematic/acpower.svg" >
      <layer layerId="schematic" />
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="schematic/dcpower.svg" >
+   <layers image="schematic/acpower.svg" >
     <layer layerId="schematic" />
    </layers>
   </pcbView>
