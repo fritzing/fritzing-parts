@@ -21,13 +21,14 @@
     <property name="delay time">0s</property>
     <property name="rise time">0s</property>
     <property name="fall time">0s</property>
-    <property name="nuber of cyles">0</property>
+    <property name="number of pulses">0</property>
+    <property name="internal resistance">0.1&#937;</property>
     
   </properties>
   <taxonomy>discreteParts.power.power.acpower</taxonomy>
   <description>A generic pulse power symbol</description>
   <spice>
-    <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector0} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} {nuber of cyles})</line>
+    <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector0} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} {number of pulses})</line>
     <line>R{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector1} {internal resistance}</line>
   </spice>
   <views>
