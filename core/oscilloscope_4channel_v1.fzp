@@ -11,12 +11,16 @@
   <properties>
     <property name="family">Oscilloscope</property>
     <property name="channels">4</property>
-    <property name="volts/div">5V</property>
+    <property name="ch1 volts/div">5V</property>
+    <property name="ch2 volts/div">5V</property>
+    <property name="ch3 volts/div">5V</property>
+    <property name="ch4 volts/div">5V</property>
     <property name="time/div">10ms</property>
-    <property name="v1 offset">0V</property>
-    <property name="v2 offset">0V</property>
-    <property name="v3 offset">0V</property>
-    <property name="v4 offset">0V</property>
+    <property name="horizontal position">0s</property>
+    <property name="ch1 offset">0V</property>
+    <property name="ch2 offset">0V</property>
+    <property name="ch3 offset">0V</property>
+    <property name="ch4 offset">0V</property>
   </properties>
   <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
