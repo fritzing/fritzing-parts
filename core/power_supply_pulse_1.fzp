@@ -28,8 +28,8 @@
   <taxonomy>discreteParts.power.power.acpower</taxonomy>
   <description>A generic pulse power symbol</description>
   <spice>
-    <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector0} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} {number of pulses})</line>
-    <line>R{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector1} {internal resistance}</line>
+    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} {number of pulses})</line>
+    <line>R{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector0} {internal resistance}</line>
   </spice>
   <views>
     <defaultUnits>cmil</defaultUnits>
