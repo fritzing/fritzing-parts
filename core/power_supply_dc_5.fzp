@@ -20,8 +20,8 @@
   <taxonomy>discreteParts.power.power.dcpower</taxonomy>
   <description>A generic dc power symbol</description>
   <spice>
-    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} DC {voltage}</line>
-    <line>R{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector0} {internal resistance}</line>
+    <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector0} DC {voltage}</line>
+    <line>R{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector1} {internal resistance}</line>
   </spice>
   <views>
     <defaultUnits>cmil</defaultUnits>
