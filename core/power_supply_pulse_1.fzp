@@ -25,7 +25,7 @@
     <property name="internal resistance">0.1&#937;</property>
     
   </properties>
-  <taxonomy>discreteParts.power.power.acpower</taxonomy>
+  <taxonomy>discreteParts.power.wavegenerator.genericpulse</taxonomy>
   <description>A generic pulse power symbol</description>
   <spice>
     <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} {number of pulses})</line>
@@ -39,8 +39,8 @@
       </layers>
     </iconView>
     <breadboardView>
-      <layers image="schematic/power_supply_pulse_1_schematic.svg">
-        <layer layerId="schematic"/>
+      <layers image="breadboard/waveform_generator_generic_pulse_v1_breadboard.svg">
+        <layer layerId="breadboard"/>
       </layers>
     </breadboardView>
     <schematicView>
@@ -55,7 +55,7 @@
     </pcbView>
   </views>
   <connectors>
-    <connector type="male" id="connector0" name="V+">
+    <connector type="female" id="connector0" name="V+">
       <description>Positive Supply Voltage</description>
       <erc etype="VCC">
         <voltage value="5.0"/>
@@ -63,7 +63,7 @@
       </erc>
       <views>
         <breadboardView>
-          <p svgId="connector0pin" layer="schematic"/>
+          <p svgId="connector0pin" layer="breadboard"/>
         </breadboardView>
         <schematicView>
           <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
@@ -73,11 +73,11 @@
         </pcbView>
       </views>
     </connector>
-    <connector type="male" id="connector1" name="V-">
+    <connector type="female" id="connector1" name="V-">
       <description>Negative Supply Voltage</description>
       <views>
         <breadboardView>
-          <p svgId="connector1pin" layer="schematic"/>
+          <p svgId="connector1pin" layer="breadboard"/>
         </breadboardView>
         <schematicView>
           <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
