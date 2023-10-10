@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<module moduleId="1_ACPowerSupplyModuleID" fritzingVersion="0.9.10">
-  <version>5</version>
+<module moduleId="1_TriangularPowerSupplyModuleID" fritzingVersion="0.9.10">
+  <version>1</version>
   <author>Brendan Howell (modified by vanepp Apr 2023 and A. Faina)</author>
-  <title>AC Power</title>
+  <title>Pulse Power</title>
   <date>2008-07-28</date>
   <label>V</label>
   <tags>
@@ -13,40 +13,41 @@
   </tags>
   <properties>
     <property name="family">voltage source</property>
-   <property name="type">ac power supply</property>
-   <property name="offset voltage">0V</property>
-   <property name="amplitude" showInLabel="yes">5V</property>
-   <property name="frequency">60Hz</property>
-   <property name="delay time">0s</property>
-   <property name="damping factor">0s-1</property>
-   <property name="phase">0degrees</property>
-   <property name="internal resistance">0.1&#937;</property>
+    <property name="type">triangular power supply</property>
+    <property name="offset voltage">0V</property>
+    <property name="amplitude">5V</property>
+    <property name="delay time">0s</property>
+    <property name="rise time">10ms</property>
+    <property name="fall time">10ms</property>
+    <property name="number of pulses">0</property>
+    <property name="internal resistance">0.1&#937;</property>
+    
   </properties>
-  <taxonomy>discreteParts.power.power.acpower</taxonomy>
-  <description>A generic ac power symbol</description>
+  <taxonomy>discreteParts.power.wavegenerator.triangular</taxonomy>
+  <description>A triangular power symbol</description>
   <spice>
-    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} SIN({offset voltage} {amplitude} {frequency} {delay time} {damping factor} {phase})</line>
+    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} PULSE({-1*{amplitude}+{offset voltage}} {{amplitude}+{offset voltage}} {delay time} {rise time} {fall time} 1n {{rise time}+{fall time}} {number of pulses})</line>
     <line>R{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector0} {internal resistance}</line>
   </spice>
   <views>
     <defaultUnits>cmil</defaultUnits>
     <iconView>
-      <layers image="schematic/power_supply_ac_1_schematic.svg">
+      <layers image="breadboard/waveform_generator_triangular_v1_breadboard.svg">
         <layer layerId="icon"/>
       </layers>
     </iconView>
     <breadboardView>
-      <layers image="breadboard/waveform_generator_sine_v1_breadboard.svg">
+      <layers image="breadboard/waveform_generator_triangular_v1_breadboard.svg">
         <layer layerId="breadboard"/>
       </layers>
     </breadboardView>
     <schematicView>
-      <layers image="schematic/power_supply_ac_1_schematic.svg">
+      <layers image="schematic/power_supply_pulse_1_schematic.svg">
         <layer layerId="schematic"/>
       </layers>
     </schematicView>
     <pcbView>
-      <layers image="schematic/power_supply_ac_1_schematic.svg">
+      <layers image="schematic/power_supply_pulse_1_schematic.svg">
         <layer layerId="schematic"/>
       </layers>
     </pcbView>
@@ -71,7 +72,7 @@
       </views>
     </connector>
     <connector type="female" id="connector1" name="V-">
-      <description>V-</description>
+      <description>Negative Supply Voltage</description>
       <views>
         <breadboardView>
           <p svgId="connector1pin" layer="breadboard"/>
