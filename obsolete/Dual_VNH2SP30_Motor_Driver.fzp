@@ -1,6 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.7.0b.02.01.5801" moduleId="045cef49a96039c64e7363608e127209">
-    <author>David Thomasson</author>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module fritzingVersion="0.7.0b.02.01.5801" moduleId="045cef49a96039c64e7363608e127209">
+    <version replacedby="DualVNH2311acd0be31c4d7cbd909ecf39e39784">1</version><author>David Thomasson</author>
     <title>Dual VNH2SP30 Motor Driver</title>
     <label>MD03A</label>
     <date>2012-02-05</date>
@@ -14,7 +13,7 @@
         <tag>VNH3</tag>
     </tags>
     <properties>
-        <property name="family">Motor Driver</property>
+        <property name="family">//obsolete//Motor Driver</property>
         <property name="part number">MD03A</property>
     </properties>
     <description>The Pololu dual high-power motor driver carrier for the VNH2SP30 motor driver integrated circuits from ST.
@@ -43,7 +42,7 @@ http://www.pololu.com/catalog/product/708</description>
         </pcbView>
     </views>
     <connectors>
-        <connector type="female" id="connector130" name="1INa">
+        <connector type="female" id="connector130"  replacedby="connector1"name="1INa">
             <description>Clockwise Input 1</description>
             <views>
                 <breadboardView>
@@ -58,7 +57,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector131" name="1INb">
+        <connector type="female" id="connector131" replacedby="connector2" name="1INb">
             <description>Counter Clockwise Input 1</description>
             <views>
                 <breadboardView>
@@ -73,7 +72,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector132" name="PWM">
+        <connector type="female" id="connector132" replacedby="connector3" name="PWM">
             <description>PWM Input 1</description>
             <views>
                 <breadboardView>
@@ -88,7 +87,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector150" name="VIN">
+        <connector type="female" id="connector150" replacedby="connector17" name="VIN">
             <description>Battery</description>
             <views>
                 <breadboardView>
@@ -103,7 +102,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector151" name="GND">
+        <connector type="female" id="connector151" replacedby="connector18" name="GND">
             <description>Ground</description>
             <views>
                 <breadboardView>
@@ -118,7 +117,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector133" name="1CS">
+        <connector type="female" id="connector133" replacedby="connector4" name="1CS">
             <description>Output of Current sense 1</description>
             <views>
                 <breadboardView>
@@ -133,7 +132,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector134" name="VIN">
+        <connector type="female" id="connector134" replacedby="connector5" name="VIN">
             <description>Battery</description>
             <views>
                 <breadboardView>
@@ -148,7 +147,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector136" name="GND">
+        <connector type="female" id="connector136" replacedby="connector6" name="GND">
             <description>Ground</description>
             <views>
                 <breadboardView>
@@ -163,7 +162,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector137" name="+5V (IN)">
+        <connector type="female" id="connector137" replacedby="connector7" name="+5V (IN)">
             <description>no description yet</description>
             <views>
                 <breadboardView>
@@ -178,7 +177,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector138" name="GND">
+        <connector type="female" id="connector138" replacedby="connector8" name="GND">
             <description>Ground</description>
             <views>
                 <breadboardView>
@@ -193,7 +192,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector139" name="VIN">
+        <connector type="female" id="connector139" replacedby="connector9" name="VIN">
             <description>Battery</description>
             <views>
                 <breadboardView>
@@ -208,7 +207,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector140" name="2CS">
+        <connector type="female" id="connector140" replacedby="connector10" name="2CS">
             <description>Output of Current sense 2</description>
             <views>
                 <breadboardView>
@@ -223,7 +222,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector141" name="2PWM">
+        <connector type="female" id="connector141" replacedby="connector11" name="2PWM">
             <description>PWM Input 2</description>
             <views>
                 <breadboardView>
@@ -238,7 +237,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector142" name="2INb">
+        <connector type="female" id="connector142" replacedby="connector12" name="2INb">
             <description>Clockwise Input 2</description>
             <views>
                 <breadboardView>
@@ -253,7 +252,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector143" name="2INb">
+        <connector type="female" id="connector143" replacedby="connector13" name="2INb">
             <description>Counter Clockwise Input 2</description>
             <views>
                 <breadboardView>
@@ -268,7 +267,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector144" name="2DIAG/EN">
+        <connector type="female" id="connector144" replacedby="connector14" name="2DIAG/EN">
             <description>Status of High-Side and Low-Side Switche; Open Drain Output</description>
             <views>
                 <breadboardView>
@@ -283,7 +282,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector129" name="1DIAG/EN">
+        <connector type="female" id="connector129" replacedby="connector0" name="1DIAG/EN">
             <description>Status of High-Side and Low-Side Switches; Open Drain Output</description>
             <views>
                 <breadboardView>
@@ -298,7 +297,7 @@ http://www.pololu.com/catalog/product/708</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector146" name="OUT 1A">
+        <connector type="female" id="connector146" replacedby="connector20" name="OUT 1A">
             <description>Power connections to the motor 1.
 Source of High-Side Switch A / Drain of Low-Side Switch A</description>
             <views>
@@ -314,7 +313,7 @@ Source of High-Side Switch A / Drain of Low-Side Switch A</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector147" name="OUT 1B">
+        <connector type="female" id="connector147" replacedby="connector19" name="OUT 1B">
             <description>Power connections to the motor 1.
 Source of High-Side Switch B / Drain of Low-Side Switch B</description>
             <views>
@@ -330,7 +329,7 @@ Source of High-Side Switch B / Drain of Low-Side Switch B</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector148" name="OUT 2A">
+        <connector type="female" id="connector148" replacedby="connector16" name="OUT 2A">
             <description>Power connections to the motor 2.
 Source of High-Side Switch A / Drain of Low-Side Switch A</description>
             <views>
@@ -346,7 +345,7 @@ Source of High-Side Switch A / Drain of Low-Side Switch A</description>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector149" name="OUT 2B">
+        <connector type="female" id="connector149" replacedby="connector15" name="OUT 2B">
             <description>Power connections to the motor 1.
 Source of High-Side Switch B / Drain of Low-Side Switch B</description>
             <views>
