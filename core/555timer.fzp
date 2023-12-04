@@ -14,7 +14,66 @@
  </tags>
  <properties>
   <property name="family">Timer IC</property>
- <property name="package">DIP8 [THT]</property></properties>
+ <property name="package">DIP8 [THT]</property>
+</properties>
+<spice>
+    <line>X{instanceTitle} {net connector1} {net connector2} {net connector3} {net connector4} {net connector5} {net connector6} {net connector7} {net connector0} UA555</line>
+    <model>.SUBCKT UA555 32 30 19 23 33 1  21 999
+    *                    TR O  R  F  TH D  V  GND
+    *
+    * Taken from ngspice examples: https://github.com/imr/ngspice/blob/master/examples/p-to-n-examples/555-timer-2.cir and modified to include the ground. And this model has been...
+    * Taken from the Fairchild data book (1982) page 9-3
+    *SYM=UA555
+    *DWG=C:\SPICE\555\UA555.DWG
+    Q4 25 2 3 QP
+    Q5 999 6 3 QP
+    Q6 6 6 8 QP
+    R1 9 21 4.7K
+    R2 3 21 830
+    R3 8 21 4.7K
+    Q7 2 33 5 QN
+    Q8 2 5 17 QN
+    Q9 6 4 17 QN
+    Q10 6 23 4 QN
+    Q11 12 20 10 QP
+    R4 10 21 1K
+    Q12 22 11 12 QP
+    Q13 14 13 12 QP
+    Q14 999 32 11 QP
+    Q15 14 18 13 QP
+    R5 14 999 100K
+    R6 22 999 100K
+    R7 17 999 10K
+    Q16 1 15 999 QN
+    Q17 15 19 31 QP
+    R8 18 23 5K
+    R9 18 999 5K
+    R10 21 23 5K
+    Q18 27 20 21 QP
+    Q19 20 20 21 QP
+    R11 20 31 5K
+    D1 31 24 DA
+    Q20 24 25 999 QN
+    Q21 25 22 999 QN
+    Q22 27 24 999 QN
+    R12 25 27 4.7K
+    R13 21 29 6.8K
+    Q23 21 29 28 QN
+    Q24 29 27 16 QN
+    Q25 30 26 999 QN
+    Q26 21 28 30 QN
+    D2 30 29 DA
+    R14 16 15 100
+    R15 16 26 220
+    R16 16 999 4.7K
+    R17 28 30 3.9K
+    Q3 2 2 9 QP
+    .MODEL DA D (RS=40 IS=1.0E-14 CJO=1PF)
+    .MODEL QP PNP (BF=20 BR=0.02 RC=4 RB=25 IS=1.0E-14 VA=50 NE=2 CJE=12.4P VJE=1.1 MJE=.5 CJC=4.02P VJC=.3 MJC=.3 TF=229P TR=159N)
+    .MODEL QN NPN (IS=5.07F NF=1 BF=100 VAF=161 IKF=30M ISE=3.9P NE=2 BR=4 NR=1 VAR=16 IKR=45M RE=1.03 RB=4.12 RC=.412 XTB=1.5 CJE=12.4P VJE=1.1 MJE=.5 CJC=4.02P VJC=.3 MJC=.3 TF=229P TR=959P)
+ .ENDS
+</model>
+</spice>    
  <description>The classic 555 general purpose timer/oscillator.</description>
  <views>
   <iconView>
@@ -43,7 +102,7 @@
   </schematicView>
  </views>
  <connectors>
-  <connector id="connector3" name="Pin 4" type="male">
+  <connector id="connector3" name="Reset" type="male">
    <description>Reset</description>
    <views>
     <breadboardView>
@@ -57,7 +116,7 @@
     <p layer="copper1" svgId="connector3pin"/></pcbView>
    </views>
   </connector>
-  <connector id="connector4" name="Pin 5" type="male">
+  <connector id="connector4" name="Control Voltage" type="male">
    <description>Control Voltage</description>
    <views>
     <breadboardView>
@@ -71,7 +130,7 @@
     <p layer="copper1" svgId="connector4pin"/></pcbView>
    </views>
   </connector>
-  <connector id="connector5" name="Pin 6" type="male">
+  <connector id="connector5" name="Threshold" type="male">
    <description>Threshold</description>
    <views>
     <breadboardView>
@@ -85,7 +144,7 @@
     <p layer="copper1" svgId="connector5pin"/></pcbView>
    </views>
   </connector>
-  <connector id="connector6" name="Pin 7" type="male">
+  <connector id="connector6" name="Discharge" type="male">
    <description>Discharge</description>
    <views>
     <breadboardView>
@@ -99,8 +158,8 @@
     <p layer="copper1" svgId="connector6pin"/></pcbView>
    </views>
   </connector>
-  <connector id="connector7" name="Pin 8" type="male">
-   <description>+Vcc Supply Voltage</description>
+  <connector id="connector7" name="Vcc Supply Voltage" type="male">
+   <description>Vcc Supply Voltage</description>
    <views>
     <breadboardView>
      <p layer="breadboard" svgId="connector7pin" terminalId="connector7terminal"/>
@@ -113,7 +172,7 @@
     <p layer="copper1" svgId="connector7pin"/></pcbView>
    </views>
   </connector>
-  <connector id="connector0" name="Pin 1" type="male">
+  <connector id="connector0" name="Ground" type="male">
    <description>Ground</description>
    <views>
     <breadboardView>
@@ -127,7 +186,7 @@
     <p layer="copper1" svgId="connector0pin"/></pcbView>
    </views>
   </connector>
-  <connector id="connector1" name="Pin 2" type="male">
+  <connector id="connector1" name="Trigger" type="male">
    <description>Trigger</description>
    <views>
     <breadboardView>
@@ -141,7 +200,7 @@
     <p layer="copper1" svgId="connector1pin"/></pcbView>
    </views>
   </connector>
-  <connector id="connector2" name="Pin 3" type="male">
+  <connector id="connector2" name="Output" type="male">
    <description>Output</description>
    <views>
     <breadboardView>
