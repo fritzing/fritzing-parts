@@ -2,7 +2,14 @@
 <module fritzingVersion="1.0.0" icon="infineon.png">
     <title>Infineon</title>
     <instances>
-        <instance moduleIdRef="Infineon_MY_IOT_ADAPTER" modelIndex="5548" path="Infineon_MY_IOT_ADAPTER.fzp">
+        <instance moduleIdRef="Infineon_MY_IOT_ADAPTER" modelIndex="5550" path="Infineon_MY_IOT_ADAPTER.fzp">
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+      </instance>
+        <instance moduleIdRef="Infineon_H-BRIDGE_KIT2GO" modelIndex="5551" path="Infineon_H-BRIDGE_KIT2GO.fzp">
           <views>
               <iconView layer="icon">
                   <geometry z="-1" x="-1" y="-1"/>
