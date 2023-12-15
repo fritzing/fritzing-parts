@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module referenceFile="Arduino_ADK_MEGA_2560-Rev3(fix).fzp" moduleId="Infineon_H-BRIDGE_KIT2GO" fritzingVersion="0.5.2b.02.18.4756">
+<module  moduleId="Infineon_H-BRIDGE_KIT2GO" fritzingVersion="1.0.2">
  <version>4</version>
- <date>Mon Aug 28 2023</date>
- <author>janarthanan, Kannan Subramani</author>
+ <date>2023-08-23</date>
+ <history date='2023-08-23' author='janarthanan, Kannan Subramani'> Initial version </history>
+ <history date='2023-12-15' author='Kjell Morgenstern'> Cleanup warnings, add missing terminal points, fix buses, fix layer IDs, remove empty svg structures </history>
  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
@@ -12,6 +13,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;br />&lt;/p>&lt;/body>&lt;/html></description>
  <title>H-BRIDGE_KIT2GO</title>
  <url>https://www.infineon.com/cms/en/product/evaluation-boards/h-bridge-kit-2go/</url>
+ <label>#H-BRIDGE</label>
  <tags>
   <tag>Evaluation Board</tag>
   <tag>Kit2Go</tag>
@@ -299,6 +301,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector16pin"/>
+     <p terminalId="connector16terminal" layer="schematic" svgId="connector16pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector16pin"/>
@@ -314,6 +317,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector17pin"/>
+     <p terminalId="connector17terminal" layer="schematic" svgId="connector17pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector17pin"/>
@@ -329,6 +333,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector18pin"/>
+     <p terminalId="connector18terminal" layer="schematic" svgId="connector18pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector18pin"/>
@@ -344,6 +349,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector19pin"/>
+     <p terminalId="connector19terminal" layer="schematic" svgId="connector19pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector19pin"/>
@@ -359,6 +365,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector20pin"/>
+     <p terminalId="connector20terminal" layer="schematic" svgId="connector20pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector20pin"/>
@@ -374,6 +381,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector21pin"/>
+     <p terminalId="connector21terminal" layer="schematic" svgId="connector21pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector21pin"/>
@@ -389,6 +397,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector22pin"/>
+     <p terminalId="connector22terminal" layer="schematic" svgId="connector22pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector22pin"/>
@@ -404,6 +413,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector23pin"/>
+     <p terminalId="connector23terminal" layer="schematic" svgId="connector23pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector23pin"/>
@@ -419,6 +429,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector24pin"/>
+     <p terminalId="connector24terminal" layer="schematic" svgId="connector24pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector24pin"/>
@@ -434,6 +445,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector25pin"/>
+     <p terminalId="connector25terminal" layer="schematic" svgId="connector25pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector25pin"/>
@@ -449,6 +461,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector26pin"/>
+     <p terminalId="connector26terminal" layer="schematic" svgId="connector26pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector26pin"/>
@@ -464,6 +477,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector27pin"/>
+     <p terminalId="connector27terminal" layer="schematic" svgId="connector27pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector27pin"/>
@@ -479,6 +493,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector28pin"/>
+     <p terminalId="connector28terminal" layer="schematic" svgId="connector28pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector28pin"/>
@@ -494,6 +509,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector29pin"/>
+     <p terminalId="connector29terminal" layer="schematic" svgId="connector29pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector29pin"/>
@@ -509,6 +525,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector30pin"/>
+     <p terminalId="connector30terminal" layer="schematic" svgId="connector30pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector30pin"/>
@@ -524,6 +541,7 @@ p, li { white-space: pre-wrap; }
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector31pin"/>
+     <p terminalId="connector31terminal" layer="schematic" svgId="connector31pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector31pin"/>
@@ -534,19 +552,8 @@ p, li { white-space: pre-wrap; }
  </connectors>
  <buses>
   <bus id="gnd">
-   <nodeMember connectorId="connector279"/>
-   <nodeMember connectorId="connector283"/>
-   <nodeMember connectorId="connector307"/>
-   <nodeMember connectorId="connector308"/>
-   <nodeMember connectorId="connector496"/>
-   <nodeMember connectorId="connector497"/>
-  </bus>
-  <bus id="+5v">
-   <nodeMember connectorId="connector275"/>
-   <nodeMember connectorId="connector303"/>
-   <nodeMember connectorId="connector306"/>
-   <nodeMember connectorId="connector462"/>
-   <nodeMember connectorId="connector463"/>
+   <nodeMember connectorId="connector25"/>
+   <nodeMember connectorId="connector24"/>
   </bus>
  </buses>
 </module>
