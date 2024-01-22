@@ -44,6 +44,13 @@
                 </iconView>
             </views>
         </instance>
+        <instance modelIndex="8" moduleIdRef="SparkFun-PowerIC-TRANSFORMER-PTH" path="sparkfun-poweric-transformer-pth.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry x="-1" y="-1" z="-1"/>
+                </iconView>
+            </views>
+        </instance>
         <instance modelIndex="9" moduleIdRef="3254CBFC44diode" path="diode_1N4001_300mil.fzp">
             <views>
                 <iconView layer="icon">
@@ -191,7 +198,15 @@
             </views>
         </instance>
         <!-- 
-        <instance modelIndex="33" moduleIdRef="a59353bd0db0225dc22770e292c622f3" path="lm358.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="34" moduleIdRef="1001AAAB555Timer" path="555timer.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="35" moduleIdRef="1001AAACOptocoupler" path="optocoupler.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="36" moduleIdRef="a4f38a10-dd92-11dd-a3e2-001f5b3a17a4" path="h-bridge.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="36" moduleIdRef="1a7828b6466fac9fd042221e931124c4" path="74HC595.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="36" moduleIdRef="HEF4094" path="HEF4094.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance moduleIdRef="RevEd_FRM050"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance moduleIdRef="RevEd_ULN2003A"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="CrystalModuleID" path="crystal.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="37asdf3c843a2127a0e499f8a0b3ef6aCrystalModuleID" path="resonator-3pin.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="4001_4_x_2_input_NOR_gate_single"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="4001_4_x_2_input_NOR_gate_single"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance>-->
+        <instance modelIndex="33" moduleIdRef="a59353bd0db0225dc22770e292c622f3" path="lm358.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance>-->
+        <instance modelIndex="34" moduleIdRef="1001AAAB555Timer" path="555timer.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry x="-1" y="-1" z="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <!--<instance modelIndex="35" moduleIdRef="1001AAACOptocoupler" path="optocoupler.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="36" moduleIdRef="a4f38a10-dd92-11dd-a3e2-001f5b3a17a4" path="h-bridge.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="36" moduleIdRef="1a7828b6466fac9fd042221e931124c4" path="74HC595.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="36" moduleIdRef="HEF4094" path="HEF4094.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance moduleIdRef="RevEd_FRM050"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance moduleIdRef="RevEd_ULN2003A"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="CrystalModuleID" path="crystal.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="37asdf3c843a2127a0e499f8a0b3ef6aCrystalModuleID" path="resonator-3pin.fzp"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="4001_4_x_2_input_NOR_gate_single"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance><instance modelIndex="38" moduleIdRef="4001_4_x_2_input_NOR_gate_single"><views><iconView layer="icon"><geometry x="-1" y="-1" z="-1"/></iconView></views></instance>-->
         <instance modelIndex="38" moduleIdRef="4011_4_x_2_input_NAND_gate_single">
             <views>
                 <iconView layer="icon">
@@ -273,6 +288,20 @@
         </instance>
         <!--
         <instance moduleIdRef="d8f570d723ea4d14f9b61b34575a9699" modelIndex="40" path="Power plug.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="1238DBDC00-voltage-reg_7805" modelIndex="41" path="voltage_regulator_7805.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="fuse_with_handler_cff5" modelIndex="41" path="Fuse_with_Handler.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance>-->
+        <instance modelIndex="3" moduleIdRef="__spacer__" path="Waveform generators">
+            <views>
+                <iconView layer="icon">
+                    <geometry x="-1" y="-1" z="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance modelIndex="39" moduleIdRef="1_TriangularPowerSupplyModuleID" path="1_TriangularPowerSupplyModuleID.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry x="-1" y="-1" z="-1"/>
+                </iconView>
+            </views>
+        </instance>
         <instance modelIndex="3" moduleIdRef="__spacer__" path="Breadboard View">
             <views>
                 <iconView layer="icon">
@@ -336,13 +365,27 @@
                 </iconView>
             </views>
         </instance>
-        <instance modelIndex="52" moduleIdRef="DC2PowerModuleID" path=":/resources/parts/core/dcpower2.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry x="-1" y="-1" z="-1"/>
-                </iconView>
-            </views>
-        </instance>
+        <instance moduleIdRef="5_DCPowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_dc_5.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="1_ACPowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_ac_1.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="1_PulsePowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_pulse_1.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
         <instance modelIndex="53" moduleIdRef="PowerLabelModuleID" path=":/resources/parts/core/power_label.fzp">
             <views>
                 <iconView layer="icon">
@@ -435,6 +478,13 @@
             </views>
         </instance>
         <instance modelIndex="61" moduleIdRef="multimeter_r_1" path=":/resources/parts/core/multimeter_r_1.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry x="-1" y="-1" z="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance modelIndex="61" moduleIdRef="4ChannelV1OscilloscopeModuleID" path=":/resources/parts/core/oscilloscope_4channel_v1.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry x="-1" y="-1" z="-1"/>

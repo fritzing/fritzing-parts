@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="4ChannelV1OscilloscopeModuleID" fritzingVersion="0.9.10" referenceFile="oscilloscope_4channel_v1.fzp">
+  <version>1</version>
+  <author>Andres Faina</author>
+  <title>Oscilloscope</title>
+  <label>Oscilloscope</label>
+  <date>13-03-2023</date>
+  <tags>
+    <tag>Oscilloscope</tag>
+  </tags>
+  <properties>
+    <property name="family">Oscilloscope</property>
+    <property name="channels">4</property>
+    <property name="ch1 volts/div">5V</property>
+    <property name="ch2 volts/div">5V</property>
+    <property name="ch3 volts/div">5V</property>
+    <property name="ch4 volts/div">5V</property>
+    <property name="time/div">10ms</property>
+    <property name="horizontal position">0s</property>
+    <property name="ch1 offset">0V</property>
+    <property name="ch2 offset">0V</property>
+    <property name="ch3 offset">0V</property>
+    <property name="ch4 offset">0V</property>
+  </properties>
+  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;A 4 channel oscilloscope to plot voltages over time&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <spice>
+    <!-- We need a comment so the spice field is not empty and the part is added to the simulation-->
+    <line>* Oscilloscope, com probe connected to {net connector0} and voltage probes connected to {net connector1}, {net connector2}, {net connector3} and {net connector4}</line>
+  </spice>
+  <views>
+    <iconView>
+      <layers image="breadboard/oscilloscope_v1_breadboard.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView fliphorizontal="false" flipvertical="false">
+      <layers image="breadboard/oscilloscope_v1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView fliphorizontal="false" flipvertical="false">
+      <layers image="schematic/oscilloscope_v1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="breadboard/oscilloscope_v1_breadboard.svg">
+        <layer layerId="partimage"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector name="COM Probe" type="female" id="connector0">
+      <description>COM</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" terminalId="connector0terminal" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pin" layer="partimage"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="V1 Probe" type="female" id="connector1">
+      <description>Voltage 1 probe</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector1pin" layer="partimage"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="V2 Probe" type="female" id="connector2">
+      <description>Voltage 2 probe</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector2pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector2pin" terminalId="connector2terminal" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector2pin" layer="partimage"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="V3 Probe" type="female" id="connector3">
+      <description>Voltage 3 probe</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector3pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector3pin" terminalId="connector3terminal" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector3pin" layer="partimage"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="V4 Probe" type="female" id="connector4">
+      <description>Voltage 4 probe</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector4pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector4pin" terminalId="connector4terminal" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector4pin" layer="partimage"/>
+        </pcbView>
+      </views>
+    </connector>
+  </connectors>
+</module>

@@ -5,17 +5,35 @@
 <label>U</label>
 <author>www.fritzing.org</author>
 <description>Small transformers</description>
-<title>TRANSFORMER</title>
+<title>Transformer</title>
 <tags>
-<tag>TRANSFORMER_SMD</tag>
-<tag>TRANSFORMER</tag>
+<tag>Transformer_SMD</tag>
+<tag>Transformer</tag>
 <tag>SMD</tag>
 </tags>
 <properties>
 <property name="package">transformer_smd</property>
 <property name="family">sparkfun Transformer</property>
 <property name="variant">smd</property>
+<property name="input inductance">10H</property>
+<property name="output inductance">40H</property>
+<property name="input resistance">1&#937;</property>
+<property name="output resistance">1&#937;</property>
 </properties>
+<spice>
+	<line>x{instanceTitle} {net connector0} {net connector1} {net connector3} {net connector2} basic_transformer Lin={input inductance} Lout={output inductance} Rin={input resistance} Rout={output resistance}</line>
+	<model>.subckt basic_transformer in1 in2 out1 out2 Lin=100u Lout=100u Rin=1 Rout=1
+* inductances
+Li in1 intin {Lin}
+Lo out1 intou {Lout}
+* coupling factors
+K1 Li Lo 1
+* series resistances
+Ri intin in2 {Rin}
+Ro intou out2 {Rout}
+.ends basic_transformer
+</model>
+</spice>
 <views>
 <breadboardView>
 <layers image="breadboard/sparkfun-poweric_transformer_smd_breadboard.svg">

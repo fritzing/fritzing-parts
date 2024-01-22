@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="1_TriangularPowerSupplyModuleID" fritzingVersion="0.9.10">
+  <version>1</version>
+  <author>Brendan Howell (modified by vanepp Apr 2023 and A. Faina)</author>
+  <title>Pulse Power</title>
+  <date>2008-07-28</date>
+  <label>V</label>
+  <tags>
+    <tag>ac power</tag>
+    <tag>symbol</tag>
+    <tag>fritzing core</tag>
+    <tag>voltage source</tag>
+  </tags>
+  <properties>
+    <property name="family">voltage source</property>
+    <property name="type">triangular power supply</property>
+    <property name="offset voltage">0V</property>
+    <property name="amplitude">5V</property>
+    <property name="delay time">0s</property>
+    <property name="rise time">10ms</property>
+    <property name="fall time">10ms</property>
+    <property name="number of pulses">0</property>
+    <property name="internal resistance">0.1&#937;</property>
+    
+  </properties>
+  <taxonomy>discreteParts.power.wavegenerator.triangular</taxonomy>
+  <description>A triangular power symbol</description>
+  <spice>
+    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} PULSE({-1*{amplitude}+{offset voltage}} {{amplitude}+{offset voltage}} {delay time} {rise time} {fall time} 1n {{rise time}+{fall time}} {number of pulses})</line>
+    <line>R{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector0} {internal resistance}</line>
+  </spice>
+  <views>
+    <defaultUnits>cmil</defaultUnits>
+    <iconView>
+      <layers image="breadboard/waveform_generator_triangular_v1_breadboard.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/waveform_generator_triangular_v1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/power_supply_pulse_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="schematic/power_supply_pulse_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector type="female" id="connector0" name="V+">
+      <description>Positive Supply Voltage</description>
+      <erc etype="VCC">
+        <voltage value="5.0"/>
+        <current flow="source" valueMax="0"/>
+      </erc>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pin" layer="schematic"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector type="female" id="connector1" name="V-">
+      <description>Negative Supply Voltage</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector1pin" layer="schematic"/>
+        </pcbView>
+      </views>
+    </connector>
+  </connectors>
+  <buses>
+    <bus id="powerbus">
+      <nodeMember connectorId="connector0"/>
+    </bus>
+    <bus id="groundbus">
+      <nodeMember connectorId="connector1"/>
+    </bus>
+  </buses>
+</module>

@@ -1,44 +1,53 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module moduleId="AC2PowerModuleID" fritzingVersion="0.12.34">
+<module moduleId="DCPulseSourceModuleID" fritzingVersion="0.9.10">
  <version>4</version>
- <author>Brendan Howell</author>
- <title>AC Power</title>
- <date>2008-07-28</date>
+ <author>Andres Faina</author>
+ <title>DC Pulse</title>
+ <date>2023-03-08</date>
  <label>V</label>
  <tags>
-   <tag>ac power</tag>
+   <tag>voltage source</tag>
+   <tag>dc power</tag>
    <tag>symbol</tag>
    <tag>fritzing core</tag>
-   <tag>voltage source</tag>
  </tags>
  <properties>
    <property name="family">voltage source</property>
-   <property name="type">ac power supply</property>
-   <property name="voltage" showInLabel="yes">5</property>
-   <property name="frequency">60</property>
+   <property name="type">dc pulse power supply</property>
+   <property name="initial voltage" showInLabel="yes">0V</property>
+   <property name="pulsed voltage" showInLabel="yes">5V</property>
+   <property name="delay time">0ms</property>
+   <property name="rise time">1ms</property>
+   <property name="fall time">1ms</property>
+   <property name="pulse width">50ms</property>
+   <property name="period">100ms</property>
+   <property name="internal resistance">0.1&#937;</property>
  </properties>
- <taxonomy>discreteParts.power.power.acpower</taxonomy>
- <description>A generic ac power symbol</description>
- <spice><line>V{instanceTitle} {net connector0} {net connector1} AC 1 SIN(0 {voltage} {frequency} 0 0)</line></spice>
+ <taxonomy>discreteParts.power.power.dcpower</taxonomy>
+ <description>A generic dc power symbol</description>
+ <spice>
+   <line>V{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector0} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} 0)</line>
+   <line>R{instanceTitle} {net connector1}_{instanceTitle}_aux {net connector1} {internal resistance}</line>
+ </spice>
  <views>
   <defaultUnits>cmil</defaultUnits>
   <iconView>
-   <layers image="schematic/acpower.svg" >
+   <layers image="schematic/dcpower_pulse.svg" >
     <layer layerId="icon" />
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="schematic/acpower.svg" >
+   <layers image="schematic/dcpower_pulse.svg" >
     <layer layerId="schematic" />
    </layers>
   </breadboardView>
    <schematicView flipvertical="true">
-   <layers image="schematic/acpower.svg" >
+   <layers image="schematic/dcpower_pulse.svg" >
      <layer layerId="schematic" />
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="schematic/acpower.svg" >
+   <layers image="schematic/dcpower_pulse.svg" >
     <layer layerId="schematic" />
    </layers>
   </pcbView>
