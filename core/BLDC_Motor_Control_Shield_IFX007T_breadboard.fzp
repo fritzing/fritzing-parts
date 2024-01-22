@@ -1,0 +1,490 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="PROFET+_24V_Shield_wo_OL_V1.2.fzp" fritzingVersion="0.5.2b.02.18.4756" moduleId="BLDC-SHIELD_IFX007T_0130e40be5904e57302d0f9bbb373df7_81">
+ <version>1.0</version>
+ <date>Mo Feb 1 2021</date>
+ <author>Infineon Technologies AG; S. Poeller</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333; background-color:#ffffff;">The (BL)DC motor control shield from Infineon technologies is a high current motor control board compatible with Arduino and Infineon’s &lt;/span>&lt;a href="https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc47_relax_5v_ad_v1/">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; font-weight:600; text-decoration: underline; color:#005da9; background-color:#ffffff;">XMC4700 Boot Kit&lt;/span>&lt;/a>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333; background-color:#ffffff;">. It is equipped with three smart &lt;/span>&lt;a href="https://www.infineon.com/cms/en/product/power/motor-control-ics/brushed-dc-motor-driver-ics/single-half-bridge-ics/ifx007t/">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; font-weight:600; text-decoration: underline; color:#005da9; background-color:#ffffff;">IFX007T&lt;/span>&lt;/a>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333; background-color:#ffffff;"> half-bridges. The BLDC motor control shield is capable to drive one BLDC motor. Alternatively, it can be used to drive one or two bi-directional DC motors (H-Bridge configuration, cascaded to support second motor) or up to three uni-directional DC motors (half-bridge configuration).The implemented integrated IFX007T NovalithIC™ half-bridges can be controlled by a PWM via the IN Pin. Interfacing to a microcontroller is made easy by the integrated driver IC which features logic level inputs, diagnosis with current sense, slew rate adjustment, and dead time generation. The three IFX007T half-bridges are also fully protected against over-temperature, under-voltage, overcurrent and short circuit events.&lt;/span> &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:9pt; font-weight:600; color:#333333;">Summary of Features&lt;/span>  &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Symbol'; font-size:10pt; color:#333333;">·&lt;/span>&lt;span style=" font-family:'Times New Roman'; font-size:7pt; color:#333333;">         &lt;/span>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333;">Compatible with Arduino Uno R3&lt;/span> &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Symbol'; font-size:10pt; color:#333333;">·&lt;/span>&lt;span style=" font-family:'Times New Roman'; font-size:7pt; color:#333333;">         &lt;/span>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333;">Capable of high frequency PWM e.g. 30kHz&lt;/span> &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Symbol'; font-size:10pt; color:#333333;">·&lt;/span>&lt;span style=" font-family:'Times New Roman'; font-size:7pt; color:#333333;">         &lt;/span>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333;">Adjustable slew rates for optimized EMI by changing external resistor&lt;/span> &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Symbol'; font-size:10pt; color:#333333;">·&lt;/span>&lt;span style=" font-family:'Times New Roman'; font-size:7pt; color:#333333;">         &lt;/span>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333;">Driver circuit with logic level inputs&lt;/span> &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Symbol'; font-size:10pt; color:#333333;">·&lt;/span>&lt;span style=" font-family:'Times New Roman'; font-size:7pt; color:#333333;">         &lt;/span>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333;">Diagnosis with current sense&lt;/span> &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Symbol'; font-size:10pt; color:#333333;">·&lt;/span>&lt;span style=" font-family:'Times New Roman'; font-size:7pt; color:#333333;">         &lt;/span>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333;">Protection e.g. against over-temperature and overcurrent&lt;/span> &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:9pt; font-weight:600; color:#333333;">Benefits&lt;/span> &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Symbol'; font-size:10pt; color:#333333;">·&lt;/span>&lt;span style=" font-family:'Times New Roman'; font-size:7pt; color:#333333;">         &lt;/span>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333;">Fast and inexpensive prototyping of (BL)DC motor control&lt;/span> &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Symbol'; font-size:10pt; color:#333333;">·&lt;/span>&lt;span style=" font-family:'Times New Roman'; font-size:7pt; color:#333333;">         &lt;/span>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333;">Easy testing of half- and full-bridge motor control&lt;/span> &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Symbol'; font-size:10pt; color:#333333;">·&lt;/span>&lt;span style=" font-family:'Times New Roman'; font-size:7pt; color:#333333;">         &lt;/span>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333;">Status flag diagnosis with current sense capability&lt;/span> &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Symbol'; font-size:10pt; color:#333333;">·&lt;/span>&lt;span style=" font-family:'Times New Roman'; font-size:7pt; color:#333333;">         &lt;/span>&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt; color:#333333;">Over-temperature shut down with latch behavior and under-voltage shut down&lt;/span> &lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:9pt; font-weight:600; color:#333333;">Potential Applications&lt;/span> &lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Brushed and brushless DC motor control up to 300W continuous load&lt;/span> &lt;/li>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 2;">&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">8–40V nominal input voltage (optimized for 24V)&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Average motor current 30A restricted due to PCB (IFX007T current limitation @ 55A min.)&lt;/span> &lt;/li>&lt;/ul>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Can be used to drive motors in various industrial applications:&lt;/span> &lt;/li>&lt;/ul>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 2;">&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Power Tools&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Healthcare (e.g., hospital beds)&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Robots&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Pumps&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Massage chairs&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Fans&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Multicopter&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">CAV&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Vacuum cleaners&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Home &amp;amp; garden&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">3D printer&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">Industrial automation&lt;/span> &lt;/li>
+&lt;li style=" color:#333333; background-color:#ffffff;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Source Sans Pro,sans-serif'; font-size:8pt;">And many more…&lt;/span> &lt;/li>&lt;/ul>&lt;/body>&lt;/html></description>
+ <title>BLDC-SHIELD_IFX007T</title>
+ <tags>
+  <tag>Arduino</tag>
+  <tag>PWM</tag>
+  <tag>IFX007</tag>
+  <tag>Shield</tag>
+  <tag>current sense </tag>
+  <tag>ifx</tag>
+  <tag>Infineon</tag>
+  <tag>BLDC</tag>
+  <tag>Bridge</tag>
+ </tags>
+ <properties>
+  <property name="family">Motor Driver</property>
+  <property name="variant">variant</property>
+  <property name="layer"></property>
+  <property name="part number">BLDCSHIELDIFX007TTOBO1</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/BLDC-SHIELD_IFX007T_63fdf4419060007262680d52d2235abe_5_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/BLDC-SHIELD_IFX007T_63fdf4419060007262680d52d2235abe_5_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/BLDC-SHIELD_IFX007T_63fdf4419060007262680d52d2235abe_5_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/BLDC-SHIELD_IFX007T_63fdf4419060007262680d52d2235abe_5_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector183" type="pad" name="U">
+   <description>U</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector183pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector183pin" terminalId="connector183terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector183pad"/>
+     <p layer="copper1" svgId="connector183pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector189" type="male" name="INHV">
+   <description>INHV</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector189pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector189pin" terminalId="connector189terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector189pad"/>
+     <p layer="copper1" svgId="connector189pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector193" type="male" name="INW">
+   <description>INW</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector193pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector193pin" terminalId="connector193terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector193pad"/>
+     <p layer="copper1" svgId="connector193pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector186" type="pad" name="V">
+   <description>V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector186pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector186pin" terminalId="connector186terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector186pad"/>
+     <p layer="copper1" svgId="connector186pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector190" type="male" name="INHW ">
+   <description>INHW </description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector190pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector190pin" terminalId="connector190terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector190pad"/>
+     <p layer="copper1" svgId="connector190pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector182" type="male" name="VDD_5V">
+   <description>VDD_5V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector182pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector182pin" terminalId="connector182terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector182pad"/>
+     <p layer="copper1" svgId="connector182pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector188" type="male" name="INHU ">
+   <description>INHU </description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector188pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector188pin" terminalId="connector188terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector188pad"/>
+     <p layer="copper1" svgId="connector188pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector192" type="male" name="INV">
+   <description>INV</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector192pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector192pin" terminalId="connector192terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector192pad"/>
+     <p layer="copper1" svgId="connector192pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector187" type="pad" name="W">
+   <description>W</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector187pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector187pin" terminalId="connector187terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector187pad"/>
+     <p layer="copper1" svgId="connector187pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector191" type="male" name="INU">
+   <description>INU</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector191pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector191pin" terminalId="connector191terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector191pad"/>
+     <p layer="copper1" svgId="connector191pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector179" type="pad" name="GND ">
+   <description>GND </description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector179pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector179pin" terminalId="connector179terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector179pad"/>
+     <p layer="copper1" svgId="connector179pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector180" type="pad" name="VBAT">
+   <description>VBAT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector180pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector180pin" terminalId="connector180terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector180pad"/>
+     <p layer="copper1" svgId="connector180pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector181" type="male" name="VDD_3V3">
+   <description>VDD_3V3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector181pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector181pin" terminalId="connector181terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector181pad"/>
+     <p layer="copper1" svgId="connector181pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector195" type="male" name="V_IS_RC ">
+   <description>V_IS_RC </description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector195pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector195pin" terminalId="connector195terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector195pad"/>
+     <p layer="copper1" svgId="connector195pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector196" type="male" name="ADC_U ">
+   <description>ADC_U </description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector196pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector196pin" terminalId="connector196terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector196pad"/>
+     <p layer="copper1" svgId="connector196pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector194" type="male" name="IS">
+   <description>IS</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector194pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector194pin" terminalId="connector194terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector194pad"/>
+     <p layer="copper1" svgId="connector194pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector197" type="male" name="ADC_V">
+   <description>ADC_V </description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector197pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector197pin" terminalId="connector197terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector197pad"/>
+     <p layer="copper1" svgId="connector197pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector198" type="male" name="ADC_W">
+   <description>ADC_W</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector198pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector198pin" terminalId="connector198terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector198pad"/>
+     <p layer="copper1" svgId="connector198pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector199" type="male" name="ADC_VDD_2">
+   <description>ADC_VDD_2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector199pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector199pin" terminalId="connector199terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector199pad"/>
+     <p layer="copper1" svgId="connector199pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector209" type="male" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector209pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector209pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector209pin"/>
+     <p layer="copper1" svgId="connector209pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector210" type="male" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector210pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector210pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector210pin"/>
+     <p layer="copper1" svgId="connector210pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector211" type="pad" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector211pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector211pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector211pin"/>
+     <p layer="copper1" svgId="connector211pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector212" type="pad" name="VDD_5V">
+   <description>VDD_5V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector212pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector212pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector212pin"/>
+     <p layer="copper1" svgId="connector212pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector213" type="pad" name="ADC_U">
+   <description>ADC_U</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector213pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector213pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector213pin"/>
+     <p layer="copper1" svgId="connector213pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector214" type="pad" name="ADC_V">
+   <description>ADC_V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector214pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector214pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector214pin"/>
+     <p layer="copper1" svgId="connector214pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector215" type="pad" name="ADC_W">
+   <description>ADC_W</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector215pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector215pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector215pin"/>
+     <p layer="copper1" svgId="connector215pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector200"/>
+   <nodeMember connectorId="connector213"/>
+   <nodeMember connectorId="connector215"/>
+  </bus>
+  <bus id="internal1">
+   <nodeMember connectorId="connector211"/>
+   <nodeMember connectorId="connector209"/>
+  </bus>
+  <bus id="internal2"/>
+ </buses>
+ <label>The BLDC Shield for Arduino is equipped with three IFX007T</label>
+ <url>https://www.infineon.com/cms/en/product/evaluation-boards/bldc-shield_ifx007t/</url>
+</module>
