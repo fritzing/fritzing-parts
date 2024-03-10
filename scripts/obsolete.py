@@ -51,18 +51,18 @@ def main():
         description="Replace a part with a new version of itself.",
         epilog=textwrap.dedent('''
             Run this before editing a part that you want to fix. The script does the following steps.\n 
-                    1. move and the part image to the obsolete directory\n
+                    1. move the part image to the obsolete directory\n
                     2. add a copy of the part and the images with a new name\n
                     3. set a new moduleId for the new part.
                     4. set a replacedby link in the obsoleted part\n
-                    5. All changes are already add to git.\n
+                    5. All changes are already added to git.\n
                     After running the script, you can modify the part, increase the version, fix bugs in the graphics and so on.        
-            
+
             ''')
     )
     parser.add_argument("part", help="The part file that should be replaced.")
     parser.add_argument(
-        "name", help="The name of the part. This can be the same as before or a new name")
+        "name", nargs='?', help="The base name for the new part files. If omitted, the name will be derived from the part filename.")
     parser.add_argument(
         "-s", "--simulate", help="No modifications, just show what would happen.", action='store_true')
     parser.add_argument("-r", "--revision", type=int,
@@ -71,7 +71,7 @@ def main():
     parser.add_argument(
         "-x", "--hash", help="7 digit number to avoid collisions, like two different \"ArduinoUno_v2\" files.")
 
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 2:
         parser.print_help(sys.stderr)
         sys.exit(1)
 
@@ -106,11 +106,17 @@ def main():
     obsolete_fzp = os.path.join(
         topdir, 'obsolete', os.path.basename(fzpFilename))
 
-    if re.search(r"/|\.fzp", args.name):
-        print("<name> should be a name, not a filename. Got: '%s' " % args.name)
+    if args.name:
+        name = args.name
+    else:
+        # Extract the name from the fzpFilename
+        name = os.path.splitext(os.path.basename(fzpFilename))[0]
+        print(f"Name parameter not provided. Deriving name from the part filename: {name}")
+
+    if re.search(r"/|\.fzp", name):
+        print("<name> should be a name, not a filename. Got: '%s' " % name)
         return -1
 
-    name = args.name
     if args.revision:
         revision = "%03d" % args.revision
     else:
@@ -120,7 +126,7 @@ def main():
         part_hash = "%07x" % int(args.hash, 0)
     else:
         part_hash = "%07x" % random.randint(1, 268435454)
-        
+
     new_fzp_filename = "_".join([name, part_hash, revision]) + ".fzp"
     new_svg_filename = "_".join([name, part_hash, revision]) + ".svg"
 
