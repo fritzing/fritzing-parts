@@ -20,8 +20,8 @@
 			<path d="m6.393 24.437h-0.69v3.625s0.208 0.639 0.345 0.639 0.346-0.639 0.346-0.639l-1e-3 -3.625z" fill="#B3B3B3"/>
 			<rect width="19.296" height="21.795" fill="#0071BC"/>
 			<rect y="21.795" width="19.296" height="5.063" fill="#07466F"/>
-			<rect ftoggle="switch2" x="11.066" y="5.476" width="4.32" height="10.802" fill="#E6E6E6"/>
-			<rect ftoggle="switch1" x="3.888" y="5.497" width="4.32" height="10.802" fill="#E6E6E6"/>
+			<rect faction="switch2" x="11.066" y="5.476" width="4.32" height="10.802" fill="#E6E6E6"/>
+			<rect faction="switch1" x="3.888" y="5.497" width="4.32" height="10.802" fill="#E6E6E6"/>
 			<g fill="#ccc">
 				<rect x="12.169" y="6.794" width="2.16" height="8.751"/>
 				<rect x="4.968" y="6.794" width="2.16" height="8.751"/>
@@ -43,7 +43,7 @@
 			<rect y="9.864" width="1.728" height="5.909" fill="#333"/>
 			<rect x="17.568" y="6.412" width="1.729" height="9.361" fill="#07466F"/>
 			<rect x="17.568" y="9.864" width="1.729" height="5.909" fill="#333"/>
-			<g fdata-switch2-on="transform:translate(0,-5.2)" fdata-switch2-off="transform:translate(0,0)">
+			<g faction-switch2-on="transform:translate(0,-5.2)" faction-switch2-off="transform:translate(0,0)">
 				<rect x="11.808" y="10.849" width="2.88" height="4.729" fill="#B3B3B3"/>
 				<rect x="11.841" y="10.849" width="2.88" height="1.128" fill="#F2F2F2"/>
 				<rect x="11.808" y="12.253" width="2.88" height="1.524" fill="#F2F2F2"/>
@@ -58,7 +58,7 @@
 				<rect x="11.8" y="10.849" width=".193" height="1.105" fill="#fff"/>
 				<rect x="11.996" y="10.898" width="1.594" height=".192" fill="#fff"/>
 			</g>
-			<g ftoggle="switch1" fdata-switch1-on="transform:translate(0,0)" fdata-switch1-off="transform:translate(0,5.2)">
+			<g faction-switch1-on="transform:translate(0,0)" faction-switch1-off="transform:translate(0,5.2)">
 				<rect x="4.608" y="5.68" width="2.88" height="4.729" fill="#B3B3B3"/>
 				<rect x="4.608" y="5.68" width="2.88" height="1.128" fill="#F2F2F2"/>
 				<rect x="4.608" y="7.083" width="2.88" height="1.524" fill="#F2F2F2"/>

@@ -15,6 +15,15 @@
 <property name="channels">1</property>
 <property name="family">sparkfun DIP Switch</property>
 </properties>
+<faction type="toggle" name="switch1">
+<on> On </on>
+<off> Off </off>
+</faction>
+<faction type="toggle" name="switch2">
+<on> On </on>
+<off> Off </off>
+</faction>
+
 <views>
 <breadboardView>
 <layers image="breadboard/sparkfun-electromechanical_dipswitch-02_breadboard.svg">
