@@ -18,6 +18,10 @@
  </properties>
  <taxonomy>discreteParts.switches.pushbutton</taxonomy>
  <description>A generic pushbutton.</description>
+<faction type="push" name="switch">
+<off> Off </off>
+<on> On </on>
+</faction>
  <spice>
   <line>* Open switch {instanceTitle} between nets {net connector0} and {net connector1}</line>
  </spice>
