@@ -16,6 +16,10 @@
   <property name="contact resistance">0.1&#937;</property>
  </properties>
  <description>Toggle Switch</description>
+<faction type="toggle" name="switch">
+<on> On </on>
+<off> Off </off>
+</faction>
  <spice>
   <line>R{instanceTitle} {net connector0} {net connector1} {contact resistance}</line>
  </spice>
