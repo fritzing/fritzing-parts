@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<module moduleId="1_TriangularPowerSupplyModuleID" fritzingVersion="0.9.10">
+<module moduleId="1_SquarePulsePowerSupplyModuleID" fritzingVersion="0.9.10">
   <version>1</version>
   <author>Brendan Howell (modified by vanepp Apr 2023 and A. Faina)</author>
   <title>Pulse Power</title>
@@ -13,40 +13,40 @@
   </tags>
   <properties>
     <property name="family">voltage source</property>
-    <property name="type">triangular</property>
-    <property name="offset voltage">0V</property>
-    <property name="amplitude">5V</property>
+    <property name="type">square pulse</property>
+    <property name="initial voltage">0V</property>
+    <property name="pulsed voltage">5V</property>
+    <property name="period">100ms</property>
     <property name="delay time">0s</property>
-    <property name="period">20ms</property>
     <property name="number of pulses">0</property>
     <property name="internal resistance">0.1&#937;</property>
     
   </properties>
-  <taxonomy>discreteParts.power.wavegenerator.triangular</taxonomy>
-  <description>A triangular power symbol</description>
+  <taxonomy>discreteParts.power.wavegenerator.genericpulse</taxonomy>
+  <description>A generic pulse power symbol</description>
   <spice>
-    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} PULSE({-1*{amplitude}+{offset voltage}} {{amplitude}+{offset voltage}} {delay time} {{period}/2} {{period}/2} 1n {period} {number of pulses})</line>
+    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} PULSE({initial voltage} {pulsed voltage} {delay time} 1n 1n {{period}/2} {period} {number of pulses})</line>
     <line>R{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector0} {internal resistance}</line>
   </spice>
   <views>
     <defaultUnits>cmil</defaultUnits>
     <iconView>
-      <layers image="breadboard/waveform_generator_triangular_v1_breadboard.svg">
+      <layers image="schematic/power_supply_pulse_1_schematic.svg">
         <layer layerId="icon"/>
       </layers>
     </iconView>
     <breadboardView>
-      <layers image="breadboard/waveform_generator_triangular_v1_breadboard.svg">
+      <layers image="breadboard/waveform_generator_square_pulse_v1_breadboard.svg">
         <layer layerId="breadboard"/>
       </layers>
     </breadboardView>
     <schematicView>
-      <layers image="schematic/power_supply_triangular_1_schematic.svg">
+      <layers image="schematic/power_supply_pulse_1_schematic.svg">
         <layer layerId="schematic"/>
       </layers>
     </schematicView>
     <pcbView>
-      <layers image="schematic/power_supply_triangular_1_schematic.svg">
+      <layers image="schematic/power_supply_pulse_1_schematic.svg">
         <layer layerId="schematic"/>
       </layers>
     </pcbView>

@@ -13,14 +13,12 @@
   </tags>
   <properties>
     <property name="family">voltage source</property>
-    <property name="type">pulse power supply</property>
+    <property name="type">pulse</property>
     <property name="initial voltage">0V</property>
     <property name="pulsed voltage">5V</property>
     <property name="period">100ms</property>
     <property name="pulse width">10ms</property>
     <property name="delay time">0s</property>
-    <property name="rise time">0s</property>
-    <property name="fall time">0s</property>
     <property name="number of pulses">0</property>
     <property name="internal resistance">0.1&#937;</property>
     
@@ -28,7 +26,7 @@
   <taxonomy>discreteParts.power.wavegenerator.genericpulse</taxonomy>
   <description>A generic pulse power symbol</description>
   <spice>
-    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} PULSE({initial voltage} {pulsed voltage} {delay time} {rise time} {fall time} {pulse width} {period} {number of pulses})</line>
+    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} PULSE({initial voltage} {pulsed voltage} {delay time} 1n 1n {pulse width} {period} {number of pulses})</line>
     <line>R{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector0} {internal resistance}</line>
   </spice>
   <views>
@@ -39,7 +37,7 @@
       </layers>
     </iconView>
     <breadboardView>
-      <layers image="breadboard/waveform_generator_generic_pulse_v1_breadboard.svg">
+      <layers image="breadboard/waveform_generator_pulse_v1_breadboard.svg">
         <layer layerId="breadboard"/>
       </layers>
     </breadboardView>
