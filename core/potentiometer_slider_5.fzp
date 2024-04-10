@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <module fritzingVersion="0.9.9" moduleId="potentiometer_slider_5_PotentiometerModuleID">
   <version>5</version>
   <author>Lionel Michel (modified by A. Faina)</author>
@@ -22,6 +22,13 @@
     <property name="knob status">50%</property>
     <property name="package">THT</property>
   </properties>
+
+<faction type="range" name="resistance"> Resistance
+    <values unit="Ohm">
+        <start>0</start>
+        <end>10000</end>
+    </values>
+</faction>
   <description>A sliding adjustable resistor (potentiometer).</description>
   <spice>
     <line>R{instanceTitle}A {net connector0} {net connector1} {{knob status}/100*{maximum resistance}}</line>
