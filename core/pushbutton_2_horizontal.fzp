@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1201" moduleId="20A9BBEE34_ST-2leadbutton-horizon">
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="1.0.3" moduleId="20A9BBEE34_ST-2leadbutton-horizon">
  <version>4</version>
  <title>Pushbutton</title>
  <date>2008-09-16</date>
+ <history date="2024-04-20" author="Kjell">Add simulation items. Repair terminals. Cleanups"</history>
  <label>S</label>
  <tags>
   <tag>Pushbutton</tag>
@@ -18,10 +19,11 @@
  </properties>
  <taxonomy>discreteParts.switches.pushbutton</taxonomy>
  <description>A generic pushbutton.</description>
-<faction type="push" name="switch">
-<off> Off </off>
-<on> On </on>
-</faction>
+
+ <faction type="push" name="switch">
+  <off> Off </off>
+  <on> On </on>
+ </faction>
  <spice>
   <line>* Open switch {instanceTitle} between nets {net connector0} and {net connector1}</line>
  </spice>
@@ -53,10 +55,10 @@
    <description>leg</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+     <p layer="breadboard" svgId="connector0pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+     <p layer="schematic" svgId="connector0pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector0pin"/>
@@ -67,10 +69,10 @@
    <description>leg</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+     <p layer="breadboard" svgId="connector1pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+     <p layer="schematic" svgId="connector1pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector1pin"/>
