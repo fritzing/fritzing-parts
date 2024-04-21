@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module fritzingVersion="0.1.16.b.02.02.2310" moduleId="a59353bd0db0225dc22770e292c622f3">
+<module fritzingVersion="1.0.3" moduleId="a59353bd0db0225dc22770e292c622f3">
 <version>4</version>
     <author>Brendan Howell</author>
     <title>LM 358 Dual Op-Amp</title>
     <label>U</label>
     <date>2008-02-02</date>
+    <history date="2024-04-21" author="Kjell"> Repair schematic terminals. Cleanup SVGs</history>
     <tags>
         <tag>Op-Amp,LM358</tag>
         <tag>IC</tag>
@@ -62,7 +63,7 @@
                     <p layer="breadboard" svgId="connector4pin" terminalId="connector4terminal"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+                    <p layer="schematic" svgId="connector4pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper0" svgId="connector4pin"/>
@@ -76,7 +77,7 @@
                     <p layer="breadboard" svgId="connector5pin" terminalId="connector5terminal"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+                    <p layer="schematic" svgId="connector5pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper0" svgId="connector5pin"/>
@@ -90,7 +91,7 @@
                     <p layer="breadboard" svgId="connector6pin" terminalId="connector6terminal"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+                    <p layer="schematic" svgId="connector6pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper0" svgId="connector6pin"/>
@@ -104,7 +105,7 @@
                     <p layer="breadboard" svgId="connector7pin" terminalId="connector7terminal"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+                    <p layer="schematic" svgId="connector7pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper0" svgId="connector7pin"/>
@@ -118,7 +119,7 @@
                     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                    <p layer="schematic" svgId="connector0pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper0" svgId="connector0pin"/>
@@ -132,7 +133,7 @@
                     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                    <p layer="schematic" svgId="connector1pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper0" svgId="connector1pin"/>
@@ -146,7 +147,7 @@
                     <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                    <p layer="schematic" svgId="connector2pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper0" svgId="connector2pin"/>
