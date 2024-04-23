@@ -288,6 +288,7 @@
         </instance>
         <!--
         <instance moduleIdRef="d8f570d723ea4d14f9b61b34575a9699" modelIndex="40" path="Power plug.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="1238DBDC00-voltage-reg_7805" modelIndex="41" path="voltage_regulator_7805.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance><instance moduleIdRef="fuse_with_handler_cff5" modelIndex="41" path="Fuse_with_Handler.fzp"><views><iconView layer="icon"><geometry z="-1" x="-1" y="-1"/></iconView></views></instance>-->
+        <!--
         <instance modelIndex="3" moduleIdRef="__spacer__" path="Waveform generators">
             <views>
                 <iconView layer="icon">
@@ -308,7 +309,8 @@
                     <geometry x="-1" y="-1" z="-1"/>
                 </iconView>
             </views>
-        </instance>
+	</instance>
+	-->
         <instance modelIndex="49" moduleIdRef="Breadboard-RSR03MB102-ModuleID" path="breadboard.fzp">
             <views>
                 <iconView layer="icon">
@@ -366,26 +368,28 @@
             </views>
         </instance>
         <instance moduleIdRef="5_DCPowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_dc_5.fzp">
-        <views>
-          <iconView layer="icon">
-            <geometry z="-1" x="-1" y="-1"/>
-          </iconView>
-        </views>
-      </instance>
-      <instance moduleIdRef="1_ACPowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_ac_1.fzp">
-        <views>
-          <iconView layer="icon">
-            <geometry z="-1" x="-1" y="-1"/>
-          </iconView>
-        </views>
-      </instance>
-      <instance moduleIdRef="1_PulsePowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_pulse_1.fzp">
-        <views>
-          <iconView layer="icon">
-            <geometry z="-1" x="-1" y="-1"/>
-          </iconView>
-        </views>
-      </instance>
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="1_ACPowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_ac_1.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <!--
+        <instance moduleIdRef="1_PulsePowerSupplyModuleID" modelIndex="52" path=":/resources/parts/core/power_supply_pulse_1.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        -->
         <instance modelIndex="53" moduleIdRef="PowerLabelModuleID" path=":/resources/parts/core/power_label.fzp">
             <views>
                 <iconView layer="icon">
