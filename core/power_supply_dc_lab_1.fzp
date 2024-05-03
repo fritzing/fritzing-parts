@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module moduleId="1_LabDCPowerSupplyModuleID" fritzingVersion="1.02">
+  <version>1</version>
+  <author>Peter Van Epp (vanepp in forums)</author>
+  <title>DC Power Supply</title>
+  <label>V</label>
+  <date>Sat Sep 29 2023</date>
+  <tags>
+    <tag>DC Power Supply</tag>
+  </tags>
+  <properties>
+    <property name="family">voltage source</property>
+    <property name="type">dc</property>
+    <property name="voltage" showInLabel="yes">12V</property>
+    <property name="max current" showInLabel="yes">0.1A</property>
+    <property name="internal resistance">1&#937;</property>
+  </properties>
+  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;DC Power Supply 30V5A.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <spice>
+    <line>.model labPowerSuppyModel ilimit(r_out_source={internal resistance} r_out_sink={internal resistance} i_limit_source={max current} i_limit_sink={max current})</line>
+    <line>V{instanceTitle}Aux {net connector0}_{instanceTitle}_aux2 {net connector0}_{instanceTitle}_aux 5</line>
+    <line>V{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector1} {voltage}</line>
+    <line>A{instanceTitle} {net connector0}_{instanceTitle}_aux {net connector0}_{instanceTitle}_aux2 {net connector1} {net connector0} labPowerSuppyModel</line>
+  </spice>
+  <views>
+    <iconView>
+      <layers image="breadboard/power_supply_dc_lab_1_breadboard.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/power_supply_dc_lab_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/power_supply_dc_lab_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="pcb/jumper_2_100mil_pcb.svg">
+        <layer layerId="copper0"/>
+        <layer layerId="silkscreen"/>
+        <layer layerId="copper1"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector id="connector1" type="male" name="Pin 1">
+      <description>OUTPUT -</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+    <connector id="connector0" type="male" name="Pin 2">
+      <description>OUTPUT +</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+        </schematicView>
+      </views>
+    </connector>
+  </connectors>
+</module>
