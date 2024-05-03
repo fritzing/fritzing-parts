@@ -19,11 +19,14 @@ class SVGChecker:
 
 class SVGFontSizeChecker(SVGChecker):
     def check(self):
+        errors = 0
         text_elements = self.svg_doc.getElementsByTagName("text")
         for element in text_elements:
             font_size = element.getAttribute("font-size")
             if not re.match(r"^\d+(\.\d+)?$", font_size):
                 print(f"Invalid font size in <text> element: {font_size}")
+                errors += 1
+        return errors
 
     @staticmethod
     def get_name():
@@ -36,13 +39,17 @@ class SVGFontSizeChecker(SVGChecker):
 
 class SVGViewBoxChecker(SVGChecker):
     def check(self):
+        errors = 0
         root_element = self.svg_doc.documentElement
         if root_element.hasAttribute("viewBox"):
             viewbox = root_element.getAttribute("viewBox")
             if not re.match(r"^-?\d+(\.\d+)?( -?\d+(\.\d+)?){3}$", viewbox):
                 print(f"Invalid viewBox attribute: {viewbox}")
+                errors += 1
         else:
             print("Missing viewBox attribute")
+            errors += 1
+        return errors
 
     @staticmethod
     def get_name():
@@ -55,6 +62,7 @@ class SVGViewBoxChecker(SVGChecker):
 
 class SVGIdsChecker(SVGChecker):
     def check(self):
+        errors = 0
         id_set = set()
         elements_with_id = self.svg_doc.getElementsByTagName("*")
         for element in elements_with_id:
@@ -62,8 +70,10 @@ class SVGIdsChecker(SVGChecker):
                 element_id = element.getAttribute("id")
                 if element_id in id_set:
                     print(f"Duplicate id attribute: {element_id}")
+                    errors += 1
                 else:
                     id_set.add(element_id)
+        return errors
 
     @staticmethod
     def get_name():
@@ -73,8 +83,10 @@ class SVGIdsChecker(SVGChecker):
     def get_description():
         return "Check that all id attributes are unique"
 
+
 class SVGInvisibleConnectorsChecker(SVGChecker):
     def check(self):
+        errors = 0
         connectors = self.svg_doc.getElementsByTagName("*")
         for element in connectors:
             if "connector" not in element.getAttribute("id"):
@@ -82,20 +94,20 @@ class SVGInvisibleConnectorsChecker(SVGChecker):
             if "terminal" in element.getAttribute("id"):
                 continue
 
-            hasVisibleChild = False
+            has_visible_child = False
             for child in element.childNodes:
                 if child.nodeType == child.ELEMENT_NODE:
                     fill = child.getAttribute("fill")
                     if fill and fill != "none":
-                        hasVisibleChild = True
+                        has_visible_child = True
                         break
 
-            if hasVisibleChild:
+            if has_visible_child:
                 continue
 
             stroke = element.getAttribute("stroke")
             fill = element.getAttribute("fill")
-            strokewidth = element.getAttribute("stroke-width")
+            stroke_width = element.getAttribute("stroke-width")
 
             if not stroke:
                 style = element.getAttribute("style")
@@ -106,22 +118,24 @@ class SVGInvisibleConnectorsChecker(SVGChecker):
                         if name == "stroke":
                             stroke = styles[index + 1]
                         elif name == "stroke-width":
-                            strokewidth = styles[index + 1]
+                            stroke_width = styles[index + 1]
                         elif name == "fill":
                             fill = styles[index + 1]
 
             if (len(fill) > 0 and fill != "none") or (len(stroke) > 0 and stroke != "none"):
                 continue
 
-            if len(strokewidth) > 0 and strokewidth != "0":
+            if len(stroke_width) > 0 and stroke_width != "0":
                 if stroke == "none":
-                    print("invisible connector", svgFilename, element.getAttribute("id"))
-                    print("  strokewidth is > 0 but stroke is 'none'")
+                    print(f"Invisible connector: {element.getAttribute('id')}")
+                    print("  stroke-width is > 0 but stroke is 'none'")
+                    errors += 1
                 continue
 
-            print("invisible connector", svgFilename, element.getAttribute("id"))
+            print(f"Invisible connector: {element.getAttribute('id')}")
+            errors += 1
 
-            print(f"Invisible connector found: {element.getAttribute('id')}")
+        return errors
 
     @staticmethod
     def get_name():

@@ -4,18 +4,21 @@ from svg_checkers import SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, S
 AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGInvisibleConnectorsChecker]
 
 
-class SVGChecker:
+class SVGCheckerRunner:
     def __init__(self, path):
         self.path = path
+        self.total_errors = 0
 
     def check(self, check_types):
         svg_doc = self._parse_svg()
+        print(f"Scanning file: {self.path}")
 
         for check_type in check_types:
             checker = self._get_checker(check_type, svg_doc)
-            checker.check()
+            errors = checker.check()
+            self.total_errors += errors
 
-        # Close the SVG file
+        print(f"Total errors in {self.path}: {self.total_errors}")
         svg_doc.unlink()
 
     def _parse_svg(self):
@@ -27,6 +30,9 @@ class SVGChecker:
             if check_type == "all" or checker.get_name() == check_type:
                 return checker(svg_doc)
         raise ValueError(f"Invalid check type: {check_type}")
+
+
+AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGInvisibleConnectorsChecker]
 
 
 if __name__ == "__main__":
@@ -48,17 +54,18 @@ if __name__ == "__main__":
 
     try:
         if os.path.isfile(args.path):
-            print(f"Scanning file: {args.path}")
-            checker = SVGChecker(args.path)
-            checker.check(args.checks)
+            checker_runner = SVGCheckerRunner(args.path)
+            checker_runner.check(args.checks)
         elif os.path.isdir(args.path):
             print(f"Scanning directory: {args.path}")
+            total_errors = 0
             for filename in os.listdir(args.path):
                 if filename.endswith(".svg"):
                     filepath = os.path.join(args.path, filename)
-                    print(f"Scanning file: {filepath}")
-                    checker = SVGChecker(filepath)
-                    checker.check(args.checks)
+                    checker_runner = SVGCheckerRunner(filepath)
+                    checker_runner.check(args.checks)
+                    total_errors += checker_runner.total_errors
+            print(f"Total errors in directory: {total_errors}")
         else:
             print(f"Invalid path: {args.path}")
     except ValueError as e:
