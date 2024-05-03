@@ -3,22 +3,24 @@ from svg_checkers import SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, S
 
 AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGInvisibleConnectorsChecker]
 
-
 class SVGCheckerRunner:
-    def __init__(self, path):
+    def __init__(self, path, verbose=False):
         self.path = path
+        self.verbose = verbose
         self.total_errors = 0
 
     def check(self, check_types):
         svg_doc = self._parse_svg()
-        print(f"Scanning file: {self.path}")
+        if self.verbose:
+            print(f"Scanning file: {self.path}")
 
         for check_type in check_types:
             checker = self._get_checker(check_type, svg_doc)
             errors = checker.check()
             self.total_errors += errors
 
-        print(f"Total errors in {self.path}: {self.total_errors}")
+        if self.verbose or self.total_errors > 0:
+            print(f"Total errors in {self.path}: {self.total_errors}")
         svg_doc.unlink()
 
     def _parse_svg(self):
@@ -43,6 +45,7 @@ if __name__ == "__main__":
     parser.add_argument("path", help="Path to SVG file or directory to scan")
     parser.add_argument("checks", nargs="+", choices=[checker.get_name() for checker in AVAILABLE_CHECKERS],
                         help="Type(s) of check to run")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
     args = parser.parse_args()
 
     if not args.checks:
@@ -54,18 +57,20 @@ if __name__ == "__main__":
 
     try:
         if os.path.isfile(args.path):
-            checker_runner = SVGCheckerRunner(args.path)
+            checker_runner = SVGCheckerRunner(args.path, verbose=args.verbose)
             checker_runner.check(args.checks)
         elif os.path.isdir(args.path):
-            print(f"Scanning directory: {args.path}")
+            if args.verbose:
+                print(f"Scanning directory: {args.path}")
             total_errors = 0
             for filename in os.listdir(args.path):
                 if filename.endswith(".svg"):
                     filepath = os.path.join(args.path, filename)
-                    checker_runner = SVGCheckerRunner(filepath)
+                    checker_runner = SVGCheckerRunner(filepath, verbose=args.verbose)
                     checker_runner.check(args.checks)
                     total_errors += checker_runner.total_errors
-            print(f"Total errors in directory: {total_errors}")
+            if args.verbose or total_errors > 0:
+                print(f"Total errors in directory: {total_errors}")
         else:
             print(f"Invalid path: {args.path}")
     except ValueError as e:
