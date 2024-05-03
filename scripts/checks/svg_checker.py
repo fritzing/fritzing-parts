@@ -1,7 +1,7 @@
 from xml.dom import minidom
-from svg_checkers import SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker
+from svg_checkers import SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGInvisibleConnectorsChecker
 
-AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker]
+AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGInvisibleConnectorsChecker]
 
 
 class SVGChecker:

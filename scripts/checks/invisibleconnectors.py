@@ -1,9 +1,3 @@
-# usage:
-#       invisibleconnectors.py -d [svg folder]
-#       invisibleconnectors.py -f [svg file]
-#       looks for connector-like svg elements with no fill or stroke
-
-
 import getopt
 import sys
 import os
@@ -18,7 +12,9 @@ def usage():
 usage:
     invisibleconnectors.py -d [svg folder] 
     invisibleconnectors.py -f [svg file]
-    looks for connector-like svg elements with no fill or stroke
+    Looks for connector-like svg elements with no fill or stroke.
+    Fritzing (at least  version <= 1.0.3) can not colorize open connectors in red if the graphic doesn't have
+    a fill or stroke.    
 """)
 
 
@@ -35,12 +31,26 @@ def check_file(svgFilename):
         for node in element.childNodes:
             if node.nodeType == node.ELEMENT_NODE:
                 todo.append(node)
+
+        if not "connector" in element.getAttribute("id"):
+            continue
+        if "terminal" in element.getAttribute("id"):
+            continue
+
+        hasVisibleChild = False
+        for child in element.childNodes:
+            if child.nodeType == child.ELEMENT_NODE:
+                fill = child.getAttribute("fill")
+                if fill and fill != "none":
+                    hasVisibleChild = True
+                    break
+
+        if hasVisibleChild:
+            continue
+
         stroke = element.getAttribute("stroke")
         fill = element.getAttribute("fill")
         strokewidth = element.getAttribute("stroke-width")
-        id = element.getAttribute("id")
-        if not "connector" in id:
-            continue
 
         if len(stroke) == 0:
             style = element.getAttribute("style")
@@ -61,8 +71,7 @@ def check_file(svgFilename):
         if len(strokewidth) > 0 and strokewidth != "0":
             continue
 
-        print("invisible connector", svgFilename, id)
-
+        print("invisible connector", svgFilename, element.getAttribute("id"))
 
 def main():
     try:
