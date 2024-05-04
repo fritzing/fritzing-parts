@@ -1,7 +1,9 @@
 from xml.dom import minidom
+import re
 from fzp_checkers import *
 from svg_checker_runner import SVGCheckerRunner, AVAILABLE_CHECKERS as SVG_AVAILABLE_CHECKERS
-import re
+from fzp_utils import FZPUtils
+
 
 class FZPCheckerRunner:
     def __init__(self, path, verbose=False):
@@ -33,14 +35,11 @@ class FZPCheckerRunner:
     def _get_checker(self, check_type, fzp_doc):
         for checker in AVAILABLE_CHECKERS:
             if checker.get_name() == check_type:
-                return checker(fzp_doc)
+                if checker == FZPConnectorTerminalChecker:
+                    return checker(fzp_doc, self.path)
+                else:
+                    return checker(fzp_doc)
         raise ValueError(f"Invalid check type: {check_type}")
-
-    def _get_svg(self, image):
-        dir_path = os.path.dirname(self.path)
-        up_one_level = os.path.dirname(dir_path)
-        new_path = os.path.join(up_one_level, 'svg', 'core', image)
-        return new_path
 
     def _is_template(self, svg_path, view):
         # Extract the filename from the svg_path

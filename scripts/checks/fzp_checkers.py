@@ -1,6 +1,7 @@
 import os
 import xml.dom.minidom
 from abc import ABC, abstractmethod
+from fzp_utils import FZPUtils
 
 class FZPChecker(ABC):
     def __init__(self, fzp_doc):
@@ -57,6 +58,10 @@ class FZPMissingTagsChecker(FZPChecker):
         return "Check for missing required tags in the FZP file"
 
 class FZPConnectorTerminalChecker(FZPChecker):
+    def __init__(self, fzp_doc, fzp_path):
+        super().__init__(fzp_doc)
+        self.fzp_path = fzp_path
+
     def check(self):
         errors = 0
         connectors_section = self.fzp_doc.getElementsByTagName("module")[0].getElementsByTagName("connectors")
@@ -65,19 +70,37 @@ class FZPConnectorTerminalChecker(FZPChecker):
             for connector in connectors:
                 connector_id = connector.getAttribute("id")
                 views = connector.getElementsByTagName("views")[0]
-                terminal_ids = []
                 for view in views.childNodes:
+                    terminal_ids = []
                     if view.nodeType == view.ELEMENT_NODE:
-                        terminal_ids.extend([p.getAttribute("terminalId") for p in view.getElementsByTagName("p") if p.hasAttribute("terminalId")])
-                for terminal_id in terminal_ids:
-                    if not self.svg_has_element_with_id(terminal_id):
-                        print(f"Connector {connector_id} references missing terminal {terminal_id} in SVG")
-                        errors += 1
+                        terminal_ids.extend([p.getAttribute("terminalId") for p in view.getElementsByTagName("p") if
+                                             p.hasAttribute("terminalId")])
+                    for terminal_id in terminal_ids:
+                        if not self.svg_has_element_with_id(terminal_id, view.tagName):
+                            print(f"Connector {connector_id} references missing terminal {terminal_id} in SVG")
+                            errors += 1
         return errors
 
-    def svg_has_element_with_id(self, element_id):
-        # Implement this method to check if the referenced SVG has an element with the given ID
-        pass
+    def svg_has_element_with_id(self, element_id, view_name):
+        views = self.fzp_doc.getElementsByTagName("views")[0]
+        for view in views.childNodes:
+            if view.nodeType == view.ELEMENT_NODE and view.tagName == view_name:
+                layers = view.getElementsByTagName("layers")[0]
+                image = layers.getAttribute("image")
+                if image:
+                    svg_path = FZPUtils.get_svg_path(self.fzp_path, image)
+                    try:
+                        svg_doc = xml.dom.minidom.parse(svg_path)
+                        elements = svg_doc.getElementsByTagName("*")
+                        for element in elements:
+                            if element.getAttribute("id") == element_id:
+                                return True
+                    except FileNotFoundError:
+                        print(f"SVG file not found: {svg_path}")
+                    except xml.parsers.expat.ExpatError as err:
+                        print(f"Error parsing SVG file: {svg_path}")
+                        print(str(err))
+        return False
 
     @staticmethod
     def get_name():
