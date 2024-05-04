@@ -59,18 +59,20 @@ class FZPMissingTagsChecker(FZPChecker):
 class FZPConnectorTerminalChecker(FZPChecker):
     def check(self):
         errors = 0
-        connectors = self.fzp_doc.getElementsByTagName("connector")
-        for connector in connectors:
-            connector_id = connector.getAttribute("id")
-            views = connector.getElementsByTagName("views")[0]
-            terminal_ids = []
-            for view in views.childNodes:
-                if view.nodeType == view.ELEMENT_NODE:
-                    terminal_ids.extend([p.getAttribute("terminalId") for p in view.getElementsByTagName("p") if p.hasAttribute("terminalId")])
-            for terminal_id in terminal_ids:
-                if not self.svg_has_element_with_id(terminal_id):
-                    print(f"Connector {connector_id} references missing terminal {terminal_id} in SVG")
-                    errors += 1
+        connectors_section = self.fzp_doc.getElementsByTagName("module")[0].getElementsByTagName("connectors")
+        if connectors_section:
+            connectors = connectors_section[0].getElementsByTagName("connector")
+            for connector in connectors:
+                connector_id = connector.getAttribute("id")
+                views = connector.getElementsByTagName("views")[0]
+                terminal_ids = []
+                for view in views.childNodes:
+                    if view.nodeType == view.ELEMENT_NODE:
+                        terminal_ids.extend([p.getAttribute("terminalId") for p in view.getElementsByTagName("p") if p.hasAttribute("terminalId")])
+                for terminal_id in terminal_ids:
+                    if not self.svg_has_element_with_id(terminal_id):
+                        print(f"Connector {connector_id} references missing terminal {terminal_id} in SVG")
+                        errors += 1
         return errors
 
     def svg_has_element_with_id(self, element_id):
