@@ -4,7 +4,8 @@
  <author>Yihui Xiong</author>
  <title>Grove OLED 128x96</title>
  <label>Grove</label>
- <date>Tue Jul 29 2014</date>
+ <date>2014-07-29</date>
+ <history author="Kjell" date="2024-05-05"> Fix SCL, SDA, fix terminals </history>
  <tags>
   <tag>Grove</tag>
   <tag>Display</tag>
@@ -34,7 +35,7 @@ p, li { white-space: pre-wrap; }
    </layers>
   </breadboardView>
   <schematicView>
-   <layers image="schematic/seeed_grove_generic_schematic.svg">
+   <layers image="schematic/seeed_grove_scl_sda_schematic.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
@@ -51,10 +52,10 @@ p, li { white-space: pre-wrap; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector0pin" layer="breadboard" terminalId="connector0terminal"/>
+     <p svgId="connector0pin" layer="breadboard" />
     </breadboardView>
     <schematicView>
-     <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+     <p svgId="connector0pin" layer="schematic"/>
     </schematicView>
     <pcbView>
      <p svgId="connector0pin" layer="copper0"/>
@@ -66,10 +67,10 @@ p, li { white-space: pre-wrap; }
    <description>VCC</description>
    <views>
     <breadboardView>
-     <p svgId="connector1pin" layer="breadboard" terminalId="connector1terminal"/>
+     <p svgId="connector1pin" layer="breadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+     <p svgId="connector1pin" layer="schematic" />
     </schematicView>
     <pcbView>
      <p svgId="connector1pin" layer="copper0"/>
@@ -81,10 +82,10 @@ p, li { white-space: pre-wrap; }
    <description>SDA</description>
    <views>
     <breadboardView>
-     <p svgId="connector2pin" layer="breadboard" terminalId="connector2terminal"/>
+     <p svgId="connector2pin" layer="breadboard" />
     </breadboardView>
     <schematicView>
-     <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
+     <p svgId="connector2pin" layer="schematic"/>
     </schematicView>
     <pcbView>
      <p svgId="connector2pin" layer="copper0"/>
@@ -96,10 +97,10 @@ p, li { white-space: pre-wrap; }
    <description>SCL</description>
    <views>
     <breadboardView>
-     <p svgId="connector3pin" layer="breadboard" terminalId="connector3terminal"/>
+     <p svgId="connector3pin" layer="breadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector3pin" layer="schematic" terminalId="connector3terminal"/>
+     <p svgId="connector3pin" layer="schematic"/>
     </schematicView>
     <pcbView>
      <p svgId="connector3pin" layer="copper0"/>

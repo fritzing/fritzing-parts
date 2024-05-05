@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module referenceFile="grove_generic.fzp" moduleId="grove_infrared_receiver" fritzingVersion="0.12.34">
+<module referenceFile="grove_generic.fzp" moduleId="grove_infrared_receiver" fritzingVersion="1.0.3">
  <version>4</version>
  <author>Yihui Xiong</author>
  <title>Grove Infrared Receiver</title>
  <label>Grove</label>
- <date>Fri Aug 1 2014</date>
+ <date>2014-08-01</date>
+ <history author="Kjell" date="2024-05-05">Fix RX, fix terminals</history>
  <tags>
   <tag>Button</tag>
   <tag>Grove</tag>
@@ -35,7 +36,7 @@ p, li { white-space: pre-wrap; }
    </layers>
   </breadboardView>
   <schematicView>
-   <layers image="schematic/seeed_grove_generic_schematic.svg">
+   <layers image="schematic/seeed_grove_rx_schematic.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
@@ -52,10 +53,10 @@ p, li { white-space: pre-wrap; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+     <p layer="breadboard" svgId="connector0pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+     <p layer="schematic" svgId="connector0pin" />
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector0pin"/>
@@ -67,10 +68,10 @@ p, li { white-space: pre-wrap; }
    <description>VCC</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+     <p layer="breadboard" svgId="connector1pin" />
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+     <p layer="schematic" svgId="connector1pin" />
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector1pin"/>
@@ -82,10 +83,10 @@ p, li { white-space: pre-wrap; }
    <description>data receive pin</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+     <p layer="breadboard" svgId="connector3pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+     <p layer="schematic" svgId="connector3pin" />
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector3pin"/>
