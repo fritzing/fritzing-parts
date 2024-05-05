@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.12.34" referenceFile="grove_generic.fzp" moduleId="grove_temperature_sensor">
+<module fritzingVersion="1.0.3" referenceFile="grove_generic.fzp" moduleId="grove_temperature_sensor">
  <version>4</version>
  <author>Yihui Xiong</author>
  <title>Grove Temperature Sensor</title>
@@ -52,10 +52,10 @@ p, li { white-space: pre-wrap; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+     <p layer="breadboard" svgId="connector0pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+     <p layer="schematic" svgId="connector0pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector0pin"/>
@@ -67,10 +67,10 @@ p, li { white-space: pre-wrap; }
    <description>VCC</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+     <p layer="breadboard" svgId="connector1pin"/>
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+     <p layer="schematic" svgId="connector1pin" />
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector1pin"/>
@@ -82,10 +82,10 @@ p, li { white-space: pre-wrap; }
    <description>signal</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+     <p layer="breadboard" svgId="connector3pin" />
     </breadboardView>
     <schematicView>
-     <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+     <p layer="schematic" svgId="connector3pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector3pin"/>

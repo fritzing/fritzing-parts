@@ -4,8 +4,8 @@
  <author>Stephen Parry</author>
  <title>Camdenboss CTB0158-6</title>
  <label>J</label>
- <date>Mon Jun 20 2016</date>
- <tags>fritzing core</tags>
+ <date>2016-06-20</date>
+ <tags><tag>connector</tag></tags>
  <properties>
   <property name="family">CTB01x8</property>
   <property name="variant">90° 6 connector</property>
@@ -58,7 +58,7 @@ p, li { white-space: pre-wrap; }
    <description>pin 1</description>
    <views>
     <breadboardView>
-     <p terminalId="connector0terminal" layer="breadboard" svgId="connector0pin"/>
+     <p layer="breadboard" svgId="connector0pin"/>
     </breadboardView>
     <schematicView>
      <p terminalId="connector0terminal" layer="schematic" svgId="connector0pin"/>
@@ -73,7 +73,7 @@ p, li { white-space: pre-wrap; }
    <description>pin 2</description>
    <views>
     <breadboardView>
-     <p terminalId="connector1terminal" layer="breadboard" svgId="connector1pin"/>
+     <p layer="breadboard" svgId="connector1pin"/>
     </breadboardView>
     <schematicView>
      <p terminalId="connector1terminal" layer="schematic" svgId="connector1pin"/>
@@ -88,10 +88,10 @@ p, li { white-space: pre-wrap; }
    <description>pin 3</description>
    <views>
     <breadboardView>
-     <p terminalId="connector2terminal" layer="breadboard" svgId="connector2pin"/>
+     <p layer="breadboard" svgId="connector2pin"/>
     </breadboardView>
     <schematicView>
-     <p terminalId="connector2terminal" layer="schematic" svgId="connector2pin"/>
+     <p layer="schematic" svgId="connector2pin"/>
     </schematicView>
     <pcbView>
      <p layer="copper0" svgId="connector2pin"/>
@@ -103,7 +103,7 @@ p, li { white-space: pre-wrap; }
    <description>pin 4</description>
    <views>
     <breadboardView>
-     <p terminalId="connector3terminal" layer="breadboard" svgId="connector3pin"/>
+     <p layer="breadboard" svgId="connector3pin"/>
     </breadboardView>
     <schematicView>
      <p terminalId="connector3terminal" layer="schematic" svgId="connector3pin"/>
@@ -118,7 +118,7 @@ p, li { white-space: pre-wrap; }
    <description>pin 5</description>
    <views>
     <breadboardView>
-     <p terminalId="connector4terminal" layer="breadboard" svgId="connector4pin"/>
+     <p layer="breadboard" svgId="connector4pin"/>
     </breadboardView>
     <schematicView>
      <p terminalId="connector4terminal" layer="schematic" svgId="connector4pin"/>
@@ -133,7 +133,7 @@ p, li { white-space: pre-wrap; }
    <description>pin 6</description>
    <views>
     <breadboardView>
-     <p terminalId="connector5terminal" layer="breadboard" svgId="connector5pin"/>
+     <p layer="breadboard" svgId="connector5pin"/>
     </breadboardView>
     <schematicView>
      <p terminalId="connector5terminal" layer="schematic" svgId="connector5pin"/>

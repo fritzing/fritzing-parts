@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.1.1255" referenceFile="basic_fet_n.fzp" moduleId="Fairchild_MBR745">
+<module fritzingVersion="1.0.3" referenceFile="basic_fet_n.fzp" moduleId="Fairchild_MBR745">
  <version>5</version>
  <author>S. van Doorn, F.Althaus</author>
  <title>MBR745 Schottky</title>
  <label>D</label>
- <date>Tue Nov 18 2014</date>
+ <date>2014-11-18</date>
  <tags>
   <tag>DIODE</tag>
   <tag>Schottky</tag>
@@ -56,7 +56,7 @@ p, li { white-space: pre-wrap; }
      <p legId="connector0leg" svgId="connector0pin" layer="breadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector0pin" terminalId="connector0terminal" layer="schematic"/>
+     <p svgId="connector0pin" layer="schematic"/>
     </schematicView>
     <pcbView>
      <p svgId="connector0pad" layer="copper0"/>
@@ -71,7 +71,7 @@ p, li { white-space: pre-wrap; }
      <p legId="connector1leg" svgId="connector1pin" layer="breadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector1pin" terminalId="connector1terminal" layer="schematic"/>
+     <p svgId="connector1pin" layer="schematic"/>
     </schematicView>
     <pcbView>
      <p svgId="connector1pad" layer="copper0"/>
