@@ -73,6 +73,9 @@ class FZPConnectorTerminalChecker(FZPChecker):
                 for view in views.childNodes:
                     terminal_ids = []
                     if view.nodeType == view.ELEMENT_NODE:
+                        if view.tagName != "schematicView":
+                            continue
+
                         terminal_ids.extend([p.getAttribute("terminalId") for p in view.getElementsByTagName("p") if
                                              p.hasAttribute("terminalId")])
                     for terminal_id in terminal_ids:
@@ -89,6 +92,8 @@ class FZPConnectorTerminalChecker(FZPChecker):
                 image = layers.getAttribute("image")
                 if image:
                     svg_path = FZPUtils.get_svg_path(self.fzp_path, image)
+                    if FZPUtils.is_template(svg_path, view_name):
+                        return True # We assume the template has the requested ID
                     try:
                         svg_doc = xml.dom.minidom.parse(svg_path)
                         elements = svg_doc.getElementsByTagName("*")
@@ -97,6 +102,7 @@ class FZPConnectorTerminalChecker(FZPChecker):
                                 return True
                     except FileNotFoundError:
                         print(f"SVG file not found: {svg_path}")
+                        return True # Not a 'missing element' if the complete file is missing
                     except xml.parsers.expat.ExpatError as err:
                         print(f"Error parsing SVG file: {svg_path}")
                         print(str(err))

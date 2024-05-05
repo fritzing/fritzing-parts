@@ -41,43 +41,6 @@ class FZPCheckerRunner:
                     return checker(fzp_doc)
         raise ValueError(f"Invalid check type: {check_type}")
 
-    def _is_template(self, svg_path, view):
-        # Extract the filename from the svg_path
-        filename = os.path.basename(svg_path)
-
-        # Initialize the flag to False
-        starts_with_prefix = False
-
-        if view == 'breadboardView':
-            # Check if filename starts with 'generic_ic_' or matches the 'generic_female_pin_header_' pattern
-            if filename.startswith('generic_ic_'):
-                starts_with_prefix = True
-            else:
-                # Define regex pattern for 'generic_female_pin_header_' filenames
-                pattern = r'^generic_female_pin_header_\d+_100mil_bread\.svg$'
-                starts_with_prefix = bool(re.match(pattern, filename))
-
-        elif view == 'iconView':
-            # For iconView, the filename should still start with 'generic_ic_'
-            starts_with_prefix = filename.startswith('generic_ic_')
-
-        elif view == 'schematicView':
-            # For schematicView, the filename should start with 'generic_'
-            starts_with_prefix = filename.startswith('generic_')
-
-        elif view == 'pcbView':
-            # For pcbView, check if the filename matches the 'dip_' or 'jumper_' pattern
-            dip_pattern = r'^dip_\d+_\d+mil_pcb\.svg$'
-            jumper_pattern = r'^jumper_\d+_\d+mil_pcb\.svg$'
-            starts_with_prefix = bool(re.match(dip_pattern, filename) or re.match(jumper_pattern, filename))
-
-        # Define valid views
-        valid_views = ['breadboardView', 'iconView', 'schematicView', 'pcbView']
-
-        # Check if the view is valid and if the filename starts with the correct prefix or matches the pattern
-        valid_view = view in valid_views
-        return starts_with_prefix and valid_view
-
     def _run_svg_checkers(self, fzp_doc, svg_check_types):
         views = fzp_doc.getElementsByTagName("views")[0]
         for view in views.childNodes:
@@ -93,7 +56,7 @@ class FZPCheckerRunner:
                             svg_checker_runner.check(svg_check_types)
                             self.total_errors += svg_checker_runner.total_errors
                         else:
-                            if self._is_template(svg_path, view.tagName):
+                            if FZPUtils.is_template(svg_path, view.tagName):
                                 continue
                             else:
                                 print(f"Warning: SVG '{svg_path}' for view '{view.tagName}' of file '{self.path}' not found.")
