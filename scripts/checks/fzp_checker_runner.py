@@ -71,13 +71,26 @@ if __name__ == "__main__":
 
     all_checkers = AVAILABLE_CHECKERS + SVG_AVAILABLE_CHECKERS
 
-    parser = argparse.ArgumentParser(description="Scan FZP files for various checks")
+    parser = argparse.ArgumentParser(description="Scan FZP files for various checks", add_help=False)
     parser.add_argument("path", help="Path to FZP file or directory to scan")
     parser.add_argument("checks", nargs="*",
                         choices=[checker.get_name() for checker in all_checkers],
                         help="Type(s) of check to run (default: all)")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
+    parser.add_argument('-h', '--help', action='store_true', help='Show this help message and exit')
+    parser.usage = parser.format_help()
+
     args = parser.parse_args()
+
+    if args.help:
+        print("\nAvailable FZP checks:")
+        for checker in AVAILABLE_CHECKERS:
+            print(f"{checker.get_name()}:\n{checker.get_description()}\n")
+        print("Available SVG checks:")
+        for checker in SVG_AVAILABLE_CHECKERS:
+            print(f"{checker.get_name()}:\n{checker.get_description()}\n")
+        parser.print_help()
+        exit()
 
     fzp_checks = [checker.get_name() for checker in AVAILABLE_CHECKERS]
     svg_checks = [checker.get_name() for checker in SVG_AVAILABLE_CHECKERS]
@@ -88,17 +101,10 @@ if __name__ == "__main__":
     selected_fzp_checks = [check for check in args.checks if check in fzp_checks]
     selected_svg_checks = [check for check in args.checks if check in svg_checks]
 
-    if not selected_fzp_checks and not selected_svg_checks:
-        print("Available FZP checks:")
-        for checker in AVAILABLE_CHECKERS:
-            print(f"{checker.get_name()}: {checker.get_description()}")
-        print("\nAvailable SVG checks:")
-        for checker in SVG_AVAILABLE_CHECKERS:
-            print(f"{checker.get_name()}: {checker.get_description()}")
-        parser.print_help()
-        exit()
-
     try:
+        if not selected_fzp_checks and not selected_svg_checks:
+            raise ValueError("No valid check types specified.")
+
         if os.path.isfile(args.path):
             checker_runner = FZPCheckerRunner(args.path, verbose=args.verbose)
             checker_runner.check(selected_fzp_checks, selected_svg_checks)
@@ -115,7 +121,7 @@ if __name__ == "__main__":
             if args.verbose or total_errors > 0:
                 print(f"Total errors in directory: {total_errors}")
         else:
-            print(f"Invalid path: {args.path}")
+            raise ValueError(f"Invalid path: {args.path}")
     except ValueError as e:
         print(str(e))
         parser.print_help()
