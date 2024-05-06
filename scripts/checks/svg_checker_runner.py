@@ -16,6 +16,8 @@ class SVGCheckerRunner:
 
         for check_type in check_types:
             checker = self._get_checker(check_type, svg_doc)
+            if self.verbose:
+                print(f"Running SVG check: {checker.get_name()} on {self.path}")
             errors = checker.check()
             self.total_errors += errors
 

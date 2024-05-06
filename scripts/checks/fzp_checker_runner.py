@@ -18,6 +18,9 @@ class FZPCheckerRunner:
 
         for check_type in check_types:
             checker = self._get_checker(check_type, fzp_doc)
+            if self.verbose:
+                print(f"Running check: {checker.get_name()}")
+
             errors = checker.check()
             self.total_errors += errors
 
@@ -50,7 +53,7 @@ class FZPCheckerRunner:
                     layers = layers_elements[0]
                     image = layers.getAttribute("image")
                     if image:
-                        svg_path = self._get_svg(image)
+                        svg_path = FZPUtils.get_svg_path(self.path, image)
                         if os.path.isfile(svg_path):
                             svg_checker_runner = SVGCheckerRunner(svg_path, verbose=self.verbose)
                             svg_checker_runner.check(svg_check_types)
@@ -73,8 +76,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Scan FZP files for various checks", add_help=False)
     parser.add_argument("path", help="Path to FZP file or directory to scan")
-    parser.add_argument("checks", nargs="*",
-                        choices=[checker.get_name() for checker in all_checkers],
+    parser.add_argument("-c", "--checks", nargs="*", default=["all"],
+                        choices=["all"] + [checker.get_name() for checker in all_checkers],
                         help="Type(s) of check to run (default: all)")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
     parser.add_argument('-h', '--help', action='store_true', help='Show this help message and exit')
@@ -95,8 +98,8 @@ if __name__ == "__main__":
     fzp_checks = [checker.get_name() for checker in AVAILABLE_CHECKERS]
     svg_checks = [checker.get_name() for checker in SVG_AVAILABLE_CHECKERS]
 
-    if not args.checks:
-        args.checks = fzp_checks
+    if args.checks == ["all"]:
+        args.checks = fzp_checks + svg_checks
 
     selected_fzp_checks = [check for check in args.checks if check in fzp_checks]
     selected_svg_checks = [check for check in args.checks if check in svg_checks]
