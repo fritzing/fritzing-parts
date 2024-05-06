@@ -1,5 +1,4 @@
 from xml.dom import minidom
-import re
 from fzp_checkers import *
 from svg_checker_runner import SVGCheckerRunner, AVAILABLE_CHECKERS as SVG_AVAILABLE_CHECKERS
 from fzp_utils import FZPUtils
@@ -12,6 +11,7 @@ class FZPCheckerRunner:
         self.total_errors = 0
 
     def check(self, check_types, svg_check_types):
+        self.total_errors = 0
         fzp_doc = self._parse_fzp()
         if self.verbose:
             print(f"Scanning file: {self.path}")
@@ -67,6 +67,28 @@ class FZPCheckerRunner:
                 else:
                     print(f"Warning: No 'layers' element found in view '{view.tagName}' of file '{self.path}'")
 
+    def search_and_check_fzp_files(self, svg_file, fzp_dir, check_types, svg_check_types):
+        errors = 0
+        fzp_files = self._search_fzp_files_with_svg(svg_file, fzp_dir)
+        for fzp_file in fzp_files:
+            self.path = fzp_file
+            self.check(check_types, svg_check_types)
+            errors += self.total_errors
+        return errors
+
+    def _search_fzp_files_with_svg(self, svg_file, fzp_dir):
+        fzp_files = []
+        svg_filename = os.path.basename(svg_file)
+        for root, dirs, files in os.walk(fzp_dir):
+            for file in files:
+                if file.endswith(".fzp"):
+                    fzp_path = os.path.join(root, file)
+                    with open(fzp_path, 'r') as f:
+                        fzp_content = f.read()
+                        if svg_filename in fzp_content:
+                            fzp_files.append(fzp_path)
+        return fzp_files
+
 AVAILABLE_CHECKERS = [FZPValidXMLChecker, FZPMissingTagsChecker, FZPConnectorTerminalChecker]
 
 if __name__ == "__main__":
@@ -79,6 +101,7 @@ if __name__ == "__main__":
     parser.add_argument("-c", "--checks", nargs="*", default=["all"],
                         choices=["all"] + [checker.get_name() for checker in all_checkers],
                         help="Type(s) of check to run (default: all)")
+    parser.add_argument("-s", "--svg", help="Path to an SVG file to search for in FZP files")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
     parser.add_argument('-h', '--help', action='store_true', help='Show this help message and exit')
     parser.usage = parser.format_help()
@@ -108,23 +131,29 @@ if __name__ == "__main__":
         if not selected_fzp_checks and not selected_svg_checks:
             raise ValueError("No valid check types specified.")
 
-        if os.path.isfile(args.path):
-            checker_runner = FZPCheckerRunner(args.path, verbose=args.verbose)
-            checker_runner.check(selected_fzp_checks, selected_svg_checks)
+        total_errors = 0
+        checker_runner = FZPCheckerRunner(None, verbose=args.verbose)
+
+        if args.svg and os.path.isdir(args.path):
+            total_errors += checker_runner.search_and_check_fzp_files(args.svg, args.path, selected_fzp_checks, selected_svg_checks)
+        elif os.path.isfile(args.path):
+            checker_runner.path = args.path
+            total_errors += checker_runner.check(selected_fzp_checks, selected_svg_checks)
         elif os.path.isdir(args.path):
             if args.verbose:
                 print(f"Scanning directory: {args.path}")
-            total_errors = 0
             for filename in os.listdir(args.path):
                 if filename.endswith(".fzp"):
                     filepath = os.path.join(args.path, filename)
-                    checker_runner = FZPCheckerRunner(filepath, verbose=args.verbose)
+                    checker_runner.path = filepath
                     checker_runner.check(selected_fzp_checks, selected_svg_checks)
                     total_errors += checker_runner.total_errors
-            if args.verbose or total_errors > 0:
-                print(f"Total errors in directory: {total_errors}")
         else:
             raise ValueError(f"Invalid path: {args.path}")
+
+        if args.verbose or total_errors > 0:
+            print(f"Total errors in directory: {total_errors}")
+
     except ValueError as e:
         print(str(e))
         parser.print_help()
