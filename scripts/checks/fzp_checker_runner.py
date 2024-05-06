@@ -102,6 +102,7 @@ if __name__ == "__main__":
                         choices=["all"] + [checker.get_name() for checker in all_checkers],
                         help="Type(s) of check to run (default: all)")
     parser.add_argument("-s", "--svg", help="Path to an SVG file to search for in FZP files")
+    parser.add_argument("-f", "--file", help="Path to a file containing a list of SVG and FZP files to check")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
     parser.add_argument('-h', '--help', action='store_true', help='Show this help message and exit')
     parser.usage = parser.format_help()
@@ -134,26 +135,38 @@ if __name__ == "__main__":
         total_errors = 0
         checker_runner = FZPCheckerRunner(None, verbose=args.verbose)
 
-        if args.svg and os.path.isdir(args.path):
-            total_errors += checker_runner.search_and_check_fzp_files(args.svg, args.path, selected_fzp_checks, selected_svg_checks)
+        fzp_files = set()
+
+        if args.file:
+            with open(args.file, "r") as file:
+                for line in file:
+                    filepath = line.strip()
+                    if filepath.endswith(".fzp"):
+                        fzp_files.add(os.path.join(args.path, filepath))
+                    elif filepath.endswith(".svg"):
+                        fzp_files.update(checker_runner._search_fzp_files_with_svg(filepath, args.path))
+        elif args.svg and os.path.isdir(args.path):
+            fzp_files.update(checker_runner._search_fzp_files_with_svg(args.svg, args.path))
         elif os.path.isfile(args.path):
-            checker_runner.path = args.path
-            total_errors += checker_runner.check(selected_fzp_checks, selected_svg_checks)
+            fzp_files.add(args.path)
         elif os.path.isdir(args.path):
-            if args.verbose:
-                print(f"Scanning directory: {args.path}")
             for filename in os.listdir(args.path):
                 if filename.endswith(".fzp"):
-                    filepath = os.path.join(args.path, filename)
-                    checker_runner.path = filepath
-                    checker_runner.check(selected_fzp_checks, selected_svg_checks)
-                    total_errors += checker_runner.total_errors
-        else:
-            raise ValueError(f"Invalid path: {args.path}")
+                    fzp_files.add(os.path.join(args.path, filename))
+
+        if args.verbose:
+            print(f"Checking {len(fzp_files)} FZP files")
+
+        for fzp_file in fzp_files:
+            checker_runner.path = fzp_file
+            checker_runner.check(selected_fzp_checks, selected_svg_checks)
+            total_errors += checker_runner.total_errors
 
         if args.verbose or total_errors > 0:
-            print(f"Total errors in directory: {total_errors}")
+            print(f"Total errors: {total_errors}")
+            exit(total_errors)
 
     except ValueError as e:
-        print(str(e))
-        parser.print_help()
+            print(str(e))
+            parser.print_help()
+
