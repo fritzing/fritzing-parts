@@ -97,7 +97,7 @@ class SVGInvisibleConnectorsChecker(SVGChecker):
             has_visible_child = False
             for child in element.childNodes:
                 if child.nodeType == child.ELEMENT_NODE:
-                    fill = child.getAttribute("fill")
+                    fill = self.get_inherited_property(child, "fill")
                     if fill and fill != "none":
                         has_visible_child = True
                         break
@@ -105,22 +105,9 @@ class SVGInvisibleConnectorsChecker(SVGChecker):
             if has_visible_child:
                 continue
 
-            stroke = element.getAttribute("stroke")
-            fill = element.getAttribute("fill")
-            stroke_width = element.getAttribute("stroke-width")
-
-            if not stroke:
-                style = element.getAttribute("style")
-                if style:
-                    style = style.replace(";", ":")
-                    styles = style.split(":")
-                    for index, name in enumerate(styles):
-                        if name == "stroke":
-                            stroke = styles[index + 1]
-                        elif name == "stroke-width":
-                            stroke_width = styles[index + 1]
-                        elif name == "fill":
-                            fill = styles[index + 1]
+            stroke = self.get_inherited_property(element, "stroke")
+            fill = self.get_inherited_property(element, "fill")
+            stroke_width = self.get_inherited_property(element, "stroke-width")
 
             if (len(fill) > 0 and fill != "none") or (len(stroke) > 0 and stroke != "none"):
                 continue
@@ -136,6 +123,21 @@ class SVGInvisibleConnectorsChecker(SVGChecker):
             errors += 1
 
         return errors
+
+    def get_inherited_property(self, element, property_name):
+        while element is not None:
+            if element.nodeType == element.ELEMENT_NODE:
+                if element.hasAttribute(property_name):
+                    return element.getAttribute(property_name)
+                style = element.getAttribute("style")
+                if style:
+                    style = style.replace(";", ":")
+                    styles = style.split(":")
+                    for index, name in enumerate(styles):
+                        if name == property_name:
+                            return styles[index + 1]
+            element = element.parentNode
+        return ""
 
     @staticmethod
     def get_name():
