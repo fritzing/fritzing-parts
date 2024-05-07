@@ -12,7 +12,13 @@ class FZPCheckerRunner:
 
     def check(self, check_types, svg_check_types):
         self.total_errors = 0
-        fzp_doc = self._parse_fzp()
+        try:
+            fzp_doc = self._parse_fzp()
+        except xml.parsers.expat.ExpatError as e:
+            print(f"Invalid XML: {str(e)}")
+            self.total_errors += 1
+            return
+
         if self.verbose:
             print(f"Scanning file: {self.path}")
 
@@ -38,11 +44,12 @@ class FZPCheckerRunner:
     def _get_checker(self, check_type, fzp_doc):
         for checker in AVAILABLE_CHECKERS:
             if checker.get_name() == check_type:
-                if checker == FZPConnectorTerminalChecker:
+                if checker in [FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker]:
                     return checker(fzp_doc, self.path)
                 else:
                     return checker(fzp_doc)
         raise ValueError(f"Invalid check type: {check_type}")
+
 
     def _run_svg_checkers(self, fzp_doc, svg_check_types):
         views = fzp_doc.getElementsByTagName("views")[0]
@@ -89,7 +96,7 @@ class FZPCheckerRunner:
                             fzp_files.append(fzp_path)
         return fzp_files
 
-AVAILABLE_CHECKERS = [FZPValidXMLChecker, FZPMissingTagsChecker, FZPConnectorTerminalChecker]
+AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker]
 
 if __name__ == "__main__":
     import argparse

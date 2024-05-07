@@ -1,7 +1,7 @@
 from xml.dom import minidom
-from svg_checkers import SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGInvisibleConnectorsChecker
+from svg_checkers import SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker
 
-AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGInvisibleConnectorsChecker]
+AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker]
 
 class SVGCheckerRunner:
     def __init__(self, path, verbose=False):
@@ -34,9 +34,6 @@ class SVGCheckerRunner:
             if check_type == "all" or checker.get_name() == check_type:
                 return checker(svg_doc)
         raise ValueError(f"Invalid check type: {check_type}")
-
-
-AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGInvisibleConnectorsChecker]
 
 
 if __name__ == "__main__":
