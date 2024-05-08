@@ -2,8 +2,7 @@ import unittest
 import os
 import sys
 from io import StringIO
-from fzp_checker_runner import FZPCheckerRunner, AVAILABLE_CHECKERS
-from svg_checker_runner import SVGCheckerRunner, AVAILABLE_CHECKERS as SVG_AVAILABLE_CHECKERS
+from fzp_checker_runner import FZPCheckerRunner, AVAILABLE_CHECKERS, SVG_AVAILABLE_CHECKERS
 
 class TestCheckers(unittest.TestCase):
     def setUp(self):
@@ -38,17 +37,8 @@ class TestCheckers(unittest.TestCase):
         fzp_file = os.path.join(self.test_data_dir, fzp_filename)
         checker_runner = FZPCheckerRunner(fzp_file, verbose=self.verbose)
 
-        #captured_output = StringIO()
-        # sys.stdout = captured_output
-
-        # Run specific FZP and SVG checkers for this test case
+             # Run specific FZP and SVG checkers for this test case
         checker_runner.check(fzp_checkers, svg_checkers)
-
-        # sys.stdout = sys.__stdout__
-
-        # if expected_message:
-        # self.assertIn(expected_message, captured_output.getvalue())
-        # print(captured_output)
 
         self.assertEqual(checker_runner.total_errors, expected_errors)
 
@@ -58,14 +48,13 @@ class TestCheckers(unittest.TestCase):
                          ['font_size','viewbox','ids'], 0, None)
 
     # def test_missing_tags(self):
-    #     self.run_checker('missing_tags.fzp', ['MissingTags'], [], 1, 'Missing required tag')
+    #     self.run_checker('missing_tags.fzp.test', ['missing_tags'], [], 1, 'Missing required tag')
     #
     # def test_invalid_terminal(self):
-    #     self.run_checker('invalid_terminal.fzp', ['InvalidTerminal'], [], 1, 'references missing terminal')
+    #     self.run_checker('invalid_terminal.fzp.test', ['connector_terminal'], [], 1, 'references missing terminal')
     #
     # def test_invisible_connector(self):
-    #     self.run_checker('invisible_connector.fzp', ['InvisibleConnector'], [], 1, 'Invisible connector')
-
+    #     self.run_checker('invisible_connector.fzp.test', ['connector_visibility'], [], 1, 'Invisible connector')
 
 if __name__ == '__main__':
     unittest.main()

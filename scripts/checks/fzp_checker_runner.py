@@ -1,6 +1,6 @@
 from xml.dom import minidom
 from fzp_checkers import *
-from svg_checker_runner import SVGCheckerRunner, AVAILABLE_CHECKERS as SVG_AVAILABLE_CHECKERS
+from svg_checkers import *
 from fzp_utils import FZPUtils
 
 
@@ -50,11 +50,14 @@ class FZPCheckerRunner:
                     return checker(fzp_doc)
         raise ValueError(f"Invalid check type: {check_type}")
 
-
     def _run_svg_checkers(self, fzp_doc, svg_check_types):
         views = fzp_doc.getElementsByTagName("views")[0]
         for view in views.childNodes:
             if view.nodeType == view.ELEMENT_NODE:
+                if view.tagName == "defaultUnits":
+                    # defaultUnits seems unused in Fritzing.
+                    # Write a script to remove this from all core parts?
+                    continue
                 layers_elements = view.getElementsByTagName("layers")
                 if layers_elements:
                     layers = layers_elements[0]
@@ -70,9 +73,19 @@ class FZPCheckerRunner:
                     if image:
                         svg_path = FZPUtils.get_svg_path(self.path, image)
                         if os.path.isfile(svg_path):
-                            svg_checker_runner = SVGCheckerRunner(svg_path, verbose=self.verbose)
-                            svg_checker_runner.check(svg_check_types)
-                            self.total_errors += svg_checker_runner.total_errors
+                            try:
+                                svg_doc = minidom.parse(svg_path)
+                                for check_type in svg_check_types:
+                                    checker = self._get_svg_checker(check_type, svg_doc, layer_ids)
+                                    if self.verbose:
+                                        print(f"Running SVG check: {checker.get_name()} on {svg_path} for {view.tagName}")
+                                    errors = checker.check()
+                                    self.total_errors += errors
+                            except xml.parsers.expat.ExpatError as e:
+                                print(f"Invalid XML in SVG: {str(e)}")
+                                self.total_errors += 1
+                            finally:
+                                svg_doc.unlink()
                         else:
                             if FZPUtils.is_template(svg_path, view.tagName):
                                 continue
@@ -81,6 +94,12 @@ class FZPCheckerRunner:
                                 self.total_errors += 1
                 else:
                     print(f"Warning: No 'layers' element found in view '{view.tagName}' of file '{self.path}'")
+
+    def _get_svg_checker(self, check_type, svg_doc, layer_ids):
+        for checker in SVG_AVAILABLE_CHECKERS:
+            if checker.get_name() == check_type:
+                return checker(svg_doc, layer_ids)
+        raise ValueError(f"Invalid SVG check type: {check_type}")
 
     def search_and_check_fzp_files(self, svg_file, fzp_dir, check_types, svg_check_types):
         errors = 0
@@ -105,6 +124,7 @@ class FZPCheckerRunner:
         return fzp_files
 
 AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker]
+SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker]
 
 if __name__ == "__main__":
     import argparse
@@ -182,6 +202,5 @@ if __name__ == "__main__":
             exit(total_errors)
 
     except ValueError as e:
-            print(str(e))
-            parser.print_help()
-
+        print(str(e))
+        parser.print_help()
