@@ -59,6 +59,14 @@ class FZPCheckerRunner:
                 if layers_elements:
                     layers = layers_elements[0]
                     image = layers.getAttribute("image")
+
+                    layer_ids = []
+                    layer_elements = layers.getElementsByTagName("layer")
+                    for layer_element in layer_elements:
+                        layer_id = layer_element.getAttribute("layerId")
+                        if layer_id:
+                            layer_ids.append(layer_id)
+
                     if image:
                         svg_path = FZPUtils.get_svg_path(self.path, image)
                         if os.path.isfile(svg_path):

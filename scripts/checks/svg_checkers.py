@@ -3,7 +3,9 @@ import re
 
 class SVGChecker:
     def __init__(self, svg_doc):
+        #, layer_ids):
         self.svg_doc = svg_doc
+        # self.layer_ids =  layer_ids
 
     def check(self):
         pass
@@ -40,6 +42,11 @@ class SVGFontSizeChecker(SVGChecker):
 class SVGViewBoxChecker(SVGChecker):
     def check(self):
         errors = 0
+
+        # For icons, we don't really need a viewBox
+        # if self.layer_ids == ['icon']:
+        #     return errors
+
         root_element = self.svg_doc.documentElement
         if root_element.hasAttribute("viewBox"):
             viewbox = root_element.getAttribute("viewBox")
