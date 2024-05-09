@@ -42,10 +42,29 @@ class TestCheckers(unittest.TestCase):
 
         self.assertEqual(checker_runner.total_errors, expected_errors)
 
-    def test_pcb_only(self):
+    def test_pcb_only_part(self):
         self.run_checker('pcb_only.fzp.test',
                          ['missing_tags','connector_terminal','connector_visibility'],
                          ['font_size','viewbox','ids'], 0, None)
+
+    def test_hybrid_connectors_part(self):
+        self.run_checker('hybrid_connectors.fzp.test',
+                         ['missing_tags','connector_terminal','connector_visibility'],
+                         ['font_size','viewbox','ids'], 7, None)
+        # Expected errors:
+        # connector0 to 5 are covered, but it is not yet specified how
+        # this could be supported by Fritzing in a cleaner way.
+        # connector9 is really not visible, and therefore rendered incorrect, which is the issue we want to report
+        # with the invisible_connectors test.
+        # Invisible connector 'connector0pin' in layer 'breadboard' of file 'test_data/core/hybrid_connectors.fzp.test'
+        # Invisible connector 'connector1pin' in layer 'breadboard' of file 'test_data/core/hybrid_connectors.fzp.test'
+        # Invisible connector 'connector2pin' in layer 'breadboard' of file 'test_data/core/hybrid_connectors.fzp.test'
+        # Invisible connector 'connector3pin' in layer 'breadboard' of file 'test_data/core/hybrid_connectors.fzp.test'
+        # Invisible connector 'connector4pin' in layer 'breadboard' of file 'test_data/core/hybrid_connectors.fzp.test'
+        # Invisible connector 'connector5pin' in layer 'breadboard' of file 'test_data/core/hybrid_connectors.fzp.test'
+        # Invisible connector 'connector9pin' in layer 'copper1' of file 'test_data/core/hybrid_connectors.fzp.test'
+
+
 
     # def test_missing_tags(self):
     #     self.run_checker('missing_tags.fzp.test', ['missing_tags'], [], 1, 'Missing required tag')

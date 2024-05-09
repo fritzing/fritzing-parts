@@ -5,6 +5,9 @@ from fzp_utils import FZPUtils
 
 class FZPChecker(ABC):
     def __init__(self, fzp_doc):
+        # TODO
+        # pass [{view -> svg doms}] in during construction, to avoid
+        # complex lookup and expensive re-parsing.
         self.fzp_doc = fzp_doc
 
     @abstractmethod
@@ -50,6 +53,7 @@ class FZPConnectorTerminalChecker(FZPChecker):
         connectors_section = self.fzp_doc.getElementsByTagName("module")[0].getElementsByTagName("connectors")
         if connectors_section:
             connectors = connectors_section[0].getElementsByTagName("connector")
+            # TODO: Loop by views first, so we avoid reading the SVG again for each connector.
             for connector in connectors:
                 connector_id = connector.getAttribute("id")
                 views = connector.getElementsByTagName("views")[0]
@@ -110,10 +114,10 @@ class FZPConnectorVisibilityChecker(FZPChecker):
         views_section = self.fzp_doc.getElementsByTagName("views")[0]
         connectors_section = self.fzp_doc.getElementsByTagName("module")[0].getElementsByTagName("connectors")
         if connectors_section:
+            # TODO: Loop by views first, so we avoid reading the SVG again for each connector.
             connectors = connectors_section[0].getElementsByTagName("connector")
             for connector in connectors:
                 connector_id = connector.getAttribute("id")
-                is_hybrid = connector.getAttribute("hybrid") == "yes"
 
                 views = connector.getElementsByTagName("views")[0]
                 for view in views.childNodes:
@@ -121,24 +125,33 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                         p_elements = view.getElementsByTagName("p")
                         for p in p_elements:
                             layer = p.getAttribute("layer")
-
+                            connector_svg_id = p.getAttribute("svgId")
+                            is_hybrid = p.getAttribute("hybrid") == "yes"
                             if not layer:
                                 # Skip the check if the layer attribute is empty or missing
                                 continue
 
-                            if is_hybrid and layer == "unknown":
+                            if layer == "unknown":
+                                if is_hybrid:
+                                    continue
+                                else:
+                                    print(f"Unknown layer for regular connector {connector_id} in view {view.tagName}.")
+
+                            if not connector_svg_id:
+                                print(f"Connector {connector_id} does not reference an element in layer {layer}.")
+                                errors += 1
                                 continue
 
-                            svg_path = self.get_svg_path_from_views(views_section, view.tagName)
+                            svg_path = self.get_svg_path_from_views(views_section, layer)
                             if svg_path:
                                 if FZPUtils.is_template(svg_path, view.tagName):
                                     continue  # Skip the check if the SVG is a template
-                                if not self.is_connector_visible(svg_path, connector_id) and not is_hybrid:
+                                if not self.is_connector_visible(svg_path, connector_svg_id) and not is_hybrid:
                                     print(
-                                        f"Invisible connector '{connector_id}' in layer '{layer}' of file '{self.fzp_path}'")
+                                        f"Invisible connector '{connector_svg_id}' in layer '{layer}' of file '{self.fzp_path}'")
                                     errors += 1
                             else:
-                                print(f"SVG file not found for {self.fzp_path} layer {layer}")
+                                print(f"SVG file not found for {self.fzp_path} layer {layer} in {view.tagName}, connector {connector_id}")
                                 errors += 1
         return errors
 
@@ -201,7 +214,7 @@ class FZPConnectorVisibilityChecker(FZPChecker):
         return False
 
     def get_inherited_attribute(self, element, attribute_name):
-        while element is not None:
+        while element is not None and element.nodeType == element.ELEMENT_NODE:
             if element.hasAttribute(attribute_name):
                 return element.getAttribute(attribute_name)
             element = element.parentNode
