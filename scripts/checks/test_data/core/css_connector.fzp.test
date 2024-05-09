@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='1.0.0' moduleId='test'>
+<version>4</version>
+<date>2024-05-09</date>
+<label>Test</label>
+<author>fritzing.org</author>
+<description>Test</description>
+<title>Test</title>
+<tags>
+<tag>Test</tag>
+</tags>
+<properties/>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/css_connector.svg">
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+ </views>
+<connectors>
+    <connector id='connector1' type='male' name='1'>
+        <description>1</description>
+        <views>
+            <breadboardView>
+            </breadboardView>
+            <schematicView>
+            </schematicView>
+            <pcbView>
+                <p layer='copper0' svgId='connector1pin'/>
+            </pcbView>
+        </views>
+    </connector>
+</connectors>
+<buses>
+</buses>
+</module>

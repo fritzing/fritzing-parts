@@ -2,6 +2,7 @@ import os
 import xml.dom.minidom
 from abc import ABC, abstractmethod
 from fzp_utils import FZPUtils
+from svg_utils import SVGUtils
 
 class FZPChecker(ABC):
     def __init__(self, fzp_doc):
@@ -168,22 +169,6 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                                 return FZPUtils.get_svg_path(self.fzp_path, image)
         return None
 
-    # def is_layer_in_svg(self, svg_path, layer):
-    #     if not os.path.isfile(svg_path):
-    #         return False
-    #
-    #     try:
-    #         svg_doc = xml.dom.minidom.parse(svg_path)
-    #         elements = svg_doc.getElementsByTagName("*")
-    #         for element in elements:
-    #             if element.getAttribute("id") == layer:
-    #                 return True
-    #     except FileNotFoundError:
-    #         pass
-    #     except xml.parsers.expat.ExpatError:
-    #         pass
-    #     return False
-
     def is_connector_visible(self, svg_path, connector_id):
         if not os.path.isfile(svg_path):
             print(f"Warning: Invalid SVG path '{svg_path}' for connector '{connector_id}'")
@@ -194,31 +179,17 @@ class FZPConnectorVisibilityChecker(FZPChecker):
             elements = svg_doc.getElementsByTagName("*")
             for element in elements:
                 if element.getAttribute("id") == connector_id:
-                    return self.has_visible_attributes(element)
+                    try:
+                        return SVGUtils.has_visible_attributes(element)
+                    except ValueError as e:
+                        print(f"Error in {connector_id} : {e}")
+                        return False
         except FileNotFoundError:
             print(f"SVG file not found: {svg_path}")
         except xml.parsers.expat.ExpatError as err:
             print(f"Error parsing SVG file: {svg_path}")
             print(str(err))
         return False
-
-    def has_visible_attributes(self, element):
-        stroke = self.get_inherited_attribute(element, "stroke")
-        fill = self.get_inherited_attribute(element, "fill")
-        stroke_width = self.get_inherited_attribute(element, "stroke-width")
-
-        if fill and fill != "none":
-            return True
-        if stroke and stroke != "none" and stroke_width and stroke_width != "0":
-            return True
-        return False
-
-    def get_inherited_attribute(self, element, attribute_name):
-        while element is not None and element.nodeType == element.ELEMENT_NODE:
-            if element.hasAttribute(attribute_name):
-                return element.getAttribute(attribute_name)
-            element = element.parentNode
-        return None
 
     @staticmethod
     def get_name():

@@ -64,6 +64,10 @@ class TestCheckers(unittest.TestCase):
         # Invisible connector 'connector5pin' in layer 'breadboard' of file 'test_data/core/hybrid_connectors.fzp.test'
         # Invisible connector 'connector9pin' in layer 'copper1' of file 'test_data/core/hybrid_connectors.fzp.test'
 
+    def test_css_connector_part(self):
+        self.run_checker('css_connector.fzp.test',
+                         ['connector_terminal','connector_visibility'],
+                         [], 0, None)
 
 
     # def test_missing_tags(self):
