@@ -1,5 +1,6 @@
 from xml.dom import minidom
 import re
+from svg_utils import SVGUtils
 
 class SVGChecker:
     def __init__(self, svg_doc, layer_ids):
@@ -23,7 +24,7 @@ class SVGFontSizeChecker(SVGChecker):
         errors = 0
         text_elements = self.svg_doc.getElementsByTagName("text")
         for element in text_elements:
-            font_size = element.getAttribute("font-size")
+            font_size = SVGUtils.get_inherited_attribute(element, "font-size")
             if not re.match(r"^\d+(\.\d+)?$", font_size):
                 print(f"Invalid font size in <text> element: {font_size}")
                 errors += 1
