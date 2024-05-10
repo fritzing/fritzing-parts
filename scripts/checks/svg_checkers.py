@@ -1,4 +1,5 @@
-from xml.dom import minidom
+# Filename: svg_checkers.py
+from lxml import etree
 import re
 from svg_utils import SVGUtils
 
@@ -22,24 +23,18 @@ class SVGFontSizeChecker(SVGChecker):
 
     def getChildXML(self, elem):
         out = ""
-        for c in elem.childNodes:
-            if c.nodeType == minidom.Node.TEXT_NODE:
-                out += c.nodeValue
+        for c in elem.iterchildren():
+            if c.text:
+                out += c.text
+            if len(c) == 0:
+                out += f"<{c.tag}/>"
             else:
-                if c.nodeType == minidom.Node.ELEMENT_NODE:
-                    if c.childNodes.length == 0:
-                        out += "<" + c.nodeName + "/>"
-                    else:
-                        out += "<" + c.nodeName + ">"
-                        cs = ""
-                        cs = self.getChildXML(c)
-                        out += cs
-                        out += "</" + c.nodeName + ">"
+                out += f"<{c.tag}>{self.getChildXML(c)}</{c.tag}>"
         return out
 
     def check(self):
         errors = 0
-        text_elements = self.svg_doc.getElementsByTagName("text")
+        text_elements = self.svg_doc.xpath("//text")
         for element in text_elements:
             font_size = SVGUtils.get_inherited_attribute(element, "font-size")
             if font_size is None:
@@ -74,9 +69,9 @@ class SVGViewBoxChecker(SVGChecker):
         if self.layer_ids == ['icon']:
             return errors
 
-        root_element = self.svg_doc.documentElement
-        if root_element.hasAttribute("viewBox"):
-            viewbox = root_element.getAttribute("viewBox")
+        root_element = self.svg_doc.getroot()
+        if "viewBox" in root_element.attrib:
+            viewbox = root_element.attrib["viewBox"]
             if not re.match(r"^-?\d+(\.\d+)?( -?\d+(\.\d+)?){3}$", viewbox):
                 print(f"Invalid viewBox attribute: {viewbox}")
                 errors += 1
@@ -98,15 +93,14 @@ class SVGIdsChecker(SVGChecker):
     def check(self):
         errors = 0
         id_set = set()
-        elements_with_id = self.svg_doc.getElementsByTagName("*")
+        elements_with_id = self.svg_doc.xpath("//*[@id]")
         for element in elements_with_id:
-            if element.hasAttribute("id"):
-                element_id = element.getAttribute("id")
-                if element_id in id_set:
-                    print(f"Duplicate id attribute: {element_id}")
-                    errors += 1
-                else:
-                    id_set.add(element_id)
+            element_id = element.attrib["id"]
+            if element_id in id_set:
+                print(f"Duplicate id attribute: {element_id}")
+                errors += 1
+            else:
+                id_set.add(element_id)
         return errors
 
     @staticmethod
@@ -116,5 +110,3 @@ class SVGIdsChecker(SVGChecker):
     @staticmethod
     def get_description():
         return "Check that all id attributes are unique"
-
-

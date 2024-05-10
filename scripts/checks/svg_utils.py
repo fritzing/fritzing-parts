@@ -37,8 +37,8 @@ class SVGUtils:
 
     @staticmethod
     def get_inherited_attribute(element, attribute_name):
-        while element is not None and element.nodeType == element.ELEMENT_NODE:
-            if element.hasAttribute(attribute_name):
-                return element.getAttribute(attribute_name)
-            element = element.parentNode
+        while element is not None:
+            if element.get(attribute_name):
+                return element.get(attribute_name)
+            element = element.getparent()
         return None
