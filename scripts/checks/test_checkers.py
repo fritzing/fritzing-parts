@@ -70,6 +70,9 @@ class TestCheckers(unittest.TestCase):
                          [], 0, None)
 
 
+    def test_font_size(self):
+        self.run_checker('font_size.fzp.test',
+                         [], ['font_size'], 4, None)
     # def test_missing_tags(self):
     #     self.run_checker('missing_tags.fzp.test', ['missing_tags'], [], 1, 'Missing required tag')
     #

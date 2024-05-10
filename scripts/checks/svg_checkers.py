@@ -23,31 +23,38 @@ class SVGFontSizeChecker(SVGChecker):
 
     def getChildXML(self, elem):
         out = ""
+        if elem.text:
+            out += elem.text
         for c in elem.iterchildren():
-            if c.text:
-                out += c.text
             if len(c) == 0:
                 out += f"<{c.tag}/>"
             else:
                 out += f"<{c.tag}>{self.getChildXML(c)}</{c.tag}>"
+            if c.tail:
+                out += c.tail
         return out
 
+
+    def check_font_size(self, element):
+        font_size = SVGUtils.get_inherited_attribute(element, "font-size")
+        if font_size is None:
+            if element.tag.endswith("text"):
+                for child in element.iterchildren():
+                    if child.tag.endswith("tspan"):
+                        return self.check_font_size(child)
+            content = self.getChildXML(element)
+            print(f"No font size found for element [{content}]")
+            return 1
+        if not re.match(r"^\d+(\.\d+)?$", font_size):
+            content = self.getChildXML(element)
+            print(f"Invalid font size {font_size} unit in element: [{content}]")
+            return 1
+        return 0
     def check(self):
         errors = 0
-        text_elements = self.svg_doc.xpath("//text")
+        text_elements = self.svg_doc.xpath("//*[local-name()='text' or local-name()='tspan']")
         for element in text_elements:
-            font_size = SVGUtils.get_inherited_attribute(element, "font-size")
-            if font_size is None:
-                content = self.getChildXML(element)
-                print(
-                    f"No font size found for element {content})")
-                errors += 1
-                continue
-            if not re.match(r"^\d+(\.\d+)?$", font_size):
-                content = self.getChildXML(element)
-                print(
-                    f"Invalid font size in  element: {content}")
-                errors += 1
+            errors += self.check_font_size(element)
         return errors
 
 
