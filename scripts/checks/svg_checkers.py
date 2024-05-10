@@ -18,21 +18,48 @@ class SVGChecker:
     def get_description():
         raise NotImplementedError
 
-
 class SVGFontSizeChecker(SVGChecker):
+
+    def getChildXML(self, elem):
+        out = ""
+        for c in elem.childNodes:
+            if c.nodeType == minidom.Node.TEXT_NODE:
+                out += c.nodeValue
+            else:
+                if c.nodeType == minidom.Node.ELEMENT_NODE:
+                    if c.childNodes.length == 0:
+                        out += "<" + c.nodeName + "/>"
+                    else:
+                        out += "<" + c.nodeName + ">"
+                        cs = ""
+                        cs = self.getChildXML(c)
+                        out += cs
+                        out += "</" + c.nodeName + ">"
+        return out
+
     def check(self):
         errors = 0
         text_elements = self.svg_doc.getElementsByTagName("text")
         for element in text_elements:
             font_size = SVGUtils.get_inherited_attribute(element, "font-size")
+            if font_size is None:
+                content = self.getChildXML(element)
+                print(
+                    f"No font size found for element {content})")
+                errors += 1
+                continue
             if not re.match(r"^\d+(\.\d+)?$", font_size):
-                print(f"Invalid font size in <text> element: {font_size}")
+                content = self.getChildXML(element)
+                print(
+                    f"Invalid font size in  element: {content}")
                 errors += 1
         return errors
+
 
     @staticmethod
     def get_name():
         return "font_size"
+
 
     @staticmethod
     def get_description():
