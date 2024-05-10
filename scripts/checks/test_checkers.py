@@ -40,7 +40,7 @@ class TestCheckers(unittest.TestCase):
              # Run specific FZP and SVG checkers for this test case
         checker_runner.check(fzp_checkers, svg_checkers)
 
-        self.assertEqual(checker_runner.total_errors, expected_errors)
+        self.assertEqual(expected_errors, checker_runner.total_errors)
 
     def test_pcb_only_part(self):
         self.run_checker('pcb_only.fzp.test',
@@ -73,6 +73,20 @@ class TestCheckers(unittest.TestCase):
     def test_font_size(self):
         self.run_checker('font_size.fzp.test',
                          [], ['font_size'], 4, None)
+        # Expected errors:
+        # No font size found for element [
+        #         Test No Font Size 1
+        #     ]
+        # No font size found for element [ Test No Font Size 2 ]
+        # Invalid font size 5px unit in element: [
+        #          Test px unit
+        #      ]
+        # Invalid font size 2mm unit in element: [
+        #          Test mm unit
+        #      ]
+
+
+
     # def test_missing_tags(self):
     #     self.run_checker('missing_tags.fzp.test', ['missing_tags'], [], 1, 'Missing required tag')
     #

@@ -46,6 +46,54 @@
             </pcbView>
         </views>
     </connector>
+    <connector id='connector2' type='male' name='1'>
+        <description>Invalid style</description>
+        <views>
+            <breadboardView>
+            </breadboardView>
+            <schematicView>
+            </schematicView>
+            <pcbView>
+                <p layer='copper0' svgId='connector2invalid_style'/>
+            </pcbView>
+        </views>
+    </connector>
+    <connector id='connector3' type='male' name='1'>
+        <description>Invalid style</description>
+        <views>
+            <breadboardView>
+            </breadboardView>
+            <schematicView>
+            </schematicView>
+            <pcbView>
+                <p layer='copper0' svgId='connector3invalid_style'/>
+            </pcbView>
+        </views>
+    </connector>
+        <connector id='connector2' type='male' name='1'>
+        <description>Invalid style</description>
+        <views>
+            <breadboardView>
+            </breadboardView>
+            <schematicView>
+            </schematicView>
+            <pcbView>
+                <p layer='copper0' svgId='connector4invisible'/>
+            </pcbView>
+        </views>
+    </connector>
+        <connector id='connector2' type='male' name='1'>
+        <description>Invalid style</description>
+        <views>
+            <breadboardView>
+            </breadboardView>
+            <schematicView>
+            </schematicView>
+            <pcbView>
+                <p layer='copper0' svgId='connector5inherited'/>
+            </pcbView>
+        </views>
+    </connector>
 </connectors>
 <buses>
 </buses>
