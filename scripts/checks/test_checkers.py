@@ -67,7 +67,11 @@ class TestCheckers(unittest.TestCase):
     def test_css_connector_part(self):
         self.run_checker('css_connector.fzp.test',
                          ['connector_terminal','connector_visibility'],
-                         [], 0, None)
+                         [], 3, None)
+        # Expected errors:
+        # Error in connector2invalid_style : Unknown style attribute: something
+        # Error in connector3invalid_style : not enough values to unpack (expected 2, got 1)
+        # Invisible connector 'connector4invisible' in layer 'copper0' of file 'test_data/core/css_connector.fzp.test'
 
 
     def test_font_size(self):
