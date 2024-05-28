@@ -3,10 +3,15 @@ import re
 
 class FZPUtils:
     @staticmethod
-    def get_svg_path(fzp_path, image):
+    def get_svg_path(fzp_path, image, view_name):
         dir_path = os.path.dirname(fzp_path)
         up_one_level = os.path.dirname(dir_path)
-        return os.path.join(up_one_level, 'svg', 'core', image)
+        svg_path = os.path.join(up_one_level, 'svg', 'core', image)
+
+        if FZPUtils.is_template(svg_path, view_name):
+            return None  # Skip template SVGs
+
+        return svg_path
 
     @staticmethod
     def is_template(svg_path, view):
@@ -45,3 +50,23 @@ class FZPUtils:
         # Check if the view is valid and if the filename starts with the correct prefix or matches the pattern
         valid_view = view in valid_views
         return starts_with_prefix and valid_view
+
+    @staticmethod
+    def get_svg_path_from_view(fzp_doc, fzp_path, view_name, layer=None):
+        views_section = fzp_doc.xpath("//views")[0]
+        for view in views_section:
+            if view.tag == view_name:
+                layers = view.xpath("layers")
+                if layers:
+                    if layer:
+                        layer_elements = layers[0].xpath("layer")
+                        for layer_element in layer_elements:
+                            if layer_element.attrib.get("layerId") == layer:
+                                image = layers[0].attrib.get("image")
+                                if image:
+                                    return FZPUtils.get_svg_path(fzp_path, image, view.tag)
+                    else:
+                        image = layers[0].attrib.get("image")
+                        if image:
+                            return FZPUtils.get_svg_path(fzp_path, image, view.tag)
+        return None

@@ -74,7 +74,10 @@ class FZPCheckerRunner:
                         layer_ids.append(layer_id)
 
                 if image:
-                    svg_path = FZPUtils.get_svg_path(self.path, image)
+                    svg_path = FZPUtils.get_svg_path(self.path, image,
+                                                     view.tag)  # Pass view.tag as the additional parameter
+                    if svg_path is None:
+                        continue  # Skip template SVGs
                     if os.path.isfile(svg_path):
                         try:
                             svg_doc = etree.parse(svg_path)
@@ -90,11 +93,8 @@ class FZPCheckerRunner:
                         finally:
                             svg_doc.getroot().clear()
                     else:
-                        if FZPUtils.is_template(svg_path, view.tag):
-                            continue
-                        else:
-                            print(f"Warning: SVG '{svg_path}' for view '{view.tag}' of file '{self.path}' not found.")
-                            self.total_errors += 1
+                        print(f"Warning: SVG '{svg_path}' for view '{view.tag}' of file '{self.path}' not found.")
+                        self.total_errors += 1
             else:
                 print(f"Warning: No 'layers' element found in view '{view.tag}' of file '{self.path}'")
 
