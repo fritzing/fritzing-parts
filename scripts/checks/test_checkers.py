@@ -100,5 +100,11 @@ class TestCheckers(unittest.TestCase):
     # def test_invisible_connector(self):
     #     self.run_checker('invisible_connector.fzp.test', ['connector_visibility'], [], 1, 'Invisible connector')
 
+    def test_stroke_checker(self):
+        self.run_checker('stroke_test.fzp.test',
+                         ['pcb_connector_stroke'], [], 2, None)
+
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -44,7 +44,11 @@ class FZPCheckerRunner:
     def _get_checker(self, check_type, fzp_doc):
         for checker in AVAILABLE_CHECKERS:
             if checker.get_name() == check_type:
-                if checker in [FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker]:
+                if checker in [
+                    FZPConnectorTerminalChecker,
+                    FZPConnectorVisibilityChecker,
+                    FZPPCBConnectorStrokeChecker
+                ]:
                     return checker(fzp_doc, self.path)
                 else:
                     return checker(fzp_doc)
@@ -122,7 +126,7 @@ class FZPCheckerRunner:
                             fzp_files.append(fzp_path)
         return fzp_files
 
-AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker]
+AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker, FZPPCBConnectorStrokeChecker]
 SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker]
 
 if __name__ == "__main__":

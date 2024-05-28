@@ -42,3 +42,31 @@ class SVGUtils:
                 return element.get(attribute_name)
             element = element.getparent()
         return None
+
+
+    @staticmethod
+    def has_valid_stroke(element):
+        stroke = SVGUtils.get_inherited_attribute(element, "stroke")
+        stroke_width = SVGUtils.get_inherited_attribute(element, "stroke-width")
+        style = SVGUtils.get_inherited_attribute(element, "style")
+
+        if style:
+            style_attrs = style.split(";")
+            for attr in style_attrs:
+                if attr:
+                    key, value = attr.split(":")
+                    key = key.strip()
+                    value = value.strip()
+                    if key == "stroke":
+                        if stroke:
+                            raise ValueError("Stroke attribute already defined as attribute, do not override with style.")
+                        stroke = value
+                    elif key == "stroke-width":
+                        if stroke_width:
+                            raise ValueError("Stroke-width attribute already defined as attribute, do not override with style.")
+                        stroke_width = value
+
+        if stroke_width and stroke_width != "0":
+            if not stroke or stroke == "none":
+                return False
+        return True

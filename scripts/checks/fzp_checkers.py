@@ -186,3 +186,80 @@ class FZPConnectorVisibilityChecker(FZPChecker):
     @staticmethod
     def get_description():
         return "Check for invisible (non-hybrid) connectors in the SVG files referenced by the FZP"
+
+
+class FZPPCBConnectorStrokeChecker(FZPChecker):
+    def __init__(self, fzp_doc, fzp_path):
+        super().__init__(fzp_doc)
+        self.fzp_path = fzp_path
+
+    def check(self):
+        errors = 0
+        connectors_section = self.fzp_doc.xpath("//module/connectors")
+        if connectors_section:
+            connectors = connectors_section[0].xpath("connector")
+            for connector in connectors:
+                connector_id = connector.attrib["id"]
+
+                views = connector.xpath("views")[0]
+                for view in views:
+                    if view.tag != "pcbView":
+                        continue
+
+                    p_elements = view.xpath("p")
+                    for p in p_elements:
+                        connector_svg_id = p.attrib.get("svgId")
+                        if not connector_svg_id:
+                            continue
+
+                        svg_path = self.get_svg_path_from_pcb_view()
+                        if svg_path:
+                            if FZPUtils.is_template(svg_path, view.tag):
+                                continue  # Skip the check if the SVG is a template
+                            if not self.is_connector_stroke_valid(svg_path, connector_svg_id):
+                                print(f"Invalid stroke for connector '{connector_svg_id}' in PCB view of file '{self.fzp_path}'")
+                                errors += 1
+                        else:
+                            print(f"SVG file not found for {self.fzp_path} in PCB view, connector {connector_id}")
+                            errors += 1
+        return errors
+
+    def get_svg_path_from_pcb_view(self):
+        views_section = self.fzp_doc.xpath("//views")[0]
+        for view in views_section:
+            if view.tag == "pcbView":
+                layers = view.xpath("layers")
+                if layers:
+                    image = layers[0].attrib.get("image")
+                    if image:
+                        return FZPUtils.get_svg_path(self.fzp_path, image)
+        return None
+
+    def is_connector_stroke_valid(self, svg_path, connector_id):
+        if not os.path.isfile(svg_path):
+            print(f"Warning: Invalid SVG path '{svg_path}' for connector '{connector_id}'")
+            return True  # Skip the check if the SVG path is invalid
+
+        try:
+            svg_doc = etree.parse(svg_path)
+            elements = svg_doc.xpath(f"//*[@id='{connector_id}']")
+            if elements:
+                try:
+                    return SVGUtils.has_valid_stroke(elements[0])
+                except ValueError as e:
+                    print(f"Error in {connector_id}: {e}")
+                    return False
+        except FileNotFoundError:
+            print(f"SVG file not found: {svg_path}")
+        except etree.XMLSyntaxError as err:
+            print(f"Error parsing SVG file: {svg_path}")
+            print(str(err))
+        return False
+
+    @staticmethod
+    def get_name():
+        return "pcb_connector_stroke"
+
+    @staticmethod
+    def get_description():
+        return "Check for valid stroke attributes in connectors of the PCB view in the SVG files referenced by the FZP"
