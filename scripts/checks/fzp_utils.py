@@ -70,3 +70,12 @@ class FZPUtils:
                         if image:
                             return FZPUtils.get_svg_path(fzp_path, image, view.tag)
         return None
+
+
+    @staticmethod
+    def is_hybrid_or_unknown_layer(p_element):
+        layer = p_element.attrib.get("layer")
+        is_hybrid = p_element.attrib.get("hybrid") == "yes"
+        if not is_hybrid and layer == "unknown":
+            print(f"Unknown layer for regular connector in {p_element}.")
+        return layer == "unknown" or is_hybrid
