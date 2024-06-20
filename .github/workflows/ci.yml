@@ -57,6 +57,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
@@ -67,7 +69,6 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v44
         with:
-          since_last_remote_commit: true
           files: |
             **/*.fzp
             **/*.svg
@@ -85,6 +86,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
@@ -95,7 +98,6 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v44
         with:
-          since_last_remote_commit: true
           files: |
             **/*.fzp
             **/*.svg
