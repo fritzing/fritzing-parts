@@ -51,7 +51,7 @@ jobs:
       - name: Fzp validate
         run: fzp validate --dir ./core
 
-  check_modified_files_merge:
+  check_modified_files_pull_request:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
@@ -75,6 +75,7 @@ jobs:
           files_ignore: |
             **/obsolete/**
           write_output_files: true
+          separator: "\n"
       - name: List changed files
         run: cat .github/outputs/all_changed_files.txt
       - name: Run fzp checker
@@ -104,6 +105,8 @@ jobs:
           files_ignore: |
             **/obsolete/**
           write_output_files: true
+          separator: "\n"
+          since: "develop"
       - name: List changed files
         run: cat .github/outputs/all_changed_files.txt
       - name: Run fzp checker
