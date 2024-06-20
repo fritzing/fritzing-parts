@@ -2,7 +2,7 @@ from lxml import etree
 from fzp_checkers import *
 from svg_checkers import *
 from fzp_utils import FZPUtils
-
+import json
 
 class FZPCheckerRunner:
     def __init__(self, path, verbose=False):
@@ -174,15 +174,21 @@ if __name__ == "__main__":
         checker_runner = FZPCheckerRunner(None, verbose=args.verbose)
 
         fzp_files = set()
+        file_list = []
 
         if args.file:
-            with open(args.file, "r") as file:
-                for line in file:
-                    filepath = line.strip()
-                    if filepath.endswith(".fzp"):
-                        fzp_files.add(os.path.join(args.path, filepath))
-                    elif filepath.endswith(".svg"):
-                        fzp_files.update(checker_runner._search_fzp_files_with_svg(filepath, args.path))
+            if args.file.endswith(".json"):
+                with open(args.file, "r") as file:
+                    file_list = json.load(file)
+            else:
+                with open(args.file, "r") as file:
+                    file_list = [line.strip() for line in file]
+
+            for filepath in file_list:
+                if filepath.endswith(".fzp"):
+                    fzp_files.add(os.path.join(args.path, filepath))
+                elif filepath.endswith(".svg"):
+                    fzp_files.update(checker_runner._search_fzp_files_with_svg(filepath, args.path))
         elif args.svg and os.path.isdir(args.path):
             fzp_files.update(checker_runner._search_fzp_files_with_svg(args.svg, args.path))
         elif os.path.isfile(args.path):

@@ -76,10 +76,11 @@ jobs:
             **/obsolete/**
           write_output_files: true
           json: true
+          escape_json: false
       - name: List changed files
         run: cat .github/outputs/all_changed_files.json
       - name: Run fzp checker
-        run: python scripts/checks/fzp_checker_runner.py . -f .github/outputs/all_changed_files.txt -v
+        run: python scripts/checks/fzp_checker_runner.py . -f .github/outputs/all_changed_files.json -v
 
   check_modified_files_default:
     if: github.event_name != 'pull_request'
@@ -106,11 +107,12 @@ jobs:
             **/obsolete/**
           write_output_files: true
           json: true
+          escape_json: false
           sha: develop
       - name: List changed files
         run: cat .github/outputs/all_changed_files.json
       - name: Run fzp checker
-        run: python scripts/checks/fzp_checker_runner.py . -f .github/outputs/all_changed_files.txt -v
+        run: python scripts/checks/fzp_checker_runner.py . -f .github/outputs/all_changed_files.json -v
 
   checker_unit_test:
     runs-on: ubuntu-latest
