@@ -134,6 +134,11 @@ if __name__ == "__main__":
 
     all_checkers = AVAILABLE_CHECKERS + SVG_AVAILABLE_CHECKERS
 
+    # TODOs
+    # Cleanup arguments: Remove path, --svg, replace with:
+    # --basedir : directory to use as fritzing-parts dir (contains core and svg subdirs)
+    # --file : Automatically detect .json, .txt, .fzp and .svg
+    # Add support for directly checking .fzpz files
     parser = argparse.ArgumentParser(description="Scan FZP files for various checks", add_help=False)
     parser.add_argument("path", help="Path to FZP file or directory to scan")
     parser.add_argument("-c", "--checks", nargs="*", default=["all"],
@@ -178,9 +183,11 @@ if __name__ == "__main__":
 
         if args.file:
             if args.file.endswith(".json"):
+                # List of strings in json format
                 with open(args.file, "r") as file:
                     file_list = json.load(file)
             else:
+                # Textfile, each filename on a new line
                 with open(args.file, "r") as file:
                     file_list = [line.strip() for line in file]
 
