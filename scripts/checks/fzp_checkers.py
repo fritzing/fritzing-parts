@@ -137,7 +137,7 @@ class FZPConnectorVisibilityChecker(FZPChecker):
             elements = svg_doc.xpath(f"//*[@id='{connector_id}']")
             if elements:
                 try:
-                    return SVGUtils.has_visible_attributes(elements[0])
+                    return SVGUtils.has_visible_attributes_recursive(elements[0])
                 except ValueError as e:
                     print(f"Error in {connector_id} : {e}")
                     return False

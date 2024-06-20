@@ -70,3 +70,23 @@ class SVGUtils:
             if not stroke or stroke == "none":
                 return False
         return True
+
+    @staticmethod
+    def has_visible_attributes_recursive(element):
+        if element.tag.endswith('g'):  # Group element
+            for child in element.iterchildren():
+                if SVGUtils.has_visible_attributes_recursive(child):
+                    return True
+            return False
+        else:
+            return SVGUtils.has_visible_attributes(element)
+
+    # @staticmethod
+    # def lazy_load_svg(svg_path):
+    #     if svg_path and os.path.exists(svg_path):
+    #         try:
+    #             return etree.parse(svg_path)
+    #         except (FileNotFoundError, etree.XMLSyntaxError) as err:
+    #             print(f"Error loading SVG file: {svg_path}")
+    #             print(str(err))
+    #     return None
