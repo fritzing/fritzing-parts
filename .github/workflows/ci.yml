@@ -76,7 +76,6 @@ jobs:
             **/obsolete/**
           write_output_files: true
           json: true
-          escape_json: false
       - name: List changed files
         run: cat .github/outputs/all_changed_files.json
       - name: Run fzp checker
@@ -107,7 +106,6 @@ jobs:
             **/obsolete/**
           write_output_files: true
           json: true
-          escape_json: false
           sha: develop
       - name: List changed files
         run: cat .github/outputs/all_changed_files.json
