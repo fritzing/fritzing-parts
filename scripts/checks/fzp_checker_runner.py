@@ -116,7 +116,11 @@ class FZPCheckerRunner:
     def _search_fzp_files_with_svg(self, svg_file, fzp_dir):
         fzp_files = []
         svg_filename = os.path.basename(svg_file)
+        is_obsolete = 'obsolete' in svg_file.split(os.sep)
         for root, dirs, files in os.walk(fzp_dir):
+            if not is_obsolete and 'obsolete' in root.split(os.sep):
+                continue
+
             for file in files:
                 if file.endswith(".fzp"):
                     fzp_path = os.path.join(root, file)
