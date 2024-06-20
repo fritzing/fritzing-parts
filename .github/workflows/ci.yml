@@ -75,9 +75,9 @@ jobs:
           files_ignore: |
             **/obsolete/**
           write_output_files: true
-          separator: "\n"
+          json: true
       - name: List changed files
-        run: cat .github/outputs/all_changed_files.txt
+        run: cat .github/outputs/all_changed_files.json
       - name: Run fzp checker
         run: python scripts/checks/fzp_checker_runner.py . -f .github/outputs/all_changed_files.txt -v
 
@@ -105,10 +105,10 @@ jobs:
           files_ignore: |
             **/obsolete/**
           write_output_files: true
-          separator: "\n"
-          since: "develop"
+          json: true
+          sha: develop
       - name: List changed files
-        run: cat .github/outputs/all_changed_files.txt
+        run: cat .github/outputs/all_changed_files.json
       - name: Run fzp checker
         run: python scripts/checks/fzp_checker_runner.py . -f .github/outputs/all_changed_files.txt -v
 
