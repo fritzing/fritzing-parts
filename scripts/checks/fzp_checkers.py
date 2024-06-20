@@ -113,6 +113,7 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                             continue
 
                         connector_svg_id = p.attrib.get("svgId")
+                        layer = p.attrib.get("layer")
                         if not connector_svg_id:
                             print(f"Connector {connector_id} does not reference an element in layer {layer}.")
                             errors += 1
@@ -121,7 +122,7 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                         svg_path = FZPUtils.get_svg_path_from_view(self.fzp_doc, self.fzp_path, view.tag, layer)
                         if not svg_path:
                             continue  # Skip template SVGs
-                        if not self.is_connector_visible(svg_path, connector_svg_id) and not is_hybrid:
+                        if not self.is_connector_visible(svg_path, connector_svg_id): # we already checked that it is not hybrid
                             print(f"Invisible connector '{connector_svg_id}' in layer '{layer}' of file '{self.fzp_path}'")
                             errors += 1
         return errors
