@@ -213,3 +213,4 @@ if __name__ == "__main__":
     except ValueError as e:
         print(str(e))
         parser.print_help()
+        exit(-1)
