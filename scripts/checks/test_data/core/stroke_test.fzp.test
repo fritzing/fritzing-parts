@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='1.0.0' moduleId='stroke_test'>
+    <version>1</version>
+    <date>2023-05-09</date>
+    <author>Test Author</author>
+    <description>Test module for stroke checking</description>
+    <title>Stroke Test</title>
+    <url/>
+    <tags/>
+    <properties/>
+    <views>
+        <pcbView>
+            <layers image="pcb/stroke_test.svg">
+                <layer layerId="copper0"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector0" type="male" name="Connector 0">
+            <description>Connector 0 description</description>
+            <views>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="Connector 1">
+            <description>Connector 1 description</description>
+            <views>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="Connector 2">
+            <description>Connector 2 description</description>
+            <views>
+                <pcbView>
+                    <p layer="copper1" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector3" type="male" name="Connector 3">
+            <description>Connector 3 description</description>
+            <views>
+                <pcbView>
+                    <p layer="copper1" svgId="connector3pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" type="male" name="Connector 4">
+            <description>Connector 4 description</description>
+            <views>
+                <pcbView>
+                    <p layer="copper1" svgId="connector4pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>
