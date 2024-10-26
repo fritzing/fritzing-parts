@@ -9,7 +9,6 @@ from fzp_additional_checks import (
     check_title,
     check_description,
     check_author,
-    check_required_tags,
     check_views,
     check_bus_id,
     check_bus_nodes,
