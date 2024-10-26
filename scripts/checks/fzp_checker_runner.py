@@ -40,6 +40,14 @@ class FZPCheckerRunner:
             errors = checker.check()
             self.total_errors += errors
 
+        self.total_errors += check_fritzing_version(fzp_doc)
+        self.total_errors += check_module_id(fzp_doc)
+        self.total_errors += check_version(fzp_doc)
+        self.total_errors += check_title(fzp_doc)
+        self.total_errors += check_description(fzp_doc)
+        self.total_errors += check_author(fzp_doc)
+        self.total_errors += check_required_tags(fzp_doc)
+        self.total_errors += check_views(fzp_doc)
         self.total_errors += check_bus_id(fzp_doc)
         self.total_errors += check_bus_nodes(fzp_doc)
         self.total_errors += check_connector_layers(fzp_doc)
