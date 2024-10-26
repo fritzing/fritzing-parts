@@ -2,6 +2,16 @@ from lxml import etree
 from fzp_checkers import *
 from svg_checkers import *
 from fzp_utils import FZPUtils
+from fzp_additional_checks import (
+    check_bus_id,
+    check_bus_nodes,
+    check_connector_layers,
+    check_family_property,
+    check_unique_property_names,
+    check_property_fields,
+    check_required_tags_and_attributes,
+    check_buses
+)
 import json
 
 class FZPCheckerRunner:
@@ -29,6 +39,15 @@ class FZPCheckerRunner:
 
             errors = checker.check()
             self.total_errors += errors
+
+        self.total_errors += check_bus_id(fzp_doc)
+        self.total_errors += check_bus_nodes(fzp_doc)
+        self.total_errors += check_connector_layers(fzp_doc)
+        self.total_errors += check_family_property(fzp_doc)
+        self.total_errors += check_unique_property_names(fzp_doc)
+        self.total_errors += check_property_fields(fzp_doc)
+        self.total_errors += check_required_tags_and_attributes(fzp_doc)
+        self.total_errors += check_buses(fzp_doc)
 
         if svg_check_types:
             self._run_svg_checkers(fzp_doc, svg_check_types)
