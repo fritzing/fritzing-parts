@@ -3,6 +3,14 @@ from fzp_checkers import *
 from svg_checkers import *
 from fzp_utils import FZPUtils
 from fzp_additional_checks import (
+    check_fritzing_version,
+    check_module_id,
+    check_version,
+    check_title,
+    check_description,
+    check_author,
+    check_required_tags,
+    check_views,
     check_bus_id,
     check_bus_nodes,
     check_connector_layers,
