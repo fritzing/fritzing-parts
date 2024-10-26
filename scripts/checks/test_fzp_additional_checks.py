@@ -9,13 +9,17 @@ from fzp_additional_checks import (
     check_title,
     check_description,
     check_author,
-    check_required_tags_and_attributes,
+    check_required_tags,
+    check_views,
+    check_bus_id,
+    check_bus_nodes,
+    check_connector_layers,
     check_family_property,
     check_unique_property_names,
     check_property_fields,
-    check_views,
-    check_buses,
-    check_connector_layers
+    check_required_tags_and_attributes,
+    check_buses
+
 )
 
 class TestFZPAdditionalChecks(unittest.TestCase):
