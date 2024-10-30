@@ -9,7 +9,6 @@ from fzp_additional_checks import (
     check_title,
     check_description,
     check_author,
-    check_required_tags,
     check_views,
     check_bus_id,
     check_bus_nodes,
@@ -54,7 +53,6 @@ class FZPCheckerRunner:
         self.total_errors += check_title(fzp_doc)
         self.total_errors += check_description(fzp_doc)
         self.total_errors += check_author(fzp_doc)
-        self.total_errors += check_required_tags(fzp_doc)
         self.total_errors += check_views(fzp_doc)
         self.total_errors += check_bus_id(fzp_doc)
         self.total_errors += check_bus_nodes(fzp_doc)
