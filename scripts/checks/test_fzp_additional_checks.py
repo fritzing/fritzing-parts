@@ -46,7 +46,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             </buses>
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_fritzing_version(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -74,7 +75,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             </buses>
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_fritzing_version(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -102,7 +104,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             </buses>
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_fritzing_version(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -113,7 +116,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_module_id(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -124,7 +128,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_module_id(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -136,7 +141,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_version(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -147,7 +153,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_version(fzp_doc)
         self.assertEqual(errors, 0)  # Warning does not count as error
 
@@ -159,7 +166,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_version(fzp_doc)
         self.assertEqual(errors, 0)  # Warning does not count as error
 
@@ -170,7 +178,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_title(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -181,7 +190,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_title(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -193,7 +203,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_description(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -205,7 +216,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_description(fzp_doc)
         self.assertEqual(errors, 0)  # Warning does not count as error
 
@@ -217,7 +229,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_author(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -229,7 +242,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_author(fzp_doc)
         self.assertEqual(errors, 0)  # Warning does not count as error
 
@@ -257,7 +271,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             </buses>
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_required_tags_and_attributes(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -267,7 +282,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Missing moduleId, title, tags, properties, etc. -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_required_tags_and_attributes(fzp_doc)
         self.assertGreater(errors, 0)
 
@@ -280,7 +296,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_family_property(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -294,7 +311,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_family_property(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -308,7 +326,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_unique_property_names(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -322,7 +341,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_unique_property_names(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -336,7 +356,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_property_fields(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -349,7 +370,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_property_fields(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -362,7 +384,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_property_fields(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -378,7 +401,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_views(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -389,7 +413,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_views(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -404,7 +429,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_buses(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -419,7 +445,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_buses(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -434,7 +461,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_buses(fzp_doc)
         self.assertEqual(errors, 1)
 
@@ -449,7 +477,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_connector_layers(fzp_doc)
         self.assertEqual(errors, 0)
 
@@ -466,7 +495,8 @@ class TestFZPAdditionalChecks(unittest.TestCase):
             <!-- Other required tags -->
         </module>
         """
-        fzp_doc = etree.fromstring(xml_content)
+        element = etree.fromstring(xml_content)
+        fzp_doc = etree.ElementTree(element)
         errors = check_connector_layers(fzp_doc)
         self.assertEqual(errors, 3)
 
