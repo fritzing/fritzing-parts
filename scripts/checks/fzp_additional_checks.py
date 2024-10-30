@@ -232,12 +232,18 @@ def check_required_tags_and_attributes(fzp_doc):
     }
     errors = 0
     root = fzp_doc.getroot()
+
     for tag, attrs in required_tags.items():
+        # Check both root and descendants
         elements = fzp_doc.findall('.//' + tag)
+        if root.tag == tag:
+            elements = [root]  # Use root if it matches the tag we're looking for
+
         if not elements:
             print(f"Error: Required tag '{tag}' is missing.")
             errors += 1
             continue
+
         for attr in attrs:
             if not elements[0].get(attr):
                 print(f"Error: Tag '{tag}' is missing required attribute '{attr}'.")
