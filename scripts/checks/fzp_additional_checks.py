@@ -1,5 +1,6 @@
 # fzp_additional_checks.py
 from lxml import etree
+import re
 
 def check_bus_id(fzp_doc):
     buses = fzp_doc.findall('.//bus')
@@ -127,11 +128,6 @@ def check_buses(fzp_doc):
             print(f"Bus '{bus_id}' has no node members.")
             errors += 1
     return errors
-
-# fzp_additional_checks.py
-
-from lxml import etree
-import re
 
 def check_fritzing_version(fzp_doc):
     """
