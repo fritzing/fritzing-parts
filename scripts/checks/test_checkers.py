@@ -104,6 +104,155 @@ class TestCheckers(unittest.TestCase):
         self.run_checker('stroke_test.fzp.test',
                          ['pcb_connector_stroke'], [], 2, None)
 
+    def test_fritzing_version_present_valid(self):
+        self.run_checker('fritzing_version_present_valid.fzp.test',
+                         ['fritzing_version'],
+                         [], 0, None)
+
+    def test_fritzing_version_missing(self):
+        self.run_checker('fritzing_version_missing.fzp.test',
+                         ['fritzing_version'],
+                         [], 1, None)
+
+    def test_fritzing_version_invalid_format(self):
+        self.run_checker('fritzing_version_invalid_format.fzp.test',
+                         ['fritzing_version'],
+                         [], 1, None)
+
+    def test_module_id_present(self):
+        self.run_checker('module_id_present.fzp.test',
+                         ['module_id'],
+                         [], 0, None)
+
+    def test_module_id_missing(self):
+        self.run_checker('module_id_missing.fzp.test',
+                         ['module_id'],
+                         [], 1, None)
+
+    def test_version_present_valid(self):
+        self.run_checker('version_present_valid.fzp.test',
+                         ['version'],
+                         [], 0, None)
+
+    def test_version_missing(self):
+        self.run_checker('version_missing.fzp.test',
+                         ['version'],
+                         [], 1, None)
+
+    def test_version_invalid_format(self):
+        self.run_checker('version_invalid_format.fzp.test',
+                         ['version'],
+                         [], 1, None)
+
+    def test_title_present(self):
+        self.run_checker('title_present.fzp.test',
+                         ['title'],
+                         [], 0, None)
+
+    def test_title_missing(self):
+        self.run_checker('title_missing.fzp.test',
+                         ['title'],
+                         [], 1, None)
+
+    def test_description_present(self):
+        self.run_checker('description_present.fzp.test',
+                         ['description'],
+                         [], 0, None)
+
+    def test_description_missing(self):
+        self.run_checker('description_missing.fzp.test',
+                         ['description'],
+                         [], 1, None)
+
+    def test_author_present(self):
+        self.run_checker('author_present.fzp.test',
+                         ['author'],
+                         [], 0, None)
+
+    def test_author_missing(self):
+        self.run_checker('author_missing.fzp.test',
+                         ['author'],
+                         [], 1, None)
+
+    def test_required_tags_present(self):
+        self.run_checker('required_tags_present.fzp.test',
+                         ['required_tags'],
+                         [], 0, None)
+
+    def test_required_tags_missing(self):
+        self.run_checker('required_tags_missing.fzp.test',
+                         ['required_tags'],
+                         [], 6, None)  # Missing 6 required tags
+
+    def test_family_property_present_and_valid(self):
+        self.run_checker('family_property_present_valid.fzp.test',
+                         ['family_property'],
+                         [], 0, None)
+
+    def test_family_property_missing(self):
+        self.run_checker('family_property_missing.fzp.test',
+                         ['family_property'],
+                         [], 1, None)
+
+    def test_unique_property_names_unique(self):
+        self.run_checker('unique_property_names_unique.fzp.test',
+                         ['unique_property_names'],
+                         [], 0, None)
+
+    def test_unique_property_names_duplicates(self):
+        self.run_checker('unique_property_names_duplicates.fzp.test',
+                         ['unique_property_names'],
+                         [], 1, None)
+
+    def test_property_fields_present(self):
+        self.run_checker('property_fields_present.fzp.test',
+                         ['property_fields'],
+                         [], 0, None)
+
+    def test_property_fields_missing_name(self):
+        self.run_checker('property_fields_missing_name.fzp.test',
+                         ['property_fields'],
+                         [], 1, None)
+
+    def test_property_fields_missing_value(self):
+        self.run_checker('property_fields_missing_value.fzp.test',
+                         ['property_fields'],
+                         [], 1, None)
+
+    def test_views_present(self):
+        self.run_checker('views_present.fzp.test',
+                         ['views'],
+                         [], 0, None)
+
+    def test_views_missing(self):
+        self.run_checker('views_missing.fzp.test',
+                         ['views'],
+                         [], 1, None)
+
+    def test_buses_present_valid(self):
+        self.run_checker('buses_present_valid.fzp.test',
+                         ['buses'],
+                         [], 0, None)
+
+    def test_buses_missing_id(self):
+        self.run_checker('buses_missing_id.fzp.test',
+                         ['buses'],
+                         [], 1, None)
+
+    def test_buses_missing_node_members(self):
+        self.run_checker('buses_missing_node_members.fzp.test',
+                         ['buses'],
+                         [], 1, None)
+
+    def test_connector_layers_present_valid(self):
+        self.run_checker('connector_layers_present_valid.fzp.test',
+                         ['connector_layers'],
+                         [], 0, None)
+
+    def test_connector_layers_missing_attributes(self):
+        self.run_checker('connector_layers_missing_attributes.fzp.test',
+                         ['connector_layers'],
+                         [], 3, None)
 
 
 if __name__ == '__main__':
