@@ -244,6 +244,90 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
     def get_description():
         return "Check for valid stroke attributes in connectors of the PCB view in the SVG files referenced by the FZP"
 
+class FZPFritzingVersionChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "fritzing_version"
+
+    @staticmethod
+    def get_description():
+        return "Check fritzing version attribute is present and valid"
+
+    def check(self):
+        return check_fritzing_version(self.fzp_doc)
+
+class FZPModuleIDChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "module_id"
+
+    @staticmethod
+    def get_description():
+        return "Check module ID attribute is present"
+
+    def check(self):
+        return check_module_id(self.fzp_doc)
+
+class FZPVersionChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "version"
+
+    @staticmethod
+    def get_description():
+        return "Check version tag is present and valid"
+
+    def check(self):
+        return check_version(self.fzp_doc)
+
+class FZPTitleChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "title"
+
+    @staticmethod
+    def get_description():
+        return "Check title tag is present"
+
+    def check(self):
+        return check_title(self.fzp_doc)
+
+class FZPDescriptionChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "description"
+
+    @staticmethod
+    def get_description():
+        return "Check description tag is present"
+
+    def check(self):
+        return check_description(self.fzp_doc)
+
+class FZPAuthorChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "author"
+
+    @staticmethod
+    def get_description():
+        return "Check author tag is present"
+
+    def check(self):
+        return check_author(self.fzp_doc)
+
+class FZPViewsChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "views"
+
+    @staticmethod
+    def get_description():
+        return "Check views section is present"
+
+    def check(self):
+        return check_views(self.fzp_doc)
+
 class FZPBusIDChecker(FZPChecker):
     @staticmethod
     def get_name():
@@ -251,7 +335,7 @@ class FZPBusIDChecker(FZPChecker):
 
     @staticmethod
     def get_description():
-        return "Check that all buses have valid IDs"
+        return "Check bus IDs are present"
 
     def check(self):
         return check_bus_id(self.fzp_doc)
@@ -263,7 +347,7 @@ class FZPBusNodesChecker(FZPChecker):
 
     @staticmethod
     def get_description():
-        return "Check that all buses have valid node members"
+        return "Check bus nodes are present and valid"
 
     def check(self):
         return check_bus_nodes(self.fzp_doc)
@@ -275,7 +359,7 @@ class FZPConnectorLayersChecker(FZPChecker):
 
     @staticmethod
     def get_description():
-        return "Check that all connector layers have required attributes"
+        return "Check connector layers are properly defined"
 
     def check(self):
         return check_connector_layers(self.fzp_doc)
@@ -287,7 +371,7 @@ class FZPFamilyPropertyChecker(FZPChecker):
 
     @staticmethod
     def get_description():
-        return "Check that the family property exists and has a value"
+        return "Check family property is present"
 
     def check(self):
         return check_family_property(self.fzp_doc)
@@ -299,7 +383,7 @@ class FZPUniquePropertyNamesChecker(FZPChecker):
 
     @staticmethod
     def get_description():
-        return "Check that all property names are unique"
+        return "Check property names are unique"
 
     def check(self):
         return check_unique_property_names(self.fzp_doc)
@@ -311,7 +395,7 @@ class FZPPropertyFieldsChecker(FZPChecker):
 
     @staticmethod
     def get_description():
-        return "Check that all properties have required fields"
+        return "Check property fields are properly defined"
 
     def check(self):
         return check_property_fields(self.fzp_doc)
@@ -323,7 +407,7 @@ class FZPRequiredTagsChecker(FZPChecker):
 
     @staticmethod
     def get_description():
-        return "Check that all required tags and attributes are present"
+        return "Check all required tags and attributes are present"
 
     def check(self):
         return check_required_tags_and_attributes(self.fzp_doc)
@@ -335,7 +419,7 @@ class FZPBusesChecker(FZPChecker):
 
     @staticmethod
     def get_description():
-        return "Check that all buses are properly defined"
+        return "Check buses are properly defined"
 
     def check(self):
         return check_buses(self.fzp_doc)
