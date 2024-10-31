@@ -3,6 +3,23 @@ from lxml import etree
 from abc import ABC, abstractmethod
 from fzp_utils import FZPUtils
 from svg_utils import SVGUtils
+from fzp_additional_checks import (
+      check_fritzing_version,
+      check_module_id,
+      check_version,
+      check_title,
+      check_description,
+      check_author,
+      check_views,
+      check_bus_id,
+      check_bus_nodes,
+      check_connector_layers,
+      check_family_property,
+      check_unique_property_names,
+      check_property_fields,
+      check_required_tags_and_attributes,
+      check_buses
+  )
 
 class FZPChecker(ABC):
     def __init__(self, fzp_doc):
@@ -226,3 +243,99 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
     @staticmethod
     def get_description():
         return "Check for valid stroke attributes in connectors of the PCB view in the SVG files referenced by the FZP"
+
+class FZPBusIDChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "bus_id"
+
+    @staticmethod
+    def get_description():
+        return "Check that all buses have valid IDs"
+
+    def check(self):
+        return check_bus_id(self.fzp_doc)
+
+class FZPBusNodesChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "bus_nodes"
+
+    @staticmethod
+    def get_description():
+        return "Check that all buses have valid node members"
+
+    def check(self):
+        return check_bus_nodes(self.fzp_doc)
+
+class FZPConnectorLayersChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "connector_layers"
+
+    @staticmethod
+    def get_description():
+        return "Check that all connector layers have required attributes"
+
+    def check(self):
+        return check_connector_layers(self.fzp_doc)
+
+class FZPFamilyPropertyChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "family_property"
+
+    @staticmethod
+    def get_description():
+        return "Check that the family property exists and has a value"
+
+    def check(self):
+        return check_family_property(self.fzp_doc)
+
+class FZPUniquePropertyNamesChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "unique_property_names"
+
+    @staticmethod
+    def get_description():
+        return "Check that all property names are unique"
+
+    def check(self):
+        return check_unique_property_names(self.fzp_doc)
+
+class FZPPropertyFieldsChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "property_fields"
+
+    @staticmethod
+    def get_description():
+        return "Check that all properties have required fields"
+
+    def check(self):
+        return check_property_fields(self.fzp_doc)
+
+class FZPRequiredTagsChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "required_tags"
+
+    @staticmethod
+    def get_description():
+        return "Check that all required tags and attributes are present"
+
+    def check(self):
+        return check_required_tags_and_attributes(self.fzp_doc)
+
+class FZPBusesChecker(FZPChecker):
+    @staticmethod
+    def get_name():
+        return "buses"
+
+    @staticmethod
+    def get_description():
+        return "Check that all buses are properly defined"
+
+    def check(self):
+        return check_buses(self.fzp_doc)

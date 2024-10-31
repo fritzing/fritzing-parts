@@ -2,23 +2,6 @@ from lxml import etree
 from fzp_checkers import *
 from svg_checkers import *
 from fzp_utils import FZPUtils
-from fzp_additional_checks import (
-    check_fritzing_version,
-    check_module_id,
-    check_version,
-    check_title,
-    check_description,
-    check_author,
-    check_views,
-    check_bus_id,
-    check_bus_nodes,
-    check_connector_layers,
-    check_family_property,
-    check_unique_property_names,
-    check_property_fields,
-    check_required_tags_and_attributes,
-    check_buses
-)
 import json
 
 class FZPCheckerRunner:
@@ -46,22 +29,6 @@ class FZPCheckerRunner:
 
             errors = checker.check()
             self.total_errors += errors
-
-        self.total_errors += check_fritzing_version(fzp_doc)
-        self.total_errors += check_module_id(fzp_doc)
-        self.total_errors += check_version(fzp_doc)
-        self.total_errors += check_title(fzp_doc)
-        self.total_errors += check_description(fzp_doc)
-        self.total_errors += check_author(fzp_doc)
-        self.total_errors += check_views(fzp_doc)
-        self.total_errors += check_bus_id(fzp_doc)
-        self.total_errors += check_bus_nodes(fzp_doc)
-        self.total_errors += check_connector_layers(fzp_doc)
-        self.total_errors += check_family_property(fzp_doc)
-        self.total_errors += check_unique_property_names(fzp_doc)
-        self.total_errors += check_property_fields(fzp_doc)
-        self.total_errors += check_required_tags_and_attributes(fzp_doc)
-        self.total_errors += check_buses(fzp_doc)
 
         if svg_check_types:
             self._run_svg_checkers(fzp_doc, svg_check_types)
@@ -165,6 +132,17 @@ class FZPCheckerRunner:
 
 AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker, FZPPCBConnectorStrokeChecker]
 SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker]
+AVAILABLE_CHECKERS_FROM_GOLANG = [
+    FZPBusIDChecker,
+    FZPBusNodesChecker,
+    FZPConnectorLayersChecker,
+    FZPFamilyPropertyChecker,
+    FZPUniquePropertyNamesChecker,
+    FZPPropertyFieldsChecker,
+    FZPRequiredTagsChecker,
+    FZPBusesChecker
+]
+AVAILABLE_CHECKERS += AVAILABLE_CHECKERS_FROM_GOLANG
 
 if __name__ == "__main__":
     import argparse
