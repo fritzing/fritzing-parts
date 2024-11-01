@@ -3,31 +3,28 @@ from lxml import etree
 from abc import ABC, abstractmethod
 from fzp_utils import FZPUtils
 from svg_utils import SVGUtils
-from fzp_additional_checks import (
-      check_fritzing_version,
-      check_module_id,
-      check_version,
-      check_title,
-      check_description,
-      check_author,
-      check_views,
-      check_bus_id,
-      check_bus_nodes,
-      check_connector_layers,
-      check_family_property,
-      check_unique_property_names,
-      check_property_fields,
-      check_required_tags_and_attributes,
-      check_buses
-  )
+import re
 
 class FZPChecker(ABC):
     def __init__(self, fzp_doc):
         self.fzp_doc = fzp_doc
+        self.errors = 0
+        self.warnings = 0
 
     @abstractmethod
     def check(self):
         pass
+
+    def add_error(self, message):
+        print(f"Error: {message}")
+        self.errors += 1
+
+    def add_warning(self, message):
+        print(f"Warning: {message}")
+        self.warnings += 1
+
+    def get_result(self):
+        return self.errors, self.warnings
 
     @staticmethod
     @abstractmethod
@@ -42,13 +39,11 @@ class FZPChecker(ABC):
 
 class FZPMissingTagsChecker(FZPChecker):
     def check(self):
-        errors = 0
         required_tags = ["module", "version", "author", "title", "label", "date", "description", "views", "connectors"]
         for tag in required_tags:
             if not self.fzp_doc.xpath(f"//{tag}"):
-                print(f"Missing required tag: {tag}")
-                errors += 1
-        return errors
+                self.add_error(f"Missing required tag: {tag}")
+        return self.get_result()
 
     @staticmethod
     def get_name():
@@ -65,7 +60,6 @@ class FZPConnectorTerminalChecker(FZPChecker):
         self.fzp_path = fzp_path
 
     def check(self):
-        errors = 0
         connectors_section = self.fzp_doc.xpath("//module/connectors")
         if connectors_section:
             connectors = connectors_section[0].xpath("connector")
@@ -80,9 +74,8 @@ class FZPConnectorTerminalChecker(FZPChecker):
                     terminal_ids.extend([p.attrib["terminalId"] for p in view.xpath("p[@terminalId]")])
                     for terminal_id in terminal_ids:
                         if not self.svg_has_element_with_id(terminal_id, view.tag):
-                            print(f"Connector {connector_id} references missing terminal {terminal_id} in SVG")
-                            errors += 1
-        return errors
+                            self.add_error(f"Connector {connector_id} references missing terminal {terminal_id} in SVG")
+        return self.get_result()
 
     def svg_has_element_with_id(self, element_id, view_name):
         svg_path = FZPUtils.get_svg_path_from_view(self.fzp_doc, self.fzp_path, view_name)
@@ -115,13 +108,11 @@ class FZPConnectorVisibilityChecker(FZPChecker):
         self.fzp_path = fzp_path
 
     def check(self):
-        errors = 0
         connectors_section = self.fzp_doc.xpath("//module/connectors")
         if connectors_section:
             connectors = connectors_section[0].xpath("connector")
             for connector in connectors:
                 connector_id = connector.attrib["id"]
-
                 views = connector.xpath("views")[0]
                 for view in views:
                     p_elements = view.xpath("p")
@@ -132,22 +123,20 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                         connector_svg_id = p.attrib.get("svgId")
                         layer = p.attrib.get("layer")
                         if not connector_svg_id:
-                            print(f"Connector {connector_id} does not reference an element in layer {layer}.")
-                            errors += 1
+                            self.add_error(f"Connector {connector_id} does not reference an element in layer {layer}.")
                             continue
 
                         svg_path = FZPUtils.get_svg_path_from_view(self.fzp_doc, self.fzp_path, view.tag, layer)
                         if not svg_path:
                             continue  # Skip template SVGs
-                        if not self.is_connector_visible(svg_path, connector_svg_id): # we already checked that it is not hybrid
-                            print(f"Invisible connector '{connector_svg_id}' in layer '{layer}' of file '{self.fzp_path}'")
-                            errors += 1
-        return errors
+                        if not self.is_connector_visible(svg_path, connector_svg_id):
+                            self.add_error(f"Invisible connector '{connector_svg_id}' in layer '{layer}' of file '{self.fzp_path}'")
+        return self.get_result()
 
     def is_connector_visible(self, svg_path, connector_id):
         if not os.path.isfile(svg_path):
             print(f"Warning: Invalid SVG path '{svg_path}' for connector '{connector_id}'")
-            return True  # Skip the check if the SVG path is invalid
+            return True
 
         try:
             svg_doc = etree.parse(svg_path)
@@ -178,7 +167,6 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
     def __init__(self, fzp_doc, fzp_path):
         super().__init__(fzp_doc)
         self.fzp_path = fzp_path
-        self.errors = 0
 
     def check(self):
         connectors_section = self.fzp_doc.xpath("//module/connectors")
@@ -186,7 +174,6 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
             connectors = connectors_section[0].xpath("connector")
             for connector in connectors:
                 connector_id = connector.attrib["id"]
-
                 views = connector.xpath("views")[0]
                 for view in views:
                     if view.tag != "pcbView":
@@ -202,14 +189,13 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
                         if not svg_path:
                             continue  # Skip template SVGs
                         if not self.is_connector_stroke_valid(svg_path, connector_svg_id):
-                            print(f"Invalid stroke for connector '{connector_svg_id}' in PCB view of file '{self.fzp_path}'")
-                            self.errors += 1
-        return self.errors
+                            self.add_error(f"Invalid stroke for connector '{connector_svg_id}' in PCB view of file '{self.fzp_path}'")
+        return self.get_result()
 
     def is_connector_stroke_valid(self, svg_path, connector_id):
         if not os.path.isfile(svg_path):
             print(f"Warning: Invalid SVG path '{svg_path}' for connector '{connector_id}'")
-            return True  # Skip the check if the SVG path is invalid
+            return True
 
         try:
             svg_doc = etree.parse(svg_path)
@@ -218,20 +204,16 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
                 try:
                     return SVGUtils.has_valid_stroke(elements[0])
                 except ValueError as e:
-                    self.errors += 1
-                    print(f"Error in {connector_id}: {e}")
-                    return True # Connector not found, skip further checks
+                    self.add_error(f"Error in {connector_id}: {e}")
+                    return True
             else:
-                self.errors += 1
-                print(f"Warning: Connector {connector_id} not found in {svg_path}")
+                self.add_error(f"Warning: Connector {connector_id} not found in {svg_path}")
                 return True
         except FileNotFoundError:
-            self.errors += 1
-            print(f"SVG file not found: {svg_path}")
+            self.add_error(f"SVG file not found: {svg_path}")
             return True
         except etree.XMLSyntaxError as err:
-            self.errors += 1
-            print(f"Error parsing SVG file: {svg_path}")
+            self.add_error(f"Error parsing SVG file: {svg_path}")
             print(str(err))
             return True
         return False
@@ -244,7 +226,16 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
     def get_description():
         return "Check for valid stroke attributes in connectors of the PCB view in the SVG files referenced by the FZP"
 
+
 class FZPFritzingVersionChecker(FZPChecker):
+    def check(self):
+        version = self.fzp_doc.getroot().get('fritzingVersion')
+        if not version:
+            self.add_error("'FritzingVersion' is undefined or empty.")
+        elif not re.match(r'^\d+\.\d+\.\d+$', version):
+            self.add_error(f"'FritzingVersion' '{version}' does not match the expected format.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "fritzing_version"
@@ -253,10 +244,14 @@ class FZPFritzingVersionChecker(FZPChecker):
     def get_description():
         return "Check fritzing version attribute is present and valid"
 
-    def check(self):
-        return check_fritzing_version(self.fzp_doc)
 
 class FZPModuleIDChecker(FZPChecker):
+    def check(self):
+        module_id = self.fzp_doc.getroot().get('moduleId')
+        if not module_id:
+            self.add_error("'ModuleID' is undefined or empty.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "module_id"
@@ -265,10 +260,18 @@ class FZPModuleIDChecker(FZPChecker):
     def get_description():
         return "Check module ID attribute is present"
 
-    def check(self):
-        return check_module_id(self.fzp_doc)
 
 class FZPVersionChecker(FZPChecker):
+    def check(self):
+        version_elements = self.fzp_doc.xpath("//version")
+        if not version_elements:
+            self.add_warning("'Version' is undefined.")
+        else:
+            version = version_elements[0].text
+            if not re.match(r'^\d+(\.\d+)*$', version):
+                self.add_warning(f"'Version' '{version}' does not match the expected format.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "version"
@@ -277,10 +280,13 @@ class FZPVersionChecker(FZPChecker):
     def get_description():
         return "Check version tag is present and valid"
 
-    def check(self):
-        return check_version(self.fzp_doc)
 
 class FZPTitleChecker(FZPChecker):
+    def check(self):
+        if not self.fzp_doc.xpath("//title"):
+            self.add_error("'Title' is undefined or empty.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "title"
@@ -289,10 +295,13 @@ class FZPTitleChecker(FZPChecker):
     def get_description():
         return "Check title tag is present"
 
-    def check(self):
-        return check_title(self.fzp_doc)
 
 class FZPDescriptionChecker(FZPChecker):
+    def check(self):
+        if not self.fzp_doc.xpath("//description"):
+            self.add_warning("'Description' is undefined.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "description"
@@ -301,10 +310,13 @@ class FZPDescriptionChecker(FZPChecker):
     def get_description():
         return "Check description tag is present"
 
-    def check(self):
-        return check_description(self.fzp_doc)
 
 class FZPAuthorChecker(FZPChecker):
+    def check(self):
+        if not self.fzp_doc.xpath("//author"):
+            self.add_warning("'Author' is undefined.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "author"
@@ -313,10 +325,20 @@ class FZPAuthorChecker(FZPChecker):
     def get_description():
         return "Check author tag is present"
 
-    def check(self):
-        return check_author(self.fzp_doc)
 
 class FZPViewsChecker(FZPChecker):
+    def check(self):
+        views = self.fzp_doc.xpath("//views")
+        if not views:
+            self.add_error("'views' section is missing.")
+            return self.get_result()
+
+        required_views = ['breadboardView', 'pcbView', 'schematicView']
+        for view in required_views:
+            if not views[0].xpath(f".//{view}"):
+                self.add_error(f"Required view '{view}' is missing.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "views"
@@ -325,10 +347,15 @@ class FZPViewsChecker(FZPChecker):
     def get_description():
         return "Check views section is present"
 
-    def check(self):
-        return check_views(self.fzp_doc)
 
 class FZPBusIDChecker(FZPChecker):
+    def check(self):
+        buses = self.fzp_doc.xpath("//bus")
+        for bus in buses:
+            if not bus.get('id'):
+                self.add_error(f"Bus with missing ID found: {etree.tostring(bus, pretty_print=True).decode()}")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "bus_id"
@@ -337,10 +364,20 @@ class FZPBusIDChecker(FZPChecker):
     def get_description():
         return "Check bus IDs are present"
 
-    def check(self):
-        return check_bus_id(self.fzp_doc)
 
 class FZPBusNodesChecker(FZPChecker):
+    def check(self):
+        buses = self.fzp_doc.xpath("//bus")
+        for bus in buses:
+            nodes = bus.xpath(".//nodeMember")
+            if not nodes:
+                self.add_error(f"Bus '{bus.get('id')}' has no node members.")
+            else:
+                for node in nodes:
+                    if not node.get('connectorId'):
+                        self.add_error(f"Node missing connectorId in Bus '{bus.get('id')}'.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "bus_nodes"
@@ -349,10 +386,22 @@ class FZPBusNodesChecker(FZPChecker):
     def get_description():
         return "Check bus nodes are present and valid"
 
-    def check(self):
-        return check_bus_nodes(self.fzp_doc)
 
 class FZPConnectorLayersChecker(FZPChecker):
+    def check(self):
+        connectors = self.fzp_doc.xpath("//connector")
+        for connector in connectors:
+            connector_id = connector.get('id')
+            layers = connector.xpath(".//ConnectorLayer")
+            for layer in layers:
+                if not layer.get('layer'):
+                    self.add_error(f"ConnectorLayer missing 'layer' ID in Connector '{connector_id}'.")
+                if not layer.get('svgId'):
+                    self.add_error(f"ConnectorLayer missing 'svgId' in Connector '{connector_id}'.")
+                if not layer.get('terminalId'):
+                    self.add_error(f"ConnectorLayer missing 'terminalId' in Connector '{connector_id}'.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "connector_layers"
@@ -361,10 +410,18 @@ class FZPConnectorLayersChecker(FZPChecker):
     def get_description():
         return "Check connector layers are properly defined"
 
-    def check(self):
-        return check_connector_layers(self.fzp_doc)
 
 class FZPFamilyPropertyChecker(FZPChecker):
+    def check(self):
+        properties = self.fzp_doc.xpath("//property")
+        for prop in properties:
+            if prop.get('name') == 'family':
+                if not prop.text:
+                    self.add_error("'family' property has no value.")
+                return self.get_result()
+        self.add_error("'family' property is missing.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "family_property"
@@ -373,10 +430,19 @@ class FZPFamilyPropertyChecker(FZPChecker):
     def get_description():
         return "Check family property is present"
 
-    def check(self):
-        return check_family_property(self.fzp_doc)
 
 class FZPUniquePropertyNamesChecker(FZPChecker):
+    def check(self):
+        properties = self.fzp_doc.xpath("//property")
+        names = set()
+        for prop in properties:
+            name = prop.get('name')
+            if name in names:
+                self.add_error(f"Duplicate property name found: '{name}'.")
+            else:
+                names.add(name)
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "unique_property_names"
@@ -385,10 +451,18 @@ class FZPUniquePropertyNamesChecker(FZPChecker):
     def get_description():
         return "Check property names are unique"
 
-    def check(self):
-        return check_unique_property_names(self.fzp_doc)
 
 class FZPPropertyFieldsChecker(FZPChecker):
+    def check(self):
+        properties = self.fzp_doc.xpath("//property")
+        for prop in properties:
+            name = prop.get('name')
+            if not name:
+                self.add_error(f"Property with empty 'name' attribute found: {etree.tostring(prop, pretty_print=True).decode()}")
+            elif not prop.text:
+                self.add_error(f"Property '{name}' has an empty value.")
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "property_fields"
@@ -397,10 +471,29 @@ class FZPPropertyFieldsChecker(FZPChecker):
     def get_description():
         return "Check property fields are properly defined"
 
-    def check(self):
-        return check_property_fields(self.fzp_doc)
 
 class FZPRequiredTagsChecker(FZPChecker):
+    def check(self):
+        required_attributes = {
+            'module': ['moduleId']
+        }
+        required_tags = ['title', 'tags', 'properties', 'views', 'connectors', 'buses']
+
+        # Check required attributes
+        for element, attributes in required_attributes.items():
+            elements = self.fzp_doc.xpath(f"//{element}")
+            if elements:
+                for attr in attributes:
+                    if not elements[0].get(attr):
+                        self.add_error(f"Tag '{element}' is missing required attribute '{attr}'.")
+
+        # Check required tags
+        for tag in required_tags:
+            if not self.fzp_doc.xpath(f"//{tag}"):
+                self.add_error(f"Required tag '{tag}' is missing.")
+
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "required_tags"
@@ -409,10 +502,24 @@ class FZPRequiredTagsChecker(FZPChecker):
     def get_description():
         return "Check all required tags and attributes are present"
 
-    def check(self):
-        return check_required_tags_and_attributes(self.fzp_doc)
 
 class FZPBusesChecker(FZPChecker):
+    def check(self):
+        buses = self.fzp_doc.xpath("//bus")
+        for bus in buses:
+            bus_id = bus.get('id')
+            if not bus_id:
+                self.add_error(f"Bus found without an ID: {etree.tostring(bus, pretty_print=True).decode()}")
+
+            node_members = bus.xpath(".//nodeMember")
+            if not node_members:
+                if bus_id:
+                    self.add_error(f"Bus '{bus_id}' has no node members.")
+                else:
+                    self.add_error("Bus has no node members.")
+
+        return self.get_result()
+
     @staticmethod
     def get_name():
         return "buses"
@@ -420,6 +527,3 @@ class FZPBusesChecker(FZPChecker):
     @staticmethod
     def get_description():
         return "Check buses are properly defined"
-
-    def check(self):
-        return check_buses(self.fzp_doc)

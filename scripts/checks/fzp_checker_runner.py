@@ -9,6 +9,7 @@ class FZPCheckerRunner:
         self.path = path
         self.verbose = verbose
         self.total_errors = 0
+        self.total_warnings = 0
 
     def check(self, check_types, svg_check_types):
         self.total_errors = 0
@@ -27,14 +28,17 @@ class FZPCheckerRunner:
             if self.verbose:
                 print(f"Running check: {checker.get_name()}")
 
-            errors = checker.check()
+            errors, warnings = checker.check()  # Now returns both
             self.total_errors += errors
+            self.total_warnings += warnings
 
         if svg_check_types:
             self._run_svg_checkers(fzp_doc, svg_check_types)
 
-        if self.verbose or self.total_errors > 0:
+        if self.verbose or self.total_errors > 0 or self.total_warnings > 0:
             print(f"Total errors in {self.path}: {self.total_errors}")
+            if self.total_warnings > 0:
+                print(f"Total warnings in {self.path}: {self.total_warnings}")
         fzp_doc.getroot().clear()
 
     def _parse_fzp(self):
