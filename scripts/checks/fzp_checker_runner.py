@@ -227,14 +227,14 @@ if __name__ == "__main__":
         elif os.path.isfile(args.path):
             fzp_files.add(args.path)
         elif os.path.isdir(args.path):
-            for filename in os.listdir(args.path):
+            for filename in sorted(os.listdir(args.path)):
                 if filename.endswith(".fzp"):
                     fzp_files.add(os.path.join(args.path, filename))
 
         if args.verbose:
             print(f"Checking {len(fzp_files)} FZP files")
 
-        for fzp_file in fzp_files:
+        for fzp_file in sorted(fzp_files):
             checker_runner.path = fzp_file
             checker_runner.check(selected_fzp_checks, selected_svg_checks)
             total_errors += checker_runner.total_errors
