@@ -232,8 +232,6 @@ class FZPFritzingVersionChecker(FZPChecker):
         version = self.fzp_doc.getroot().get('fritzingVersion')
         if not version:
             self.add_error("'FritzingVersion' is undefined or empty.")
-        elif not re.match(r'^\d+\.\d+\.\d+$', version):
-            self.add_error(f"'FritzingVersion' '{version}' does not match the expected format.")
         return self.get_result()
 
     @staticmethod

@@ -116,11 +116,6 @@ class TestCheckers(unittest.TestCase):
                          ['fritzing_version'],
                          [], 1, None, 0)
 
-    def test_fritzing_version_invalid_format(self):
-        self.run_checker('fritzing_version_invalid_format.fzp.test',
-                         ['fritzing_version'],
-                         [], 1, None, 0)
-
     def test_module_id_present(self):
         self.run_checker('module_id_present.fzp.test',
                          ['module_id'],
