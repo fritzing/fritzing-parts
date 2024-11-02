@@ -364,17 +364,57 @@ class FZPBusIDChecker(FZPChecker):
 
 
 class FZPBusNodesChecker(FZPChecker):
+    def __init__(self, fzp_doc, fzp_path):
+        super().__init__(fzp_doc)
+        self.fzp_path = fzp_path
+        self.buses_with_no_nodes = []
+
     def check(self):
         buses = self.fzp_doc.xpath("//bus")
         for bus in buses:
             nodes = bus.xpath(".//nodeMember")
             if not nodes:
-                self.add_error(f"Bus '{bus.get('id')}' has no node members.")
+                bus_id = bus.get('id', 'unknown')
+                self.add_error(f"Bus '{bus_id}' has no node members.")
+                self.buses_with_no_nodes.append(bus_id)
             else:
                 for node in nodes:
                     if not node.get('connectorId'):
-                        self.add_error(f"Node missing connectorId in Bus '{bus.get('id')}'.")
+                        bus_id = bus.get('id', 'unknown')
+                        self.add_error(f"Node missing connectorId in Bus '{bus_id}'.")
         return self.get_result()
+
+    def fix(self):
+        """Remove buses that have no node members by treating XML as string and removing the relevant blocks."""
+        if not self.buses_with_no_nodes:
+            return False  # Nothing to fix
+
+        fixed = False
+
+        try:
+            with open(self.fzp_path, 'r', encoding='UTF-8') as f:
+                content = f.read()
+
+            for bus_id in self.buses_with_no_nodes:
+                # Pattern includes leading whitespace and entire line
+                pattern = re.compile(
+                    r'[\t ]*<bus\b[^>]*\bid\s*=\s*["\']{}["\'][^>]*/?>(?:[^<]*</bus>)?\r?\n'.format(re.escape(bus_id))
+                )
+                new_content, count = pattern.subn('', content)
+                if count > 0:
+                    fixed = True
+                    print(f"Fixed: Removed empty bus '{bus_id}'")
+                content = new_content
+
+            if fixed:
+                with open(self.fzp_path, 'w', encoding='UTF-8') as f:
+                    f.write(content)
+
+        except Exception as e:
+            self.add_error(f"Error during fixing buses: {str(e)}")
+            return False
+
+        return fixed
 
     @staticmethod
     def get_name():

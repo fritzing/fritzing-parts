@@ -3,6 +3,7 @@ from fzp_checkers import *
 from svg_checkers import *
 from fzp_utils import FZPUtils
 import json
+import re
 
 class FZPCheckerRunner:
     def __init__(self, path, verbose=False):
@@ -10,9 +11,11 @@ class FZPCheckerRunner:
         self.verbose = verbose
         self.total_errors = 0
         self.total_warnings = 0
+        self.fixed = False
 
-    def check(self, check_types, svg_check_types):
+    def check(self, check_types, svg_check_types, fix=False):
         self.total_errors = 0
+        self.fixed = False
         try:
             fzp_doc = self._parse_fzp()
         except etree.XMLSyntaxError as e:
@@ -28,9 +31,18 @@ class FZPCheckerRunner:
             if self.verbose:
                 print(f"Running check: {checker.get_name()}")
 
-            errors, warnings = checker.check()  # Now returns both
+            errors, warnings = checker.check()
             self.total_errors += errors
             self.total_warnings += warnings
+
+            # Apply fixes if requested and available
+            if fix and errors > 0 and hasattr(checker, 'fix'):
+                try:
+                    if checker.fix():
+                        self.fixed = True
+                except Exception as e:
+                    print(f"Error while fixing: {str(e)}")
+                    continue
 
         if svg_check_types:
             self._run_svg_checkers(fzp_doc, svg_check_types)
@@ -39,6 +51,7 @@ class FZPCheckerRunner:
             print(f"Total errors in {self.path}: {self.total_errors}")
             if self.total_warnings > 0:
                 print(f"Total warnings in {self.path}: {self.total_warnings}")
+
         fzp_doc.getroot().clear()
 
     def _parse_fzp(self):
@@ -51,7 +64,8 @@ class FZPCheckerRunner:
                 if checker in [
                     FZPConnectorTerminalChecker,
                     FZPConnectorVisibilityChecker,
-                    FZPPCBConnectorStrokeChecker
+                    FZPPCBConnectorStrokeChecker,
+                    FZPBusNodesChecker
                 ]:
                     return checker(fzp_doc, self.path)
                 else:
@@ -174,6 +188,7 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--file", help="Path to a file containing a list of SVG and FZP files to check")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
     parser.add_argument('-h', '--help', action='store_true', help='Show this help message and exit')
+    parser.add_argument("--fix", action="store_true", help="Try to automatically fix errors when possible")
     parser.usage = parser.format_help()
 
     args = parser.parse_args()
@@ -236,7 +251,7 @@ if __name__ == "__main__":
 
         for fzp_file in sorted(fzp_files):
             checker_runner.path = fzp_file
-            checker_runner.check(selected_fzp_checks, selected_svg_checks)
+            checker_runner.check(selected_fzp_checks, selected_svg_checks, fix=args.fix)
             total_errors += checker_runner.total_errors
 
         if args.verbose or total_errors > 0:
