@@ -71,6 +71,8 @@ def main():
     parser.add_argument(
         "-x", "--hash", help="7 digit number to avoid collisions, like two different \"ArduinoUno_v2\" files.")
     parser.add_argument("--keep-svgs", action="store_true", help="Don't move or copy SVGs to new locations")
+    parser.add_argument("--modified", action="store_true",
+                        help="The input fzp is already the modified version. The obsolete version will be created from git.")
 
     if len(sys.argv) < 2:
         parser.print_help(sys.stderr)
@@ -128,6 +130,12 @@ def main():
     else:
         part_hash = "%07x" % random.randint(1, 268435454)
 
+    if args.modified:
+        temp_modified = fzpFilename + ".modified"
+        command("mv", fzpFilename, temp_modified)
+        # Restore the original version
+        command("git", "checkout", "HEAD", fzpFilename)
+
     new_fzp_filename = "_".join([name, part_hash, revision]) + ".fzp"
 
     new_fzp = os.path.join(fzpdir, new_fzp_filename)
@@ -137,7 +145,12 @@ def main():
         raise Exception("Error: destination already exists %s " % obsolete_fzp)
     command("git", "mv", fzpFilename, obsolete_fzp)
 
-    new_fzp_dom = deepcopy(obsolete_fzp_dom)
+    if args.modified:
+        # Instead of copying from obsolete, use our saved modified version
+        command("mv", temp_modified, new_fzp)
+        new_fzp_dom = get_dom(new_fzp)
+    else:
+        new_fzp_dom = deepcopy(obsolete_fzp_dom)
 
     if not args.keep_svgs:
         new_svg_filename = "_".join([name, part_hash, revision]) + ".svg"
