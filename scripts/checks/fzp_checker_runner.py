@@ -106,11 +106,11 @@ class FZPCheckerRunner:
                                     print(f"Running SVG check: {checker.get_name()} on {svg_path} for {view.tag}")
                                 errors = checker.check()
                                 self.total_errors += errors
+                            svg_doc.getroot().clear()
                         except etree.XMLSyntaxError as e:
                             print(f"Invalid XML in SVG: {str(e)}")
                             self.total_errors += 1
-                        finally:
-                            svg_doc.getroot().clear()
+
                     else:
                         print(f"Warning: SVG '{svg_path}' for view '{view.tag}' of file '{self.path}' not found.")
                         self.total_errors += 1
