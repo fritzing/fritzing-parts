@@ -85,8 +85,8 @@ class FZPConnectorTerminalChecker(FZPChecker):
             svg_doc = etree.parse(svg_path)
             elements = svg_doc.xpath(f"//*[@id='{element_id}']")
             return len(elements) > 0
-        except FileNotFoundError:
-            print(f"SVG file not found: {svg_path}")
+        except (FileNotFoundError, OSError) as e:
+            print(f"SVG file error: {svg_path} - {str(e)}")
             return True  # Not a 'missing element' if the complete file is missing
         except etree.XMLSyntaxError as err:
             print(f"Error parsing SVG file: {svg_path}")
