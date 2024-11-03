@@ -70,6 +70,7 @@ def main():
 
     parser.add_argument(
         "-x", "--hash", help="7 digit number to avoid collisions, like two different \"ArduinoUno_v2\" files.")
+    parser.add_argument("--keep-svgs", action="store_true", help="Don't move or copy SVGs to new locations")
 
     if len(sys.argv) < 2:
         parser.print_help(sys.stderr)
@@ -128,7 +129,6 @@ def main():
         part_hash = "%07x" % random.randint(1, 268435454)
 
     new_fzp_filename = "_".join([name, part_hash, revision]) + ".fzp"
-    new_svg_filename = "_".join([name, part_hash, revision]) + ".svg"
 
     new_fzp = os.path.join(fzpdir, new_fzp_filename)
     obsolete_fzp_dom = get_dom(fzpFilename)
@@ -139,37 +139,39 @@ def main():
 
     new_fzp_dom = deepcopy(obsolete_fzp_dom)
 
-    layers = new_fzp_dom.getElementsByTagName("layers")
-    for layer in layers:
-        # 1 cp to new name
-        image = os.path.normpath(layer.getAttribute("image"))
-        # look in ../svg/<subpath>/<image>
-        # e.g. ../svg/core/breadboard/imagefile.svg
-        path = os.path.join(os.path.dirname(fzpdir), "svg",
-                            os.path.basename(fzpdir), image)
-        if not os.path.isfile(path):
-            print("Warning: %s not found. Ignoring" % path)
-            continue
+    if not args.keep_svgs:
+        new_svg_filename = "_".join([name, part_hash, revision]) + ".svg"
+        layers = new_fzp_dom.getElementsByTagName("layers")
+        for layer in layers:
+            # 1 cp to new name
+            image = os.path.normpath(layer.getAttribute("image"))
+            # look in ../svg/<subpath>/<image>
+            # e.g. ../svg/core/breadboard/imagefile.svg
+            path = os.path.join(os.path.dirname(fzpdir), "svg",
+                                os.path.basename(fzpdir), image)
+            if not os.path.isfile(path):
+                print("Warning: %s not found. Ignoring" % path)
+                continue
 
-        new_svg = os.path.join(os.path.dirname(path), new_svg_filename)
+            new_svg = os.path.join(os.path.dirname(path), new_svg_filename)
 
-        command("cp", path, new_svg)
+            command("cp", path, new_svg)
 
-        # 2 mv from core to obsolete
-        dest = os.path.join(topdir, "svg", "obsolete", os.path.basename(
-            os.path.dirname(path)), os.path.basename(path))
-        if os.path.isfile(dest):
-            raise Exception("Error: destination already exists %s " % dest)
+            # 2 mv from core to obsolete
+            dest = os.path.join(topdir, "svg", "obsolete", os.path.basename(
+                os.path.dirname(path)), os.path.basename(path))
+            if os.path.isfile(dest):
+                raise Exception("Error: destination already exists %s " % dest)
 
-        command("git", "mv", path, dest)
+            command("git", "mv", path, dest)
 
-        command("git", "add", new_svg)
+            command("git", "add", new_svg)
 
-        # 3 set new name in dom
-        new_image = os.path.join(os.path.basename(
-            os.path.dirname(image)), new_svg_filename)
-        print("set layer image to %s" % new_image)
-        layer.setAttribute("image", new_image)
+            # 3 set new name in dom
+            new_image = os.path.join(os.path.basename(
+                os.path.dirname(image)), new_svg_filename)
+            print("set layer image to %s" % new_image)
+            layer.setAttribute("image", new_image)
 
     old_module_id = obsolete_fzp_dom.getAttribute("moduleId")
     print("replace moduleId=\"%s\"" % old_module_id)
