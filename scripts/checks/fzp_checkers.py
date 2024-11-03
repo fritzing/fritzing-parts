@@ -515,7 +515,7 @@ class FZPRequiredTagsChecker(FZPChecker):
         required_attributes = {
             'module': ['moduleId']
         }
-        required_tags = ['title', 'tags', 'properties', 'views', 'connectors', 'buses']
+        required_tags = ['title', 'tags', 'properties', 'views', 'connectors']
 
         # Check required attributes
         for element, attributes in required_attributes.items():

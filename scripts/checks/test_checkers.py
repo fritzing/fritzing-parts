@@ -174,12 +174,12 @@ class TestCheckers(unittest.TestCase):
     def test_required_tags_present(self):
         self.run_checker('required_tags_present.fzp.test',
                          ['required_tags'],
-                         [], 5, None, 0)
+                         [], 4, None, 0)
 
     def test_required_tags_missing(self):
         self.run_checker('required_tags_missing.fzp.test',
                          ['required_tags'],
-                         [], 7, None, 0)
+                         [], 6, None, 0)
 
     def test_family_property_present_and_valid(self):
         self.run_checker('family_property_present_valid.fzp.test',
