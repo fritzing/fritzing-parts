@@ -15,6 +15,7 @@ class FZPCheckerRunner:
 
     def check(self, check_types, svg_check_types, fix=False):
         self.total_errors = 0
+        self.total_warnings = 0
         self.fixed = False
         try:
             fzp_doc = self._parse_fzp()
@@ -217,6 +218,8 @@ if __name__ == "__main__":
             raise ValueError("No valid check types specified.")
 
         total_errors = 0
+        total_warnings = 0
+
         checker_runner = FZPCheckerRunner(None, verbose=args.verbose)
 
         fzp_files = set()
