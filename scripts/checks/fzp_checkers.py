@@ -204,16 +204,16 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
                 try:
                     return SVGUtils.has_valid_stroke(elements[0])
                 except ValueError as e:
-                    self.add_error(f"Error in {connector_id}: {e}")
+                    self.add_error(f"Failure with {connector_id}: {e}")
                     return True # Connector not found, skip further checks
             else:
-                self.add_error(f"Warning: Connector {connector_id} not found in {svg_path}")
+                self.add_error(f"Connector {connector_id} not found in {svg_path}")
                 return True
         except FileNotFoundError:
             self.add_error(f"SVG file not found: {svg_path}")
             return True
         except etree.XMLSyntaxError as err:
-            self.add_error(f"Error parsing SVG file: {svg_path}")
+            self.add_error(f"Failed to parse SVG file: {svg_path}")
             print(str(err))
             return True
         return False
@@ -411,7 +411,7 @@ class FZPBusNodesChecker(FZPChecker):
                     f.write(content)
 
         except Exception as e:
-            self.add_error(f"Error during fixing buses: {str(e)}")
+            self.add_error(f"Failed while fixing buses: {str(e)}")
             return False
 
         return fixed
