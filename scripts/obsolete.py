@@ -58,6 +58,15 @@ def main():
                     5. All changes are already added to git.\n
                     After running the script, you can modify the part, increase the version, fix bugs in the graphics and so on.        
 
+            Examples:
+                1. Basic usage with automatic name generation:
+                   python3 scripts/obsolete.py core/RFM23BP.fzp
+
+                2. Specify a custom name and revision:
+                   python3 scripts/obsolete.py core/Arduino_Uno.fzp ArduinoUno_Rev3 -r 3
+
+                3. Keep existing SVGs and use modified file:
+                   python3 scripts/obsolete.py core/RFM23BP.fzp --keep-svgs --modified
             ''')
     )
     parser.add_argument("part", help="The part file that should be replaced.")
@@ -70,9 +79,10 @@ def main():
 
     parser.add_argument(
         "-x", "--hash", help="7 digit number to avoid collisions, like two different \"ArduinoUno_v2\" files.")
-    parser.add_argument("--keep-svgs", action="store_true", help="Don't move or copy SVGs to new locations")
+    parser.add_argument("--keep-svgs", action="store_true", help="Don't move or copy SVGs to new locations. Only the fzp is obsoleted.")
     parser.add_argument("--modified", action="store_true",
-                        help="The input fzp is already the modified version. The obsolete version will be created from git.")
+                        help="The input fzp is already the modified version. The obsolete version will be created from git. "
+                             "Requires git to be installed and accessible by the script to recover the original version.")
 
     if len(sys.argv) < 2:
         parser.print_help(sys.stderr)
