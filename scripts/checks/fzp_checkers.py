@@ -135,7 +135,7 @@ class FZPConnectorVisibilityChecker(FZPChecker):
 
     def is_connector_visible(self, svg_path, connector_id):
         if not os.path.isfile(svg_path):
-            print(f"Warning: Invalid SVG path '{svg_path}' for connector '{connector_id}'")
+            self.add_warning(f"Invalid SVG path '{svg_path}' for connector '{connector_id}'")
             return True # Skip the check if the SVG path is invalid
 
         try:
@@ -194,7 +194,7 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
 
     def is_connector_stroke_valid(self, svg_path, connector_id):
         if not os.path.isfile(svg_path):
-            print(f"Warning: Invalid SVG path '{svg_path}' for connector '{connector_id}'")
+            self.add_warning(f"Invalid SVG path '{svg_path}' for connector '{connector_id}'")
             return True
 
         try:
