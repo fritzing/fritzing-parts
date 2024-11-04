@@ -129,14 +129,14 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                         svg_path = FZPUtils.get_svg_path_from_view(self.fzp_doc, self.fzp_path, view.tag, layer)
                         if not svg_path:
                             continue  # Skip template SVGs
-                        if not self.is_connector_visible(svg_path, connector_svg_id):
+                        if not self.is_connector_visible(svg_path, connector_svg_id): # we already checked that it is not hybrid
                             self.add_error(f"Invisible connector '{connector_svg_id}' in layer '{layer}' of file '{self.fzp_path}'")
         return self.get_result()
 
     def is_connector_visible(self, svg_path, connector_id):
         if not os.path.isfile(svg_path):
             print(f"Warning: Invalid SVG path '{svg_path}' for connector '{connector_id}'")
-            return True
+            return True # Skip the check if the SVG path is invalid
 
         try:
             svg_doc = etree.parse(svg_path)
@@ -205,7 +205,7 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
                     return SVGUtils.has_valid_stroke(elements[0])
                 except ValueError as e:
                     self.add_error(f"Error in {connector_id}: {e}")
-                    return True
+                    return True # Connector not found, skip further checks
             else:
                 self.add_error(f"Warning: Connector {connector_id} not found in {svg_path}")
                 return True
