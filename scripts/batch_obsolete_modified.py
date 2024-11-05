@@ -60,7 +60,7 @@ def main():
             'scripts/obsolete.py',
             fzp,
             '--keep-svgs',
-            '--modified'
+            '--fzp-already-modified'
         ]
 
         if args.simulate:

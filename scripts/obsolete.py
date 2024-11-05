@@ -65,8 +65,9 @@ def main():
                 2. Specify a custom name and revision:
                    python3 scripts/obsolete.py core/Arduino_Uno.fzp ArduinoUno_Rev3 -r 3
 
-                3. Keep existing SVGs and use modified file:
-                   python3 scripts/obsolete.py core/RFM23BP.fzp --keep-svgs --modified
+                3. Process an already modified fzp and keep existing SVGs:
+                   python3 scripts/obsolete.py core/RFM23BP.fzp --keep-svgs --fzp-already-modified
+                   (Use when you've already updated the fzp and want to preserve existing SVG files)
             ''')
     )
     parser.add_argument("part", help="The part file that should be replaced.")
@@ -80,9 +81,11 @@ def main():
     parser.add_argument(
         "-x", "--hash", help="7 digit number to avoid collisions, like two different \"ArduinoUno_v2\" files.")
     parser.add_argument("--keep-svgs", action="store_true", help="Don't move or copy SVGs to new locations. Only the fzp is obsoleted.")
-    parser.add_argument("--modified", action="store_true",
-                        help="The input fzp is already the modified version. The obsolete version will be created from git. "
-                             "Requires git to be installed and accessible by the script to recover the original version.")
+    parser.add_argument("--fzp-already-modified", action="store_true",
+                        help="Use when you've already updated the input fzp file. Without this flag, you should run this script "
+                             "on the original fzp file before making changes. With this flag, the script will use git to recover "
+                             "the original version for the obsolete copy while preserving your modifications as the new version. "
+                             "Requires git to be installed.")
 
     if len(sys.argv) < 2:
         parser.print_help(sys.stderr)
