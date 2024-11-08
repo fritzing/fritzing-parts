@@ -143,7 +143,7 @@ def main():
     else:
         part_hash = "%07x" % random.randint(1, 268435454)
 
-    if args.modified:
+    if args.fzp_already_modified:
         temp_modified = fzpFilename + ".modified"
         command("mv", fzpFilename, temp_modified)
         # Restore the original version
@@ -158,7 +158,7 @@ def main():
         raise Exception("Error: destination already exists %s " % obsolete_fzp)
     command("git", "mv", fzpFilename, obsolete_fzp)
 
-    if args.modified:
+    if args.fzp_already_modified:
         # Instead of copying from obsolete, use our saved modified version
         command("mv", temp_modified, new_fzp)
         new_fzp_dom = get_dom(new_fzp)
