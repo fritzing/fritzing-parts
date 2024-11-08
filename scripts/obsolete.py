@@ -46,6 +46,14 @@ def command(*args):
             raise Exception("command error")
 
 
+def get_xml_declaration(filename):
+    with open(filename, 'r', encoding='utf-8') as f:
+        first_line = f.readline().strip()
+        if first_line.startswith('<?xml') and first_line.endswith('?>'):
+            return first_line + '\n'
+    return '<?xml version="1.0" encoding="UTF-8"?>\n'  # fallback default
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Replace a part with a new version of itself.",
@@ -154,6 +162,8 @@ def main():
     new_fzp = os.path.join(fzpdir, new_fzp_filename)
     obsolete_fzp_dom = get_dom(fzpFilename)
 
+    xml_decl = get_xml_declaration(fzpFilename)
+
     if os.path.isfile(obsolete_fzp):
         raise Exception("Error: destination already exists %s " % obsolete_fzp)
     command("git", "mv", fzpFilename, obsolete_fzp)
@@ -217,16 +227,16 @@ def main():
 
     if not simulate:
         print("Write %s" % new_fzp)
-        outfile = open(new_fzp, 'wb')
-        s = new_fzp_dom.toxml("UTF-8")
-        outfile.write(s)
-        outfile.close()
+        with open(new_fzp, 'wb') as outfile:
+            outfile.write(xml_decl.encode('utf-8'))
+            s = new_fzp_dom.toxml("UTF-8")
+            outfile.write(s)
 
         print("Write %s" % obsolete_fzp)
-        outfile = open(obsolete_fzp, 'wb')
-        s = obsolete_fzp_dom.toxml("UTF-8")
-        outfile.write(s)
-        outfile.close()
+        with open(obsolete_fzp, 'wb') as outfile:
+            outfile.write(xml_decl.encode('utf-8'))
+            s = obsolete_fzp_dom.toxml("UTF-8")
+            outfile.write(s)
 
     # s = obsolete_fzp_dom.toxml("UTF-8")
     # print(s)
