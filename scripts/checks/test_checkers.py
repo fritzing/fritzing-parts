@@ -251,5 +251,16 @@ class TestCheckers(unittest.TestCase):
                          ['connector_layers'],
                          [], 7, None, 0)
 
+
+    def test_layer_ids_match(self):
+        self.run_checker('layer_ids_match.fzp.test',
+                         ['layer_ids'],
+                         [], 0, None)
+
+    def test_layer_ids_mismatch(self):
+        self.run_checker('layer_ids_mismatch.fzp.test',
+                         ['layer_ids'],
+                         [], 3, None)
+
 if __name__ == '__main__':
     unittest.main()

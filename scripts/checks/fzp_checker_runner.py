@@ -66,7 +66,8 @@ class FZPCheckerRunner:
                     FZPConnectorTerminalChecker,
                     FZPConnectorVisibilityChecker,
                     FZPPCBConnectorStrokeChecker,
-                    FZPBusNodesChecker
+                    FZPBusNodesChecker,
+                    FZPLayerIDsChecker
                 ]:
                     return checker(fzp_doc, self.path)
                 else:
@@ -166,7 +167,8 @@ AVAILABLE_CHECKERS_FROM_GOLANG = [
     FZPUniquePropertyNamesChecker,
     FZPPropertyFieldsChecker,
     FZPRequiredTagsChecker,
-    FZPBusesChecker
+    FZPBusesChecker,
+    FZPLayerIDsChecker,
 ]
 AVAILABLE_CHECKERS += AVAILABLE_CHECKERS_FROM_GOLANG
 

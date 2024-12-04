@@ -565,3 +565,59 @@ class FZPBusesChecker(FZPChecker):
     @staticmethod
     def get_description():
         return "Check buses are properly defined"
+
+class FZPLayerIDsChecker(FZPChecker):
+    def __init__(self, fzp_doc, fzp_path):
+        super().__init__(fzp_doc)
+        self.fzp_path = fzp_path
+
+    def check(self):
+        views = self.fzp_doc.xpath("//views")[0]
+        for view in views:
+            if view.tag == "defaultUnits":
+                continue
+
+            layers_elements = view.xpath("layers")
+            if not layers_elements:
+                continue
+
+            layers = layers_elements[0]
+            image = layers.get("image")
+            if not image:
+                continue
+
+            svg_path = FZPUtils.get_svg_path(self.fzp_path, image, view.tag)
+            if svg_path is None:
+                continue  # Skip template SVGs
+
+            if not os.path.isfile(svg_path):
+                self.add_error(f"SVG file not found: {svg_path}")
+                continue
+
+            try:
+                svg_doc = etree.parse(svg_path)
+
+                # Check each layer ID
+                layer_elements = layers.xpath("layer")
+                for layer_element in layer_elements:
+                    layer_id = layer_element.get("layerId")
+                    if not layer_id:
+                        continue
+
+                    # Look for matching ID in SVG
+                    matching_elements = svg_doc.xpath(f"//*[@id='{layer_id}']")
+                    if not matching_elements:
+                        self.add_error(f"Layer ID '{layer_id}' from {view.tag} not found in SVG file {svg_path}")
+
+            except etree.XMLSyntaxError as err:
+                self.add_error(f"Error parsing SVG file {svg_path}: {str(err)}")
+
+        return self.get_result()
+
+    @staticmethod
+    def get_name():
+        return "layer_ids"
+
+    @staticmethod
+    def get_description():
+        return "Check that layer IDs in FZP file match with IDs in corresponding SVG files"
