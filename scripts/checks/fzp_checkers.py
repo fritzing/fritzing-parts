@@ -117,6 +117,10 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                 for view in views:
                     p_elements = view.xpath("p")
                     for p in p_elements:
+                        # Skip legs, connector is invisible
+                        if 'legId' in p.attrib:
+                            continue
+                        # Skip hybrids or unknown layers, no way to check visibility
                         if FZPUtils.is_hybrid_or_unknown_layer(p):
                             continue
 
