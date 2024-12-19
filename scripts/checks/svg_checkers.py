@@ -71,6 +71,7 @@ class SVGFontSizeChecker(SVGChecker):
 
 class SVGFontTypeChecker(SVGChecker):
     VALID_FONTS = {
+        'Noto Sans',
         'NotoSans',
         'OCR-Fritzing-mono',
         'Droid Sans',
@@ -80,8 +81,19 @@ class SVGFontTypeChecker(SVGChecker):
 
     FONT_REPLACEMENTS = {
         'OCRAStd': 'OCR-Fritzing-mono',
+        'OCRATributeW01 - Regular': 'OCR-Fritzing-mono',
+        'ocra10': 'OCR-Fritzing-mono',
+        'OCRATributeW01-Regular': 'OCR-Fritzing-mono',
         'OpenSans': 'Noto Sans',
-        'Arial': 'Noto Sans',
+        'ArialMT': 'default',
+        'MyriadPro - Regular': 'default',
+        'MyriadPro-Regular': 'default',
+        'HelveticaNeueLTStd-Roman': 'default',
+        'DroidSans - Bold': 'Noto Sans',
+        'DroidSans-Bold': 'Noto Sans',
+        'Droid Sans Mono': 'default',
+        'Arial-BoldMT': 'Noto Sans',
+        'EurostileLTStd': 'Noto Sans',
     }
 
     def __init__(self, svg_doc, layer_ids):
@@ -93,6 +105,7 @@ class SVGFontTypeChecker(SVGChecker):
         """
         Fixes invalid or missing font families in the SVG document.
         Only replaces fonts that are in the FONT_REPLACEMENTS dictionary.
+        Special value 'default' in FONT_REPLACEMENTS will use view-appropriate default font.
 
         Returns:
             bool: True if modifications were made, False otherwise
@@ -118,6 +131,10 @@ class SVGFontTypeChecker(SVGChecker):
                 # Only replace if the font is in the replacement list
                 if font_family in self.FONT_REPLACEMENTS:
                     new_font = self.FONT_REPLACEMENTS[font_family]
+                    # Handle special 'default' replacement value
+                    if new_font == 'default':
+                        new_font = self.default_font
+
                     element.set("font-family", new_font)
                     content = self.getChildXML(element)
                     print(f"Replaced font '{font_family}' with '{new_font}' in element: [{content}]")
@@ -145,6 +162,7 @@ class SVGFontTypeChecker(SVGChecker):
         else:
             print("No invalid fonts found. No changes made.")
             return False
+
 
     def check_font_type(self, element):
         font_family = SVGUtils.get_inherited_attribute(element, "font-family")
