@@ -59,22 +59,41 @@ class FZPConnectorTerminalChecker(FZPChecker):
         super().__init__(fzp_doc)
         self.fzp_path = fzp_path
 
-    def check(self):
-        connectors_section = self.fzp_doc.xpath("//module/connectors")
-        if connectors_section:
-            connectors = connectors_section[0].xpath("connector")
-            for connector in connectors:
-                connector_id = connector.attrib["id"]
-                views = connector.xpath("views")[0]
-                for view in views:
-                    terminal_ids = []
-                    if view.tag != "schematicView":
-                        continue
+    def _find_invalid_terminal_ids(self):
+        """
+        Private helper method to find invalid terminal IDs in connectors.
 
-                    terminal_ids.extend([p.attrib["terminalId"] for p in view.xpath("p[@terminalId]")])
-                    for terminal_id in terminal_ids:
-                        if not self.svg_has_element_with_id(terminal_id, view.tag):
-                            self.add_error(f"Connector {connector_id} references missing terminal {terminal_id} in SVG")
+        Yields:
+            Tuple containing:
+                - connector Element
+                - p Element with missing terminalId
+                - terminal_id string
+        """
+        connectors_section = self.fzp_doc.xpath("//module/connectors")
+        if not connectors_section:
+            print("No connectors section found in the FZP file.")
+            return
+
+        connectors = connectors_section[0].xpath("connector")
+        for connector in connectors:
+            connector_id = connector.attrib.get("id", "unknown")
+            views = connector.xpath("views")
+            if not views:
+                continue
+            views = views[0]
+            for view in views:
+                if view.tag != "schematicView":
+                    continue
+
+                p_elements = view.xpath("p[@terminalId]")
+                for p in p_elements:
+                    terminal_id = p.attrib.get("terminalId")
+                    if not self.svg_has_element_with_id(terminal_id, view.tag):
+                        yield (connector, p, terminal_id, connector_id)
+
+    def check(self):
+        for connector, p_element, terminal_id, connector_id in self._find_invalid_terminal_ids():
+            self.add_error(f"Connector '{connector_id}' references missing terminal '{terminal_id}' in SVG")
         return self.get_result()
 
     def svg_has_element_with_id(self, element_id, view_name):
@@ -92,6 +111,40 @@ class FZPConnectorTerminalChecker(FZPChecker):
             print(f"Error parsing SVG file: {svg_path}")
             print(str(err))
         return False
+
+    def fix(self):
+        """
+        Removes invalid terminalId attributes from the FZP XML.
+
+        Returns:
+            bool: True if modifications were made and saved successfully, False otherwise.
+        """
+        modified = False
+
+        for connector, p_element, terminal_id, connector_id in self._find_invalid_terminal_ids():
+            # Remove the terminalId attribute
+            del p_element.attrib["terminalId"]
+            print(f"Removed missing terminalId '{terminal_id}' from connector '{connector_id}' in schematicView.")
+            modified = True
+
+        if modified:
+            try:
+                # Create a backup before modifying
+                backup_path = self.fzp_path + ".bak"
+                if not os.path.exists(backup_path):
+                    self.fzp_doc.write(backup_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+                    print(f"Backup created at '{backup_path}'.")
+
+                # Write the modified XML back to the FZP file
+                self.fzp_doc.write(self.fzp_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+                print(f"FZP file '{self.fzp_path}' has been updated successfully.")
+                return True
+            except Exception as e:
+                print(f"Failed to write FZP file '{self.fzp_path}': {str(e)}")
+                return False
+        else:
+            print("No invalid terminal IDs found. No changes made.")
+            return False
 
     @staticmethod
     def get_name():
