@@ -1,6 +1,7 @@
 # Filename: svg_checkers.py
 from lxml import etree
 import re
+import os
 from svg_utils import SVGUtils
 
 class SVGChecker:
@@ -66,6 +67,132 @@ class SVGFontSizeChecker(SVGChecker):
     @staticmethod
     def get_description():
         return "Check that the font-size attribute of each text element is a valid number"
+
+
+class SVGFontTypeChecker(SVGChecker):
+    VALID_FONTS = {
+        'NotoSans',
+        'OCR-Fritzing-mono',
+        'Droid Sans',
+        'DroidSans',
+        'OCRA'
+    }
+
+    FONT_REPLACEMENTS = {
+        'OCRAStd': 'OCR-Fritzing-mono',
+        'OpenSans': 'Noto Sans',
+        'Arial': 'Noto Sans',
+    }
+
+    def __init__(self, svg_doc, layer_ids):
+        super().__init__(svg_doc, layer_ids)
+        self.is_pcb_view = 'copper' in layer_ids or 'silkscreen' in layer_ids
+        self.default_font = 'OCR-Fritzing-mono' if self.is_pcb_view else 'Noto Sans'
+
+    def fix(self):
+        """
+        Fixes invalid or missing font families in the SVG document.
+        Only replaces fonts that are in the FONT_REPLACEMENTS dictionary.
+
+        Returns:
+            bool: True if modifications were made, False otherwise
+        """
+        modified = False
+        text_elements = self.svg_doc.xpath("//*[local-name()='text' or local-name()='tspan']")
+
+        for element in text_elements:
+            font_family = SVGUtils.get_inherited_attribute(element, "font-family")
+
+            if font_family is None:
+                # Add missing font-family attribute
+                element.set("font-family", self.default_font)
+                content = self.getChildXML(element)
+                print(f"Added default font '{self.default_font}' to element: [{content}]")
+                modified = True
+                continue
+
+            # Remove quotes if present
+            font_family = font_family.strip('"\'')
+
+            if font_family not in self.VALID_FONTS:
+                # Only replace if the font is in the replacement list
+                if font_family in self.FONT_REPLACEMENTS:
+                    new_font = self.FONT_REPLACEMENTS[font_family]
+                    element.set("font-family", new_font)
+                    content = self.getChildXML(element)
+                    print(f"Replaced font '{font_family}' with '{new_font}' in element: [{content}]")
+                    modified = True
+                # else: keep the unknown font
+
+        if modified:
+            try:
+                # Get the file path from the SVG document
+                svg_path = self.svg_doc.docinfo.URL
+                if svg_path:
+                    # Create backup
+                    backup_path = svg_path + ".bak"
+                    if not os.path.exists(backup_path):
+                        self.svg_doc.write(backup_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+                        print(f"Backup created at '{backup_path}'")
+
+                    # Write modified SVG
+                    self.svg_doc.write(svg_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+                    print(f"SVG file '{svg_path}' has been updated successfully")
+                    return True
+            except Exception as e:
+                print(f"Failed to write SVG file: {str(e)}")
+                return False
+        else:
+            print("No invalid fonts found. No changes made.")
+            return False
+
+    def check_font_type(self, element):
+        font_family = SVGUtils.get_inherited_attribute(element, "font-family")
+        if font_family is None:
+            if element.tag.endswith("text"):
+                for child in element.iterchildren():
+                    if child.tag.endswith("tspan"):
+                        return self.check_font_type(child)
+            content = self.getChildXML(element)
+            print(f"No font family found for element [{content}]")
+            return 1
+
+        # Remove quotes if present
+        font_family = font_family.strip('"\'')
+
+        if font_family not in self.VALID_FONTS:
+            content = self.getChildXML(element)
+            print(f"Invalid font family '{font_family}' in element: [{content}]")
+            return 1
+        return 0
+
+    def getChildXML(self, elem):
+        out = ""
+        if elem.text:
+            out += elem.text
+        for c in elem.iterchildren():
+            if len(c) == 0:
+                out += f"<{c.tag}/>"
+            else:
+                out += f"<{c.tag}>{self.getChildXML(c)}</{c.tag}>"
+            if c.tail:
+                out += c.tail
+        return out
+
+    def check(self):
+        errors = 0
+        text_elements = self.svg_doc.xpath("//*[local-name()='text' or local-name()='tspan']")
+        for element in text_elements:
+            errors += self.check_font_type(element)
+        return errors
+
+    @staticmethod
+    def get_name():
+        return "font_type"
+
+    @staticmethod
+    def get_description():
+        return "Check that font-family attributes use only allowed fonts (Noto Sans, OCR-Fritzing-mono, DroidSans, OCRA)"
 
 
 class SVGViewBoxChecker(SVGChecker):

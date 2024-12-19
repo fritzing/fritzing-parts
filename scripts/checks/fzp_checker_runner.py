@@ -46,7 +46,7 @@ class FZPCheckerRunner:
                     continue
 
         if svg_check_types:
-            self._run_svg_checkers(fzp_doc, svg_check_types)
+            self._run_svg_checkers(fzp_doc, svg_check_types, fix)
 
         if self.verbose or self.total_errors > 0 or self.total_warnings > 0:
             print(f"Total errors in {self.path}: {self.total_errors}")
@@ -74,7 +74,7 @@ class FZPCheckerRunner:
                     return checker(fzp_doc)
         raise ValueError(f"Invalid check type: {check_type}")
 
-    def _run_svg_checkers(self, fzp_doc, svg_check_types):
+    def _run_svg_checkers(self, fzp_doc, svg_check_types, fix):
         views = fzp_doc.xpath("//views")[0]
         for view in views.xpath("*"):
             if view.tag == "defaultUnits":
@@ -107,6 +107,14 @@ class FZPCheckerRunner:
                                     print(f"Running SVG check: {checker.get_name()} on {svg_path} for {view.tag}")
                                 errors = checker.check()
                                 self.total_errors += errors
+
+                                if fix and errors > 0 and hasattr(checker, 'fix'):
+                                    try:
+                                        if checker.fix():
+                                            self.fixed = True
+                                    except Exception as e:
+                                        print(f"Error while fixing: {str(e)}")
+
                             svg_doc.getroot().clear()
                         except etree.XMLSyntaxError as e:
                             print(f"Invalid XML in SVG: {str(e)}")
@@ -151,7 +159,7 @@ class FZPCheckerRunner:
         return fzp_files
 
 AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker, FZPPCBConnectorStrokeChecker]
-SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGMatrixChecker]
+SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGFontTypeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGMatrixChecker]
 AVAILABLE_CHECKERS_FROM_GOLANG = [
     FZPFritzingVersionChecker,
     FZPModuleIDChecker,
