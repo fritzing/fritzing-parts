@@ -72,14 +72,17 @@ class SVGFontSizeChecker(SVGChecker):
 class SVGFontTypeChecker(SVGChecker):
     VALID_FONTS = {
         'Noto Sans',
-        'NotoSans',
         'OCR-Fritzing-mono',
-        'Droid Sans',
-        'DroidSans',
-        'OCRA'
+        'Droid Sans',  # deprecated, use Noto Sans instead
+        'Droid Sans Mono',  # deprecated, use Noto Sans instead
+        'OCRA',
+        'Segment16C'
     }
 
     FONT_REPLACEMENTS = {
+        'Segment16C Bold.ttf': 'Segment16C',
+        'DroidSans-Bold': 'Noto Sans',
+        'NotoSans-Regular': 'Noto Sans',
         'OCRAStd': 'OCR-Fritzing-mono',
         'OCRATributeW01 - Regular': 'OCR-Fritzing-mono',
         'ocra10': 'OCR-Fritzing-mono',
@@ -90,8 +93,10 @@ class SVGFontTypeChecker(SVGChecker):
         'MyriadPro-Regular': 'default',
         'HelveticaNeueLTStd-Roman': 'default',
         'DroidSans - Bold': 'Noto Sans',
-        'DroidSans-Bold': 'Noto Sans',
+        'DroidSans': 'Noto Sans',
+        "Droid": "Noto Sans",
         'Droid Sans Mono': 'default',
+        'DroidSansMono': 'default',
         'Arial-BoldMT': 'Noto Sans',
         'EurostileLTStd': 'Noto Sans',
     }
@@ -101,19 +106,25 @@ class SVGFontTypeChecker(SVGChecker):
         self.is_pcb_view = 'copper' in layer_ids or 'silkscreen' in layer_ids
         self.default_font = 'OCR-Fritzing-mono' if self.is_pcb_view else 'Noto Sans'
 
+    def has_inherited_style(self, element):
+        """Check if element has an inherited style attribute"""
+        return SVGUtils.get_inherited_attribute(element, "style") is not None
+
     def fix(self):
         """
         Fixes invalid or missing font families in the SVG document.
-        Only replaces fonts that are in the FONT_REPLACEMENTS dictionary.
-        Special value 'default' in FONT_REPLACEMENTS will use view-appropriate default font.
-
-        Returns:
-            bool: True if modifications were made, False otherwise
+        Skips elements that have or inherit style attributes.
+        Only fixes direct font-family attributes.
         """
         modified = False
         text_elements = self.svg_doc.xpath("//*[local-name()='text' or local-name()='tspan']")
 
         for element in text_elements:
+            # Skip if element has or inherits a style attribute
+            if self.has_inherited_style(element):
+                print(f"Skipping element with inherited style attribute: [{self.getChildXML(element)}]")
+                continue
+
             font_family = SVGUtils.get_inherited_attribute(element, "font-family")
 
             if font_family is None:
@@ -160,7 +171,7 @@ class SVGFontTypeChecker(SVGChecker):
                 print(f"Failed to write SVG file: {str(e)}")
                 return False
         else:
-            print("No invalid fonts found. No changes made.")
+            print("No fonts found to add or replace. No changes made.")
             return False
 
 
