@@ -58,13 +58,15 @@ def main():
     parser = argparse.ArgumentParser(
         description="Replace a part with a new version of itself.",
         epilog=textwrap.dedent('''
-            Run this before editing a part that you want to fix. The script does the following steps.\n 
-                    1. move the part image to the obsolete directory\n
-                    2. add a copy of the part and the images with a new name\n
-                    3. set a new moduleId for the new part.
-                    4. set a replacedby link in the obsoleted part\n
-                    5. All changes are already added to git.\n
-                    After running the script, you can modify the part, increase the version, fix bugs in the graphics and so on.        
+            Run this before editing a part that you want to fix. The script does the following steps:
+
+            1. move the part image to the obsolete directory
+            2. add a copy of the part and the images with a new name
+            3. set a new moduleId for the new part
+            4. set a replacedby link in the obsoleted part
+            5. All changes are already added to git
+
+            After running the script, you can modify the part, increase the version, fix bugs in the graphics and so on.        
 
             Examples:
                 1. Basic usage with automatic name generation:
@@ -76,8 +78,9 @@ def main():
                 3. Process an already modified fzp and keep existing SVGs:
                    python3 scripts/obsolete.py core/RFM23BP.fzp --keep-svgs --fzp-already-modified
                    (Use when you've already updated the fzp and want to preserve existing SVG files)
-            ''')
-    )
+            '''),
+        formatter_class=argparse.RawDescriptionHelpFormatter)
+
     parser.add_argument("part", help="The part file that should be replaced.")
     parser.add_argument(
         "name", nargs='?', help="The base name for the new part files. If omitted, the name will be derived from the part filename.")
