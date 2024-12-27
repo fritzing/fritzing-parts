@@ -283,12 +283,15 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
     def get_description():
         return "Check for valid stroke attributes in connectors of the PCB view in the SVG files referenced by the FZP"
 
-
 class FZPFritzingVersionChecker(FZPChecker):
     def check(self):
         version = self.fzp_doc.getroot().get('fritzingVersion')
         if not version:
             self.add_error("'FritzingVersion' is undefined or empty.")
+        else:
+            version_pattern = r'^\d+\.\d+\.\d+.*$'  # Require three numbers, allow anything after
+            if not re.match(version_pattern, version.strip()):
+                self.add_error(f"'FritzingVersion' '{version}' does not match the expected format.")
         return self.get_result()
 
     @staticmethod
