@@ -289,9 +289,10 @@ class FZPFritzingVersionChecker(FZPChecker):
         if not version:
             self.add_error("'FritzingVersion' is undefined or empty.")
         else:
-            version_pattern = r'^\d+\.\d+\.\d+.*$'  # Require three numbers, allow anything after
+            # Requires a Fritzing release version as announced on the blog or download page.
+            version_pattern = r'^\d+\.\d+\.\d+.*$'
             if not re.match(version_pattern, version.strip()):
-                self.add_error(f"'FritzingVersion' '{version}' does not match the expected format.")
+                self.add_error(f"'FritzingVersion' '{version}' should be in semantic versioning format (https://semver.org/).")
         return self.get_result()
 
     @staticmethod
