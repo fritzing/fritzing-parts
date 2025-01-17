@@ -138,7 +138,7 @@ class SVGMatrixChecker(SVGChecker):
                 try:
                     # Extract values between parentheses
                     matrix_values = transform.split("(")[1].split(")")[0]
-                    values = [v.strip() for v in matrix_values.split(",")]
+                    values = re.split(r'[,\s]+', matrix_values.strip())
 
                     # Matrix should have exactly 6 values
                     if len(values) != 6:
