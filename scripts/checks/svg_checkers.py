@@ -117,3 +117,50 @@ class SVGIdsChecker(SVGChecker):
     @staticmethod
     def get_description():
         return "Check that all id attributes are unique"
+
+
+class SVGMatrixChecker(SVGChecker):
+    @staticmethod
+    def get_name():
+        return "matrix"
+
+    @staticmethod
+    def get_description():
+        return "Checks for malformed matrix transformations in SVG files"
+
+    def check(self):
+        errors = 0
+        elements = self.svg_doc.xpath("//*[@transform]")
+
+        for element in elements:
+            transform = element.get("transform")
+            if "matrix" in transform:
+                try:
+                    # Extract values between parentheses
+                    matrix_values = transform.split("(")[1].split(")")[0]
+                    values = [v.strip() for v in matrix_values.split(",")]
+
+                    # Matrix should have exactly 6 values
+                    if len(values) != 6:
+                        print(f"Invalid matrix transform (wrong number of values) in element {element.get('id')}: {transform}")
+                        errors += 1
+                        continue
+
+                    # Check for empty values
+                    if any(not v for v in values):
+                        print(f"Invalid matrix transform (empty value) in element {element.get('id')}: {transform}")
+                        errors += 1
+                        continue
+
+                    # Validate each value can be converted to float
+                    try:
+                        [float(v) for v in values]
+                    except ValueError:
+                        print(f"Invalid matrix transform (non-numeric value) in element {element.get('id')}: {transform}")
+                        errors += 1
+
+                except IndexError:
+                    print(f"Malformed matrix transform in element {element.get('id')}: {transform}")
+                    errors += 1
+
+        return errors

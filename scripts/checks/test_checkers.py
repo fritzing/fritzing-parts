@@ -267,5 +267,12 @@ class TestCheckers(unittest.TestCase):
                          ['layer_ids'],
                          [], 3, None)
 
+    def test_matrix_transform(self):
+        self.run_checker('matrix_transform.fzp.test',
+                        [],
+                        ['matrix'],
+                        4,  # Expecting 4 errors
+                        None)
+
 if __name__ == '__main__':
     unittest.main()
