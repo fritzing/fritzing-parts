@@ -132,6 +132,11 @@ class SVGMatrixChecker(SVGChecker):
         errors = 0
         elements = self.svg_doc.xpath("//*[@transform]")
 
+        # SVG standard allows numbers with optional leading dot (.5),
+        # but requires decimal point to be followed by digit if present
+        # See: https://www.w3.org/TR/SVGTiny12/types.html#DataTypeNumber
+        float_regex = re.compile(r'^-?(\d+|\d*\.\d+)([eE][-+]?\d+)?$')
+
         for element in elements:
             transform = element.get("transform")
             if "matrix" in transform:
@@ -146,18 +151,11 @@ class SVGMatrixChecker(SVGChecker):
                         errors += 1
                         continue
 
-                    # Check for empty values
-                    if any(not v for v in values):
-                        print(f"Invalid matrix transform (empty value) in element {element.get('id')}: {transform}")
+                    # Check for empty values and validate float format
+                    if any(not v or not float_regex.match(v) for v in values):
+                        print(f"Invalid matrix transform (invalid value) in element {element.get('id')}: {transform}")
                         errors += 1
                         continue
-
-                    # Validate each value can be converted to float
-                    try:
-                        [float(v) for v in values]
-                    except ValueError:
-                        print(f"Invalid matrix transform (non-numeric value) in element {element.get('id')}: {transform}")
-                        errors += 1
 
                 except IndexError:
                     print(f"Malformed matrix transform in element {element.get('id')}: {transform}")

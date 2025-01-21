@@ -271,7 +271,7 @@ class TestCheckers(unittest.TestCase):
         self.run_checker('matrix_transform.fzp.test',
                         [],
                         ['matrix'],
-                        4,  # Expecting 4 errors
+                        5,
                         None)
 
 if __name__ == '__main__':
