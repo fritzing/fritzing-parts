@@ -81,24 +81,24 @@ class SVGFontTypeChecker(SVGChecker):
 
     FONT_REPLACEMENTS = {
         'Segment16C Bold.ttf': 'Segment16C',
-        'DroidSans-Bold': 'Noto Sans',
-        'NotoSans-Regular': 'Noto Sans',
-        'OCRAStd': 'OCR-Fritzing-mono',
-        'OCRATributeW01 - Regular': 'OCR-Fritzing-mono',
-        'ocra10': 'OCR-Fritzing-mono',
-        'OCRATributeW01-Regular': 'OCR-Fritzing-mono',
-        'OpenSans': 'Noto Sans',
-        'ArialMT': 'default',
-        'MyriadPro - Regular': 'default',
-        'MyriadPro-Regular': 'default',
-        'HelveticaNeueLTStd-Roman': 'default',
-        'DroidSans - Bold': 'Noto Sans',
-        'DroidSans': 'Noto Sans',
-        "Droid": "Noto Sans",
-        'Droid Sans Mono': 'default',
-        'DroidSansMono': 'default',
-        'Arial-BoldMT': 'Noto Sans',
-        'EurostileLTStd': 'Noto Sans',
+        # 'DroidSans-Bold': 'Noto Sans',
+        # 'NotoSans-Regular': 'Noto Sans',
+        # 'OCRAStd': 'OCR-Fritzing-mono',
+        # 'OCRATributeW01 - Regular': 'OCR-Fritzing-mono',
+        # 'ocra10': 'OCR-Fritzing-mono',
+        # 'OCRATributeW01-Regular': 'OCR-Fritzing-mono',
+        # 'OpenSans': 'Noto Sans',
+        # 'ArialMT': 'default',
+        # 'MyriadPro - Regular': 'default',
+        # 'MyriadPro-Regular': 'default',
+        # 'HelveticaNeueLTStd-Roman': 'default',
+        # 'DroidSans - Bold': 'Noto Sans',
+        # 'DroidSans': 'Noto Sans',
+        # "Droid": "Noto Sans",
+        # 'Droid Sans Mono': 'default',
+        # 'DroidSansMono': 'default',
+        # 'Arial-BoldMT': 'Noto Sans',
+        # 'EurostileLTStd': 'Noto Sans',
     }
 
     def __init__(self, svg_doc, layer_ids):
@@ -128,10 +128,13 @@ class SVGFontTypeChecker(SVGChecker):
             font_family = SVGUtils.get_inherited_attribute(element, "font-family")
 
             if font_family is None:
-                # Add missing font-family attribute
+                # If it's a text element that contains child elements, skip adding default
+                if element.tag.endswith("text") and len(element) > 0:
+                    print(f"Skipping font addition for element with child elements: [{self.getChildXML(element)}]")
+                    continue
+                # Otherwise, add missing font-family attribute
                 element.set("font-family", self.default_font)
-                content = self.getChildXML(element)
-                print(f"Added default font '{self.default_font}' to element: [{content}]")
+                print(f"Added default font '{self.default_font}' to element: [{self.getChildXML(element)}]")
                 modified = True
                 continue
 
