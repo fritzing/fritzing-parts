@@ -313,3 +313,40 @@ class SVGMatrixChecker(SVGChecker):
                     errors += 1
 
         return errors
+
+
+class SVGLayerNestingChecker(SVGChecker):
+    def check(self):
+        errors = 0
+        root_element = self.svg_doc.getroot()
+        svg_path = self.svg_doc.docinfo.URL
+
+        # Layer groups that shouldn't be nested in certain other layers
+        invalid_nesting = {
+            'breadboard': ['schematic', 'silkscreen', 'copper0', 'copper1'],
+            'schematic': ['breadboard', 'silkscreen', 'copper0', 'copper1'],
+            'icon': ['silkscreen', 'copper0', 'copper1', 'breadboard', 'schematic'],
+            'silkscreen': ['breadboard', 'schematic'],
+            'copper0': ['breadboard', 'schematic'],
+            'copper1': ['breadboard', 'schematic']
+        }
+
+        # Check each main layer group
+        for parent_layer, invalid_children in invalid_nesting.items():
+            parent_groups = root_element.xpath(f"//*[@id='{parent_layer}']")
+            for parent_group in parent_groups:
+                # Check for invalid child layers
+                for invalid_child in invalid_children:
+                    child_elements = parent_group.xpath(f".//*[@id='{invalid_child}']")
+                    for element in child_elements:
+                        print(f"Found '{invalid_child}' layer nested inside '{parent_layer}' group, which is invalid. File: {svg_path}")
+                        errors += 1
+        return errors
+
+    @staticmethod
+    def get_name():
+        return "layer_nesting"
+
+    @staticmethod
+    def get_description():
+        return "Check that layer groups are not incorrectly nested (e.g. silkscreen within breadboard)"
