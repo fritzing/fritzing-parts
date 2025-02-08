@@ -83,7 +83,7 @@ class SVGFontTypeChecker(SVGChecker):
         'Segment16C Bold.ttf': 'Segment16C',
         # 'DroidSans-Bold': 'Noto Sans',
         # 'NotoSans-Regular': 'Noto Sans',
-        # 'OCRAStd': 'OCR-Fritzing-mono',
+        'OCRAStd': 'OCR-Fritzing-mono',
         # 'OCRATributeW01 - Regular': 'OCR-Fritzing-mono',
         # 'ocra10': 'OCR-Fritzing-mono',
         # 'OCRATributeW01-Regular': 'OCR-Fritzing-mono',
@@ -109,75 +109,67 @@ class SVGFontTypeChecker(SVGChecker):
     def has_inherited_style(self, element):
         """Check if element has an inherited style attribute"""
         return SVGUtils.get_inherited_attribute(element, "style") is not None
-
+	
     def fix(self):
         """
-        Fixes invalid or missing font families in the SVG document.
-        Skips elements that have or inherit style attributes.
-        Only fixes direct font-family attributes.
+        Fixes invalid or missing font families in the SVG document using regex
+        to preserve original formatting and make minimal changes.
+        Always uses double quotes for consistency.
         """
-        modified = False
-        text_elements = self.svg_doc.xpath("//*[local-name()='text' or local-name()='tspan']")
-
-        for element in text_elements:
-            # Skip if element has or inherits a style attribute
-            if self.has_inherited_style(element):
-                print(f"Skipping element with inherited style attribute: [{self.getChildXML(element)}]")
-                continue
-
-            font_family = SVGUtils.get_inherited_attribute(element, "font-family")
-
-            if font_family is None:
-                # If it's a text element that contains child elements, skip adding default
-                if element.tag.endswith("text") and len(element) > 0:
-                    print(f"Skipping font addition for element with child elements: [{self.getChildXML(element)}]")
-                    continue
-                # Otherwise, add missing font-family attribute
-                element.set("font-family", self.default_font)
-                print(f"Added default font '{self.default_font}' to element: [{self.getChildXML(element)}]")
-                modified = True
-                continue
-
-            # Remove quotes if present
-            font_family = font_family.strip('"\'')
-
-            if font_family not in self.VALID_FONTS:
-                # Only replace if the font is in the replacement list
-                if font_family in self.FONT_REPLACEMENTS:
-                    new_font = self.FONT_REPLACEMENTS[font_family]
-                    # Handle special 'default' replacement value
+        # Get the file path from the SVG document
+        svg_path = self.svg_doc.docinfo.URL
+        if not svg_path:
+            print("Cannot fix: SVG file path not found")
+            return False
+        
+        try:
+            # Read the original file
+            with open(svg_path, 'r', encoding='utf-8') as file:
+                content = file.read()
+            
+            modified = False
+            original_content = content
+            
+            # Pattern to match font-family with any quote style
+            pattern = r'font-family\s*=\s*["\']\'?([^\'">]+)\'?["\']'
+            
+            def replace_font(match):
+                nonlocal modified
+                font = match.group(1)
+                if font in self.FONT_REPLACEMENTS:
+                    new_font = self.FONT_REPLACEMENTS[font]
                     if new_font == 'default':
                         new_font = self.default_font
-
-                    element.set("font-family", new_font)
-                    content = self.getChildXML(element)
-                    print(f"Replaced font '{font_family}' with '{new_font}' in element: [{content}]")
                     modified = True
-                # else: keep the unknown font
-
-        if modified:
-            try:
-                # Get the file path from the SVG document
-                svg_path = self.svg_doc.docinfo.URL
-                if svg_path:
-                    # Create backup
-                    backup_path = svg_path + ".bak"
-                    if not os.path.exists(backup_path):
-                        self.svg_doc.write(backup_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
-                        print(f"Backup created at '{backup_path}'")
-
-                    # Write modified SVG
-                    self.svg_doc.write(svg_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
-                    print(f"SVG file '{svg_path}' has been updated successfully")
-                    return True
-            except Exception as e:
-                print(f"Failed to write SVG file: {str(e)}")
+                    print(f"Replacing font '{font}' with '{new_font}'")
+                    # Always use double quotes
+                    return f'font-family="{new_font}"'
+                return match.group(0)
+            
+            # Make replacements
+            content = re.sub(pattern, replace_font, content)
+            
+            if modified:
+                # Create backup if it doesn't exist
+                backup_path = svg_path + ".bak"
+                if not os.path.exists(backup_path):
+                    with open(backup_path, 'w', encoding='utf-8') as file:
+                        file.write(original_content)
+                    print(f"Backup created at '{backup_path}'")
+                
+                # Write modified content only if changes were made
+                with open(svg_path, 'w', encoding='utf-8') as file:
+                    file.write(content)
+                print(f"SVG file '{svg_path}' has been updated successfully")
+                return True
+            else:
+                print("No fonts found to replace. No changes made.")
                 return False
-        else:
-            print("No fonts found to add or replace. No changes made.")
+        
+        except Exception as e:
+            print(f"Failed to process SVG file: {str(e)}")
             return False
-
-
+	
     def check_font_type(self, element):
         font_family = SVGUtils.get_inherited_attribute(element, "font-family")
         if font_family is None:
