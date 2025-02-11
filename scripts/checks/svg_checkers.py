@@ -88,7 +88,7 @@ class SVGFontTypeChecker(SVGChecker):
         'ocra10': 'OCR-Fritzing-mono',
         'OCRATributeW01-Regular': 'OCR-Fritzing-mono',
         # 'OpenSans': 'Noto Sans',
-        # 'ArialMT': 'default',
+        'ArialMT': 'default',
         'MyriadPro - Regular': 'default',
         'MyriadPro-Regular': 'default',
         # 'HelveticaNeueLTStd-Roman': 'default',
