@@ -87,18 +87,18 @@ class SVGFontTypeChecker(SVGChecker):
         'OCRATributeW01 - Regular': 'OCR-Fritzing-mono',
         'ocra10': 'OCR-Fritzing-mono',
         'OCRATributeW01-Regular': 'OCR-Fritzing-mono',
-        #'OpenSans': 'Noto Sans',
+        'OpenSans': 'Noto Sans',
         'ArialMT': 'default',
         'MyriadPro - Regular': 'default',
         'MyriadPro-Regular': 'default',
-        # 'HelveticaNeueLTStd-Roman': 'default',
+        'HelveticaNeueLTStd-Roman': 'default',
         'DroidSans - Bold': 'Noto Sans',
         'DroidSans': 'Noto Sans',
         "Droid": "Noto Sans",
         'Droid Sans Mono': 'default',
         'DroidSansMono': 'default',
-        # 'Arial-BoldMT': 'Noto Sans',
-        # 'EurostileLTStd': 'Noto Sans',
+        'Arial-BoldMT': 'Noto Sans',
+        'EurostileLTStd': 'Noto Sans',
     }
 
     def __init__(self, svg_doc, layer_ids):
