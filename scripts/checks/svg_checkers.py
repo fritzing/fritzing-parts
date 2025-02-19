@@ -109,7 +109,7 @@ class SVGFontTypeChecker(SVGChecker):
     def has_inherited_style(self, element):
         """Check if element has an inherited style attribute"""
         return SVGUtils.get_inherited_attribute(element, "style") is not None
-	
+
     def fix(self):
         """
         Fixes invalid or missing font families in the SVG document using regex
@@ -121,18 +121,18 @@ class SVGFontTypeChecker(SVGChecker):
         if not svg_path:
             print("Cannot fix: SVG file path not found")
             return False
-        
+
         try:
             # Read the original file
             with open(svg_path, 'r', encoding='utf-8') as file:
                 content = file.read()
-            
+
             modified = False
             original_content = content
-            
+
             # Pattern to match font-family with any quote style
             pattern = r'font-family\s*=\s*["\']\'?([^\'">]+)\'?["\']'
-            
+
             def replace_font(match):
                 nonlocal modified
                 font = match.group(1)
@@ -145,10 +145,10 @@ class SVGFontTypeChecker(SVGChecker):
                     # Always use double quotes
                     return f'font-family="{new_font}"'
                 return match.group(0)
-            
+
             # Make replacements
             content = re.sub(pattern, replace_font, content)
-            
+
             if modified:
                 # Create backup if it doesn't exist
                 backup_path = svg_path + ".bak"
@@ -156,7 +156,7 @@ class SVGFontTypeChecker(SVGChecker):
                     with open(backup_path, 'w', encoding='utf-8') as file:
                         file.write(original_content)
                     print(f"Backup created at '{backup_path}'")
-                
+
                 # Write modified content only if changes were made
                 with open(svg_path, 'w', encoding='utf-8') as file:
                     file.write(content)
@@ -165,11 +165,11 @@ class SVGFontTypeChecker(SVGChecker):
             else:
                 print("No fonts found to replace. No changes made.")
                 return False
-        
+
         except Exception as e:
             print(f"Failed to process SVG file: {str(e)}")
             return False
-	
+
     def check_font_type(self, element):
         font_family = SVGUtils.get_inherited_attribute(element, "font-family")
         if font_family is None:
