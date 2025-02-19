@@ -326,9 +326,9 @@ class SVGLayerNestingChecker(SVGChecker):
             'breadboard': ['schematic', 'silkscreen', 'copper0', 'copper1'],
             'schematic': ['breadboard', 'silkscreen', 'copper0', 'copper1'],
             'icon': ['silkscreen', 'copper0', 'copper1', 'breadboard', 'schematic'],
-            'silkscreen': ['breadboard', 'schematic'],
-            'copper0': ['breadboard', 'schematic'],
-            'copper1': ['breadboard', 'schematic']
+            'silkscreen': ['breadboard', 'schematic', 'copper0', 'copper1'],
+            'copper0': ['breadboard', 'schematic', 'silkscreen'],
+            'copper1': ['breadboard', 'schematic', 'silkscreen'],
         }
 
         # Check each main layer group
