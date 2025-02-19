@@ -7,7 +7,20 @@ from svg_utils import SVGUtils
 class SVGChecker:
     def __init__(self, svg_doc, layer_ids):
         self.svg_doc = svg_doc
-        self.layer_ids =  layer_ids
+        self.layer_ids = layer_ids
+        self.errors = 0
+        self.warnings = 0
+
+    def add_error(self, message):
+        print(f"Error: {message}")
+        self.errors += 1
+
+    def add_warning(self, message):
+        print(f"Warning: {message}")
+        self.warnings += 1
+
+    def get_result(self):
+        return self.errors, self.warnings
 
     def check(self):
         pass
@@ -44,19 +57,17 @@ class SVGFontSizeChecker(SVGChecker):
                     if child.tag.endswith("tspan"):
                         return self.check_font_size(child)
             content = self.getChildXML(element)
-            print(f"No font size found for element [{content}]")
-            return 1
+            self.add_error(f"No font size found for element [{content}]")
+            return
         if not re.match(r"^\d+(\.\d+)?$", font_size):
             content = self.getChildXML(element)
-            print(f"Invalid font size {font_size} unit in element: [{content}]")
-            return 1
-        return 0
+            self.add_error(f"Invalid font size {font_size} unit in element: [{content}]")
+
     def check(self):
-        errors = 0
         text_elements = self.svg_doc.xpath("//*[local-name()='text' or local-name()='tspan']")
         for element in text_elements:
-            errors += self.check_font_size(element)
-        return errors
+            self.check_font_size(element)
+        return self.get_result()
 
 
     @staticmethod
@@ -178,17 +189,15 @@ class SVGFontTypeChecker(SVGChecker):
                     if child.tag.endswith("tspan"):
                         return self.check_font_type(child)
             content = self.getChildXML(element)
-            print(f"No font family found for element [{content}]")
-            return 1
+            self.add_error(f"No font family found for element [{content}]")
+            return
 
         # Remove quotes if present
         font_family = font_family.strip('"\'')
 
         if font_family not in self.VALID_FONTS:
             content = self.getChildXML(element)
-            print(f"Invalid font family '{font_family}' in element: [{content}]")
-            return 1
-        return 0
+            self.add_error(f"Invalid font family '{font_family}' in element: [{content}]")
 
     def getChildXML(self, elem):
         out = ""
@@ -204,11 +213,10 @@ class SVGFontTypeChecker(SVGChecker):
         return out
 
     def check(self):
-        errors = 0
         text_elements = self.svg_doc.xpath("//*[local-name()='text' or local-name()='tspan']")
         for element in text_elements:
-            errors += self.check_font_type(element)
-        return errors
+            self.check_font_type(element)
+        return self.get_result()
 
     @staticmethod
     def get_name():
@@ -221,22 +229,18 @@ class SVGFontTypeChecker(SVGChecker):
 
 class SVGViewBoxChecker(SVGChecker):
     def check(self):
-        errors = 0
-
         # For icons, we don't really need a viewBox
         if self.layer_ids == ['icon']:
-            return errors
+            return self.get_result()
 
         root_element = self.svg_doc.getroot()
         if "viewBox" in root_element.attrib:
             viewbox = root_element.attrib["viewBox"]
             if not re.match(r"^-?\d+(\.\d+)?( -?\d+(\.\d+)?){3}$", viewbox):
-                print(f"Invalid viewBox attribute: {viewbox}")
-                errors += 1
+                self.add_error(f"Invalid viewBox attribute: {viewbox}")
         else:
-            print("Missing viewBox attribute")
-            errors += 1
-        return errors
+            self.add_error("Missing viewBox attribute")
+        return self.get_result()
 
     @staticmethod
     def get_name():
@@ -249,17 +253,15 @@ class SVGViewBoxChecker(SVGChecker):
 
 class SVGIdsChecker(SVGChecker):
     def check(self):
-        errors = 0
         id_set = set()
         elements_with_id = self.svg_doc.xpath("//*[@id]")
         for element in elements_with_id:
             element_id = element.attrib["id"]
             if element_id in id_set:
-                print(f"Duplicate id attribute: {element_id}")
-                errors += 1
+                self.add_error(f"Duplicate id attribute: {element_id}")
             else:
                 id_set.add(element_id)
-        return errors
+        return self.get_result()
 
     @staticmethod
     def get_name():
@@ -280,7 +282,6 @@ class SVGMatrixChecker(SVGChecker):
         return "Checks for malformed matrix transformations in SVG files"
 
     def check(self):
-        errors = 0
         elements = self.svg_doc.xpath("//*[@transform]")
 
         # SVG standard allows numbers with optional leading dot (.5),
@@ -298,26 +299,22 @@ class SVGMatrixChecker(SVGChecker):
 
                     # Matrix should have exactly 6 values
                     if len(values) != 6:
-                        print(f"Invalid matrix transform (wrong number of values) in element {element.get('id')}: {transform}")
-                        errors += 1
+                        self.add_error(f"Invalid matrix transform (wrong number of values) in element {element.get('id')}: {transform}")
                         continue
 
                     # Check for empty values and validate float format
                     if any(not v or not float_regex.match(v) for v in values):
-                        print(f"Invalid matrix transform (invalid value) in element {element.get('id')}: {transform}")
-                        errors += 1
+                        self.add_error(f"Invalid matrix transform (invalid value) in element {element.get('id')}: {transform}")
                         continue
 
                 except IndexError:
-                    print(f"Malformed matrix transform in element {element.get('id')}: {transform}")
-                    errors += 1
+                    self.add_error(f"Malformed matrix transform in element {element.get('id')}: {transform}")
 
-        return errors
+        return self.get_result()
 
 
 class SVGLayerNestingChecker(SVGChecker):
     def check(self):
-        errors = 0
         root_element = self.svg_doc.getroot()
         svg_path = self.svg_doc.docinfo.URL
 
@@ -339,9 +336,9 @@ class SVGLayerNestingChecker(SVGChecker):
                 for invalid_child in invalid_children:
                     child_elements = parent_group.xpath(f".//*[@id='{invalid_child}']")
                     for element in child_elements:
-                        print(f"Found '{invalid_child}' layer nested inside '{parent_layer}' group, which is invalid. File: {svg_path}")
-                        errors += 1
-        return errors
+                        self.add_error(f"Found '{invalid_child}' layer nested inside '{parent_layer}' group, which is invalid. File: {svg_path}")
+
+        return self.get_result()
 
     @staticmethod
     def get_name():

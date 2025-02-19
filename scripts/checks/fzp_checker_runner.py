@@ -105,8 +105,9 @@ class FZPCheckerRunner:
                                 checker = self._get_svg_checker(check_type, svg_doc, layer_ids)
                                 if self.verbose:
                                     print(f"Running SVG check: {checker.get_name()} on {svg_path} for {view.tag}")
-                                errors = checker.check()
+                                errors, warnings = checker.check()
                                 self.total_errors += errors
+                                self.total_warnings += warnings
 
                                 if fix and errors > 0 and hasattr(checker, 'fix'):
                                     try:
