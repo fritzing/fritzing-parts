@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-PowerIC-V_REG_317-SINK">
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-PowerIC-V_REG_317-SINK_1">
 <!-- generated from Sparkfun Eagle Library 'SparkFun-PowerIC' V_REG_317 SINK -->
-<version>4</version>
+<version>5</version>
 <date>2013-02-13</date>
 <label>U</label>
 <author>www.fritzing.org</author>
@@ -26,7 +26,7 @@ Standard LM317 adjustable voltage regulator. AOI (Adjust Output Input). Google '
 </layers>
 </breadboardView>
 <schematicView>
-<layers image="schematic/sparkfun-poweric_78adj-2_schematic_1.svg">
+<layers image="schematic/sparkfun-poweric_78adj-2_schematic.svg">
 <layer layerId="schematic"/>
 </layers>
 </schematicView>
@@ -48,10 +48,10 @@ Standard LM317 adjustable voltage regulator. AOI (Adjust Output Input). Google '
 <description>ADJ</description>
 <views>
 <breadboardView>
-<p layer="breadboard" svgId="connector0pin"/>
+<p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
 </breadboardView>
 <schematicView>
-<p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+<p layer="schematic" svgId="connector0pin"/>
 </schematicView>
 <pcbView>
 <p layer="copper0" svgId="connector0pad"/>
@@ -59,33 +59,33 @@ Standard LM317 adjustable voltage regulator. AOI (Adjust Output Input). Google '
 </pcbView>
 </views>
 </connector>
-<connector id="connector1" name="IN" type="male">
-<description>IN</description>
-<views>
-<breadboardView>
-<p layer="breadboard" svgId="connector1pin"/>
-</breadboardView>
-<schematicView>
-<p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
-</schematicView>
-<pcbView>
-<p layer="copper0" svgId="connector1pad"/>
-<p layer="copper1" svgId="connector1pad"/>
-</pcbView>
-</views>
-</connector>
-<connector id="connector2" name="OUT" type="male">
+<connector id="connector1" name="OUT" type="male">
 <description>OUT</description>
 <views>
 <breadboardView>
-<p layer="breadboard" svgId="connector2pin"/>
+<p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>
 </breadboardView>
 <schematicView>
-<p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+<p layer="schematic" svgId="connector2pin"/>
 </schematicView>
 <pcbView>
 <p layer="copper0" svgId="connector2pad"/>
 <p layer="copper1" svgId="connector2pad"/>
+</pcbView>
+</views>
+</connector>
+<connector id="connector2" name="IN" type="male">
+<description>IN</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector2pin" legId="connector2leg"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector1pin"/>
+</schematicView>
+<pcbView>
+<p layer="copper0" svgId="connector1pad"/>
+<p layer="copper1" svgId="connector1pad"/>
 </pcbView>
 </views>
 </connector>
