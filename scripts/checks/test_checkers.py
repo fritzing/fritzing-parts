@@ -274,5 +274,19 @@ class TestCheckers(unittest.TestCase):
                         5,
                         None)
 
+    def test_layer_nesting_valid(self):
+        self.run_checker('layer_nesting_valid.fzp.test',
+                        [],
+                        ['layer_nesting'],
+                        0,
+                        None)
+
+    def test_layer_nesting_invalid(self):
+        self.run_checker('layer_nesting_invalid.fzp.test',
+                        [],
+                        ['layer_nesting'],
+                        2,
+                        None)
+
 if __name__ == '__main__':
     unittest.main()
