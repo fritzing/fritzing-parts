@@ -320,12 +320,13 @@ class SVGLayerNestingChecker(SVGChecker):
 
         # Layer groups that shouldn't be nested in certain other layers
         invalid_nesting = {
-            'breadboard': ['schematic', 'silkscreen', 'copper0', 'copper1'],
-            'schematic': ['breadboard', 'silkscreen', 'copper0', 'copper1'],
-            'icon': ['silkscreen', 'copper0', 'copper1', 'breadboard', 'schematic'],
+            'breadboard': ['schematic', 'silkscreen', 'silkscreen0', 'copper0', 'copper1'],
+            'schematic': ['breadboard', 'silkscreen', 'silkscreen0', 'copper0', 'copper1'],
+            'icon': ['silkscreen', 'silkscreen0', 'copper0', 'copper1', 'breadboard', 'schematic'],
             'silkscreen': ['breadboard', 'schematic', 'copper0', 'copper1'],
-            'copper0': ['breadboard', 'schematic', 'silkscreen'],
-            'copper1': ['breadboard', 'schematic', 'silkscreen'],
+            'silkscreen0': ['breadboard', 'schematic', 'copper0', 'copper1'],
+            'copper0': ['breadboard', 'schematic', 'silkscreen', 'silkscreen0'],
+            'copper1': ['breadboard', 'schematic', 'silkscreen', 'silkscreen0'],
         }
 
         # Check each main layer group
