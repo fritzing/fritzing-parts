@@ -116,6 +116,11 @@ class TestCheckers(unittest.TestCase):
                         ['missing_connector_refs'],
                         [], 0, None)  # No errors when all references are present
 
+    def test_missing_leg_ids(self):
+        self.run_checker('missing_leg_ids.fzp.test',
+                        ['missing_leg_ids'],
+                        [], 2, None)  # 2 errors for missing leg refs
+
     def test_fritzing_version_present_valid(self):
         self.run_checker('fritzing_version_present_valid.fzp.test',
                          ['fritzing_version'],
