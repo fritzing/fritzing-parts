@@ -319,6 +319,24 @@ class FZPModuleIDChecker(FZPChecker):
     def get_description():
         return "Check module ID attribute is present"
 
+class FZPModuleIDSpecialCharsChecker(FZPChecker):
+    def check(self):
+        module_id = self.fzp_doc.getroot().get('moduleId')
+        if module_id:
+            special_chars = ['*', '?', ',', '/']
+            for char in special_chars:
+                if char in module_id:
+                    self.add_warning(f"ModuleID contains special character '{char}' which may cause issues")
+        return self.get_result()
+
+    @staticmethod
+    def get_name():
+        return "module_id_special_chars"
+
+    @staticmethod
+    def get_description():
+        return "Check module ID for special characters that may cause issues"
+
 
 class FZPVersionChecker(FZPChecker):
     def check(self):

@@ -131,6 +131,16 @@ class TestCheckers(unittest.TestCase):
                          ['module_id'],
                          [], 1, None, 0)
 
+    def test_module_id_special_chars_present(self):
+        self.run_checker('module_id_special_chars_present.fzp.test',
+                         ['module_id_special_chars'],
+                         [], 0, None, 1)  # 1 warning for '*'
+
+    def test_module_id_special_chars_absent(self):
+        self.run_checker('module_id_special_chars_absent.fzp.test',
+                         ['module_id_special_chars'],
+                         [], 0, None, 0)
+
     def test_version_present_valid(self):
         self.run_checker('version_present_valid.fzp.test',
                          ['version'],
