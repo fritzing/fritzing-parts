@@ -6,6 +6,8 @@ from svg_utils import SVGUtils
 import re
 
 class FZPChecker(ABC):
+    needs_path = False
+
     def __init__(self, fzp_doc):
         self.fzp_doc = fzp_doc
         self.errors = 0
