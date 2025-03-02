@@ -106,6 +106,16 @@ class TestCheckers(unittest.TestCase):
         self.run_checker('stroke_test.fzp.test',
                          ['pcb_connector_stroke'], [], 2, None)
 
+    def test_missing_connector_refs(self):
+        self.run_checker('missing_connector_refs.fzp.test',
+                        ['missing_connector_refs'],
+                        [], 4, None)  # 4 errors: 2 copper0, 1 breadboard, 1 schematic
+
+    def test_connector_refs_valid(self):
+        self.run_checker('connector_refs_valid.fzp.test',
+                        ['missing_connector_refs'],
+                        [], 0, None)  # No errors when all references are present
+
     def test_fritzing_version_present_valid(self):
         self.run_checker('fritzing_version_present_valid.fzp.test',
                          ['fritzing_version'],

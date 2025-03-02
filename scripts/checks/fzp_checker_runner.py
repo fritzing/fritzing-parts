@@ -1,6 +1,7 @@
 from lxml import etree
 from fzp_checkers import *
 from svg_checkers import *
+from fzp_svg_checkers import FZPMissingConnectorRefsChecker
 from fzp_utils import FZPUtils
 import json
 import re
@@ -67,7 +68,8 @@ class FZPCheckerRunner:
                     FZPConnectorVisibilityChecker,
                     FZPPCBConnectorStrokeChecker,
                     FZPBusNodesChecker,
-                    FZPLayerIDsChecker
+                    FZPLayerIDsChecker,
+                    FZPMissingConnectorRefsChecker
                 ]:
                     return checker(fzp_doc, self.path)
                 else:
@@ -159,7 +161,8 @@ class FZPCheckerRunner:
                             fzp_files.append(fzp_path)
         return fzp_files
 
-AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker, FZPPCBConnectorStrokeChecker, FZPModuleIDSpecialCharsChecker]
+AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker, FZPPCBConnectorStrokeChecker, FZPModuleIDSpecialCharsChecker, FZPMissingConnectorRefsChecker]
+
 SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGFontTypeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGMatrixChecker, SVGLayerNestingChecker]
 AVAILABLE_CHECKERS_FROM_GOLANG = [
     FZPFritzingVersionChecker,
