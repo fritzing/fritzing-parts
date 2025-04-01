@@ -620,5 +620,19 @@ class TestCheckers(unittest.TestCase):
         self.assertIn("date format", FZPDateFormatChecker.get_description().lower())
         self.assertIn("ISO format", FZPDateFormatChecker.get_description())
 
+    def test_connector_numbering_valid(self):
+        self.run_checker('connector_numbering_valid.fzp.test',
+                        ['connector_numbering'],
+                        [],
+                        0,
+                        None)
+
+    def test_connector_numbering_invalid(self):
+        self.run_checker('connector_numbering_invalid.fzp.test',
+                        ['connector_numbering'],
+                        [],
+                        3,  # 3 errors for mismatched connector numbering
+                        None)
+
 if __name__ == '__main__':
     unittest.main()
