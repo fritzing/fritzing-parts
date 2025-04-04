@@ -66,7 +66,7 @@ class FZPConnectorNumberingChecker(FZPChecker):
                 mismatch = (idInt != nameInt)
 
             if mismatch:
-                self.add_error(f"Connector mismatch: id={connector_id}, name={connector.get('name')}")
+                self.add_warning(f"Connector mismatch: id={connector_id}, name={connector.get('name')}")
 
         return self.get_result()
 

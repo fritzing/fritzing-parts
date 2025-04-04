@@ -631,8 +631,9 @@ class TestCheckers(unittest.TestCase):
         self.run_checker('connector_numbering_invalid.fzp.test',
                         ['connector_numbering'],
                         [],
-                        3,  # 3 errors for mismatched connector numbering
-                        None)
+                        0,
+                        None,
+                        3)   # 3 warnings for mismatched connector numbering
 
 if __name__ == '__main__':
     unittest.main()
