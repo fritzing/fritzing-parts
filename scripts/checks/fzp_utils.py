@@ -1,12 +1,25 @@
 import os
 import re
+import zipfile
+import tempfile
+import shutil
 
 class FZPUtils:
     @staticmethod
     def get_svg_path(fzp_path, image, view_name):
         dir_path = os.path.dirname(fzp_path)
-        up_one_level = os.path.dirname(dir_path)
-        svg_path = os.path.join(up_one_level, 'svg', 'core', image)
+        
+        # For fzpz files, the image path might include subdirectories like "svg/core/breadboard/file.svg"
+        # but the actual file is just "file.svg" in the same directory
+        image_filename = os.path.basename(image)
+        
+        # Check if this is an extracted fzpz structure (SVGs in same directory as FZP)
+        if FZPUtils.is_fzpz_structure(fzp_path, image_filename):
+            svg_path = os.path.join(dir_path, image_filename)
+        else:
+            # Standard fritzing-parts structure
+            up_one_level = os.path.dirname(dir_path)
+            svg_path = os.path.join(up_one_level, 'svg', 'core', image)
 
         if FZPUtils.is_template(svg_path, view_name):
             return None  # Skip template SVGs
@@ -50,6 +63,58 @@ class FZPUtils:
         # Check if the view is valid and if the filename starts with the correct prefix or matches the pattern
         valid_view = view in valid_views
         return starts_with_prefix and valid_view
+
+    @staticmethod
+    def is_fzpz_structure(fzp_path, image):
+        """
+        Check if this appears to be an extracted fzpz structure.
+        In fzpz files, SVGs are in the same directory as the FZP.
+        """
+        dir_path = os.path.dirname(fzp_path)
+        svg_in_same_dir = os.path.isfile(os.path.join(dir_path, image))
+        
+        # Also check if we don't have the standard fritzing-parts directory structure
+        up_one_level = os.path.dirname(dir_path)
+        svg_in_standard_location = os.path.isfile(os.path.join(up_one_level, 'svg', 'core', image))
+        
+        return svg_in_same_dir and not svg_in_standard_location
+
+    @staticmethod
+    def extract_fzpz(fzpz_path, extract_to=None):
+        """
+        Extract an fzpz file to a temporary or specified directory.
+        Returns the path to the extracted FZP file.
+        """
+        if not fzpz_path.endswith('.fzpz'):
+            raise ValueError("File must have .fzpz extension")
+        
+        if not os.path.isfile(fzpz_path):
+            raise FileNotFoundError(f"FZPZ file not found: {fzpz_path}")
+        
+        if extract_to is None:
+            extract_to = tempfile.mkdtemp()
+        
+        try:
+            with zipfile.ZipFile(fzpz_path, 'r') as zip_file:
+                zip_file.extractall(extract_to)
+                
+                # Find the FZP file in the extracted contents
+                for filename in os.listdir(extract_to):
+                    if filename.endswith('.fzp'):
+                        return os.path.join(extract_to, filename)
+                
+                raise ValueError("No FZP file found in FZPZ archive")
+                
+        except zipfile.BadZipFile:
+            raise ValueError(f"Invalid FZPZ file: {fzpz_path}")
+
+    @staticmethod
+    def cleanup_extraction(extracted_dir):
+        """
+        Clean up extracted fzpz contents.
+        """
+        if os.path.exists(extracted_dir):
+            shutil.rmtree(extracted_dir)
 
     @staticmethod
     def get_svg_path_from_view(fzp_doc, fzp_path, view_name, layer=None):
