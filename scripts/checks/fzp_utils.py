@@ -96,6 +96,8 @@ class FZPUtils:
         
         try:
             with zipfile.ZipFile(fzpz_path, 'r') as zip_file:
+                FZPUtils._validate_zip_paths(zip_file, fzpz_path)
+                
                 zip_file.extractall(extract_to)
                 
                 # Find the FZP file in the extracted contents
@@ -107,6 +109,37 @@ class FZPUtils:
                 
         except zipfile.BadZipFile:
             raise ValueError(f"Invalid FZPZ file: {fzpz_path}")
+
+    @staticmethod
+    def _validate_zip_paths(zip_file, fzpz_path):
+        """
+        Validate all paths in the zip file to prevent directory traversal attacks.
+        Raises ValueError if any unsafe paths are found.
+        """
+        unsafe_paths = []
+        
+        for member in zip_file.infolist():
+            path = member.filename
+            
+            # Check for absolute paths
+            if os.path.isabs(path):
+                unsafe_paths.append(f"Absolute path: {path}")
+                continue
+            
+            # Check for directory traversal patterns
+            if ".." in path:
+                unsafe_paths.append(f"Directory traversal: {path}")
+                continue
+            
+            # Normalize the path and check if it tries to escape the extraction directory
+            normalized_path = os.path.normpath(path)
+            if normalized_path.startswith("..") or os.path.isabs(normalized_path):
+                unsafe_paths.append(f"Path escape attempt: {path}")
+                continue
+        
+        if unsafe_paths:
+            error_msg = f"Security violation in FZPZ file '{fzpz_path}': " + "; ".join(unsafe_paths)
+            raise ValueError(error_msg)
 
     @staticmethod
     def cleanup_extraction(extracted_dir):
