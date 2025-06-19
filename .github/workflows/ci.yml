@@ -49,7 +49,7 @@ jobs:
         run: pip install --no-cache-dir -r scripts/checks/requirements.txt
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@v44
+        uses: tj-actions/changed-files@v46.0.5
         with:
           files: |
             **/*.fzp
@@ -80,7 +80,7 @@ jobs:
         run: pip install --no-cache-dir -r scripts/checks/requirements.txt
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@v46
+        uses: tj-actions/changed-files@v46.0.5
         with:
           files: |
             **/*.fzp
