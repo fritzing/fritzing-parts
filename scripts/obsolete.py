@@ -46,20 +46,41 @@ def command(*args):
             raise Exception("command error")
 
 
+def get_xml_declaration(filename):
+    with open(filename, 'r', encoding='utf-8') as f:
+        first_line = f.readline().strip()
+        if first_line.startswith('<?xml') and first_line.endswith('?>'):
+            return first_line + '\n'
+    return '<?xml version="1.0" encoding="UTF-8"?>\n'  # fallback default
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Replace a part with a new version of itself.",
         epilog=textwrap.dedent('''
-            Run this before editing a part that you want to fix. The script does the following steps.\n 
-                    1. move the part image to the obsolete directory\n
-                    2. add a copy of the part and the images with a new name\n
-                    3. set a new moduleId for the new part.
-                    4. set a replacedby link in the obsoleted part\n
-                    5. All changes are already added to git.\n
-                    After running the script, you can modify the part, increase the version, fix bugs in the graphics and so on.        
+            Run this before editing a part that you want to fix. The script does the following steps:
 
-            ''')
-    )
+            1. move the part image to the obsolete directory
+            2. add a copy of the part and the images with a new name
+            3. set a new moduleId for the new part
+            4. set a replacedby link in the obsoleted part
+            5. All changes are already added to git
+
+            After running the script, you can modify the part, increase the version, fix bugs in the graphics and so on.        
+
+            Examples:
+                1. Basic usage with automatic name generation:
+                   python3 scripts/obsolete.py core/RFM23BP.fzp
+
+                2. Specify a custom name and revision:
+                   python3 scripts/obsolete.py core/Arduino_Uno.fzp ArduinoUno_Rev3 -r 3
+
+                3. Process an already modified fzp and keep existing SVGs:
+                   python3 scripts/obsolete.py core/RFM23BP.fzp --keep-svgs --fzp-already-modified
+                   (Use when you've already updated the fzp and want to preserve existing SVG files)
+            '''),
+        formatter_class=argparse.RawDescriptionHelpFormatter)
+
     parser.add_argument("part", help="The part file that should be replaced.")
     parser.add_argument(
         "name", nargs='?', help="The base name for the new part files. If omitted, the name will be derived from the part filename.")
@@ -70,6 +91,12 @@ def main():
 
     parser.add_argument(
         "-x", "--hash", help="7 digit number to avoid collisions, like two different \"ArduinoUno_v2\" files.")
+    parser.add_argument("--keep-svgs", action="store_true", help="Don't move or copy SVGs to new locations. Only the fzp is obsoleted.")
+    parser.add_argument("--fzp-already-modified", action="store_true",
+                        help="Use when you've already updated the input fzp file. Without this flag, you should run this script "
+                             "on the original fzp file before making changes. With this flag, the script will use git to recover "
+                             "the original version for the obsolete copy while preserving your modifications as the new version. "
+                             "Requires git to be installed.")
 
     if len(sys.argv) < 2:
         parser.print_help(sys.stderr)
@@ -127,49 +154,63 @@ def main():
     else:
         part_hash = "%07x" % random.randint(1, 268435454)
 
+    if args.fzp_already_modified:
+        temp_modified = fzpFilename + ".modified"
+        command("mv", fzpFilename, temp_modified)
+        # Restore the original version
+        command("git", "checkout", "HEAD", fzpFilename)
+
     new_fzp_filename = "_".join([name, part_hash, revision]) + ".fzp"
-    new_svg_filename = "_".join([name, part_hash, revision]) + ".svg"
 
     new_fzp = os.path.join(fzpdir, new_fzp_filename)
     obsolete_fzp_dom = get_dom(fzpFilename)
+
+    xml_decl = get_xml_declaration(fzpFilename)
 
     if os.path.isfile(obsolete_fzp):
         raise Exception("Error: destination already exists %s " % obsolete_fzp)
     command("git", "mv", fzpFilename, obsolete_fzp)
 
-    new_fzp_dom = deepcopy(obsolete_fzp_dom)
+    if args.fzp_already_modified:
+        # Instead of copying from obsolete, use our saved modified version
+        command("mv", temp_modified, new_fzp)
+        new_fzp_dom = get_dom(new_fzp)
+    else:
+        new_fzp_dom = deepcopy(obsolete_fzp_dom)
 
-    layers = new_fzp_dom.getElementsByTagName("layers")
-    for layer in layers:
-        # 1 cp to new name
-        image = os.path.normpath(layer.getAttribute("image"))
-        # look in ../svg/<subpath>/<image>
-        # e.g. ../svg/core/breadboard/imagefile.svg
-        path = os.path.join(os.path.dirname(fzpdir), "svg",
-                            os.path.basename(fzpdir), image)
-        if not os.path.isfile(path):
-            print("Warning: %s not found. Ignoring" % path)
-            continue
+    if not args.keep_svgs:
+        new_svg_filename = "_".join([name, part_hash, revision]) + ".svg"
+        layers = new_fzp_dom.getElementsByTagName("layers")
+        for layer in layers:
+            # 1 cp to new name
+            image = os.path.normpath(layer.getAttribute("image"))
+            # look in ../svg/<subpath>/<image>
+            # e.g. ../svg/core/breadboard/imagefile.svg
+            path = os.path.join(os.path.dirname(fzpdir), "svg",
+                                os.path.basename(fzpdir), image)
+            if not os.path.isfile(path):
+                print("Warning: %s not found. Ignoring" % path)
+                continue
 
-        new_svg = os.path.join(os.path.dirname(path), new_svg_filename)
+            new_svg = os.path.join(os.path.dirname(path), new_svg_filename)
 
-        command("cp", path, new_svg)
+            command("cp", path, new_svg)
 
-        # 2 mv from core to obsolete
-        dest = os.path.join(topdir, "svg", "obsolete", os.path.basename(
-            os.path.dirname(path)), os.path.basename(path))
-        if os.path.isfile(dest):
-            raise Exception("Error: destination already exists %s " % dest)
+            # 2 mv from core to obsolete
+            dest = os.path.join(topdir, "svg", "obsolete", os.path.basename(
+                os.path.dirname(path)), os.path.basename(path))
+            if os.path.isfile(dest):
+                raise Exception("Error: destination already exists %s " % dest)
 
-        command("git", "mv", path, dest)
+            command("git", "mv", path, dest)
 
-        command("git", "add", new_svg)
+            command("git", "add", new_svg)
 
-        # 3 set new name in dom
-        new_image = os.path.join(os.path.basename(
-            os.path.dirname(image)), new_svg_filename)
-        print("set layer image to %s" % new_image)
-        layer.setAttribute("image", new_image)
+            # 3 set new name in dom
+            new_image = os.path.join(os.path.basename(
+                os.path.dirname(image)), new_svg_filename)
+            print("set layer image to %s" % new_image)
+            layer.setAttribute("image", new_image)
 
     old_module_id = obsolete_fzp_dom.getAttribute("moduleId")
     print("replace moduleId=\"%s\"" % old_module_id)
@@ -189,16 +230,16 @@ def main():
 
     if not simulate:
         print("Write %s" % new_fzp)
-        outfile = open(new_fzp, 'wb')
-        s = new_fzp_dom.toxml("UTF-8")
-        outfile.write(s)
-        outfile.close()
+        with open(new_fzp, 'wb') as outfile:
+            outfile.write(xml_decl.encode('utf-8'))
+            s = new_fzp_dom.toxml("UTF-8")
+            outfile.write(s)
 
         print("Write %s" % obsolete_fzp)
-        outfile = open(obsolete_fzp, 'wb')
-        s = obsolete_fzp_dom.toxml("UTF-8")
-        outfile.write(s)
-        outfile.close()
+        with open(obsolete_fzp, 'wb') as outfile:
+            outfile.write(xml_decl.encode('utf-8'))
+            s = obsolete_fzp_dom.toxml("UTF-8")
+            outfile.write(s)
 
     # s = obsolete_fzp_dom.toxml("UTF-8")
     # print(s)

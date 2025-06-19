@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.9.3" moduleId="test_layer_ids_match">
+    <title>Layer IDs Match Test</title>
+    <version>1</version>
+    <date>2023-07-20</date>
+    <author>Test Author</author>
+    <description>Test part for layer ID matching</description>
+    <views>
+        <breadboardView>
+            <layers image="breadboard/test_layer_ids_match_breadboard.svg">
+                <layer layerId="breadboardbreadboard"/>
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/test_layer_ids_match_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/test_layer_ids_match_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+                <layer layerId="copper1"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors/>
+</module>
