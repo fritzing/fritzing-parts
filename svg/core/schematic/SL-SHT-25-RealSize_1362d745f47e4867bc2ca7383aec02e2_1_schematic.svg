@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg width=".9in" height="1in" baseProfile="tiny" version="1.2" viewBox="0 0 22.86 25.4" xmlns="http://www.w3.org/2000/svg">
+ <g id="schematic">
+  <rect class="interior rect" x=".15875" y="5.2388" width="17.462" height="14.922" fill="#fff" stroke="#000" stroke-linecap="round" stroke-width=".3175"/>
+  <line id="connector0pin" class="pin" x1="17.656" x2="22.736" y1="10.16" y2="10.16" fill="none" stroke="#787878" stroke-linecap="round" stroke-width=".24694"/>
+  <text class="text" x="20.1965" y="9.78958" fill="#8c8c8c" font-family="'Noto Sans'" font-size="0.88194" stroke-width="0" text-anchor="middle">2</text>
+  <text class="text" x="17.1626" y="10.4069" fill="#8c8c8c" font-family="'Noto Sans'" font-size="1.2347" stroke-width="0" text-anchor="end">SCL</text>
+  <rect id="connector0terminal" class="terminal" x="22.736" y="10.036" width=".24694" height=".24694" fill="none" stroke-width="0"/>
+  <line id="connector2pin" class="pin" x1="17.656" x2="22.736" y1="12.7" y2="12.7" fill="none" stroke="#787878" stroke-linecap="round" stroke-width=".24694"/>
+  <text class="text" x="20.1965" y="12.3296" fill="#8c8c8c" font-family="'Noto Sans'" font-size="0.88194" stroke-width="0" text-anchor="middle">3</text>
+  <text class="text" x="17.1626" y="12.9469" fill="#8c8c8c" font-family="'Noto Sans'" font-size="1.2347" stroke-width="0" text-anchor="end">SDA</text>
+  <rect id="connector2terminal" class="terminal" x="22.736" y="12.576" width=".24694" height=".24694" fill="none" stroke-width="0"/>
+  <line id="connector3pin" class="pin" x1="7.62" x2="7.62" y1="20.196" y2="25.276" fill="none" stroke="#787878" stroke-linecap="round" stroke-width=".24694"/>
+  <g transform="translate(7.2496 22.736)">
+   <g transform="rotate(270)">
+    <text class="text" fill="#8c8c8c" font-family="'Noto Sans'" font-size="0.88194" stroke-width="0" text-anchor="middle">1</text>
+   </g>
+  </g>
+  <g transform="translate(7.8669 19.703)">
+   <g transform="rotate(270)">
+    <text class="text" fill="#8c8c8c" font-family="'Noto Sans'" font-size="1.2347" stroke-width="0">GND</text>
+   </g>
+  </g>
+  <rect id="connector3terminal" class="terminal" x="7.4965" y="25.276" width=".24694" height=".24694" fill="none" stroke-width="0"/>
+  <line id="connector1pin" class="pin" x1="7.62" x2="7.62" y1=".12347" y2="5.2035" fill="none" stroke="#787878" stroke-linecap="round" stroke-width=".24694"/>
+  <g transform="translate(7.2496 2.6635)">
+   <g transform="rotate(270)">
+    <text class="text" fill="#8c8c8c" font-family="'Noto Sans'" font-size="0.88194" stroke-width="0" text-anchor="middle">4</text>
+   </g>
+  </g>
+  <g transform="translate(7.8669 5.6974)">
+   <g transform="rotate(270)">
+    <text class="text" fill="#8c8c8c" font-family="'Noto Sans'" font-size="1.2347" stroke-width="0" text-anchor="end">VCC</text>
+   </g>
+  </g>
+  <rect id="connector1terminal" class="terminal" x="7.4965" y="-.12347" width=".24694" height=".24694" fill="none" stroke-width="0"/>
+  <g id="label">
+   <text class="text" x="9.04875" y="9.87194" fill="#000000" font-family="'Noto Sans'" font-size="1.4993" stroke-width="0" text-anchor="middle">Humidity</text>
+   <text class="text" x="9.04875" y="11.4712" fill="#000000" font-family="'Noto Sans'" font-size="1.4993" stroke-width="0" text-anchor="middle">Temperature</text>
+   <text class="text" x="9.04875" y="13.0706" fill="#000000" font-family="'Noto Sans'" font-size="1.4993" stroke-width="0" text-anchor="middle">Sensor</text>
+   <text class="text" x="9.04875" y="14.6699" fill="#000000" font-family="'Noto Sans'" font-size="1.4993" stroke-width="0" text-anchor="middle">SHT-25</text>
+  </g>
+ </g>
+</svg>

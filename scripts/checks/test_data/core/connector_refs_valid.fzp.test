@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="test_connector_refs_valid">
+  <version>1</version>
+  <views>
+    <pcbView>
+      <layers image="pcb/connector_refs_valid_pcb.svg">
+        <layer layerId="copper0"/>
+        <layer layerId="copper1"/>
+      </layers>
+    </pcbView>
+    <breadboardView>
+      <layers image="breadboard/connector_refs_valid_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="schematic/connector_refs_valid_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+  </views>
+  <connectors>
+    <!-- In copper0 and copper1 -->
+    <connector id="connector0" type="male">
+      <views>
+        <pcbView>
+          <p svgId="connector0pad" layer="copper0"/>
+          <p svgId="connector0pad" layer="copper1"/>
+        </pcbView>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+    <!-- Only in copper1 -->
+    <connector id="connector1" type="male">
+      <views>
+        <pcbView>
+          <p svgId="connector1pad" layer="copper1"/>
+        </pcbView>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector1pin" layer="schematic"/>
+        </schematicView>
+      </views>
+    </connector>
+  </connectors>
+</module>
