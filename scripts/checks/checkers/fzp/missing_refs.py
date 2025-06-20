@@ -1,4 +1,5 @@
 from fzp_checkers import FZPChecker
+from fzp_utils import FZPUtils
 from lxml import etree
 import os
 
@@ -25,8 +26,9 @@ class FZPMissingConnectorRefsChecker(FZPChecker):
             if not image:
                 continue
 
-            svg_dir = os.path.dirname(self.fzp_path)
-            svg_path = os.path.join(os.path.dirname(svg_dir), 'svg', 'core', image)
+            svg_path = FZPUtils.get_svg_path(self.fzp_path, image, view_name)
+            if not svg_path:
+                continue  # Skip template SVGs
 
             try:
                 svg_doc = etree.parse(svg_path)
