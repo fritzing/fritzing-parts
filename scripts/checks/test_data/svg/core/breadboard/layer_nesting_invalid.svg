@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+    <g id="breadboard">
+        <!-- Invalid: silkscreen nested inside breadboard -->
+        <g id="silkscreen">
+            <rect x="10" y="10" width="20" height="20" fill="white"/>
+        </g>
+        <!-- Invalid: copper0 nested inside breadboard -->
+        <g id="copper0">
+            <circle cx="50" cy="50" r="10" fill="gold"/>
+        </g>
+    </g>
+</svg>

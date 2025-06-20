@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg">
+  <g id="copper0">
+    <circle id="connector0pad" cx="100" cy="100" r="27.5"/>  <!-- This one needs both references -->
+  </g>
+  <g id="copper1">
+    <circle id="connector0pad" cx="100" cy="100" r="27.5"/>  <!-- This one needs both references -->
+    <circle id="connector1pad" cx="200" cy="100" r="27.5"/>  <!-- This one only needs copper1 -->
+  </g>
+</svg>

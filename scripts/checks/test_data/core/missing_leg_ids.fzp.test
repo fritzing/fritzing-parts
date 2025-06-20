@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="test-missing-leg-ids">
+  <version>1</version>
+    <views>
+    <breadboardView>
+      <layers image="breadboard/missing_leg_ids_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+  </views>
+  <connectors>
+    <connector id="connector0" type="male">
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector0pin"/>
+        </breadboardView>
+      </views>
+    </connector>
+    <connector id="connector1" type="male">
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>
+        </breadboardView>
+      </views>
+    </connector>
+    <connector id="connector2" type="male">
+      <views>
+        <breadboardView>
+          <p layer="breadboard" svgId="connector2pin"/>
+        </breadboardView>
+      </views>
+    </connector>
+  </connectors>
+</module>
