@@ -6,6 +6,7 @@ from checkers import additional_fzp_checkers  # Gets the class list for AVAILABL
 from fzp_utils import FZPUtils
 import json
 import re
+import os
 
 class FZPCheckerRunner:
     def __init__(self, path, verbose=False):
@@ -14,16 +15,32 @@ class FZPCheckerRunner:
         self.total_errors = 0
         self.total_warnings = 0
         self.fixed = False
+        self.extracted_dir = None  # For fzpz cleanup
 
     def check(self, check_types, svg_check_types, fix=False):
         self.total_errors = 0
         self.total_warnings = 0
         self.fixed = False
+        
+        # Handle fzpz files
+        original_path = self.path
+        if self.path.endswith('.fzpz'):
+            try:
+                self.path = FZPUtils.extract_fzpz(self.path)
+                self.extracted_dir = os.path.dirname(self.path)
+                if self.verbose:
+                    print(f"Extracted FZPZ to: {self.extracted_dir}")
+            except Exception as e:
+                print(f"Error extracting FZPZ file {original_path}: {str(e)}")
+                self.total_errors += 1
+                return
+        
         try:
             fzp_doc = self._parse_fzp()
         except etree.XMLSyntaxError as e:
             print(f"Invalid XML: {str(e)}")
             self.total_errors += 1
+            self._cleanup_if_needed()
             return
 
         if self.verbose:
@@ -56,6 +73,7 @@ class FZPCheckerRunner:
                 print(f"Total warnings in {self.path}: {self.total_warnings}")
 
         fzp_doc.getroot().clear()
+        self._cleanup_if_needed()
 
     def _parse_fzp(self):
         fzp_doc = etree.parse(self.path)
@@ -135,6 +153,12 @@ class FZPCheckerRunner:
                 return checker(svg_doc, layer_ids)
         raise ValueError(f"Invalid SVG check type: {check_type}")
 
+    def _cleanup_if_needed(self):
+        """Clean up extracted fzpz contents if needed."""
+        if self.extracted_dir:
+            FZPUtils.cleanup_extraction(self.extracted_dir)
+            self.extracted_dir = None
+
     def search_and_check_fzp_files(self, svg_file, fzp_dir, check_types, svg_check_types):
         errors = 0
         fzp_files = self._search_fzp_files_with_svg(svg_file, fzp_dir)
@@ -195,7 +219,7 @@ if __name__ == "__main__":
     # --file : Automatically detect .json, .txt, .fzp and .svg
     # Add support for directly checking .fzpz files
     parser = argparse.ArgumentParser(description="Scan FZP files for various checks", add_help=False)
-    parser.add_argument("path", help="Path to FZP file or directory to scan")
+    parser.add_argument("path", help="Path to FZP/FZPZ file or directory to scan")
     parser.add_argument("-c", "--checks", nargs="*", default=["all"],
                         choices=["all"] + [checker.get_name() for checker in all_checkers],
                         help="Type(s) of check to run (default: all)")
@@ -250,17 +274,21 @@ if __name__ == "__main__":
                     file_list = [line.strip() for line in file]
 
             for filepath in file_list:
-                if filepath.endswith(".fzp"):
+                if filepath.endswith(".fzp") or filepath.endswith(".fzpz"):
                     fzp_files.add(os.path.join(args.path, filepath))
                 elif filepath.endswith(".svg"):
                     fzp_files.update(checker_runner._search_fzp_files_with_svg(filepath, args.path))
         elif args.svg and os.path.isdir(args.path):
             fzp_files.update(checker_runner._search_fzp_files_with_svg(args.svg, args.path))
         elif os.path.isfile(args.path):
-            fzp_files.add(args.path)
+            if args.path.endswith(".fzp") or args.path.endswith(".fzpz"):
+                fzp_files.add(args.path)
+            else:
+                print(f"Error: File {args.path} is not an FZP or FZPZ file")
+                exit(-1)
         elif os.path.isdir(args.path):
             for filename in sorted(os.listdir(args.path)):
-                if filename.endswith(".fzp"):
+                if filename.endswith(".fzp") or filename.endswith(".fzpz"):
                     fzp_files.add(os.path.join(args.path, filename))
 
         if args.verbose:
