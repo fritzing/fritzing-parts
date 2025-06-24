@@ -29,14 +29,13 @@ li.checked::marker { content: "\2612"; }
   <property name="family">PSOC™ 62x8 Microcontroller,PSOC™ 62xA Microcontroller,PSOC™ 61x8 Microcontroller,PSOC™ 61xA Microcontroller,AIROC™ CYW4343W Wi-Fi+Bluetooth® Combo</property>
   <property name="part number">CY8CPROTO-062-4343W</property>
   <property name="type">Evaluation Board</property>
-  <property name="layer"></property>
-  <property name="mpn"></property>
-  <property name="mn"></property>
+  <property name="mpn">CY8CPROTO-062-4343W</property>
+  <property name="mn">Infineon</property>
  </properties>
  <views>
   <breadboardView>
    <layers image="breadboard/Infineon_CY8CPROTO-062-4343W_breadboard.svg">
-    <layer layerId="breadboardbreadboard"/>
+    <layer layerId="breadboard"/>
    </layers>
   </breadboardView>
   <schematicView>
@@ -62,7 +61,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector0pin"/>
+     <p layer="breadboard" svgId="connector0pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
@@ -77,7 +76,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector1pin"/>
+     <p layer="breadboard" svgId="connector1pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
@@ -92,7 +91,7 @@ li.checked::marker { content: "\2612"; }
    <description>J6_2_UART_RTS</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector2pin"/>
+     <p layer="breadboard" svgId="connector2pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
@@ -107,7 +106,7 @@ li.checked::marker { content: "\2612"; }
    <description>J6_3_UART_CTS</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector3pin"/>
+     <p layer="breadboard" svgId="connector3pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
@@ -122,7 +121,7 @@ li.checked::marker { content: "\2612"; }
    <description>J6_4_UART_RX</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector4pin"/>
+     <p layer="breadboard" svgId="connector4pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
@@ -137,7 +136,7 @@ li.checked::marker { content: "\2612"; }
    <description>J6_5_UART_TX</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector5pin"/>
+     <p layer="breadboard" svgId="connector5pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
@@ -152,7 +151,7 @@ li.checked::marker { content: "\2612"; }
    <description>VTARG</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector6pin"/>
+     <p layer="breadboard" svgId="connector6pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
@@ -167,7 +166,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector7pin"/>
+     <p layer="breadboard" svgId="connector7pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
@@ -182,7 +181,7 @@ li.checked::marker { content: "\2612"; }
    <description>RESET</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector8pin"/>
+     <p layer="breadboard" svgId="connector8pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
@@ -197,7 +196,7 @@ li.checked::marker { content: "\2612"; }
    <description>SWDCLK</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector9pin"/>
+     <p layer="breadboard" svgId="connector9pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
@@ -212,7 +211,7 @@ li.checked::marker { content: "\2612"; }
    <description>SWDIO</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector10pin"/>
+     <p layer="breadboard" svgId="connector10pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
@@ -227,7 +226,7 @@ li.checked::marker { content: "\2612"; }
    <description>J7_1_VBUS</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector11pin"/>
+     <p layer="breadboard" svgId="connector11pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
@@ -242,7 +241,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector12pin"/>
+     <p layer="breadboard" svgId="connector12pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
@@ -257,7 +256,7 @@ li.checked::marker { content: "\2612"; }
    <description>VTARG</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector13pin"/>
+     <p layer="breadboard" svgId="connector13pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector13pin" terminalId="connector13terminal"/>
@@ -272,7 +271,7 @@ li.checked::marker { content: "\2612"; }
    <description>J7_4_I2C_SCL</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector14pin"/>
+     <p layer="breadboard" svgId="connector14pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector14pin" terminalId="connector14terminal"/>
@@ -287,7 +286,7 @@ li.checked::marker { content: "\2612"; }
    <description>J7_5_I2C_SDA</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector15pin"/>
+     <p layer="breadboard" svgId="connector15pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector15pin" terminalId="connector15terminal"/>
@@ -302,7 +301,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector16pin"/>
+     <p layer="breadboard" svgId="connector16pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector16pin"/>
@@ -317,7 +316,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector17pin"/>
+     <p layer="breadboard" svgId="connector17pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector17pin"/>
@@ -332,7 +331,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector18pin"/>
+     <p layer="breadboard" svgId="connector18pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector18pin"/>
@@ -347,7 +346,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector19pin"/>
+     <p layer="breadboard" svgId="connector19pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector19pin"/>
@@ -362,7 +361,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector20pin"/>
+     <p layer="breadboard" svgId="connector20pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector20pin"/>
@@ -377,7 +376,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector21pin"/>
+     <p layer="breadboard" svgId="connector21pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector21pin"/>
@@ -392,7 +391,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector22pin"/>
+     <p layer="breadboard" svgId="connector22pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector22pin"/>
@@ -407,7 +406,7 @@ li.checked::marker { content: "\2612"; }
    <description>VDDIO_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector23pin"/>
+     <p layer="breadboard" svgId="connector23pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector23pin"/>
@@ -422,7 +421,7 @@ li.checked::marker { content: "\2612"; }
    <description>P12_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector24pin"/>
+     <p layer="breadboard" svgId="connector24pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector24pin"/>
@@ -437,7 +436,7 @@ li.checked::marker { content: "\2612"; }
    <description>P12_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector25pin"/>
+     <p layer="breadboard" svgId="connector25pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector25pin"/>
@@ -452,7 +451,7 @@ li.checked::marker { content: "\2612"; }
    <description>P12_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector26pin"/>
+     <p layer="breadboard" svgId="connector26pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector26pin"/>
@@ -467,7 +466,7 @@ li.checked::marker { content: "\2612"; }
    <description>P12_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector27pin"/>
+     <p layer="breadboard" svgId="connector27pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector27pin"/>
@@ -482,7 +481,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector28pin"/>
+     <p layer="breadboard" svgId="connector28pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector28pin"/>
@@ -497,7 +496,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector29pin"/>
+     <p layer="breadboard" svgId="connector29pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector29pin"/>
@@ -512,7 +511,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_7</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector30pin"/>
+     <p layer="breadboard" svgId="connector30pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector30pin"/>
@@ -527,7 +526,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector31pin"/>
+     <p layer="breadboard" svgId="connector31pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector31pin"/>
@@ -542,7 +541,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector32pin"/>
+     <p layer="breadboard" svgId="connector32pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector32pin"/>
@@ -557,7 +556,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector33pin"/>
+     <p layer="breadboard" svgId="connector33pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector33pin"/>
@@ -572,7 +571,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector34pin"/>
+     <p layer="breadboard" svgId="connector34pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector34pin"/>
@@ -587,7 +586,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector35pin"/>
+     <p layer="breadboard" svgId="connector35pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector35pin"/>
@@ -602,7 +601,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector36pin"/>
+     <p layer="breadboard" svgId="connector36pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector36pin"/>
@@ -617,7 +616,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector37pin"/>
+     <p layer="breadboard" svgId="connector37pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector37pin"/>
@@ -632,7 +631,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector38pin"/>
+     <p layer="breadboard" svgId="connector38pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector38pin"/>
@@ -647,7 +646,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector39pin"/>
+     <p layer="breadboard" svgId="connector39pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector39pin"/>
@@ -662,7 +661,7 @@ li.checked::marker { content: "\2612"; }
    <description>VTARG</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector40pin"/>
+     <p layer="breadboard" svgId="connector40pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector40pin"/>
@@ -677,7 +676,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector41pin"/>
+     <p layer="breadboard" svgId="connector41pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector41pin"/>
@@ -692,7 +691,7 @@ li.checked::marker { content: "\2612"; }
    <description>VCC_5V</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector42pin"/>
+     <p layer="breadboard" svgId="connector42pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector42pin"/>
@@ -707,7 +706,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector43pin"/>
+     <p layer="breadboard" svgId="connector43pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector43pin"/>
@@ -722,7 +721,7 @@ li.checked::marker { content: "\2612"; }
    <description>VCC_3V6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector44pin"/>
+     <p layer="breadboard" svgId="connector44pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector44pin"/>
@@ -737,7 +736,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector45pin"/>
+     <p layer="breadboard" svgId="connector45pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector45pin"/>
@@ -752,7 +751,7 @@ li.checked::marker { content: "\2612"; }
    <description>VTARG</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector46pin"/>
+     <p layer="breadboard" svgId="connector46pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector46pin"/>
@@ -767,7 +766,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector47pin"/>
+     <p layer="breadboard" svgId="connector47pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector47pin"/>
@@ -782,7 +781,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector48pin"/>
+     <p layer="breadboard" svgId="connector48pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector48pin"/>
@@ -797,7 +796,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector49pin"/>
+     <p layer="breadboard" svgId="connector49pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector49pin"/>
@@ -812,7 +811,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector50pin"/>
+     <p layer="breadboard" svgId="connector50pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector50pin"/>
@@ -827,7 +826,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector51pin"/>
+     <p layer="breadboard" svgId="connector51pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector51pin"/>
@@ -842,7 +841,7 @@ li.checked::marker { content: "\2612"; }
    <description>P10_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector52pin"/>
+     <p layer="breadboard" svgId="connector52pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector52pin"/>
@@ -857,7 +856,7 @@ li.checked::marker { content: "\2612"; }
    <description>P0_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector53pin"/>
+     <p layer="breadboard" svgId="connector53pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector53pin"/>
@@ -872,7 +871,7 @@ li.checked::marker { content: "\2612"; }
    <description>P12_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector54pin"/>
+     <p layer="breadboard" svgId="connector54pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector54pin"/>
@@ -887,7 +886,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector55pin"/>
+     <p layer="breadboard" svgId="connector55pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector55pin"/>
@@ -902,7 +901,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector56pin"/>
+     <p layer="breadboard" svgId="connector56pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector56pin"/>
@@ -917,7 +916,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector57pin"/>
+     <p layer="breadboard" svgId="connector57pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector57pin"/>
@@ -932,7 +931,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_7</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector58pin"/>
+     <p layer="breadboard" svgId="connector58pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector58pin"/>
@@ -947,7 +946,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector59pin"/>
+     <p layer="breadboard" svgId="connector59pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector59pin"/>
@@ -962,7 +961,7 @@ li.checked::marker { content: "\2612"; }
    <description>P11_6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector60pin"/>
+     <p layer="breadboard" svgId="connector60pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector60pin"/>
@@ -977,7 +976,7 @@ li.checked::marker { content: "\2612"; }
    <description>P12_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector61pin"/>
+     <p layer="breadboard" svgId="connector61pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector61pin"/>
@@ -992,7 +991,7 @@ li.checked::marker { content: "\2612"; }
    <description>P12_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector62pin"/>
+     <p layer="breadboard" svgId="connector62pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector62pin"/>
@@ -1007,7 +1006,7 @@ li.checked::marker { content: "\2612"; }
    <description>P12_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector63pin"/>
+     <p layer="breadboard" svgId="connector63pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector63pin"/>
@@ -1022,7 +1021,7 @@ li.checked::marker { content: "\2612"; }
    <description>P12_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector64pin"/>
+     <p layer="breadboard" svgId="connector64pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector64pin"/>
@@ -1037,7 +1036,7 @@ li.checked::marker { content: "\2612"; }
    <description>VDDIO_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector65pin"/>
+     <p layer="breadboard" svgId="connector65pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector65pin"/>
@@ -1052,7 +1051,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector66pin"/>
+     <p layer="breadboard" svgId="connector66pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector66pin"/>
@@ -1067,7 +1066,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector67pin"/>
+     <p layer="breadboard" svgId="connector67pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector67pin"/>
@@ -1082,7 +1081,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector68pin"/>
+     <p layer="breadboard" svgId="connector68pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector68pin"/>
@@ -1097,7 +1096,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector69pin"/>
+     <p layer="breadboard" svgId="connector69pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector69pin"/>
@@ -1112,7 +1111,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector70pin"/>
+     <p layer="breadboard" svgId="connector70pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector70pin"/>
@@ -1127,7 +1126,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector71pin"/>
+     <p layer="breadboard" svgId="connector71pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector71pin"/>
@@ -1142,7 +1141,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector72pin"/>
+     <p layer="breadboard" svgId="connector72pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector72pin"/>
@@ -1157,7 +1156,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_7</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector73pin"/>
+     <p layer="breadboard" svgId="connector73pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector73pin"/>
@@ -1172,7 +1171,7 @@ li.checked::marker { content: "\2612"; }
    <description>P13_6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector74pin"/>
+     <p layer="breadboard" svgId="connector74pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector74pin"/>
@@ -1187,7 +1186,7 @@ li.checked::marker { content: "\2612"; }
    <description>P0_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector75pin"/>
+     <p layer="breadboard" svgId="connector75pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector75pin"/>
@@ -1202,7 +1201,7 @@ li.checked::marker { content: "\2612"; }
    <description>VTARG</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector76pin"/>
+     <p layer="breadboard" svgId="connector76pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector76pin"/>
@@ -1217,7 +1216,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector77pin"/>
+     <p layer="breadboard" svgId="connector77pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector77pin"/>
@@ -1232,7 +1231,7 @@ li.checked::marker { content: "\2612"; }
    <description>XRES</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector78pin"/>
+     <p layer="breadboard" svgId="connector78pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector78pin"/>
@@ -1247,7 +1246,7 @@ li.checked::marker { content: "\2612"; }
    <description>P6_7</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector79pin"/>
+     <p layer="breadboard" svgId="connector79pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector79pin"/>
@@ -1262,7 +1261,7 @@ li.checked::marker { content: "\2612"; }
    <description>P6_6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector80pin"/>
+     <p layer="breadboard" svgId="connector80pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector80pin"/>
@@ -1277,7 +1276,7 @@ li.checked::marker { content: "\2612"; }
    <description>B_RX</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector81pin"/>
+     <p layer="breadboard" svgId="connector81pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector81pin"/>
@@ -1292,7 +1291,7 @@ li.checked::marker { content: "\2612"; }
    <description>B_CTS</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector82pin"/>
+     <p layer="breadboard" svgId="connector82pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector82pin"/>
@@ -1307,7 +1306,7 @@ li.checked::marker { content: "\2612"; }
    <description>B_RTS</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector83pin"/>
+     <p layer="breadboard" svgId="connector83pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector83pin"/>
@@ -1322,7 +1321,7 @@ li.checked::marker { content: "\2612"; }
    <description>B_TX</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector84pin"/>
+     <p layer="breadboard" svgId="connector84pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector84pin"/>
@@ -1337,7 +1336,7 @@ li.checked::marker { content: "\2612"; }
    <description>J3_VCC_1V8</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector85pin"/>
+     <p layer="breadboard" svgId="connector85pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector85pin"/>
@@ -1352,7 +1351,7 @@ li.checked::marker { content: "\2612"; }
    <description>J3_VOUT</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector86pin"/>
+     <p layer="breadboard" svgId="connector86pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector86pin"/>
@@ -1367,7 +1366,7 @@ li.checked::marker { content: "\2612"; }
    <description>J3_VCC_3V3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector87pin"/>
+     <p layer="breadboard" svgId="connector87pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector87pin"/>
@@ -1382,7 +1381,7 @@ li.checked::marker { content: "\2612"; }
    <description>VREF</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector88pin"/>
+     <p layer="breadboard" svgId="connector88pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector88pin"/>
@@ -1397,7 +1396,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector89pin"/>
+     <p layer="breadboard" svgId="connector89pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector89pin"/>
@@ -1412,7 +1411,7 @@ li.checked::marker { content: "\2612"; }
    <description>VBACKUP</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector90pin"/>
+     <p layer="breadboard" svgId="connector90pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector90pin"/>
@@ -1427,7 +1426,7 @@ li.checked::marker { content: "\2612"; }
    <description>P9_6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector91pin"/>
+     <p layer="breadboard" svgId="connector91pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector91pin"/>
@@ -1442,7 +1441,7 @@ li.checked::marker { content: "\2612"; }
    <description>P9_7</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector92pin"/>
+     <p layer="breadboard" svgId="connector92pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector92pin"/>
@@ -1457,7 +1456,7 @@ li.checked::marker { content: "\2612"; }
    <description>P9_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector93pin"/>
+     <p layer="breadboard" svgId="connector93pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector93pin"/>
@@ -1472,7 +1471,7 @@ li.checked::marker { content: "\2612"; }
    <description>P9_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector94pin"/>
+     <p layer="breadboard" svgId="connector94pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector94pin"/>
@@ -1487,7 +1486,7 @@ li.checked::marker { content: "\2612"; }
    <description>P9_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector95pin"/>
+     <p layer="breadboard" svgId="connector95pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector95pin"/>
@@ -1502,7 +1501,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector96pin"/>
+     <p layer="breadboard" svgId="connector96pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector96pin"/>
@@ -1517,7 +1516,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector97pin"/>
+     <p layer="breadboard" svgId="connector97pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector97pin"/>
@@ -1532,7 +1531,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_7</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector98pin"/>
+     <p layer="breadboard" svgId="connector98pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector98pin"/>
@@ -1547,7 +1546,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector99pin"/>
+     <p layer="breadboard" svgId="connector99pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector99pin"/>
@@ -1562,7 +1561,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector100pin"/>
+     <p layer="breadboard" svgId="connector100pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector100pin"/>
@@ -1577,7 +1576,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector101pin"/>
+     <p layer="breadboard" svgId="connector101pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector101pin"/>
@@ -1592,7 +1591,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector102pin"/>
+     <p layer="breadboard" svgId="connector102pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector102pin"/>
@@ -1607,7 +1606,7 @@ li.checked::marker { content: "\2612"; }
    <description>P6_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector103pin"/>
+     <p layer="breadboard" svgId="connector103pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector103pin"/>
@@ -1622,7 +1621,7 @@ li.checked::marker { content: "\2612"; }
    <description>P1_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector104pin"/>
+     <p layer="breadboard" svgId="connector104pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector104pin"/>
@@ -1637,7 +1636,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector105pin"/>
+     <p layer="breadboard" svgId="connector105pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector105pin"/>
@@ -1652,7 +1651,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector106pin"/>
+     <p layer="breadboard" svgId="connector106pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector106pin"/>
@@ -1667,7 +1666,7 @@ li.checked::marker { content: "\2612"; }
    <description>P9_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector107pin"/>
+     <p layer="breadboard" svgId="connector107pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector107pin"/>
@@ -1682,7 +1681,7 @@ li.checked::marker { content: "\2612"; }
    <description>P9_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector108pin"/>
+     <p layer="breadboard" svgId="connector108pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector108pin"/>
@@ -1697,7 +1696,7 @@ li.checked::marker { content: "\2612"; }
    <description>P9_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector109pin"/>
+     <p layer="breadboard" svgId="connector109pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector109pin"/>
@@ -1712,7 +1711,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector110pin"/>
+     <p layer="breadboard" svgId="connector110pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector110pin"/>
@@ -1727,7 +1726,7 @@ li.checked::marker { content: "\2612"; }
    <description>P6_VDD</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector111pin"/>
+     <p layer="breadboard" svgId="connector111pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector111pin"/>
@@ -1742,7 +1741,7 @@ li.checked::marker { content: "\2612"; }
    <description>P6_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector112pin"/>
+     <p layer="breadboard" svgId="connector112pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector112pin"/>
@@ -1757,7 +1756,7 @@ li.checked::marker { content: "\2612"; }
    <description>P6_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector113pin"/>
+     <p layer="breadboard" svgId="connector113pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector113pin"/>
@@ -1772,7 +1771,7 @@ li.checked::marker { content: "\2612"; }
    <description>P6_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector114pin"/>
+     <p layer="breadboard" svgId="connector114pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector114pin"/>
@@ -1787,7 +1786,7 @@ li.checked::marker { content: "\2612"; }
    <description>P6_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector115pin"/>
+     <p layer="breadboard" svgId="connector115pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector115pin"/>
@@ -1802,7 +1801,7 @@ li.checked::marker { content: "\2612"; }
    <description>P6_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector116pin"/>
+     <p layer="breadboard" svgId="connector116pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector116pin"/>
@@ -1817,7 +1816,7 @@ li.checked::marker { content: "\2612"; }
    <description>VDD_USB</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector117pin"/>
+     <p layer="breadboard" svgId="connector117pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector117pin"/>
@@ -1832,7 +1831,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector118pin"/>
+     <p layer="breadboard" svgId="connector118pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector118pin"/>
@@ -1847,7 +1846,7 @@ li.checked::marker { content: "\2612"; }
    <description>VTARG</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector119pin"/>
+     <p layer="breadboard" svgId="connector119pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector119pin"/>
@@ -1862,7 +1861,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_7</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector120pin"/>
+     <p layer="breadboard" svgId="connector120pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector120pin"/>
@@ -1877,7 +1876,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector121pin"/>
+     <p layer="breadboard" svgId="connector121pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector121pin"/>
@@ -1892,7 +1891,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector122pin"/>
+     <p layer="breadboard" svgId="connector122pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector122pin"/>
@@ -1907,7 +1906,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector123pin"/>
+     <p layer="breadboard" svgId="connector123pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector123pin"/>
@@ -1922,7 +1921,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector124pin"/>
+     <p layer="breadboard" svgId="connector124pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector124pin"/>
@@ -1937,7 +1936,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector125pin"/>
+     <p layer="breadboard" svgId="connector125pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector125pin"/>
@@ -1952,7 +1951,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector126pin"/>
+     <p layer="breadboard" svgId="connector126pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector126pin"/>
@@ -1967,7 +1966,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector127pin"/>
+     <p layer="breadboard" svgId="connector127pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector127pin"/>
@@ -1982,7 +1981,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector128pin"/>
+     <p layer="breadboard" svgId="connector128pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector128pin"/>
@@ -1997,7 +1996,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector129pin"/>
+     <p layer="breadboard" svgId="connector129pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector129pin"/>
@@ -2012,7 +2011,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector130pin"/>
+     <p layer="breadboard" svgId="connector130pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector130pin"/>
@@ -2027,7 +2026,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector131pin"/>
+     <p layer="breadboard" svgId="connector131pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector131pin"/>
@@ -2042,7 +2041,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector132pin"/>
+     <p layer="breadboard" svgId="connector132pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector132pin"/>
@@ -2057,7 +2056,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector133pin"/>
+     <p layer="breadboard" svgId="connector133pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector133pin"/>
@@ -2072,7 +2071,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector134pin"/>
+     <p layer="breadboard" svgId="connector134pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector134pin"/>
@@ -2087,7 +2086,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_7</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector135pin"/>
+     <p layer="breadboard" svgId="connector135pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector135pin"/>
@@ -2102,7 +2101,7 @@ li.checked::marker { content: "\2612"; }
    <description>VTARG</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector136pin"/>
+     <p layer="breadboard" svgId="connector136pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector136pin"/>
@@ -2117,7 +2116,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector137pin"/>
+     <p layer="breadboard" svgId="connector137pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector137pin"/>
@@ -2132,7 +2131,7 @@ li.checked::marker { content: "\2612"; }
    <description>VTARG</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector138pin"/>
+     <p layer="breadboard" svgId="connector138pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector138pin"/>
@@ -2147,7 +2146,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector139pin"/>
+     <p layer="breadboard" svgId="connector139pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector139pin"/>
@@ -2162,7 +2161,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector140pin"/>
+     <p layer="breadboard" svgId="connector140pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector140pin"/>
@@ -2177,7 +2176,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector141pin"/>
+     <p layer="breadboard" svgId="connector141pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector141pin"/>
@@ -2192,7 +2191,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector142pin"/>
+     <p layer="breadboard" svgId="connector142pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector142pin"/>
@@ -2207,7 +2206,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_7</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector143pin"/>
+     <p layer="breadboard" svgId="connector143pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector143pin"/>
@@ -2222,7 +2221,7 @@ li.checked::marker { content: "\2612"; }
    <description>VTARG</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector144pin"/>
+     <p layer="breadboard" svgId="connector144pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector144pin"/>
@@ -2237,7 +2236,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector145pin"/>
+     <p layer="breadboard" svgId="connector145pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector145pin"/>
@@ -2252,7 +2251,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector146pin"/>
+     <p layer="breadboard" svgId="connector146pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector146pin"/>
@@ -2267,7 +2266,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector147pin"/>
+     <p layer="breadboard" svgId="connector147pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector147pin"/>
@@ -2282,7 +2281,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector148pin"/>
+     <p layer="breadboard" svgId="connector148pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector148pin"/>
@@ -2297,7 +2296,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector149pin"/>
+     <p layer="breadboard" svgId="connector149pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector149pin"/>
@@ -2312,7 +2311,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector150pin"/>
+     <p layer="breadboard" svgId="connector150pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector150pin"/>
@@ -2327,7 +2326,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector151pin"/>
+     <p layer="breadboard" svgId="connector151pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector151pin"/>
@@ -2342,7 +2341,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector152pin"/>
+     <p layer="breadboard" svgId="connector152pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector152pin"/>
@@ -2357,7 +2356,7 @@ li.checked::marker { content: "\2612"; }
    <description>P5_6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector153pin"/>
+     <p layer="breadboard" svgId="connector153pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector153pin"/>
@@ -2372,7 +2371,7 @@ li.checked::marker { content: "\2612"; }
    <description>GND</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector154pin"/>
+     <p layer="breadboard" svgId="connector154pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector154pin"/>
@@ -2387,7 +2386,7 @@ li.checked::marker { content: "\2612"; }
    <description>VTARG</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector155pin"/>
+     <p layer="breadboard" svgId="connector155pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector155pin"/>
@@ -2402,7 +2401,7 @@ li.checked::marker { content: "\2612"; }
    <description>NC</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector156pin"/>
+     <p layer="breadboard" svgId="connector156pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector156pin"/>
@@ -2417,7 +2416,7 @@ li.checked::marker { content: "\2612"; }
    <description>P9_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector157pin"/>
+     <p layer="breadboard" svgId="connector157pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector157pin"/>
@@ -2432,7 +2431,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_5</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector158pin"/>
+     <p layer="breadboard" svgId="connector158pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector158pin"/>
@@ -2447,7 +2446,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_2</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector159pin"/>
+     <p layer="breadboard" svgId="connector159pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector159pin"/>
@@ -2462,7 +2461,7 @@ li.checked::marker { content: "\2612"; }
    <description>P1_0</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector160pin"/>
+     <p layer="breadboard" svgId="connector160pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector160pin"/>
@@ -2477,7 +2476,7 @@ li.checked::marker { content: "\2612"; }
    <description>P6_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector161pin"/>
+     <p layer="breadboard" svgId="connector161pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector161pin"/>
@@ -2492,7 +2491,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_1</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector162pin"/>
+     <p layer="breadboard" svgId="connector162pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector162pin"/>
@@ -2507,7 +2506,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_6</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector163pin"/>
+     <p layer="breadboard" svgId="connector163pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector163pin"/>
@@ -2522,7 +2521,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_4</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector164pin"/>
+     <p layer="breadboard" svgId="connector164pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector164pin"/>
@@ -2537,7 +2536,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_3</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector165pin"/>
+     <p layer="breadboard" svgId="connector165pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector165pin"/>
@@ -2552,7 +2551,7 @@ li.checked::marker { content: "\2612"; }
    <description>P8_7</description>
    <views>
     <breadboardView>
-     <p layer="breadboardbreadboard" svgId="connector166pin"/>
+     <p layer="breadboard" svgId="connector166pin"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector166pin"/>
