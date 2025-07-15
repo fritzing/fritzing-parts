@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="adafruit_pi-stemma_2" referenceFile="adafruit_pi-stemma.fzp" fritzingVersion="1.0.5">
+ <version>2</version>
+ <author>Liz (BlitzCityDIY), RAPTOR7762</author>
+ <title>Adafruit Pi Stemma QT Breakout</title>
+ <label>A</label>
+ <date>Thu Jul 10 2025</date>
+ <tags>
+  <tag>Raspberry Pi</tag>
+  <tag>adafruit</tag>
+  <tag>contrib</tag>
+  <tag>STEMMA QT</tag>
+  <tag>fritzing user</tag>
+ </tags>
+ <properties>
+  <property name="family">STEMMA QT</property>
+  <property name="variant">Raspberry Pi Breakout</property>
+  <property name="mpn"></property>
+  <property name="part number"></property>
+  <property name="mn"></property>
+  <property name="layer"></property>
+ </properties>
+ <taxonomy>part.dip.10.pins</taxonomy>
+ <description>The Adafruit Pi Stemma is a small, easily removable breakout that adds a 4-pin JST SH connector (Stemma QT or Qwiic) to your Raspberry Pi. The 2x3 socket design allows you to plug securely into the Pi's I2C bus with no soldering required. Works great if you want to add a QT connector for quick I2C sensor and device integration without any header-fiddling.
+
+Pi Stemma has a 2x3 header on top that connects to the power and I2C pins—simply line it up with the edge of the 2x20 connector on your Pi or Pi-compatible board. It has a single JST SH connector that links to the Pi's I2C bus (SDA, SCL, 3V, and Ground). A 3.3V regulator allows it to work with all Qwiic or Stemma QT devices without risking a brownout. A green LED indicates correct power. We've also included two 10K pull-up resistors, since some Pi-compatible boards lack them.
+
+You can use it with any Linux single-board computer or microcontroller with a 2x20 Pi-compatible pinout (there are many!), and then check out Blinka, our Python interface library, so you can use our huge collection of CircuitPython libraries on SBCs using Python!</description>
+ <views>
+  <iconView>
+   <layers image="icon/prefix0000_f8c567dd6d7d58f9ad9a9b83cb90384e_4_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/prefix0000_f8c567dd6d7d58f9ad9a9b83cb90384e_4_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/prefix0000_f8c567dd6d7d58f9ad9a9b83cb90384e_4_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/prefix0000_f8c567dd6d7d58f9ad9a9b83cb90384e_4_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector id="connector0" name="GND" type="female">
+   <description>pin 1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" name="VCC" type="female">
+   <description>pin 2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector2" name="SDA" type="female">
+   <description>pin 3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector3" name="SCL" type="female">
+   <description>pin 4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+    </schematicView>
+    <pcbView>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector4" name="GPIO3" type="male">
+   <description>pin 5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector4pin"/>
+     <p layer="copper1" svgId="connector4pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector5" name="GPIO2" type="male">
+   <description>pin 6</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pin"/>
+     <p layer="copper1" svgId="connector5pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector6" name="3V3" type="male">
+   <description>pin 7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pin"/>
+     <p layer="copper1" svgId="connector6pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector7" name="GND" type="male">
+   <description>pin 8</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector7pin"/>
+     <p layer="copper1" svgId="connector7pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector8" name="5V" type="male">
+   <description>pin 9</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector8pin"/>
+     <p layer="copper1" svgId="connector8pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector9" name="5V" type="male">
+   <description>pin 10</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pin"/>
+     <p layer="copper1" svgId="connector9pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="5V">
+   <nodeMember connectorId="connector8"/>
+   <nodeMember connectorId="connector9"/>
+  </bus>
+ </buses>
+ <url>https://www.adafruit.com/product/6365</url>
+</module>
