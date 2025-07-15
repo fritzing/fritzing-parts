@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="1.0.5" icon="adafruit_rpi.png">
+    <title>Adafruit Raspberry Pi</title>
+    <instances>
+        <instance moduleIdRef="__spacer__" modelIndex="3" path="Hats and Bonnets">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+        
+        <instance moduleIdRef="__spacer__" modelIndex="3" path="Breakout Boards">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+
+        <instance moduleIdRef="adafruit_pi-stemma_2" modelIndex="3" path="adafruit_pi-stemma.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+    </instances>
+</module>
