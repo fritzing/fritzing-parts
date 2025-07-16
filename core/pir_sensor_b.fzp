@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="1.0.5" moduleId="pir_sensor_b_2">
+    <author>RAPTOR7762</author>
+    <version>2</version>
+    <title>PIR sensor</title>
+    <label>A</label>
+    <date>Wed Jul 16 2025</date>
+    <url>https://www.adafruit.com/products/189</url>
+    <tags>
+        <tag>sensor</tag>
+        <tag>IR</tag>
+    </tags>
+    <properties>
+        <property name="family">sensors</property>
+        <property name="variant">PIR</property>
+        <property name="layer"></property>
+        <property name="mn"></property>
+        <property name="mpn"></property>
+        <property name="part number"></property>
+    </properties>
+    <description>Generic PIR sensor</description>
+    <views>
+        <iconView>
+            <layers image="icon/pir_sensor_b.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/pir_sensor_b.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/pir_sensor_b.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/pir_sensor_b.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="copper1"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector3" type="male" name="VDD">
+            <description>ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector0pin"/>
+                    <p layer="copper0" svgId="connector0pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="SIG">
+            <description>supply voltage</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector1pin"/>
+                    <p layer="copper0" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="GND">
+            <description>signal</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" legId="connector2leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector2pin"/>
+                    <p layer="copper0" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>
