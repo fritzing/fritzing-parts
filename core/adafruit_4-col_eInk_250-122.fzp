@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="adafruit_4-col_eInk_250-122_3" fritzingVersion="1.0.5" referenceFile="adafruit_4-col_eInk_250-122.fzp">
+ <version>3</version>
+ <date>Thu Jul 31 2025</date>
+ <author>Liz (BitzCityDIY), RAPTOR7762</author>
+ <description>&lt;html>&lt;p>Easy e-paper finally comes to microcontrollers, with this breakout that's designed to make it a breeze to add a quad-color eInk display. Chances are you've seen one of those new-fangled 'e-readers' like the Kindle or Nook. They have gigantic electronic paper 'static' displays - that means the image stays on the display even when power is completely disconnected. The image is also high contrast and very daylight readable. It really does look just like printed paper!&lt;/p>
+
+&lt;p>We've liked these displays for a long time, but breakouts were never designed for makers to use. Finally, we decided to make our own!&lt;/p>
+
+&lt;p>This is a &lt;strong>2.13" quad-color (red, black, yellow and white) display.&lt;/strong> It has 250x122 black, red and yellow ink pixels and a white-ish background. It uses the JD79661 chipset, so make sure whatever firmware code you are planning to use has support for it. Using our CircuitPython or Arduino libraries, you can create a 'frame buffer' with what pixels you want to have activated and then write that out to the display. Most simple breakouts leave it at that. But if you do the math, 250 x 122 pixels x 2 bits = 7.5 KBytes. Which won't fit into many microcontroller memories. Heck, even if you do have 32KB of RAM, why waste 8KB?&lt;/p>
+
+&lt;p>&lt;strong>So we did you a favor and tossed a small SRAM chip on the back.&lt;/strong> This chip shares the SPI port the eInk display uses, so you only need one extra pin. And, no more frame-buffering! &lt;strong>You can use the SRAM to set up whatever you want to display, then shuffle data from SRAM to eInk when you're ready.&lt;/strong>&lt;a href="https://github.com/adafruit/Adafruit_EPD">&lt;strong>The library we wrote does all the work for you&lt;/strong>, you can just interface with it as if it were an Adafruit_GFX compatible display&lt;/a>.&lt;/p>
+
+&lt;p>We even tossed on a MicroSD socket so you can store images, text files, whatever you like to display. Everything is 3 or 5V logic safe so you can use it with any and all microcontrollers.&lt;/p>
+
+&lt;p>For ultra-low power usages, the onboard 3.3V regulator has the Enable pin brought out so you can shut down the power to the SRAM, MicroSD, and display.&lt;/p>
+
+&lt;p>This display breakout also features an 18-pin "EYE SPI" standard FPC connector with flip-top connector. You can use an &lt;a href="https://www.adafruit.com/product/5239">18-pin 0.5mm pitch FPC cable&lt;/a> to connect to all the GPIO pins, for when you want to skip the soldering. Comes assembled and tested, with some header. You'll need a soldering iron to attach the header for breadboarding or installing it into your project.&lt;/p>&lt;/html></description>
+ <title>Adafruit 2.13" 250x122 Quad-Color eInk / ePaper Display w/SRAM</title>
+ <tags>
+  <tag>adafruit</tag>
+  <tag>fritzing core</tag>
+  <tag>contrib</tag>
+  <tag>ePaper</tag>
+  <tag>eInk</tag>
+  <tag>4-color</tag>
+  <tag>4-colour</tag>
+  <tag>JD79661</tag>
+ </tags>
+ <properties>
+  <property name="variant">Adafruit Quad-color 250x150 2.13"</property>
+  <property name="family">eInk</property>
+  <property name="layer"></property>
+  <property name="mn"></property>
+  <property name="mpn"></property>
+  <property name="part number">Adafruit #6366</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_4-col_eInk_250-122.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_4-col_eInk_250-122.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_4-col_eInk_250-122.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_4-col_eInk_250-122.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VIN" id="connector0" type="male">
+   <description>pin1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+     <p layer="copper1" svgId="connector0pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3V3" id="connector1" type="male">
+   <description>pin2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+     <p layer="copper1" svgId="connector1pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCK" id="connector2" type="male">
+   <description>pin3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector2pin"/>
+     <p layer="copper1" svgId="connector2pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MISO" id="connector3" type="male">
+   <description>pin4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector3pin"/>
+     <p layer="copper1" svgId="connector3pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MOSI" id="connector4" type="male">
+   <description>pin5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector4pin"/>
+     <p layer="copper1" svgId="connector4pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="ECS" id="connector5" type="male">
+   <description>pin6</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pin"/>
+     <p layer="copper1" svgId="connector5pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DC" id="connector6" type="male">
+   <description>pin7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pin"/>
+     <p layer="copper1" svgId="connector6pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SRCS" id="connector7" type="male">
+   <description>pin8</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector7pin"/>
+     <p layer="copper1" svgId="connector7pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDCS" id="connector8" type="male">
+   <description>pin9</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector8pin"/>
+     <p layer="copper1" svgId="connector8pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MISO" id="connector9" type="male">
+   <description>pin9</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pin"/>
+     <p layer="copper1" svgId="connector9pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="RST" id="connector10" type="male">
+   <description>pin10</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pin"/>
+     <p layer="copper1" svgId="connector10pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="BUSY" id="connector11" type="male">
+   <description>pin11</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pin"/>
+     <p layer="copper1" svgId="connector11pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="ENA" id="connector12" type="male">
+   <description>pin12</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pin"/>
+     <p layer="copper1" svgId="connector12pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <label>A</label>
+ <url>https://www.adafruit.com/product/6366</url>
+</module>
