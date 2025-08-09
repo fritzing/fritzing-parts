@@ -275,6 +275,98 @@ class SVGIdsChecker(SVGChecker):
         
         return self.get_result()
 
+    def fix(self):
+        """Fix duplicate 'label' IDs by grouping consecutive text elements under <g> tags"""
+        from lxml import etree
+
+        # Find all text elements with id="label" in document order
+        label_elements = self.svg_doc.xpath("//text[@id='label']")
+
+        if len(label_elements) <= 1:
+            return
+
+        # Group consecutive elements
+        consecutive_groups = self._find_consecutive_groups(label_elements)
+
+        # Create <g> tags for each group of consecutive elements (in reverse order to maintain positions)
+        for group in reversed(consecutive_groups):
+            if len(group) > 1:
+                self._create_label_group(group)
+
+    def _find_consecutive_groups(self, elements):
+        """Find groups of consecutive text elements in document order"""
+        if not elements:
+            return []
+
+        # Get all elements in the document to determine order
+        all_elements = self.svg_doc.xpath("//*")
+        element_positions = {elem: i for i, elem in enumerate(all_elements)}
+
+        # Sort label elements by their document position
+        sorted_elements = sorted(elements, key=lambda x: element_positions.get(x, float('inf')))
+
+        # Group consecutive elements
+        groups = []
+        current_group = [sorted_elements[0]]
+
+        for i in range(1, len(sorted_elements)):
+            curr_pos = element_positions.get(sorted_elements[i], float('inf'))
+            prev_pos = element_positions.get(sorted_elements[i-1], float('inf'))
+
+            # Check if elements are consecutive in document order
+            consecutive = True
+            for pos in range(prev_pos + 1, curr_pos):
+                if pos < len(all_elements):
+                    between_elem = all_elements[pos]
+                    # If there's a text element with id="label" between them, they're not consecutive
+                    if between_elem.tag == "text" and between_elem.get("id") == "label":
+                        consecutive = False
+                        break
+
+            if consecutive:
+                current_group.append(sorted_elements[i])
+            else:
+                groups.append(current_group)
+                current_group = [sorted_elements[i]]
+
+        groups.append(current_group)
+        return groups
+
+    def _create_label_group(self, text_elements):
+        """Create a <g id='label'> containing the consecutive text elements"""
+        from lxml import etree
+
+        if not text_elements:
+            return
+
+        # Use the first element's parent and position
+        first_element = text_elements[0]
+        parent = first_element.getparent()
+        if parent is None:
+            return
+
+        # Create a new <g> element with id="label"
+        group_element = etree.Element("g")
+        group_element.set("id", "label")
+
+        # Find the position of the first text element
+        insert_index = list(parent).index(first_element)
+
+        # Remove the id attribute from all text elements and add them to the group
+        for text_element in text_elements:
+            # Remove the id attribute since the group will have it
+            if "id" in text_element.attrib:
+                del text_element.attrib["id"]
+
+            # Remove the text element from its current parent
+            text_element.getparent().remove(text_element)
+
+            # Add to the group
+            group_element.append(text_element)
+
+        # Insert the group at the position where the first text element was
+        parent.insert(insert_index, group_element)
+
     @staticmethod
     def get_name():
         return "ids"
