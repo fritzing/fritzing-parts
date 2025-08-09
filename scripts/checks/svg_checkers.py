@@ -277,21 +277,122 @@ class SVGIdsChecker(SVGChecker):
 
     def fix(self):
         """Fix duplicate 'label' IDs by grouping consecutive text elements under <g> tags"""
-        from lxml import etree
+        import re
 
-        # Find all text elements with id="label" in document order
-        label_elements = self.svg_doc.xpath("//text[@id='label']")
+        # Get the file path from the SVG document
+        svg_path = self.svg_doc.docinfo.URL
+        if not svg_path:
+            print("Debug: Cannot fix SVG IDs - file path not found")
+            return False
+
+        # Find all text elements with id="label" - use namespace-agnostic XPath
+        label_elements = self.svg_doc.xpath("//*[local-name()='text' and @id='label']")
 
         if len(label_elements) <= 1:
-            return
+            print(f"Debug: No duplicate text elements with id='label' to fix in {svg_path}")
+            return False
+
+        print(f"Debug: Found {len(label_elements)} text elements with id='label' in {svg_path}")
 
         # Group consecutive elements
         consecutive_groups = self._find_consecutive_groups(label_elements)
 
-        # Create <g> tags for each group of consecutive elements (in reverse order to maintain positions)
-        for group in reversed(consecutive_groups):
-            if len(group) > 1:
-                self._create_label_group(group)
+        # Check if there are actually groups to fix
+        groups_to_fix = [group for group in consecutive_groups if len(group) > 1]
+        if not groups_to_fix:
+            print(f"Debug: No consecutive label groups to fix in {svg_path}")
+            return False
+
+        print(f"Debug: Found {len(groups_to_fix)} groups of consecutive label elements to fix")
+
+        # Use string-based replacement to preserve formatting
+        try:
+            # Read the original file
+            with open(svg_path, 'r', encoding='utf-8') as file:
+                content = file.read()
+
+            # Process each group (in reverse order to maintain positions)
+            for i, group in enumerate(reversed(groups_to_fix)):
+                print(f"Debug: Creating group {i+1} with {len(group)} text elements")
+                content = self._replace_label_group_in_content(content, group)
+
+            # Write the modified content
+            with open(svg_path, 'w', encoding='utf-8') as file:
+                file.write(content)
+
+            print(f"Debug: Successfully fixed duplicate label IDs in {svg_path}")
+            return True
+
+        except Exception as e:
+            print(f"Debug: Failed to save SVG file: {str(e)}")
+            return False
+
+    def _replace_label_group_in_content(self, content, text_elements):
+        """Replace consecutive text elements with id='label' with a group in string content"""
+        import re
+
+        # Build regex patterns for each text element
+        patterns = []
+        for elem in text_elements:
+            # Get the text content of the element
+            text_content = elem.text or ""
+            # Escape special regex chars in attributes
+            x_val = re.escape(elem.get('x', ''))
+            y_val = re.escape(elem.get('y', ''))
+            fill_val = re.escape(elem.get('fill', ''))
+            font_family = re.escape(elem.get('font-family', ''))
+            font_size = re.escape(elem.get('font-size', ''))
+            text_anchor = re.escape(elem.get('text-anchor', ''))
+            text_escaped = re.escape(text_content)
+
+            # Create pattern to match this specific text element
+            pattern = (r'<text\s+id="label"[^>]*x="' + x_val + r'"[^>]*y="' + y_val + r'"[^>]*>' +
+                      text_escaped + r'</text>')
+            patterns.append(pattern)
+
+        # Find all the text elements in the content
+        found_elements = []
+        for pattern in patterns:
+            match = re.search(pattern, content)
+            if match:
+                found_elements.append((match.start(), match.end(), match.group(0)))
+
+        if len(found_elements) < 2:
+            return content  # Not enough elements to group
+
+        # Sort by position in file
+        found_elements.sort()
+
+        # Get the original indentation from the first element
+        first_start = found_elements[0][0]
+        line_start = content.rfind('\n', 0, first_start) + 1
+        original_indent = content[line_start:first_start]
+
+        # Create the group replacement with proper indentation
+        group_content = original_indent + '<g id="label">\n'
+        for _, _, element_str in found_elements:
+            # Remove id="label" from individual elements
+            modified_element = re.sub(r'\s*id="label"', '', element_str)
+            group_content += original_indent + '  ' + modified_element + '\n'
+        group_content += original_indent + '</g>'
+
+        # Replace all the individual elements with the group
+        # Remove from end to start to preserve positions
+        for start, end, _ in reversed(found_elements):
+            if start == found_elements[0][0]:  # First element - replace with group
+                # Replace including the original indentation (which is already in group_content)
+                line_start = content.rfind('\n', 0, start) + 1
+                content = content[:line_start] + group_content + content[end:]
+            else:  # Other elements - remove including their line and indentation
+                # Find the start of the line (including indentation)
+                line_start = content.rfind('\n', 0, start) + 1
+                # Check if there's a newline after the element to remove it too
+                end_pos = end
+                if end_pos < len(content) and content[end_pos] == '\n':
+                    end_pos += 1
+                content = content[:line_start] + content[end_pos:]
+
+        return content
 
     def _find_consecutive_groups(self, elements):
         """Find groups of consecutive text elements in document order"""
