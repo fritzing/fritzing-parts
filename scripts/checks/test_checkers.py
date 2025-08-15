@@ -2,7 +2,7 @@ import unittest
 import os
 import sys
 from io import StringIO
-from fzp_checker_runner import FZPCheckerRunner, AVAILABLE_CHECKERS, SVG_AVAILABLE_CHECKERS
+from .fzp_checker_runner import FZPCheckerRunner, AVAILABLE_CHECKERS, SVG_AVAILABLE_CHECKERS
 
 class TestCheckers(unittest.TestCase):
     def setUp(self):

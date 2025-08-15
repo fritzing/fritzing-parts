@@ -1,5 +1,5 @@
-from fzp_checkers import FZPChecker
-from fzp_utils import FZPUtils
+from .fzp_checkers import FZPChecker
+from .fzp_utils import FZPUtils
 from lxml import etree
 
 class FZPMissingLegIDsChecker(FZPChecker):

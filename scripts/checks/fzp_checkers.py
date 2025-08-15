@@ -1,8 +1,8 @@
 import os
 from lxml import etree
 from abc import ABC, abstractmethod
-from fzp_utils import FZPUtils
-from svg_utils import SVGUtils
+from .fzp_utils import FZPUtils
+from .svg_utils import SVGUtils
 import re
 
 class FZPChecker(ABC):

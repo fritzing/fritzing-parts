@@ -2,7 +2,7 @@
 from lxml import etree
 import re
 import os
-from svg_utils import SVGUtils
+from .svg_utils import SVGUtils
 
 class SVGChecker:
     def __init__(self, svg_doc, layer_ids):
