@@ -331,31 +331,29 @@ class SVGIdsChecker(SVGChecker):
         """Replace consecutive text elements with id='label' with a group in string content"""
         import re
 
-        # Build regex patterns for each text element
-        patterns = []
-        for elem in text_elements:
-            # Get the text content of the element
-            text_content = elem.text or ""
-            # Escape special regex chars in attributes
-            x_val = re.escape(elem.get('x', ''))
-            y_val = re.escape(elem.get('y', ''))
-            fill_val = re.escape(elem.get('fill', ''))
-            font_family = re.escape(elem.get('font-family', ''))
-            font_size = re.escape(elem.get('font-size', ''))
-            text_anchor = re.escape(elem.get('text-anchor', ''))
-            text_escaped = re.escape(text_content)
+        # Use a simpler approach - find all text elements with id="label" in the content
+        # and match them by position and content
+        label_pattern = r'<text[^>]*id="label"[^>]*>.*?</text>'
+        label_matches = []
 
-            # Create pattern to match this specific text element
-            pattern = (r'<text\s+id="label"[^>]*x="' + x_val + r'"[^>]*y="' + y_val + r'"[^>]*>' +
-                      text_escaped + r'</text>')
-            patterns.append(pattern)
+        for match in re.finditer(label_pattern, content, re.DOTALL):
+            # Extract the full element text
+            element_text = match.group(0)
 
-        # Find all the text elements in the content
-        found_elements = []
-        for pattern in patterns:
-            match = re.search(pattern, content)
-            if match:
-                found_elements.append((match.start(), match.end(), match.group(0)))
+            # Check if this matches any of our target elements by x, y, and text content
+            for elem in text_elements:
+                x_val = elem.get('x', '')
+                y_val = elem.get('y', '')
+                text_content = elem.text or ""
+
+                # Check if this element matches by looking for x, y, and text content
+                if (f'x="{x_val}"' in element_text and
+                    f'y="{y_val}"' in element_text and
+                    text_content in element_text):
+                    label_matches.append((match.start(), match.end(), element_text))
+                    break
+
+        found_elements = label_matches
 
         if len(found_elements) < 2:
             return content  # Not enough elements to group
