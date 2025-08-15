@@ -368,13 +368,41 @@ class SVGIdsChecker(SVGChecker):
         line_start = content.rfind('\n', 0, first_start) + 1
         original_indent = content[line_start:first_start]
 
-        # Create the group replacement with proper indentation
-        group_content = original_indent + '<g id="label">\n'
-        for _, _, element_str in found_elements:
-            # Remove id="label" from individual elements
-            modified_element = re.sub(r'\s*id="label"', '', element_str)
-            group_content += original_indent + '  ' + modified_element + '\n'
-        group_content += original_indent + '</g>'
+        # Create the text element with tspan children replacement with proper indentation
+        # Extract attributes from the first text element
+        first_element = found_elements[0][2]
+
+        # Extract common attributes from first element (x, y, fill, font-family, font-size, text-anchor)
+        import re
+        x_match = re.search(r'x="([^"]*)"', first_element)
+        y_match = re.search(r'y="([^"]*)"', first_element)
+        fill_match = re.search(r'fill="([^"]*)"', first_element)
+        font_family_match = re.search(r'font-family="([^"]*)"', first_element)
+        font_size_match = re.search(r'font-size="([^"]*)"', first_element)
+        text_anchor_match = re.search(r'text-anchor="([^"]*)"', first_element)
+
+        x_val = x_match.group(1) if x_match else "0"
+        y_val = y_match.group(1) if y_match else "0"
+        fill_val = fill_match.group(1) if fill_match else "#000000"
+        font_family_val = font_family_match.group(1) if font_family_match else "Noto Sans"
+        font_size_val = font_size_match.group(1) if font_size_match else "3.5"
+        text_anchor_val = text_anchor_match.group(1) if text_anchor_match else "middle"
+
+        # Create text element with tspan children
+        group_content = original_indent + f'<text id="label" x="{x_val}" y="{y_val}" fill="{fill_val}" font-family="{font_family_val}" font-size="{font_size_val}" text-anchor="{text_anchor_val}">\n'
+
+        for i, (_, _, element_str) in enumerate(found_elements):
+            # Extract text content from each element
+            text_match = re.search(r'<text[^>]*>([^<]*)</text>', element_str)
+            text_content = text_match.group(1) if text_match else ""
+            # Extract y position from this specific element
+            y_match = re.search(r'y="([^"]*)"', element_str)
+            element_y = y_match.group(1) if y_match else y_val
+
+            # Create tspan with x and y attributes, no dx/dy as requested
+            group_content += original_indent + f'   <tspan x="{x_val}" y="{element_y}">{text_content}</tspan>\n'
+
+        group_content += original_indent + '</text>'
 
         # Replace all the individual elements with the group
         # Remove from end to start to preserve positions
