@@ -9,20 +9,40 @@ class FZPUtils:
     def get_svg_path(fzp_path, image, view_name):
         dir_path = os.path.dirname(fzp_path)
         
-        # For fzpz files, the image path might include subdirectories like "svg/core/breadboard/file.svg"
-        # but the actual file is just "file.svg" in the same directory
-        image_filename = os.path.basename(image)
-        
         # Check if this is an extracted fzpz structure (SVGs in same directory as FZP)
-        if FZPUtils.is_fzpz_structure(fzp_path, image_filename):
+        is_fzpz_structure = FZPUtils.is_fzpz_structure(fzp_path, image)
+        
+        if is_fzpz_structure:
+            # For fzpz files, check for the dot-prefixed naming conventions
+            if '/' in image:
+                # Try pattern: icon/file.svg -> icon.file.svg
+                fzpz_filename = image.replace('/', '.')
+                svg_path = os.path.join(dir_path, fzpz_filename)
+                if os.path.isfile(svg_path):
+                    # Skip template detection for fzpz files - process all SVGs
+                    return svg_path
+                    
+                # Try pattern: icon/file.svg -> svg.icon.file.svg
+                fzpz_filename = 'svg.' + image.replace('/', '.')
+                svg_path = os.path.join(dir_path, fzpz_filename)
+                if os.path.isfile(svg_path):
+                    # Skip template detection for fzpz files - process all SVGs
+                    return svg_path
+            
+            # Fall back to checking basename only
+            image_filename = os.path.basename(image)
             svg_path = os.path.join(dir_path, image_filename)
+            if os.path.isfile(svg_path):
+                # Skip template detection for fzpz files - process all SVGs
+                return svg_path
         else:
             # Standard fritzing-parts structure
             up_one_level = os.path.dirname(dir_path)
             svg_path = os.path.join(up_one_level, 'svg', 'core', image)
-
-        if FZPUtils.is_template(svg_path, view_name):
-            return None  # Skip template SVGs
+            
+            # Only check templates for standard structure, not fzpz
+            if FZPUtils.is_template(svg_path, view_name):
+                return None  # Skip template SVGs
 
         return svg_path
 
@@ -69,9 +89,26 @@ class FZPUtils:
         """
         Check if this appears to be an extracted fzpz structure.
         In fzpz files, SVGs are in the same directory as the FZP.
+        FZPZ files use a naming convention where subdirectory/file.svg becomes subdirectory.file.svg
         """
         dir_path = os.path.dirname(fzp_path)
-        svg_in_same_dir = os.path.isfile(os.path.join(dir_path, image))
+        
+        # First check if the image file exists as-is (just the basename)
+        image_filename = os.path.basename(image)
+        svg_in_same_dir = os.path.isfile(os.path.join(dir_path, image_filename))
+        
+        # If not found, check for the fzpz naming conventions:
+        # 1. subdirectory/file.svg becomes subdirectory.file.svg
+        # 2. subdirectory/file.svg becomes svg.subdirectory.file.svg
+        if not svg_in_same_dir and '/' in image:
+            # Try pattern: icon/file.svg -> icon.file.svg
+            fzpz_filename = image.replace('/', '.')
+            svg_in_same_dir = os.path.isfile(os.path.join(dir_path, fzpz_filename))
+            
+            # Try pattern: icon/file.svg -> svg.icon.file.svg
+            if not svg_in_same_dir:
+                fzpz_filename = 'svg.' + image.replace('/', '.')
+                svg_in_same_dir = os.path.isfile(os.path.join(dir_path, fzpz_filename))
         
         # Also check if we don't have the standard fritzing-parts directory structure
         up_one_level = os.path.dirname(dir_path)

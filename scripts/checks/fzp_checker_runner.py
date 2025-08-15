@@ -30,6 +30,10 @@ class FZPCheckerRunner:
                 self.extracted_dir = os.path.dirname(self.path)
                 if self.verbose:
                     print(f"Extracted FZPZ to: {self.extracted_dir}")
+                # Debug: list extracted files
+                if self.verbose:
+                    extracted_files = os.listdir(self.extracted_dir)
+                    print(f"Extracted files: {extracted_files}")
             except Exception as e:
                 print(f"Error extracting FZPZ file {original_path}: {str(e)}")
                 self.total_errors += 1
@@ -116,6 +120,10 @@ class FZPCheckerRunner:
                 if image:
                     svg_path = FZPUtils.get_svg_path(self.path, image,
                                                      view.tag)  # Pass view.tag as the additional parameter
+                    if self.verbose:
+                        print(f"Checking FZP path: {self.path}")
+                        print(f"Image attribute: {image}")
+                        print(f"Found SVG path: {svg_path}")
                     if svg_path is None:
                         continue  # Skip template SVGs
                     if os.path.isfile(svg_path):
