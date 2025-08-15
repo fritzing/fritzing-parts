@@ -3,8 +3,6 @@ from fzp_utils import FZPUtils
 from lxml import etree
 
 class FZPMissingLegIDsChecker(FZPChecker):
-    needs_path = True
-
     def __init__(self, fzp_doc, fzp_path):
         super().__init__(fzp_doc)
         self.fzp_path = fzp_path
