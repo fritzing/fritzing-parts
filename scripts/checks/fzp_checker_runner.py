@@ -1,6 +1,6 @@
 from lxml import etree
 from fzp_checkers import *
-from fzp_svg_breadboard_view_checkers import *
+from check_missing_leg_ids import *
 from svg_checkers import *
 from fzp_svg_checkers import FZPMissingConnectorRefsChecker
 from fzp_utils import FZPUtils
