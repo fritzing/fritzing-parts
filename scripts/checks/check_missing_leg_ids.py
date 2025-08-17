@@ -3,21 +3,17 @@ from .fzp_utils import FZPUtils
 from lxml import etree
 
 class FZPMissingLegIDsChecker(FZPChecker):
-    def __init__(self, fzp_doc, fzp_path):
+    def __init__(self, fzp_doc, svg_docs):
         super().__init__(fzp_doc)
-        self.fzp_path = fzp_path
+        self.svg_docs = svg_docs
 
     def check(self):
-        print(f"Checking FZP path: {self.fzp_path}")
-        svg_path = FZPUtils.get_svg_path_from_view(self.fzp_doc, self.fzp_path, "breadboardView")
-        print(f"Found SVG path: {svg_path}")
-
-        if not svg_path:
-            return self.get_result()  # Skip template SVGs
+        breadboard_svg = self.svg_docs.get('breadboardView')
+        if not breadboard_svg:
+            return self.get_result()  # Skip if no breadboard SVG
 
         try:
-            svg_doc = etree.parse(svg_path)
-            leg_elements = svg_doc.xpath("//*[contains(@id, 'leg')]")
+            leg_elements = breadboard_svg.xpath("//*[contains(@id, 'leg')]")
 
             # First collect all leg IDs referenced in the FZP
             referenced_legs = set()
@@ -34,8 +30,8 @@ class FZPMissingLegIDsChecker(FZPChecker):
                 if leg_id not in referenced_legs:
                     self.add_error(f"Leg ID '{leg_id}' from SVG not referenced in any FZP connector")
 
-        except (FileNotFoundError, OSError, etree.XMLSyntaxError) as e:
-            self.add_error(f"Error processing SVG file {svg_path}: {str(e)}")
+        except Exception as e:
+            self.add_error(f"Error processing breadboard SVG: {str(e)}")
 
         return self.get_result()
 

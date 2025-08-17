@@ -55,9 +55,9 @@ class FZPMissingTagsChecker(FZPChecker):
 
 
 class FZPConnectorTerminalChecker(FZPChecker):
-    def __init__(self, fzp_doc, fzp_path):
+    def __init__(self, fzp_doc, svg_docs):
         super().__init__(fzp_doc)
-        self.fzp_path = fzp_path
+        self.svg_docs = svg_docs
 
     def _find_invalid_terminal_ids(self):
         """
@@ -97,19 +97,15 @@ class FZPConnectorTerminalChecker(FZPChecker):
         return self.get_result()
 
     def svg_has_element_with_id(self, element_id, view_name):
-        svg_path = FZPUtils.get_svg_path_from_view(self.fzp_doc, self.fzp_path, view_name)
-        if not svg_path:
-            return True  # Skip template SVGs
+        svg_doc = self.svg_docs.get(view_name)
+        if not svg_doc:
+            return True  # Skip if SVG not available
         try:
-            svg_doc = etree.parse(svg_path)
             elements = svg_doc.xpath(f"//*[@id='{element_id}']")
             return len(elements) > 0
-        except (FileNotFoundError, OSError) as e:
-            print(f"SVG file error: {svg_path} - {str(e)}")
-            return True  # Not a 'missing element' if the complete file is missing
-        except etree.XMLSyntaxError as err:
-            print(f"Error parsing SVG file: {svg_path}")
-            print(str(err))
+        except Exception as e:
+            print(f"Error processing {view_name} SVG: {str(e)}")
+            return True  # Not a 'missing element' if there's an error
         return False
 
     def fix(self, filename):
@@ -159,9 +155,9 @@ class FZPConnectorTerminalChecker(FZPChecker):
 
 
 class FZPConnectorVisibilityChecker(FZPChecker):
-    def __init__(self, fzp_doc, fzp_path):
+    def __init__(self, fzp_doc, svg_docs):
         super().__init__(fzp_doc)
-        self.fzp_path = fzp_path
+        self.svg_docs = svg_docs
 
     def check(self):
         connectors_section = self.fzp_doc.xpath("//module/connectors")
@@ -186,20 +182,16 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                             self.add_error(f"Connector {connector_id} does not reference an element in layer {layer}.")
                             continue
 
-                        svg_path = FZPUtils.get_svg_path_from_view(self.fzp_doc, self.fzp_path, view.tag, layer)
-                        if not svg_path:
-                            continue  # Skip template SVGs
-                        if not self.is_connector_visible(svg_path, connector_svg_id): # we already checked that it is not hybrid
-                            self.add_error(f"Invisible connector '{connector_svg_id}' in layer '{layer}' of file '{self.fzp_path}'")
+                        if not self.is_connector_visible(view.tag, connector_svg_id): # we already checked that it is not hybrid
+                            self.add_error(f"Invisible connector '{connector_svg_id}' in layer '{layer}'")
         return self.get_result()
 
-    def is_connector_visible(self, svg_path, connector_id):
-        if not os.path.isfile(svg_path):
-            self.add_warning(f"Invalid SVG path '{svg_path}' for connector '{connector_id}'")
-            return True # Skip the check if the SVG path is invalid
+    def is_connector_visible(self, view_name, connector_id):
+        svg_doc = self.svg_docs.get(view_name)
+        if not svg_doc:
+            return True # Skip the check if the SVG is not available
 
         try:
-            svg_doc = etree.parse(svg_path)
             elements = svg_doc.xpath(f"//*[@id='{connector_id}']")
             if elements:
                 try:
@@ -207,11 +199,8 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                 except ValueError as e:
                     print(f"Error in {connector_id} : {e}")
                     return False
-        except FileNotFoundError:
-            print(f"SVG file not found: {svg_path}")
-        except etree.XMLSyntaxError as err:
-            print(f"Error parsing SVG file: {svg_path}")
-            print(str(err))
+        except Exception as e:
+            print(f"Error processing {view_name} SVG: {str(e)}")
         return False
 
     @staticmethod
@@ -224,9 +213,9 @@ class FZPConnectorVisibilityChecker(FZPChecker):
 
 
 class FZPPCBConnectorStrokeChecker(FZPChecker):
-    def __init__(self, fzp_doc, fzp_path):
+    def __init__(self, fzp_doc, svg_docs):
         super().__init__(fzp_doc)
-        self.fzp_path = fzp_path
+        self.svg_docs = svg_docs
 
     def check(self):
         connectors_section = self.fzp_doc.xpath("//module/connectors")
@@ -245,20 +234,16 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
                         if not connector_svg_id:
                             continue
 
-                        svg_path = FZPUtils.get_svg_path_from_view(self.fzp_doc, self.fzp_path, view.tag)
-                        if not svg_path:
-                            continue  # Skip template SVGs
-                        if not self.is_connector_stroke_valid(svg_path, connector_svg_id):
-                            self.add_error(f"Invalid stroke for connector '{connector_svg_id}' in PCB view of file '{self.fzp_path}'")
+                        if not self.is_connector_stroke_valid(view.tag, connector_svg_id):
+                            self.add_error(f"Invalid stroke for connector '{connector_svg_id}' in PCB view")
         return self.get_result()
 
-    def is_connector_stroke_valid(self, svg_path, connector_id):
-        if not os.path.isfile(svg_path):
-            self.add_warning(f"Invalid SVG path '{svg_path}' for connector '{connector_id}'")
+    def is_connector_stroke_valid(self, view_name, connector_id):
+        svg_doc = self.svg_docs.get(view_name)
+        if not svg_doc:
             return True
 
         try:
-            svg_doc = etree.parse(svg_path)
             elements = svg_doc.xpath(f"//*[@id='{connector_id}']")
             if elements:
                 try:
@@ -267,14 +252,10 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
                     self.add_error(f"Failure with {connector_id}: {e}")
                     return True # Connector not found, skip further checks
             else:
-                self.add_error(f"Connector {connector_id} not found in {svg_path}")
+                self.add_error(f"Connector {connector_id} not found in {view_name} SVG")
                 return True
-        except FileNotFoundError:
-            self.add_error(f"SVG file not found: {svg_path}")
-            return True
-        except etree.XMLSyntaxError as err:
-            self.add_error(f"Failed to parse SVG file: {svg_path}")
-            print(str(err))
+        except Exception as e:
+            self.add_error(f"Error processing {view_name} SVG: {str(e)}")
             return True
         return False
 
@@ -446,9 +427,9 @@ class FZPBusIDChecker(FZPChecker):
 
 
 class FZPBusNodesChecker(FZPChecker):
-    def __init__(self, fzp_doc, fzp_path):
+    def __init__(self, fzp_doc, svg_docs):
         super().__init__(fzp_doc)
-        self.fzp_path = fzp_path
+        self.svg_docs = svg_docs
         self.buses_with_no_nodes = []
 
     def check(self):
@@ -649,9 +630,9 @@ class FZPBusesChecker(FZPChecker):
         return "Check buses are properly defined"
 
 class FZPLayerIDsChecker(FZPChecker):
-    def __init__(self, fzp_doc, fzp_path):
+    def __init__(self, fzp_doc, svg_docs):
         super().__init__(fzp_doc)
-        self.fzp_path = fzp_path
+        self.svg_docs = svg_docs
 
     def check(self):
         views = self.fzp_doc.xpath("//views")[0]
@@ -668,17 +649,11 @@ class FZPLayerIDsChecker(FZPChecker):
             if not image:
                 continue
 
-            svg_path = FZPUtils.get_svg_path(self.fzp_path, image, view.tag)
-            if svg_path is None:
-                continue  # Skip template SVGs
-
-            if not os.path.isfile(svg_path):
-                self.add_error(f"SVG file not found: {svg_path}")
-                continue
+            svg_doc = self.svg_docs.get(view.tag)
+            if not svg_doc:
+                continue  # Skip if SVG not available
 
             try:
-                svg_doc = etree.parse(svg_path)
-
                 # Check each layer ID
                 layer_elements = layers.xpath("layer")
                 for layer_element in layer_elements:
@@ -689,10 +664,10 @@ class FZPLayerIDsChecker(FZPChecker):
                     # Look for matching ID in SVG
                     matching_elements = svg_doc.xpath(f"//*[@id='{layer_id}']")
                     if not matching_elements:
-                        self.add_error(f"Layer ID '{layer_id}' from {view.tag} not found in SVG file {svg_path}")
+                        self.add_error(f"Layer ID '{layer_id}' from {view.tag} not found in SVG")
 
-            except etree.XMLSyntaxError as err:
-                self.add_error(f"Error parsing SVG file {svg_path}: {str(err)}")
+            except Exception as e:
+                self.add_error(f"Error processing {view.tag} SVG: {str(e)}")
 
         return self.get_result()
 

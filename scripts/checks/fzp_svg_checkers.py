@@ -4,9 +4,9 @@ from lxml import etree
 import os
 
 class FZPMissingConnectorRefsChecker(FZPChecker):
-    def __init__(self, fzp_doc, fzp_path):
+    def __init__(self, fzp_doc, svg_docs):
         super().__init__(fzp_doc)
-        self.fzp_path = fzp_path
+        self.svg_docs = svg_docs
 
     def check(self):
         view_layers = {
@@ -16,20 +16,11 @@ class FZPMissingConnectorRefsChecker(FZPChecker):
         }
 
         for view_name, layers in view_layers.items():
-            view = self.fzp_doc.xpath(f"//views/{view_name}/layers")
-            if not view:
+            svg_doc = self.svg_docs.get(view_name)
+            if not svg_doc:
                 continue
-
-            image = view[0].get("image")
-            if not image:
-                continue
-
-            svg_path = FZPUtils.get_svg_path(self.fzp_path, image, view_name)
-            if not svg_path:
-                continue  # Skip template SVGs
 
             try:
-                svg_doc = etree.parse(svg_path)
                 connector_layers = {}
 
                 # Find connectors in each layer for this view
@@ -54,8 +45,8 @@ class FZPMissingConnectorRefsChecker(FZPChecker):
                         if not refs:
                             self.add_error(f"Connector {connector_id} is in {layer} layer in SVG but not referenced in FZP {view_name}")
 
-            except (FileNotFoundError, OSError, etree.XMLSyntaxError) as e:
-                self.add_error(f"Error processing SVG file {svg_path}: {str(e)}")
+            except Exception as e:
+                self.add_error(f"Error processing {view_name} SVG: {str(e)}")
 
         return self.get_result()
 

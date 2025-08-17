@@ -47,11 +47,15 @@ class FZPCheckerRunner:
             self._cleanup_if_needed()
             return
 
+        # Pre-load all SVG XMLs
+        svg_docs = self._load_svg_docs(fzp_doc)
+        svg_paths = self._get_svg_paths(fzp_doc)
+
         if self.verbose:
             print(f"Scanning file: {self.path}")
 
         for check_type in check_types:
-            checker = self._get_checker(check_type, fzp_doc)
+            checker = self._get_checker(check_type, fzp_doc, svg_docs)
             if self.verbose:
                 print(f"Running check: {checker.get_name()}")
 
@@ -62,14 +66,14 @@ class FZPCheckerRunner:
             # Apply fixes if requested and available
             if fix and errors > 0 and hasattr(checker, 'fix'):
                 try:
-                    if checker.fix():
+                    if checker.fix(self.path):
                         self.fixed = True
                 except Exception as e:
                     print(f"Error while fixing: {str(e)}")
                     continue
 
         if svg_check_types:
-            self._run_svg_checkers(fzp_doc, svg_check_types, fix)
+            self._run_svg_checkers(fzp_doc, svg_docs, svg_paths, svg_check_types, fix)
 
         if self.verbose or self.total_errors > 0 or self.total_warnings > 0:
             print(f"Total errors in {self.path}: {self.total_errors}")
@@ -77,13 +81,16 @@ class FZPCheckerRunner:
                 print(f"Total warnings in {self.path}: {self.total_warnings}")
 
         fzp_doc.getroot().clear()
+        for svg_doc in svg_docs.values():
+            if svg_doc is not None:
+                svg_doc.getroot().clear()
         self._cleanup_if_needed()
 
     def _parse_fzp(self):
         fzp_doc = etree.parse(self.path)
         return fzp_doc
 
-    def _get_checker(self, check_type, fzp_doc):
+    def _get_checker(self, check_type, fzp_doc, svg_docs):
         for checker in AVAILABLE_CHECKERS:
             if checker.get_name() == check_type:
                 if checker in [
@@ -95,23 +102,73 @@ class FZPCheckerRunner:
                     FZPMissingConnectorRefsChecker,
                     FZPMissingLegIDsChecker
                 ]:
-                    return checker(fzp_doc, self.path)
+                    return checker(fzp_doc, svg_docs)
                 else:
                     return checker(fzp_doc)
         raise ValueError(f"Invalid check type: {check_type}")
 
-    def _run_svg_checkers(self, fzp_doc, svg_check_types, fix):
-        views = fzp_doc.xpath("//views")[0]
+    def _load_svg_docs(self, fzp_doc):
+        """Pre-load all SVG documents for the four views."""
+        svg_docs = {}
+        views_elements = fzp_doc.xpath("//views")
+        if not views_elements:
+            return svg_docs
+        views = views_elements[0]
         for view in views.xpath("*"):
             if view.tag == "defaultUnits":
-                # defaultUnits seems unused in Fritzing.
-                # Write a script to remove this from all core parts?
                 continue
             layers_elements = view.xpath("layers")
             if layers_elements:
                 layers = layers_elements[0]
                 image = layers.get("image")
+                if image:
+                    svg_path = FZPUtils.get_svg_path(self.path, image, view.tag)
+                    if svg_path and os.path.isfile(svg_path):
+                        try:
+                            svg_docs[view.tag] = etree.parse(svg_path)
+                        except etree.XMLSyntaxError as e:
+                            print(f"Invalid XML in SVG {svg_path}: {str(e)}")
+                            svg_docs[view.tag] = None
+                    else:
+                        svg_docs[view.tag] = None
+        return svg_docs
 
+    def _get_svg_paths(self, fzp_doc):
+        """Get SVG file paths for fix operations."""
+        svg_paths = {}
+        views_elements = fzp_doc.xpath("//views")
+        if not views_elements:
+            return svg_paths
+        views = views_elements[0]
+        for view in views.xpath("*"):
+            if view.tag == "defaultUnits":
+                continue
+            layers_elements = view.xpath("layers")
+            if layers_elements:
+                layers = layers_elements[0]
+                image = layers.get("image")
+                if image:
+                    svg_path = FZPUtils.get_svg_path(self.path, image, view.tag)
+                    if svg_path and os.path.isfile(svg_path):
+                        svg_paths[view.tag] = svg_path
+        return svg_paths
+
+    def _run_svg_checkers(self, fzp_doc, svg_docs, svg_paths, svg_check_types, fix):
+        views_elements = fzp_doc.xpath("//views")
+        if not views_elements:
+            return
+        views = views_elements[0]
+        for view in views.xpath("*"):
+            if view.tag == "defaultUnits":
+                continue
+            
+            svg_doc = svg_docs.get(view.tag)
+            if not svg_doc:
+                continue
+                
+            layers_elements = view.xpath("layers")
+            if layers_elements:
+                layers = layers_elements[0]
                 layer_ids = []
                 layer_elements = layers.xpath("layer")
                 for layer_element in layer_elements:
@@ -119,43 +176,21 @@ class FZPCheckerRunner:
                     if layer_id:
                         layer_ids.append(layer_id)
 
-                if image:
-                    svg_path = FZPUtils.get_svg_path(self.path, image,
-                                                     view.tag)  # Pass view.tag as the additional parameter
+                for check_type in svg_check_types:
+                    checker = self._get_svg_checker(check_type, svg_doc, layer_ids)
                     if self.verbose:
-                        print(f"Checking FZP path: {self.path}")
-                        print(f"Image attribute: {image}")
-                        print(f"Found SVG path: {svg_path}")
-                    if svg_path is None:
-                        continue  # Skip template SVGs
-                    if os.path.isfile(svg_path):
+                        print(f"Running SVG check: {checker.get_name()} for {view.tag}")
+                    errors, warnings = checker.check()
+                    self.total_errors += errors
+                    self.total_warnings += warnings
+
+                    if fix and errors > 0 and hasattr(checker, 'fix'):
                         try:
-                            svg_doc = etree.parse(svg_path)
-                            for check_type in svg_check_types:
-                                checker = self._get_svg_checker(check_type, svg_doc, layer_ids)
-                                if self.verbose:
-                                    print(f"Running SVG check: {checker.get_name()} on {svg_path} for {view.tag}")
-                                errors, warnings = checker.check()
-                                self.total_errors += errors
-                                self.total_warnings += warnings
-
-                                if fix and errors > 0 and hasattr(checker, 'fix'):
-                                    try:
-                                        if checker.fix():
-                                            self.fixed = True
-                                    except Exception as e:
-                                        print(f"Error while fixing: {str(e)}")
-
-                            svg_doc.getroot().clear()
-                        except etree.XMLSyntaxError as e:
-                            print(f"Invalid XML in SVG: {str(e)}")
-                            self.total_errors += 1
-
-                    else:
-                        print(f"Warning: SVG '{svg_path}' for view '{view.tag}' of file '{self.path}' not found.")
-                        self.total_errors += 1
-            else:
-                print(f"Warning: No 'layers' element found in view '{view.tag}' of file '{self.path}'")
+                            svg_path = svg_paths.get(view.tag)
+                            if svg_path and checker.fix(svg_path):
+                                self.fixed = True
+                        except Exception as e:
+                            print(f"Error while fixing: {str(e)}")
 
     def _get_svg_checker(self, check_type, svg_doc, layer_ids):
         for checker in SVG_AVAILABLE_CHECKERS:
