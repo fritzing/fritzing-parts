@@ -197,7 +197,7 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                             continue
 
                         if not self.is_connector_visible(view.tag, connector_svg_id): # we already checked that it is not hybrid
-                            self.add_error(f"Invisible connector '{connector_svg_id}' in layer '{layer}'")
+                            self.add_error(f"Invisible connector '{connector_svg_id}' in layer '{layer}'", connector)
         return self.get_result()
 
     def is_connector_visible(self, view_name, connector_id):

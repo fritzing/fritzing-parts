@@ -22,6 +22,7 @@ class FZPMissingConnectorRefsChecker(FZPChecker):
 
             try:
                 connector_layers = {}
+                connector_nodes = {}  # Store the actual nodes
 
                 # Find connectors in each layer for this view
                 for layer in layers:
@@ -35,15 +36,17 @@ class FZPMissingConnectorRefsChecker(FZPChecker):
 
                             if connector_id not in connector_layers:
                                 connector_layers[connector_id] = set()
+                                connector_nodes[connector_id] = connector  # Store the node
                             connector_layers[connector_id].add(layer)
 
                 # Check FZP references for each connector's required layers
                 for connector_id, required_layers in connector_layers.items():
                     connector_num = connector_id.replace('connector', '').replace('pin', '').replace('pad', '')
+                    connector_node = connector_nodes[connector_id]
                     for layer in required_layers:
                         refs = self.fzp_doc.xpath(f"//connector[@id='connector{connector_num}']/views/{view_name}/p[@layer='{layer}']")
                         if not refs:
-                            self.add_error(f"Connector {connector_id} is in {layer} layer in SVG but not referenced in FZP {view_name}")
+                            self.add_error(f"Connector {connector_id} is in {layer} layer in SVG but not referenced in FZP {view_name}", node=connector_node)
 
             except Exception as e:
                 self.add_error(f"Error processing {view_name} SVG: {str(e)}")
