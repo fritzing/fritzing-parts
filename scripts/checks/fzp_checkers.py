@@ -5,26 +5,38 @@ from .fzp_utils import FZPUtils
 from .svg_utils import SVGUtils
 import re
 
+
+class ValidationIssue:
+    """Represents a validation issue with node reference"""
+    
+    def __init__(self, message, severity='error', node=None):
+        self.message = message
+        self.severity = severity
+        self.node = node
+
 class FZPChecker(ABC):
     def __init__(self, fzp_doc):
         self.fzp_doc = fzp_doc
-        self.errors = 0
-        self.warnings = 0
+        self.issues = []
 
     @abstractmethod
     def check(self):
         pass
 
-    def add_error(self, message):
+    def add_error(self, message, node=None):
+        issue = ValidationIssue(message, severity='error', node=node)
+        self.issues.append(issue)
         print(f"Error: {message}")
-        self.errors += 1
 
-    def add_warning(self, message):
+    def add_warning(self, message, node=None):
+        issue = ValidationIssue(message, severity='warning', node=node)
+        self.issues.append(issue)
         print(f"Warning: {message}")
-        self.warnings += 1
 
     def get_result(self):
-        return self.errors, self.warnings
+        errors = len([i for i in self.issues if i.severity == 'error'])
+        warnings = len([i for i in self.issues if i.severity == 'warning'])
+        return errors, warnings
 
     @staticmethod
     @abstractmethod
@@ -40,9 +52,11 @@ class FZPChecker(ABC):
 class FZPMissingTagsChecker(FZPChecker):
     def check(self):
         required_tags = ["module", "version", "author", "title", "label", "date", "description", "views", "connectors"]
+        root = self.fzp_doc.getroot()
         for tag in required_tags:
-            if not self.fzp_doc.xpath(f"//{tag}"):
-                self.add_error(f"Missing required tag: {tag}")
+            elements = self.fzp_doc.xpath(f"//{tag}")
+            if not elements:
+                self.add_error(f"Missing required tag: {tag}", node=root)
         return self.get_result()
 
     @staticmethod
