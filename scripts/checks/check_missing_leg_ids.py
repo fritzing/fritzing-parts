@@ -28,7 +28,7 @@ class FZPMissingLegIDsChecker(FZPChecker):
                     continue
 
                 if leg_id not in referenced_legs:
-                    self.add_error(f"Leg ID '{leg_id}' from SVG not referenced in any FZP connector")
+                    self.add_error(f"Leg ID '{leg_id}' from SVG not referenced in any FZP connector", node=leg)
 
         except Exception as e:
             self.add_error(f"Error processing breadboard SVG: {str(e)}")

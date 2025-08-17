@@ -107,7 +107,7 @@ class FZPConnectorTerminalChecker(FZPChecker):
 
     def check(self):
         for connector, p_element, terminal_id, connector_id in self._find_invalid_terminal_ids():
-            self.add_error(f"Connector '{connector_id}' references missing terminal '{terminal_id}' in SVG")
+            self.add_error(f"Connector '{connector_id}' references missing terminal '{terminal_id}' in SVG", node=p_element)
         return self.get_result()
 
     def svg_has_element_with_id(self, element_id, view_name):
@@ -283,14 +283,15 @@ class FZPPCBConnectorStrokeChecker(FZPChecker):
 
 class FZPFritzingVersionChecker(FZPChecker):
     def check(self):
-        version = self.fzp_doc.getroot().get('fritzingVersion')
+        root = self.fzp_doc.getroot()
+        version = root.get('fritzingVersion')
         if not version:
-            self.add_error("'FritzingVersion' is undefined or empty.")
+            self.add_error("'FritzingVersion' is undefined or empty.", node=root)
         else:
             # Requires a Fritzing release version as announced on the blog or download page.
             version_pattern = r'^\d+\.\d+\.\d+.*$'
             if not re.match(version_pattern, version.strip()):
-                self.add_error(f"'FritzingVersion' '{version}' should be in semantic versioning format (https://semver.org/).")
+                self.add_error(f"'FritzingVersion' '{version}' should be in semantic versioning format (https://semver.org/).", node=root)
         return self.get_result()
 
     @staticmethod
@@ -304,9 +305,10 @@ class FZPFritzingVersionChecker(FZPChecker):
 
 class FZPModuleIDChecker(FZPChecker):
     def check(self):
-        module_id = self.fzp_doc.getroot().get('moduleId')
+        root = self.fzp_doc.getroot()
+        module_id = root.get('moduleId')
         if not module_id:
-            self.add_error("'ModuleID' is undefined or empty.")
+            self.add_error("'ModuleID' is undefined or empty.", node=root)
         return self.get_result()
 
     @staticmethod
@@ -319,12 +321,13 @@ class FZPModuleIDChecker(FZPChecker):
 
 class FZPModuleIDSpecialCharsChecker(FZPChecker):
     def check(self):
-        module_id = self.fzp_doc.getroot().get('moduleId')
+        root = self.fzp_doc.getroot()
+        module_id = root.get('moduleId')
         if module_id:
             special_chars = ['*', '?', ',', '/']
             for char in special_chars:
                 if char in module_id:
-                    self.add_warning(f"ModuleID contains special character '{char}' which may cause issues")
+                    self.add_warning(f"ModuleID contains special character '{char}' which may cause issues", node=root)
         return self.get_result()
 
     @staticmethod
@@ -340,11 +343,12 @@ class FZPVersionChecker(FZPChecker):
     def check(self):
         version_elements = self.fzp_doc.xpath("//version")
         if not version_elements:
-            self.add_warning("'Version' is undefined.")
+            self.add_warning("'Version' is undefined.", node=self.fzp_doc.getroot())
         else:
-            version = version_elements[0].text
+            version_element = version_elements[0]
+            version = version_element.text
             if not re.match(r'^\d+(\.\d+)*$', version):
-                self.add_warning(f"'Version' '{version}' does not match the expected format.")
+                self.add_warning(f"'Version' '{version}' does not match the expected format.", node=version_element)
         return self.get_result()
 
     @staticmethod
@@ -358,8 +362,9 @@ class FZPVersionChecker(FZPChecker):
 
 class FZPTitleChecker(FZPChecker):
     def check(self):
-        if not self.fzp_doc.xpath("//title"):
-            self.add_error("'Title' is undefined or empty.")
+        title_elements = self.fzp_doc.xpath("//title")
+        if not title_elements:
+            self.add_error("'Title' is undefined or empty.", node=self.fzp_doc.getroot())
         return self.get_result()
 
     @staticmethod
@@ -373,8 +378,9 @@ class FZPTitleChecker(FZPChecker):
 
 class FZPDescriptionChecker(FZPChecker):
     def check(self):
-        if not self.fzp_doc.xpath("//description"):
-            self.add_warning("'Description' is undefined.")
+        description_elements = self.fzp_doc.xpath("//description")
+        if not description_elements:
+            self.add_warning("'Description' is undefined.", node=self.fzp_doc.getroot())
         return self.get_result()
 
     @staticmethod
@@ -388,8 +394,9 @@ class FZPDescriptionChecker(FZPChecker):
 
 class FZPAuthorChecker(FZPChecker):
     def check(self):
-        if not self.fzp_doc.xpath("//author"):
-            self.add_warning("'Author' is undefined.")
+        author_elements = self.fzp_doc.xpath("//author")
+        if not author_elements:
+            self.add_warning("'Author' is undefined.", node=self.fzp_doc.getroot())
         return self.get_result()
 
     @staticmethod
@@ -405,13 +412,14 @@ class FZPViewsChecker(FZPChecker):
     def check(self):
         views = self.fzp_doc.xpath("//views")
         if not views:
-            self.add_error("'views' section is missing.")
+            self.add_error("'views' section is missing.", node=self.fzp_doc.getroot())
             return self.get_result()
 
+        views_element = views[0]
         required_views = ['breadboardView', 'pcbView', 'schematicView']
         for view in required_views:
-            if not views[0].xpath(f".//{view}"):
-                self.add_error(f"Required view '{view}' is missing.")
+            if not views_element.xpath(f".//{view}"):
+                self.add_error(f"Required view '{view}' is missing.", node=views_element)
         return self.get_result()
 
     @staticmethod
@@ -428,7 +436,7 @@ class FZPBusIDChecker(FZPChecker):
         buses = self.fzp_doc.xpath("//bus")
         for bus in buses:
             if not bus.get('id'):
-                self.add_error(f"Bus with missing ID found: {etree.tostring(bus, pretty_print=True).decode()}")
+                self.add_error(f"Bus with missing ID found: {etree.tostring(bus, pretty_print=True).decode()}", node=bus)
         return self.get_result()
 
     @staticmethod
@@ -451,13 +459,13 @@ class FZPBusNodesChecker(FZPChecker):
             nodes = bus.xpath(".//nodeMember")
             if not nodes:
                 bus_id = bus.get('id', 'unknown')
-                self.add_error(f"Bus '{bus_id}' has no node members.")
+                self.add_error(f"Bus '{bus_id}' has no node members.", node=bus)
                 self.buses_with_no_nodes.append(bus_id)
             else:
                 for node in nodes:
                     if not node.get('connectorId'):
                         bus_id = bus.get('id', 'unknown')
-                        self.add_error(f"Node missing connectorId in Bus '{bus_id}'.")
+                        self.add_error(f"Node missing connectorId in Bus '{bus_id}'.", node=node)
         return self.get_result()
 
     def fix(self, filename):
@@ -509,11 +517,11 @@ class FZPConnectorLayersChecker(FZPChecker):
             layers = connector.xpath(".//ConnectorLayer")
             for layer in layers:
                 if not layer.get('layer'):
-                    self.add_error(f"ConnectorLayer missing 'layer' ID in Connector '{connector_id}'.")
+                    self.add_error(f"ConnectorLayer missing 'layer' ID in Connector '{connector_id}'.", node=layer)
                 if not layer.get('svgId'):
-                    self.add_error(f"ConnectorLayer missing 'svgId' in Connector '{connector_id}'.")
+                    self.add_error(f"ConnectorLayer missing 'svgId' in Connector '{connector_id}'.", node=layer)
                 if not layer.get('terminalId'):
-                    self.add_error(f"ConnectorLayer missing 'terminalId' in Connector '{connector_id}'.")
+                    self.add_error(f"ConnectorLayer missing 'terminalId' in Connector '{connector_id}'.", node=layer)
         return self.get_result()
 
     @staticmethod
@@ -531,9 +539,9 @@ class FZPFamilyPropertyChecker(FZPChecker):
         for prop in properties:
             if prop.get('name') == 'family':
                 if not prop.text:
-                    self.add_error("'family' property has no value.")
+                    self.add_error("'family' property has no value.", node=prop)
                 return self.get_result()
-        self.add_error("'family' property is missing.")
+        self.add_error("'family' property is missing.", node=self.fzp_doc.getroot())
         return self.get_result()
 
     @staticmethod
@@ -552,7 +560,7 @@ class FZPUniquePropertyNamesChecker(FZPChecker):
         for prop in properties:
             name = prop.get('name')
             if name in names:
-                self.add_error(f"Duplicate property name found: '{name}'.")
+                self.add_error(f"Duplicate property name found: '{name}'.", node=prop)
             else:
                 names.add(name)
         return self.get_result()
@@ -572,9 +580,9 @@ class FZPPropertyFieldsChecker(FZPChecker):
         for prop in properties:
             name = prop.get('name')
             if not name:
-                self.add_error(f"Property with empty 'name' attribute found: {etree.tostring(prop, pretty_print=True).decode()}")
+                self.add_error(f"Property with empty 'name' attribute found: {etree.tostring(prop, pretty_print=True).decode()}", node=prop)
             elif not prop.text:
-                self.add_error(f"Property '{name}' has an empty value.")
+                self.add_error(f"Property '{name}' has an empty value.", node=prop)
         return self.get_result()
 
     @staticmethod
@@ -599,12 +607,12 @@ class FZPRequiredTagsChecker(FZPChecker):
             if elements:
                 for attr in attributes:
                     if not elements[0].get(attr):
-                        self.add_error(f"Tag '{element}' is missing required attribute '{attr}'.")
+                        self.add_error(f"Tag '{element}' is missing required attribute '{attr}'.", node=elements[0])
 
         # Check required tags
         for tag in required_tags:
             if not self.fzp_doc.xpath(f"//{tag}"):
-                self.add_error(f"Required tag '{tag}' is missing.")
+                self.add_error(f"Required tag '{tag}' is missing.", node=self.fzp_doc.getroot())
 
         return self.get_result()
 
