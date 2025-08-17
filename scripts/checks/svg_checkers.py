@@ -121,21 +121,19 @@ class SVGFontTypeChecker(SVGChecker):
         """Check if element has an inherited style attribute"""
         return SVGUtils.get_inherited_attribute(element, "style") is not None
 
-    def fix(self):
+    def fix(self, filename):
         """
         Fixes invalid or missing font families in the SVG document using regex
         to preserve original formatting and make minimal changes.
         Always uses double quotes for consistency.
+        
+        Args:
+            filename: Path to the SVG file to write fixes to
         """
-        # Get the file path from the SVG document
-        svg_path = self.svg_doc.docinfo.URL
-        if not svg_path:
-            print("Cannot fix: SVG file path not found")
-            return False
 
         try:
             # Read the original file
-            with open(svg_path, 'r', encoding='utf-8') as file:
+            with open(filename, 'r', encoding='utf-8') as file:
                 content = file.read()
 
             modified = False
@@ -162,16 +160,16 @@ class SVGFontTypeChecker(SVGChecker):
 
             if modified:
                 # Create backup if it doesn't exist
-                backup_path = svg_path + ".bak"
+                backup_path = filename + ".bak"
                 if not os.path.exists(backup_path):
                     with open(backup_path, 'w', encoding='utf-8') as file:
                         file.write(original_content)
                     print(f"Backup created at '{backup_path}'")
 
                 # Write modified content only if changes were made
-                with open(svg_path, 'w', encoding='utf-8') as file:
+                with open(filename, 'w', encoding='utf-8') as file:
                     file.write(content)
-                print(f"SVG file '{svg_path}' has been updated successfully")
+                print(f"SVG file '{filename}' has been updated successfully")
                 return True
             else:
                 print("No fonts found to replace. No changes made.")

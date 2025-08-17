@@ -112,9 +112,12 @@ class FZPConnectorTerminalChecker(FZPChecker):
             print(str(err))
         return False
 
-    def fix(self):
+    def fix(self, filename):
         """
         Removes invalid terminalId attributes from the FZP XML.
+
+        Args:
+            filename: Path to the FZP file to write fixes to
 
         Returns:
             bool: True if modifications were made and saved successfully, False otherwise.
@@ -130,17 +133,17 @@ class FZPConnectorTerminalChecker(FZPChecker):
         if modified:
             try:
                 # Create a backup before modifying
-                backup_path = self.fzp_path + ".bak"
+                backup_path = filename + ".bak"
                 if not os.path.exists(backup_path):
                     self.fzp_doc.write(backup_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
                     print(f"Backup created at '{backup_path}'.")
 
                 # Write the modified XML back to the FZP file
-                self.fzp_doc.write(self.fzp_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
-                print(f"FZP file '{self.fzp_path}' has been updated successfully.")
+                self.fzp_doc.write(filename, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+                print(f"FZP file '{filename}' has been updated successfully.")
                 return True
             except Exception as e:
-                print(f"Failed to write FZP file '{self.fzp_path}': {str(e)}")
+                print(f"Failed to write FZP file '{filename}': {str(e)}")
                 return False
         else:
             print("No invalid terminal IDs found. No changes made.")
@@ -463,7 +466,7 @@ class FZPBusNodesChecker(FZPChecker):
                         self.add_error(f"Node missing connectorId in Bus '{bus_id}'.")
         return self.get_result()
 
-    def fix(self):
+    def fix(self, filename):
         """Remove buses that have no node members by treating XML as string and removing the relevant blocks."""
         if not self.buses_with_no_nodes:
             return False  # Nothing to fix
@@ -471,7 +474,7 @@ class FZPBusNodesChecker(FZPChecker):
         fixed = False
 
         try:
-            with open(self.fzp_path, 'r', encoding='UTF-8') as f:
+            with open(filename, 'r', encoding='UTF-8') as f:
                 content = f.read()
 
             for bus_id in self.buses_with_no_nodes:
@@ -486,7 +489,7 @@ class FZPBusNodesChecker(FZPChecker):
                 content = new_content
 
             if fixed:
-                with open(self.fzp_path, 'w', encoding='UTF-8') as f:
+                with open(filename, 'w', encoding='UTF-8') as f:
                     f.write(content)
 
         except Exception as e:
