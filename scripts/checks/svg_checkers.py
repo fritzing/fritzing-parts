@@ -257,14 +257,22 @@ class SVGViewBoxChecker(SVGChecker):
 
 class SVGIdsChecker(SVGChecker):
     def check(self):
-        id_set = set()
+        id_occurrences = {}
         elements_with_id = self.svg_doc.xpath("//*[@id]")
+        
+        # First pass: collect all occurrences
         for element in elements_with_id:
             element_id = element.attrib["id"]
-            if element_id in id_set:
-                self.add_error(f"Duplicate id attribute: {element_id}", node=element)
-            else:
-                id_set.add(element_id)
+            if element_id not in id_occurrences:
+                id_occurrences[element_id] = []
+            id_occurrences[element_id].append(element)
+        
+        # Second pass: report duplicates with enumeration
+        for element_id, elements in id_occurrences.items():
+            if len(elements) > 1:
+                for i, element in enumerate(elements, 1):
+                    self.add_error(f"Duplicate id attribute: {element_id} (occurrence {i} of {len(elements)})", node=element)
+        
         return self.get_result()
 
     @staticmethod
