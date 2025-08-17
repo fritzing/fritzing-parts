@@ -3,6 +3,7 @@ from lxml import etree
 import re
 import os
 from .svg_utils import SVGUtils
+from .fzp_checkers import ValidationIssue
 
 class SVGChecker:
     def __init__(self, svg_doc, layer_ids):
@@ -10,12 +11,17 @@ class SVGChecker:
         self.layer_ids = layer_ids
         self.errors = 0
         self.warnings = 0
+        self.issues = []
 
-    def add_error(self, message):
+    def add_error(self, message, node=None):
+        issue = ValidationIssue(message, severity='error', node=node)
+        self.issues.append(issue)
         print(f"Error: {message}")
         self.errors += 1
 
-    def add_warning(self, message):
+    def add_warning(self, message, node=None):
+        issue = ValidationIssue(message, severity='warning', node=node)
+        self.issues.append(issue)
         print(f"Warning: {message}")
         self.warnings += 1
 
@@ -57,11 +63,11 @@ class SVGFontSizeChecker(SVGChecker):
                     if child.tag.endswith("tspan"):
                         return self.check_font_size(child)
             content = self.getChildXML(element)
-            self.add_error(f"No font size found for element [{content}]")
+            self.add_error(f"No font size found for element [{content}]", node=element)
             return
         if not re.match(r"^\d+(\.\d+)?$", font_size):
             content = self.getChildXML(element)
-            self.add_error(f"Invalid font size {font_size} unit in element: [{content}]")
+            self.add_error(f"Invalid font size {font_size} unit in element: [{content}]", node=element)
 
     def check(self):
         text_elements = self.svg_doc.xpath("//*[local-name()='text' or local-name()='tspan']")
@@ -187,7 +193,7 @@ class SVGFontTypeChecker(SVGChecker):
                     if child.tag.endswith("tspan"):
                         return self.check_font_type(child)
             content = self.getChildXML(element)
-            self.add_error(f"No font family found for element [{content}]")
+            self.add_error(f"No font family found for element [{content}]", node=element)
             return
 
         # Remove quotes if present
@@ -195,7 +201,7 @@ class SVGFontTypeChecker(SVGChecker):
 
         if font_family not in self.VALID_FONTS:
             content = self.getChildXML(element)
-            self.add_error(f"Invalid font family '{font_family}' in element: [{content}]")
+            self.add_error(f"Invalid font family '{font_family}' in element: [{content}]", node=element)
 
     def getChildXML(self, elem):
         out = ""
@@ -235,9 +241,9 @@ class SVGViewBoxChecker(SVGChecker):
         if "viewBox" in root_element.attrib:
             viewbox = root_element.attrib["viewBox"]
             if not re.match(r"^-?\d+(\.\d+)?( -?\d+(\.\d+)?){3}$", viewbox):
-                self.add_error(f"Invalid viewBox attribute: {viewbox}")
+                self.add_error(f"Invalid viewBox attribute: {viewbox}", node=root_element)
         else:
-            self.add_error("Missing viewBox attribute")
+            self.add_error("Missing viewBox attribute", node=root_element)
         return self.get_result()
 
     @staticmethod
@@ -256,7 +262,7 @@ class SVGIdsChecker(SVGChecker):
         for element in elements_with_id:
             element_id = element.attrib["id"]
             if element_id in id_set:
-                self.add_error(f"Duplicate id attribute: {element_id}")
+                self.add_error(f"Duplicate id attribute: {element_id}", node=element)
             else:
                 id_set.add(element_id)
         return self.get_result()
@@ -297,16 +303,16 @@ class SVGMatrixChecker(SVGChecker):
 
                     # Matrix should have exactly 6 values
                     if len(values) != 6:
-                        self.add_error(f"Invalid matrix transform (wrong number of values) in element {element.get('id')}: {transform}")
+                        self.add_error(f"Invalid matrix transform (wrong number of values) in element {element.get('id')}: {transform}", node=element)
                         continue
 
                     # Check for empty values and validate float format
                     if any(not v or not float_regex.match(v) for v in values):
-                        self.add_error(f"Invalid matrix transform (invalid value) in element {element.get('id')}: {transform}")
+                        self.add_error(f"Invalid matrix transform (invalid value) in element {element.get('id')}: {transform}", node=element)
                         continue
 
                 except IndexError:
-                    self.add_error(f"Malformed matrix transform in element {element.get('id')}: {transform}")
+                    self.add_error(f"Malformed matrix transform in element {element.get('id')}: {transform}", node=element)
 
         return self.get_result()
 
@@ -335,7 +341,7 @@ class SVGLayerNestingChecker(SVGChecker):
                 for invalid_child in invalid_children:
                     child_elements = parent_group.xpath(f".//*[@id='{invalid_child}']")
                     for element in child_elements:
-                        self.add_error(f"Found '{invalid_child}' layer nested inside '{parent_layer}' group, which is invalid. File: {svg_path}")
+                        self.add_error(f"Found '{invalid_child}' layer nested inside '{parent_layer}' group, which is invalid. File: {svg_path}", node=element)
 
         return self.get_result()
 
