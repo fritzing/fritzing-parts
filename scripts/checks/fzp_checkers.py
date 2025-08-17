@@ -441,9 +441,8 @@ class FZPBusIDChecker(FZPChecker):
 
 
 class FZPBusNodesChecker(FZPChecker):
-    def __init__(self, fzp_doc, svg_docs):
+    def __init__(self, fzp_doc):
         super().__init__(fzp_doc)
-        self.svg_docs = svg_docs
         self.buses_with_no_nodes = []
 
     def check(self):
