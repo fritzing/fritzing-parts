@@ -374,12 +374,12 @@ class SVGIdsChecker(SVGChecker):
 
         # Extract common attributes from first element (x, y, fill, font-family, font-size, text-anchor)
         import re
-        x_match = re.search(r'x="([^"]*)"', first_element)
-        y_match = re.search(r'y="([^"]*)"', first_element)
-        fill_match = re.search(r'fill="([^"]*)"', first_element)
-        font_family_match = re.search(r'font-family="([^"]*)"', first_element)
-        font_size_match = re.search(r'font-size="([^"]*)"', first_element)
-        text_anchor_match = re.search(r'text-anchor="([^"]*)"', first_element)
+        x_match = re.search(r'\bx="([^"]*)"', first_element)
+        y_match = re.search(r'\by="([^"]*)"', first_element)
+        fill_match = re.search(r'\bfill="([^"]*)"', first_element)
+        font_family_match = re.search(r'\bfont-family="([^"]*)"', first_element)
+        font_size_match = re.search(r'\bfont-size="([^"]*)"', first_element)
+        text_anchor_match = re.search(r'\btext-anchor="([^"]*)"', first_element)
 
         x_val = x_match.group(1) if x_match else "0"
         y_val = y_match.group(1) if y_match else "0"
@@ -396,7 +396,7 @@ class SVGIdsChecker(SVGChecker):
             text_match = re.search(r'<text[^>]*>([^<]*)</text>', element_str)
             text_content = text_match.group(1) if text_match else ""
             # Extract y position from this specific element
-            y_match = re.search(r'y="([^"]*)"', element_str)
+            y_match = re.search(r'\by="([^"]*)"', element_str)
             element_y = y_match.group(1) if y_match else y_val
 
             # Create tspan with x and y attributes, no dx/dy as requested
