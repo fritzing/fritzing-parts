@@ -275,12 +275,12 @@ class SVGIdsChecker(SVGChecker):
         
         return self.get_result()
 
-    def fix(self):
+    def fix(self, filename):
         """Fix duplicate 'label' IDs by combining consecutive text elements into a single text element with tspan children"""
         import re
 
-        # Get the file path from the SVG document
-        svg_path = self.svg_doc.docinfo.URL
+        # Use the provided filename
+        svg_path = filename
         if not svg_path:
             print("Debug: Cannot fix SVG IDs - file path not found")
             return False
