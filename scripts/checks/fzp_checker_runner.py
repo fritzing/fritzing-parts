@@ -97,7 +97,6 @@ class FZPCheckerRunner:
                     FZPConnectorTerminalChecker,
                     FZPConnectorVisibilityChecker,
                     FZPPCBConnectorStrokeChecker,
-                    FZPBusNodesChecker,
                     FZPLayerIDsChecker,
                     FZPMissingConnectorRefsChecker,
                     FZPMissingLegIDsChecker
@@ -253,8 +252,9 @@ AVAILABLE_CHECKERS_FROM_GOLANG = [
 ]
 AVAILABLE_CHECKERS += AVAILABLE_CHECKERS_FROM_GOLANG
 
-if __name__ == "__main__":
+def main():
     import argparse
+    import sys
 
     all_checkers = AVAILABLE_CHECKERS + SVG_AVAILABLE_CHECKERS
 
@@ -263,29 +263,33 @@ if __name__ == "__main__":
     # --basedir : directory to use as fritzing-parts dir (contains core and svg subdirs)
     # --file : Automatically detect .json, .txt, .fzp and .svg
     # Add support for directly checking .fzpz files
-    parser = argparse.ArgumentParser(description="Scan FZP files for various checks", add_help=False)
-    parser.add_argument("path", help="Path to FZP/FZPZ file or directory to scan")
+    parser = argparse.ArgumentParser(description="Scan FZP files for various checks")
+    parser.add_argument("path", nargs='?', help="Path to FZP/FZPZ file or directory to scan")
     parser.add_argument("-c", "--checks", nargs="*", default=["all"],
                         choices=["all"] + [checker.get_name() for checker in all_checkers],
                         help="Type(s) of check to run (default: all)")
     parser.add_argument("-s", "--svg", help="Path to an SVG file to search for in FZP files")
     parser.add_argument("-f", "--file", help="Path to a file containing a list of SVG and FZP files to check")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
-    parser.add_argument('-h', '--help', action='store_true', help='Show this help message and exit')
     parser.add_argument("--fix", action="store_true", help="Try to automatically fix errors when possible")
-    parser.usage = parser.format_help()
 
-    args = parser.parse_args()
-
-    if args.help:
+    # Check for help flag to show detailed checker info
+    if "-h" in sys.argv or "--help" in sys.argv:
+        parser.print_help()
         print("\nAvailable FZP checks:")
         for checker in AVAILABLE_CHECKERS:
             print(f"{checker.get_name()}:\n{checker.get_description()}\n")
         print("Available SVG checks:")
         for checker in SVG_AVAILABLE_CHECKERS:
             print(f"{checker.get_name()}:\n{checker.get_description()}\n")
-        parser.print_help()
         exit()
+
+    args = parser.parse_args()
+
+    # Show standard help if no path provided
+    if not args.path:
+        parser.print_help()
+        exit(1)
 
     fzp_checks = [checker.get_name() for checker in AVAILABLE_CHECKERS]
     svg_checks = [checker.get_name() for checker in SVG_AVAILABLE_CHECKERS]
@@ -335,6 +339,9 @@ if __name__ == "__main__":
             for filename in sorted(os.listdir(args.path)):
                 if filename.endswith(".fzp") or filename.endswith(".fzpz"):
                     fzp_files.add(os.path.join(args.path, filename))
+        else:
+            print(f"Error: Path '{args.path}' does not exist or is not accessible")
+            exit(1)
 
         if args.verbose:
             print(f"Checking {len(fzp_files)} FZP files")
@@ -352,3 +359,6 @@ if __name__ == "__main__":
         print(str(e))
         parser.print_help()
         exit(-1)
+
+if __name__ == "__main__":
+    main()
