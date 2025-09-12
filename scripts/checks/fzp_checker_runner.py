@@ -256,6 +256,10 @@ def main():
     import argparse
     import sys
 
+    # Simple formatting
+    BOLD = '\033[1m'
+    RESET = '\033[0m'
+
     all_checkers = AVAILABLE_CHECKERS + SVG_AVAILABLE_CHECKERS
 
     # TODOs
@@ -276,12 +280,14 @@ def main():
     # Check for help flag to show detailed checker info
     if "-h" in sys.argv or "--help" in sys.argv:
         parser.print_help()
-        print("\nAvailable FZP checks:")
+        print(f"\n{BOLD}Example:{RESET}")
+        print("  python fzp_checker.py mypart.fzpz              # Check an FZPZ file")
+        print(f"\n{BOLD}Available FZP checks:{RESET}")
         for checker in AVAILABLE_CHECKERS:
-            print(f"{checker.get_name()}:\n{checker.get_description()}\n")
-        print("Available SVG checks:")
+            print(f"{BOLD}{checker.get_name()}{RESET}:\n{checker.get_description()}\n")
+        print(f"{BOLD}Available SVG checks:{RESET}")
         for checker in SVG_AVAILABLE_CHECKERS:
-            print(f"{checker.get_name()}:\n{checker.get_description()}\n")
+            print(f"{BOLD}{checker.get_name()}{RESET}:\n{checker.get_description()}\n")
         exit()
 
     args = parser.parse_args()
@@ -289,6 +295,8 @@ def main():
     # Show standard help if no path provided
     if not args.path:
         parser.print_help()
+        print(f"\n{BOLD}Example:{RESET}")
+        print("  python fzp_checker.py mypart.fzpz              # Check an FZPZ file")
         exit(1)
 
     fzp_checks = [checker.get_name() for checker in AVAILABLE_CHECKERS]
