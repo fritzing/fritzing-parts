@@ -38,13 +38,19 @@ class FZPUtils:
         else:
             # Standard fritzing-parts structure
             up_one_level = os.path.dirname(dir_path)
-            svg_path = os.path.join(up_one_level, 'svg', 'core', image)
             
-            # Only check templates for standard structure, not fzpz
-            if FZPUtils.is_template(svg_path, view_name):
-                return None  # Skip template SVGs
-
-        return svg_path
+            # Try contrib first (for imported parts), then core
+            svg_path_contrib = os.path.join(up_one_level, 'svg', 'contrib', image)
+            if os.path.isfile(svg_path_contrib):
+                # Contrib parts cannot be templates, so return the path directly
+                return svg_path_contrib
+            else:
+                # Fall back to core directory
+                svg_path = os.path.join(up_one_level, 'svg', 'core', image)
+                # Only check templates for core parts
+                if FZPUtils.is_template(svg_path, view_name):
+                    return None  # Skip template SVGs
+                return svg_path
 
     @staticmethod
     def is_template(svg_path, view):
