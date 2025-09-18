@@ -231,7 +231,7 @@ class FZPCheckerRunner:
 
 AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker, FZPPCBConnectorStrokeChecker, FZPModuleIDSpecialCharsChecker, FZPMissingLegIDsChecker, FZPMissingConnectorRefsChecker]
 
-SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGFontTypeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGMatrixChecker, SVGLayerNestingChecker]
+SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGFontTypeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGMatrixChecker, SVGLayerNestingChecker, SVGGornChecker]
 AVAILABLE_CHECKERS_FROM_GOLANG = [
     FZPFritzingVersionChecker,
     FZPModuleIDChecker,

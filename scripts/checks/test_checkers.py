@@ -313,5 +313,59 @@ class TestCheckers(unittest.TestCase):
                         2,
                         None)
 
+    def test_gorn_present(self):
+        """Test that gorn attributes are detected in SVG files"""
+        self.run_checker('gorn_present.fzp.test',
+                         [],
+                         ['svg-gorn'],
+                         3,  # Should find 3 gorn attributes
+                         None)
+
+    def test_gorn_absent(self):
+        """Test that files without gorn attributes pass the check"""
+        self.run_checker('gorn_absent.fzp.test',
+                         [],
+                         ['svg-gorn'],
+                         0,  # Should find no gorn attributes
+                         None)
+
+    def test_gorn_fix(self):
+        """Test that gorn attributes can be automatically removed"""
+        import tempfile
+        import shutil
+        
+        # Create temporary copies of test files
+        test_fzp = os.path.join(self.test_data_dir, 'gorn_present.fzp.test')
+        test_svg = 'test_data/svg/core/breadboard/gorn_present_breadboard.svg'
+        
+        with tempfile.TemporaryDirectory() as temp_dir:
+            # Copy test files to temp directory
+            temp_fzp = os.path.join(temp_dir, 'temp_gorn.fzp')
+            temp_svg = os.path.join(temp_dir, 'temp_gorn.svg')
+            
+            shutil.copy(test_fzp, temp_fzp)
+            shutil.copy(test_svg, temp_svg)
+            
+            # Update FZP to reference temp SVG
+            with open(temp_fzp, 'r') as f:
+                content = f.read()
+            content = content.replace('gorn_present_breadboard.svg', 'temp_gorn.svg')
+            with open(temp_fzp, 'w') as f:
+                f.write(content)
+            
+            # Test initial state - should have gorn attributes
+            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner.check([], ['svg-gorn'], fix=False)
+            self.assertEqual(checker_runner.total_errors, 3, "Should initially have 3 gorn errors")
+            
+            # Apply fix
+            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner.check([], ['svg-gorn'], fix=True)
+            
+            # Check that fix was successful
+            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner.check([], ['svg-gorn'], fix=False)
+            self.assertEqual(checker_runner.total_errors, 0, "Should have no gorn errors after fix")
+
 if __name__ == '__main__':
     unittest.main()

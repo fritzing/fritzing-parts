@@ -360,3 +360,55 @@ class SVGLayerNestingChecker(SVGChecker):
     @staticmethod
     def get_description():
         return "Check that layer groups are not incorrectly nested (e.g. silkscreen within breadboard)"
+
+
+class SVGGornChecker(SVGChecker):
+    """Check for gorn attributes in SVG files"""
+    
+    def check(self):
+        """Check for gorn attributes in the SVG document"""
+        self.errors = 0
+        self.warnings = 0
+        
+        # Search for all elements with gorn attributes
+        gorn_elements = self.svg_doc.xpath("//*[@gorn]")
+        
+        for element in gorn_elements:
+            gorn_value = element.get("gorn")
+            self.add_error(f"Found gorn attribute with value '{gorn_value}' on element '{element.tag}'", element)
+        
+        return self.errors, self.warnings
+    
+    def fix(self, svg_path):
+        """Remove gorn attributes from the SVG file"""
+        if self.errors == 0:
+            return False
+            
+        try:
+            # Read the file content
+            with open(svg_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Use regex to remove gorn attributes (same pattern as removegorn.py)
+            gorn_pattern = r'\s*gorn="[\.\d]*"\s*'
+            updated_content, count = re.subn(gorn_pattern, ' ', content, flags=re.MULTILINE)
+            
+            if count > 0:
+                # Write the updated content back
+                with open(svg_path, 'w', encoding='utf-8') as f:
+                    f.write(updated_content)
+                print(f"Removed {count} gorn attributes from {svg_path}")
+                return True
+            
+        except Exception as e:
+            print(f"Error removing gorn attributes from {svg_path}: {e}")
+        
+        return False
+    
+    @staticmethod
+    def get_name():
+        return "svg-gorn"
+    
+    @staticmethod
+    def get_description():
+        return "Check for unwanted gorn attributes left by the Fritzing parts editor"
