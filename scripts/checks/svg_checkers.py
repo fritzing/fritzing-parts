@@ -114,6 +114,7 @@ class SVGFontTypeChecker(SVGChecker):
         "Droid": "Noto Sans",
         'Droid Sans Mono': 'default',
         'DroidSansMono': 'default',
+        "'DroidSans, 'Droid Sans'": 'Noto Sans',
         'Arial-BoldMT': 'Noto Sans',
         'EurostileLTStd': 'Noto Sans',
     }
