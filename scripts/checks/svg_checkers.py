@@ -276,7 +276,7 @@ class SVGIdsChecker(SVGChecker):
         return self.get_result()
 
     def fix(self):
-        """Fix duplicate 'label' IDs by grouping consecutive text elements under <g> tags"""
+        """Fix duplicate 'label' IDs by combining consecutive text elements into a single text element with tspan children"""
         import re
 
         # Get the file path from the SVG document
@@ -328,7 +328,7 @@ class SVGIdsChecker(SVGChecker):
             return False
 
     def _replace_label_group_in_content(self, content, text_elements):
-        """Replace consecutive text elements with id='label' with a group in string content"""
+        """Replace consecutive text elements with id='label' with a single text element containing tspan children"""
         import re
 
         # Use a simpler approach - find all text elements with id="label" in the content
@@ -459,40 +459,6 @@ class SVGIdsChecker(SVGChecker):
         groups.append(current_group)
         return groups
 
-    def _create_label_group(self, text_elements):
-        """Create a <g id='label'> containing the consecutive text elements"""
-        from lxml import etree
-
-        if not text_elements:
-            return
-
-        # Use the first element's parent and position
-        first_element = text_elements[0]
-        parent = first_element.getparent()
-        if parent is None:
-            return
-
-        # Create a new <g> element with id="label"
-        group_element = etree.Element("g")
-        group_element.set("id", "label")
-
-        # Find the position of the first text element
-        insert_index = list(parent).index(first_element)
-
-        # Remove the id attribute from all text elements and add them to the group
-        for text_element in text_elements:
-            # Remove the id attribute since the group will have it
-            if "id" in text_element.attrib:
-                del text_element.attrib["id"]
-
-            # Remove the text element from its current parent
-            text_element.getparent().remove(text_element)
-
-            # Add to the group
-            group_element.append(text_element)
-
-        # Insert the group at the position where the first text element was
-        parent.insert(insert_index, group_element)
 
     @staticmethod
     def get_name():
