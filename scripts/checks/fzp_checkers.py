@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 from .fzp_utils import FZPUtils
 from .svg_utils import SVGUtils
 import re
+import logging
 
 
 class ValidationIssue:
@@ -27,6 +28,7 @@ class FZPChecker(ABC):
         self.fzp_doc = fzp_doc
         self.issues = []
         self.fixes = []
+        self.logger = logging.getLogger(self.__class__.__name__)
 
     @abstractmethod
     def check(self):
@@ -35,17 +37,17 @@ class FZPChecker(ABC):
     def add_error(self, message, node=None):
         issue = ValidationIssue(message, severity='error', node=node)
         self.issues.append(issue)
-        print(f"Error: {message}")
+        self.logger.debug(f"Error: {message}")
 
     def add_warning(self, message, node=None):
         issue = ValidationIssue(message, severity='warning', node=node)
         self.issues.append(issue)
-        print(f"Warning: {message}")
+        self.logger.debug(f"Warning: {message}")
 
     def add_fix(self, message, node=None, line_number=None):
         fix = FixResult(message, node=node, line_number=line_number)
         self.fixes.append(fix)
-        print(f"Fixed: {message}")
+        self.logger.debug(f"Fixed: {message}")
 
     def get_result(self):
         errors = len([i for i in self.issues if i.severity == 'error'])

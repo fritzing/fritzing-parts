@@ -2,6 +2,7 @@
 from lxml import etree
 import re
 import os
+import logging
 from .svg_utils import SVGUtils
 from .fzp_checkers import ValidationIssue, FixResult
 
@@ -13,23 +14,24 @@ class SVGChecker:
         self.warnings = 0
         self.issues = []
         self.fixes = []
+        self.logger = logging.getLogger(self.__class__.__name__)
 
     def add_error(self, message, node=None):
         issue = ValidationIssue(message, severity='error', node=node)
         self.issues.append(issue)
-        print(f"Error: {message}")
+        self.logger.debug(f"Error: {message}")
         self.errors += 1
 
     def add_warning(self, message, node=None):
         issue = ValidationIssue(message, severity='warning', node=node)
         self.issues.append(issue)
-        print(f"Warning: {message}")
+        self.logger.debug(f"Warning: {message}")
         self.warnings += 1
 
     def add_fix(self, message, node=None, line_number=None):
         fix = FixResult(message, node=node, line_number=line_number)
         self.fixes.append(fix)
-        print(f"Fixed: {message}")
+        self.logger.debug(f"Fixed: {message}")
 
     def get_result(self):
         return self.errors, self.warnings
