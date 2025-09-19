@@ -367,5 +367,74 @@ class TestCheckers(unittest.TestCase):
             checker_runner.check([], ['svg-gorn'], fix=False)
             self.assertEqual(checker_runner.total_errors, 0, "Should have no gorn errors after fix")
 
+    def test_unique_ids_valid(self):
+        """Test that files with unique IDs pass the check"""
+        self.run_checker('unique_ids.fzp.test',
+                         [],
+                         ['ids'],
+                         0,  # Should find no duplicate IDs
+                         None)
+
+    def test_duplicate_ids_invalid(self):
+        """Test that duplicate IDs are detected"""
+        self.run_checker('duplicate_ids.fzp.test',
+                         [],
+                         ['ids'],
+                         5,  # Should find 5 duplicate ID errors (5 elements with id="label")
+                         None)
+
+    def test_duplicate_ids_fix(self):
+        """Test that duplicate label IDs can be automatically fixed"""
+        import tempfile
+        import shutil
+        import re
+
+        # Create temporary copies of test files
+        test_fzp = os.path.join(self.test_data_dir, 'duplicate_ids.fzp.test')
+        test_svg = 'test_data/svg/core/breadboard/duplicate_ids_breadboard.svg'
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            # Copy test files to temp directory
+            temp_fzp = os.path.join(temp_dir, 'temp_duplicate_ids.fzp')
+            temp_svg = os.path.join(temp_dir, 'temp_duplicate_ids.svg')
+
+            shutil.copy(test_fzp, temp_fzp)
+            shutil.copy(test_svg, temp_svg)
+
+            # Update FZP to reference temp SVG
+            with open(temp_fzp, 'r') as f:
+                content = f.read()
+            content = content.replace('duplicate_ids_breadboard.svg', 'temp_duplicate_ids.svg')
+            with open(temp_fzp, 'w') as f:
+                f.write(content)
+
+            # Test initial state - should have duplicate ID errors
+            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner.check([], ['ids'], fix=False)
+            initial_errors = checker_runner.total_errors
+            self.assertGreater(initial_errors, 0, "Should initially have duplicate ID errors")
+
+            # Apply fix
+            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner.check([], ['ids'], fix=True)
+
+            # Verify that the SVG was modified to combine consecutive text elements
+            with open(temp_svg, 'r') as f:
+                fixed_content = f.read()
+
+            # Should have fewer text elements with id="label" after fix
+            label_count = len(re.findall(r'id="label"', fixed_content))
+            self.assertEqual(label_count, 2, "Should have 2 elements with id='label' after fix (1 combined text + 1 circle)")
+
+            # Should have tspan elements
+            tspan_count = len(re.findall(r'<tspan', fixed_content))
+            self.assertGreater(tspan_count, 0, "Should have tspan elements after fix")
+
+            # Check that fix reduced errors (though may not eliminate all due to non-text duplicates)
+            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner.check([], ['ids'], fix=False)
+            final_errors = checker_runner.total_errors
+            self.assertLess(final_errors, initial_errors, "Should have fewer duplicate ID errors after fix")
+
 if __name__ == '__main__':
     unittest.main()
