@@ -14,10 +14,19 @@ class ValidationIssue:
         self.severity = severity
         self.node = node
 
+class FixResult:
+    """Represents a fix that was applied during checking"""
+    
+    def __init__(self, message, node=None, line_number=None):
+        self.message = message
+        self.node = node
+        self.line_number = line_number
+
 class FZPChecker(ABC):
     def __init__(self, fzp_doc):
         self.fzp_doc = fzp_doc
         self.issues = []
+        self.fixes = []
 
     @abstractmethod
     def check(self):
@@ -33,10 +42,18 @@ class FZPChecker(ABC):
         self.issues.append(issue)
         print(f"Warning: {message}")
 
+    def add_fix(self, message, node=None, line_number=None):
+        fix = FixResult(message, node=node, line_number=line_number)
+        self.fixes.append(fix)
+        print(f"Fixed: {message}")
+
     def get_result(self):
         errors = len([i for i in self.issues if i.severity == 'error'])
         warnings = len([i for i in self.issues if i.severity == 'warning'])
         return errors, warnings
+    
+    def get_fixes_count(self):
+        return len(self.fixes)
 
     @staticmethod
     @abstractmethod

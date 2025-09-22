@@ -3,7 +3,7 @@ from lxml import etree
 import re
 import os
 from .svg_utils import SVGUtils
-from .fzp_checkers import ValidationIssue
+from .fzp_checkers import ValidationIssue, FixResult
 
 class SVGChecker:
     def __init__(self, svg_doc, layer_ids):
@@ -12,6 +12,7 @@ class SVGChecker:
         self.errors = 0
         self.warnings = 0
         self.issues = []
+        self.fixes = []
 
     def add_error(self, message, node=None):
         issue = ValidationIssue(message, severity='error', node=node)
@@ -25,8 +26,16 @@ class SVGChecker:
         print(f"Warning: {message}")
         self.warnings += 1
 
+    def add_fix(self, message, node=None, line_number=None):
+        fix = FixResult(message, node=node, line_number=line_number)
+        self.fixes.append(fix)
+        print(f"Fixed: {message}")
+
     def get_result(self):
         return self.errors, self.warnings
+    
+    def get_fixes_count(self):
+        return len(self.fixes)
 
     def check(self):
         pass

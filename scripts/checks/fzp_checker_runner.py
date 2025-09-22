@@ -14,13 +14,15 @@ class FZPCheckerRunner:
         self.verbose = verbose
         self.total_errors = 0
         self.total_warnings = 0
-        self.fixed = False
         self.extracted_dir = None  # For fzpz cleanup
+        self.checks_run = 0
+        self.errors_fixed = 0
 
     def check(self, check_types, svg_check_types, fix=False):
         self.total_errors = 0
         self.total_warnings = 0
-        self.fixed = False
+        self.checks_run = 0
+        self.errors_fixed = 0
         
         # Handle fzpz files
         original_path = self.path
@@ -62,15 +64,12 @@ class FZPCheckerRunner:
             errors, warnings = checker.check()
             self.total_errors += errors
             self.total_warnings += warnings
+            self.checks_run += 1
 
             # Apply fixes if requested and available
             if fix and errors > 0 and hasattr(checker, 'fix'):
-                try:
-                    if checker.fix(self.path):
-                        self.fixed = True
-                except Exception as e:
-                    print(f"Error while fixing: {str(e)}")
-                    continue
+                if checker.fix(self.path):
+                    self.errors_fixed += checker.get_fixes_count()
 
         if svg_check_types:
             self._run_svg_checkers(fzp_doc, svg_docs, svg_paths, svg_check_types, fix)
@@ -182,14 +181,12 @@ class FZPCheckerRunner:
                     errors, warnings = checker.check()
                     self.total_errors += errors
                     self.total_warnings += warnings
+                    self.checks_run += 1
 
                     if fix and errors > 0 and hasattr(checker, 'fix'):
-                        try:
-                            svg_path = svg_paths.get(view.tag)
-                            if svg_path and checker.fix(svg_path):
-                                self.fixed = True
-                        except Exception as e:
-                            print(f"Error while fixing: {str(e)}")
+                        svg_path = svg_paths.get(view.tag)
+                        if svg_path and checker.fix(svg_path):
+                            self.errors_fixed += checker.get_fixes_count()
 
     def _get_svg_checker(self, check_type, svg_doc, layer_ids):
         for checker in SVG_AVAILABLE_CHECKERS:
@@ -314,6 +311,9 @@ def main():
 
         total_errors = 0
         total_warnings = 0
+        total_files_checked = 0
+        total_checks_run = 0
+        total_errors_fixed = 0
 
         checker_runner = FZPCheckerRunner(None, verbose=args.verbose)
 
@@ -358,6 +358,16 @@ def main():
             checker_runner.path = fzp_file
             checker_runner.check(selected_fzp_checks, selected_svg_checks, fix=args.fix)
             total_errors += checker_runner.total_errors
+            total_files_checked += 1
+            total_checks_run += checker_runner.checks_run
+            total_errors_fixed += checker_runner.errors_fixed
+
+        # Print summary
+        print(f"Summary:")
+        print(f"  Files checked: {total_files_checked}")
+        print(f"  Checks run: {total_checks_run}")
+        print(f"  Errors found: {total_errors}")
+        print(f"  Errors fixed: {total_errors_fixed}")
 
         if args.verbose or total_errors > 0:
             print(f"Total errors: {total_errors}")
