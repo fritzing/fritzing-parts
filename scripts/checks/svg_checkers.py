@@ -310,13 +310,28 @@ class SVGIdsChecker(SVGChecker):
             self.logger.debug("Cannot fix SVG IDs - file path not found")
             return False
 
-        # Find all text elements with id="label" - use namespace-agnostic XPath
         fixes_applied = False
         
         # Read the original file for string-based operations
         with open(svg_path, 'r', encoding='utf-8') as file:
             content = file.read()
+        original_content = content
 
+        # First: Remove empty or whitespace-only IDs using regex
+        empty_id_pattern = r'\s+id\s*=\s*["\']["\']'  # matches id="" or id=''
+        whitespace_id_pattern = r'\s+id\s*=\s*["\'][\s]*["\']'  # matches id=" " etc
+        
+        empty_matches = len(re.findall(empty_id_pattern, content))
+        whitespace_matches = len(re.findall(whitespace_id_pattern, content))
+        
+        if empty_matches > 0 or whitespace_matches > 0:
+            content = re.sub(empty_id_pattern, '', content)
+            content = re.sub(whitespace_id_pattern, '', content)
+            total_removed = empty_matches + whitespace_matches
+            self.add_fix(f"Removed {total_removed} empty/whitespace id attributes in {svg_path}")
+            fixes_applied = True
+
+        # Second: Handle duplicate label IDs
         label_elements = self.svg_doc.xpath("//*[local-name()='text' and @id='label']")
 
         if len(label_elements) <= 1:
