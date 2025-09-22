@@ -115,6 +115,7 @@ class SVGFontTypeChecker(SVGChecker):
         'Droid Sans Mono': 'default',
         'DroidSansMono': 'default',
         "'DroidSans, 'Droid Sans'": 'Noto Sans',
+        "DroidSans, 'Droid Sans'": 'Noto Sans',
         'Arial-BoldMT': 'Noto Sans',
         'EurostileLTStd': 'Noto Sans',
     }
@@ -146,22 +147,28 @@ class SVGFontTypeChecker(SVGChecker):
             modified = False
             original_content = content
 
-            # Pattern to match font-family with any quote style
-            pattern = r'font-family\s*=\s*["\']\'?([^\'">]+)\'?["\']'
+            # Pattern to match font-family with any quote style, including nested quotes
+            # Handles cases like font-family="'DroidSans, 'Droid Sans'"
+            pattern = r'font-family\s*=\s*(["\'])([^\1]*?)\1'
 
             def replace_font(match):
                 nonlocal modified
-                font = match.group(1)
+                quote_char = match.group(1)  # The quote character used
+                font = match.group(2)        # The font name content
                 if font in self.FONT_REPLACEMENTS:
                     new_font = self.FONT_REPLACEMENTS[font]
                     if new_font == 'default':
                         new_font = self.default_font
                     modified = True
-                    print(f"Replacing font '{font}' with '{new_font}'")
-                    # Always use double quotes
+                    self.add_fix(f"Replaced font '{font}' with '{new_font}' in {filename}")
+                    # Always use double quotes for consistency
                     return f'font-family="{new_font}"'
                 return match.group(0)
 
+            # Debug: Show all matches found
+            matches = re.findall(pattern, content)
+            self.logger.debug(f"Font-family matches found: {matches}")
+            
             # Make replacements
             content = re.sub(pattern, replace_font, content)
 
@@ -171,15 +178,15 @@ class SVGFontTypeChecker(SVGChecker):
                 if not os.path.exists(backup_path):
                     with open(backup_path, 'w', encoding='utf-8') as file:
                         file.write(original_content)
-                    print(f"Backup created at '{backup_path}'")
+                    self.logger.debug(f"Backup created at '{backup_path}'")
 
                 # Write modified content only if changes were made
                 with open(filename, 'w', encoding='utf-8') as file:
                     file.write(content)
-                print(f"SVG file '{filename}' has been updated successfully")
+                self.logger.debug(f"SVG file '{filename}' has been updated successfully")
                 return True
             else:
-                print("No fonts found to replace. No changes made.")
+                self.logger.debug("No fonts found to replace. No changes made.")
                 return False
 
         except Exception as e:
