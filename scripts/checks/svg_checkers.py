@@ -279,9 +279,15 @@ class SVGIdsChecker(SVGChecker):
         id_occurrences = {}
         elements_with_id = self.svg_doc.xpath("//*[@id]")
         
-        # First pass: collect all occurrences
+        # First pass: collect all occurrences and check for empty IDs
         for element in elements_with_id:
             element_id = element.attrib["id"]
+            
+            # Check for empty or whitespace-only IDs
+            if not element_id or element_id.isspace():
+                self.add_warning(f"Element has empty or whitespace-only id attribute - should be removed", node=element)
+                continue
+                
             if element_id not in id_occurrences:
                 id_occurrences[element_id] = []
             id_occurrences[element_id].append(element)
