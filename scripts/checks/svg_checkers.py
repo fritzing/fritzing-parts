@@ -301,50 +301,54 @@ class SVGIdsChecker(SVGChecker):
         # Use the provided filename
         svg_path = filename
         if not svg_path:
-            print("Debug: Cannot fix SVG IDs - file path not found")
+            self.logger.debug("Cannot fix SVG IDs - file path not found")
             return False
 
         # Find all text elements with id="label" - use namespace-agnostic XPath
         label_elements = self.svg_doc.xpath("//*[local-name()='text' and @id='label']")
 
         if len(label_elements) <= 1:
-            print(f"Debug: No duplicate text elements with id='label' to fix in {svg_path}")
+            self.logger.debug(f"No duplicate text elements with id='label' to fix in {svg_path}")
             return False
 
-        print(f"Debug: Found {len(label_elements)} text elements with id='label' in {svg_path}")
+        self.logger.debug(f"Found {len(label_elements)} text elements with id='label' in {svg_path}")
 
         # Group consecutive elements
         consecutive_groups = self._find_consecutive_groups(label_elements)
 
         # Check if there are actually groups to fix
         groups_to_fix = [group for group in consecutive_groups if len(group) > 1]
+        
+        # Count total elements that could be fixed vs those in consecutive groups
+        total_fixable_elements = sum(len(group) for group in groups_to_fix)
+        
         if not groups_to_fix:
-            print(f"Debug: No consecutive label groups to fix in {svg_path}")
+            # We have duplicates but no consecutive groups - this can't be auto-fixed
+            self.add_error(f"Found {len(label_elements)} duplicate label IDs that are not consecutive and cannot be automatically fixed in {svg_path}")
             return False
+        elif total_fixable_elements < len(label_elements):
+            # We have some consecutive groups but also some non-consecutive duplicates
+            non_consecutive_count = len(label_elements) - total_fixable_elements
+            self.add_error(f"Found {non_consecutive_count} non-consecutive duplicate label IDs that cannot be automatically fixed in {svg_path}")
 
-        print(f"Debug: Found {len(groups_to_fix)} groups of consecutive label elements to fix")
+        self.logger.debug(f"Found {len(groups_to_fix)} groups of consecutive label elements to fix")
 
         # Use string-based replacement to preserve formatting
-        try:
-            # Read the original file
-            with open(svg_path, 'r', encoding='utf-8') as file:
-                content = file.read()
+        # Read the original file
+        with open(svg_path, 'r', encoding='utf-8') as file:
+            content = file.read()
 
-            # Process each group (in reverse order to maintain positions)
-            for i, group in enumerate(reversed(groups_to_fix)):
-                print(f"Debug: Creating group {i+1} with {len(group)} text elements")
-                content = self._replace_label_group_in_content(content, group)
+        # Process each group (in reverse order to maintain positions)
+        for i, group in enumerate(reversed(groups_to_fix)):
+            self.logger.debug(f"Creating group {i+1} with {len(group)} text elements")
+            content = self._replace_label_group_in_content(content, group)
 
-            # Write the modified content
-            with open(svg_path, 'w', encoding='utf-8') as file:
-                file.write(content)
+        # Write the modified content
+        with open(svg_path, 'w', encoding='utf-8') as file:
+            file.write(content)
 
-            print(f"Debug: Successfully fixed duplicate label IDs in {svg_path}")
-            return True
-
-        except Exception as e:
-            print(f"Debug: Failed to save SVG file: {str(e)}")
-            return False
+        self.add_fix(f"Successfully fixed {len(groups_to_fix)} groups of duplicate label IDs in {svg_path}")
+        return True
 
     def _replace_label_group_in_content(self, content, text_elements):
         """Replace consecutive text elements with id='label' with a single text element containing tspan children"""
