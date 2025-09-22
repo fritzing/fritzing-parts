@@ -223,6 +223,89 @@ class FZPCheckerRunner:
             FZPUtils.cleanup_extraction(self.extracted_dir)
             self.extracted_dir = None
 
+    def check_svg_file(self, svg_path, selected_svg_checks, fix=False):
+        """Check a single SVG file directly with SVG-specific checks."""
+        from lxml import etree
+        
+        if not os.path.isfile(svg_path):
+            print(f"Error: SVG file '{svg_path}' does not exist")
+            return 1
+        
+        try:
+            svg_doc = etree.parse(svg_path)
+        except etree.XMLSyntaxError as e:
+            print(f"Error: Invalid XML in SVG file '{svg_path}': {str(e)}")
+            return 1
+        
+        svg_errors = 0
+        svg_warnings = 0
+        svg_fixes = 0
+        all_issues = []
+        all_fixes = []
+        
+        self.logger.info(f"Checking SVG file: {svg_path}")
+        
+        for check_type in selected_svg_checks:
+            checker = self._get_svg_checker(check_type, svg_doc, [])
+            self.logger.debug(f"Running SVG check: {checker.get_name()}")
+            
+            errors, warnings = checker.check()
+            svg_errors += errors
+            svg_warnings += warnings
+            
+            # Collect issues from this checker
+            all_issues.extend(checker.issues)
+            
+            # Apply fixes if requested
+            if fix and errors > 0 and hasattr(checker, 'fix'):
+                if checker.fix(svg_path):
+                    fixes_count = checker.get_fixes_count()
+                    svg_fixes += fixes_count
+                    # Collect fixes from this checker
+                    all_fixes.extend(checker.fixes)
+        
+        # Print results
+        print(f"\nSummary:")
+        print(f"  Files checked: 1 (SVG only)")
+        print(f"  Checks run: {len(selected_svg_checks)} (SVG checks only)")
+        print(f"  Errors found: {svg_errors}")
+        if svg_warnings > 0:
+            print(f"  Warnings found: {svg_warnings}")
+        print(f"  Errors fixed: {svg_fixes}")
+        
+        print(f"\n💡 Hint: To find FZP files that use this SVG and run additional checks, try:")
+        print(f"   python fzp_checker.py -s {svg_path} /path/to/fzp/directory")
+        print(f"   Example: python fzp_checker.py -s {svg_path} contrib/")
+        
+        print(f"\nFile Details:")
+        status_parts = []
+        if svg_errors == 0 and svg_warnings == 0:
+            status = "✓ CLEAN"
+        else:
+            if svg_errors > 0:
+                status_parts.append(f"{svg_errors} error{'s' if svg_errors > 1 else ''}")
+            if svg_warnings > 0:
+                status_parts.append(f"{svg_warnings} warning{'s' if svg_warnings > 1 else ''}")
+            status = "✗ " + ", ".join(status_parts)
+        
+        fixes_info = ""
+        if svg_fixes > 0:
+            fixes_info = f" (fixed: {svg_fixes})"
+        
+        print(f"  {svg_path}: {status}{fixes_info}")
+        
+        # Show detailed messages
+        if all_issues:
+            for issue in all_issues:
+                severity_icon = "✗" if issue.severity == 'error' else "⚠"
+                print(f"    {severity_icon} {issue.message}")
+                
+        if all_fixes:
+            for fix in all_fixes:
+                print(f"    ✓ {fix.message}")
+        
+        return svg_errors
+
     def search_and_check_fzp_files(self, svg_file, fzp_dir, check_types, svg_check_types):
         errors = 0
         fzp_files = self._search_fzp_files_with_svg(svg_file, fzp_dir)
@@ -292,7 +375,7 @@ def main():
     parser.add_argument("-c", "--checks", nargs="*", default=["all"],
                         choices=["all"] + [checker.get_name() for checker in all_checkers],
                         help="Type(s) of check to run (default: all)")
-    parser.add_argument("-s", "--svg", help="Path to an SVG file to search for in FZP files")
+    parser.add_argument("-s", "--svg", help="Path to an SVG file. If path provided, searches for FZP files using this SVG. If no path, checks SVG directly.")
     parser.add_argument("-f", "--file", help="Path to a file containing a list of SVG and FZP files to check")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
     parser.add_argument("--fix", action="store_true", help="Try to automatically fix errors when possible")
@@ -300,8 +383,10 @@ def main():
     # Check for help flag to show detailed checker info
     if "-h" in sys.argv or "--help" in sys.argv:
         parser.print_help()
-        print(f"\n{BOLD}Example:{RESET}")
+        print(f"\n{BOLD}Examples:{RESET}")
         print("  python fzp_checker.py mypart.fzpz              # Check an FZPZ file")
+        print("  python fzp_checker.py contrib/                 # Check all FZP files in directory")
+        print("  python fzp_checker.py -s myfile.svg            # Check SVG file directly")
         print(f"\n{BOLD}Available FZP checks:{RESET}")
         for checker in AVAILABLE_CHECKERS:
             print(f"{BOLD}{checker.get_name()}{RESET}:\n{checker.get_description()}\n")
@@ -318,11 +403,14 @@ def main():
     else:
         logging.basicConfig(level=logging.INFO, format='%(message)s')
 
-    # Show standard help if no path provided
-    if not args.path:
+    # Show standard help if no path provided (unless using --svg which doesn't need path)
+    if not args.path and not args.svg:
         parser.print_help()
-        print(f"\n{BOLD}Example:{RESET}")
+        print(f"\n{BOLD}Examples:{RESET}")
         print("  python fzp_checker.py mypart.fzpz              # Check an FZPZ file")
+        print("  python fzp_checker.py contrib/                 # Check all FZP files in directory")
+        print("  python fzp_checker.py -s myfile.svg            # Check SVG file directly")
+        print("  python fzp_checker.py -s myfile.svg contrib/   # Find FZP files using myfile.svg")
         exit(1)
 
     fzp_checks = [checker.get_name() for checker in AVAILABLE_CHECKERS]
@@ -365,8 +453,13 @@ def main():
                     fzp_files.add(os.path.join(args.path, filepath))
                 elif filepath.endswith(".svg"):
                     fzp_files.update(checker_runner._search_fzp_files_with_svg(filepath, args.path))
-        elif args.svg and os.path.isdir(args.path):
+        elif args.svg and args.path and os.path.isdir(args.path):
+            # Search for FZP files that reference the SVG file
             fzp_files.update(checker_runner._search_fzp_files_with_svg(args.svg, args.path))
+        elif args.svg and not args.path:
+            # For SVG files without path, run SVG checks directly
+            exit_code = checker_runner.check_svg_file(args.svg, selected_svg_checks, fix=args.fix)
+            exit(exit_code)
         elif os.path.isfile(args.path):
             if args.path.endswith(".fzp") or args.path.endswith(".fzpz"):
                 fzp_files.add(args.path)
