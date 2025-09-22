@@ -301,7 +301,7 @@ class SVGIdsChecker(SVGChecker):
         return self.get_result()
 
     def fix(self, filename):
-        """Fix duplicate 'label' IDs by combining consecutive text elements into a single text element with tspan children"""
+        """Fix SVG ID issues: 1) Remove empty IDs, 2) Fix duplicate 'label' IDs by combining consecutive text elements"""
         import re
 
         # Use the provided filename
@@ -311,11 +311,18 @@ class SVGIdsChecker(SVGChecker):
             return False
 
         # Find all text elements with id="label" - use namespace-agnostic XPath
+        fixes_applied = False
+        
+        # Read the original file for string-based operations
+        with open(svg_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+
         label_elements = self.svg_doc.xpath("//*[local-name()='text' and @id='label']")
 
         if len(label_elements) <= 1:
-            self.logger.debug(f"No duplicate text elements with id='label' to fix in {svg_path}")
-            return False
+            if not fixes_applied:
+                self.logger.debug(f"No duplicate text elements with id='label' to fix in {svg_path}")
+            return fixes_applied
 
         self.logger.debug(f"Found {len(label_elements)} text elements with id='label' in {svg_path}")
 
@@ -339,22 +346,20 @@ class SVGIdsChecker(SVGChecker):
 
         self.logger.debug(f"Found {len(groups_to_fix)} groups of consecutive label elements to fix")
 
-        # Use string-based replacement to preserve formatting
-        # Read the original file
-        with open(svg_path, 'r', encoding='utf-8') as file:
-            content = file.read()
-
         # Process each group (in reverse order to maintain positions)
         for i, group in enumerate(reversed(groups_to_fix)):
             self.logger.debug(f"Creating group {i+1} with {len(group)} text elements")
             content = self._replace_label_group_in_content(content, group)
 
-        # Write the modified content
-        with open(svg_path, 'w', encoding='utf-8') as file:
-            file.write(content)
+            self.add_fix(f"Successfully fixed {len(groups_to_fix)} groups of duplicate label IDs in {svg_path}")
+            fixes_applied = True
 
-        self.add_fix(f"Successfully fixed {len(groups_to_fix)} groups of duplicate label IDs in {svg_path}")
-        return True
+        # Write the modified content back if any fixes were applied
+        if fixes_applied:
+            with open(svg_path, 'w', encoding='utf-8') as file:
+                file.write(content)
+
+        return fixes_applied
 
     def _replace_label_group_in_content(self, content, text_elements):
         """Replace consecutive text elements with id='label' with a single text element containing tspan children"""
