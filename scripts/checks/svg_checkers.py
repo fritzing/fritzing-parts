@@ -195,14 +195,14 @@ class SVGFontTypeChecker(SVGChecker):
                 with open(filename, 'w', encoding='utf-8') as file:
                     file.write(content)
                 self.logger.debug(f"SVG file '{filename}' has been updated successfully")
-                return True
+                return self.fixes
             else:
                 self.logger.debug("No fonts found to replace. No changes made.")
-                return False
+                return self.fixes
 
         except Exception as e:
             print(f"Failed to process SVG file: {str(e)}")
-            return False
+            return self.fixes
 
     def check_font_type(self, element):
         font_family = SVGUtils.get_inherited_attribute(element, "font-family")
@@ -337,7 +337,7 @@ class SVGIdsChecker(SVGChecker):
         if len(label_elements) <= 1:
             if not fixes_applied:
                 self.logger.debug(f"No duplicate text elements with id='label' to fix in {svg_path}")
-            return fixes_applied
+            return self.fixes
 
         self.logger.debug(f"Found {len(label_elements)} text elements with id='label' in {svg_path}")
 
@@ -353,7 +353,7 @@ class SVGIdsChecker(SVGChecker):
         if not groups_to_fix:
             # We have duplicates but no consecutive groups - this can't be auto-fixed
             self.add_error(f"Found {len(label_elements)} duplicate label IDs that are not consecutive and cannot be automatically fixed in {svg_path}")
-            return False
+            return self.fixes
         elif total_fixable_elements < len(label_elements):
             # We have some consecutive groups but also some non-consecutive duplicates
             non_consecutive_count = len(label_elements) - total_fixable_elements
@@ -374,7 +374,7 @@ class SVGIdsChecker(SVGChecker):
             with open(svg_path, 'w', encoding='utf-8') as file:
                 file.write(content)
 
-        return fixes_applied
+        return self.fixes
 
     def _replace_label_group_in_content(self, content, text_elements):
         """Replace consecutive text elements with id='label' with a single text element containing tspan children"""
@@ -616,7 +616,7 @@ class SVGGornChecker(SVGChecker):
     def fix(self, svg_path):
         """Remove gorn attributes from the SVG file"""
         if self.errors == 0:
-            return False
+            return self.fixes
             
         try:
             # Read the file content
@@ -631,13 +631,12 @@ class SVGGornChecker(SVGChecker):
                 # Write the updated content back
                 with open(svg_path, 'w', encoding='utf-8') as f:
                     f.write(updated_content)
-                print(f"Removed {count} gorn attributes from {svg_path}")
-                return True
+                self.add_fix(f"Removed {count} gorn attributes from {svg_path}")
             
         except Exception as e:
             print(f"Error removing gorn attributes from {svg_path}: {e}")
         
-        return False
+        return self.fixes
     
     @staticmethod
     def get_name():
