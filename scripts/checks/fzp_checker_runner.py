@@ -161,6 +161,11 @@ class FZPCheckerRunner:
             if not svg_doc:
                 continue
                 
+            # Show which SVG file is being checked for this view
+            svg_path = svg_paths.get(view.tag)
+            if svg_path:
+                self.logger.info(f"Checking SVG file: {svg_path}")
+                
             layers_elements = view.xpath("layers")
             if layers_elements:
                 layers = layers_elements[0]
