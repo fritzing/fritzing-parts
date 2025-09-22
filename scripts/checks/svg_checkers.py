@@ -612,7 +612,10 @@ class SVGGornChecker(SVGChecker):
     def fix(self, svg_path):
         """Remove gorn attributes from the SVG file"""
         if self.errors == 0:
+            self.logger.debug(f"No gorns to fix for {svg_path}")
             return self.fixes
+        else:
+            self.logger.debug(f"{self.errors} gorns to fix for {svg_path}")
             
         # Read the file content
         with open(svg_path, 'r', encoding='utf-8') as f:
