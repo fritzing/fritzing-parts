@@ -7,16 +7,17 @@ from .fzp_utils import FZPUtils
 import json
 import re
 import os
+import logging
 
 class FZPCheckerRunner:
-    def __init__(self, path, verbose=False):
+    def __init__(self, path):
         self.path = path
-        self.verbose = verbose
         self.total_errors = 0
         self.total_warnings = 0
         self.extracted_dir = None  # For fzpz cleanup
         self.checks_run = 0
         self.errors_fixed = 0
+        self.logger = logging.getLogger(self.__class__.__name__)
 
     def check(self, check_types, svg_check_types, fix=False):
         self.total_errors = 0
@@ -30,12 +31,10 @@ class FZPCheckerRunner:
             try:
                 self.path = FZPUtils.extract_fzpz(self.path)
                 self.extracted_dir = os.path.dirname(self.path)
-                if self.verbose:
-                    print(f"Extracted FZPZ to: {self.extracted_dir}")
+                self.logger.debug(f"Extracted FZPZ to: {self.extracted_dir}")
                 # Debug: list extracted files
-                if self.verbose:
-                    extracted_files = os.listdir(self.extracted_dir)
-                    print(f"Extracted files: {extracted_files}")
+                extracted_files = os.listdir(self.extracted_dir)
+                self.logger.debug(f"Extracted files: {extracted_files}")
             except Exception as e:
                 print(f"Error extracting FZPZ file {original_path}: {str(e)}")
                 self.total_errors += 1
@@ -53,13 +52,11 @@ class FZPCheckerRunner:
         svg_docs = self._load_svg_docs(fzp_doc)
         svg_paths = self._get_svg_paths(fzp_doc)
 
-        if self.verbose:
-            print(f"Scanning file: {self.path}")
+        self.logger.info(f"Scanning file: {self.path}")
 
         for check_type in check_types:
             checker = self._get_checker(check_type, fzp_doc, svg_docs)
-            if self.verbose:
-                print(f"Running check: {checker.get_name()}")
+            self.logger.debug(f"Running check: {checker.get_name()}")
 
             errors, warnings = checker.check()
             self.total_errors += errors
@@ -74,10 +71,10 @@ class FZPCheckerRunner:
         if svg_check_types:
             self._run_svg_checkers(fzp_doc, svg_docs, svg_paths, svg_check_types, fix)
 
-        if self.verbose or self.total_errors > 0 or self.total_warnings > 0:
-            print(f"Total errors in {self.path}: {self.total_errors}")
+        if self.total_errors > 0 or self.total_warnings > 0:
+            self.logger.info(f"Total errors in {self.path}: {self.total_errors}")
             if self.total_warnings > 0:
-                print(f"Total warnings in {self.path}: {self.total_warnings}")
+                self.logger.info(f"Total warnings in {self.path}: {self.total_warnings}")
 
         fzp_doc.getroot().clear()
         for svg_doc in svg_docs.values():
@@ -176,8 +173,7 @@ class FZPCheckerRunner:
 
                 for check_type in svg_check_types:
                     checker = self._get_svg_checker(check_type, svg_doc, layer_ids)
-                    if self.verbose:
-                        print(f"Running SVG check: {checker.get_name()} for {view.tag}")
+                    self.logger.debug(f"Running SVG check: {checker.get_name()} for {view.tag}")
                     errors, warnings = checker.check()
                     self.total_errors += errors
                     self.total_warnings += warnings
@@ -289,6 +285,12 @@ def main():
 
     args = parser.parse_args()
 
+    # Configure logging based on verbose flag
+    if args.verbose:
+        logging.basicConfig(level=logging.DEBUG, format='%(message)s')
+    else:
+        logging.basicConfig(level=logging.INFO, format='%(message)s')
+
     # Show standard help if no path provided
     if not args.path:
         parser.print_help()
@@ -315,7 +317,7 @@ def main():
         total_checks_run = 0
         total_errors_fixed = 0
 
-        checker_runner = FZPCheckerRunner(None, verbose=args.verbose)
+        checker_runner = FZPCheckerRunner(None)
 
         fzp_files = set()
         file_list = []
@@ -351,8 +353,9 @@ def main():
             print(f"Error: Path '{args.path}' does not exist or is not accessible")
             exit(1)
 
-        if args.verbose:
-            print(f"Checking {len(fzp_files)} FZP files")
+        # Create a logger for main function messages
+        logger = logging.getLogger('fzp_checker_main')
+        logger.info(f"Checking {len(fzp_files)} FZP files")
 
         for fzp_file in sorted(fzp_files):
             checker_runner.path = fzp_file

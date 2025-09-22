@@ -11,7 +11,7 @@ class TestCheckers(unittest.TestCase):
 
     def test_valid_xml(self):
         fzp_file = os.path.join(self.test_data_dir, 'valid_xml.fzp.test')
-        checker_runner = FZPCheckerRunner(fzp_file, verbose=self.verbose)
+        checker_runner = FZPCheckerRunner(fzp_file)
 
         captured_output = StringIO()
         sys.stdout = captured_output
@@ -23,7 +23,7 @@ class TestCheckers(unittest.TestCase):
 
     def test_invalid_xml(self):
         fzp_file = os.path.join(self.test_data_dir, 'invalid_xml.fzp.test')
-        checker_runner = FZPCheckerRunner(fzp_file, verbose=self.verbose)
+        checker_runner = FZPCheckerRunner(fzp_file)
 
         captured_output = StringIO()
         sys.stdout = captured_output
@@ -35,7 +35,7 @@ class TestCheckers(unittest.TestCase):
 
     def run_checker(self, fzp_filename, fzp_checkers, svg_checkers, expected_errors, expected_message, expected_warnings=None):
         fzp_file = os.path.join(self.test_data_dir, fzp_filename)
-        checker_runner = FZPCheckerRunner(fzp_file, verbose=self.verbose)
+        checker_runner = FZPCheckerRunner(fzp_file)
 
         # Run specific FZP and SVG checkers for this test case
         checker_runner.check(fzp_checkers, svg_checkers)
@@ -354,16 +354,16 @@ class TestCheckers(unittest.TestCase):
                 f.write(content)
             
             # Test initial state - should have gorn attributes
-            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner = FZPCheckerRunner(temp_fzp)
             checker_runner.check([], ['svg-gorn'], fix=False)
             self.assertEqual(checker_runner.total_errors, 3, "Should initially have 3 gorn errors")
             
             # Apply fix
-            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner = FZPCheckerRunner(temp_fzp)
             checker_runner.check([], ['svg-gorn'], fix=True)
             
             # Check that fix was successful
-            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner = FZPCheckerRunner(temp_fzp)
             checker_runner.check([], ['svg-gorn'], fix=False)
             self.assertEqual(checker_runner.total_errors, 0, "Should have no gorn errors after fix")
 
@@ -409,13 +409,13 @@ class TestCheckers(unittest.TestCase):
                 f.write(content)
 
             # Test initial state - should have duplicate ID errors
-            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner = FZPCheckerRunner(temp_fzp)
             checker_runner.check([], ['ids'], fix=False)
             initial_errors = checker_runner.total_errors
             self.assertGreater(initial_errors, 0, "Should initially have duplicate ID errors")
 
             # Apply fix
-            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner = FZPCheckerRunner(temp_fzp)
             checker_runner.check([], ['ids'], fix=True)
 
             # Verify that the SVG was modified to combine consecutive text elements
@@ -431,7 +431,7 @@ class TestCheckers(unittest.TestCase):
             self.assertGreater(tspan_count, 0, "Should have tspan elements after fix")
 
             # Check that fix reduced errors (though may not eliminate all due to non-text duplicates)
-            checker_runner = FZPCheckerRunner(temp_fzp, verbose=False)
+            checker_runner = FZPCheckerRunner(temp_fzp)
             checker_runner.check([], ['ids'], fix=False)
             final_errors = checker_runner.total_errors
             self.assertLess(final_errors, initial_errors, "Should have fewer duplicate ID errors after fix")
