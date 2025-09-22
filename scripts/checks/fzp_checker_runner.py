@@ -237,9 +237,6 @@ class FZPCheckerRunner:
             print(f"Error: Invalid XML in SVG file '{svg_path}': {str(e)}")
             return 1
         
-        svg_errors = 0
-        svg_warnings = 0
-        svg_fixes = 0
         all_issues = []
         all_fixes = []
         
@@ -250,8 +247,6 @@ class FZPCheckerRunner:
             self.logger.debug(f"Running SVG check: {checker.get_name()}")
             
             errors, warnings = checker.check()
-            svg_errors += errors
-            svg_warnings += warnings
             
             # Collect issues from this checker
             all_issues.extend(checker.issues)
@@ -259,52 +254,143 @@ class FZPCheckerRunner:
             # Apply fixes if requested
             if fix and errors > 0 and hasattr(checker, 'fix'):
                 if checker.fix(svg_path):
-                    fixes_count = checker.get_fixes_count()
-                    svg_fixes += fixes_count
                     # Collect fixes from this checker
                     all_fixes.extend(checker.fixes)
         
-        # Print results
-        print(f"\nSummary:")
-        print(f"  Files checked: 1 (SVG only)")
-        print(f"  Checks run: {len(selected_svg_checks)} (SVG checks only)")
-        print(f"  Errors found: {svg_errors}")
-        if svg_warnings > 0:
-            print(f"  Warnings found: {svg_warnings}")
-        print(f"  Errors fixed: {svg_fixes}")
+        # Create file result structure for SVG-only check
+        # Treat the SVG file as the main file (like an FZP file would be)
+        file_result = {
+            'file': svg_path,
+            'checks': len(selected_svg_checks),
+            'issues': all_issues[:],  # SVG issues as main issues
+            'fix_results': all_fixes[:]  # SVG fixes as main fixes
+            # No 'svg_files' key since this IS the SVG file
+        }
         
+        # Show hint before the report
         print(f"\n💡 Hint: To find FZP files that use this SVG and run additional checks, try:")
         print(f"   python fzp_checker.py -s {svg_path} /path/to/fzp/directory")
         print(f"   Example: python fzp_checker.py -s {svg_path} contrib/")
         
+        # Use the unified reporting method
+        self.generate_report([file_result], verbose=self.logger.isEnabledFor(logging.DEBUG))
+        
+        # Return error count for exit code
+        return len([issue for issue in all_issues if issue.severity == 'error'])
+
+    def generate_report(self, file_results, verbose=False):
+        """Generate a formatted report for checker results"""
+        # Calculate totals from the collected data
+        total_files_checked = len(file_results)
+        total_checks_run = sum(result['checks'] for result in file_results)
+        total_errors = 0
+        total_warnings = 0
+        total_errors_fixed = 0
+        
+        # Calculate totals and add counts to each result
+        for result in file_results:
+            # Count FZP errors/warnings/fixes
+            fzp_errors = len([issue for issue in result['issues'] if issue.severity == 'error'])
+            fzp_warnings = len([issue for issue in result['issues'] if issue.severity == 'warning'])
+            fzp_fixes = len(result['fix_results'])
+            
+            result['errors'] = fzp_errors
+            result['warnings'] = fzp_warnings
+            result['fixes'] = fzp_fixes
+            
+            total_errors += fzp_errors
+            total_warnings += fzp_warnings
+            total_errors_fixed += fzp_fixes
+            
+            # Process SVG results for this FZP
+            if 'svg_files' in result:
+                for svg_path, svg_result in result['svg_files'].items():
+                    svg_errors = len([issue for issue in svg_result['issues'] if issue.severity == 'error'])
+                    svg_warnings = len([issue for issue in svg_result['issues'] if issue.severity == 'warning'])
+                    svg_fixes = len(svg_result['fix_results'])
+                    
+                    svg_result['errors'] = svg_errors
+                    svg_result['warnings'] = svg_warnings
+                    svg_result['fixes'] = svg_fixes
+                    
+                    total_errors += svg_errors
+                    total_warnings += svg_warnings
+                    total_errors_fixed += svg_fixes
+        
+        # Print detailed summary
+        print(f"\nSummary:")
+        print(f"  Files checked: {total_files_checked}")
+        print(f"  Checks run: {total_checks_run}")
+        print(f"  Errors found: {total_errors}")
+        if total_warnings > 0:
+            print(f"  Warnings found: {total_warnings}")
+        print(f"  Errors fixed: {total_errors_fixed}")
+        
         print(f"\nFile Details:")
-        status_parts = []
-        if svg_errors == 0 and svg_warnings == 0:
-            status = "✓ CLEAN"
-        else:
-            if svg_errors > 0:
-                status_parts.append(f"{svg_errors} error{'s' if svg_errors > 1 else ''}")
-            if svg_warnings > 0:
-                status_parts.append(f"{svg_warnings} warning{'s' if svg_warnings > 1 else ''}")
-            status = "✗ " + ", ".join(status_parts)
         
-        fixes_info = ""
-        if svg_fixes > 0:
-            fixes_info = f" (fixed: {svg_fixes})"
-        
-        print(f"  {svg_path}: {status}{fixes_info}")
-        
-        # Show detailed messages
-        if all_issues:
-            for issue in all_issues:
-                severity_icon = "✗" if issue.severity == 'error' else "⚠"
-                print(f"    {severity_icon} {issue.message}")
+        # Show FZP files with their associated SVG files
+        for result in file_results:
+            # FZP file status
+            status_parts = []
+            if result['errors'] == 0 and result['warnings'] == 0:
+                status = "✓ CLEAN"
+            else:
+                if result['errors'] > 0:
+                    status_parts.append(f"{result['errors']} error{'s' if result['errors'] > 1 else ''}")
+                if result['warnings'] > 0:
+                    status_parts.append(f"{result['warnings']} warning{'s' if result['warnings'] > 1 else ''}")
+                status = "✗ " + ", ".join(status_parts)
+            
+            fixes_info = ""
+            if result['fixes'] > 0:
+                fixes_info = f" (fixed: {result['fixes']})"
                 
-        if all_fixes:
-            for fix in all_fixes:
-                print(f"    ✓ {fix.message}")
+            print(f"  {result['file']}: {status}{fixes_info}")
+            
+            # Show FZP-specific issues
+            if result['issues']:
+                for issue in result['issues']:
+                    severity_icon = "✗" if issue.severity == 'error' else "⚠"
+                    print(f"    {severity_icon} {issue.message}")
+                    
+            if result['fix_results']:
+                for fix in result['fix_results']:
+                    print(f"    ✓ {fix.message}")
+            
+            # Show associated SVG files
+            if result.get('svg_files'):
+                for svg_file, svg_result in sorted(result['svg_files'].items()):
+                    svg_status_parts = []
+                    if svg_result['errors'] == 0 and svg_result['warnings'] == 0:
+                        svg_status = "✓ CLEAN"
+                    else:
+                        if svg_result['errors'] > 0:
+                            svg_status_parts.append(f"{svg_result['errors']} error{'s' if svg_result['errors'] > 1 else ''}")
+                        if svg_result['warnings'] > 0:
+                            svg_status_parts.append(f"{svg_result['warnings']} warning{'s' if svg_result['warnings'] > 1 else ''}")
+                        svg_status = "✗ " + ", ".join(svg_status_parts)
+                    
+                    svg_fixes_info = ""
+                    if svg_result['fixes'] > 0:
+                        svg_fixes_info = f" (fixed: {svg_result['fixes']})"
+                        
+                    print(f"    └── {svg_file}: {svg_status}{svg_fixes_info}")
+                    
+                    # Show SVG-specific issues
+                    if svg_result['issues']:
+                        for issue in svg_result['issues']:
+                            severity_icon = "✗" if issue.severity == 'error' else "⚠"
+                            print(f"        {severity_icon} {issue.message}")
+                            
+                    if svg_result['fix_results']:
+                        for fix in svg_result['fix_results']:
+                            print(f"        ✓ {fix.message}")
         
-        return svg_errors
+        if total_files_checked > 1:
+            print()  # Extra line break after file details when multiple files
+
+        if verbose or total_errors > 0:
+            print(f"Total errors: {total_errors}")
 
     def search_and_check_fzp_files(self, svg_file, fzp_dir, check_types, svg_check_types):
         errors = 0
@@ -426,11 +512,6 @@ def main():
         if not selected_fzp_checks and not selected_svg_checks:
             raise ValueError("No valid check types specified.")
 
-        total_errors = 0
-        total_warnings = 0
-        total_files_checked = 0
-        total_checks_run = 0
-        total_errors_fixed = 0
         file_results = []  # Store results for each FZP file (including its SVG files)
 
         checker_runner = FZPCheckerRunner(None)
@@ -478,34 +559,22 @@ def main():
         logger = logging.getLogger('fzp_checker_main')
         logger.info(f"Checking {len(fzp_files)} FZP files")
 
+        total_errors = 0
         for fzp_file in sorted(fzp_files):
             checker_runner.path = fzp_file
             checker_runner.check(selected_fzp_checks, selected_svg_checks, fix=args.fix)
             
-            # Count FZP-only errors/warnings (exclude SVG issues)
-            fzp_errors = len([issue for issue in checker_runner.all_issues if issue.severity == 'error'])
-            fzp_warnings = len([issue for issue in checker_runner.all_issues if issue.severity == 'warning'])
-            fzp_fixes = len(checker_runner.all_fixes)
-            
-            # Process SVG results for this FZP
+            # Process SVG results for this FZP - just store raw data
             svg_results_for_fzp = {}
             for svg_path, svg_result in checker_runner.svg_file_results.items():
-                svg_errors = len([issue for issue in svg_result['issues'] if issue.severity == 'error'])
-                svg_warnings = len([issue for issue in svg_result['issues'] if issue.severity == 'warning'])
                 svg_results_for_fzp[svg_path] = {
-                    'errors': svg_errors,
-                    'warnings': svg_warnings,
-                    'fixes': len(svg_result['fixes']),
                     'issues': svg_result['issues'][:],
                     'fix_results': svg_result['fixes'][:]
                 }
             
-            # Store results for this FZP file (including its SVG results)
+            # Store results for this FZP file (including its SVG results) - just raw data
             file_result = {
                 'file': fzp_file,
-                'errors': fzp_errors,
-                'warnings': fzp_warnings,
-                'fixes': fzp_fixes,
                 'checks': checker_runner.checks_run,
                 'issues': checker_runner.all_issues[:],  # FZP issues only
                 'fix_results': checker_runner.all_fixes[:],  # FZP fixes only
@@ -514,82 +583,11 @@ def main():
             file_results.append(file_result)
             
             total_errors += checker_runner.total_errors
-            total_files_checked += 1
-            total_checks_run += checker_runner.checks_run
-            total_errors_fixed += checker_runner.errors_fixed
 
-        # Print detailed summary
-        print(f"\nSummary:")
-        print(f"  Files checked: {total_files_checked}")
-        print(f"  Checks run: {total_checks_run}")
-        print(f"  Errors found: {total_errors}")
-        print(f"  Errors fixed: {total_errors_fixed}")
-        
-        print(f"\nFile Details:")
-        
-        # Show FZP files with their associated SVG files
-        for result in file_results:
-            # FZP file status
-            status_parts = []
-            if result['errors'] == 0 and result['warnings'] == 0:
-                status = "✓ CLEAN"
-            else:
-                if result['errors'] > 0:
-                    status_parts.append(f"{result['errors']} error{'s' if result['errors'] > 1 else ''}")
-                if result['warnings'] > 0:
-                    status_parts.append(f"{result['warnings']} warning{'s' if result['warnings'] > 1 else ''}")
-                status = "✗ " + ", ".join(status_parts)
-            
-            fixes_info = ""
-            if result['fixes'] > 0:
-                fixes_info = f" (fixed: {result['fixes']})"
-                
-            print(f"  {result['file']}: {status}{fixes_info}")
-            
-            # Show FZP-specific issues
-            if result['issues']:
-                for issue in result['issues']:
-                    severity_icon = "✗" if issue.severity == 'error' else "⚠"
-                    print(f"    {severity_icon} {issue.message}")
-                    
-            if result['fix_results']:
-                for fix in result['fix_results']:
-                    print(f"    ✓ {fix.message}")
-            
-            # Show associated SVG files
-            if result['svg_files']:
-                for svg_file, svg_result in sorted(result['svg_files'].items()):
-                    svg_status_parts = []
-                    if svg_result['errors'] == 0 and svg_result['warnings'] == 0:
-                        svg_status = "✓ CLEAN"
-                    else:
-                        if svg_result['errors'] > 0:
-                            svg_status_parts.append(f"{svg_result['errors']} error{'s' if svg_result['errors'] > 1 else ''}")
-                        if svg_result['warnings'] > 0:
-                            svg_status_parts.append(f"{svg_result['warnings']} warning{'s' if svg_result['warnings'] > 1 else ''}")
-                        svg_status = "✗ " + ", ".join(svg_status_parts)
-                    
-                    svg_fixes_info = ""
-                    if svg_result['fixes'] > 0:
-                        svg_fixes_info = f" (fixed: {svg_result['fixes']})"
-                        
-                    print(f"    └── {svg_file}: {svg_status}{svg_fixes_info}")
-                    
-                    # Show SVG-specific issues
-                    if svg_result['issues']:
-                        for issue in svg_result['issues']:
-                            severity_icon = "✗" if issue.severity == 'error' else "⚠"
-                            print(f"        {severity_icon} {issue.message}")
-                            
-                    if svg_result['fix_results']:
-                        for fix in svg_result['fix_results']:
-                            print(f"        ✓ {fix.message}")
-        
-        if total_files_checked > 1:
-            print()  # Extra line break after file details when multiple files
+        # Generate report using the extracted method
+        checker_runner.generate_report(file_results, verbose=args.verbose)
 
         if args.verbose or total_errors > 0:
-            print(f"Total errors: {total_errors}")
             exit(total_errors)
 
     except ValueError as e:
