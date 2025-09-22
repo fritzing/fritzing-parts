@@ -160,20 +160,16 @@ class FZPConnectorTerminalChecker(FZPChecker):
             modified = True
 
         if modified:
-            try:
-                # Create a backup before modifying
-                backup_path = filename + ".bak"
-                if not os.path.exists(backup_path):
-                    self.fzp_doc.write(backup_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
-                    print(f"Backup created at '{backup_path}'.")
+            # Create a backup before modifying
+            backup_path = filename + ".bak"
+            if not os.path.exists(backup_path):
+                self.fzp_doc.write(backup_path, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+                print(f"Backup created at '{backup_path}'.")
 
-                # Write the modified XML back to the FZP file
-                self.fzp_doc.write(filename, pretty_print=True, xml_declaration=True, encoding='UTF-8')
-                print(f"FZP file '{filename}' has been updated successfully.")
-                return True
-            except Exception as e:
-                print(f"Failed to write FZP file '{filename}': {str(e)}")
-                return False
+            # Write the modified XML back to the FZP file
+            self.fzp_doc.write(filename, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+            print(f"FZP file '{filename}' has been updated successfully.")
+            return True
         else:
             print("No invalid terminal IDs found. No changes made.")
             return False
@@ -494,28 +490,23 @@ class FZPBusNodesChecker(FZPChecker):
 
         fixed = False
 
-        try:
-            with open(filename, 'r', encoding='UTF-8') as f:
-                content = f.read()
+        with open(filename, 'r', encoding='UTF-8') as f:
+            content = f.read()
 
-            for bus_id in self.buses_with_no_nodes:
-                # Pattern includes leading whitespace and entire line
-                pattern = re.compile(
-                    r'[\t ]*<bus\b[^>]*\bid\s*=\s*["\']{}["\'][^>]*/?>(?:[^<]*</bus>)?\r?\n'.format(re.escape(bus_id))
-                )
-                new_content, count = pattern.subn('', content)
-                if count > 0:
-                    fixed = True
-                    print(f"Fixed: Removed empty bus '{bus_id}'")
-                content = new_content
+        for bus_id in self.buses_with_no_nodes:
+            # Pattern includes leading whitespace and entire line
+            pattern = re.compile(
+                r'[\t ]*<bus\b[^>]*\bid\s*=\s*["\']{}["\'][^>]*/?>(?:[^<]*</bus>)?\r?\n'.format(re.escape(bus_id))
+            )
+            new_content, count = pattern.subn('', content)
+            if count > 0:
+                fixed = True
+                print(f"Fixed: Removed empty bus '{bus_id}'")
+            content = new_content
 
-            if fixed:
-                with open(filename, 'w', encoding='UTF-8') as f:
-                    f.write(content)
-
-        except Exception as e:
-            self.add_error(f"Failed while fixing buses: {str(e)}")
-            return False
+        if fixed:
+            with open(filename, 'w', encoding='UTF-8') as f:
+                f.write(content)
 
         return fixed
 
@@ -693,21 +684,17 @@ class FZPLayerIDsChecker(FZPChecker):
             if not svg_doc:
                 continue  # Skip if SVG not available
 
-            try:
-                # Check each layer ID
-                layer_elements = layers.xpath("layer")
-                for layer_element in layer_elements:
-                    layer_id = layer_element.get("layerId")
-                    if not layer_id:
-                        continue
+            # Check each layer ID
+            layer_elements = layers.xpath("layer")
+            for layer_element in layer_elements:
+                layer_id = layer_element.get("layerId")
+                if not layer_id:
+                    continue
 
-                    # Look for matching ID in SVG
-                    matching_elements = svg_doc.xpath(f"//*[@id='{layer_id}']")
-                    if not matching_elements:
-                        self.add_error(f"Layer ID '{layer_id}' from {view.tag} not found in SVG")
-
-            except Exception as e:
-                self.add_error(f"Error processing {view.tag} SVG: {str(e)}")
+                # Look for matching ID in SVG
+                matching_elements = svg_doc.xpath(f"//*[@id='{layer_id}']")
+                if not matching_elements:
+                    self.add_error(f"Layer ID '{layer_id}' from {view.tag} not found in SVG")
 
         return self.get_result()
 

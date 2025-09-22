@@ -150,59 +150,56 @@ class SVGFontTypeChecker(SVGChecker):
             filename: Path to the SVG file to write fixes to
         """
 
-        try:
-            # Read the original file
-            with open(filename, 'r', encoding='utf-8') as file:
-                content = file.read()
+        # Read the original file
+        with open(filename, 'r', encoding='utf-8') as file:
+            content = file.read()
 
-            modified = False
-            original_content = content
+        modified = False
+        original_content = content
 
-            # Pattern to match font-family with any quote style, including nested quotes
-            # Handles cases like font-family="'DroidSans, 'Droid Sans'"
-            pattern = r'font-family\s*=\s*(["\'])([^\1]*?)\1'
+        # Pattern to match font-family with any quote style, including nested quotes
+        # Handles cases like font-family="'DroidSans, 'Droid Sans'"
+        pattern = r'font-family\s*=\s*(["\'])([^\1]*?)\1'
 
-            def replace_font(match):
-                nonlocal modified
-                quote_char = match.group(1)  # The quote character used
-                font = match.group(2)        # The font name content
-                if font in self.FONT_REPLACEMENTS:
-                    new_font = self.FONT_REPLACEMENTS[font]
-                    if new_font == 'default':
-                        new_font = self.default_font
-                    modified = True
-                    self.add_fix(f"Replaced font '{font}' with '{new_font}' in {filename}")
-                    # Always use double quotes for consistency
-                    return f'font-family="{new_font}"'
-                return match.group(0)
+        def replace_font(match):
+            nonlocal modified
+            quote_char = match.group(1)  # The quote character used
+            font = match.group(2)        # The font name content
+            if font in self.FONT_REPLACEMENTS:
+                new_font = self.FONT_REPLACEMENTS[font]
+                if new_font == 'default':
+                    new_font = self.default_font
+                modified = True
+                self.add_fix(f"Replaced font '{font}' with '{new_font}' in {filename}")
+                # Always use double quotes for consistency
+                return f'font-family="{new_font}"'
+            return match.group(0)
 
-            # Debug: Show all matches found
-            matches = re.findall(pattern, content)
-            self.logger.debug(f"Font-family matches found: {matches}")
-            
-            # Make replacements
-            content = re.sub(pattern, replace_font, content)
+        # Debug: Show all matches found
+        matches = re.findall(pattern, content)
+        self.logger.debug(f"Font-family matches found: {matches}")
+        
+        # Make replacements
+        content = re.sub(pattern, replace_font, content)
 
-            if modified:
-                # Create backup if it doesn't exist
-                backup_path = filename + ".bak"
-                if not os.path.exists(backup_path):
-                    with open(backup_path, 'w', encoding='utf-8') as file:
-                        file.write(original_content)
-                    self.logger.debug(f"Backup created at '{backup_path}'")
+        if modified:
+            # Create backup if it doesn't exist
+            backup_path = filename + ".bak"
+            if not os.path.exists(backup_path):
+                with open(backup_path, 'w', encoding='utf-8') as file:
+                    file.write(original_content)
+                self.logger.debug(f"Backup created at '{backup_path}'")
 
-                # Write modified content only if changes were made
-                with open(filename, 'w', encoding='utf-8') as file:
-                    file.write(content)
-                self.logger.debug(f"SVG file '{filename}' has been updated successfully")
-                return self.fixes
-            else:
-                self.logger.debug("No fonts found to replace. No changes made.")
-                return self.fixes
-
-        except Exception as e:
-            print(f"Failed to process SVG file: {str(e)}")
+            # Write modified content only if changes were made
+            with open(filename, 'w', encoding='utf-8') as file:
+                file.write(content)
+            self.logger.debug(f"SVG file '{filename}' has been updated successfully")
             return self.fixes
+        else:
+            self.logger.debug("No fonts found to replace. No changes made.")
+            return self.fixes
+
+
 
     def check_font_type(self, element):
         font_family = SVGUtils.get_inherited_attribute(element, "font-family")
@@ -618,24 +615,20 @@ class SVGGornChecker(SVGChecker):
         if self.errors == 0:
             return self.fixes
             
-        try:
-            # Read the file content
-            with open(svg_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            # Use regex to remove gorn attributes (same pattern as removegorn.py)
-            gorn_pattern = r'\s*gorn="[\.\d]*"\s*'
-            updated_content, count = re.subn(gorn_pattern, ' ', content, flags=re.MULTILINE)
-            
-            if count > 0:
-                # Write the updated content back
-                with open(svg_path, 'w', encoding='utf-8') as f:
-                    f.write(updated_content)
-                self.add_fix(f"Removed {count} gorn attributes from {svg_path}")
-            
-        except Exception as e:
-            print(f"Error removing gorn attributes from {svg_path}: {e}")
+        # Read the file content
+        with open(svg_path, 'r', encoding='utf-8') as f:
+            content = f.read()
         
+        # Use regex to remove gorn attributes (same pattern as removegorn.py)
+        gorn_pattern = r'\s*gorn="[\.\d]*"\s*'
+        updated_content, count = re.subn(gorn_pattern, ' ', content, flags=re.MULTILINE)
+        
+        if count > 0:
+            # Write the updated content back
+            with open(svg_path, 'w', encoding='utf-8') as f:
+                f.write(updated_content)
+            self.add_fix(f"Removed {count} gorn attributes from {svg_path}")
+            
         return self.fixes
     
     @staticmethod
