@@ -362,7 +362,6 @@ class SVGIdsChecker(SVGChecker):
         for i, group in enumerate(reversed(groups_to_fix)):
             self.logger.debug(f"Creating group {i+1} with {len(group)} text elements")
             content = self._replace_label_group_in_content(content, group)
-
             self.add_fix(f"Successfully fixed {len(groups_to_fix)} groups of duplicate label IDs in {svg_path}")
             fixes_applied = True
 
