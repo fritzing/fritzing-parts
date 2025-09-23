@@ -34,22 +34,17 @@ class FZPCheckerRunner:
         # Handle fzpz files
         original_path = self.path
         if self.path.endswith('.fzpz'):
-            try:
-                self.path = FZPUtils.extract_fzpz(self.path)
-                self.extracted_dir = os.path.dirname(self.path)
-                self.logger.debug(f"Extracted FZPZ to: {self.extracted_dir}")
-                # Debug: list extracted files
-                extracted_files = os.listdir(self.extracted_dir)
-                self.logger.debug(f"Extracted files: {extracted_files}")
-            except Exception as e:
-                print(f"Error extracting FZPZ file {original_path}: {str(e)}")
-                self.total_errors += 1
-                return
+            self.path = FZPUtils.extract_fzpz(self.path)
+            self.extracted_dir = os.path.dirname(self.path)
+            self.logger.debug(f"Extracted FZPZ to: {self.extracted_dir}")
+            # Debug: list extracted files
+            extracted_files = os.listdir(self.extracted_dir)
+            self.logger.debug(f"Extracted files: {extracted_files}")
         
         try:
             fzp_doc = self._parse_fzp()
         except etree.XMLSyntaxError as e:
-            print(f"Invalid XML: {str(e)}")
+            self.logger.error(f"Invalid XML: {str(e)}")
             self.total_errors += 1
             self._cleanup_if_needed()
             return
@@ -134,7 +129,7 @@ class FZPCheckerRunner:
                         try:
                             svg_docs[view.tag] = etree.parse(svg_path)
                         except etree.XMLSyntaxError as e:
-                            print(f"Invalid XML in SVG {svg_path}: {str(e)}")
+                            self.logger.error(f"Invalid XML in SVG {svg_path}: {str(e)}")
                             svg_docs[view.tag] = None
                     else:
                         svg_docs[view.tag] = None
