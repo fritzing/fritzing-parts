@@ -30,13 +30,13 @@ class TestCheckers(unittest.TestCase):
         fzp_file = os.path.join(self.test_data_dir, 'invalid_xml.fzp.test')
         checker_runner = FZPCheckerRunner(fzp_file)
 
-        captured_output = StringIO()
-        sys.stdout = captured_output
         checker_runner.check([], [])
-        sys.stdout = sys.__stdout__
 
         self.assertEqual(checker_runner.total_errors, 1)
-        self.assertIn('Invalid XML', captured_output.getvalue())
+        # Check that the error is recorded in the errors list
+        self.assertTrue(len(checker_runner.all_issues) > 0)
+        error_messages = [issue.message for issue in checker_runner.all_issues]
+        self.assertTrue(any('Invalid XML' in msg for msg in error_messages))
 
     def run_checker(self, fzp_filename, fzp_checkers, svg_checkers, expected_errors, expected_message, expected_warnings=None):
         fzp_file = os.path.join(self.test_data_dir, fzp_filename)

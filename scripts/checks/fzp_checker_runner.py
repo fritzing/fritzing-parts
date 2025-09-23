@@ -3,6 +3,7 @@ from .fzp_checkers import *
 from .check_missing_leg_ids import *
 from .svg_checkers import *
 from .fzp_svg_checkers import FZPMissingConnectorRefsChecker
+from .fzp_checkers import ValidationIssue
 from .fzp_utils import FZPUtils
 import json
 import re
@@ -44,7 +45,11 @@ class FZPCheckerRunner:
         try:
             fzp_doc = self._parse_fzp()
         except etree.XMLSyntaxError as e:
-            self.logger.error(f"Invalid XML: {str(e)}")
+            error_msg = f"Invalid XML: {str(e)}"
+            self.logger.error(error_msg)
+            # Create ValidationIssue for XML syntax error
+            xml_error = ValidationIssue(error_msg, severity='error', node=None)
+            self.all_issues.append(xml_error)
             self.total_errors += 1
             self._cleanup_if_needed()
             return
@@ -129,7 +134,12 @@ class FZPCheckerRunner:
                         try:
                             svg_docs[view.tag] = etree.parse(svg_path)
                         except etree.XMLSyntaxError as e:
-                            self.logger.error(f"Invalid XML in SVG {svg_path}: {str(e)}")
+                            error_msg = f"Invalid XML in SVG {svg_path}: {str(e)}"
+                            self.logger.error(error_msg)
+                            # Create ValidationIssue for SVG XML syntax error
+                            xml_error = ValidationIssue(error_msg, severity='error', node=None)
+                            self.all_issues.append(xml_error)
+                            self.total_errors += 1
                             svg_docs[view.tag] = None
                     else:
                         svg_docs[view.tag] = None
