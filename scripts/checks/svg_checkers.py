@@ -618,21 +618,41 @@ class SVGGornChecker(SVGChecker):
             return self.fixes
         else:
             self.logger.debug(f"{self.errors} gorns to fix for {svg_path}")
-            
+
         # Read the file content
         with open(svg_path, 'r', encoding='utf-8') as f:
             content = f.read()
-        
-        # Use regex to remove gorn attributes (same pattern as removegorn.py)
-        gorn_pattern = r'\s*gorn="[\.\d]*"\s*'
+
+        # Find all gorn attributes with their details before removing them
+        gorn_pattern = r'\s*gorn="([\.\d]*)"\s*'
+        gorn_matches = []
+
+        # Split content into lines for line number tracking
+        lines = content.split('\n')
+        for line_num, line in enumerate(lines, 1):
+            for match in re.finditer(gorn_pattern, line):
+                gorn_value = match.group(1)
+                gorn_matches.append({
+                    'value': gorn_value,
+                    'line_number': line_num,
+                    'full_match': match.group(0).strip()
+                })
+
+        # Remove gorn attributes using the same pattern
         updated_content, count = re.subn(gorn_pattern, ' ', content, flags=re.MULTILINE)
-        
+
         if count > 0:
             # Write the updated content back
             with open(svg_path, 'w', encoding='utf-8') as f:
                 f.write(updated_content)
-            self.add_fix(f"Removed {count} gorn attributes from {svg_path}")
-            
+
+            # Add one detailed fix entry per gorn attribute removed
+            for gorn_info in gorn_matches:
+                self.add_fix(
+                    f"Removed gorn attribute '{gorn_info['full_match']}' (value: {gorn_info['value']}) from line {gorn_info['line_number']} in {svg_path}",
+                    line_number=gorn_info['line_number']
+                )
+
         return self.fixes
     
     @staticmethod
