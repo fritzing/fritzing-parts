@@ -596,6 +596,53 @@ class FZPPropertyFieldsChecker(FZPChecker):
                 self.add_error(f"Property '{name}' has an empty value.", node=prop)
         return self.get_result()
 
+    def fix(self, filename):
+        """Apply fixes for property issues using regex to avoid etree side effects."""
+        filename_base = os.path.basename(filename)
+        contains_adafruit = "Adafruit" in filename_base
+
+        with open(filename, 'r', encoding='UTF-8') as f:
+            content = f.read()
+
+        original_content = content
+
+        # Remove empty layer properties
+        empty_layer_pattern = r'[\t ]*<property name="layer">\s*</property>\r?\n?'
+        new_content, layer_removals = re.subn(empty_layer_pattern, '', content)
+        if layer_removals > 0:
+            self.add_fix(f"Removed {layer_removals} empty 'layer' property/properties")
+            content = new_content
+
+        if contains_adafruit:
+            # Set empty mn property to "Adafruit"
+            empty_mn_pattern = r'(<property name="mn">)\s*(</property>)'
+            mn_replacement = r'\1Adafruit\2'
+            new_content, mn_fixes = re.subn(empty_mn_pattern, mn_replacement, content)
+            if mn_fixes > 0:
+                self.add_fix("Set empty 'mn' property to 'Adafruit'")
+                content = new_content
+
+        # Find part number value to set mpn (if empty)
+        part_number_match = re.search(r'<property name="part number">([^<]+)</property>', content)
+        if part_number_match:
+            part_number_value = part_number_match.group(1).strip()
+
+            # Set empty mpn property to part number value
+            empty_mpn_pattern = r'<property name="mpn">\s*</property>'
+            mpn_replacement = f'<property name="mpn">{part_number_value}</property>'
+            new_content, mpn_fixes = re.subn(empty_mpn_pattern, mpn_replacement, content)
+            if mpn_fixes > 0:
+                self.add_fix(f"Set 'mpn' property to '{part_number_value}' from 'part number'")
+                content = new_content
+
+        # Write back if modified
+        if content != original_content:
+            with open(filename, 'w', encoding='UTF-8') as f:
+                f.write(content)
+            return True
+
+        return False
+
     @staticmethod
     def get_name():
         return "property_fields"
