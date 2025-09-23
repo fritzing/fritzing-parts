@@ -427,5 +427,198 @@ class TestCheckers(unittest.TestCase):
             self.assertGreater(len(fix_results), 0, "Should have applied some fixes - there are consecutive duplicate label IDs to fix")
             self.assertEqual(len(fix_results), checker.get_fixes_count(), "Fix results count should match fixes count")
 
+    def test_date_format_valid_iso(self):
+        """Test that valid ISO dates pass without changes"""
+        fzp_xml = """<?xml version="1.0"?>
+<module fritzingVersion="1.0.0" moduleId="test">
+    <version>1.0</version>
+    <date>2024-06-13</date>
+</module>"""
+
+        from .fzp_checkers import FZPDateFormatChecker
+
+        fzp_doc = etree.fromstring(fzp_xml)
+        checker = FZPDateFormatChecker(fzp_doc)
+        errors, warnings = checker.check()
+
+        self.assertEqual(errors, 0, "Valid ISO date should not produce errors")
+        self.assertEqual(warnings, 0, "Valid ISO date should not produce warnings")
+        self.assertEqual(len(checker.fixes), 0, "Valid ISO date should not need fixes")
+
+        # Date should remain unchanged
+        date_element = fzp_doc.find('.//date')
+        self.assertEqual(date_element.text, "2024-06-13")
+
+    def test_date_format_common_format_check(self):
+        """Test that common date format 'Thu Jun 13 2024' is detected by check method"""
+        fzp_xml = """<?xml version="1.0"?>
+<module fritzingVersion="1.0.0" moduleId="test">
+    <version>1.0</version>
+    <date>Thu Jun 13 2024</date>
+</module>"""
+
+        from .fzp_checkers import FZPDateFormatChecker
+
+        fzp_doc = etree.fromstring(fzp_xml)
+        checker = FZPDateFormatChecker(fzp_doc)
+        errors, warnings = checker.check()
+
+        self.assertEqual(errors, 0, "Fixable date should not produce errors")
+        self.assertEqual(warnings, 1, "Fixable date should produce one warning")
+        self.assertEqual(len(checker.fixes), 0, "Check method should not apply fixes")
+
+        # Date should remain unchanged after check
+        date_element = fzp_doc.find('.//date')
+        self.assertEqual(date_element.text, "Thu Jun 13 2024", "Date should be unchanged by check method")
+
+        # Check warning message
+        self.assertIn("2024-06-13", checker.issues[0].message)
+
+    def test_date_format_fix_method(self):
+        """Test that fix method properly converts date format"""
+        import tempfile
+        fzp_content = """<?xml version="1.0"?>
+<module fritzingVersion="1.0.0" moduleId="test">
+    <version>1.0</version>
+    <date>Thu Jun 13 2024</date>
+</module>"""
+
+        from .fzp_checkers import FZPDateFormatChecker
+
+        # Create temporary file
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.fzp', delete=False) as temp_file:
+            temp_file.write(fzp_content)
+            temp_filename = temp_file.name
+
+        try:
+            # Parse and check
+            fzp_doc = etree.fromstring(fzp_content)
+            checker = FZPDateFormatChecker(fzp_doc)
+
+            # Apply fixes
+            fixes = checker.fix(temp_filename)
+
+            # Read the modified file
+            with open(temp_filename, 'r') as f:
+                modified_content = f.read()
+
+            # Check that the date was converted
+            self.assertIn("2024-06-13", modified_content)
+            self.assertNotIn("Thu Jun 13 2024", modified_content)
+
+            # Check fix results
+            self.assertEqual(len(fixes), 1, "Should have applied one fix")
+            self.assertIn("Thu Jun 13 2024", fixes[0].message)
+            self.assertIn("2024-06-13", fixes[0].message)
+
+        finally:
+            # Clean up
+            os.unlink(temp_filename)
+
+    def test_date_format_japanese_format(self):
+        """Test Japanese date format conversion"""
+        fzp_xml = """<?xml version="1.0"?>
+<module fritzingVersion="1.0.0" moduleId="test">
+    <version>1.0</version>
+    <date>木 3 31 2016</date>
+</module>"""
+
+        from .fzp_checkers import FZPDateFormatChecker
+
+        fzp_doc = etree.fromstring(fzp_xml)
+        checker = FZPDateFormatChecker(fzp_doc)
+        errors, warnings = checker.check()
+
+        self.assertEqual(errors, 0, "Japanese date should be fixable")
+        self.assertEqual(warnings, 1, "Should produce one warning for fixable date")
+        self.assertEqual(len(checker.fixes), 0, "Check method should not apply fixes")
+
+        # Date should remain unchanged after check
+        date_element = fzp_doc.find('.//date')
+        self.assertEqual(date_element.text, "木 3 31 2016", "Date should remain unchanged by check method")
+
+    def test_date_format_ambiguous_dates(self):
+        """Test ambiguous date formats (DD/MM vs MM/DD)"""
+        test_cases = [
+            ("25/06/2024", "2024-06-25"),  # Clearly DD/MM (25 > 12)
+            ("06/25/2024", "2024-06-25"),  # Clearly MM/DD (25 > 12)
+            ("05/06/2024", "2024-06-05"),  # Ambiguous, defaults to DD/MM
+        ]
+
+        from .fzp_checkers import FZPDateFormatChecker
+
+        for input_date, expected_output in test_cases:
+            with self.subTest(input_date=input_date):
+                fzp_xml = f"""<?xml version="1.0"?>
+<module fritzingVersion="1.0.0" moduleId="test">
+    <version>1.0</version>
+    <date>{input_date}</date>
+</module>"""
+
+                fzp_doc = etree.fromstring(fzp_xml)
+                checker = FZPDateFormatChecker(fzp_doc)
+                errors, warnings = checker.check()
+
+                self.assertEqual(errors, 0, f"Date {input_date} should be fixable")
+                self.assertEqual(warnings, 1, f"Date {input_date} should produce one warning")
+
+                # Date should remain unchanged after check
+                date_element = fzp_doc.find('.//date')
+                self.assertEqual(date_element.text, input_date,
+                               f"Date {input_date} should remain unchanged by check method")
+
+    def test_date_format_invalid_dates(self):
+        """Test invalid date formats"""
+        invalid_dates = [
+            "Not a date",
+            "32/13/2024",
+            "June 32 2024",
+            "2024-13-01",
+            "",
+        ]
+
+        from .fzp_checkers import FZPDateFormatChecker
+
+        for invalid_date in invalid_dates:
+            with self.subTest(invalid_date=invalid_date):
+                fzp_xml = f"""<?xml version="1.0"?>
+<module fritzingVersion="1.0.0" moduleId="test">
+    <version>1.0</version>
+    <date>{invalid_date}</date>
+</module>"""
+
+                fzp_doc = etree.fromstring(fzp_xml)
+                checker = FZPDateFormatChecker(fzp_doc)
+                errors, warnings = checker.check()
+
+                # Should produce either an error or warning
+                total_issues = errors + warnings
+                self.assertGreater(total_issues, 0, f"Invalid date '{invalid_date}' should produce issues")
+
+    def test_date_format_empty_date(self):
+        """Test empty date element"""
+        fzp_xml = """<?xml version="1.0"?>
+<module fritzingVersion="1.0.0" moduleId="test">
+    <version>1.0</version>
+    <date></date>
+</module>"""
+
+        from .fzp_checkers import FZPDateFormatChecker
+
+        fzp_doc = etree.fromstring(fzp_xml)
+        checker = FZPDateFormatChecker(fzp_doc)
+        errors, warnings = checker.check()
+
+        self.assertEqual(warnings, 1, "Empty date should produce one warning")
+        self.assertIn("empty", checker.issues[0].message.lower())
+
+    def test_date_format_checker_name_and_description(self):
+        """Test checker metadata"""
+        from .fzp_checkers import FZPDateFormatChecker
+
+        self.assertEqual(FZPDateFormatChecker.get_name(), "date_format")
+        self.assertIn("date format", FZPDateFormatChecker.get_description().lower())
+        self.assertIn("ISO format", FZPDateFormatChecker.get_description())
+
 if __name__ == '__main__':
     unittest.main()

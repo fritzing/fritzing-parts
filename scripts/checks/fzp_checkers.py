@@ -5,6 +5,7 @@ from .fzp_utils import FZPUtils
 from .svg_utils import SVGUtils
 import re
 import logging
+import datetime
 
 
 class ValidationIssue:
@@ -705,3 +706,205 @@ class FZPLayerIDsChecker(FZPChecker):
     @staticmethod
     def get_description():
         return "Check that layer IDs in FZP file match with IDs in corresponding SVG files"
+
+
+class FZPDateFormatChecker(FZPChecker):
+    """Checker for date format validation and automatic fixing"""
+
+    def __init__(self, fzp_doc):
+        super().__init__(fzp_doc)
+
+    def check(self):
+        """Check date format in FZP file"""
+        # Find all date elements
+        date_elements = self.fzp_doc.xpath("//date")
+
+        for date_element in date_elements:
+            if date_element.text is None or not date_element.text.strip():
+                self.add_warning("Date element is empty", node=date_element)
+                continue
+
+            date_text = date_element.text.strip()
+
+            # Try to parse as ISO format first (this is the target format)
+            try:
+                datetime.date.fromisoformat(date_text)
+                # If successful, date is already in correct format
+                continue
+            except ValueError:
+                pass
+
+            # Try to parse and fix common date formats
+            converted_date = self._try_convert_date_format(date_text)
+
+            if converted_date:
+                # Report the issue - fix method will handle the actual fixing
+                self.add_warning(f"Date format '{date_text}' should be in YYYY-MM-DD format. Can be converted to: '{converted_date}'",
+                               node=date_element)
+            else:
+                # Unable to parse the date
+                self.add_error(f"Invalid date format: '{date_text}'. Expected YYYY-MM-DD format.",
+                             node=date_element)
+
+        return self.get_result()
+
+    def fix(self, filename):
+        """Apply date format fixes using regex to avoid etree side effects"""
+        with open(filename, 'r', encoding='UTF-8') as f:
+            content = f.read()
+
+        original_content = content
+
+        # Apply date format conversions using regex
+        fixes_applied = 0
+
+        # Pattern to match date elements
+        date_pattern = r'(<date>)(.*?)(</date>)'
+
+        def date_replacer(match):
+            nonlocal fixes_applied
+            date_text = match.group(2).strip()
+
+            # Skip if already in ISO format
+            try:
+                datetime.date.fromisoformat(date_text)
+                return match.group(0)  # Return unchanged
+            except ValueError:
+                pass
+
+            # Try to convert the date
+            converted_date = self._try_convert_date_format(date_text)
+            if converted_date:
+                fixes_applied += 1
+                self.add_fix(f"Converted date format from '{date_text}' to '{converted_date}'")
+                return f"{match.group(1)}{converted_date}{match.group(3)}"
+
+            return match.group(0)  # Return unchanged if can't convert
+
+        new_content = re.sub(date_pattern, date_replacer, content)
+
+        # Write back if changes were made
+        if new_content != original_content:
+            with open(filename, 'w', encoding='UTF-8') as f:
+                f.write(new_content)
+
+        return self.fixes
+
+    def _try_convert_date_format(self, date_text):
+        """Try to convert various date formats to ISO format (YYYY-MM-DD)"""
+
+        # Common date format patterns and their conversion logic
+        date_patterns = [
+            # Format: "Thu Jun 13 2024" or "Jun 13 2024" (with optional day name)
+            {
+                'pattern': r'^(?:\w{3}\s+)?(\w{3})\s+(\d{1,2})\s+(\d{4})$',
+                'months': {
+                    'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04', 'May': '05', 'Jun': '06',
+                    'Jul': '07', 'Aug': '08', 'Sep': '09', 'Oct': '10', 'Nov': '11', 'Dec': '12'
+                },
+                'converter': self._convert_month_day_year
+            },
+
+            # Format: "13/06/2024" or "13-06-2024" (ambiguous DD/MM/YYYY vs MM/DD/YYYY)
+            # We'll try both interpretations and use the valid one
+            {
+                'pattern': r'^(\d{1,2})[/-](\d{1,2})[/-](\d{4})$',
+                'converter': self._convert_ambiguous_date
+            },
+
+            # Format: "2024/06/13" or "2024-06-13" (YYYY/MM/DD or YYYY-MM-DD with wrong separator)
+            {
+                'pattern': r'^(\d{4})[/-](\d{1,2})[/-](\d{1,2})$',
+                'converter': self._convert_yyyy_mm_dd_fix_separator
+            },
+
+            # Japanese format: "木 3 31 2016" (from importer)
+            {
+                'pattern': r'^木\s+(\d+)\s+(\d+)\s+(\d+)$',
+                'converter': self._convert_japanese_format
+            }
+        ]
+
+        for pattern_info in date_patterns:
+            match = re.match(pattern_info['pattern'], date_text)
+            if match:
+                try:
+                    return pattern_info['converter'](match, pattern_info.get('months'))
+                except (ValueError, KeyError):
+                    continue
+
+        return None
+
+    def _convert_month_day_year(self, match, months_dict):
+        """Convert 'Thu Jun 13 2024' or 'Jun 13 2024' format"""
+        month_name = match.group(1)
+        day = int(match.group(2))
+        year = int(match.group(3))
+
+        if month_name not in months_dict:
+            raise ValueError(f"Unknown month: {month_name}")
+
+        month = months_dict[month_name]
+        return f"{year:04d}-{month}-{day:02d}"
+
+    def _convert_ambiguous_date(self, match, months_dict=None):
+        """Convert DD/MM/YYYY or MM/DD/YYYY format - try both interpretations"""
+        first_num = int(match.group(1))
+        second_num = int(match.group(2))
+        year = int(match.group(3))
+
+        # Try DD/MM/YYYY first (European format)
+        if 1 <= second_num <= 12 and 1 <= first_num <= 31:
+            day, month = first_num, second_num
+            # Additional validation: check for obviously wrong dates
+            if day > 12 and month <= 12:
+                # Definitely DD/MM format (e.g., 25/06/2024)
+                return f"{year:04d}-{month:02d}-{day:02d}"
+
+        # Try MM/DD/YYYY (US format)
+        if 1 <= first_num <= 12 and 1 <= second_num <= 31:
+            month, day = first_num, second_num
+            # Additional validation: check for obviously wrong dates
+            if first_num > 12:
+                # Can't be MM/DD format
+                raise ValueError("Invalid date format")
+            elif second_num > 12:
+                # Must be MM/DD format (e.g., 06/25/2024)
+                return f"{year:04d}-{month:02d}-{day:02d}"
+
+        # If both are valid (ambiguous case like 05/06/2024), default to DD/MM
+        if 1 <= second_num <= 12 and 1 <= first_num <= 12:
+            day, month = first_num, second_num
+            return f"{year:04d}-{month:02d}-{day:02d}"
+
+        raise ValueError("Invalid day or month")
+
+    def _convert_yyyy_mm_dd_fix_separator(self, match, months_dict=None):
+        """Convert YYYY/MM/DD or YYYY-MM-DD with wrong separator to YYYY-MM-DD"""
+        year = int(match.group(1))
+        month = int(match.group(2))
+        day = int(match.group(3))
+
+        if not (1 <= month <= 12) or not (1 <= day <= 31):
+            raise ValueError("Invalid day or month")
+
+        return f"{year:04d}-{month:02d}-{day:02d}"
+
+    def _convert_japanese_format(self, match, months_dict=None):
+        """Convert Japanese format '木 3 31 2016' to ISO format"""
+        month = int(match.group(1))
+        day = int(match.group(2))
+        year = int(match.group(3))
+
+        if not (1 <= month <= 12) or not (1 <= day <= 31):
+            raise ValueError("Invalid day or month")
+
+        return f"{year:04d}-{month:02d}-{day:02d}"
+
+    @staticmethod
+    def get_name():
+        return "date_format"
+
+    @staticmethod
+    def get_description():
+        return "Check and fix date format in FZP files. Supports multiple common date formats and converts them to ISO format (YYYY-MM-DD)"
