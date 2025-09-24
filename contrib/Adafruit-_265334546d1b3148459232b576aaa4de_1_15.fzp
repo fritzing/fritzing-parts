@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="Adafruit Pi Stemma QT Breakout.fzp" fritzingVersion="0.5.2b.02.18.4756" moduleId="Adafruit-_265334546d1b3148459232b576aaa4de_1_15">
+ <version>4</version>
+ <date>2025-07-10</date>
+ <author>Liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The&lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit Pi Stemma&lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> is a small, easily removable breakout that easily adds a 4-pin JST SH pin (Stemma QT or &lt;/span>&lt;a href="https://www.adafruit.com/?q=qwiic">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">Qwiic&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">) connector to your Raspberry Pi. The 2x3 socket design allows you to plug securely into the Pi's I2C bus with no soldering required, Works great if you want to add a &lt;/span>&lt;a href="https://www.adafruit.com/?q=jst%20sh%204-pin%20connector%20pack%20qwiic">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">QT connector&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> for quick I2C sensor and devices integration without any header-fiddling.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Pi Stemma has a 2x3 header on top that connects to the power and I2C pins, simply line up with the edge of the 2x20 connector on your Pi or Pi Compatible. It has a single JST SH connector that connects to your Pi's I2C bus (SDA, SCL, 3V, and Ground). It also features a 3.3V regulator, allowing it to work with all Qwiic or Stemma QT devices without risking a brownout dip. A green LED lets you know it's powered correctly. We also added two 10K pullup resistors since there are some Pi compatible boards that don't have them included.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">You can use it with any Linux single board computer or microcontroller that has '2x20 Pi-compatible pinout' (there are a lot!) and then&lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://circuitpython.org/blinka">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">check out Blinka, our Python interface library,&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> so &lt;/span>&lt;a href="https://circuitpython.readthedocs.io/projects/bundle/en/latest/">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">you can use our huge collection of CircuitPython libraries on SBC computers using Python&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;a href="https://www.adafruit.com/category/1005">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">Check out all our STEMMA QT offerings here, including a wide range of lengths and connectors&lt;/span>&lt;/a>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit Pi Stemma QT Breakout</title>
+ <tags/>
+ <properties>
+  <property name="family">STEMMA QT</property>
+  <property name="variant">variant 1</property>
+  <property name="part number">#6365</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_265334546d1b3148459232b576aaa4de_1_15_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_265334546d1b3148459232b576aaa4de_1_15_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_265334546d1b3148459232b576aaa4de_1_15_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_265334546d1b3148459232b576aaa4de_1_15_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="3.3V" type="female" id="connector12">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector12terminal" svgId="connector12pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="female" id="connector14">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector14terminal" svgId="connector14pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pad"/>
+     <p layer="copper1" svgId="connector14pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="female" id="connector13">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector13terminal" svgId="connector13pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pad"/>
+     <p layer="copper1" svgId="connector13pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector11">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector11terminal" svgId="connector11pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <label>Adafruit Pi Stemma QT Breakout</label>
+ <url>https://www.adafruit.com/product/6365</url>
+</module>

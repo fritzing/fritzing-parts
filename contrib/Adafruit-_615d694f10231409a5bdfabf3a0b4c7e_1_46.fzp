@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="Adafruit-_615d694f10231409a5bdfabf3a0b4c7e_1_46" referenceFile="Adafruit TMC2209 Stepper Motor Driver.fzp" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2025-01-10</date>
+ <author>Liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Stepper motors are used for CNC machines, 3D printers, and whenever else one needs precise, powerful motion. But to get good behavior from steppers you need a motor driver chip that can provide high bursts of current, and for smooth motion, be able to PWM that current for microstepping support. You can DIY this with a lot of timers, a microcontroller and an  H-Bridge chip - &lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; font-style:italic; color:#000000;">or &lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">you could take the easy way out and use an&lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;"> Adafruit TMC2209 Stepper Motor Driver Breakout Board&lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> which makes controlling stepper motors easy-breezy &lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; font-style:italic; color:#000000;">and&lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> super-silent. &lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">All you need is two output pins, no timers, PWM or real-time microcontroller. Set the DIRection pin high or low to set the spin orientation. Then toggle the STEP pin to take one microstep at a time. You can set whether you want to go faster with 1/8 microsteps, or increase the precision to 1/16, 1/32 or 1/64 microsteps per STEP toggle. If you want more control, say to single-step or up to 1/256 microsteps, you can do so via the UART interface (more on that later). By default the driver is set to 1/8 microstep mode, you can change it by tying the MS1/MS2 pins high, either with jumpers or with 2 more output pins. The step/microstep mode can even be adjusted on the fly! LEDs on the DIR and STEP pins let you get visual feedback of your motor signal.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The Trinamic drivers are often known as &amp;quot;silent&amp;quot; or &amp;quot;stealth&amp;quot; chips - compared to the A4988 they are unbelievably quiet, you can barely tell they are running thanks to the microstepping techniques used. This reduces noise and wear, to make users happy. There's also a lot of niceties like index output which will pulse when the microstepping counter cycles back to 'zero', and a diagnostic output to quickly alert the microcontroller of a big error like short or open circuits. It can also do 'sensor-less stop detection' with a feature called StallGuard - but for that you will need to use the UART interface.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The UART interface is a single-pin serial port with auto-baud detection that allows more precise communication, diagnostics and control. You can do things like set microsteps from 1 to 256, or set the speed with a single command. You can also configure settings like current limiting, over-heat temperature limit, PWM frequency, etc. You'll need a microcontroller library to use UART and it's an 'extra' - not essential for basic motion control! &lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The Trinamic TMC2209 is a popular driver chip, with small breakout boards used in many 3D printers. Those breakouts are great for plugging into motherboards, but are a little tough to use for prototyping. Our version comes with terminal blocks for the motor power and stepper wires, plus nicely labeled pins for control and mounting holes.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">We fabricated the board with 2 oz copper to give it a hand with the 2A-max current that this driver can handle. To use the current limiting capability, twist the onboard potentiometer: when all the way to the right we can get to up to 2A max. Note that the higher the currents will heat up both the motor driver and stepper so you may need to add heatsinking to the chip. We don't include a heatsink but you can get &lt;/span>&lt;a href="https://www.adafruit.com/product/1493">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">a tall ~80ºC/W&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> or &lt;/span>&lt;a href="https://www.adafruit.com/product/1515">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">short ~90ºC/W heatsink&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> to attach on top.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;">Features:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="https://www.analog.com/en/products/tmc2209.html">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">Trinamic TMC2209&lt;/span>&lt;/a>&lt;span style=" font-size:15px;"> silent &amp;quot;Stealth Chopper&amp;quot; DMOS microstepping driver with translator and overcurrent protection&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Motor voltage from 5V to 29VDC&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Vdd/Logic voltage from 3V to 5V, use with anything from an Arduino-compatible or ESP32 to Raspberry Pi other Single Board Computer&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Terminal screw block connections for easy VMotor power and 4-wire bi-polar stepper motor connection with 26-20AWG slots, 2.54mm / 0.1&amp;quot; spacing&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Control steppers using only two pins: DIRection and STEP&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Defaults to 1/8 microstep mode, change by pulling MS1/MS2 high (see &lt;/span>&lt;a href="https://www.analog.com/en/products/tmc2209.html">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">TMC2209 datasheet&lt;/span>&lt;/a>&lt;span style=" font-size:15px;"> for pin configuration) or via UART&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Red and Green LEDs on DIR signal to let you know forward or backward motion&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Yellow LED on STEP to let you know that motor driver is being moved&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Enable control line for low power / deactivation&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Index output will toggle when passing through the 'zero point' of the microsteps&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Diagnostic output will trigger on errors like shorted output or with &amp;quot;stall detection&amp;quot; (which requires UART configuration)&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Potentiometer to set current limiting, up to 2A&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">22uF 35V electrolytic capacitor on motor power&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">2 Oz copper for better current carrying and heatsinking&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Four mounting holes&lt;/span>&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Comes as one assembled and tested breakout plus a small strip of header. You'll need to do some light soldering to attach the header onto the breakout PCB. Microcontroller, motors, and power supply not included. You will need some sort of driver board that will toggle the DIR/STEP pins for you.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit TMC2209 Stepper Motor Driver</title>
+ <tags/>
+ <properties>
+  <property name="family">Motor Driver</property>
+  <property name="variant">variant 2</property>
+  <property name="part number">#6121</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_615d694f10231409a5bdfabf3a0b4c7e_1_46_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_615d694f10231409a5bdfabf3a0b4c7e_1_46_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_615d694f10231409a5bdfabf3a0b4c7e_1_46_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_615d694f10231409a5bdfabf3a0b4c7e_1_46_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="female" id="connector32" name="VMOTOR">
+   <description>VMOTOR</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector32pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector32pin" terminalId="connector32terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector32pad"/>
+     <p layer="copper1" svgId="connector32pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector33" name="VDD">
+   <description>VDD</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector33pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector33pin" terminalId="connector33terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector33pad"/>
+     <p layer="copper1" svgId="connector33pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector35" name="DIR">
+   <description>DIR</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector35pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector35pin" terminalId="connector35terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector35pad"/>
+     <p layer="copper1" svgId="connector35pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector36" name="STEP">
+   <description>STEP</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector36pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector36pin" terminalId="connector36terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector36pad"/>
+     <p layer="copper1" svgId="connector36pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector37" name="MS1">
+   <description>MS1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector37pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector37pin" terminalId="connector37terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector37pad"/>
+     <p layer="copper1" svgId="connector37pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector38" name="MS2">
+   <description>MS2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector38pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector38pin" terminalId="connector38terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector38pad"/>
+     <p layer="copper1" svgId="connector38pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector39" name="DIAG">
+   <description>DIAG</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector39pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector39pin" terminalId="connector39terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector39pad"/>
+     <p layer="copper1" svgId="connector39pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector40" name="INDEX">
+   <description>INDEX</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector40pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector40pin" terminalId="connector40terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector40pad"/>
+     <p layer="copper1" svgId="connector40pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector41" name="UART">
+   <description>UART</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector41pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector41pin" terminalId="connector41terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector41pad"/>
+     <p layer="copper1" svgId="connector41pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector42" name="ENABLE">
+   <description>ENABLE</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector42pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector42pin" terminalId="connector42terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector42pad"/>
+     <p layer="copper1" svgId="connector42pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector30" name="OUT2B">
+   <description>OUT2B</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector30pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector30pin" terminalId="connector30terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector30pad"/>
+     <p layer="copper1" svgId="connector30pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector29" name="OUT2A">
+   <description>OUT2A</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector29pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector29pin" terminalId="connector29terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector29pad"/>
+     <p layer="copper1" svgId="connector29pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector28" name="OUT1A">
+   <description>OUT1A</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector28pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector28pin" terminalId="connector28terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector28pad"/>
+     <p layer="copper1" svgId="connector28pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector27" name="OUT1B">
+   <description>OUT1B</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector27pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector27pin" terminalId="connector27terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector27pad"/>
+     <p layer="copper1" svgId="connector27pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector31" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector31pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector31pin" terminalId="connector31terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector31pad"/>
+     <p layer="copper1" svgId="connector31pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector34" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector34pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector34pin" terminalId="connector34terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector34pad"/>
+     <p layer="copper1" svgId="connector34pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector31"/>
+   <nodeMember connectorId="connector34"/>
+  </bus>
+ </buses>
+ <url>https://www.adafruit.com/product/6121</url>
+ <label>Adafruit TMC2209 Stepper Motor Driver</label>
+</module>

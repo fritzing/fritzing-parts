@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="ItsyBitsy RP2040 rev C1.fzp" fritzingVersion="0.5.2b.02.18.4756" moduleId="adafruit_8106318beffe9690c151e1f455d16d09_1_17">
+ <version>4</version>
+ <date>2025-07-28</date>
+ <author>kattni</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">A new chip means a new ItsyBitsy, and the Raspberry Pi RP2040 is no exception. When we saw this chip we thought &amp;quot;this chip is going to be awesome when we give it the ItsyBitsy teensy-weensy Treatment&amp;quot; and so we did! This Itsy' features the RP2040, &lt;a href="https://www.adafruit.com/category/1008">&lt;span style=" text-decoration: underline; color:#0068da;">and all niceties you know and love about the ItsyBitsy family&lt;/span>&lt;/a>&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">What's smaller than a Feather but larger than a Trinket? It's an Adafruit ItsyBitsy RP2040 featuring the Raspberry Pi RP2040! Small, powerful, with a ultra fast dual Cortex M0+ processor running at 125 MHz - this microcontroller board is perfect when you want something very compact, with lots of horsepower and a bunch of pins. This Itsy has sports car speed, but SUV roominess with 8 MB of FLASH and 264KB of SRAM.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">ItsyBitsy RP2040 is only 1.4&amp;quot; long by 0.7&amp;quot; wide, but has 6 power pins, 23 digital GPIO pins (4 of which can be analog in and 16 x PWM out). It's the same chip as the &lt;a href="https://www.adafruit.com/products/4884">&lt;span style=" text-decoration: underline; color:#0068da;">Feather RP2040&lt;/span>&lt;/a> and &lt;a href="https://www.adafruit.com/products/4883">&lt;span style=" text-decoration: underline; color:#0068da;">Raspberry Pi Pico&lt;/span>&lt;/a> &lt;span style=" font-style:italic;">but really really small&lt;/span>. So it's great once you've finished up a prototype, and want to make the project much smaller. It even comes with 8 MB of SPI Flash built in, for data logging, file storage, or CircuitPython/MicroPython code&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="https://www.adafruit.com/category/1008">&lt;span style=" text-decoration: underline; color:#0068da;">Same size and form-factor as the rest of the ItsyBitsy family&lt;/span>&lt;/a> and nearly-identical pinout&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Measures 1.4&amp;quot; x 0.7&amp;quot; x 0.2&amp;quot; (36mm x 18mm x 4mm) without headers soldered in&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">RP2040 32-bit Cortex M0+ dual core running at ~125 MHz @ 3.3V logic and power&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">264 KB RAM&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">8 MB SPI FLASH&lt;/span> chip for storing files and CircuitPython/MicroPython code storage. No EEPROM&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Tons of GPIO! 23 x GPIO pins with following capabilities:&lt;/span>&lt;/li>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 2;">&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Four &lt;/span>12 bit ADCs (one more than Pico)&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Two I2C, Two SPI and two UART peripherals, we label one for the 'main' interface in standard ItsyBitsy locations&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">16 x PWM outputs - for servos, LEDs, etc&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The 10 digital 'non-ADC/non-peripheral' GPIO are consecutive for maximum PIO compatibility&lt;/li>&lt;/ul>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Pin #13 red LED &lt;/span>for general purpose blinking&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">RGB NeoPixel &lt;/span>with power pin on GPIO so you can depower it for low power usages.&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Both Reset button and Bootloader select button for quick restarts (no unplugging-replugging to relaunch code) &lt;/span>&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3.3V regulator with 500mA peak current output&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3.3V Power/enable pin&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Power with either USB or external output (such as a battery) - it'll automatically switch over&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Broken-out SWD pins for debug access&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">12 MHz crystal for perfect timing.&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Special &lt;span style=" font-weight:600;">Vhigh&lt;/span> output pin gives you the higher voltage from VBAT or VUSB, for driving NeoPixels, servos, and other 5V-logic devices. &lt;span style=" font-weight:600;">Digital 5&lt;/span> level-shifted output for high-voltage logic level output.&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">USB Micro B connector &lt;/span>lets you access built-in ROM USB bootloader and serial port debugging&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Inside the RP2040 is a 'permanent ROM' USB UF2 bootloader&lt;/span>. What that means is when you want to program new firmware, you can hold down the BOOTSEL button while plugging it into USB (or pulling down the RUN/Reset pin to ground) and it will appear as a USB disk drive you can drag the firmware onto. Folks who have been using Adafruit products will find this very familiar - we use the technique on all our native-USB boards. Just note you don't double-click reset, instead hold down BOOTSEL during boot to enter the bootloader!&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The RP2040 is a powerful chip, which has the clock speed of our M4 (SAMD51), and two cores that are equivalent to our M0 (SAMD21). Since it is an M0 chip, it does not have a floating point unit or DSP hardware support - so if you're doing something with heavy floating point math, it will be done in software and thus not as fast as an M4. For many other computational tasks, you'll get close-to-M4 speeds!&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">For peripherals, there are two I2C controllers, two SPI controllers, and two UARTs that are multiplexed across the GPIO - check the pinout for what pins can be set to which. There are 16 PWM channels, each pin has a channel it can be set to (ditto on the pinout).&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">You'll note there's no I2S peripheral, or SDIO, or camera, what's up with that? Well instead of having specific hardware support for serial-data-like peripherals like these, the RP2040 comes with the PIO state machine system which is a unique and powerful way to create &lt;span style=" font-style:italic;">custom hardware logic and data processing blocks&lt;/span> that run on their own without taking up a CPU. For example, NeoPixels - often we bitbang the timing-specific protocol for these LEDs. For the RP2040, we instead use PIO object that reads in the data buffer and clocks out the right bitstream with perfect accuracy. &lt;a href="https://github.com/raspberrypi/pico-examples/tree/master/pio">&lt;span style=" text-decoration: underline; color:#0068da;">Same with I2S audio in or out, LED matrix displays, 8-bit or SPI based TFTs, even VGA&lt;/span>&lt;/a>! In MicroPython and CircuitPython you can create PIO control commands to script the peripheral and load it in at runtime. There are 2 PIO peripherals with 4 state machines each.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">At the time of launch, there is no Arduino core support for this board. There is great &lt;/span>&lt;a href="https://github.com/raspberrypi/pico-sdk">&lt;span style=" font-weight:600; text-decoration: underline; color:#0068da;">C/C++ support&lt;/span>&lt;/a>&lt;span style=" font-weight:600;">, an official &lt;/span>&lt;a href="https://github.com/raspberrypi/micropython">&lt;span style=" font-weight:600; text-decoration: underline; color:#0068da;">MicroPython port&lt;/span>&lt;/a>&lt;span style=" font-weight:600;">, and a &lt;/span>&lt;a href="https://circuitpython.org/downloads">&lt;span style=" font-weight:600; text-decoration: underline; color:#0068da;">CircuitPython port&lt;/span>&lt;/a>&lt;span style=" font-weight:600;">!&lt;/span> We of course &lt;a href="https://learn.adafruit.com/welcome-to-circuitpython">&lt;span style=" text-decoration: underline; color:#0068da;">recommend CircuitPython because we think it's the easiest way to get started&lt;/span>&lt;/a> and it has support with most of our drivers, displays, sensors, and more, supported out of the box so you can follow along with our CircuitPython projects and tutorials.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This Itsy comes with loose 0.1&amp;quot; headers you can solder in for breadboard use!&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">While the RP2040 has lots of onboard RAM (264KB), it does not have built-in FLASH memory. Instead, that is provided by the external QSPI flash chip. On this board there is 8 MB, which is shared between the program it's running and any file storage used by MicroPython or CircuitPython. When using C/C++ you get the whole flash memory, if using Python you will have about 7 MB remaining for code, files, images, fonts, etc.&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit ItsyBitsy RP2040</title>
+ <tags/>
+ <properties>
+  <property name="family">Adafruit ItsyBitsy RP2040</property>
+  <property name="variant">variant 2</property>
+  <property name="part number">Adafruit #4888</property>
+  <property name="mn">Adafruit</property>
+  <property name="mpn">Adafruit #4888</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_8106318beffe9690c151e1f455d16d09_1_17_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_8106318beffe9690c151e1f455d16d09_1_17_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_8106318beffe9690c151e1f455d16d09_1_17_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_8106318beffe9690c151e1f455d16d09_1_17_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VBAT" id="connector102" type="male">
+   <description>VBAT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector102pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector102terminal" svgId="connector102pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector102pad"/>
+     <p layer="copper1" svgId="connector102pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VBUS" id="connector104" type="male">
+   <description>VBUS</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector104pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector104terminal" svgId="connector104pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector104pad"/>
+     <p layer="copper1" svgId="connector104pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VHI" id="connector126" type="male">
+   <description>VHI</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector126pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector126terminal" svgId="connector126pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector126pad"/>
+     <p layer="copper1" svgId="connector126pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="+3V3" id="connector127" type="male">
+   <description>+3V3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector127pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector127terminal" svgId="connector127pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector127pad"/>
+     <p layer="copper1" svgId="connector127pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="+3V3" id="connector128" type="male">
+   <description>+3V3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector128pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector128terminal" svgId="connector128pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector128pad"/>
+     <p layer="copper1" svgId="connector128pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="!RESET" id="connector129" type="male">
+   <description>!RESET</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector129pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector129terminal" svgId="connector129pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector129pad"/>
+     <p layer="copper1" svgId="connector129pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A0" id="connector125" type="male">
+   <description>A0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector125pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector125terminal" svgId="connector125pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector125pad"/>
+     <p layer="copper1" svgId="connector125pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A1" id="connector124" type="male">
+   <description>A1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector124pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector124terminal" svgId="connector124pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector124pad"/>
+     <p layer="copper1" svgId="connector124pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A2" id="connector123" type="male">
+   <description>A2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector123pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector123terminal" svgId="connector123pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector123pad"/>
+     <p layer="copper1" svgId="connector123pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A3" id="connector122" type="male">
+   <description>A3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector122pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector122terminal" svgId="connector122pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector122pad"/>
+     <p layer="copper1" svgId="connector122pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D24" id="connector121" type="male">
+   <description>D24</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector121pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector121terminal" svgId="connector121pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector121pad"/>
+     <p layer="copper1" svgId="connector121pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D25" id="connector120" type="male">
+   <description>D25</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector120pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector120terminal" svgId="connector120pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector120pad"/>
+     <p layer="copper1" svgId="connector120pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCK" id="connector119" type="male">
+   <description>SCK</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector119pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector119terminal" svgId="connector119pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector119pad"/>
+     <p layer="copper1" svgId="connector119pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MOSI" id="connector118" type="male">
+   <description>MOSI</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector118pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector118terminal" svgId="connector118pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector118pad"/>
+     <p layer="copper1" svgId="connector118pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MISO" id="connector117" type="male">
+   <description>MISO</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector117pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector117terminal" svgId="connector117pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector117pad"/>
+     <p layer="copper1" svgId="connector117pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D2" id="connector116" type="male">
+   <description>D2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector116pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector116terminal" svgId="connector116pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector116pad"/>
+     <p layer="copper1" svgId="connector116pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="EN" id="connector97" type="female">
+   <description>EN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector97pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector97terminal" svgId="connector97pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector97pad"/>
+     <p layer="copper1" svgId="connector97pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SWDIO" id="connector98" type="female">
+   <description>SWDIO</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector98pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector98terminal" svgId="connector98pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector98pad"/>
+     <p layer="copper1" svgId="connector98pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SWCLK" id="connector99" type="female">
+   <description>SWCLK</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector99pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector99terminal" svgId="connector99pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector99pad"/>
+     <p layer="copper1" svgId="connector99pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D13" id="connector105" type="male">
+   <description>D13</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector105pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector105terminal" svgId="connector105pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector105pad"/>
+     <p layer="copper1" svgId="connector105pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D12" id="connector106" type="male">
+   <description>D12</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector106pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector106terminal" svgId="connector106pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector106pad"/>
+     <p layer="copper1" svgId="connector106pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D11" id="connector107" type="male">
+   <description>D11</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector107pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector107terminal" svgId="connector107pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector107pad"/>
+     <p layer="copper1" svgId="connector107pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D10" id="connector108" type="male">
+   <description>D10</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector108pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector108terminal" svgId="connector108pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector108pad"/>
+     <p layer="copper1" svgId="connector108pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D9" id="connector109" type="male">
+   <description>D9</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector109pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector109terminal" svgId="connector109pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector109pad"/>
+     <p layer="copper1" svgId="connector109pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D7" id="connector110" type="male">
+   <description>D7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector110pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector110terminal" svgId="connector110pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector110pad"/>
+     <p layer="copper1" svgId="connector110pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D5_5V" id="connector111" type="male">
+   <description>D5_5V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector111pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector111terminal" svgId="connector111pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector111pad"/>
+     <p layer="copper1" svgId="connector111pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" id="connector112" type="male">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector112pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector112terminal" svgId="connector112pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector112pad"/>
+     <p layer="copper1" svgId="connector112pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" id="connector113" type="male">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector113pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector113terminal" svgId="connector113pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector113pad"/>
+     <p layer="copper1" svgId="connector113pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="TX" id="connector114" type="male">
+   <description>TX</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector114pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector114terminal" svgId="connector114pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector114pad"/>
+     <p layer="copper1" svgId="connector114pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="RX" id="connector115" type="male">
+   <description>RX</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector115pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector115terminal" svgId="connector115pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector115pad"/>
+     <p layer="copper1" svgId="connector115pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D4" id="connector101" type="female">
+   <description>D4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector101pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector101terminal" svgId="connector101pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector101pad"/>
+     <p layer="copper1" svgId="connector101pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D3" id="connector100" type="female">
+   <description>D3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector100pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector100terminal" svgId="connector100pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector100pad"/>
+     <p layer="copper1" svgId="connector100pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector103" type="male">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector103pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector103terminal" svgId="connector103pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector103pad"/>
+     <p layer="copper1" svgId="connector103pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="+3v3">
+   <nodeMember connectorId="connector127"/>
+   <nodeMember connectorId="connector128"/>
+  </bus>
+ </buses>
+ <url>https://www.adafruit.com/product/4888</url>
+</module>

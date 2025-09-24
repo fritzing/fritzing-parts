@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="Adafruit-_675f963b36467c364eee281dd59f9a38_1_3B" referenceFile="Adafruit bq25185 Breakout.fzp" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2024-11-21</date>
+ <author>Liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">We're always on the look out for better ways to make projects portable: being able to charge your battery in the most convenient manner will let projects run no matter what power is available. The&lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit bq25185 USB / DC / Solar Charger Board&lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> uses the new &lt;/span>&lt;a href="https://www.ti.com/product/BQ25185">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">bq25185&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> is a nifty charger chip which has a lot of flexibility for different kinds of batteries (LiPoly, LiIon or LiFePO4), charging rates (250mA, 500mA, or 1A) and power sources (USB, DC or solar). It's also a great value, so it's a good upgrade from &lt;/span>&lt;a href="https://www.adafruit.com/product/259">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">MCP73833&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> or &lt;/span>&lt;a href="https://www.adafruit.com/product/4410">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">MCP73831-based&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> charger boards.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">To let folks really explore what this chip can do, we made a basic breakout board with all the things we find most useful: two ways to power/charge including a solar-friendly DC input, adjustable current and voltage, power path management, and status and control I/O.&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">USB Type C&lt;/span>&lt;span style=" font-size:15px;"> connector with 5.1k CC resistors so it will work with any computer or power supply to get 5V and up to 1A&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Separate DC or Solar Input &lt;/span>&lt;span style=" font-size:15px;">- Two pads on the side can be used to connect a 5 ~ 18V power supply, which can be used instead of USB. If the input is a solar panel, the charging chip will adjust the current draw so that the voltage does not dip below the battery, thus optimizing the solar power input. No large capacitor needed to stabilize it, and you get near-MPPT capability without the cost and complexity of MPPT.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Default charge rate of 1A&lt;/span>&lt;span style=" font-size:15px;">, but you can cut the &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">IS &lt;/span>&lt;span style=" font-size:15px;">jumper on the front and solder either jumper on the back to set the rate to 500mA or 250mA&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Default 3.7V nominal / 4.2V max&lt;/span>&lt;span style=" font-size:15px;"> battery chemistry/voltage for all modern 1-cell LiPoly or LiIon batteries. You can set this to 3.2V / 3.65V for&lt;/span>&lt;span style=" font-size:15px; font-weight:496;"> LiFePO4 &lt;/span>&lt;span style=" font-size:15px;">batteries by cutting the &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">VS&lt;/span>&lt;span style=" font-size:15px;"> jumper on the front and soldering a jumper on the back&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Power Path to Load&lt;/span>&lt;span style=" font-size:15px;"> - If the load connector is drawing current while the USB / DC/Solar power is attached, it will default to drawing current from the charger and any left over current will go to the battery. That keeps your battery from constantly charging/discharging which will reduce the battery life. The max draw from USB / DC / Solar is still 1A, if you need more current it will come from the battery and the chip can provide up to 3A current spikes from the battery to the load output!&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Regulated 4.5V-max Load Output&lt;/span>&lt;span style=" font-size:15px;"> - no matter what voltage you have on the USB or DC / solar inputs, the Load output port will never go above 4.5V due to an internal voltage regulator. Keep this in mind, though, when dealing with high currents and high DC voltages as the LDO will make the board start to overheat and throttle the current.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Three Status LEDs&lt;/span>&lt;span style=" font-size:15px;"> - Orange Charging LED, red Fault LED, and Green Power Good LED. The charge/fault pins are also available on the left side breakout pads.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Thermistor -&lt;/span>&lt;span style=" font-size:15px;"> cut the TH trace and you can connect a 10K thermistor to the TH pad which will adjust the charge rate to keep the battery from overheating.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Chip Enable &lt;/span>&lt;span style=" font-size:15px;">to disable the charger.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Mounting holes!&lt;/span>&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">This board is pretty much plug-and-play. Change any jumpers you like and then connect your battery to the BATT port, and the LOAD goes to your circuit. Don't forget the LOAD will never go above 4.5V, but it can go as low as 3.0V if the battery is nearly empty. You can monitor the voltage on the battery and load via the secondary pads on the right side, if necessary.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">To use with solar,&lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/category/580">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">pick up a 5~7V solar panel&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">, and either cut the connector off to wire it directly, or &lt;/span>&lt;a href="https://www.adafruit.com/product/2788">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">use a 2.1mm adapter cable&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> plus a &lt;/span>&lt;a href="https://www.adafruit.com/product/368">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">2.1mm terminal block&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> to get two wires for the DC Input port.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">If you need a board with higher charge current or a DC plug already on-board,&lt;/span>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/product/4755">&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">check out the bq24074 which has up to 1.5A charge rate and a on-board 2.1mm DC jack&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit bq25185 USB - DC - Solar Lithium Ion Polymer Charger</title>
+ <tags/>
+ <properties>
+  <property name="family">Solar Charger</property>
+  <property name="variant">variant 1</property>
+  <property name="part number">#6091</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_675f963b36467c364eee281dd59f9a38_1_3B_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_675f963b36467c364eee281dd59f9a38_1_3B_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_675f963b36467c364eee281dd59f9a38_1_3B_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_675f963b36467c364eee281dd59f9a38_1_3B_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="female" id="connector35" name="VBAT">
+   <description>VBAT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector35pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector35terminal" svgId="connector35pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector35pad" layer="copper0"/>
+     <p svgId="connector35pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector82" name="VBAT">
+   <description>VBAT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector82pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector82terminal" svgId="connector82pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector82pad" layer="copper0"/>
+     <p svgId="connector82pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector39" name="VSET">
+   <description>VSET</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector39pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector39terminal" svgId="connector39pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector39pad" layer="copper0"/>
+     <p svgId="connector39pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector86" name="5.0V">
+   <description>5.0V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector86pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector86terminal" svgId="connector86pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector86pad" layer="copper0"/>
+     <p svgId="connector86pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector33" name="5.0V">
+   <description>5.0V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector33pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector33terminal" svgId="connector33pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector33pad" layer="copper0"/>
+     <p svgId="connector33pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector38" name="THERM">
+   <description>THERM</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector38pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector38terminal" svgId="connector38pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector38pad" layer="copper0"/>
+     <p svgId="connector38pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector31" name="2">
+   <description>2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector31pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector31terminal" svgId="connector31pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector31pad" layer="copper0"/>
+     <p svgId="connector31pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector40" name="ISET">
+   <description>ISET</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector40pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector40terminal" svgId="connector40pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector40pad" layer="copper0"/>
+     <p svgId="connector40pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector41" name="STAT1">
+   <description>STAT1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector41pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector41terminal" svgId="connector41pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector41pad" layer="copper0"/>
+     <p svgId="connector41pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector42" name="STAT2">
+   <description>STAT2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector42pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector42terminal" svgId="connector42pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector42pad" layer="copper0"/>
+     <p svgId="connector42pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector43" name="/CE">
+   <description>/CE</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector43pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector43terminal" svgId="connector43pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector43pad" layer="copper0"/>
+     <p svgId="connector43pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector30" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector30pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector30terminal" svgId="connector30pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector30pad" layer="copper0"/>
+     <p svgId="connector30pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector32" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector32pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector32terminal" svgId="connector32pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector32pad" layer="copper0"/>
+     <p svgId="connector32pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector34" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector34pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector34terminal" svgId="connector34pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector34pad" layer="copper0"/>
+     <p svgId="connector34pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector85" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector85pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector85terminal" svgId="connector85pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector85pad" layer="copper0"/>
+     <p svgId="connector85pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector81" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector81pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector81terminal" svgId="connector81pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector81pad" layer="copper0"/>
+     <p svgId="connector81pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector30"/>
+   <nodeMember connectorId="connector32"/>
+   <nodeMember connectorId="connector34"/>
+   <nodeMember connectorId="connector85"/>
+   <nodeMember connectorId="connector81"/>
+  </bus>
+  <bus id="vbat">
+   <nodeMember connectorId="connector35"/>
+   <nodeMember connectorId="connector82"/>
+  </bus>
+  <bus id="5.0v">
+   <nodeMember connectorId="connector86"/>
+   <nodeMember connectorId="connector33"/>
+  </bus>
+ </buses>
+ <label>Adafruit bq25185 USB - DC - Solar Lithium Ion Polymer Charger</label>
+ <url>https://www.adafruit.com/product/6091</url>
+</module>

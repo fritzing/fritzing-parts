@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="Adafruit-_1a39c9bd7accf9cc618c550f469713b5_1_E9" referenceFile="Adafruit RP2350 HSTX to DVI Adapter.fzp" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2024-10-02</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">You may have noticed that our&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/product/6000">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">RP2350 Feather&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> has an FPC output connector on the end for accessing the HSTX (High Speed Transmission) peripheral. This new capability, not available on the RP2040, is specifically designed to allow the RP2350 chip drive DVI displays really easily! Historically you could &lt;/span>&lt;a href="https://www.adafruit.com/product/5710">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">use DVI on the RP2040&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> by mashing together some overclocking and a lot of PIO - it works but its quite hacky. The HSTX peripheral is streamlined, and doesn't require PIO or overclocking and there's a lot more RAM on the RP2350.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">If you want to try out HSTX to drive an HDMI monitor or display, this dongle is what you need to take HSTX out and give you a connector with proper level shifting and signal conditioning. Simply connect a 22 pin FPC cable between the Feather RP2350 and &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit RP2350 22-pin FPC HSTX to DVI Adapter for HDMI Displays &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">then load DVI output code. In CircuitPython, we have support for 320x240 pixels at 16-bit color, which gets pixel doubled to 640x480. Or, if you're willing to cut some colorspace to save RAM, you can get true 640x480 resolution at 4 / 8 bit color, or 1 / 2 bit grayscale.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The eight HSTX lines are connected to the differential Clock (IO #14 &amp;amp; 15), Lane0 (#18, 19), Lane1 (#16, #17), and Lane2 (#12, #13) connections. I2C is connected as well so you can read the display EEPROM. Hot-plug-detect is connected to IO #11 on the Feather, but can be disconnected by cutting a jumper on the bottom. Ditto for CEC which we connect by default to IO #10.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Each order comes with one DVI adapter board. &lt;/span>&lt;a href="https://www.adafruit.com/product/6034">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">22-pin FPC cable&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> is&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;"> not included,&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> so be sure to get one too!&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit RP2350 HSTX to DVI Adapter</title>
+ <tags/>
+ <properties>
+  <property name="part number"></property>
+  <property name="family">HSTX to DVI</property>
+  <property name="variant">variant 1</property>
+  <property name="mpn"></property>
+  <property name="mn">Adafruit</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_1a39c9bd7accf9cc618c550f469713b5_1_E9_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_1a39c9bd7accf9cc618c550f469713b5_1_E9_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_1a39c9bd7accf9cc618c550f469713b5_1_E9_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_1a39c9bd7accf9cc618c550f469713b5_1_E9_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors/>
+ <buses/>
+ <label>Adafruit RP2350 HSTX to DVI Adapter</label>
+ <url>https://www.adafruit.com/product/6055</url>
+</module>

@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="Adafruit-_8da72ed6b228da377b9f6f94da8b8070_1_65" fritzingVersion="0.5.2b.02.18.4756" referenceFile="Adafruit Simple Soil Moisture Sensor.fzp">
+ <version>4</version>
+ <date>2025-07-08</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Perfect for educational uses, the &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit Simple Soil Moisture Sensor&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> is low cost, and easy to use. This is a simple &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-style:italic; color:#000000;">resistive&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> style moisture sensor, where there's two prongs and the sensor measures the conductivity between the two. We gold-plated the prongs so reduce risk of oxidation - if you see build-up on the prongs, clean them off with a dish-scrubber to keep the sensor going.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">While not as advanced as a capacitive or frequency-based sensor, these are really easy to use! We're stocking this sensor for folks who want to use it with a micro:bit or Arduino or other board with an analog input. It won't work with a Raspberry Pi because those don't have analog inputs -&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/product/4026">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">for that use one of our capacitive sensors&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Getting started is super easy!&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;"> When using with a micro:bit&lt;/span>&lt;span style=" font-size:15px;"> you'll need some &lt;/span>&lt;a href="https://www.adafruit.com/product/4100">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">small alligator clips&lt;/span>&lt;/a>&lt;span style=" font-size:15px;">.  Connect the GND pad from the 'bit to the GND pad on the sensor. Connect the 3V pad to the 3V pad. Then connect the 0 pad on the 'bit to the OUT pad on the sensor (you can also use 1 or 2 pad on the 'bit). Then, on the micro:bit read the analog value. When soil is dry, the reading will be under 100. As the soil gets wetter it will rise to 1000. &lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">On an Arduino,&lt;/span>&lt;span style=" font-size:15px;"> connect 3V to the 3V output pin (or 5V if there's no 3V pin) and GND to ground. You can either use &lt;/span>&lt;a href="https://www.adafruit.com/product/3255">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">alligator-clips-to-pins&lt;/span>&lt;/a>&lt;span style=" font-size:15px;"> or a &lt;/span>&lt;a href="https://www.adafruit.com/product/5755">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">JST SH to 3-pin cable&lt;/span>&lt;/a>&lt;span style=" font-size:15px;">. Then connect the OUT to A0 or another analog input. When you use analogRead() you'll see dry soil at &amp;lt; 100 and wet soil &amp;gt; 600.&lt;/span>&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Either way, no soldering is required!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Please note: This is just the sensor, you'll also need alligator clips or a JST-SH cable to connect to it! &lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit Simple Soil Moisture Sensor</title>
+ <tags/>
+ <properties>
+  <property name="family">Sensor</property>
+  <property name="variant">variant 1</property>
+  <property name="mpn">#6362</property>
+  <property name="mn">Adafruit</property>
+  <property name="part number">#6362</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_8da72ed6b228da377b9f6f94da8b8070_1_65_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_8da72ed6b228da377b9f6f94da8b8070_1_65_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_8da72ed6b228da377b9f6f94da8b8070_1_65_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_8da72ed6b228da377b9f6f94da8b8070_1_65_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector19" type="pad" name="V+">
+   <description>V+</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector19terminal" layer="schematic" svgId="connector19pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector19pad"/>
+     <p layer="copper1" svgId="connector19pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector6" type="female" name="V+">
+   <description>V+</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector6terminal" layer="schematic" svgId="connector6pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pad"/>
+     <p layer="copper1" svgId="connector6pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector20" type="pad" name="SIGNAL">
+   <description>SIGNAL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector20pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector20terminal" layer="schematic" svgId="connector20pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector20pad"/>
+     <p layer="copper1" svgId="connector20pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector5" type="female" name="SIGNAL">
+   <description>SIGNAL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector5terminal" layer="schematic" svgId="connector5pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pad"/>
+     <p layer="copper1" svgId="connector5pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector21" type="pad" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector21pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector21terminal" layer="schematic" svgId="connector21pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector21pad"/>
+     <p layer="copper1" svgId="connector21pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector7" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector7terminal" layer="schematic" svgId="connector7pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector7pad"/>
+     <p layer="copper1" svgId="connector7pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="v+">
+   <nodeMember connectorId="connector19"/>
+   <nodeMember connectorId="connector6"/>
+  </bus>
+  <bus id="signal">
+   <nodeMember connectorId="connector20"/>
+   <nodeMember connectorId="connector5"/>
+  </bus>
+  <bus id="gnd">
+   <nodeMember connectorId="connector21"/>
+   <nodeMember connectorId="connector7"/>
+  </bus>
+ </buses>
+ <label>Adafruit Simple Soil Moisture Sensor</label>
+ <url>https://www.adafruit.com/product/6362</url>
+</module>
