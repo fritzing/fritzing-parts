@@ -73,7 +73,7 @@ class FZPCheckerRunner:
             self.all_issues.extend(checker.issues)
 
             # Apply fixes if requested and available
-            if fix and errors > 0 and hasattr(checker, 'fix'):
+            if fix and (errors > 0 or warnings > 0) and hasattr(checker, 'fix'):
                 if checker.fix(self.path):
                     fixes_count = checker.get_fixes_count()
                     self.errors_fixed += fixes_count
