@@ -598,8 +598,20 @@ class FZPPropertyFieldsChecker(FZPChecker):
 
     def fix(self, filename):
         """Apply fixes for property issues using regex to avoid etree side effects."""
-        filename_base = os.path.basename(filename)
-        contains_adafruit = "Adafruit" in filename_base
+        filename_base = os.path.basename(filename).lower()
+
+        # Determine manufacturer from filename (case-insensitive)
+        manufacturer = None
+        if "adafruit" in filename_base:
+            manufacturer = "Adafruit"
+        elif "infineon" in filename_base:
+            manufacturer = "Infineon"
+        elif "arduino" in filename_base:
+            manufacturer = "Arduino"
+        elif "sparkfun" in filename_base:
+            manufacturer = "SparkFun"
+        elif "espressif" in filename_base:
+            manufacturer = "Espressif"
 
         with open(filename, 'r', encoding='UTF-8') as f:
             content = f.read()
@@ -613,13 +625,13 @@ class FZPPropertyFieldsChecker(FZPChecker):
             self.add_fix(f"Removed {layer_removals} empty 'layer' property/properties")
             content = new_content
 
-        if contains_adafruit:
-            # Set empty mn property to "Adafruit"
+        if manufacturer:
+            # Set empty mn property to detected manufacturer
             empty_mn_pattern = r'(<property name="mn">)\s*(</property>)'
-            mn_replacement = r'\1Adafruit\2'
+            mn_replacement = rf'\1{manufacturer}\2'
             new_content, mn_fixes = re.subn(empty_mn_pattern, mn_replacement, content)
             if mn_fixes > 0:
-                self.add_fix("Set empty 'mn' property to 'Adafruit'")
+                self.add_fix(f"Set empty 'mn' property to '{manufacturer}'")
                 content = new_content
 
         # Find part number value to set mpn (if empty)
