@@ -18,8 +18,12 @@
    </g>
   </g>
   <rect id="connector1terminal" class="terminal" x="12.576" y="15.116" width=".24694" height=".24694" fill="none" stroke-width="0"/>
-  <text class="text" x="12.8588" y="2.83979" fill="#000000" font-family="'Droid Sans'" font-size="1.4993" stroke-width="0" text-anchor="middle">Voltage</text>
-  <text class="text" x="12.8588" y="4.4391" fill="#000000" font-family="'Droid Sans'" font-size="1.4993" stroke-width="0" text-anchor="middle">Regulator</text>
-  <text class="text" x="12.8588" y="6.0384" fill="#000000" font-family="'Droid Sans'" font-size="1.4993" stroke-width="0" text-anchor="middle">Variable</text>
+
+<text id="label" text-anchor="middle" font-family="Noto Sans" stroke='none' stroke-width='0' fill='#000000' font-size='1.5' x='12.7' y='2.83979' >
+<tspan>Voltage</tspan>
+<tspan x='12.7' dy="1em">Regulator</tspan>
+<tspan x='12.7' dy="1em">Variable</tspan>
+</text>
+
  </g>
 </svg>
