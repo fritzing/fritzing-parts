@@ -62,7 +62,7 @@ jobs:
       - name: List changed files
         run: cat .github/outputs/all_changed_files.json
       - name: Run fzp checker
-        run: python scripts/checks/fzp_checker_runner.py . -f .github/outputs/all_changed_files.json -v
+        run: python fzp_checker.py . -f .github/outputs/all_changed_files.json -v
 
   check_modified_files_default:
     if: github.event_name != 'pull_request'
@@ -94,7 +94,7 @@ jobs:
       - name: List changed files
         run: cat .github/outputs/all_changed_files.json
       - name: Run fzp checker
-        run: python scripts/checks/fzp_checker_runner.py . -f .github/outputs/all_changed_files.json -v
+        run: python fzp_checker.py . -f .github/outputs/all_changed_files.json -v
 
   checker_unit_test:
     runs-on: ubuntu-latest
