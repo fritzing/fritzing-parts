@@ -283,6 +283,98 @@ class FZPCheckerRunner:
         # Return error count for exit code
         return len([issue for issue in all_issues if issue.severity == 'error'])
 
+    def generate_github_summary(self, file_results):
+        """Generate a markdown report for GitHub Actions summary"""
+        # Calculate totals
+        total_files_checked = len(file_results)
+        total_checks_run = sum(result['checks'] for result in file_results)
+        total_errors = 0
+        total_warnings = 0
+        total_errors_fixed = 0
+
+        for result in file_results:
+            fzp_errors = len([issue for issue in result['issues'] if issue.severity == 'error'])
+            fzp_warnings = len([issue for issue in result['issues'] if issue.severity == 'warning'])
+            fzp_fixes = len(result['fix_results'])
+
+            total_errors += fzp_errors
+            total_warnings += fzp_warnings
+            total_errors_fixed += fzp_fixes
+
+            if 'svg_files' in result:
+                for svg_path, svg_result in result['svg_files'].items():
+                    svg_errors = len([issue for issue in svg_result['issues'] if issue.severity == 'error'])
+                    svg_warnings = len([issue for issue in svg_result['issues'] if issue.severity == 'warning'])
+                    svg_fixes = len(svg_result['fix_results'])
+
+                    total_errors += svg_errors
+                    total_warnings += svg_warnings
+                    total_errors_fixed += svg_fixes
+
+        # Generate markdown
+        md = []
+        md.append("# FZP Checker Results\n")
+
+        # Summary table
+        if total_errors == 0 and total_warnings == 0:
+            md.append("## ✅ All checks passed!\n")
+        elif total_errors > 0:
+            md.append("## ❌ Issues found\n")
+        else:
+            md.append("## ⚠️ Warnings found\n")
+
+        md.append("| Metric | Count |")
+        md.append("|--------|-------|")
+        md.append(f"| Files checked | {total_files_checked} |")
+        md.append(f"| Checks run | {total_checks_run} |")
+        md.append(f"| Errors | {total_errors} |")
+        md.append(f"| Warnings | {total_warnings} |")
+        md.append(f"| Fixed | {total_errors_fixed} |")
+        md.append("")
+
+        # File details
+        if file_results:
+            md.append("## File Details\n")
+            for result in file_results:
+                fzp_errors = len([issue for issue in result['issues'] if issue.severity == 'error'])
+                fzp_warnings = len([issue for issue in result['issues'] if issue.severity == 'warning'])
+                fzp_fixes = len(result['fix_results'])
+
+                if fzp_errors == 0 and fzp_warnings == 0:
+                    status = "✅"
+                elif fzp_errors > 0:
+                    status = "❌"
+                else:
+                    status = "⚠️"
+
+                md.append(f"### {status} `{result['file']}`")
+
+                if fzp_errors > 0 or fzp_warnings > 0:
+                    if result['issues']:
+                        for issue in result['issues']:
+                            icon = "🔴" if issue.severity == 'error' else "🟡"
+                            md.append(f"- {icon} {issue.message}")
+
+                if fzp_fixes > 0:
+                    md.append(f"\n**Fixed:** {fzp_fixes} issue(s)")
+
+                # SVG files
+                if result.get('svg_files'):
+                    for svg_file, svg_result in sorted(result['svg_files'].items()):
+                        svg_errors = len([issue for issue in svg_result['issues'] if issue.severity == 'error'])
+                        svg_warnings = len([issue for issue in svg_result['issues'] if issue.severity == 'warning'])
+
+                        if svg_errors > 0 or svg_warnings > 0:
+                            md.append(f"\n**SVG:** `{svg_file}`")
+                            if svg_result['issues']:
+                                for issue in svg_result['issues']:
+                                    icon = "🔴" if issue.severity == 'error' else "🟡"
+                                    md.append(f"  - {icon} {issue.message}")
+
+                md.append("")
+
+        return "\n".join(md)
+
     def generate_report(self, file_results, verbose=False):
         """Generate a formatted report for checker results"""
         # Calculate totals from the collected data
@@ -591,6 +683,17 @@ def main():
 
         # Generate report using the extracted method
         checker_runner.generate_report(file_results, verbose=args.verbose)
+
+        # Write to GitHub Actions summary if running in CI
+        github_summary_file = os.environ.get('GITHUB_STEP_SUMMARY')
+        if github_summary_file:
+            try:
+                markdown_report = checker_runner.generate_github_summary(file_results)
+                with open(github_summary_file, 'a') as f:
+                    f.write(markdown_report)
+                logger.info("Report written to GitHub Actions summary")
+            except Exception as e:
+                logger.warning(f"Failed to write GitHub Actions summary: {e}")
 
         if args.verbose or total_errors > 0:
             exit(total_errors)
