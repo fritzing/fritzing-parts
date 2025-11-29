@@ -1,6 +1,7 @@
 from lxml import etree
 from .fzp_checkers import *
 from .check_missing_leg_ids import *
+from .connector_numbering import *
 from .svg_checkers import *
 from .fzp_svg_checkers import FZPMissingConnectorRefsChecker
 from .fzp_checkers import ValidationIssue
@@ -515,7 +516,7 @@ class FZPCheckerRunner:
                             fzp_files.append(fzp_path)
         return fzp_files
 
-AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker, FZPPCBConnectorStrokeChecker, FZPModuleIDSpecialCharsChecker, FZPMissingLegIDsChecker, FZPMissingConnectorRefsChecker, FZPDateFormatChecker]
+AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker, FZPPCBConnectorStrokeChecker, FZPModuleIDSpecialCharsChecker, FZPMissingLegIDsChecker, FZPMissingConnectorRefsChecker, FZPDateFormatChecker, FZPConnectorNumberingChecker]
 
 SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGFontTypeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGMatrixChecker, SVGLayerNestingChecker, SVGGornChecker]
 AVAILABLE_CHECKERS_FROM_GOLANG = [

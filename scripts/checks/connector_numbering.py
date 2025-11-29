@@ -1,4 +1,4 @@
-from fzp_checkers import FZPChecker
+from .fzp_checkers import FZPChecker
 import re
 
 class FZPConnectorNumberingChecker(FZPChecker):
