@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="Adafruit USB DC Solar LiPo Charger.fzp" moduleId="adafruit_e2038ea6b62cf4a9b6ce794eacb71a7f_1_0F" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2016-08-26</date>
+ <author>ladyada</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Make your projects to go green this summer with our specialized USB/Solar Lithium Ion Polymer Battery charger! This charger is a very unique design, perfect for outdoor projects, or DIY iPod chargers. We've spent over a year testing and tinkering with this charger to come up with a plug and play solution to charging batteries with the sun and we're really pleased with what we ended up with.&lt;br />&lt;br />Easy to use! &lt;a href="http://www.adafruit.com/category/44">&lt;span style=" text-decoration: underline; color:#0000ff;">Pick up any of our many 3.7V/4.2V LiIon batteries&lt;/span>&lt;/a>, and a &lt;a href="http://www.adafruit.com/category/67">&lt;span style=" text-decoration: underline; color:#0000ff;">6V solar panel&lt;/span>&lt;/a>. Plug the battery into the &lt;span style=" font-weight:600;">BATT&lt;/span> port using a 2-pin JST cable and the solar panel into the DC jack using a &lt;a href="https://www.adafruit.com/products/2788">&lt;span style=" text-decoration: underline; color:#0000ff;">2.1mm adapter cable&lt;/span>&lt;/a> Put the solar panel outside (and keep the battery out of the sun, it needs to be kept cool!) to start charging. You can power another project like a Mintyboost at the same time by connecting to the &lt;span style=" font-weight:600;">LOAD&lt;/span> output port&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit USB DC Solar LiPo Charger</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Adafruit USB DC Solar LiPo Charger</property>
+  <property name="part number">Adafruit #390</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_e2038ea6b62cf4a9b6ce794eacb71a7f_2_breadboard_0F.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_e2038ea6b62cf4a9b6ce794eacb71a7f_2_schematic_0F.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_e2038ea6b62cf4a9b6ce794eacb71a7f_2_pcb_0F.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_e2038ea6b62cf4a9b6ce794eacb71a7f_2_icon_0F.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector10" name="DCIN" type="female">
+   <description>DCIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector10terminal" svgId="connector10pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pad"/>
+     <p layer="copper1" svgId="connector10pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector11" name="GND" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector11terminal" svgId="connector11pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector52" name="GND" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector52pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector52terminal" svgId="connector52pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector52pad"/>
+     <p layer="copper1" svgId="connector52pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector53" name="DCIN" type="female">
+   <description>DCIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector53pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector53terminal" svgId="connector53pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector53pad"/>
+     <p layer="copper1" svgId="connector53pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector54" name="LOAD" type="female">
+   <description>LOAD</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector54pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector54terminal" svgId="connector54pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector54pad"/>
+     <p layer="copper1" svgId="connector54pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector55" name="GND" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector55pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector55terminal" svgId="connector55pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector55pad"/>
+     <p layer="copper1" svgId="connector55pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector56" name="BATT" type="female">
+   <description>BATT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector56pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector56terminal" svgId="connector56pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector56pad"/>
+     <p layer="copper1" svgId="connector56pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector57" name="GND" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector57pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector57terminal" svgId="connector57pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector57pad"/>
+     <p layer="copper1" svgId="connector57pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector58" name="CHARGE" type="female">
+   <description>CHARGE</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector58pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector58terminal" svgId="connector58pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector58pad"/>
+     <p layer="copper1" svgId="connector58pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector59" name="DCIN" type="female">
+   <description>DCIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector59pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector59terminal" svgId="connector59pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector59pad"/>
+     <p layer="copper1" svgId="connector59pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector60" name="DONE" type="female">
+   <description>DONE</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector60pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector60terminal" svgId="connector60pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector60pad"/>
+     <p layer="copper1" svgId="connector60pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector81" name="GND" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector81pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector81terminal" svgId="connector81pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector81pad"/>
+     <p layer="copper1" svgId="connector81pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector87" name="GND" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector87pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector87terminal" svgId="connector87pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector87pad"/>
+     <p layer="copper1" svgId="connector87pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector91" name="P$1" type="female">
+   <description>P$1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector91pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector91terminal" svgId="connector91pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector91pad"/>
+     <p layer="copper1" svgId="connector91pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector92" name="P$1" type="female">
+   <description>P$1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector92pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector92terminal" svgId="connector92pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector92pad"/>
+     <p layer="copper1" svgId="connector92pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector93" name="P$1" type="female">
+   <description>P$1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector93pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector93terminal" svgId="connector93pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector93pad"/>
+     <p layer="copper1" svgId="connector93pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector94" name="P$1" type="female">
+   <description>P$1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector94pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector94terminal" svgId="connector94pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector94pad"/>
+     <p layer="copper1" svgId="connector94pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector11"/>
+   <nodeMember connectorId="connector52"/>
+   <nodeMember connectorId="connector55"/>
+   <nodeMember connectorId="connector57"/>
+   <nodeMember connectorId="connector81"/>
+   <nodeMember connectorId="connector87"/>
+  </bus>
+  <bus id="dcin">
+   <nodeMember connectorId="connector10"/>
+   <nodeMember connectorId="connector53"/>
+   <nodeMember connectorId="connector59"/>
+  </bus>
+ </buses>
+ <url>https://www.adafruit.com/products/390</url>
+</module>

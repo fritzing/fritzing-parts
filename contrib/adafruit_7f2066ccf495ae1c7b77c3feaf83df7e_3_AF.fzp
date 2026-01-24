@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="adafruit_7f2066ccf495ae1c7b77c3feaf83df7e_3_AF" fritzingVersion="0.5.2b.02.18.4756" referenceFile="Adafruit Mini 8x8 LED Matrix Backpack.fzp">
+ <version>4</version>
+ <date>2016-08-22</date>
+ <author>Adafruit</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica'; color:#454545;">This 0.8&amp;quot; 8x8 monochrome LED matrix includes a driver chip for simple control via an I2C interface. The backpack features address-selection jumpers so you can connect up to four matrices on a single I2C bus.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Mini 8x8 LED Matrix Backpack</title>
+ <tags/>
+ <properties>
+  <property name="variant">Pure Green</property>
+  <property name="family">Adafruit Mini LED Matrix Backpack</property>
+  <property name="part number">1633</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_7f2066ccf495ae1c7b77c3feaf83df7e_3_breadboard_AF.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_7f2066ccf495ae1c7b77c3feaf83df7e_3_schematic_AF.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_7f2066ccf495ae1c7b77c3feaf83df7e_3_pcb_AF.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_7f2066ccf495ae1c7b77c3feaf83df7e_3_icon_AF.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VDD" type="male" id="connector8">
+   <description>VDD</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector8pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector8terminal" svgId="connector8pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector8pad" layer="copper0"/>
+     <p svgId="connector8pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="male" id="connector6">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector6pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector6terminal" svgId="connector6pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector6pad" layer="copper0"/>
+     <p svgId="connector6pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="male" id="connector5">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector5pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector5terminal" svgId="connector5pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector5pad" layer="copper0"/>
+     <p svgId="connector5pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector7">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector7pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector7terminal" svgId="connector7pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector7pad" layer="copper0"/>
+     <p svgId="connector7pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.adafruit.com/products/1633</url>
+</module>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.5b.07.02.6130" moduleId="8a096443fe991cb26dee2658ab54d3ab_C9">
+    <author>John De Cristofaro</author>
+    <title>7-Segment Panel Celsius Thermometer </title>
+    <label>METER</label>
+    <date>2012-09-11</date>
+    <url>http://www.adafruit.com/products/576</url>
+    <tags>
+        <tag>temp</tag>
+        <tag>temperature</tag>
+        <tag>thermo</tag>
+        <tag>thermometer</tag>
+        <tag>meter</tag>
+        <tag>celsius</tag>
+        <tag>centigrade</tag>
+        <tag>thermocouple</tag>
+        <tag>adafruit</tag>
+        <tag>panel</tag>
+    </tags>
+    <properties>
+        <property name="family"></property>
+        <property name="part number"></property>
+    </properties>
+    <description>7-Segment Panel Celsius Thermometer</description>
+    <views>
+        <iconView>
+            <layers image="icon/7_Segment_Panel_Celsius_Thermometer___f1__icon__9468706d5a07746c0cb5bb0148669e7c_C9.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/7_Segment_Panel_Celsius_Thermometer___f1__breadboard__f13c8c53e10535c5ba95ff33d3050d97_C9.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/7_Segment_Panel_Celsius_Thermometer___f1__schematic__31dd29aa6ac1b9f529ad434cb2c46357_C9.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/7_Segment_Panel_Celsius_Thermometer___f1__pcb__4ff31a63a0e495b401dec998738d3fdb_C9.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="copper1"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector1" type="male" name="V+">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector1pin"/>
+                    <p layer="copper0" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="V-">
+            <description>aka ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector2pin"/>
+                    <p layer="copper0" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

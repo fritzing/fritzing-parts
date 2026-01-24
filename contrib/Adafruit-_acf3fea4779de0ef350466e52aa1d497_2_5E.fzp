@@ -1,0 +1,853 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="Feather RP2040 Scorpio rev A.fzp" fritzingVersion="0.5.2b.02.18.4756" moduleId="Adafruit-_acf3fea4779de0ef350466e52aa1d497_2_5E">
+ <version>4</version>
+ <date>2023-01-30</date>
+ <author>Liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">If there is one thing Adafruit is known for, its mega-blinky-fun-rainbow-LEDs.&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/category/168">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">We just love sticking NeoPixels anywhere and everywhere&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">. When we saw the new 'PIO' peripheral on&lt;/span>&lt;a href="https://www.adafruit.com/category/875">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;"> the RP2040 from Raspberry Pi&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">, we just knew it would be perfect for driving large quantities of NeoPixels. So we created this board, the&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;"> Adafruit Feather RP2040 SCORPIO&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">, designed specifically for NeoPixel (WS2812) driving but also good for various other PIO-based projects that want to take advantage of the Feather pinout with 8 separate consecutive outputs (or inputs).&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;a href="https://learn.adafruit.com/intro-to-rp2040-pio-with-circuitpython">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">The RP2040 PIO state machine&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> is perfect for LED driving: it can generate perfect waveforms, with up to 8 outputs concurrently, all through DMA. That means that you don't need to use any processor time to bit-bang-out the LED data. Just set up the buffer and tell the PIO peripheral to 'make it so' and it will shove that data to the 8 outputs without delay while your code can continue to read buttons, play music, run CircuitPython - whatever you like!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The SCORPIO has a clever pinout, where all the standard Feather pins are the same as the GPIO pins, plus the standard I2C, SPI and UART lines - and theres&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-style:italic; color:#000000;">still&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> enough pins left over to have 8 consecutive pins for PIO usage on GPIO16 through GPIO23 inclusive.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">To make NeoPixel usage glitch-free there is a 3V-&amp;gt;5V level shifter so that the output logic is 5V. If you happen to want 3V signals, you can adjust the shifter voltage with a jumper on the bottom. It's also possible to flip the direction of the level shifter to make the 8 I/O pins inputs - say for making a logic analyzer - with a directional jumper selection also on the bottom of the PCB.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The RP2040 SCORPIO also has a &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-style:italic; color:#000000;">ton&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> of RAM, 264KB, making it trivial to buffer huge numbers of NeoPixels…&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-style:italic; color:#000000;">several thousand&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> if needed. In fact there's so much RAM you can even &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-style:italic; color:#000000;">dither&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> the pixels to for finer brightness control, for better-looking LEDs at low brightness or for gamma correction.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">We have&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://github.com/adafruit/Adafruit_NeoPXL8">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">NeoPXL8 driver code available in Arduino&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> and &lt;/span>&lt;a href="https://github.com/adafruit/Adafruit_CircuitPython_NeoPxl8">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">CircuitPython&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">, so you can jump immediately to making beautiful artworks driven by the Adafruit SCORPIO.&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Measures 2.0&amp;quot; x 0.9&amp;quot; x 0.28&amp;quot; (50.8mm x 22.8mm x 7mm) without headers soldered in&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Light as a (large?) feather - 5 grams&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">RP2040 32-bit Cortex M0+ dual core running at ~125 MHz @ 3.3V logic and power&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">264 KB RAM&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">8 MB SPI FLASH&lt;/span>&lt;span style=" font-size:15px;"> chip for storing files and CircuitPython/MicroPython code storage. No EEPROM&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Tons of GPIO! 21 x GPIO pins with following capabilities:&lt;/span>&lt;/li>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 2;">&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Four &lt;/span>&lt;span style=" font-size:15px;">12-bit ADCs (one more than Pico)&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Two I2C, Two SPI, and two UART peripherals, we label one for the 'main' interface in standard Feather locations&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">16 x PWM outputs - for servos, LEDs, etc&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">8 x consecutive GPIO outputs with 5V level shifting for PIO NeoPixel driving&lt;/span>&lt;/li>&lt;/ul>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Built-in 200mA+ lipoly charger&lt;/span>&lt;span style=" font-size:15px;"> with charging status indicator LED&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Pin #13 red LED &lt;/span>&lt;span style=" font-size:15px;">for general purpose blinking&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">RGB NeoPixel&lt;/span>&lt;span style=" font-size:15px;"> for full-color indication on &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">D4&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">On-board &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">STEMMA QT connector&lt;/span>&lt;span style=" font-size:15px;"> that lets you quickly connect any Qwiic, STEMMA QT or Grove I2C devices with no soldering!&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Both Reset button and Bootloader select button for quick restarts &lt;/span>&lt;span style=" font-size:15px;">(no unplugging-replugging to relaunch code). Bootloader button is also available as user-input button on GPIO #7&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">3.3V Power/enable pin&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">4 mounting holes&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">12 MHz crystal for perfect timing.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">3.3V regulator with 500mA peak current output&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">USB Type C connector &lt;/span>&lt;span style=" font-size:15px;">lets you access built-in ROM USB bootloader and serial port debugging&lt;/span>&lt;/li>&lt;/ul>&lt;/body>&lt;/html></description>
+ <title>Adafruit Feather RP2040 SCORPIO</title>
+ <tags/>
+ <properties>
+  <property name="family">Feather</property>
+  <property name="variant">variant 2</property>
+  <property name="part number">#5650</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_acf3fea4779de0ef350466e52aa1d497_2_breadboard_5E.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_acf3fea4779de0ef350466e52aa1d497_2_schematic_5E.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_acf3fea4779de0ef350466e52aa1d497_2_pcb_5E.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_acf3fea4779de0ef350466e52aa1d497_2_icon_5E.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="+3V3" type="male" id="connector127">
+   <description>+3V3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector127pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector127pin" terminalId="connector127terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector127pad"/>
+     <p layer="copper1" svgId="connector127pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="+3V3" type="male" id="connector128">
+   <description>+3V3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector128pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector128pin" terminalId="connector128terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector128pad"/>
+     <p layer="copper1" svgId="connector128pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="+3V3" type="female" id="connector48">
+   <description>+3V3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector48pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector48pin" terminalId="connector48terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector48pad"/>
+     <p layer="copper1" svgId="connector48pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VBAT" type="male" id="connector146">
+   <description>VBAT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector146pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector146pin" terminalId="connector146terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector146pad"/>
+     <p layer="copper1" svgId="connector146pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VBAT" type="female" id="connector262">
+   <description>VBAT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector262pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector262pin" terminalId="connector262terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector262pad"/>
+     <p layer="copper1" svgId="connector262pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VBUS" type="male" id="connector148">
+   <description>VBUS</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector148pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector148pin" terminalId="connector148terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector148pad"/>
+     <p layer="copper1" svgId="connector148pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="!RESET" type="male" id="connector129">
+   <description>!RESET</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector129pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector129pin" terminalId="connector129terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector129pad"/>
+     <p layer="copper1" svgId="connector129pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A0" type="male" id="connector125">
+   <description>A0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector125pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector125pin" terminalId="connector125terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector125pad"/>
+     <p layer="copper1" svgId="connector125pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A1" type="male" id="connector124">
+   <description>A1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector124pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector124pin" terminalId="connector124terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector124pad"/>
+     <p layer="copper1" svgId="connector124pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A2" type="male" id="connector123">
+   <description>A2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector123pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector123pin" terminalId="connector123terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector123pad"/>
+     <p layer="copper1" svgId="connector123pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A3" type="male" id="connector122">
+   <description>A3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector122pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector122pin" terminalId="connector122terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector122pad"/>
+     <p layer="copper1" svgId="connector122pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D24" type="male" id="connector121">
+   <description>D24</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector121pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector121pin" terminalId="connector121terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector121pad"/>
+     <p layer="copper1" svgId="connector121pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D25" type="male" id="connector120">
+   <description>D25</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector120pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector120pin" terminalId="connector120terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector120pad"/>
+     <p layer="copper1" svgId="connector120pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCK" type="male" id="connector119">
+   <description>SCK</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector119pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector119pin" terminalId="connector119terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector119pad"/>
+     <p layer="copper1" svgId="connector119pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MOSI" type="male" id="connector118">
+   <description>MOSI</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector118pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector118pin" terminalId="connector118terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector118pad"/>
+     <p layer="copper1" svgId="connector118pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MISO" type="male" id="connector117">
+   <description>MISO</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector117pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector117pin" terminalId="connector117terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector117pad"/>
+     <p layer="copper1" svgId="connector117pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="RX" type="male" id="connector116">
+   <description>RX</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector116pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector116pin" terminalId="connector116terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector116pad"/>
+     <p layer="copper1" svgId="connector116pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="TX" type="male" id="connector115">
+   <description>TX</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector115pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector115pin" terminalId="connector115terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector115pad"/>
+     <p layer="copper1" svgId="connector115pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D4" type="male" id="connector114">
+   <description>D4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector114pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector114pin" terminalId="connector114terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector114pad"/>
+     <p layer="copper1" svgId="connector114pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="NEO7" type="female" id="connector131">
+   <description>NEO7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector131pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector131pin" terminalId="connector131terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector131pad"/>
+     <p layer="copper1" svgId="connector131pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="NEO6" type="female" id="connector133">
+   <description>NEO6</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector133pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector133pin" terminalId="connector133terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector133pad"/>
+     <p layer="copper1" svgId="connector133pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="NEO5" type="female" id="connector135">
+   <description>NEO5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector135pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector135pin" terminalId="connector135terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector135pad"/>
+     <p layer="copper1" svgId="connector135pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="NEO4" type="female" id="connector137">
+   <description>NEO4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector137pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector137pin" terminalId="connector137terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector137pad"/>
+     <p layer="copper1" svgId="connector137pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="EN" type="male" id="connector147">
+   <description>EN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector147pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector147pin" terminalId="connector147terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector147pad"/>
+     <p layer="copper1" svgId="connector147pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D13" type="male" id="connector149">
+   <description>D13</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector149pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector149pin" terminalId="connector149terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector149pad"/>
+     <p layer="copper1" svgId="connector149pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D12" type="male" id="connector150">
+   <description>D12</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector150pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector150pin" terminalId="connector150terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector150pad"/>
+     <p layer="copper1" svgId="connector150pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D11" type="male" id="connector151">
+   <description>D11</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector151pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector151pin" terminalId="connector151terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector151pad"/>
+     <p layer="copper1" svgId="connector151pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D10" type="male" id="connector152">
+   <description>D10</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector152pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector152pin" terminalId="connector152terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector152pad"/>
+     <p layer="copper1" svgId="connector152pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D9" type="male" id="connector153">
+   <description>D9</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector153pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector153pin" terminalId="connector153terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector153pad"/>
+     <p layer="copper1" svgId="connector153pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D6" type="male" id="connector154">
+   <description>D6</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector154pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector154pin" terminalId="connector154terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector154pad"/>
+     <p layer="copper1" svgId="connector154pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="D5" type="male" id="connector155">
+   <description>D5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector155pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector155pin" terminalId="connector155terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector155pad"/>
+     <p layer="copper1" svgId="connector155pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="female" id="connector50">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector50pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector50pin" terminalId="connector50terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector50pad"/>
+     <p layer="copper1" svgId="connector50pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="male" id="connector156">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector156pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector156pin" terminalId="connector156terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector156pad"/>
+     <p layer="copper1" svgId="connector156pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="female" id="connector49">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector49pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector49pin" terminalId="connector49terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector49pad"/>
+     <p layer="copper1" svgId="connector49pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="male" id="connector157">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector157pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector157pin" terminalId="connector157terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector157pad"/>
+     <p layer="copper1" svgId="connector157pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="NEO0" type="female" id="connector145">
+   <description>NEO0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector145pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector145pin" terminalId="connector145terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector145pad"/>
+     <p layer="copper1" svgId="connector145pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="NEO1" type="female" id="connector143">
+   <description>NEO1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector143pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector143pin" terminalId="connector143terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector143pad"/>
+     <p layer="copper1" svgId="connector143pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="NEO2" type="female" id="connector141">
+   <description>NEO2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector141pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector141pin" terminalId="connector141terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector141pad"/>
+     <p layer="copper1" svgId="connector141pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="NEO3" type="female" id="connector139">
+   <description>NEO3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector139pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector139pin" terminalId="connector139terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector139pad"/>
+     <p layer="copper1" svgId="connector139pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector126">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector126pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector126pin" terminalId="connector126terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector126pad"/>
+     <p layer="copper1" svgId="connector126pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector130">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector130pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector130pin" terminalId="connector130terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector130pad"/>
+     <p layer="copper1" svgId="connector130pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector132">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector132pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector132pin" terminalId="connector132terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector132pad"/>
+     <p layer="copper1" svgId="connector132pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector134">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector134pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector134pin" terminalId="connector134terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector134pad"/>
+     <p layer="copper1" svgId="connector134pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector136">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector136pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector136pin" terminalId="connector136terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector136pad"/>
+     <p layer="copper1" svgId="connector136pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector138">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector138pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector138pin" terminalId="connector138terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector138pad"/>
+     <p layer="copper1" svgId="connector138pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector140">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector140pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector140pin" terminalId="connector140terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector140pad"/>
+     <p layer="copper1" svgId="connector140pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector142">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector142pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector142pin" terminalId="connector142terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector142pad"/>
+     <p layer="copper1" svgId="connector142pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector144">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector144pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector144pin" terminalId="connector144terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector144pad"/>
+     <p layer="copper1" svgId="connector144pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector47">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector47pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector47pin" terminalId="connector47terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector47pad"/>
+     <p layer="copper1" svgId="connector47pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector261">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector261pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector261pin" terminalId="connector261terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector261pad"/>
+     <p layer="copper1" svgId="connector261pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector126"/>
+   <nodeMember connectorId="connector130"/>
+   <nodeMember connectorId="connector132"/>
+   <nodeMember connectorId="connector134"/>
+   <nodeMember connectorId="connector136"/>
+   <nodeMember connectorId="connector138"/>
+   <nodeMember connectorId="connector140"/>
+   <nodeMember connectorId="connector142"/>
+   <nodeMember connectorId="connector144"/>
+   <nodeMember connectorId="connector47"/>
+   <nodeMember connectorId="connector261"/>
+  </bus>
+  <bus id="+3v3">
+   <nodeMember connectorId="connector127"/>
+   <nodeMember connectorId="connector128"/>
+   <nodeMember connectorId="connector48"/>
+  </bus>
+  <bus id="scl">
+   <nodeMember connectorId="connector50"/>
+   <nodeMember connectorId="connector156"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector49"/>
+   <nodeMember connectorId="connector157"/>
+  </bus>
+  <bus id="vbat">
+   <nodeMember connectorId="connector146"/>
+   <nodeMember connectorId="connector262"/>
+  </bus>
+ </buses>
+ <label>Adafruit Feather RP2040 SCORPIO</label>
+ <url>https://www.adafruit.com/product/5650</url>
+</module>

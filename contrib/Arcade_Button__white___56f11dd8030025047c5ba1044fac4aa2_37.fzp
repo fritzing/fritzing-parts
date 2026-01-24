@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.5b.07.02.6130" moduleId="e23f64e3f24020ebd77fd4c7188f86b9_37">
+    <author>John De Cristofaro</author>
+    <title>Arcade Button (white)</title>
+    <label>BUTTON</label>
+    <date>2012-08-28</date>
+    <url>https://www.adafruit.com/products/471</url>
+    <tags>
+        <tag>adafruit</tag>
+        <tag>arcade</tag>
+        <tag>button</tag>
+        <tag>pushbutton</tag>
+        <tag>mash</tag>
+        <tag>white</tag>
+    </tags>
+    <properties>
+        <property name="family">afarcadebutton</property>
+        <property name="color">white</property>
+    </properties>
+    <description>Adafruit Arcade Button (white)</description>
+    <views>
+        <schematicView>
+            <layers image="schematic/Arcade_Button__blue___0c30cbbdde0863c5df__schematic__d8366fcc92cf6f1f2281d3d8a33c8d06_37.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/Arcade_Button__blue___0c30cbbdde0863c5df__pcb__93882a7ba3b8289551f4df52db18e663_37.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="copper1"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+        <iconView>
+            <layers image="icon/Arcade_Button__white___56f11dd8030025047__icon__665066a2f30f16345d5755d3e9f058a5_37.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/Arcade_Button__white___56f11dd8030025047__breadboard__ed7b8c86825677a8ac6e30863ddcce1e_37.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+    </views>
+    <connectors>
+        <connector id="connector1" type="male" name="no name yet">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                    <p layer="copper1" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="no name yet">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                    <p layer="copper1" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

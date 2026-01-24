@@ -1,0 +1,461 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="trellis m4 rev D1.fzp" moduleId="Adafruit-_0c3c88ef192b7b9e98daa060c16ddb46_1_65" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2022-05-23</date>
+ <author>Liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">We got a big ol' blender and tossed in an ItsyBitsy M4, two NeoTrellis boards and an electret mic amp - turned on the 'mix' button and out came the NeoTrellis M4 - a super fun dev board for anyone who likes to squish buttons, see pretty lights and maybe make a tune or two.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The NeoTrellis M4 is an all-in-one USB + NeoPixel + Elastomer + Audio board. It's powered by our new favoritest-chip-in-the-world, the SAMD51, a Cortex M4 core running at 120 MHz. This chip has a speedy core with CircuitPython and Arduino support, hardware DSP/floating point, dual DACs (more on that later!) and all the goodies you expect from normal chips like I2C, ADC, DMA, etc. It has a roomy 512KB of flash and 192KB of SRAM so it's great for CircuitPython, we added a full 8MB flash chip so tons of space for files and audio clips. Or you can load Arduino in for bonkers-fast audio processing/generation&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://github.com/adafruit/Audio">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">with our fork of the PJRC Audio library&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The native USB port can turn it into a MIDI USB device if you like, in both Arduino and CircuitPython. Tether it to a computer or tablet, if you like. Or use it in standalone mode, as long as its powered from a USB power plug, it'll run whatever firmware is burned into it.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">OK so you've got this big brain, but now you need inputs and outputs! There's a 4x8 grid of elastomer button pads with a NeoPixel nestled in the center of each one. You can read any/all button presses simultaneously thanks to the fully diode'd matrix, and also set each button color to any of 24-bit colors. (We've even got some DMA Arduino code for the NeoPixels so that they won't take up any processor time.) The elastomer buttons are translucent so they glow beautifully when lit.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Time to make some noise! We picked the SAMD51 mostly because its got that dual DAC - that's two 12-bit, 500KSPS 'true analog' outputs and we connected them to left and right on a standard headphone jack. Since the DAC pins are also ADC pins you could also use the left/right for audio line level&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-style:italic; color:#000000;">input &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">if you so choose. You're not going to get audiophile-quality outputs from two 12-bit DACs but you can certainly play audio clips and make beeps and bloops.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">And if you want to have some audio inputs, we have you covered. The 4th pin on the headphone jack is for microphone or line in. If you have a classic 'mobile phone headset', the electret mic will go through an amplifier into an ADC pin. Again, it's not audiophile quality (we're talking about an electret mic here) but you can do audio recording and filtering on the mono input. The raw un-amplified mic input is also connected to a DAC so you can read button presses on headsets that have a resistor-selector for their buttons, or some other 3.3V-max analog signal.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">To add more interactivity, a precision triple-axis accelerometer from Analog Devices, the ADXL343, is included as well, and provides sensor information on tilt, motion, or tapping. Great for adding another dimension of data input in addition to the button pads.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Finally, a 4 pin JST hacking port is available for extra add-ons. It's STEMMA and Grove compatible, and provides GND, 3.3V power, and two pins that can be used for I2C, ADC, or a UART. So connect some other sensor, or read stereo audio in, or maybe hack together a MIDI port. Whatever you like!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;">This item is just the mainboard! &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">You'll almost certainly want two &lt;/span>&lt;a href="https://www.adafruit.com/products/4021">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">Silicone Elastomer 4x4 Pads&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;"> &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">and &lt;/span>&lt;a href="https://www.adafruit.com/product/3963">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">an enclosure&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;"> &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">to go along.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Here are some of the updates you can look forward to when using NeoTrellis M4&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">ATSAMD51 32-bit Cortex M4&lt;/span>&lt;span style=" font-size:15px;"> core running at &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">120 MHz&lt;/span>&lt;span style=" font-size:15px;"> (32-bit, 3.3V logic and power)&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Hardware DSP and floating point support&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">512 KB&lt;/span>&lt;span style=" font-size:15px;"> flash, &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">192 KB&lt;/span>&lt;span style=" font-size:15px;"> RAM&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Native USB that can act as a true USB MIDI device if you like.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">8 MB SPI FLASH chip&lt;/span>&lt;span style=" font-size:15px;"> for storing files and CircuitPython code storage.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">4x8 elastomer pads with fully diode'd matrix - no ghosting!&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">4x8 NeoPixels for each pad, glows through the elastomer buttons&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">TRRS Headphone jack with stereo DAC outputs on Left/Right, can also be stereo ADC inputs. Fourth pin on headphone for electret/ADC input&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Built in &lt;/span>&lt;a href="https://www.adafruit.com/product/1063">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">MAX4466 electret mic amplifier&lt;/span>&lt;/a>&lt;span style=" font-size:15px;"> for mobile phone headsets. 'Raw' DC level reading also available on a separate ADC&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">4-JST hacking port with 3.3V power, ground, and two GPIO that can be I2C/ADC/UART&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="https://www.analog.com/en/products/adxl343.html">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">Analog Devices ADXL343 triple-axis accelerometer&lt;/span>&lt;/a>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Really fun to press buttons and have sounds come out!&lt;/span>&lt;/li>&lt;/ul>&lt;/body>&lt;/html></description>
+ <title>Adafruit NeoTrellis M4 Express</title>
+ <tags/>
+ <properties>
+  <property name="family">NeoTrellis M4</property>
+  <property name="part number">Adafruit #3938</property>
+  <property name="variant">variant 1</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_0c3c88ef192b7b9e98daa060c16ddb46_1_breadboard_65.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_0c3c88ef192b7b9e98daa060c16ddb46_1_schematic_65.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_0c3c88ef192b7b9e98daa060c16ddb46_1_pcb_65.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_0c3c88ef192b7b9e98daa060c16ddb46_1_icon_65.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="female" id="connector52" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector52pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector52pin" layer="schematic" terminalId="connector52terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector52pad" layer="copper0"/>
+     <p svgId="connector52pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector189" name="VDD">
+   <description>VDD</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector189pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector189pin" layer="schematic" terminalId="connector189terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector189pad" layer="copper0"/>
+     <p svgId="connector189pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector194" name="VDD">
+   <description>VDD</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector194pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector194pin" layer="schematic" terminalId="connector194terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector194pad" layer="copper0"/>
+     <p svgId="connector194pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector199" name="VDD">
+   <description>VDD</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector199pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector199pin" layer="schematic" terminalId="connector199terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector199pad" layer="copper0"/>
+     <p svgId="connector199pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector204" name="VDD">
+   <description>VDD</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector204pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector204pin" layer="schematic" terminalId="connector204terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector204pad" layer="copper0"/>
+     <p svgId="connector204pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector188" name="INT">
+   <description>INT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector188pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector188pin" layer="schematic" terminalId="connector188terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector188pad" layer="copper0"/>
+     <p svgId="connector188pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector193" name="INT">
+   <description>INT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector193pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector193pin" layer="schematic" terminalId="connector193terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector193pad" layer="copper0"/>
+     <p svgId="connector193pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector198" name="INT">
+   <description>INT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector198pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector198pin" layer="schematic" terminalId="connector198terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector198pad" layer="copper0"/>
+     <p svgId="connector198pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector203" name="INT">
+   <description>INT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector203pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector203pin" layer="schematic" terminalId="connector203terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector203pad" layer="copper0"/>
+     <p svgId="connector203pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector54" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector54pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector54pin" layer="schematic" terminalId="connector54terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector54pad" layer="copper0"/>
+     <p svgId="connector54pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector191" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector191pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector191pin" layer="schematic" terminalId="connector191terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector191pad" layer="copper0"/>
+     <p svgId="connector191pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector196" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector196pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector196pin" layer="schematic" terminalId="connector196terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector196pad" layer="copper0"/>
+     <p svgId="connector196pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector201" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector201pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector201pin" layer="schematic" terminalId="connector201terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector201pad" layer="copper0"/>
+     <p svgId="connector201pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector206" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector206pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector206pin" layer="schematic" terminalId="connector206terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector206pad" layer="copper0"/>
+     <p svgId="connector206pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector53" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector53pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector53pin" layer="schematic" terminalId="connector53terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector53pad" layer="copper0"/>
+     <p svgId="connector53pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector192" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector192pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector192pin" layer="schematic" terminalId="connector192terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector192pad" layer="copper0"/>
+     <p svgId="connector192pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector197" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector197pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector197pin" layer="schematic" terminalId="connector197terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector197pad" layer="copper0"/>
+     <p svgId="connector197pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector202" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector202pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector202pin" layer="schematic" terminalId="connector202terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector202pad" layer="copper0"/>
+     <p svgId="connector202pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector207" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector207pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector207pin" layer="schematic" terminalId="connector207terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector207pad" layer="copper0"/>
+     <p svgId="connector207pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector51" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector51pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector51pin" layer="schematic" terminalId="connector51terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector51pad" layer="copper0"/>
+     <p svgId="connector51pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector190" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector190pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector190pin" layer="schematic" terminalId="connector190terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector190pad" layer="copper0"/>
+     <p svgId="connector190pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector195" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector195pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector195pin" layer="schematic" terminalId="connector195terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector195pad" layer="copper0"/>
+     <p svgId="connector195pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector200" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector200pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector200pin" layer="schematic" terminalId="connector200terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector200pad" layer="copper0"/>
+     <p svgId="connector200pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector205" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector205pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector205pin" layer="schematic" terminalId="connector205terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector205pad" layer="copper0"/>
+     <p svgId="connector205pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector51"/>
+   <nodeMember connectorId="connector190"/>
+   <nodeMember connectorId="connector195"/>
+   <nodeMember connectorId="connector200"/>
+   <nodeMember connectorId="connector205"/>
+  </bus>
+  <bus id="scl">
+   <nodeMember connectorId="connector54"/>
+   <nodeMember connectorId="connector191"/>
+   <nodeMember connectorId="connector196"/>
+   <nodeMember connectorId="connector201"/>
+   <nodeMember connectorId="connector206"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector53"/>
+   <nodeMember connectorId="connector192"/>
+   <nodeMember connectorId="connector197"/>
+   <nodeMember connectorId="connector202"/>
+   <nodeMember connectorId="connector207"/>
+  </bus>
+  <bus id="int">
+   <nodeMember connectorId="connector188"/>
+   <nodeMember connectorId="connector193"/>
+   <nodeMember connectorId="connector198"/>
+   <nodeMember connectorId="connector203"/>
+  </bus>
+  <bus id="vdd">
+   <nodeMember connectorId="connector189"/>
+   <nodeMember connectorId="connector194"/>
+   <nodeMember connectorId="connector199"/>
+   <nodeMember connectorId="connector204"/>
+  </bus>
+ </buses>
+ <url>https://www.adafruit.com/product/3938</url>
+</module>

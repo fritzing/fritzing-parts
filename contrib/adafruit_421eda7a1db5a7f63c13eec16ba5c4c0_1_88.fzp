@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="PiEYESPI Beret rev A.fzp" moduleId="adafruit_421eda7a1db5a7f63c13eec16ba5c4c0_1_88" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2023-08-30</date>
+ <author>kattni</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Raspberry Pi's make for handy lil computers, but they're really wonderful when you can connect all sorts of nifty hardware to them: color TFT or E-Ink displays, and sensors are our go-to favorites. Even better is when we make it fast and effortless to wire these up. With this new EYESPI Pi Beret there's no more counting pins or noodling with a breakout board. &lt;a href="https://www.raspberrypi.com/news/introducing-raspberry-pi-hats/">&lt;span style=" text-decoration: underline; color:#0068da;">This slim HAT&lt;/span>&lt;/a> plugs in and gives you lots of hardware connection options so that many projects become plug-and-play.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Our most recent &lt;a href="https://www.adafruit.com/?q=eyespi&amp;amp;sort=BestMatch">&lt;span style=" text-decoration: underline; color:#0068da;">display breakouts have come with a new feature: an 18-pin &amp;quot;EYE SPI&amp;quot; standard FPC connector with flip-top connector&lt;/span>&lt;/a>. This is intended to be a sort-of &amp;quot;&lt;a href="https://learn.adafruit.com/introducing-adafruit-stemma-qt">&lt;span style=" text-decoration: underline; color:#0068da;">STEMMA QT&lt;/span>&lt;/a> for displays&amp;quot; - a way to quickly connect and extend display wiring that uses a lot of SPI pins. In this case we need a lot of SPI and accessory pins, and we want to be able to use long distances, so we go with an 18-pin 0.5mm pitch FPC.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">With such a slim and flexible cable, it's easy to have displays anywhere &lt;a href="https://www.adafruit.com/category/804">&lt;span style=" text-decoration: underline; color:#0068da;">without them physically attached to the Pi like in our PiTFTs&lt;/span>&lt;/a>. Accessorize with &lt;a href="https://www.adafruit.com/search?q=eyespi+display">&lt;span style=" text-decoration: underline; color:#0068da;">big bold colorful displays&lt;/span>&lt;/a> or &lt;a href="https://www.adafruit.com/search?q=e-ink">&lt;span style=" text-decoration: underline; color:#0068da;">power-sipping E-Ink&lt;/span>&lt;/a>. &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Don't forget you'll also want an &lt;/span>&lt;a href="https://www.adafruit.com/product/5462">&lt;span style=" font-weight:600; text-decoration: underline; color:#0068da;">18-pin EYESPI FPC cable&lt;/span>&lt;/a>&lt;span style=" font-weight:600;">. And of course &lt;/span>&lt;a href="https://www.adafruit.com/search?q=eyespi">&lt;span style=" font-weight:600; text-decoration: underline; color:#0068da;">one of our EYESPI displays&lt;/span>&lt;/a>&lt;span style=" font-weight:600;"> too -&lt;/span> look for the EYESPI logo on the back to know you've got one that can clip in.&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">MOSI/MISO/SCK&lt;/span> SPI pins are connected to the default&lt;span style=" font-weight:600;"> SPI &lt;/span>port on the Raspberry Pi&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">SDA/SCL&lt;/span> I2C pins are connected to the default &lt;span style=" font-weight:600;">I2C&lt;/span> port on the Pi&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Display CS &lt;/span>on Raspberry Pi &lt;span style=" font-weight:600;">CE 0&lt;/span>&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Display DC &lt;/span>on Raspberry Pi &lt;span style=" font-weight:600;">GPIO #25&lt;/span>&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Display Reset &lt;/span>on Raspberry Pi &lt;span style=" font-weight:600;">GPIO #27&lt;/span>&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Display Busy &lt;/span>on Raspberry Pi &lt;span style=" font-weight:600;">GPIO #17 &lt;/span>(used for E-Inks)&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Display Backlight &lt;/span>on Raspberry Pi &lt;span style=" font-weight:600;">GPIO #18 &lt;/span>(there's a jumper to cut/disable this if you want to use the PWM output for other uses like NeoPixels)&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Touch CS &lt;/span>on Raspberry Pi &lt;span style=" font-weight:600;">CE 1&lt;/span>&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Touch IRQ &lt;/span>on Raspberry Pi &lt;span style=" font-weight:600;">GPIO #24&lt;/span>&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The remaining EYESPI pins are not connected, leaving you with plenty of GPIO for other accessory boards.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">We also have a Stemma QT connector for the I2C port, to make connecting all sorts of Qwiic/Stemma QT devices super easy, two tactile switches on GPIO #5 and #6 and a slide switch on GPIO #13 which you can use for any sort of interface project or configuration.&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Display and EYESPI cable are not included&lt;/span>.&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit EYESPI Pi Beret with EYESPI Cable</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Adafruit EYESPI Pi Beret with EYESPI Cable</property>
+  <property name="mpn">Adafruit #5783</property>
+  <property name="mn">Adafruit</property>
+  <property name="part number">Adafruit #5783</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_421eda7a1db5a7f63c13eec16ba5c4c0_1_breadboard_88.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_421eda7a1db5a7f63c13eec16ba5c4c0_1_schematic_88.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_421eda7a1db5a7f63c13eec16ba5c4c0_1_pcb_88.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_421eda7a1db5a7f63c13eec16ba5c4c0_1_icon_88.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="3.3V" id="connector10" type="male">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector10pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector10pin" layer="schematic" terminalId="connector10terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector10pad" layer="copper0"/>
+     <p svgId="connector10pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" id="connector11" type="male">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector11pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector11pin" layer="schematic" terminalId="connector11terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector11pad" layer="copper0"/>
+     <p svgId="connector11pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" id="connector12" type="male">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector12pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector12pin" layer="schematic" terminalId="connector12terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector12pad" layer="copper0"/>
+     <p svgId="connector12pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector9" type="male">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector9pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector9pin" layer="schematic" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector9pad" layer="copper0"/>
+     <p svgId="connector9pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.adafruit.com/product/5783</url>
+</module>
