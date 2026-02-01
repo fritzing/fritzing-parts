@@ -615,7 +615,9 @@ class SVGCopperLayerContentChecker(SVGChecker):
     }
 
     # RGB threshold for color similarity (Euclidean distance)
-    RGB_DISTANCE_THRESHOLD = 15.0
+    # Set high enough to catch all copperish/golden/orange colors
+    # but low enough to reject silkscreen colors (white ~227, black ~311)
+    RGB_DISTANCE_THRESHOLD = 75.0
     STANDARD_COPPER_RGB = (247, 189, 19)  # #f7bd13
 
     def check(self):
