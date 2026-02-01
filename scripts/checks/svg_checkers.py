@@ -610,6 +610,8 @@ class SVGCopperLayerContentChecker(SVGChecker):
         '#f6ca34',  # Legacy variation
         '#ffd555',  # Legacy variation
         '#f5bd18',  # Legacy variation
+        '#ffbf00',  # Copper variation rgb(255, 191, 0)
+        '#ff9400',  # Copper variation
     }
 
     # RGB threshold for color similarity (Euclidean distance)
@@ -686,24 +688,40 @@ class SVGCopperLayerContentChecker(SVGChecker):
         # Normalize color (lowercase, remove whitespace)
         color = color.strip().lower()
 
-        # Check allowlist (case-insensitive)
-        if color in [c.lower() for c in self.VALID_COPPER_COLORS]:
-            return True
-
-        # Check RGB distance for colors not in allowlist
+        # Convert color to RGB for comparison
         try:
-            rgb = self._hex_to_rgb(color)
-            if rgb:
-                distance = self._rgb_distance(rgb, self.STANDARD_COPPER_RGB)
-                return distance <= self.RGB_DISTANCE_THRESHOLD
+            rgb = self._color_to_rgb(color)
+            if not rgb:
+                return False
+
+            # Check if RGB matches any color in allowlist
+            for valid_color in self.VALID_COPPER_COLORS:
+                valid_rgb = self._color_to_rgb(valid_color.lower())
+                if valid_rgb and rgb == valid_rgb:
+                    return True
+
+            # Check RGB distance from standard copper color
+            distance = self._rgb_distance(rgb, self.STANDARD_COPPER_RGB)
+            return distance <= self.RGB_DISTANCE_THRESHOLD
         except:
             pass
 
         return False
 
-    def _hex_to_rgb(self, hex_color):
-        """Convert hex color to RGB tuple"""
-        hex_color = hex_color.lstrip('#')
+    def _color_to_rgb(self, color):
+        """Convert color (hex or rgb notation) to RGB tuple"""
+        color = color.strip().lower()
+
+        # Handle rgb(r, g, b) notation
+        if color.startswith('rgb(') and color.endswith(')'):
+            try:
+                rgb_values = color[4:-1].split(',')
+                return tuple(int(v.strip()) for v in rgb_values)
+            except (ValueError, IndexError):
+                return None
+
+        # Handle hex notation
+        hex_color = color.lstrip('#')
         if len(hex_color) != 6:
             return None
         try:
