@@ -612,6 +612,7 @@ class SVGCopperLayerContentChecker(SVGChecker):
         '#f5bd18',  # Legacy variation
         '#ffbf00',  # Copper variation rgb(255, 191, 0)
         '#ff9400',  # Copper variation
+        '#dab662',  # Another copper/golden color
     }
 
     # RGB threshold for color similarity (Euclidean distance)
