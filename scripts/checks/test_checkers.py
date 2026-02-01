@@ -635,5 +635,82 @@ class TestCheckers(unittest.TestCase):
                         None,
                         3)   # 3 warnings for mismatched connector numbering
 
+    def test_copper_color_valid_standard(self):
+        self.run_checker('copper_color_valid_standard.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        0,
+                        None)
+
+    def test_copper_color_valid_uppercase(self):
+        self.run_checker('copper_color_valid_uppercase.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        0,
+                        None)
+
+    def test_copper_color_valid_legacy(self):
+        self.run_checker('copper_color_valid_legacy.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        0,
+                        None)
+
+    def test_copper_color_valid_inherited(self):
+        self.run_checker('copper_color_valid_inherited.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        0,
+                        None)
+
+    def test_copper_color_valid_none(self):
+        self.run_checker('copper_color_valid_none.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        0,
+                        None)
+
+    def test_copper_color_valid_nested_copper(self):
+        self.run_checker('copper_color_valid_nested_copper.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        0,
+                        None)
+
+    def test_copper_color_invalid_silkscreen_nested(self):
+        self.run_checker('copper_color_invalid_silkscreen_nested.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        2,
+                        None)
+
+    def test_copper_color_invalid_wrong_color(self):
+        self.run_checker('copper_color_invalid_wrong_color.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        1,
+                        None)
+
+    def test_copper_color_invalid_white_stroke(self):
+        self.run_checker('copper_color_invalid_white_stroke.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        1,
+                        None)
+
+    def test_copper_color_invalid_mixed(self):
+        self.run_checker('copper_color_invalid_mixed.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        2,
+                        None)
+
+    def test_copper_color_invalid_style_attr(self):
+        self.run_checker('copper_color_invalid_style_attr.fzp.test',
+                        [],
+                        ['copper_layer_content'],
+                        1,
+                        None)
+
 if __name__ == '__main__':
     unittest.main()

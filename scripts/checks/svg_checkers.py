@@ -594,6 +594,148 @@ class SVGLayerNestingChecker(SVGChecker):
         return "Check that layer groups are not incorrectly nested (e.g. silkscreen within breadboard)"
 
 
+class SVGCopperLayerContentChecker(SVGChecker):
+    """
+    Validates that copper layer groups (copper0, copper1) only contain
+    copper-colored elements and no non-copper colors.
+
+    This prevents the common mistake of using silkscreen colors (white, gray)
+    or other non-copper colors within copper layer groups, which causes
+    rendering issues.
+    """
+
+    # Known valid copper colors (case-insensitive)
+    VALID_COPPER_COLORS = {
+        '#f7bd13',  # Standard Fritzing copper
+        '#f6ca34',  # Legacy variation
+        '#ffd555',  # Legacy variation
+        '#f5bd18',  # Legacy variation
+    }
+
+    # RGB threshold for color similarity (Euclidean distance)
+    RGB_DISTANCE_THRESHOLD = 15.0
+    STANDARD_COPPER_RGB = (247, 189, 19)  # #f7bd13
+
+    def check(self):
+        """Check copper0 and copper1 layers for invalid content"""
+        # Skip if not a PCB view
+        if 'copper0' not in self.layer_ids and 'copper1' not in self.layer_ids:
+            return self.get_result()
+
+        # Check both copper layers
+        for layer in ['copper0', 'copper1']:
+            layer_groups = self.svg_doc.xpath(f"//*[@id='{layer}']")
+            for group in layer_groups:
+                self._check_copper_layer_colors(group, layer)
+
+        return self.get_result()
+
+    def _check_copper_layer_colors(self, layer_group, layer_id):
+        """Check colors of all elements within a copper layer group"""
+        # Get all descendant elements
+        descendants = layer_group.xpath(".//*")
+
+        for element in descendants:
+            # Skip copper layer groups themselves (copper0 in copper1 is valid)
+            if element.get('id') in ['copper0', 'copper1']:
+                continue
+
+            self._check_element_colors(element, layer_id)
+
+    def _check_element_colors(self, element, layer_id):
+        """Check fill and stroke colors of an element"""
+        # Get attributes (may be overridden by style)
+        fill = SVGUtils.get_inherited_attribute(element, 'fill')
+        stroke = SVGUtils.get_inherited_attribute(element, 'stroke')
+        stroke_width = SVGUtils.get_inherited_attribute(element, 'stroke-width')
+        style = SVGUtils.get_inherited_attribute(element, 'style')
+
+        # Parse style attribute if present (style overrides attributes)
+        if style:
+            style_attrs = style.split(";")
+            for attr in style_attrs:
+                if attr:
+                    parts = attr.split(":")
+                    if len(parts) == 2:
+                        key = parts[0].strip()
+                        value = parts[1].strip()
+                        if key == "fill":
+                            fill = value
+                        elif key == "stroke":
+                            stroke = value
+                        elif key == "stroke-width":
+                            stroke_width = value
+
+        # Check fill color
+        if fill and fill.lower() != 'none':
+            if not self._is_valid_copper_color(fill):
+                self._report_invalid_color(element, layer_id, fill, 'fill')
+
+        # Check stroke color (only if stroke is visible)
+        if stroke and stroke.lower() != 'none':
+            # Only check stroke if it's visible (has non-zero width)
+            if stroke_width and stroke_width != '0':
+                if not self._is_valid_copper_color(stroke):
+                    self._report_invalid_color(element, layer_id, stroke, 'stroke')
+
+    def _is_valid_copper_color(self, color):
+        """Check if color is a valid copper color"""
+        if not color:
+            return True
+
+        # Normalize color (lowercase, remove whitespace)
+        color = color.strip().lower()
+
+        # Check allowlist (case-insensitive)
+        if color in [c.lower() for c in self.VALID_COPPER_COLORS]:
+            return True
+
+        # Check RGB distance for colors not in allowlist
+        try:
+            rgb = self._hex_to_rgb(color)
+            if rgb:
+                distance = self._rgb_distance(rgb, self.STANDARD_COPPER_RGB)
+                return distance <= self.RGB_DISTANCE_THRESHOLD
+        except:
+            pass
+
+        return False
+
+    def _hex_to_rgb(self, hex_color):
+        """Convert hex color to RGB tuple"""
+        hex_color = hex_color.lstrip('#')
+        if len(hex_color) != 6:
+            return None
+        try:
+            return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+        except ValueError:
+            return None
+
+    def _rgb_distance(self, rgb1, rgb2):
+        """Calculate Euclidean distance between two RGB colors"""
+        return sum((a - b) ** 2 for a, b in zip(rgb1, rgb2)) ** 0.5
+
+    def _report_invalid_color(self, element, layer_id, color, attr_type):
+        """Report an invalid color error"""
+        element_id = element.get('id', '(no id)')
+        element_tag = element.tag.split('}')[-1] if '}' in element.tag else element.tag
+
+        self.add_error(
+            f"Invalid color '{color}' found in copper layer '{layer_id}'. "
+            f"Expected copper color (#f7bd13 or similar). "
+            f"Element: {element_tag} with id='{element_id}' ({attr_type} attribute)",
+            node=element
+        )
+
+    @staticmethod
+    def get_name():
+        return "copper_layer_content"
+
+    @staticmethod
+    def get_description():
+        return "Check that copper layers only contain copper-colored elements (no silkscreen or other layer content)"
+
+
 class SVGGornChecker(SVGChecker):
     """Check for gorn attributes in SVG files"""
     
