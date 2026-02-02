@@ -604,17 +604,6 @@ class SVGCopperLayerContentChecker(SVGChecker):
     rendering issues.
     """
 
-    # Known valid copper colors (case-insensitive)
-    VALID_COPPER_COLORS = {
-        '#f7bd13',  # Standard Fritzing copper
-        '#f6ca34',  # Legacy variation
-        '#ffd555',  # Legacy variation
-        '#f5bd18',  # Legacy variation
-        '#ffbf00',  # Copper variation rgb(255, 191, 0)
-        '#ff9400',  # Copper variation
-        '#dab662',  # Another copper/golden color
-    }
-
     # RGB threshold for color similarity (Euclidean distance)
     # Set high enough to catch all copperish/golden/orange colors
     # but low enough to reject silkscreen colors (white ~227, black ~311)
@@ -673,23 +662,27 @@ class SVGCopperLayerContentChecker(SVGChecker):
 
         # Check fill color
         if fill and fill.lower() != 'none':
-            if not self._is_valid_copper_color(fill):
+            result = self._is_valid_copper_color(fill, element, layer_id, 'fill')
+            if not result:
                 self._report_invalid_color(element, layer_id, fill, 'fill')
 
         # Check stroke color (only if stroke is visible)
         if stroke and stroke.lower() != 'none':
             # Only check stroke if it's visible (has non-zero width)
             if stroke_width and stroke_width != '0':
-                if not self._is_valid_copper_color(stroke):
+                result = self._is_valid_copper_color(stroke, element, layer_id, 'stroke')
+                if not result:
                     self._report_invalid_color(element, layer_id, stroke, 'stroke')
 
-    def _is_valid_copper_color(self, color):
-        """Check if color is a valid copper color"""
+    def _is_valid_copper_color(self, color, element, layer_id, attr_type):
+        """Check if color is a valid copper color
+
+        Only #f7bd13 passes without warning.
+        Near colors (within threshold) generate a warning.
+        Far colors generate an error (by returning False).
+        """
         if not color:
             return True
-
-        # Normalize color (lowercase, remove whitespace)
-        color = color.strip().lower()
 
         # Convert color to RGB for comparison
         try:
@@ -697,22 +690,38 @@ class SVGCopperLayerContentChecker(SVGChecker):
             if not rgb:
                 return False
 
-            # Check if RGB matches any color in allowlist
-            for valid_color in self.VALID_COPPER_COLORS:
-                valid_rgb = self._color_to_rgb(valid_color.lower())
-                if valid_rgb and rgb == valid_rgb:
-                    return True
+            # Check if exact match with standard copper color
+            if rgb == self.STANDARD_COPPER_RGB:
+                return True
 
             # Check RGB distance from standard copper color
             distance = self._rgb_distance(rgb, self.STANDARD_COPPER_RGB)
-            return distance <= self.RGB_DISTANCE_THRESHOLD
+
+            if distance <= self.RGB_DISTANCE_THRESHOLD:
+                # Near color - issue warning but don't fail
+                element_id = element.get('id', '(no id)')
+                element_tag = element.tag.split('}')[-1] if '}' in element.tag else element.tag
+                self.add_warning(
+                    f"Non-standard copper color '{color}' found in copper layer '{layer_id}'. "
+                    f"Expected exact color (#f7bd13). "
+                    f"Element: {element_tag} with id='{element_id}' ({attr_type} attribute)",
+                    node=element
+                )
+                return True
+
+            # Far color - will trigger error
+            return False
         except:
             pass
 
         return False
 
     def _color_to_rgb(self, color):
-        """Convert color (hex or rgb notation) to RGB tuple"""
+        """Convert color (hex or rgb notation) to RGB tuple
+
+        Handles normalization (lowercase, whitespace removal) internally.
+        """
+        # Normalize color (lowercase, remove whitespace)
         color = color.strip().lower()
 
         # Handle rgb(r, g, b) notation
@@ -743,7 +752,7 @@ class SVGCopperLayerContentChecker(SVGChecker):
 
         self.add_error(
             f"Invalid color '{color}' found in copper layer '{layer_id}'. "
-            f"Expected copper color (#f7bd13 or similar). "
+            f"Expected copper color (#f7bd13). "
             f"Element: {element_tag} with id='{element_id}' ({attr_type} attribute)",
             node=element
         )
