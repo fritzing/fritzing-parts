@@ -47,17 +47,28 @@ def svg_to_png_bytes(svg_path, size=42):
         with open(svg_path, 'rb') as f:
             svg_data = f.read()
 
-        # Convert SVG to PNG using cairosvg (at original size)
+        # Convert SVG to PNG using cairosvg, ensuring it's at least size x size
+        # so small SVGs get scaled up rather than leaving a border
         png_data = cairosvg.svg2png(bytestring=svg_data)
 
-        # Open with PIL to resize and center
+        # Open with PIL to check dimensions
         img = Image.open(io.BytesIO(png_data))
+
+        # If the rendered image is smaller than target, re-render at a larger size
+        if img.width < size or img.height < size:
+            scale = max(size / img.width, size / img.height)
+            png_data = cairosvg.svg2png(
+                bytestring=svg_data,
+                output_width=int(img.width * scale),
+                output_height=int(img.height * scale),
+            )
+            img = Image.open(io.BytesIO(png_data))
 
         # Convert to RGBA if necessary
         if img.mode != 'RGBA':
             img = img.convert('RGBA')
 
-        # Calculate scaling to fit within size x size while preserving aspect ratio
+        # Scale down to fit within size x size while preserving aspect ratio
         img.thumbnail((size, size), Image.Resampling.LANCZOS)
 
         # Create a new transparent canvas of exact size
