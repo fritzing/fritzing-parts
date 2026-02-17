@@ -81,7 +81,38 @@ class TestCheckers(unittest.TestCase):
         #          Test mm unit
         #      ]
 
+    def test_font_size_fix(self):
+        """Test that font-size unit suffixes are automatically removed"""
+        test_svg = 'test_data/svg/core/pcb/font_size.svg'
 
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp_svg = os.path.join(temp_dir, 'temp_font_size.svg')
+            shutil.copy(test_svg, temp_svg)
+
+            # Parse and check - should find unit errors
+            svg_doc = etree.parse(temp_svg)
+            from .svg_checkers import SVGFontSizeChecker
+            checker = SVGFontSizeChecker(svg_doc, ['silkscreen'])
+            errors, warnings = checker.check()
+            self.assertGreater(errors, 0, "Should initially have font-size errors")
+
+            # Apply fix
+            fix_results = checker.fix(temp_svg)
+            self.assertGreater(len(fix_results), 0, "Should have applied fixes")
+
+            # Verify the file no longer has unit suffixes
+            with open(temp_svg, 'r') as f:
+                content = f.read()
+            self.assertNotIn('font-size="5px"', content)
+            self.assertNotIn('font-size="2mm"', content)
+            self.assertIn('font-size="5"', content)
+            self.assertIn('font-size="2"', content)
+
+            # Re-check: only the 2 "missing font-size" errors should remain
+            svg_doc2 = etree.parse(temp_svg)
+            checker2 = SVGFontSizeChecker(svg_doc2, ['silkscreen'])
+            errors2, _ = checker2.check()
+            self.assertEqual(errors2, 2, "After fix, only missing font-size errors should remain")
 
     # def test_missing_tags(self):
     #     self.run_checker('missing_tags.fzp.test', ['missing_tags'], [], 1, 'Missing required tag')

@@ -86,11 +86,53 @@ class SVGFontSizeChecker(SVGChecker):
             self.check_font_size(element)
         return self.get_result()
 
+    def fix(self, filename):
+        """Strip unit suffixes (px, mm, pt, etc.) from font-size values.
+
+        Handles both XML attributes (font-size="5px") and CSS style
+        properties (style="font-size:5px;...").
+        """
+        with open(filename, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        original_content = content
+        units = r'(?:px|mm|pt|in|cm|em|ex|rem|%)'
+
+        # Fix font-size XML attributes: font-size="5px" -> font-size="5"
+        attr_pattern = r'(font-size\s*=\s*(["\']))(\d+(?:\.\d+)?)\s*' + units + r'(\2)'
+
+        def replace_attr(match):
+            prefix = match.group(1)    # font-size="  (including quote)
+            number = match.group(3)
+            closing = match.group(4)   # closing quote
+            old_val = match.group(0)
+            self.add_fix(f"Removed unit from font-size attribute: {old_val} -> {prefix}{number}{closing}")
+            return f'{prefix}{number}{closing}'
+
+        content = re.sub(attr_pattern, replace_attr, content)
+
+        # Fix font-size inside style attributes: font-size:5px -> font-size:5
+        style_pattern = r'(font-size\s*:\s*)(\d+(?:\.\d+)?)\s*' + units + r'(\s*[;"\'])'
+
+        def replace_style(match):
+            prefix = match.group(1)    # font-size:
+            number = match.group(2)
+            suffix = match.group(3)    # ; or closing quote
+            old_val = match.group(0)
+            self.add_fix(f"Removed unit from font-size in style: {old_val} -> {prefix}{number}{suffix}")
+            return f'{prefix}{number}{suffix}'
+
+        content = re.sub(style_pattern, replace_style, content)
+
+        if content != original_content:
+            with open(filename, 'w', encoding='utf-8') as f:
+                f.write(content)
+
+        return self.fixes
 
     @staticmethod
     def get_name():
         return "font_size"
-
 
     @staticmethod
     def get_description():
