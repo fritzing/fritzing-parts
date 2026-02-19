@@ -315,15 +315,76 @@ class FZPModuleIDChecker(FZPChecker):
         return "Check module ID attribute is present"
 
 class FZPModuleIDSpecialCharsChecker(FZPChecker):
+    # Characters that are unsafe for filenames on Windows, Linux, or macOS
+    FILENAME_UNSAFE_CHARS = set('<>:"/\\|?*\0')
+    # Control characters (0x00-0x1F)
+    CONTROL_CHARS = set(chr(c) for c in range(0, 32))
+    MIN_LENGTH = 8
+
     def check(self):
         root = self.fzp_doc.getroot()
         module_id = root.get('moduleId')
-        if module_id:
-            special_chars = ['*', '?', ',', '/']
-            for char in special_chars:
-                if char in module_id:
-                    self.add_warning(f"ModuleID contains special character '{char}' which may cause issues", node=root)
+        if not module_id:
+            return self.get_result()
+
+        if len(module_id) < self.MIN_LENGTH:
+            self.add_error(f"ModuleID '{module_id}' is too short (minimum {self.MIN_LENGTH} characters)", node=root)
+
+        reported_errors = set()
+        reported_warnings = set()
+
+        for char in module_id:
+            if char in self.CONTROL_CHARS or char in self.FILENAME_UNSAFE_CHARS:
+                if char not in reported_errors:
+                    reported_errors.add(char)
+                    if ord(char) < 32:
+                        self.add_error(f"ModuleID contains control character 0x{ord(char):02X} which is unsafe for filenames", node=root)
+                    else:
+                        self.add_error(f"ModuleID contains character '{char}' which is unsafe for filenames", node=root)
+            elif not (char.isalnum() or char in '-_.'):
+                if char not in reported_warnings:
+                    reported_warnings.add(char)
+                    if char == ' ':
+                        self.add_warning("ModuleID contains spaces", node=root)
+                    else:
+                        self.add_warning(f"ModuleID contains non-alphanumeric character '{char}'", node=root)
+
         return self.get_result()
+
+    def fix(self, filename):
+        """Replace unsafe characters in moduleId with underscores."""
+        with open(filename, 'r', encoding='UTF-8') as f:
+            content = f.read()
+
+        original_content = content
+
+        pattern = r'(moduleId\s*=\s*")([^"]*?)(")'
+
+        def replace_module_id(match):
+            prefix = match.group(1)
+            module_id = match.group(2)
+            suffix = match.group(3)
+
+            sanitized = []
+            for char in module_id:
+                if char.isalnum() or char in '-_.':
+                    sanitized.append(char)
+                else:
+                    sanitized.append('_')
+            sanitized = ''.join(sanitized)
+
+            if sanitized != module_id:
+                self.add_fix(f"Sanitized moduleId from '{module_id}' to '{sanitized}'")
+                return f"{prefix}{sanitized}{suffix}"
+            return match.group(0)
+
+        content = re.sub(pattern, replace_module_id, content)
+
+        if content != original_content:
+            with open(filename, 'w', encoding='UTF-8') as f:
+                f.write(content)
+
+        return self.fixes
 
     @staticmethod
     def get_name():
@@ -331,7 +392,7 @@ class FZPModuleIDSpecialCharsChecker(FZPChecker):
 
     @staticmethod
     def get_description():
-        return "Check module ID for special characters that may cause issues"
+        return "Check module ID for characters that are unsafe for filenames or not alphanumeric"
 
 
 class FZPVersionChecker(FZPChecker):
