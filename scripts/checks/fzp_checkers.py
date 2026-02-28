@@ -184,7 +184,7 @@ class FZPConnectorTerminalChecker(FZPChecker):
         return "Check if the connector terminals defined in the FZP file exist in the referenced SVGs"
 
 
-class FZPConnectorVisibilityChecker(FZPChecker):
+class FZPConnectorSvgRefChecker(FZPChecker):
     def __init__(self, fzp_doc, svg_docs):
         super().__init__(fzp_doc)
         self.svg_docs = svg_docs
@@ -199,10 +199,10 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                 for view in views:
                     p_elements = view.xpath("p")
                     for p in p_elements:
-                        # Skip legs, connector is invisible
+                        # Skip legs
                         if 'legId' in p.attrib:
                             continue
-                        # Skip hybrids or unknown layers, no way to check visibility
+                        # Skip hybrids or unknown layers
                         if FZPUtils.is_hybrid_or_unknown_layer(p):
                             continue
 
@@ -210,36 +210,15 @@ class FZPConnectorVisibilityChecker(FZPChecker):
                         layer = p.attrib.get("layer")
                         if not connector_svg_id:
                             self.add_error(f"Connector {connector_id} does not reference an element in layer {layer}.")
-                            continue
-
-                        if not self.is_connector_visible(view.tag, connector_svg_id): # we already checked that it is not hybrid
-                            self.add_error(f"Invisible connector '{connector_svg_id}' in layer '{layer}'", connector)
         return self.get_result()
-
-    def is_connector_visible(self, view_name, connector_id):
-        svg_doc = self.svg_docs.get(view_name)
-        if not svg_doc:
-            return True # Skip the check if the SVG is not available
-
-        try:
-            elements = svg_doc.xpath(f"//*[@id='{connector_id}']")
-            if elements:
-                try:
-                    return SVGUtils.has_visible_attributes_recursive(elements[0])
-                except ValueError as e:
-                    print(f"Error in {connector_id} : {e}")
-                    return False
-        except Exception as e:
-            print(f"Error processing {view_name} SVG: {str(e)}")
-        return False
 
     @staticmethod
     def get_name():
-        return "connector_visibility"
+        return "connector_svg_ref"
 
     @staticmethod
     def get_description():
-        return "Check for invisible (non-hybrid) connectors in the SVG files referenced by the FZP"
+        return "Check if connectors reference SVG elements via svgId attribute"
 
 
 class FZPPCBConnectorStrokeChecker(FZPChecker):

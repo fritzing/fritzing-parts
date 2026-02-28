@@ -104,7 +104,7 @@ class FZPCheckerRunner:
             if checker.get_name() == check_type:
                 if checker in [
                     FZPConnectorTerminalChecker,
-                    FZPConnectorVisibilityChecker,
+                    FZPConnectorSvgRefChecker,
                     FZPPCBConnectorStrokeChecker,
                     FZPLayerIDsChecker,
                     FZPMissingConnectorRefsChecker,
@@ -516,7 +516,7 @@ class FZPCheckerRunner:
                             fzp_files.append(fzp_path)
         return fzp_files
 
-AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorVisibilityChecker, FZPPCBConnectorStrokeChecker, FZPModuleIDSpecialCharsChecker, FZPMissingLegIDsChecker, FZPMissingConnectorRefsChecker, FZPDateFormatChecker, FZPConnectorNumberingChecker]
+AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorSvgRefChecker, FZPPCBConnectorStrokeChecker, FZPModuleIDSpecialCharsChecker, FZPMissingLegIDsChecker, FZPMissingConnectorRefsChecker, FZPDateFormatChecker, FZPConnectorNumberingChecker]
 
 SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGFontTypeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGMatrixChecker, SVGLayerNestingChecker, SVGGornChecker, SVGCopperLayerContentChecker]
 AVAILABLE_CHECKERS_FROM_GOLANG = [
