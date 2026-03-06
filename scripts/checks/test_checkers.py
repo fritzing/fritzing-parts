@@ -167,15 +167,42 @@ class TestCheckers(unittest.TestCase):
                          ['module_id'],
                          [], 1, None, 0)
 
-    def test_module_id_special_chars_present(self):
+    def test_module_id_unsafe_filename_chars(self):
         self.run_checker('module_id_special_chars_present.fzp.test',
                          ['module_id_special_chars'],
-                         [], 0, None, 1)  # 1 warning for '*'
+                         [], 1, None, 0)  # 1 error for '*' (unsafe for filenames)
 
-    def test_module_id_special_chars_absent(self):
+    def test_module_id_clean(self):
         self.run_checker('module_id_special_chars_absent.fzp.test',
                          ['module_id_special_chars'],
                          [], 0, None, 0)
+
+    def test_module_id_non_alnum_warns(self):
+        self.run_checker('module_id_non_alnum.fzp.test',
+                         ['module_id_special_chars'],
+                         [], 0, None, 1)  # 1 warning for space
+
+    def test_module_id_too_short(self):
+        self.run_checker('module_id_too_short.fzp.test',
+                         ['module_id_special_chars'],
+                         [], 1, None, 0)  # 1 error for too short (<8 chars)
+
+    def test_module_id_special_chars_fix(self):
+        """Test that the fixer replaces unsafe and non-alnum chars with underscores."""
+        import tempfile
+        import shutil
+        src = os.path.join(self.test_data_dir, 'module_id_special_chars_present.fzp.test')
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.fzp', delete=False) as tmp:
+            tmp_path = tmp.name
+            shutil.copy2(src, tmp_path)
+        try:
+            runner = FZPCheckerRunner(tmp_path)
+            runner.check(['module_id_special_chars'], [], fix=True)
+            with open(tmp_path, 'r', encoding='UTF-8') as f:
+                content = f.read()
+            self.assertIn('moduleId="SparkFun-DigitalIC-74_08-SE"', content)
+        finally:
+            os.unlink(tmp_path)
 
     def test_version_present_valid(self):
         self.run_checker('version_present_valid.fzp.test',
