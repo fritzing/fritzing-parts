@@ -57,10 +57,9 @@ li.checked::marker { content: "\2612"; }
  <properties>
   <property name="family">Motor Driver</property>
   <property name="variant">variant 8</property>
-  <property name="layer"/>
   <property name="part number">BLDCSHIELDIFX007TTOBO1</property>
-  <property name="mn"/>
-  <property name="mpn"/>
+  <property name="mn">Infineon</mn>
+  <property name="mpn">BLDCSHIELDIFX007TTOBO1</mpn>
  </properties>
  <views>
   <breadboardView>
@@ -728,7 +727,6 @@ li.checked::marker { content: "\2612"; }
    <nodeMember connectorId="connector25"/>
    <nodeMember connectorId="connector13"/>
   </bus>
-  <bus id="internal2"/>
  </buses>
  <label>The BLDC Shield for Arduino is equipped with three IFX007T</label>
  <url>https://www.infineon.com/cms/en/product/evaluation-boards/bldc-shield_ifx007t/</url>
