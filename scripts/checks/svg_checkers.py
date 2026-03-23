@@ -808,6 +808,76 @@ class SVGCopperLayerContentChecker(SVGChecker):
         return "Check that copper layers only contain copper-colored elements (no silkscreen or other layer content)"
 
 
+class SVGNoLayerChecker(SVGChecker):
+    """Check that SVG child elements are inside proper Fritzing layer groups."""
+
+    VALID_LAYERS = [
+        "icon", "breadboardbreadboard", "breadboard", "breadboardWire",
+        "breadboardLabel", "breadboardNote", "breadboardRuler",
+        "schematic", "schematicWire", "schematicTrace", "schematicLabel",
+        "schematicRuler", "board", "ratsnest", "silkscreen",
+        "silkscreenLabel", "groundplane", "copper0", "copper0trace",
+        "groundplane1", "copper1", "copper1trace", "silkscreen0",
+        "silkscreen0Label", "soldermask", "outline", "keepout",
+        "partimage", "pcbNote", "pcbRuler"
+    ]
+
+    SKIP_LOCAL_TAGS = {"metadata", "title", "desc", "defs", "namedview"}
+
+    def _check_element(self, element):
+        """Walk direct children of element, checking for valid layer groups."""
+        for child in element:
+            tag = etree.QName(child.tag).localname if '}' in child.tag else child.tag
+
+            if tag in self.SKIP_LOCAL_TAGS:
+                continue
+
+            child_id = child.get("id", "")
+            if child_id in self.VALID_LAYERS:
+                continue
+
+            if tag == "g":
+                result = self._check_element(child)
+                if result:
+                    return result
+                continue
+
+            return tag
+
+        return None
+
+    def check(self):
+        root = self.svg_doc.getroot()
+
+        # Check that root <svg> doesn't have a layer ID (Fritzing bug)
+        root_id = root.get("id", "")
+        if root_id in self.VALID_LAYERS:
+            self.add_error(
+                f"Root <svg> element contains layer id '{root_id}' — "
+                f"Fritzing has problems with layer ids in the root element",
+                node=root
+            )
+            return self.get_result()
+
+        bad_tag = self._check_element(root)
+        if bad_tag:
+            self.add_error(
+                f"Child element '{bad_tag}' is not inside a valid Fritzing layer group "
+                f"(expected a <g> with id matching a known layer)",
+                node=root
+            )
+
+        return self.get_result()
+
+    @staticmethod
+    def get_name():
+        return "no_layer"
+
+    @staticmethod
+    def get_description():
+        return "Check that SVG child elements are inside proper Fritzing layer groups (e.g. <g id='breadboard'>)"
+
+
 class SVGGornChecker(SVGChecker):
     """Check for gorn attributes in SVG files"""
     

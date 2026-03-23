@@ -755,5 +755,29 @@ class TestCheckers(unittest.TestCase):
                         1,
                         None)
 
+    def test_no_layer_valid(self):
+        """Test that SVG with elements inside proper layer group passes"""
+        self.run_checker('no_layer_valid.fzp.test',
+                        [],
+                        ['no_layer'],
+                        0,
+                        None)
+
+    def test_no_layer_invalid(self):
+        """Test that SVG with elements outside any layer group is detected"""
+        self.run_checker('no_layer_invalid.fzp.test',
+                        [],
+                        ['no_layer'],
+                        1,
+                        None)
+
+    def test_no_layer_with_namedview(self):
+        """Test that sodipodi:namedview is skipped (not a false positive)"""
+        self.run_checker('no_layer_namedview.fzp.test',
+                        [],
+                        ['no_layer'],
+                        0,
+                        None)
+
 if __name__ == '__main__':
     unittest.main()

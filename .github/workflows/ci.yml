@@ -26,8 +26,6 @@ jobs:
         run: python scripts/checkcopies.py -d svg
       - name: Dry run script to test the script itself
         run: python scripts/obsolete.py core/sparkfun-connectors-rca-.fzp dummy -s
-      - name: Check that SVGs have proper layer ids
-        run: python scripts/svgNoLayer.py -d svg/core -s scripts/nolayeridcheck.txt
       - name: Check that SVGs and FZPs are ASCII or UTF-8
         run: python scripts/utf8stats.py . --verbose
 
