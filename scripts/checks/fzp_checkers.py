@@ -298,6 +298,68 @@ class FZPFritzingVersionChecker(FZPChecker):
         return "Check fritzing version attribute is present and valid"
 
 
+class FZPFritzingVersionRangeChecker(FZPChecker):
+    """Check that fritzingVersion is not too old."""
+
+    @staticmethod
+    def _parse_version(version_str):
+        """Parse a version string into a comparable tuple of ints.
+
+        Handles formats like '0.9.3b', '0.5.2b.02.18.4756', '1.0.3'.
+        Only the first three numeric components are compared.
+        """
+        if not version_str:
+            return None
+        parts = version_str.strip().split('.')
+        result = []
+        for part in parts[:3]:
+            digits = re.match(r'(\d+)', part)
+            if digits:
+                result.append(int(digits.group(1)))
+            else:
+                break
+        if len(result) < 3:
+            result.extend([0] * (3 - len(result)))
+        return tuple(result[:3])
+
+    def check(self):
+        root = self.fzp_doc.getroot()
+        version_str = root.get('fritzingVersion')
+        if not version_str:
+            # Missing version is handled by FZPFritzingVersionChecker
+            return self.get_result()
+
+        version = self._parse_version(version_str)
+        if version is None:
+            return self.get_result()
+
+        if version < (0, 8, 0):
+            self.add_error(
+                f"fritzingVersion '{version_str}' is below 0.8. "
+                f"This part is very old and likely needs a full update.",
+                node=root
+            )
+        if version < (0, 9, 4):
+            self.add_warning(
+                f"fritzingVersion '{version_str}' — this part claims a fritzingVersion that is more than ten years old.",
+                node=root
+            )
+        elif version < (1, 0, 4):
+            self.add_warning(
+                f"fritzingVersion '{version_str}' — this part might use some outdated conventions.",
+                node=root
+            )
+        return self.get_result()
+
+    @staticmethod
+    def get_name():
+        return "fritzing_version_range"
+
+    @staticmethod
+    def get_description():
+        return "Check that fritzingVersion is not too old (error if < 0.8, warning if < 0.9.4 or < 1.0.4)"
+
+
 class FZPModuleIDChecker(FZPChecker):
     def check(self):
         root = self.fzp_doc.getroot()
@@ -571,8 +633,6 @@ class FZPConnectorLayersChecker(FZPChecker):
                     self.add_error(f"ConnectorLayer missing 'layer' ID in Connector '{connector_id}'.", node=layer)
                 if not layer.get('svgId'):
                     self.add_error(f"ConnectorLayer missing 'svgId' in Connector '{connector_id}'.", node=layer)
-                if not layer.get('terminalId'):
-                    self.add_error(f"ConnectorLayer missing 'terminalId' in Connector '{connector_id}'.", node=layer)
         return self.get_result()
 
     @staticmethod

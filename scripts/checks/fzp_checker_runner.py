@@ -521,6 +521,7 @@ AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPCon
 SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGFontTypeChecker, SVGViewBoxChecker, SVGIdsChecker, SVGMatrixChecker, SVGLayerNestingChecker, SVGNoLayerChecker, SVGGornChecker, SVGCopperLayerContentChecker]
 AVAILABLE_CHECKERS_FROM_GOLANG = [
     FZPFritzingVersionChecker,
+    FZPFritzingVersionRangeChecker,
     FZPModuleIDChecker,
     FZPVersionChecker,
     FZPTitleChecker,

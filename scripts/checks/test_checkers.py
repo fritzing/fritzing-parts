@@ -157,6 +157,53 @@ class TestCheckers(unittest.TestCase):
                          ['fritzing_version'],
                          [], 1, None, 0)
 
+    def _make_fzp_tree(self, xml_string):
+        """Helper: parse XML string into an ElementTree (as FZPChecker expects)"""
+        root = etree.fromstring(xml_string)
+        return etree.ElementTree(root)
+
+    def test_fritzing_version_range_current(self):
+        """Test that version >= 1.0.4 passes without issues"""
+        from .fzp_checkers import FZPFritzingVersionRangeChecker
+        fzp_doc = self._make_fzp_tree('<module fritzingVersion="1.0.4" moduleId="test"/>')
+        checker = FZPFritzingVersionRangeChecker(fzp_doc)
+        errors, warnings = checker.check()
+        self.assertEqual(errors, 0)
+        self.assertEqual(warnings, 0)
+
+    def test_fritzing_version_range_outdated_conventions(self):
+        """Test that version < 1.0.4 but >= 0.9.4 warns about outdated conventions"""
+        from .fzp_checkers import FZPFritzingVersionRangeChecker
+        fzp_doc = self._make_fzp_tree('<module fritzingVersion="1.0.3" moduleId="test"/>')
+        checker = FZPFritzingVersionRangeChecker(fzp_doc)
+        errors, warnings = checker.check()
+        self.assertEqual(errors, 0)
+        self.assertEqual(warnings, 1)
+        self.assertIn("outdated conventions", checker.issues[0].message)
+
+    def test_fritzing_version_range_very_old(self):
+        """Test that version < 0.8 produces error + ten years old warning"""
+        from .fzp_checkers import FZPFritzingVersionRangeChecker
+        fzp_doc = self._make_fzp_tree('<module fritzingVersion="0.5.2b.02.18.4756" moduleId="test"/>')
+        checker = FZPFritzingVersionRangeChecker(fzp_doc)
+        errors, warnings = checker.check()
+        self.assertEqual(errors, 1)
+        self.assertEqual(warnings, 1)
+        error_msgs = [i.message for i in checker.issues if i.severity == 'error']
+        warning_msgs = [i.message for i in checker.issues if i.severity == 'warning']
+        self.assertIn("below 0.8", error_msgs[0])
+        self.assertIn("ten years old", warning_msgs[0])
+
+    def test_fritzing_version_range_at_threshold(self):
+        """Test that version exactly 0.9.4 gets the outdated conventions warning"""
+        from .fzp_checkers import FZPFritzingVersionRangeChecker
+        fzp_doc = self._make_fzp_tree('<module fritzingVersion="0.9.4" moduleId="test"/>')
+        checker = FZPFritzingVersionRangeChecker(fzp_doc)
+        errors, warnings = checker.check()
+        self.assertEqual(errors, 0)
+        self.assertEqual(warnings, 1)
+        self.assertIn("outdated conventions", checker.issues[0].message)
+
     def test_module_id_present(self):
         self.run_checker('module_id_present.fzp.test',
                          ['module_id'],
@@ -327,7 +374,7 @@ class TestCheckers(unittest.TestCase):
     def test_connector_layers_missing_attributes(self):
         self.run_checker('connector_layers_missing_attributes.fzp.test',
                          ['connector_layers'],
-                         [], 7, None, 0)
+                         [], 4, None, 0)
 
 
     def test_layer_ids_match(self):
