@@ -606,13 +606,13 @@ class SVGLayerNestingChecker(SVGChecker):
 
         # Layer groups that shouldn't be nested in certain other layers
         invalid_nesting = {
-            'breadboard': ['schematic', 'silkscreen', 'silkscreen0', 'copper0', 'copper1'],
-            'schematic': ['breadboard', 'silkscreen', 'silkscreen0', 'copper0', 'copper1'],
+            'breadboard': ['schematic', 'icon', 'silkscreen', 'silkscreen0', 'copper0', 'copper1'],
+            'schematic': ['breadboard', 'icon', 'silkscreen', 'silkscreen0', 'copper0', 'copper1'],
             'icon': ['silkscreen', 'silkscreen0', 'copper0', 'copper1', 'breadboard', 'schematic'],
-            'silkscreen': ['breadboard', 'schematic', 'copper0', 'copper1'],
-            'silkscreen0': ['breadboard', 'schematic', 'copper0', 'copper1'],
-            'copper0': ['breadboard', 'schematic', 'silkscreen', 'silkscreen0'],
-            'copper1': ['breadboard', 'schematic', 'silkscreen', 'silkscreen0'],
+            'silkscreen': ['breadboard', 'schematic', 'icon', 'copper0', 'copper1'],
+            'silkscreen0': ['breadboard', 'schematic', 'icon', 'copper0', 'copper1'],
+            'copper0': ['breadboard', 'schematic', 'icon', 'silkscreen', 'silkscreen0'],
+            'copper1': ['breadboard', 'schematic', 'icon', 'silkscreen', 'silkscreen0'],
         }
 
         # Check each main layer group
@@ -623,7 +623,12 @@ class SVGLayerNestingChecker(SVGChecker):
                 for invalid_child in invalid_children:
                     child_elements = parent_group.xpath(f".//*[@id='{invalid_child}']")
                     for element in child_elements:
-                        self.add_error(f"Found '{invalid_child}' layer nested inside '{parent_layer}' group, which is invalid. File: {svg_path}", node=element)
+                        # icon inside breadboard (or vice versa) is unsupported but not fatal
+                        pair = {parent_layer, invalid_child}
+                        if pair == {'breadboard', 'icon'}:
+                            self.add_warning(f"Found '{invalid_child}' layer nested inside '{parent_layer}' group, which is unsupported. File: {svg_path}", node=element)
+                        else:
+                            self.add_error(f"Found '{invalid_child}' layer nested inside '{parent_layer}' group, which is invalid. File: {svg_path}", node=element)
 
         return self.get_result()
 
