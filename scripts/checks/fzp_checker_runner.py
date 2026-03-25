@@ -9,6 +9,7 @@ from .fzp_utils import FZPUtils
 import json
 import re
 import os
+import sys
 import logging
 
 class FZPCheckerRunner:
@@ -583,7 +584,7 @@ def main():
         print(f"{BOLD}Available SVG checks:{RESET}")
         for checker in SVG_AVAILABLE_CHECKERS:
             print(f"{BOLD}{checker.get_name()}{RESET}:\n{checker.get_description()}\n")
-        exit()
+        sys.exit(os.EX_OK)
 
     args = parser.parse_args()
 
@@ -601,7 +602,7 @@ def main():
         print("  python fzp_checker.py contrib/                 # Check all FZP files in directory")
         print("  python fzp_checker.py -s myfile.svg            # Check SVG file directly")
         print("  python fzp_checker.py -s myfile.svg contrib/   # Find FZP files using myfile.svg")
-        exit(1)
+        sys.exit(os.EX_USAGE)
 
     fzp_checks = [checker.get_name() for checker in AVAILABLE_CHECKERS]
     svg_checks = [checker.get_name() for checker in SVG_AVAILABLE_CHECKERS]
@@ -644,20 +645,20 @@ def main():
         elif args.svg and not args.path:
             # For SVG files without path, run SVG checks directly
             exit_code = checker_runner.check_svg_file(args.svg, selected_svg_checks, fix=args.fix)
-            exit(exit_code)
+            sys.exit(os.EX_DATAERR if exit_code > 0 else os.EX_OK)
         elif os.path.isfile(args.path):
             if args.path.endswith(".fzp") or args.path.endswith(".fzpz"):
                 fzp_files.add(args.path)
             else:
                 print(f"Error: File {args.path} is not an FZP or FZPZ file")
-                exit(-1)
+                sys.exit(os.EX_DATAERR)
         elif os.path.isdir(args.path):
             for filename in sorted(os.listdir(args.path)):
                 if filename.endswith(".fzp") or filename.endswith(".fzpz"):
                     fzp_files.add(os.path.join(args.path, filename))
         else:
             print(f"Error: Path '{args.path}' does not exist or is not accessible")
-            exit(1)
+            sys.exit(os.EX_NOINPUT)
 
         # Create a logger for main function messages
         logger = logging.getLogger('fzp_checker_main')
@@ -702,13 +703,15 @@ def main():
             except Exception as e:
                 logger.warning(f"Failed to write GitHub Actions summary: {e}")
 
-        if args.verbose or total_errors > 0:
-            exit(total_errors)
+        if total_errors > 0:
+            sys.exit(os.EX_DATAERR)
+        elif args.verbose:
+            sys.exit(os.EX_OK)
 
     except ValueError as e:
         print(str(e))
         parser.print_help()
-        exit(-1)
+        sys.exit(os.EX_USAGE)
 
 if __name__ == "__main__":
     main()
