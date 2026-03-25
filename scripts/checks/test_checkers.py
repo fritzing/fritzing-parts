@@ -23,7 +23,8 @@ class TestCheckers(unittest.TestCase):
         checker_runner.check([], [])
         sys.stdout = sys.__stdout__
 
-        self.assertEqual(checker_runner.total_errors, 0)
+        # 4 missing SVG file errors (test data doesn't include the referenced SVGs)
+        self.assertEqual(checker_runner.total_errors, 4)
         self.assertNotIn('Invalid XML', captured_output.getvalue())
 
     def test_invalid_xml(self):
@@ -824,6 +825,14 @@ class TestCheckers(unittest.TestCase):
                         [],
                         ['no_layer'],
                         1,
+                        None)
+
+    def test_template_svgs_not_reported_missing(self):
+        """Test that template SVGs (generic_ic_*, dip_*, etc.) are not reported as missing"""
+        self.run_checker('template_svgs.fzp.test',
+                        [],
+                        [],
+                        0,
                         None)
 
 if __name__ == '__main__':

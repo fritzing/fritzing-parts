@@ -143,6 +143,11 @@ class FZPCheckerRunner:
                             self.total_errors += 1
                             svg_docs[view.tag] = None
                     else:
+                        if svg_path:
+                            error_msg = f"Missing SVG file referenced by FZP: {image}"
+                            xml_error = ValidationIssue(error_msg, severity='error', node=None)
+                            self.all_issues.append(xml_error)
+                            self.total_errors += 1
                         svg_docs[view.tag] = None
         return svg_docs
 
