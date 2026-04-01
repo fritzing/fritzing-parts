@@ -22,7 +22,7 @@ jobs:
         run: python scripts/checkascii.py .
       - name: Check that image filenames use same case
         run: python scripts/checkcase.py
-- name: Dry run script to test the script itself
+      - name: Dry run script to test the script itself
         run: python scripts/obsolete.py core/sparkfun-connectors-rca-.fzp dummy -s
       - name: Check that SVGs and FZPs are ASCII or UTF-8
         run: python scripts/utf8stats.py . --verbose
