@@ -1,0 +1,748 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="Adafruit-_d4a0bd61a9860cbdc506cc4c8bf0e785_1_BB" fritzingVersion="0.5.2b.02.18.4756" referenceFile="Adafruit PiCowbell Camera Breakout.fzp">
+ <version>4</version>
+ <date>2024-05-03</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Ding dong! Hear that? It's the PiCowbell ringing, letting you know that the new &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit PiCowbell OV5640 Camera Breakout with 72-Degree Lens and Autofocus&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> is in stock.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">This is a quality OV5640 camera with a 5 Megapixel sensor element, a 72-degree non-distorting lens, and autofocus motor, plus all the support circuitry you need to start taking pictures with your Pico or Pico W. You can grab raw RGB images for image analysis, or use the built in JPEG encoding to save images to an SD card or upload them to adafruit.io.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The RP2040 chip has a fast PIO interface peripheral and enough memory to interface with 'DVP' (8-bit parallel digital) cameras. These camera sensors have 8 image data pins, Pixel Clock, H Sync and V Sync signals, plus I2C configuration interface and a Reset plus power Down pin. That does mean a lot of GPIO are used! But we still have 6 GPIO pin available even after adding an SD cart and shutter button.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Camera PiCowbell Features:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Interface for OV5640 Camera module&lt;/span>&lt;span style=" font-size:15px;">&lt;br />VSync: GPIO 0&lt;br />Power Down: GPIO 1&lt;br />HSync: GPIO 2&lt;br />Pixel Clock: GPIO 3&lt;br />SDA/SCL: GPIO 4 and GPIO 5&lt;br />8-bit Digital: GPIO6 through GPIO 13&lt;br />Reset: GPIO 14&lt;br />VMotor connected to 3.3V for auto-focus modules&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Micro SD Card:&lt;/span>&lt;span style=" font-size:15px;">&lt;br />SPI on GPIO 16, GPIO 18 and GPIO 19&lt;br />Chip select on GPIO 17&lt;br />Optional SD Detect on GPIO 15&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Shutter button &lt;/span>&lt;span style=" font-size:15px;">on GPIO 22&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Reset button&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">16 MHz 'XClock' &lt;/span>&lt;span style=" font-size:15px;">generated by onboard oscillator&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Stemma QT port &lt;/span>&lt;span style=" font-size:15px;">for I2C on GPIO 4 / 5&lt;/span>&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Note that to use the auto-focusing capability, you need to load a new firmware binary over I2C. The autofocus system is controlled with I2C commands to begin an auto-focus procedure and determine that focus is complete. Otherwise, the camera looks just like any other OV5640 sensor.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Each order comes with an assembled PCB, camera sensor, and two pieces of 20-pin pin header. You will need to solder in the header yourself, but it's a quick task.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Since this board has the camera pointing 'up', it's best to use our&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/product/5906">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">PiCowbell 'doubler' to have the Pico on one side with the BOOT button accessible, and then the camera on the other side&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. Or you can 'stack' the camera 'bell on top, best when you don't need easy access to the BOOT loading button.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Or, for a compact package, you can...&lt;/span>&lt;/p>
+&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="https://www.adafruit.com/product/5582">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">Use the Pico Stacking Headers&lt;/span>&lt;/a>&lt;span style=" font-size:15px;"> if you want to be able to plug into a breadboard or other accessory with sockets. Solder these onto the Pico so that the camera is on top.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="https://www.adafruit.com/product/5583">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">Use the Pico Socket Headers&lt;/span>&lt;/a>&lt;span style=" font-size:15px;"> if you want to plug directly in and have a nice solid connection that doesn't have any poking-out-bits. Ditto, solder these into the Pico and plug the camera on top.&lt;/span>&lt;/li>&lt;/ol>&lt;/body>&lt;/html></description>
+ <title>Adafruit PiCowbell Camera Breakout</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">PiCowbell</property>
+  <property name="mpn">#5945</property>
+  <property name="part number">#5945</property>
+  <property name="mn">Adafruit</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_d4a0bd61a9860cbdc506cc4c8bf0e785_1_BB_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_d4a0bd61a9860cbdc506cc4c8bf0e785_1_BB_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_d4a0bd61a9860cbdc506cc4c8bf0e785_1_BB_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_d4a0bd61a9860cbdc506cc4c8bf0e785_1_BB_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VBUS" type="male" id="connector72">
+   <description>VBUS</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector72pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector72terminal" svgId="connector72pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector72pad"/>
+     <p layer="copper1" svgId="connector72pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VSYS" type="male" id="connector71">
+   <description>VSYS</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector71pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector71terminal" svgId="connector71pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector71pad"/>
+     <p layer="copper1" svgId="connector71pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" type="male" id="connector68">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector68pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector68terminal" svgId="connector68pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector68pad"/>
+     <p layer="copper1" svgId="connector68pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" type="female" id="connector74">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector74pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector74terminal" svgId="connector74pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector74pad"/>
+     <p layer="copper1" svgId="connector74pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VREF" type="male" id="connector67">
+   <description>VREF</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector67pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector67terminal" svgId="connector67pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector67pad"/>
+     <p layer="copper1" svgId="connector67pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VSYNC" type="male" id="connector33">
+   <description>VSYNC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector33pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector33terminal" svgId="connector33pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector33pad"/>
+     <p layer="copper1" svgId="connector33pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="PWDN" type="male" id="connector34">
+   <description>PWDN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector34pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector34terminal" svgId="connector34pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector34pad"/>
+     <p layer="copper1" svgId="connector34pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="HSYNC" type="male" id="connector36">
+   <description>HSYNC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector36pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector36terminal" svgId="connector36pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector36pad"/>
+     <p layer="copper1" svgId="connector36pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="PCLK" type="male" id="connector37">
+   <description>PCLK</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector37pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector37terminal" svgId="connector37pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector37pad"/>
+     <p layer="copper1" svgId="connector37pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="male" id="connector38">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector38pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector38terminal" svgId="connector38pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector38pad"/>
+     <p layer="copper1" svgId="connector38pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="female" id="connector75">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector75pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector75terminal" svgId="connector75pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector75pad"/>
+     <p layer="copper1" svgId="connector75pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="female" id="connector76">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector76pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector76terminal" svgId="connector76pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector76pad"/>
+     <p layer="copper1" svgId="connector76pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="male" id="connector39">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector39pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector39terminal" svgId="connector39pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector39pad"/>
+     <p layer="copper1" svgId="connector39pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DATA2" type="male" id="connector41">
+   <description>DATA2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector41pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector41terminal" svgId="connector41pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector41pad"/>
+     <p layer="copper1" svgId="connector41pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DATA3" type="male" id="connector42">
+   <description>DATA3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector42pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector42terminal" svgId="connector42pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector42pad"/>
+     <p layer="copper1" svgId="connector42pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DATA4" type="male" id="connector43">
+   <description>DATA4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector43pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector43terminal" svgId="connector43pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector43pad"/>
+     <p layer="copper1" svgId="connector43pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DATA5" type="male" id="connector44">
+   <description>DATA5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector44pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector44terminal" svgId="connector44pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector44pad"/>
+     <p layer="copper1" svgId="connector44pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DATA6" type="male" id="connector46">
+   <description>DATA6</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector46pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector46terminal" svgId="connector46pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector46pad"/>
+     <p layer="copper1" svgId="connector46pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DATA7" type="male" id="connector47">
+   <description>DATA7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector47pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector47terminal" svgId="connector47pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector47pad"/>
+     <p layer="copper1" svgId="connector47pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DATA8" type="male" id="connector48">
+   <description>DATA8</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector48pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector48terminal" svgId="connector48pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector48pad"/>
+     <p layer="copper1" svgId="connector48pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DATA9" type="male" id="connector49">
+   <description>DATA9</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector49pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector49terminal" svgId="connector49pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector49pad"/>
+     <p layer="copper1" svgId="connector49pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="CAM_RST" type="male" id="connector51">
+   <description>CAM_RST</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector51pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector51terminal" svgId="connector51pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector51pad"/>
+     <p layer="copper1" svgId="connector51pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="20" type="male" id="connector52">
+   <description>20</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector52pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector52terminal" svgId="connector52pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector52pad"/>
+     <p layer="copper1" svgId="connector52pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="!EN" type="male" id="connector69">
+   <description>!EN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector69pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector69terminal" svgId="connector69pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector69pad"/>
+     <p layer="copper1" svgId="connector69pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="AD2" type="male" id="connector66">
+   <description>AD2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector66pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector66terminal" svgId="connector66pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector66pad"/>
+     <p layer="copper1" svgId="connector66pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="AD1" type="male" id="connector64">
+   <description>AD1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector64pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector64terminal" svgId="connector64pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector64pad"/>
+     <p layer="copper1" svgId="connector64pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="AD0" type="male" id="connector63">
+   <description>AD0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector63pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector63terminal" svgId="connector63pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector63pad"/>
+     <p layer="copper1" svgId="connector63pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="!RESET" type="male" id="connector62">
+   <description>!RESET</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector62pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector62terminal" svgId="connector62pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector62pad"/>
+     <p layer="copper1" svgId="connector62pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SHUTTER" type="male" id="connector61">
+   <description>SHUTTER</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector61pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector61terminal" svgId="connector61pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector61pad"/>
+     <p layer="copper1" svgId="connector61pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="IO21" type="male" id="connector59">
+   <description>IO21</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector59pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector59terminal" svgId="connector59pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector59pad"/>
+     <p layer="copper1" svgId="connector59pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="IO20" type="male" id="connector58">
+   <description>IO20</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector58pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector58terminal" svgId="connector58pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector58pad"/>
+     <p layer="copper1" svgId="connector58pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MOSI" type="male" id="connector57">
+   <description>MOSI</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector57pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector57terminal" svgId="connector57pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector57pad"/>
+     <p layer="copper1" svgId="connector57pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCK" type="male" id="connector56">
+   <description>SCK</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector56pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector56terminal" svgId="connector56pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector56pad"/>
+     <p layer="copper1" svgId="connector56pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="CARD_CS" type="male" id="connector54">
+   <description>CARD_CS</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector54pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector54terminal" svgId="connector54pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector54pad"/>
+     <p layer="copper1" svgId="connector54pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MISO" type="male" id="connector53">
+   <description>MISO</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector53pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector53terminal" svgId="connector53pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector53pad"/>
+     <p layer="copper1" svgId="connector53pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector35">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector35pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector35terminal" svgId="connector35pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector35pad"/>
+     <p layer="copper1" svgId="connector35pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector40">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector40pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector40terminal" svgId="connector40pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector40pad"/>
+     <p layer="copper1" svgId="connector40pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector45">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector45pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector45terminal" svgId="connector45pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector45pad"/>
+     <p layer="copper1" svgId="connector45pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector50">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector50pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector50terminal" svgId="connector50pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector50pad"/>
+     <p layer="copper1" svgId="connector50pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector55">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector55pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector55terminal" svgId="connector55pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector55pad"/>
+     <p layer="copper1" svgId="connector55pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector60">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector60pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector60terminal" svgId="connector60pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector60pad"/>
+     <p layer="copper1" svgId="connector60pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector65">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector65pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector65terminal" svgId="connector65pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector65pad"/>
+     <p layer="copper1" svgId="connector65pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector70">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector70pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector70terminal" svgId="connector70pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector70pad"/>
+     <p layer="copper1" svgId="connector70pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector73">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector73pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector73terminal" svgId="connector73pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector73pad"/>
+     <p layer="copper1" svgId="connector73pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector35"/>
+   <nodeMember connectorId="connector40"/>
+   <nodeMember connectorId="connector45"/>
+   <nodeMember connectorId="connector50"/>
+   <nodeMember connectorId="connector55"/>
+   <nodeMember connectorId="connector60"/>
+   <nodeMember connectorId="connector65"/>
+   <nodeMember connectorId="connector70"/>
+   <nodeMember connectorId="connector73"/>
+  </bus>
+  <bus id="3.3v">
+   <nodeMember connectorId="connector68"/>
+   <nodeMember connectorId="connector74"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector38"/>
+   <nodeMember connectorId="connector75"/>
+  </bus>
+  <bus id="scl">
+   <nodeMember connectorId="connector76"/>
+   <nodeMember connectorId="connector39"/>
+  </bus>
+ </buses>
+ <label>Adafruit PiCowbell Camera Breakout</label>
+ <url>https://www.adafruit.com/product/5945</url>
+</module>

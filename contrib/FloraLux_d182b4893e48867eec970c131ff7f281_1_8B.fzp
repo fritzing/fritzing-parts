@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="FloraLux_d182b4893e48867eec970c131ff7f281_1_8B" referenceFile="flora lux v0.2.fzp" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2016-08-04</date>
+ <author>Adafruit</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica';">Add light-reactive sensing to your wearable Flora project with this high precision Lux sensor. The TSL2561 luminosity sensor is an advanced digital light sensor, ideal for use in a wide range of light situations. Compared to low cost CdS cells, this sensor is more precise, allowing for exact lux calculations and can be configured for different gain/timing ranges to detect light ranges from up to 0.1 - 40,000+ Lux on the fly. The best part of this sensor is that it contains both infrared and full spectrum diodes! That means you can separately measure infrared, full-spectrum or human-visible light. Most sensors can only detect one or the other, which does not accurately represent what human eyes see (since we cannot perceive the IR light that is detected by most photo diodes)&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Flora TSL2561 Lux Sensor</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Adafruit Flora TSL2561</property>
+  <property name="part number"></property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/FloraLux_5f6125105117ef2dcd686a506a7bf682_1_breadboard_8B.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/FloraLux_5f6125105117ef2dcd686a506a7bf682_1_schematic_8B.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/FloraLux_5f6125105117ef2dcd686a506a7bf682_1_pcb_8B.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/FloraLux_5f6125105117ef2dcd686a506a7bf682_1_icon_8B.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector4" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector4pad"/>
+     <p layer="copper1" svgId="connector4pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector9" type="female" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pad"/>
+     <p layer="copper1" svgId="connector9pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector10" type="female" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pad"/>
+     <p layer="copper1" svgId="connector10pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector11" type="female" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector12" type="female" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector19" type="female" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector19pin" terminalId="connector19terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector19pad"/>
+     <p layer="copper1" svgId="connector19pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="scl">
+   <nodeMember connectorId="connector9"/>
+   <nodeMember connectorId="connector10"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector11"/>
+   <nodeMember connectorId="connector12"/>
+  </bus>
+ </buses>
+ <url>https://www.adafruit.com/products/1246</url>
+</module>

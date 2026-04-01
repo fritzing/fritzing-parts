@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" referenceFile="Adafruit OLED Monochrome 128x64 1.3 inch.fzp" moduleId="adafruit_dc10de3e9966df648756bab945430983_1_27">
+ <version>4</version>
+ <date>2016-08-24</date>
+ <author>Adafruit</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica';">These displays are small, only about 1.3&amp;quot; diagonal, but very readable due to the high contrast of an OLED display. This display is made of 128x64 individual white OLED pixels, each one is turned on or off by the controller chip. Because the display makes its own light, no backlight is required. This reduces the power required to run the OLED and is why the display has such high contrast; we really like this miniature display for its crispness!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica';">The driver chip, SSD1306 can communicate in two ways: I2C or SPI. The OLED itself require a 3.3V power supply and 3.3V logic levels for communication, but we include a 3.3V regulator and all pins are fully level shifted so you can use with 5V devices!&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>OLED Monochrome 128x64 1.3 inch</title>
+ <tags/>
+ <properties>
+  <property name="variant">Mono 128x64 1.3 inch</property>
+  <property name="part number">938</property>
+  <property name="family">Adafruit OLED</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_9209602f3c06916fbab98c5459dcf7b1_1_breadboard_27.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_9209602f3c06916fbab98c5459dcf7b1_1_schematic_27.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_9209602f3c06916fbab98c5459dcf7b1_1_pcb_27.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_9209602f3c06916fbab98c5459dcf7b1_1_icon_27.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="male" name="VIN" id="connector11">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector11pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector11terminal" svgId="connector11pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector11pad" layer="copper0"/>
+     <p svgId="connector11pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="3.3V" id="connector10">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector10pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector10terminal" svgId="connector10pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector10pad" layer="copper0"/>
+     <p svgId="connector10pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="MOSI_SDA" id="connector5">
+   <description>MOSI_SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector5pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector5terminal" svgId="connector5pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector5pad" layer="copper0"/>
+     <p svgId="connector5pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="SCLK_SCK" id="connector6">
+   <description>SCLK_SCK</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector6pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector6terminal" svgId="connector6pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector6pad" layer="copper0"/>
+     <p svgId="connector6pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="DC_SA0" id="connector7">
+   <description>DC_SA0</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector7pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector7terminal" svgId="connector7pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector7pad" layer="copper0"/>
+     <p svgId="connector7pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="RESET" id="connector8">
+   <description>RESET</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector8pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector8terminal" svgId="connector8pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector8pad" layer="copper0"/>
+     <p svgId="connector8pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="CS" id="connector9">
+   <description>CS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector9pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector9terminal" svgId="connector9pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector9pad" layer="copper0"/>
+     <p svgId="connector9pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="GND" id="connector12">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector12pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector12terminal" svgId="connector12pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector12pad" layer="copper0"/>
+     <p svgId="connector12pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.adafruit.com/products/938</url>
+</module>

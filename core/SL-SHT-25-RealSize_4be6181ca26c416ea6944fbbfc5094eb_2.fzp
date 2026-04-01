@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="1.0.5" referenceFile="Power plug.fzp" moduleId="SL-SHT-25-RealSize_4be6181ca26c416ea6944fbbfc5094eb_2">
+ <version>4</version>
+ <author>houtbrion@gmail.com</author>
+ <title>StrawberryLinux SHT25 Sensor module</title>
+ <label>S</label>
+ <date>2016-03-31</date>
+ <history author="Kjell" date="2025-03-24"> Reduce PCB silkscreen details, fix fonts, add missing layer IDs, remove gorn, fix schematic terminals</history> 
+ <tags>
+  <tag>SHT</tag>
+  <tag>Temperature</tag>
+  <tag>Sensor</tag>
+  <tag>Humidity</tag>
+ </tags>
+ <properties>
+  <property name="family">SHT</property>
+  <property name="package">DFN6-3x3</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Noto Sans'; font-size:9pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Strawberry Linux SHT-25 / ストロベリーリナックス SHT-25</p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/SL-SHT-25-RealSize_1362d745f47e4867bc2ca7383aec02e2_1_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/SL-SHT-25-RealSize_1362d745f47e4867bc2ca7383aec02e2_1_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/SL-SHT-25-RealSize_1362d745f47e4867bc2ca7383aec02e2_1_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/SL-SHT-25-RealSize_1362d745f47e4867bc2ca7383aec02e2_1_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector id="connector0" name="VCC" type="male">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector1terminal" svgId="connector1pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector1pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" name="SCL" type="male">
+   <description>I2C SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector0terminal" svgId="connector0pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector0pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector2" name="SDA" type="male">
+   <description>I2C SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector2terminal" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector2pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector3" name="GND" type="male">
+   <description>Ground</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector3terminal" svgId="connector3pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector3pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>https://strawberry-linux.com/catalog/items?code=80025</url>
+</module>

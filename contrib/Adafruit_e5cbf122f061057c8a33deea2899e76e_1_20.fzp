@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="NeoKey Breakout rev B flipped.fzp" fritzingVersion="0.5.2b.02.18.4756" moduleId="Adafruit_e5cbf122f061057c8a33deea2899e76e_1_20">
+ <version>4</version>
+ <date>2023-06-09</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The only thing better than a nice mechanical key, is one that also can glow any color of the rainbow - and that's what the&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit NeoKey Breakout&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> will let you do! This little 0.75&amp;quot; x 0.85&amp;quot; PCB can fit one &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Cherry MX or compatible switch&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> and make it easy to use with a breadboard or perfboard.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The breakout has a Kailh socket, which means you can plug in any MX-compatible switch instead of soldering it in. You may need a little glue to keep the switch in place: hot glue or a dot of epoxy worked fine for us. We also place a 1N4148 signal diode in series with the switch, so you can create key-grid matrices without worrying about ghosted keys.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Each breakout also has a single reverse-mount NeoPixel pointing up through the spot where many switches would have an LED to shine though. The input and output of the pixel are broken out so you can 'chain' these board together and control them as one NeoPixel strand.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">There's plenty of flexibility for any kind of use, each board has the following pin out:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">VDD (+) &lt;/span>&lt;span style=" font-size:15px;">The power pin for the NeoPixel, provide 3 to 5VDC&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">GND (-) &lt;/span>&lt;span style=" font-size:15px;">The ground power pin for the NeoPixel, connect to ground&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">In (I)&lt;/span>&lt;span style=" font-size:15px;"> and &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">Out (O) &lt;/span>&lt;span style=" font-size:15px;">The input and output to/from the NeoPixel, for chaining&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Switch Anode (A&lt;/span>&lt;span style=" font-size:15px;">) - The 'positive' side of the switch+diode. If you're using the switch with a pull-up resistor, connect this pin to your microcontroller. If you're using a pull-down, connect this pin to your logic level power pin.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Switch Cathode (C)&lt;/span>&lt;span style=" font-size:15px;"> - The 'negative' side of the switch+diode. If you're using the switch with a pull-up resistor, connect this pin to ground. If you're using a pull-down, connect this pin to your microcontroller.&lt;/span>&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">There's two rows of 5-pin contacts on a 0.1&amp;quot; grid on both sides. Solder in both sides for mechanical stability, the two sides share the same pins except for one side is NeoPixel in and the opposite side has the out pin. For side-by-side wiring, we also have the cathode pin broken out on the sides, and another set of NeoPixel In/Out pins.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Please note,&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">each order comes with one assembled PCB and a small stick of break-off header. &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">Soldering is required to attach the header for breadboard use. A mechanical switch and key cap is not included! Use any MX-compatible switch: Kailh, Gateron, etc all work!&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit NeoKey MX Socket Breakout</title>
+ <tags/>
+ <properties>
+  <property name="family">NeoKey</property>
+  <property name="variant">variant 1</property>
+  <property name="mn">Adafruit</property>
+  <property name="mpn">#4978</property>
+  <property name="part number">#4978</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit_e5cbf122f061057c8a33deea2899e76e_1_breadboard_20.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit_e5cbf122f061057c8a33deea2899e76e_1_schematic_20.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit_e5cbf122f061057c8a33deea2899e76e_1_pcb_20.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit_e5cbf122f061057c8a33deea2899e76e_1_icon_20.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector5" type="male" name="VDD">
+   <description>VDD</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector5terminal" layer="schematic" svgId="connector5pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pad"/>
+     <p layer="copper1" svgId="connector5pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector12" type="male" name="VDD">
+   <description>VDD</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector12terminal" layer="schematic" svgId="connector12pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector14" type="male" name="NEO_IN">
+   <description>NEO_IN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector14terminal" layer="schematic" svgId="connector14pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pad"/>
+     <p layer="copper1" svgId="connector14pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector10" type="female" name="NEO_IN">
+   <description>NEO_IN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector10terminal" layer="schematic" svgId="connector10pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pad"/>
+     <p layer="copper1" svgId="connector10pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector17" type="female" name="NEO_OUT">
+   <description>NEO_OUT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector17terminal" layer="schematic" svgId="connector17pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pad"/>
+     <p layer="copper1" svgId="connector17pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector7" type="male" name="NEO_OUT">
+   <description>NEO_OUT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector7terminal" layer="schematic" svgId="connector7pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector7pad"/>
+     <p layer="copper1" svgId="connector7pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector15" type="male" name="SWITCHA">
+   <description>SWITCHA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector15terminal" layer="schematic" svgId="connector15pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector15pad"/>
+     <p layer="copper1" svgId="connector15pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector8" type="male" name="SWITCHA">
+   <description>SWITCHA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector8terminal" layer="schematic" svgId="connector8pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector8pad"/>
+     <p layer="copper1" svgId="connector8pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector18" type="female" name="SWITCHC">
+   <description>SWITCHC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector18terminal" layer="schematic" svgId="connector18pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pad"/>
+     <p layer="copper1" svgId="connector18pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector11" type="female" name="SWITCHC">
+   <description>SWITCHC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector11terminal" layer="schematic" svgId="connector11pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector16" type="male" name="SWITCHC">
+   <description>SWITCHC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector16pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector16terminal" layer="schematic" svgId="connector16pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector16pad"/>
+     <p layer="copper1" svgId="connector16pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector9" type="male" name="SWITCHC">
+   <description>SWITCHC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector9terminal" layer="schematic" svgId="connector9pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pad"/>
+     <p layer="copper1" svgId="connector9pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector6" type="male" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector6terminal" layer="schematic" svgId="connector6pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pad"/>
+     <p layer="copper1" svgId="connector6pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector13" type="male" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector13terminal" layer="schematic" svgId="connector13pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pad"/>
+     <p layer="copper1" svgId="connector13pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="switchc">
+   <nodeMember connectorId="connector18"/>
+   <nodeMember connectorId="connector11"/>
+   <nodeMember connectorId="connector16"/>
+   <nodeMember connectorId="connector9"/>
+  </bus>
+  <bus id="vdd">
+   <nodeMember connectorId="connector5"/>
+   <nodeMember connectorId="connector12"/>
+  </bus>
+  <bus id="gnd">
+   <nodeMember connectorId="connector6"/>
+   <nodeMember connectorId="connector13"/>
+  </bus>
+  <bus id="neo_in">
+   <nodeMember connectorId="connector14"/>
+   <nodeMember connectorId="connector10"/>
+  </bus>
+  <bus id="switcha">
+   <nodeMember connectorId="connector15"/>
+   <nodeMember connectorId="connector8"/>
+  </bus>
+  <bus id="neo_out">
+   <nodeMember connectorId="connector17"/>
+   <nodeMember connectorId="connector7"/>
+  </bus>
+ </buses>
+ <label>Adafruit NeoKey MX Socket Breakout</label>
+ <url>https://www.adafruit.com/product/4978</url>
+</module>

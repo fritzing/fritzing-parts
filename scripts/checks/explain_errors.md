@@ -58,6 +58,35 @@ In some cases, CSS styles and XML attributes may be conflicting. The rendered re
 since XML does not specify a strict ordering for attributes. Please resolve the conflict manually, by
 only using a XML attribute.
 
+### Property has an empty value
+You can check the inspector how the properties are applied.
+
+Example:
+```
+Error: Property 'part number' has an empty value.
+Error: Property 'layer' has an empty value.
+Error: Property 'hole size' has an empty value.
+Error: Property 'mn' has an empty value.
+Error: Property 'mpn' has an empty value.
+```
+Custom parts currently can't configure the hole size. So you might as well remove it.
+Without a value, listing properties in the part will often have no effect.
+If you provide a default value, it should actually show as a default in the inspector.
+
+![inspector_fc51.png](inspector_fc51.png)
+
+
+### Layer ID 'icon' from iconView not found in SVG file
+This usually happens if you use the breadboard image as icon. 
+This is often not the best solution, because the breadboard image
+is difficult to recognize at icon size. 
+It is better to have a separate icon file,
+showing some characteristic region of interest,
+like a cropped version of the breadboard image.
+
+### Process completed with exit code 255
+This is just the CI telling us that some error has happened before.
+
 ## Error not listed here, or still unclear?
 
  If you think that an error is a false alert, or unsure what the error means or how to fix it, please open an issue at

@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="Adafruit-_78ecc6d96dc413c3ecc2bdeefbc8a6f8_1_56" referenceFile="Adafruit ANO Rotary Encoder to I2C.fzp" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2023-05-17</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The ANO rotary encoder wheel is a funky user interface element, reminiscent of the&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://gizmodo.com/a-visual-history-of-the-ipod-click-wheel-r-i-p-1632640054">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">original clicking scroll wheel interface on the first iPods&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. It's a nifty kit, but the pin-out is a little odd - and there's a ton of pins needed to connect to the rotary encoder and 5 button switches.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">This Stemma QT breakout makes all that frustration go away - solder in the&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/product/5001">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">ANO Directional Navigation and Scroll Wheel Rotary Encoder (not included)&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. The onboard microcontroller is programmed with our seesaw firmware and will track all pulses and pins for you and then save the incremental value for querying at any time over I2C. Plug it in with a Stemma QT cable for instant rotary goodness, with any kind of microcontroller from an Arduino UNO up to a Raspberry Pi to one of our QT Py's.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;a href="https://github.com/adafruit/Adafruit_Seesaw">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">You can use our Arduino library to control and read data&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> with any compatible microcontroller. &lt;/span>&lt;a href="https://github.com/adafruit/Adafruit_CircuitPython_seesaw">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">We also have CircuitPython/Python code&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> for use with computers or single-board Linux boards.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Power with 3 to 5V DC, and then use 3 or 5V logic I2C data. The INT pin can be configured to pulse low whenever rotation or push-buttoning is detected so you do not have to spam-read the I2C port to detect motion. It's also easy to add this breakout to a breadboard - with six 0.1&amp;quot;-spaced breakout pads - if you so choose.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Four solder jumpers can be used to change the I2C address - up to 16 can share one I2C bus! If you happen to need more, it's possible to set the I2C address with a special address-change command that is saved to the onboard non-volatile EEPROM memory.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">This is just the assembled and programmed 'seesaw' PCB for the ANO encoder, &lt;/span>&lt;a href="https://www.adafruit.com/product/5001">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">the encoder is NOT included! Pick one up here&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">.&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> Some soldering is required to attach the encoder to the backing.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit ANO Rotary Encoder to I2C Adapter - No Encoder</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">ANO Rotary Encoder</property>
+  <property name="mn">Adafruit</property>
+  <property name="part number">#5740</property>
+  <property name="mpn">#5740</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_78ecc6d96dc413c3ecc2bdeefbc8a6f8_1_breadboard_56.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_78ecc6d96dc413c3ecc2bdeefbc8a6f8_1_schematic_56.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_78ecc6d96dc413c3ecc2bdeefbc8a6f8_1_pcb_56.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_78ecc6d96dc413c3ecc2bdeefbc8a6f8_1_icon_56.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="male" name="VCC" id="connector29">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector29pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector29terminal" svgId="connector29pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector29pad"/>
+     <p layer="copper1" svgId="connector29pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="VCC" id="connector12">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector12terminal" svgId="connector12pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="VCC" id="connector18">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector18terminal" svgId="connector18pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pad"/>
+     <p layer="copper1" svgId="connector18pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="ENC_A" id="connector69">
+   <description>ENC_A</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector69pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector69terminal" svgId="connector69pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector69pad"/>
+     <p layer="copper1" svgId="connector69pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="ENC_B" id="connector70">
+   <description>ENC_B</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector70pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector70terminal" svgId="connector70pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector70pad"/>
+     <p layer="copper1" svgId="connector70pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="INT" id="connector33">
+   <description>INT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector33pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector33terminal" svgId="connector33pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector33pad"/>
+     <p layer="copper1" svgId="connector33pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="SCL" id="connector31">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector31pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector31terminal" svgId="connector31pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector31pad"/>
+     <p layer="copper1" svgId="connector31pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="SCL" id="connector20">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector20pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector20terminal" svgId="connector20pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector20pad"/>
+     <p layer="copper1" svgId="connector20pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="SCL" id="connector14">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector14terminal" svgId="connector14pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pad"/>
+     <p layer="copper1" svgId="connector14pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="SDA" id="connector32">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector32pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector32terminal" svgId="connector32pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector32pad"/>
+     <p layer="copper1" svgId="connector32pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="SDA" id="connector19">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector19terminal" svgId="connector19pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector19pad"/>
+     <p layer="copper1" svgId="connector19pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="SDA" id="connector13">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector13terminal" svgId="connector13pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pad"/>
+     <p layer="copper1" svgId="connector13pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="SW1" id="connector73">
+   <description>SW1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector73pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector73terminal" svgId="connector73pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector73pad"/>
+     <p layer="copper1" svgId="connector73pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="SW3" id="connector75">
+   <description>SW3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector75pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector75terminal" svgId="connector75pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector75pad"/>
+     <p layer="copper1" svgId="connector75pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="SW2" id="connector74">
+   <description>SW2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector74pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector74terminal" svgId="connector74pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector74pad"/>
+     <p layer="copper1" svgId="connector74pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="SW4" id="connector76">
+   <description>SW4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector76pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector76terminal" svgId="connector76pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector76pad"/>
+     <p layer="copper1" svgId="connector76pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="SW5" id="connector77">
+   <description>SW5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector77pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector77terminal" svgId="connector77pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector77pad"/>
+     <p layer="copper1" svgId="connector77pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="UPDI" id="connector34">
+   <description>UPDI</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector34pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector34terminal" svgId="connector34pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector34pad"/>
+     <p layer="copper1" svgId="connector34pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="GND" id="connector30">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector30pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector30terminal" svgId="connector30pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector30pad"/>
+     <p layer="copper1" svgId="connector30pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="GND" id="connector71">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector71pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector71terminal" svgId="connector71pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector71pad"/>
+     <p layer="copper1" svgId="connector71pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="GND" id="connector72">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector72pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector72terminal" svgId="connector72pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector72pad"/>
+     <p layer="copper1" svgId="connector72pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="GND" id="connector17">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector17terminal" svgId="connector17pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pad"/>
+     <p layer="copper1" svgId="connector17pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" name="GND" id="connector11">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector11terminal" svgId="connector11pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector30"/>
+   <nodeMember connectorId="connector71"/>
+   <nodeMember connectorId="connector72"/>
+   <nodeMember connectorId="connector17"/>
+   <nodeMember connectorId="connector11"/>
+  </bus>
+  <bus id="vcc">
+   <nodeMember connectorId="connector29"/>
+   <nodeMember connectorId="connector12"/>
+   <nodeMember connectorId="connector18"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector32"/>
+   <nodeMember connectorId="connector19"/>
+   <nodeMember connectorId="connector13"/>
+  </bus>
+  <bus id="scl">
+   <nodeMember connectorId="connector31"/>
+   <nodeMember connectorId="connector20"/>
+   <nodeMember connectorId="connector14"/>
+  </bus>
+ </buses>
+ <label>Adafruit ANO Rotary Encoder to I2C Adapter - No Encoder</label>
+ <url>https://www.adafruit.com/product/5740</url>
+</module>

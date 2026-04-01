@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="Adafruit_ADXL377.fzp" fritzingVersion="0.5.2b.02.18.4756" moduleId="adafruit_85a8ed1e6f240f3461dd0e944e1b15a6_13_3E">
+ <version>4</version>
+ <date>2016-07-04</date>
+ <author>ladyada</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Hey rocket man (&lt;span style=" font-style:italic;">burnin' out your fuse out there alone&lt;/span>) ever wonder how fast you're rocketing? The ADXL377 +-200g 3-axis accelerometer may be able to tell the answer. You read that right, this accelerometer can sense up to &lt;span style=" font-weight:600;">200g's of force&lt;/span>. Incredible! Not surprisingly, we couldn't say &amp;quot;no&amp;quot; to a breakout for this sensor.&lt;br />&lt;br />The sensor is soldered onto a PCB with four mounting holes (in case you don't remember, this is accelerating at up to 200g's!) and a 3.3V regulator so you can use it with 5v logic such as an Arduino. We also add 0.01uF filter caps for 500Hz output bandwidth.&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit ADXL377</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Adafruit ADXL377</property>
+  <property name="part number">Adafruit #1413</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_85a8ed1e6f240f3461dd0e944e1b15a6_13_breadboard_3E.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_85a8ed1e6f240f3461dd0e944e1b15a6_13_schematic_3E.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_85a8ed1e6f240f3461dd0e944e1b15a6_13_pcb_3E.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_85a8ed1e6f240f3461dd0e944e1b15a6_13_icon_3E.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VIN" type="male" id="connector13">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector13terminal" layer="schematic" svgId="connector13pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pad"/>
+     <p layer="copper1" svgId="connector13pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" type="male" id="connector14">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector14terminal" layer="schematic" svgId="connector14pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pad"/>
+     <p layer="copper1" svgId="connector14pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector15">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector15terminal" layer="schematic" svgId="connector15pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector15pad"/>
+     <p layer="copper1" svgId="connector15pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SELFTEST" type="male" id="connector16">
+   <description>SELFTEST</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector16pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector16terminal" layer="schematic" svgId="connector16pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector16pad"/>
+     <p layer="copper1" svgId="connector16pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="ZOUT" type="male" id="connector17">
+   <description>ZOUT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector17terminal" layer="schematic" svgId="connector17pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pad"/>
+     <p layer="copper1" svgId="connector17pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="YOUT" type="male" id="connector18">
+   <description>YOUT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector18terminal" layer="schematic" svgId="connector18pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pad"/>
+     <p layer="copper1" svgId="connector18pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="XOUT" type="male" id="connector19">
+   <description>XOUT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector19terminal" layer="schematic" svgId="connector19pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector19pad"/>
+     <p layer="copper1" svgId="connector19pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.adafruit.com/products/1413</url>
+</module>

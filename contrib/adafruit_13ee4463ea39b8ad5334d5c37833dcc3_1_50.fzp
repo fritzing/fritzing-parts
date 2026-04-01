@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="adafruit_13ee4463ea39b8ad5334d5c37833dcc3_1_50" referenceFile="FET_I2CShifter_v0.2.fzp">
+ <version>4</version>
+ <date>2016-08-19</date>
+ <author>andydoro</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.Helvetica Neue DeskInterface'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Because the Arduino (and Basic Stamp) are 5V devices, and most modern sensors, displays, flash cards and modes are 3.3V-only, many makers find that they need to perform level shifting/conversion to protect the 3.3V device from 5V.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">We do have some other handy level shifters in the shop, from the DIP 74LVC245 to the fancy bi-directional TXB0108. However, neither of these are happy to work with I2C, which uses a funky pull-up system to transfer data back and forth. This level shifter board combines the ease-of-use of the bi-directional TXB0108 with an I2C-compatible FET design following NXP's app note.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This breakout has 4 BSS138 FETs with 10K pullups. It works down to 1.8V on the low side, and up to 10V on the high side. The 10K's do make the interface a little more sluggish than using a TXB0108 or 74LVC245 so we suggest checking those out if you need high-speed transfer.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">While we designed it for use with I2C, this works as well for  TTL Serial,  slow &amp;lt;2MHz SPI, and any other digital interface both uni-directional and bidirectional. Comes with a fully assembled, and tested PCB with 4 full bidirectional converter lines as well as 2 pieces of 6-pin header you can solder on to plug into a breadboard or perfboard.&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit 4-channel I2C-safe Bi-directional Logic Level Converter</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Adafruit 4-channel I2C-safe Bi-directional Logic Level Converter</property>
+  <property name="part number">Adafruit #757</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_13ee4463ea39b8ad5334d5c37833dcc3_2_breadboard_50.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_13ee4463ea39b8ad5334d5c37833dcc3_2_schematic_50.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_13ee4463ea39b8ad5334d5c37833dcc3_2_pcb_50.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_13ee4463ea39b8ad5334d5c37833dcc3_2_icon_50.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector10" name="LV" type="male">
+   <description>LV</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pad"/>
+     <p layer="copper1" svgId="connector10pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector9" name="A1" type="male">
+   <description>A1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pad"/>
+     <p layer="copper1" svgId="connector9pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector8" name="A2" type="male">
+   <description>A2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector8pad"/>
+     <p layer="copper1" svgId="connector8pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector7" name="A3" type="male">
+   <description>A3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector7pad"/>
+     <p layer="copper1" svgId="connector7pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector6" name="A4" type="male">
+   <description>A4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pad"/>
+     <p layer="copper1" svgId="connector6pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector16" name="HV" type="male">
+   <description>HV</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector16pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector16pin" terminalId="connector16terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector16pad"/>
+     <p layer="copper1" svgId="connector16pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector15" name="B1" type="male">
+   <description>B1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector15pin" terminalId="connector15terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector15pad"/>
+     <p layer="copper1" svgId="connector15pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector14" name="B2" type="male">
+   <description>B2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector14pin" terminalId="connector14terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pad"/>
+     <p layer="copper1" svgId="connector14pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector13" name="B3" type="male">
+   <description>B3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector13pin" terminalId="connector13terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pad"/>
+     <p layer="copper1" svgId="connector13pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector12" name="B4" type="male">
+   <description>B4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector5" name="GND" type="male">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pad"/>
+     <p layer="copper1" svgId="connector5pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector11" name="GND" type="male">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector5"/>
+   <nodeMember connectorId="connector11"/>
+  </bus>
+ </buses>
+ <url>https://www.adafruit.com/products/757</url>
+</module>

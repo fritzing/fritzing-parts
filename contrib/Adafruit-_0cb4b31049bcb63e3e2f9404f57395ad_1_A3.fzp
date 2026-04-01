@@ -1,0 +1,598 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="ESP32-S2 reverse TFT Rev D.fzp" fritzingVersion="0.5.2b.02.18.4756" moduleId="Adafruit-_0cb4b31049bcb63e3e2f9404f57395ad_1_A3">
+ <version>4</version>
+ <date>2023-02-01</date>
+ <author>Liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Like Missy Elliot, we like to&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.youtube.com/watch?v=cjIvu7e6Wq8">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">&amp;quot;put our [Feather] down, flip it and reverse it&amp;quot;&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> and that's exactly what we've done with this new development board. It's basically our &lt;/span>&lt;a href="https://www.adafruit.com/product/5300">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">ESP32-S2 TFT Feather&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> but with the 240x135 color TFT display on the back-side not the front-side. That makes it great for panel-mounted projects, particularly since we've also got some space for 3 buttons to go along. It's like an all-in-one display interface dev board, powered by the fantastic ESP32-S2 WIFI module.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">This feather comes with native USB and &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;">4 MB flash + 2 MB of PSRAM&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">, so it is perfect for use with CircuitPython or Arduino with low-cost WiFi. Native USB means it can act like a keyboard or a disk drive. WiFi means it's awesome for IoT projects. And Feather means it works with the large community of Feather Wings for expandability.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The ESP32-S2 is a highly-integrated, low-power, 2.4 GHz Wi-Fi System-on-Chip (SoC) solution that now has &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;">built-in native USB&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> as well as some other interesting new technologies like Time of Flight distance measurements. With its state-of-the-art power and RF performance, this SoC is an ideal choice for a wide variety of application scenarios relating to the &lt;/span>&lt;a href="https://www.adafruit.com/category/342">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">Internet of Things (IoT)&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">, &lt;/span>&lt;a href="https://www.adafruit.com/category/65">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">wearable electronics&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">, and smart homes.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;">Please note &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">the Feather ESP32-S2 has a single-core 240 MHz chip, so it won't be as fast as ESP32's with dual-core. Also, there is no Bluetooth support. However, we are super excited about the ESP32-S2's native USB which unlocks a lot of capabilities for advanced interfacing! This ESP32-S2 mini-module we are using on the Feather comes with 4 MB flash and 2 MB PSRAM so you can buffer massive JSON files for parsing!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The color TFT is connected to the SPI pins, and uses additional pins for control that are not exposed to the breakout pads. &lt;/span>&lt;a href="https://www.adafruit.com/product/4383">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">It's the same display as you see here, with 240x135 pixels and is IPS&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> so you get bright color at any angle. The backlight is also connected to a separate pin so you can PWM the backlight up and down as desired.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">For low power usage, the Feather has a &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-style:italic; color:#000000;">second&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> RT9080 regulator. The regulator is controlled with a GPIO pin on the enable line and can shut off power to the Stemma QT port and TFT. There is also a separate power pin for the NeoPixel that can be used to disable it for even lower quiescent power. With everything off and in deep sleep mode, the TFT feather uses about 40uA of current.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;">Features:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">ESP32-S2 240MHz Tensilica processor &lt;/span>&lt;span style=" font-size:15px;">- the next generation of ESP32, now with native USB so it can act like a keyboard/mouse, MIDI device, disk drive, etc!&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Mini module&lt;/span>&lt;span style=" font-size:15px;"> has FCC/CE certification and comes with 4 MByte of Flash and 2 MByte of PSRAM - you can have huge data buffers&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;a href="https://www.adafruit.com/product/4383">&lt;span style=" font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">Color 1.14&amp;quot; IPS TFT with 240x135 pixels&lt;/span>&lt;/a>&lt;span style=" font-size:15px; font-weight:496;"> &lt;/span>&lt;span style=" font-size:15px;">- bright and colorful display with ST7789 chipset that can be viewed at any angle.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Three User Tactile buttons &lt;/span>&lt;span style=" font-size:15px;">- D0, D1, and D2. D0/BOOT0 is also used for entering ROM bootloader mode if necessary.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Power options&lt;/span>&lt;span style=" font-size:15px;"> - USB type C &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">or&lt;/span>&lt;span style=" font-size:15px;"> Lipoly battery&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Built-in battery charging&lt;/span>&lt;span style=" font-size:15px;"> when powered over USB-C&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">LiPoly battery monitor&lt;/span>&lt;span style=" font-size:15px;"> - LC709203 chip actively monitors your battery for voltage and state of charge / percentage reporting over I2C&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Reset and DFU&lt;/span>&lt;span style=" font-size:15px;"> (BOOT0) buttons to get into the ROM bootloader (which is a USB serial port so you don't need a separate cable!)&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Serial debug output pin&lt;/span>&lt;span style=" font-size:15px;"> (optional, for checking the hardware serial debug console)&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">STEMMA QT&lt;/span>&lt;span style=" font-size:15px;"> connector for I2C devices, with switchable power, so you can go into low power mode.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">On/Charge/User&lt;/span>&lt;span style=" font-size:15px;"> LEDs + status &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">NeoPixel &lt;/span>&lt;span style=" font-size:15px;">with pin-controlled power for low power usage&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Low Power friendly&lt;/span>&lt;span style=" font-size:15px;">! In deep sleep mode, we can get down to 40~50uA of current draw from the Lipoly connection. Quiescent current is from the power regulator, ESP32-S2 chip, and Lipoly monitor. Turn off the NeoPixel and external I2C/TFT power for the lowest quiescent current draw.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Works with Arduino or CircuitPython&lt;/span>&lt;/li>&lt;/ul>&lt;/body>&lt;/html></description>
+ <title>Adafruit ESP32-S2 Reverse TFT Feather</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Feather</property>
+  <property name="part number">#5345</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_0cb4b31049bcb63e3e2f9404f57395ad_1_breadboard_A3.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_0cb4b31049bcb63e3e2f9404f57395ad_1_schematic_A3.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_0cb4b31049bcb63e3e2f9404f57395ad_1_pcb_A3.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_0cb4b31049bcb63e3e2f9404f57395ad_1_icon_A3.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector54" type="male" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector54pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector54pin" layer="schematic" terminalId="connector54terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector54pad" layer="copper0"/>
+     <p svgId="connector54pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector55" type="male" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector55pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector55pin" layer="schematic" terminalId="connector55terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector55pad" layer="copper0"/>
+     <p svgId="connector55pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector57" type="male" name="VBAT">
+   <description>VBAT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector57pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector57pin" layer="schematic" terminalId="connector57terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector57pad" layer="copper0"/>
+     <p svgId="connector57pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector212" type="female" name="VBAT">
+   <description>VBAT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector212pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector212pin" layer="schematic" terminalId="connector212terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector212pad" layer="copper0"/>
+     <p svgId="connector212pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector59" type="male" name="VBUS">
+   <description>VBUS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector59pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector59pin" layer="schematic" terminalId="connector59terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector59pad" layer="copper0"/>
+     <p svgId="connector59pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector32" type="female" name="VSENSOR">
+   <description>VSENSOR</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector32pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector32pin" layer="schematic" terminalId="connector32terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector32pad" layer="copper0"/>
+     <p svgId="connector32pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector56" type="male" name="RESET">
+   <description>RESET</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector56pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector56pin" layer="schematic" terminalId="connector56terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector56pad" layer="copper0"/>
+     <p svgId="connector56pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector52" type="male" name="A0">
+   <description>A0</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector52pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector52pin" layer="schematic" terminalId="connector52terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector52pad" layer="copper0"/>
+     <p svgId="connector52pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector51" type="male" name="A1">
+   <description>A1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector51pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector51pin" layer="schematic" terminalId="connector51terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector51pad" layer="copper0"/>
+     <p svgId="connector51pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector50" type="male" name="A2">
+   <description>A2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector50pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector50pin" layer="schematic" terminalId="connector50terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector50pad" layer="copper0"/>
+     <p svgId="connector50pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector49" type="male" name="A3">
+   <description>A3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector49pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector49pin" layer="schematic" terminalId="connector49terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector49pad" layer="copper0"/>
+     <p svgId="connector49pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector48" type="male" name="A4">
+   <description>A4</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector48pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector48pin" layer="schematic" terminalId="connector48terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector48pad" layer="copper0"/>
+     <p svgId="connector48pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector47" type="male" name="A5">
+   <description>A5</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector47pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector47pin" layer="schematic" terminalId="connector47terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector47pad" layer="copper0"/>
+     <p svgId="connector47pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector46" type="male" name="SCK">
+   <description>SCK</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector46pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector46pin" layer="schematic" terminalId="connector46terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector46pad" layer="copper0"/>
+     <p svgId="connector46pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector45" type="male" name="MOSI">
+   <description>MOSI</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector45pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector45pin" layer="schematic" terminalId="connector45terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector45pad" layer="copper0"/>
+     <p svgId="connector45pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector44" type="male" name="MISO">
+   <description>MISO</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector44pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector44pin" layer="schematic" terminalId="connector44terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector44pad" layer="copper0"/>
+     <p svgId="connector44pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector43" type="male" name="RX">
+   <description>RX</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector43pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector43pin" layer="schematic" terminalId="connector43terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector43pad" layer="copper0"/>
+     <p svgId="connector43pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector42" type="male" name="TX">
+   <description>TX</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector42pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector42pin" layer="schematic" terminalId="connector42terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector42pad" layer="copper0"/>
+     <p svgId="connector42pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector41" type="male" name="TXD0">
+   <description>TXD0</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector41pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector41pin" layer="schematic" terminalId="connector41terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector41pad" layer="copper0"/>
+     <p svgId="connector41pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector58" type="male" name="EN">
+   <description>EN</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector58pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector58pin" layer="schematic" terminalId="connector58terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector58pad" layer="copper0"/>
+     <p svgId="connector58pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector60" type="male" name="D13">
+   <description>D13</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector60pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector60pin" layer="schematic" terminalId="connector60terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector60pad" layer="copper0"/>
+     <p svgId="connector60pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector61" type="male" name="D12">
+   <description>D12</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector61pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector61pin" layer="schematic" terminalId="connector61terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector61pad" layer="copper0"/>
+     <p svgId="connector61pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector62" type="male" name="D11">
+   <description>D11</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector62pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector62pin" layer="schematic" terminalId="connector62terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector62pad" layer="copper0"/>
+     <p svgId="connector62pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector63" type="male" name="D10">
+   <description>D10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector63pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector63pin" layer="schematic" terminalId="connector63terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector63pad" layer="copper0"/>
+     <p svgId="connector63pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector64" type="male" name="D9">
+   <description>D9</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector64pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector64pin" layer="schematic" terminalId="connector64terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector64pad" layer="copper0"/>
+     <p svgId="connector64pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector65" type="male" name="D6">
+   <description>D6</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector65pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector65pin" layer="schematic" terminalId="connector65terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector65pad" layer="copper0"/>
+     <p svgId="connector65pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector66" type="male" name="D5">
+   <description>D5</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector66pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector66pin" layer="schematic" terminalId="connector66terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector66pad" layer="copper0"/>
+     <p svgId="connector66pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector34" type="female" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector34pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector34pin" layer="schematic" terminalId="connector34terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector34pad" layer="copper0"/>
+     <p svgId="connector34pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector67" type="male" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector67pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector67pin" layer="schematic" terminalId="connector67terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector67pad" layer="copper0"/>
+     <p svgId="connector67pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector68" type="male" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector68pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector68pin" layer="schematic" terminalId="connector68terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector68pad" layer="copper0"/>
+     <p svgId="connector68pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector33" type="female" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector33pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector33pin" layer="schematic" terminalId="connector33terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector33pad" layer="copper0"/>
+     <p svgId="connector33pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector53" type="male" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector53pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector53pin" layer="schematic" terminalId="connector53terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector53pad" layer="copper0"/>
+     <p svgId="connector53pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector31" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector31pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector31pin" layer="schematic" terminalId="connector31terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector31pad" layer="copper0"/>
+     <p svgId="connector31pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector211" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector211pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector211pin" layer="schematic" terminalId="connector211terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector211pad" layer="copper0"/>
+     <p svgId="connector211pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector53"/>
+   <nodeMember connectorId="connector31"/>
+   <nodeMember connectorId="connector211"/>
+  </bus>
+  <bus id="3.3v">
+   <nodeMember connectorId="connector54"/>
+   <nodeMember connectorId="connector55"/>
+  </bus>
+  <bus id="scl">
+   <nodeMember connectorId="connector34"/>
+   <nodeMember connectorId="connector67"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector68"/>
+   <nodeMember connectorId="connector33"/>
+  </bus>
+  <bus id="vbat">
+   <nodeMember connectorId="connector57"/>
+   <nodeMember connectorId="connector212"/>
+  </bus>
+ </buses>
+ <label>Adafruit ESP32-S2 Reverse TFT Feather</label>
+ <url>https://www.adafruit.com/product/5345</url>
+</module>

@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" referenceFile="Adafruit MCP3421 ADC.fzp" moduleId="Adafruit-_ed118f5ad2fa9e6dde4f8531ce97986d_1_6B">
+ <version>4</version>
+ <date>2024-01-08</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit MCP3421 18-Bit ADC&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> is a simple, inexpensive, and easy to use 18-bit, 240 SPS, single-channel ADC with an I2C interface that can run up to 3.4MHz clock rate. A perfect component whenever you need an ADC that has differential inputs, adjustable gain, and a built in precision/low-drift reference voltage.&lt;br />&lt;br />One of the trade-offs with getting 18-bit precision is that the ADC is not going to be very fast: you can configure the chip to do a faster 12-bit conversion at 240 SPS, but at 18-bits it slows down to 3.5 SPS.&lt;br />That's because the way a &lt;/span>&lt;a href="https://en.wikipedia.org/wiki/Delta-sigma_modulation">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">sigma-delta ADC&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> works, it 'guesses' the analog voltage and uses a comparator to determine whether the input is higher or lower. Each 'guess' takes an extra step, and thus&lt;br />halves the throughput, so 12-bit is 240 SPS, and 14-bit is 1/4 (2-bit) slower, 60 SPS. Ditto 16-bit is 1/4 slower, 15 SPS, and finally 18-bit is 3.75 SPS.&lt;br />&lt;br />The MCP3421 is already set up for differential inputs, which means that you can read positive or negative differences between the two inputs, &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">as long as both signals are between 0 and 2.048V&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. This means its not going to be great for reading stuff like potentiometers, where you have a single-end reading referenced to ground, and you want to read the full range from 0 to Vcc. It is great, however, for reading sensors like strain gauges, pressure sensors, or thermocouples.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;a href="https://github.com/adafruit/Adafruit_MCP3421">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">We have a ready to go Arduino library that makes usage simple&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">: select the sample rate / precision you want and one-shot or continuous mode. Then read values over I2C! This sensor has a fixed address, so &lt;/span>&lt;a href="https://learn.adafruit.com/adafruit-tca9548a-1-to-8-i2c-multiplexer-breakout">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">you may want to use a multiplexor&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> if you want to connect multiple MCP3421's on a single I2C bus.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">To get you going fast, we spun up a custom-made PCB in the&lt;/span>&lt;a href="https://www.adafruit.com/?q=stemma%20qt%20sensor">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;"> &lt;/span>&lt;/a>&lt;a href="https://www.adafruit.com/?q=stemma%20qt%20sensor">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">STEMMA QT&lt;/span>&lt;/a>&lt;a href="https://www.adafruit.com/?q=stemma%20qt%20sensor">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;"> form factor&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, making it easy to interface with. The &lt;/span>&lt;a href="https://learn.adafruit.com/introducing-adafruit-stemma-qt/what-is-stemma-qt">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">STEMMA QT connectors&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> on either side are compatible with the &lt;/span>&lt;a href="https://www.sparkfun.com/qwiic">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">SparkFun Qwiic&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> I2C connectors. This allows you to make solderless connections between your development board and the MCP or to chain it with a wide range of other sensors and accessories using a &lt;/span>&lt;a href="https://www.adafruit.com/?q=stemma%20qt%20cable">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">compatible cable&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;a href="https://www.adafruit.com/?q=stemma+qt+cable&amp;amp;sort=BestMatch">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">QT Cable is not included&lt;/span>&lt;/a>&lt;a href="https://www.adafruit.com/?q=stemma+qt+cable&amp;amp;sort=BestMatch">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">, but we have a variety in the shop&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Comes with a bit of 0.1&amp;quot; standard header in case you want to use it with a breadboard or perfboard. Four mounting holes for easy attachment.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit MCP3421 18-Bit ADC</title>
+ <tags/>
+ <properties>
+  <property name="family">ADC</property>
+  <property name="variant">variant 1</property>
+  <property name="mpn">#5870</property>
+  <property name="mn">Adafruit</property>
+  <property name="part number">#5870</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_ed118f5ad2fa9e6dde4f8531ce97986d_1_breadboard_6B.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_ed118f5ad2fa9e6dde4f8531ce97986d_1_schematic_6B.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_ed118f5ad2fa9e6dde4f8531ce97986d_1_pcb_6B.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_ed118f5ad2fa9e6dde4f8531ce97986d_1_icon_6B.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector27" type="male" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector27pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector27pin" terminalId="connector27terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector27pad"/>
+     <p layer="copper1" svgId="connector27pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector10" type="female" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pad"/>
+     <p layer="copper1" svgId="connector10pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector16" type="female" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector16pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector16pin" terminalId="connector16terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector16pad"/>
+     <p layer="copper1" svgId="connector16pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector51" type="female" name="VIN+">
+   <description>VIN+</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector51pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector51pin" terminalId="connector51terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector51pad"/>
+     <p layer="copper1" svgId="connector51pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector31" type="male" name="VIN+">
+   <description>VIN+</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector31pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector31pin" terminalId="connector31terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector31pad"/>
+     <p layer="copper1" svgId="connector31pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector32" type="male" name="VIN-">
+   <description>VIN-</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector32pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector32pin" terminalId="connector32terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector32pad"/>
+     <p layer="copper1" svgId="connector32pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector52" type="female" name="VIN-">
+   <description>VIN-</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector52pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector52pin" terminalId="connector52terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector52pad"/>
+     <p layer="copper1" svgId="connector52pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector29" type="male" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector29pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector29pin" terminalId="connector29terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector29pad"/>
+     <p layer="copper1" svgId="connector29pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector12" type="female" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector18" type="female" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector18pin" terminalId="connector18terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pad"/>
+     <p layer="copper1" svgId="connector18pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector30" type="male" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector30pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector30pin" terminalId="connector30terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector30pad"/>
+     <p layer="copper1" svgId="connector30pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector17" type="female" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector17pin" terminalId="connector17terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pad"/>
+     <p layer="copper1" svgId="connector17pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector11" type="female" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector28" type="male" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector28pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector28pin" terminalId="connector28terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector28pad"/>
+     <p layer="copper1" svgId="connector28pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector9" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pad"/>
+     <p layer="copper1" svgId="connector9pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector15" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector15pin" terminalId="connector15terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector15pad"/>
+     <p layer="copper1" svgId="connector15pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector28"/>
+   <nodeMember connectorId="connector9"/>
+   <nodeMember connectorId="connector15"/>
+  </bus>
+  <bus id="vcc">
+   <nodeMember connectorId="connector27"/>
+   <nodeMember connectorId="connector10"/>
+   <nodeMember connectorId="connector16"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector30"/>
+   <nodeMember connectorId="connector17"/>
+   <nodeMember connectorId="connector11"/>
+  </bus>
+  <bus id="scl">
+   <nodeMember connectorId="connector29"/>
+   <nodeMember connectorId="connector12"/>
+   <nodeMember connectorId="connector18"/>
+  </bus>
+  <bus id="vin+">
+   <nodeMember connectorId="connector51"/>
+   <nodeMember connectorId="connector31"/>
+  </bus>
+  <bus id="vin-">
+   <nodeMember connectorId="connector32"/>
+   <nodeMember connectorId="connector52"/>
+  </bus>
+ </buses>
+ <label>Adafruit MCP3421 18-Bit ADC</label>
+ <url>https://www.adafruit.com/product/5870</url>
+</module>

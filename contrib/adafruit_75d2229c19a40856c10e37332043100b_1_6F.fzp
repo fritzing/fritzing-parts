@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="adafruit_75d2229c19a40856c10e37332043100b_1_6F" fritzingVersion="0.7.5b.07.02.6130" referenceFile="Neopixel_Strip____Black__60_m___0ea01f433b942700409847ae1f75d0f9.fzp">
+ <author>adafruit</author>
+ <title>DotStar LED Strip</title>
+ <label>DotStar</label>
+ <date>2025-05-23</date>
+ <tags>
+  <tag>adafruit</tag>
+  <tag>pwm</tag>
+  <tag>rgb</tag>
+  <tag>led</tag>
+  <tag>dotstar</tag>
+ </tags>
+ <properties>
+  <property name="part number">2239</property>
+  <property name="color">black</property>
+  <property name="family">Adafruit_DotStar</property>
+  <property name="url">https://www.adafruit.com/product/2239</property>
+  <property name="variant">variant 1</property>
+  <property name="mn">Adafruit</property>
+  <property name="mpn">2239</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Move over NeoPixels, there's a new LED strip in town! These fancy new DotStar LED strips are a great upgrade for people who have loved and used NeoPixel strips for a few years but want something even better. DotStar LEDs use generic 2-wire SPI, so you can push data much faster than with the NeoPixel 800 KHz protocol and there's no specific timing required. They also have much higher PWM refresh rates, so  you can do Persistence-of-Vision (POV) and have less flickering, particularly at low brightness levels.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Like NeoPixels, DotStar LEDs are 5050-sized LEDs with an embedded microcontroller &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">inside the LED&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. You can set the color/brightness of each LED to 24-bit color (8 bits each red green and blue). Each LED acts like a shift register, reading incoming color data on the input pins, and then shifting the previous color data out on the output pin. By sending a long string of data, you can control an infinite number of LEDs, just tack on more or cut off unwanted LEDs at the end. The PWM is built into each LED-chip so once you set the color you can stop talking to the strip and it will continue to PWM all the LEDs for you&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">However, unlike NeoPixels, these LEDs have 2 wires (input and output) for sending data - one clock pin and one data pin. That means you need two pins, not one, to control DotStars. &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Because the clock and data is seperated, you can use any processor speed or type to control these strips, and you don't have to worry about being careful with the timing&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. Hardware SPI support is handy but not required. This makes them excellent for use with any microcontroller or microprocessor, including Arduino, Raspberry Pi, BeagleBone, Propeller, SparkCore, and any 'raw' microcontrollers/microprocessors. It's very easy to port the library, and you can send data to the pixels at up to 32MHz clock rate!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Another nice thing about DotStars is their high PWM rate. You only have to set the 24-bit color data for each pixel LED once, and then the LED+built-in-chip will handle the PWMing of the red, green and blue. On NeoPixels, this PWM rate happens 400 Hz, which works well but is noticably at lower brightnesses and if the strip is moving in any way.  DotStars have a 20 KHz PWM rate, so even when moving the strip around, you won't see the pixelation, the color blending is very smooth.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">This is the 60 LED-per-meter version of our DotStar strips, on black flex PCB. &lt;/span>&lt;a href="https://www.adafruit.com/categories/340">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">We have 30 LED/m, 60 LED/m and 144 LED/m on both white and black flex PCB.&lt;/span>&lt;/a>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The strip is made of flexible PCB material, and comes with a weatherproof sheathing. You can cut this stuff pretty easily with wire cutters, there are cut-lines every 0.65&amp;quot;/1.7cm (1 LED each). Solder to the 0.1&amp;quot; copper pads and you're good to go. Of course, you can also connect strips together to make them longer, just watch how much current you need! &lt;/span>&lt;a href="http://www.adafruit.com/products/276">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">We have a 5V/2A supply that should be able to drive 1 meter,&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> a &lt;/span>&lt;a href="https://www.adafruit.com/product/1466">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">5V/4A that can drive a couple meters&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, and &lt;/span>&lt;a href="http://www.adafruit.com/products/658">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">a 5V/10A supply that can drive up to 10 meters&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> (depending on use) &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">You must use a 5V DC power supply to power these strips, do not use higher than 6V or you can destroy the entire strip&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">These strips come in 4 meter reels with a &lt;/span>&lt;a href="http://www.adafruit.com/datasheets/JSTSM.pdf">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">4-pin JST SM connector&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> on each end. These strips are &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">sold by the meter&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">! If you buy 4 meters at a time, you'll get full reels with two connectors. If you buy less than 4m, you'll get a single strip, but it will be a cut piece from a reel &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">which may or may not have a connector on it&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. If the piece comes from the end of the reel, the connector may be on the output end of the strip!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">To wire up these strips we suggest picking up some &lt;/span>&lt;a href="https://www.adafruit.com/products/578">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">JST SM &lt;/span>&lt;/a>&lt;a href="https://www.adafruit.com/product/578">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">plug and receptacle cables&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> for the signal wires  &lt;/span>&lt;a href="http://adafruit.com/products/368">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">For the power wires, you will also probably want a 2.1mm DC jack to wire in so you can connect one of our 5V wall adapters to power it&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;a href="https://learn.adafruit.com/adafruit-dotstar-leds">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">We have a tutorial showing wiring, power usage calculations, example code for usage, etc. Please check it out!&lt;/span>&lt;/a>&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_75d2229c19a40856c10e37332043100b_1_6F_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_75d2229c19a40856c10e37332043100b_1_6F_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_75d2229c19a40856c10e37332043100b_1_6F_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_75d2229c19a40856c10e37332043100b_1_6F_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="DI" id="connector3" type="pad">
+   <description>Data Input</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector3terminal" svgId="connector3pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector3pin"/>
+     <p layer="copper0" svgId="connector3pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="+5V" id="connector4" type="pad">
+   <description>+5V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector4terminal" svgId="connector4pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector4pin"/>
+     <p layer="copper0" svgId="connector4pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector5" type="pad">
+   <description>Ground</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector5terminal" svgId="connector5pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector5pin"/>
+     <p layer="copper0" svgId="connector5pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="CO" id="connector6" type="pad">
+   <description>Clock Output</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector6terminal" svgId="connector6pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector6pin"/>
+     <p layer="copper0" svgId="connector6pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector1" type="pad">
+   <description>Ground</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector1terminal" svgId="connector1pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector1pin"/>
+     <p layer="copper0" svgId="connector1pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="CI" id="connector2" type="pad">
+   <description>Clock Input</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector2terminal" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector2pin"/>
+     <p layer="copper0" svgId="connector2pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DO" id="connector7" type="pad">
+   <description>Data Output</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector7terminal" svgId="connector7pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector7pin"/>
+     <p layer="copper0" svgId="connector7pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="+5V" id="connector8" type="pad">
+   <description>+5V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector8terminal" svgId="connector8pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper1" svgId="connector8pin"/>
+     <p layer="copper0" svgId="connector8pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>

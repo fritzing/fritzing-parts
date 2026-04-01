@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="Adafruit Pixel Shifter.fzp" moduleId="Adafruit-_299cf6509b878fe2cf233f0ff2ed0e2f_1_5F" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2024-11-05</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">We've been stocking&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/product/1260">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">WS2811-n-friends&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> for a long time, enough to see many iterations and versions of the &amp;quot;one-wire-control&amp;quot; addressable LED pixel. We call them NeoPixels, since the part number itself can change quite a bit, but all have the same idea: send color data to lights and they'll change on their own without having to constantly PWM three or four diodes. Despite this simplicity, we've seen folks struggle with them because of voltage level expectations: &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-style:italic; color:#000000;">some&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> NeoPixel-compatible pixels are very picky and want 5V logic level. Without the right voltage, you get flickering or weird behavior. There's also some funky variants like the TM1814 that want &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-style:italic; color:#000000;">inverted&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> signal levels.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">To make wiring easy, so you don't need a separate chip or breadboard, we made this&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;"> Adafruit Pixel Shifter &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">which can be easily wired in-line to your LED strips or grids or any other shape configuration they come in. On-board is a tiny 5V voltage generator, two shifters and one inverter. Provide it 3-5V power (it only needs a few milliamps) and it will shift up to two signal lines, with one of them also available as an inverted output. All pins are available on 0.1&amp;quot; terminal blocks, use a small flathead screw to attach your solid or stranded core wire, 18AWG to 26AWG.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">It's a simple, low-cost, and solder-free way to make your finicky LED setups work with 3.3V logic chips like the RP2040, ESP32 / ESP8266, STM32, SAMD, Raspberry Pi or other modern 3.3V-logic devices. You can also use it for other 5V-logic-needing IC's that require one or two inputs. The onboard 74HCT2G34 shifter can easily handle 10MHz signals, most LED strips use a signal frequency of about 800KHz. A perfect companion to WLED!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">You can also use this board as a quick signal debugger: there's a single tiny NeoPixel on the Data line, so you can verify that you're getting valid signal on that pin. If you aren't using NeoPixel protocol, or want to keep it dark, disable it by cutting the trace on the back.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit Pixel Shifter</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">NeoPixel</property>
+  <property name="part number">#6066</property>
+  <property name="mn">Adafruit</property>
+  <property name="mpn">#6066</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_299cf6509b878fe2cf233f0ff2ed0e2f_1_5F_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_299cf6509b878fe2cf233f0ff2ed0e2f_1_5F_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_299cf6509b878fe2cf233f0ff2ed0e2f_1_5F_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_299cf6509b878fe2cf233f0ff2ed0e2f_1_5F_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VIN" type="female" id="connector30">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector30pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector30pin" terminalId="connector30terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector30pad"/>
+     <p layer="copper1" svgId="connector30pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="CLK_3V" type="female" id="connector32">
+   <description>CLK_3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector32pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector32pin" terminalId="connector32terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector32pad"/>
+     <p layer="copper1" svgId="connector32pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="CLK_5V" type="female" id="connector25">
+   <description>CLK_5V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector25pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector25pin" terminalId="connector25terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector25pad"/>
+     <p layer="copper1" svgId="connector25pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DAT_3V" type="female" id="connector31">
+   <description>DAT_3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector31pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector31pin" terminalId="connector31terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector31pad"/>
+     <p layer="copper1" svgId="connector31pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DAT_5V" type="female" id="connector27">
+   <description>DAT_5V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector27pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector27pin" terminalId="connector27terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector27pad"/>
+     <p layer="copper1" svgId="connector27pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="!DAT_5V" type="female" id="connector26">
+   <description>!DAT_5V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector26pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector26pin" terminalId="connector26terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector26pad"/>
+     <p layer="copper1" svgId="connector26pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector28">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector28pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector28pin" terminalId="connector28terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector28pad"/>
+     <p layer="copper1" svgId="connector28pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector29">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector29pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector29pin" terminalId="connector29terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector29pad"/>
+     <p layer="copper1" svgId="connector29pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector28"/>
+   <nodeMember connectorId="connector29"/>
+  </bus>
+ </buses>
+ <label>Adafruit Pixel Shifter</label>
+ <url>https://www.adafruit.com/product/6066</url>
+</module>

@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="adafruit_4283e6b9343ccac9a41a6dfac188e624_7_B8" fritzingVersion="0.5.2b.02.18.4756" referenceFile="Adafruit PCF8523 RTC.fzp">
+ <version>4</version>
+ <date>2017-10-29</date>
+ <author>ladyada</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is a great battery-backed real time clock (RTC) that allows your microcontroller project to keep track of time even if it is reprogrammed, or if the power is lost. Perfect for datalogging, clock-building, time stamping, timers and alarms, etc. Equipped with &lt;span style=" font-weight:600;">PCF8523&lt;/span> RTC - it can run from 3.3V &lt;span style=" font-style:italic;">or&lt;/span> 5V power &amp;amp; logic!&lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Works great with an &lt;a href="https://learn.adafruit.com/adafruit-pcf8523-real-time-clock/rtc-with-arduino">&lt;span style=" text-decoration: underline; color:#0000ff;">Arduino using our RTC library&lt;/span>&lt;/a>, with &lt;a href="https://learn.adafruit.com/adafruit-pcf8523-real-time-clock/rtc-with-circuitpython">&lt;span style=" text-decoration: underline; color:#0000ff;">CircuitPython&lt;/span>&lt;/a> or with a &lt;a href="https://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi">&lt;span style=" text-decoration: underline; color:#0000ff;">Raspberry Pi (or similar single board linux computer)&lt;/span>&lt;/a>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">PCB &amp;amp; header are included&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Plugs into any breadboard, or you can use wires&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Two mounting holes&lt;/li>
+&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Will keep time for 5 years or more&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The PCF8523 is simple and inexpensive but not a high precision device. It may lose or gain up to 2 seconds a day. For a high-precision, temperature compensated alternative, &lt;a href="https://www.adafruit.com/products/3013">&lt;span style=" text-decoration: underline; color:#0000ff;">please check out the DS3231 precision RTC&lt;/span>&lt;/a>. If you need a DS1307 for compatibility reasons, check out our &lt;a href="http://www.adafruit.com/products/3296">&lt;span style=" text-decoration: underline; color:#0000ff;">DS1307 RTC breakout&lt;/span>&lt;/a>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit PCF8523 RTC</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Adafruit PCF8523 RTC</property>
+  <property name="part number">Adafruit #3295</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_4c7d8d46f0c71581a61faf9e98b2c5f1_1_breadboard_B8.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_4c7d8d46f0c71581a61faf9e98b2c5f1_1_schematic_B8.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_4c7d8d46f0c71581a61faf9e98b2c5f1_1_pcb_B8.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_4c7d8d46f0c71581a61faf9e98b2c5f1_1_icon_B8.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="male" name="SQW" id="connector17">
+   <description>SQW</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector17pin" terminalId="connector17terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pad"/>
+     <p layer="copper1" svgId="connector17pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="SCL" id="connector18">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector18pin" terminalId="connector18terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pad"/>
+     <p layer="copper1" svgId="connector18pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="SDA" id="connector19">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector19pin" terminalId="connector19terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector19pad"/>
+     <p layer="copper1" svgId="connector19pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="VCC" id="connector20">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector20pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector20pin" terminalId="connector20terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector20pad"/>
+     <p layer="copper1" svgId="connector20pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" name="GND" id="connector21">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector21pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector21pin" terminalId="connector21terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector21pad"/>
+     <p layer="copper1" svgId="connector21pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.adafruit.com/product/3295</url>
+</module>

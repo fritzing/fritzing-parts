@@ -1,0 +1,448 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="Infineon_TLE493D-P2B6_MS2GO" referenceFile="Arduino_ADK_MEGA_2560-Rev3(fix).fzp">
+ <version>4</version>
+ <date>2025-09-30</date>
+ <author>Kannan Subramani</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">TLE493D-P2B6 3D magnetic sensor 2GO kit is a budget-priced evaluation board equipped with a magnetic sensor for three dimensional measurement combined with an ARM® Cortex™-M0 CPU. It has a complete set of on-board devices, including an on-board debugger. In addition Infineon is offering so called add-on components which are adapters for the 3D Magnetic Sensor 2GO kits. Theses add ons (e.g. joysticks, rotation knobs, linear slider etc.) comprise a magnet and can be directly mounted onto the 2GO kits. Together with a dedicated GUI it’s the perfect tool for fast and easy plug-and-play systems. Build and evaluate your own application and gadget with the 3D magnetic sensor 2GO kit.&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Infineon_Infineon_TLE493D-P2B6_MS2GO</title>
+ <url>https://www.infineon.com/cms/en/product/evaluation-boards/tle493d-p2b6ms2go/</url>
+ <tags>
+  <tag>3D magnetic sensor</tag>
+  <tag>Consumer</tag>
+  <tag>Industrial</tag>
+  <tag>Sensors</tag>
+  <tag>Automotive</tag>
+  <tag>Infineon</tag>
+ </tags>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Sensors</property>
+  <property name="type">Sensors</property>
+  <property name="part number">TLE493DP2B6MS2GOTOBO1</property>
+  <property name="mpn">TLE493DP2B6MS2GOTOBO1</property>
+  <property name="mn">Infineon</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Infineon_TLE493D-P2B6_MS2GO_breadboard.svg">
+    <layer layerId="breadboardbreadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Infineon_TLE493D-P2B6_MS2GO_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Infineon_TLE493D-P2B6_MS2GO_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Infineon_TLE493D-P2B6_MS2GO_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector0" name="GND" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+     <p layer="copper1" svgId="connector0pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" name="P2.7" type="female">
+   <description>P2.7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+     <p layer="copper1" svgId="connector1pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector2" name="P2.9" type="female">
+   <description>P2.9</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector2pin"/>
+     <p layer="copper1" svgId="connector2pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector3" name="P2.10" type="female">
+   <description>P2.10</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector3pin"/>
+     <p layer="copper1" svgId="connector3pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector4" name="P2.11" type="female">
+   <description>P2.11</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector4pin"/>
+     <p layer="copper1" svgId="connector4pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector5" name="GND" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pin"/>
+     <p layer="copper1" svgId="connector5pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector6" name="+3V3" type="female">
+   <description>+3V3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pin"/>
+     <p layer="copper1" svgId="connector6pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector7" name="P0.0" type="female">
+   <description>P0.0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector7pin"/>
+     <p layer="copper1" svgId="connector7pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector8" name="P0.5" type="female">
+   <description>P0.5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector8pin"/>
+     <p layer="copper1" svgId="connector8pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector9" name="P2.6" type="female">
+   <description>P2.6</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pin"/>
+     <p layer="copper1" svgId="connector9pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector10" name="P2.0" type="female">
+   <description>P2.0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector10pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pin"/>
+     <p layer="copper1" svgId="connector10pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector11" name="P0.15" type="female">
+   <description>P0.15</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector11pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pin"/>
+     <p layer="copper1" svgId="connector11pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector12" name="P0.14" type="female">
+   <description>P0.14</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector12pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pin"/>
+     <p layer="copper1" svgId="connector12pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector13" name="P0.9" type="female">
+   <description>P0.9</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector13pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pin"/>
+     <p layer="copper1" svgId="connector13pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector14" name="P0.8" type="female">
+   <description>P0.8</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector14pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pin"/>
+     <p layer="copper1" svgId="connector14pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector15" name="P0.7" type="female">
+   <description>P0.7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector15pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector15pin"/>
+     <p layer="copper1" svgId="connector15pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector16" name="P0.6" type="female">
+   <description>P0.6</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector16pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector16pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector16pin"/>
+     <p layer="copper1" svgId="connector16pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector17" name="SDA" type="female">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector17pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pin"/>
+     <p layer="copper1" svgId="connector17pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector18" name="SCL" type="female">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector18pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pin"/>
+     <p layer="copper1" svgId="connector18pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector19" name="GND" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector19pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector19pin"/>
+     <p layer="copper1" svgId="connector19pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector20" name="P1.0/VDDSENS" type="female">
+   <description>P1.0/VDDSENS</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector20pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector20pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector20pin"/>
+     <p layer="copper1" svgId="connector20pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector21" name="P1.0/VDDSENS" type="female">
+   <description>P1.0/VDDSENS</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector21pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector21pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector21pin"/>
+     <p layer="copper1" svgId="connector21pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector22" name="GND" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector22pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector22pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector22pin"/>
+     <p layer="copper1" svgId="connector22pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector23" name="SCL" type="female">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector23pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector23pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector23pin"/>
+     <p layer="copper1" svgId="connector23pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector24" name="SDA" type="female">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector24pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector24pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector24pin"/>
+     <p layer="copper1" svgId="connector24pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector279"/>
+   <nodeMember connectorId="connector283"/>
+   <nodeMember connectorId="connector307"/>
+   <nodeMember connectorId="connector308"/>
+   <nodeMember connectorId="connector496"/>
+   <nodeMember connectorId="connector497"/>
+  </bus>
+  <bus id="+5v">
+   <nodeMember connectorId="connector275"/>
+   <nodeMember connectorId="connector303"/>
+   <nodeMember connectorId="connector306"/>
+   <nodeMember connectorId="connector462"/>
+   <nodeMember connectorId="connector463"/>
+  </bus>
+ </buses>
+ <label>TLE493D-P2B6_MS2GO</label>
+</module>

@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="Adafruit-_46ab47b280cdca75301e29c6600d5f8a_1_47" referenceFile="Adafruit SEN6x Breakout.fzp">
+ <version>4</version>
+ <date>2025-05-21</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Now you can quickly integrate the &lt;/span>&lt;a href="https://blog.adafruit.com/2025/05/08/eye-on-npi-sensirion-sen66-environmental-sensor-node-eyeonnpi-digikey-digikey-sensirion-adafruit/">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">Sensirion SEN6x environmental sensor node&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> into your microcontroller or microcomputer project, with no soldering or fiddly breadboarding - thanks to this here &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit SEN6x Adapter Breakout &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">(for SEN66 and friends). We covered the awesome &lt;/span>&lt;a href="https://blog.adafruit.com/2025/05/08/eye-on-npi-sensirion-sen66-environmental-sensor-node-eyeonnpi-digikey-digikey-sensirion-adafruit/">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">Sensirion SEN66 environmental sensor nodes on EYE ON NPI&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> a while ago; it's an awesome all-in-one air quality sensor, but it has the annoyance that it requires 3V power/logic, and it has a special cable connection.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">This adapter breakout will make an instant friendship with all SEN6x boards, thanks to a JST GH-compatible connector in the middle so that you can plug a&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/product/5754">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">6-pin GH cable&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> directly between your SEN6x and this adapter. In the middle is a clean 3.3V regulator and level shifter, so you can use this module whether you're using 3.3V or 5V power and logic. &lt;/span>&lt;a href="https://www.adafruit.com/product/4210">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">Then you can use any ol' STEMMA QT cable&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> to plug into your Metro, Feather, QT Py, Raspberry Pi, etc, etc. I2C port.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Once you've got it plugged together, you can run Sensirion's&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://github.com/Sensirion/arduino-i2c-sen66">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">Arduino library&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> or &lt;/span>&lt;a href="https://github.com/Sensirion/raspberry-pi-i2c-sen66">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">Raspberry Pi Python library&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> to read temperature, humidity, VOC, Particulate Matter PM1 / PM2.5 / PM4, and PM10. (NOx reading is also available on the SEN55)&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Please note: this board does NOT come with a JST GH-compatible cable NOR a SEN6x sensor!&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> You &lt;/span>&lt;a href="https://www.adafruit.com/product/5754">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">can pick up the cable here&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, and &lt;/span>&lt;a href="https://www.digikey.com/en/product-highlight/s/sensirion/environmental-sensor-node-sen6x">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">a SEN6x from DigiKey&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit SEN6x Breakout</title>
+ <tags/>
+ <properties>
+  <property name="family">Environmental sensor</property>
+  <property name="variant">variant 1</property>
+  <property name="part number">#6331</property>
+  <property name="mpn">#6331</property>
+  <property name="mn">Adafruit</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_46ab47b280cdca75301e29c6600d5f8a_1_47_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_46ab47b280cdca75301e29c6600d5f8a_1_47_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_46ab47b280cdca75301e29c6600d5f8a_1_47_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_46ab47b280cdca75301e29c6600d5f8a_1_47_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VCC" id="connector27" type="male">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector27pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector27terminal" svgId="connector27pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector27pad"/>
+     <p layer="copper1" svgId="connector27pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VCC" id="connector12" type="female">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector12terminal" svgId="connector12pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VCC" id="connector18" type="female">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector18terminal" svgId="connector18pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pad"/>
+     <p layer="copper1" svgId="connector18pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector28" type="male">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector28pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector28terminal" svgId="connector28pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector28pad"/>
+     <p layer="copper1" svgId="connector28pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector57" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector57pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector57terminal" svgId="connector57pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector57pad"/>
+     <p layer="copper1" svgId="connector57pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector62" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector62pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector62terminal" svgId="connector62pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector62pad"/>
+     <p layer="copper1" svgId="connector62pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" id="connector30" type="male">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector30pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector30terminal" svgId="connector30pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector30pad"/>
+     <p layer="copper1" svgId="connector30pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" id="connector14" type="female">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector14terminal" svgId="connector14pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pad"/>
+     <p layer="copper1" svgId="connector14pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" id="connector20" type="female">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector20pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector20terminal" svgId="connector20pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector20pad"/>
+     <p layer="copper1" svgId="connector20pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL_3V" id="connector60" type="female">
+   <description>SCL_3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector60pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector60terminal" svgId="connector60pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector60pad"/>
+     <p layer="copper1" svgId="connector60pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" id="connector31" type="male">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector31pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector31terminal" svgId="connector31pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector31pad"/>
+     <p layer="copper1" svgId="connector31pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" id="connector13" type="female">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector13terminal" svgId="connector13pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pad"/>
+     <p layer="copper1" svgId="connector13pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" id="connector19" type="female">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector19terminal" svgId="connector19pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector19pad"/>
+     <p layer="copper1" svgId="connector19pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA_3V" id="connector59" type="female">
+   <description>SDA_3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector59pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector59terminal" svgId="connector59pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector59pad"/>
+     <p layer="copper1" svgId="connector59pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector29" type="male">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector29pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector29terminal" svgId="connector29pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector29pad"/>
+     <p layer="copper1" svgId="connector29pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector11" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector11terminal" svgId="connector11pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector17" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector17terminal" svgId="connector17pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pad"/>
+     <p layer="copper1" svgId="connector17pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector58" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector58pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector58terminal" svgId="connector58pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector58pad"/>
+     <p layer="copper1" svgId="connector58pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector61" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector61pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector61terminal" svgId="connector61pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector61pad"/>
+     <p layer="copper1" svgId="connector61pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector29"/>
+   <nodeMember connectorId="connector11"/>
+   <nodeMember connectorId="connector17"/>
+   <nodeMember connectorId="connector58"/>
+   <nodeMember connectorId="connector61"/>
+  </bus>
+  <bus id="vcc">
+   <nodeMember connectorId="connector27"/>
+   <nodeMember connectorId="connector12"/>
+   <nodeMember connectorId="connector18"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector31"/>
+   <nodeMember connectorId="connector13"/>
+   <nodeMember connectorId="connector19"/>
+  </bus>
+  <bus id="scl">
+   <nodeMember connectorId="connector30"/>
+   <nodeMember connectorId="connector14"/>
+   <nodeMember connectorId="connector20"/>
+  </bus>
+  <bus id="3.3v">
+   <nodeMember connectorId="connector28"/>
+   <nodeMember connectorId="connector57"/>
+   <nodeMember connectorId="connector62"/>
+  </bus>
+ </buses>
+ <label>Adafruit SEN6x Breakout</label>
+ <url>https://www.adafruit.com/product/6331</url>
+</module>

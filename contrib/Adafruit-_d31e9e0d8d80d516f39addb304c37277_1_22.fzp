@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="Adafruit LPS28 Pressure Sensor.fzp" moduleId="Adafruit-_d31e9e0d8d80d516f39addb304c37277_1_22" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2024-11-05</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">We stock a large number of barometric pressure sensors, and they all have slight differences:&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/product/3965">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">some are ported&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, &lt;/span>&lt;a href="https://www.adafruit.com/product/4633">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">some are tiny&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, &lt;/span>&lt;a href="https://www.adafruit.com/product/2652">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">some are popular and precise&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> and &lt;/span>&lt;a href="https://www.adafruit.com/product/4494">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">some are low cost&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. The &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit LPS28 (LPS28DFW) Pressure Sensor&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> is unique in that it can handle a much higher range of pressures: almost every other sensor we've encountered tops out at about 1260 hPa. That means they're totally fine for measuring altitude for most human endeavours, we tend to stay above sea level. However, for some scientific or deep-water uses, 1260 will not cut it! &lt;/span>&lt;a href="https://www.st.com/en/mems-and-sensors/lps28dfw.html">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">That's why we're happy to stock a sensor that can go down to 4060 hPa&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> - that's as low as -43,000 feet below sea level in air or 40 meters underwater. &lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;a href="https://blog.adafruit.com/2022/08/04/eye-on-npi-st-lps28dfw-dual-full-scale-absolute-digital-output-barometer-eyeonnpi-digikey-st_world-digikey-adafruit/">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">We covered the LPS28DFW sensor on our EYE ON NPI video segment&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, and liked it so much we turned it into a product!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">That makes this a good sensor for use with underwater devices or robots, as it can tell your depth from the pressure readings. Of course, its also still a great sensor for altitude sensing out of the water: with a 24-bit sensor and the ability to discern absolute pressure changes of ±0.5 hPa at the highest quality readings, good for less than 1 centimeter of altitude. (Like all pressure sensors, the actual altitude-above-sea-level depends on the days' pressure at sea level) Or, if you need speed, it can do up to 200 samples per second, without filtering and averaging.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The sensor comes with a little metal port, so you could connect a thin tubing to it for measuring pressure far from where it is soldered. The sensor element within the package has potting gel good up to 10,000 hPa of pressure and protection against some harsh chemicals -&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.st.com/en/mems-and-sensors/lps28dfw.html">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">check the datasheet for more information to make sure you can use it to measure pressure of the liquid or gas you need&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">To make life easier when working with this fancy sensor, we've taken the LPS28 and put it onto a breakout PCB along with support circuitry to let you use this little wonder with 3.3V (Feather/Raspberry Pi) or 5V (Arduino/ Metro328) logic levels. Additionally since it speaks I2C you can easily connect it up with two wires (plus power and ground!).  We've even included &lt;/span>&lt;a href="https://www.sparkfun.com/qwiic">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">SparkFun qwiic&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> compatible&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;"> &lt;/span>&lt;a href="https://learn.adafruit.com/introducing-adafruit-stemma-qt">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">STEMMA QT&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> connectors for the I2C bus so &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">you don't even need to solder!&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> Just wire up to your favorite micro and you can use our CircuitPython/Python or Arduino drivers to easily interface with the LPS28 and make approximate approximations of proximity in no time! &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">QT Cable is not included&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, &lt;/span>&lt;a href="https://www.adafruit.com/product/4210">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">but we have a variety in the shop&lt;/span>&lt;/a>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit LPS28 Pressure Sensor</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Pressure Sensor</property>
+  <property name="mn">Adafruit</property>
+  <property name="mpn">#6067</property>
+  <property name="part number">#6067</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_d31e9e0d8d80d516f39addb304c37277_1_22_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_d31e9e0d8d80d516f39addb304c37277_1_22_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_d31e9e0d8d80d516f39addb304c37277_1_22_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_d31e9e0d8d80d516f39addb304c37277_1_22_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VCC" type="male" id="connector27">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector27pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector27pin" terminalId="connector27terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector27pad"/>
+     <p layer="copper1" svgId="connector27pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VCC" type="female" id="connector12">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VCC" type="female" id="connector18">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector18pin" terminalId="connector18terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pad"/>
+     <p layer="copper1" svgId="connector18pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" type="male" id="connector28">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector28pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector28pin" terminalId="connector28terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector28pad"/>
+     <p layer="copper1" svgId="connector28pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="male" id="connector31">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector31pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector31pin" terminalId="connector31terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector31pad"/>
+     <p layer="copper1" svgId="connector31pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="female" id="connector19">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector19pin" terminalId="connector19terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector19pad"/>
+     <p layer="copper1" svgId="connector19pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="female" id="connector13">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector13pin" terminalId="connector13terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pad"/>
+     <p layer="copper1" svgId="connector13pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="female" id="connector14">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector14pin" terminalId="connector14terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pad"/>
+     <p layer="copper1" svgId="connector14pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="female" id="connector20">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector20pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector20pin" terminalId="connector20terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector20pad"/>
+     <p layer="copper1" svgId="connector20pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="male" id="connector30">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector30pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector30pin" terminalId="connector30terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector30pad"/>
+     <p layer="copper1" svgId="connector30pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="INT" type="male" id="connector32">
+   <description>INT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector32pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector32pin" terminalId="connector32terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector32pad"/>
+     <p layer="copper1" svgId="connector32pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector29">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector29pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector29pin" terminalId="connector29terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector29pad"/>
+     <p layer="copper1" svgId="connector29pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector17">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector17pin" terminalId="connector17terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pad"/>
+     <p layer="copper1" svgId="connector17pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector11">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector29"/>
+   <nodeMember connectorId="connector17"/>
+   <nodeMember connectorId="connector11"/>
+  </bus>
+  <bus id="vcc">
+   <nodeMember connectorId="connector27"/>
+   <nodeMember connectorId="connector12"/>
+   <nodeMember connectorId="connector18"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector31"/>
+   <nodeMember connectorId="connector19"/>
+   <nodeMember connectorId="connector13"/>
+  </bus>
+  <bus id="scl">
+   <nodeMember connectorId="connector14"/>
+   <nodeMember connectorId="connector20"/>
+   <nodeMember connectorId="connector30"/>
+  </bus>
+ </buses>
+ <label>Adafruit LPS28 Pressure Sensor</label>
+ <url>https://www.adafruit.com/product/6067</url>
+</module>

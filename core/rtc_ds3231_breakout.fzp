@@ -17,8 +17,6 @@
   <property name="chip">DS3231</property>
   <property name="family">rtc</property>
   <property name="variant">variant 4</property>
-  <property name="layer"></property>
-  <property name="part number"></property>
  </properties>
  <views>
   <breadboardView>
@@ -70,7 +68,8 @@
      <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
     </schematicView>
     <pcbView>
-     <p svgId="connector1pad" layer="copper1" terminalId="connector1terminal"/>
+     <p svgId="connector1pad" layer="copper1"/>
+     <p svgId="connector1pad" layer="copper0"/>
     </pcbView>
    </views>
   </connector>

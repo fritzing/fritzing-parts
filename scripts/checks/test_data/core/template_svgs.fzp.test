@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module moduleId="template_svgs_test" fritzingVersion="1.0.0">
+ <version>1</version>
+ <author>Test</author>
+ <title>Template SVGs Test</title>
+ <date>2024-01-01</date>
+ <label>Test</label>
+ <tags><tag>test</tag></tags>
+ <properties><property name="family">Test</property></properties>
+ <description>Test part referencing template SVGs that should not be reported as missing</description>
+ <views>
+  <iconView>
+   <layers image="icon/generic_ic_dip_8_300mil_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/generic_ic_dip_8_300mil_bread.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/generic_ic_dip_8_300mil_schem.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/dip_8_300mil_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+</module>

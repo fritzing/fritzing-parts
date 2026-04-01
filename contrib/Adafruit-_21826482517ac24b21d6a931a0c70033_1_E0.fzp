@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="Adafruit-_21826482517ac24b21d6a931a0c70033_1_E0" referenceFile="Adafruit USB Type C PD Switchable.fzp">
+ <version>4</version>
+ <date>2024-07-22</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The HUSB238 USB PD sink chip is neat in that you can either use switches (really, resistor selection) to set the desired PD voltage &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-style:italic; color:#000000;">or&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> use I2C for dynamic querying and setting. We already stock a simple &lt;/span>&lt;a href="https://www.adafruit.com/product/5807">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">Adafruit USB Type C Power Delivery Dummy Breakout&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;"> &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">board around the HUSB238, but that one requires soldering closed jumpers to select the voltage. For folks who want a no-soldering-required board, this &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit USB Type C Power Delivery Dummy - I2C or Switchable&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> is ready for instant gratification. No soldering required!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Compared to the basic &lt;/span>&lt;a href="https://www.adafruit.com/product/5807">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">Adafruit USB Type C Power Delivery Dummy Breakout&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;"> &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">we've done a renovation to keep the same great schematic and also add some oft-requested features:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">No soldering required!&lt;/span>&lt;span style=" font-size:15px;"> Switches allow on-the-fly voltage changes. Terminal block can be used to provide power to your robot, display, LEDs, etc.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Green LED&lt;/span>&lt;span style=" font-size:15px;"> output lets you know that the terminal block power is on - can be disabled if you prefer&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Stemma QT for I2C control&lt;/span>&lt;span style=" font-size:15px;"> plug-and-play with Qwiic/QT&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">USB Data lines&lt;/span>&lt;span style=" font-size:15px;"> available on solderable pads&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">On/Off switch&lt;/span>&lt;span style=" font-size:15px;"> - you can disconnect the internal pass FET by connecting a switch between two onboard pads. When the switch is &lt;/span>&lt;span style=" font-size:15px; font-style:italic;">closed&lt;/span>&lt;span style=" font-size:15px;"> the output will disconnect / turn off.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">We use the &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">HUSB328 PDL003A E-Marker variant&lt;/span>&lt;span style=" font-size:15px;"> of the chip, a little more expensive, but it can request 5A power.&lt;/span>&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">It's perfect for USB Type C wall adapters providing multiple voltages. The standard offerings are 5V, 9V, 12V, 15V, 18V, and 20V. This HUSB238 breakout plugs into the USB C cable and negotiates the PD request and commands over the CC lines. For example, we can ask what voltages are available and pick the highest. Or if you need a specific voltage, it will select that one.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">This breakout will be handy for projects where you need a lot more than 5V @ 2A power: this adapter can give up to 20V at 5A - yes you can get 100W over USB C! - and you could buck that down to get a ton of current at 5V or 12V if that's needed. Or use it to convert a DC or battery-powered device into a USB C powered one!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">DIP switch-configured usage is simple&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">: simply unplug the USB PD so you don't accidentally select too high a voltage for your device. Then switch ON the voltage you want: 5V, 9V, 12V, 15V, 18V, or 20V. You'll get that voltage and as much current as the adapter will provide. No microcontroller or microcomputer is required!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">I2C-configured usage&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> is also available via a Stemma QT port. Use the &lt;/span>&lt;a href="https://github.com/adafruit/Adafruit_HUSB238">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">Arduino library and example code&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> to query the USB Type C PD source for available voltages and currents and select the desired voltage dynamically. When configuring over I2C, the jumper settings are used on startup until the I2C commands come over.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The &lt;/span>&lt;a href="https://learn.adafruit.com/introducing-adafruit-stemma-qt/what-is-stemma-qt">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">STEMMA QT connector&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> lets you make solderless connections between your development board and the breakout or chain it with a wide range of other sensors and accessories using a &lt;/span>&lt;a href="https://www.adafruit.com/?q=stemma%20qt%20cable">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">compatible cable&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. &lt;/span>&lt;a href="https://www.adafruit.com/?q=stemma+qt+cable&amp;amp;sort=BestMatch">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">QT Cable is not included&lt;/span>&lt;/a>&lt;a href="https://www.adafruit.com/?q=stemma+qt+cable&amp;amp;sort=BestMatch">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">, but we have a variety in the shop&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. &lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit USB Type C Power Delivery Dummy - I2C or Switchable - HUSB238 - STEMMA QT</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">USB PD</property>
+  <property name="mpn">#5991</property>
+  <property name="part number">#5991</property>
+  <property name="mn">Adafruit</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_21826482517ac24b21d6a931a0c70033_1_E0_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_21826482517ac24b21d6a931a0c70033_1_E0_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_21826482517ac24b21d6a931a0c70033_1_E0_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_21826482517ac24b21d6a931a0c70033_1_E0_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector35" type="female" name="VBUS">
+   <description>VBUS</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector35pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector35terminal" svgId="connector35pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector35pad"/>
+     <p layer="copper1" svgId="connector35pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector102" type="female" name="VOUT">
+   <description>VOUT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector102pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector102terminal" svgId="connector102pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector102pad"/>
+     <p layer="copper1" svgId="connector102pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector14" type="female" name="2">
+   <description>2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector14terminal" svgId="connector14pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pad"/>
+     <p layer="copper1" svgId="connector14pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector36" type="female" name="N$2">
+   <description>N$2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector36pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector36terminal" svgId="connector36pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector36pad"/>
+     <p layer="copper1" svgId="connector36pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector37" type="female" name="D+">
+   <description>D+</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector37pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector37terminal" svgId="connector37pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector37pad"/>
+     <p layer="copper1" svgId="connector37pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector38" type="female" name="D-">
+   <description>D-</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector38pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector38terminal" svgId="connector38pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector38pad"/>
+     <p layer="copper1" svgId="connector38pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector15" type="female" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector15terminal" svgId="connector15pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector15pad"/>
+     <p layer="copper1" svgId="connector15pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector16" type="female" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector16pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector16terminal" svgId="connector16pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector16pad"/>
+     <p layer="copper1" svgId="connector16pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector101" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector101pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector101terminal" svgId="connector101pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector101pad"/>
+     <p layer="copper1" svgId="connector101pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector13" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector13terminal" svgId="connector13pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pad"/>
+     <p layer="copper1" svgId="connector13pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector101"/>
+   <nodeMember connectorId="connector13"/>
+  </bus>
+ </buses>
+ <label>Adafruit USB Type C Power Delivery Dummy - I2C or Switchable - HUSB238 - STEMMA QT</label>
+ <url>https://www.adafruit.com/product/5991</url>
+</module>

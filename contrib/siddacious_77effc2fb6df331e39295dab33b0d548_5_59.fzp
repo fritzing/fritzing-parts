@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" referenceFile="Adafruit DS1841.fzp" moduleId="siddacious_77effc2fb6df331e39295dab33b0d548_5_59">
+ <version>4</version>
+ <date>2020-05-15</date>
+ <author>bs</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">Potentiometers are the perfect tool when you want to change your circuit by turning a knob. Turns out, there are times when you want to adjust your circuit without manually turning a knob, and the&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#333333;"> DS1841 I2C Logarithmic Resistor from Maxim&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;"> can do just that. It's a programmable resistor, similar to an I2C potentiometer like the the &lt;/span>&lt;a href="https://www.adafruit.com/product/4286">&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#652f8f; background-color:transparent;">DS3502 I2C Potentiometer&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">, so why another?&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">The big difference between the two is how the resistance changes in relation to changes made to the wiper. The DS3502's resistance has a &lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-style:italic; color:#333333;">linear&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;"> relationship to the wiper's setting. Each time you change the wiper by a given amount, the resistance will change by the same amount. With the DS1841, the relationship between resistance and the wiper setting is &lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#333333;">logarithmic&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">. This means that as the wiper setting changes, the amount of resistance will depend on where in the wiper's range the current setting is.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">Log potentiometers are used in audio applications for things like volume control because they better match the response of human ear to sound.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">The DS1841's resistance ranges from &lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#333333;">22kOhms to 3.7 kOhms&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;"> and has&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#333333;"> 128 tap points&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">. Even more interestingly, the DS1841 can be configured to &lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#333333;">adjust its resistance based on temperature&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;"> with hysteresis to keep things from jumping around. &lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">Additionally the temperature compensation can be adjusted by using the &lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#333333;">LUT&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;"> (&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#333333;">L&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">ook &lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#333333;">U&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">p &lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#333333;">T&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">able) built into the DS1841. This table allows you to  specify the wiper setting for each of 70 temperature increments between -39 and 100 degrees C, plus one each for above or below that range. You can even manually set the wiper to one of the entries in the LUT.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;">Working with the DS1841 is easy. We've  put it on a breakout PCB with the required support circuitry and &lt;/span>&lt;a href="https://www.sparkfun.com/qwiic">&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#652f8f; background-color:transparent;">SparkFun qwiic&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;"> compatible &lt;/span>&lt;a href="https://learn.adafruit.com/introducing-adafruit-stemma-qt">&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#652f8f; background-color:transparent;">STEMMA QT&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;"> connectors to allow you to use it with other similarly equipped boards &lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; font-weight:696; color:#333333;">without needing to solder.&lt;/span>&lt;span style=" font-family:'proxima nova,montserrat,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:16px; color:#333333;"> This handy little helper can work with 3.3V or 5V micros, so it's ready to get to work with a range of development boards. To make things even easier we've gone and written Arduino and CircuitPython/Python 3 drivers to simplify interfacing with your new knob-replacing friend.&lt;/span>&lt;br />&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit DS1841</title>
+ <tags/>
+ <properties>
+  <property name="part number"></property>
+  <property name="family">77effc2fb6df331e39295dab33b0d548</property>
+  <property name="variant">variant 5</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/siddacious_77effc2fb6df331e39295dab33b0d548_5_breadboard_59.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/siddacious_77effc2fb6df331e39295dab33b0d548_5_schematic_59.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/siddacious_77effc2fb6df331e39295dab33b0d548_5_pcb_59.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/siddacious_77effc2fb6df331e39295dab33b0d548_5_icon_59.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector39" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector39pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector39terminal" layer="schematic" svgId="connector39pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector39pad"/>
+     <p layer="copper1" svgId="connector39pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector40" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector40pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector40terminal" layer="schematic" svgId="connector40pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector40pad"/>
+     <p layer="copper1" svgId="connector40pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector10" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector10terminal" layer="schematic" svgId="connector10pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pad"/>
+     <p layer="copper1" svgId="connector10pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector16" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector16pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector16terminal" layer="schematic" svgId="connector16pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector16pad"/>
+     <p layer="copper1" svgId="connector16pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector44" name="A0">
+   <description>A0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector44pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector44terminal" layer="schematic" svgId="connector44pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector44pad"/>
+     <p layer="copper1" svgId="connector44pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector45" name="A1">
+   <description>A1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector45pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector45terminal" layer="schematic" svgId="connector45pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector45pad"/>
+     <p layer="copper1" svgId="connector45pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector38" name="RH">
+   <description>RH</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector38pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector38terminal" layer="schematic" svgId="connector38pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector38pad"/>
+     <p layer="copper1" svgId="connector38pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector12" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector12terminal" layer="schematic" svgId="connector12pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector18" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector18terminal" layer="schematic" svgId="connector18pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pad"/>
+     <p layer="copper1" svgId="connector18pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector42" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector42pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector42terminal" layer="schematic" svgId="connector42pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector42pad"/>
+     <p layer="copper1" svgId="connector42pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector11" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector11terminal" layer="schematic" svgId="connector11pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector17" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector17terminal" layer="schematic" svgId="connector17pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pad"/>
+     <p layer="copper1" svgId="connector17pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector43" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector43pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector43terminal" layer="schematic" svgId="connector43pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector43pad"/>
+     <p layer="copper1" svgId="connector43pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector37" name="RW">
+   <description>RW</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector37pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector37terminal" layer="schematic" svgId="connector37pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector37pad"/>
+     <p layer="copper1" svgId="connector37pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector36" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector36pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector36terminal" layer="schematic" svgId="connector36pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector36pad"/>
+     <p layer="copper1" svgId="connector36pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector41" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector41pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector41terminal" layer="schematic" svgId="connector41pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector41pad"/>
+     <p layer="copper1" svgId="connector41pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector15" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector15terminal" layer="schematic" svgId="connector15pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector15pad"/>
+     <p layer="copper1" svgId="connector15pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="pad" id="connector9" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector9terminal" layer="schematic" svgId="connector9pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pad"/>
+     <p layer="copper1" svgId="connector9pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector36"/>
+   <nodeMember connectorId="connector41"/>
+   <nodeMember connectorId="connector15"/>
+   <nodeMember connectorId="connector9"/>
+  </bus>
+  <bus id="vcc">
+   <nodeMember connectorId="connector39"/>
+   <nodeMember connectorId="connector40"/>
+   <nodeMember connectorId="connector10"/>
+   <nodeMember connectorId="connector16"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector11"/>
+   <nodeMember connectorId="connector17"/>
+   <nodeMember connectorId="connector43"/>
+  </bus>
+  <bus id="scl">
+   <nodeMember connectorId="connector12"/>
+   <nodeMember connectorId="connector18"/>
+   <nodeMember connectorId="connector42"/>
+  </bus>
+ </buses>
+ <url>https://www.adafruit.com/product/4570</url>
+ <label>Adafruit DS1841</label>
+</module>

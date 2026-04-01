@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="adafruit_43ef79a2fad9dce1661a27e705b560d7_1_56" referenceFile="Adafruit MPRLS Sensor Breakout.fzp">
+ <version>4</version>
+ <date>2018-09-26</date>
+ <author>adafruit</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica Neue'; color:#454545;">This pressure sensor is special because it comes with a metal port - you can easily attach a tube to it, to measure air pressure inside a close space. In particular we think this would be a great sensor for use with making DIY assistive tech &amp;quot;Sip &amp;amp; Puff&amp;quot; interfaces, or measuring the pressure within a vacuum chamber or other pressurized container. The port is made of stainless steel and is 3.7mm long and 2.5mm diameter.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica Neue'; color:#454545;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica Neue'; color:#454545;">Unlike most ported pressure sensors, this one uses I2C, it's really easy to use with any microcontroller. Inside is a silicone-gel covered pressure sensing gauge with a pre-calibrated and compensated 24 bit ADC. You can measure absolute pressure 0 to 25 PSI. We've placed this nice sensor on a breakout board with 3.3V power regulation and level shifting so you can use it with any kind of microcontroller or microcomputer, from an Arduino compatible to Raspberry Pi.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit MPRLS Sensor Breakout</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">MPRLS</property>
+  <property name="part number">3965</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_43ef79a2fad9dce1661a27e705b560d7_1_breadboard_56.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_43ef79a2fad9dce1661a27e705b560d7_1_schematic_56.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_43ef79a2fad9dce1661a27e705b560d7_1_pcb_56.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_43ef79a2fad9dce1661a27e705b560d7_1_icon_56.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector17" type="male" name="VIN">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector17pin" terminalId="connector17terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pad"/>
+     <p layer="copper1" svgId="connector17pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector18" type="male" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector18pin" terminalId="connector18terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pad"/>
+     <p layer="copper1" svgId="connector18pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector22" type="male" name="EOC">
+   <description>EOC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector22pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector22pin" terminalId="connector22terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector22pad"/>
+     <p layer="copper1" svgId="connector22pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector23" type="male" name="RESET">
+   <description>RESET</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector23pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector23pin" terminalId="connector23terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector23pad"/>
+     <p layer="copper1" svgId="connector23pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector21" type="male" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector21pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector21pin" terminalId="connector21terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector21pad"/>
+     <p layer="copper1" svgId="connector21pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector20" type="male" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector20pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector20pin" terminalId="connector20terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector20pad"/>
+     <p layer="copper1" svgId="connector20pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector19" type="male" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector19pin" terminalId="connector19terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector19pad"/>
+     <p layer="copper1" svgId="connector19pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.adafruit.com/product/3965</url>
+</module>

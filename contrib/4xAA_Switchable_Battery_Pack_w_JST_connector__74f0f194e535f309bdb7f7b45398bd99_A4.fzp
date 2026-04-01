@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.5b.07.02.6130" moduleId="ae7b264ce49d3e0e8a042d559b285af8_A4">
+    <author>John De Cristofaro</author>
+    <title>4xAA Switchable Battery Pack w/JST connector</title>
+    <label>BATT</label>
+    <date>2012-09-04</date>
+    <url>https://www.adafruit.com/products/830</url>
+    <tags>
+        <tag>aaa</tag>
+        <tag>battery</tag>
+        <tag>pack</tag>
+        <tag>4.5</tag>
+        <tag>adafruit</tag>
+        <tag>power</tag>
+    </tags>
+    <properties>
+        <property name="family"></property>
+        <property name="part number"></property>
+    </properties>
+    <description>4xAA Switchable Battery Pack with JST connector</description>
+    <views>
+        <iconView>
+            <layers image="icon/4xAA_Switchable_Battery_Pack_w_JST_conne__icon__c4a5dbcedf93e528b10dd9734c100ec5_A4.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/4xAA_Switchable_Battery_Pack_w_JST_conne__breadboard__ccb01dc6970cf2e65ead1a93d392c07a_A4.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/4xAA_Switchable_Battery_Pack_w_JST_conne__schematic__308d365494b250c4b7b5cbf65f2cb3bf_A4.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/4xAA_Switchable_Battery_Pack_w_JST_conne__pcb__c7de84521122051dcffc8cd1d26f714a_A4.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector1" type="male" name="POS">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="NEG">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

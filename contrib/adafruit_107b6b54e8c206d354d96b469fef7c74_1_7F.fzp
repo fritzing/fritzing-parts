@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="adafruit_107b6b54e8c206d354d96b469fef7c74_1_7F" referenceFile="Adafruit SI1145 Digital UV Index + IR + Visible Light Sensor.fzp" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2016-08-15</date>
+ <author>Adafruit</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica';">The SI1145 is a new sensor from SiLabs with a calibrated light sensing algorithm that can calculate UV Index. It doesn't contain an actual UV sensing element, instead it approximates it based on visible &amp;amp; IR light from the sun. We took this outside a couple days and compared the calculated UV index with the news-reported index and found it was very accurate! It's a digital sensor that works over I2C so just about any microcontroller can use it. The sensor also has individual visible and IR sensing elements so you can measure just about any kind of light - we only wrote our library to printout the 'counts' rather than the calculate the exact values of IR and Visible light so if you need precision Lux measurement check out the TSL2561. If you're feeling really advanced, you can &lt;/span>&lt;a href="http://www.adafruit.com/products/387">&lt;span style=" font-family:'Helvetica'; text-decoration: underline; color:#00a7e9;">connect up an IR LED&lt;/span>&lt;/a>&lt;span style=" font-family:'Helvetica';"> to the LED pin and use the basic proximity sensor capability that is in the SI1145 as well.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>SI1145 Digital UV Index + IR + Visible Light Sensor</title>
+ <tags/>
+ <properties>
+  <property name="family">SI1145</property>
+  <property name="variant">variant 1</property>
+  <property name="part number">1777</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_107b6b54e8c206d354d96b469fef7c74_1_breadboard_7F.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_107b6b54e8c206d354d96b469fef7c74_1_schematic_7F.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_107b6b54e8c206d354d96b469fef7c74_1_pcb_7F.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_107b6b54e8c206d354d96b469fef7c74_1_icon_7F.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="+5V" id="connector11" type="male">
+   <description>+5V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector11pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector11pin" terminalId="connector11terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector11pad" layer="copper0"/>
+     <p svgId="connector11pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="+3V3" id="connector13" type="male">
+   <description>+3V3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector13pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector13pin" terminalId="connector13terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector13pad" layer="copper0"/>
+     <p svgId="connector13pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="INT" id="connector14" type="male">
+   <description>INT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector14pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector14pin" terminalId="connector14terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector14pad" layer="copper0"/>
+     <p svgId="connector14pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="LED" id="connector15" type="male">
+   <description>LED</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector15pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector15pin" terminalId="connector15terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector15pad" layer="copper0"/>
+     <p svgId="connector15pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" id="connector16" type="male">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector16pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector16pin" terminalId="connector16terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector16pad" layer="copper0"/>
+     <p svgId="connector16pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" id="connector17" type="male">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector17pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector17pin" terminalId="connector17terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector17pad" layer="copper0"/>
+     <p svgId="connector17pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector12" type="male">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector12pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector12pin" terminalId="connector12terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector12pad" layer="copper0"/>
+     <p svgId="connector12pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.adafruit.com/products/1777</url>
+</module>

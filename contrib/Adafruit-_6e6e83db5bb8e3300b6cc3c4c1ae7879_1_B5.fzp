@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="Adafruit CH9102F.fzp" fritzingVersion="0.5.2b.02.18.4756" moduleId="Adafruit-_6e6e83db5bb8e3300b6cc3c4c1ae7879_1_B5">
+ <version>4</version>
+ <date>2022-09-22</date>
+ <author>Liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Long gone are the days of parallel ports and serial ports. Now the USB port reigns supreme! But USB is hard, and you just want to transfer your everyday serial data from a microcontroller to computer. What now? Enter the&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit CH9102F Friend&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">, a version of our popular USB-Serial 'friend' breakouts that uses &lt;/span>&lt;a href="https://learn.adafruit.com/how-to-install-drivers-for-wch-usb-to-serial-chips">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">the affordable (and available) CH9102F&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> - a 'near pin-compatible' to the &lt;/span>&lt;a href="https://www.adafruit.com/product/5335">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">CP2102N&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">This board features the CH9102F USB-Serial chip that can upload code at  3Mbit/s for fast development time. It also has auto-reset for Arduino/ATmega328 boards so no noodling with pins and reset button pressings. The CH9102F has fairly good driver support, and for 99% of use cases is a fine replacement of the FTR232, FT231x or CP210x series. With a modern USB Type C connector, it's ready to rock on any kind of computer.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Some things we've noted as we have been working with this board:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">The RX LED blinks as you expect when data is received, however the TX LED does not blink constantly. Instead after a few seconds of data transmission the LED will blink slowly.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">On Linux, the CTS pin is not supported by the built in Linux kernel driver. Oddly enough, all the other flow control pins work perfectly fine - its just CTS that doesn't. &lt;/span>&lt;a href="https://github.com/SoldierJazz/ch343ser_linux">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">You can fix it by installing an out-of-tree driver&lt;/span>&lt;/a>&lt;span style=" font-size:15px;"> which we did on a Raspberry Pi. Fortunately, for uploading code to microcontrollers, almost all of them use RTS/DTR for auto-resetting so not having CTS isn't a big deal.&lt;/span>&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">By default, we've set it up so that it matches our FTDI cables. The 6th pin is RTS, the power wire is +5V, and the signal levels are 3.3V (they are 5V compliant and should work in the vast majority of 3.3V and 5V signal systems). Works excellently with any Arduino, ESP8266, ESP32, or any other microcontroller that uses an 'FTDI port' for communications and upload. You can also purchase a&lt;/span>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/products/206">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">6-pin extension cable&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000;"> from us, which will let you rearrange the wire order.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">There's also a full collection of all the modem control pins you may need on the side, in case you need the DTR, RI, DSR, etc. pins.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Each order comes with a fully assembled and tested board. We give you a right-angle socket header and some male header strip. You can solder in the socket header on the edge to make it 'FTDI-like' or solder the male headers in to plug it into a breadboard and get access to all the pins.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">For Linux, you won't need a driver (unless you happen to need CTS support, see above).&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;a href="https://learn.adafruit.com/how-to-install-drivers-for-wch-usb-to-serial-chips">&lt;span style=" font-family:'proxima nova,lucida grande,lucida sans unicode,lucida sans,Geneva,Verdana,sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">For Windows and MacOS X, check our tutorial page on how to install drivers.&lt;/span>&lt;/a>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit WCH CH9102F Friend - USB to Serial Converter</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">CH9102F Friend</property>
+  <property name="part number">#5568</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_6e6e83db5bb8e3300b6cc3c4c1ae7879_1_breadboard_B5.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_6e6e83db5bb8e3300b6cc3c4c1ae7879_1_schematic_B5.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_6e6e83db5bb8e3300b6cc3c4c1ae7879_1_pcb_B5.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_6e6e83db5bb8e3300b6cc3c4c1ae7879_1_icon_B5.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector48" type="female" name="VBUS">
+   <description>VBUS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector48pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector48pin" layer="schematic" terminalId="connector48terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector48pad" layer="copper0"/>
+     <p svgId="connector48pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector60" type="male" name="VBUS">
+   <description>VBUS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector60pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector60pin" layer="schematic" terminalId="connector60terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector60pad" layer="copper0"/>
+     <p svgId="connector60pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector61" type="male" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector61pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector61pin" layer="schematic" terminalId="connector61terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector61pad" layer="copper0"/>
+     <p svgId="connector61pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector63" type="male" name="RST">
+   <description>RST</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector63pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector63pin" layer="schematic" terminalId="connector63terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector63pad" layer="copper0"/>
+     <p svgId="connector63pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector64" type="male" name="GPIO3">
+   <description>GPIO3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector64pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector64pin" layer="schematic" terminalId="connector64terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector64pad" layer="copper0"/>
+     <p svgId="connector64pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector65" type="male" name="GPIO2">
+   <description>GPIO2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector65pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector65pin" layer="schematic" terminalId="connector65terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector65pad" layer="copper0"/>
+     <p svgId="connector65pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector66" type="male" name="#SUSP">
+   <description>#SUSP</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector66pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector66pin" layer="schematic" terminalId="connector66terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector66pad" layer="copper0"/>
+     <p svgId="connector66pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector67" type="male" name="SUSP">
+   <description>SUSP</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector67pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector67pin" layer="schematic" terminalId="connector67terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector67pad" layer="copper0"/>
+     <p svgId="connector67pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector59" type="male" name="RI">
+   <description>RI</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector59pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector59pin" layer="schematic" terminalId="connector59terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector59pad" layer="copper0"/>
+     <p svgId="connector59pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector58" type="male" name="DCD">
+   <description>DCD</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector58pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector58pin" layer="schematic" terminalId="connector58terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector58pad" layer="copper0"/>
+     <p svgId="connector58pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector57" type="male" name="DTR">
+   <description>DTR</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector57pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector57pin" layer="schematic" terminalId="connector57terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector57pad" layer="copper0"/>
+     <p svgId="connector57pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector56" type="male" name="DSR">
+   <description>DSR</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector56pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector56pin" layer="schematic" terminalId="connector56terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector56pad" layer="copper0"/>
+     <p svgId="connector56pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector55" type="male" name="TXD">
+   <description>TXD</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector55pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector55pin" layer="schematic" terminalId="connector55terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector55pad" layer="copper0"/>
+     <p svgId="connector55pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector49" type="female" name="TXD">
+   <description>TXD</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector49pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector49pin" layer="schematic" terminalId="connector49terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector49pad" layer="copper0"/>
+     <p svgId="connector49pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector50" type="female" name="RXD">
+   <description>RXD</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector50pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector50pin" layer="schematic" terminalId="connector50terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector50pad" layer="copper0"/>
+     <p svgId="connector50pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector54" type="male" name="RXD">
+   <description>RXD</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector54pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector54pin" layer="schematic" terminalId="connector54terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector54pad" layer="copper0"/>
+     <p svgId="connector54pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector53" type="male" name="RTS">
+   <description>RTS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector53pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector53pin" layer="schematic" terminalId="connector53terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector53pad" layer="copper0"/>
+     <p svgId="connector53pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector51" type="male" name="RTS">
+   <description>RTS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector51pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector51pin" layer="schematic" terminalId="connector51terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector51pad" layer="copper0"/>
+     <p svgId="connector51pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector52" type="male" name="CTS">
+   <description>CTS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector52pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector52pin" layer="schematic" terminalId="connector52terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector52pad" layer="copper0"/>
+     <p svgId="connector52pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector47" type="female" name="CTS">
+   <description>CTS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector47pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector47pin" layer="schematic" terminalId="connector47terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector47pad" layer="copper0"/>
+     <p svgId="connector47pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector46" type="male" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector46pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector46pin" layer="schematic" terminalId="connector46terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector46pad" layer="copper0"/>
+     <p svgId="connector46pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector62" type="male" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector62pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector62pin" layer="schematic" terminalId="connector62terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector62pad" layer="copper0"/>
+     <p svgId="connector62pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="cts">
+   <nodeMember connectorId="connector52"/>
+   <nodeMember connectorId="connector47"/>
+  </bus>
+  <bus id="rts">
+   <nodeMember connectorId="connector53"/>
+   <nodeMember connectorId="connector51"/>
+  </bus>
+  <bus id="rxd">
+   <nodeMember connectorId="connector50"/>
+   <nodeMember connectorId="connector54"/>
+  </bus>
+  <bus id="txd">
+   <nodeMember connectorId="connector55"/>
+   <nodeMember connectorId="connector49"/>
+  </bus>
+  <bus id="vbus">
+   <nodeMember connectorId="connector48"/>
+   <nodeMember connectorId="connector60"/>
+  </bus>
+  <bus id="gnd">
+   <nodeMember connectorId="connector46"/>
+   <nodeMember connectorId="connector62"/>
+  </bus>
+ </buses>
+ <label>Adafruit WCH CH9102F Friend - USB to Serial Converter</label>
+ <url>https://www.adafruit.com/product/5568</url>
+</module>

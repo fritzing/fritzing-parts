@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" referenceFile="protrinket backpack.fzp" moduleId="adafruit_3061e3ada86e308593c65a384fdeab6d_4_BA">
+ <version>4</version>
+ <date>2016-07-12</date>
+ <author>ladyada</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">If you have a Pro Trinket you probably know it's the perfect little size for a portable project. This LiPoly backpack makes it really easy to do! Instead of wiring 2 or 3 boards together to make a charging system, this little PCB sits on top of the Pro Trinket and allows a LiPoly/LiIon battery to plug in. When the Pro Trinket USB port is powered, the battery is recharged automatically. Unplug the USB port and the Pro Trinket will switch over to the rechargeable battery. &lt;/p>
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ideally, this backpack is for use with the 3.3V Pro Trinket, so that the battery voltage (3.7V-4.2V) will get regulated down to 3.3V on the Pro Trinket board. However, many times, you can run a 5V Pro Trinket + accessories off of the ~4V from the LiPoly battery with no problem. (Technically its overclocking but we've never seen that affect the Pro Trinket itself, AVRs are happy to overclock without complaint).&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit Pro Trinket LiIon/LiPoly Backpack</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Adafruit Pro Trinket LiIon/LiPoly Backpack</property>
+  <property name="part number">Adafruit #2124</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_3061e3ada86e308593c65a384fdeab6d_7_breadboard_BA.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_3061e3ada86e308593c65a384fdeab6d_7_schematic_BA.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_3061e3ada86e308593c65a384fdeab6d_7_pcb_BA.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_3061e3ada86e308593c65a384fdeab6d_7_icon_BA.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VBUS" type="female" id="connector13">
+   <description>VBUS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector13pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector13pin" layer="schematic" terminalId="connector13terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector13pad" layer="copper0"/>
+     <p svgId="connector13pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector14">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector14pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector14pin" layer="schematic" terminalId="connector14terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector14pad" layer="copper0"/>
+     <p svgId="connector14pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VBAT" type="female" id="connector15">
+   <description>VBAT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector15pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector15pin" layer="schematic" terminalId="connector15terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector15pad" layer="copper0"/>
+     <p svgId="connector15pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SW2" type="female" id="connector16">
+   <description>SW2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector16pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector16pin" layer="schematic" terminalId="connector16terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector16pad" layer="copper0"/>
+     <p svgId="connector16pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SW1" type="female" id="connector17">
+   <description>SW1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector17pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector17pin" layer="schematic" terminalId="connector17terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector17pad" layer="copper0"/>
+     <p svgId="connector17pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.adafruit.com/products/2124</url>
+</module>

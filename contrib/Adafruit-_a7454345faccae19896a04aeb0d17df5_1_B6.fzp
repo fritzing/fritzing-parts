@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="Adafruit-_a7454345faccae19896a04aeb0d17df5_1_B6" referenceFile="Adafruit AS5600 Magnetic Angle Sensor.fzp" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2025-06-26</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Add rotational sensing - without a mechanical connection - with the &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit AS5600 Magnetic Angle Sensor&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">. Featuring the classic &lt;/span>&lt;a href="https://ams-osram.com/products/sensor-solutions/position-sensors/ams-as5600-position-sensor">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">ams AS5600&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, this board can sense a rotating N/S magnetic field up to 3mm away from the chip body. These sensors are often used to create 'frictionless' rotary encoders or potentiometers, without the risk of mechanical failure or noise. Magnetic angle sensors get the best of 'both worlds': like rotary encoders they can rotate freely 360 degrees around, and like potentiometers, they have absolute location detection.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">All you need is a microcontroller or microcomputer with I2C - we have Arduino, Python and CircuitPython driver support. Then, identify the north and south of a magnet: we recommend a rare earth magnet. Note that many round magnets have the N/S on alternate 'coin face' sides, so you'll need to rotate it on the edge. Place the magnet near the middle of the chip and rotate it in place. The firmware will detect the magnetic field and report the angle from 0 to 359 with 0.1° precision and 0.4° accuracy.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">To make usage plug-and-play, we added&lt;/span>&lt;a href="https://www.sparkfun.com/qwiic">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;"> SparkFun qwiic&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">-compatible &lt;/span>&lt;a href="https://learn.adafruit.com/introducing-adafruit-stemma-qt">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; text-decoration: underline; color:#0062c7;">STEMMA QT&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> connectors for the I2C bus, &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">so you don't even need to solder the I2C and power lines.&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> Simply wire up to your favorite micro using a &lt;/span>&lt;a href="https://www.adafruit.com/?q=stemma%20qt%20cable">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">STEMMA QT adapter cable.&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> The Stemma QT connectors also mean the AS5600 can be used with our &lt;/span>&lt;a href="https://www.adafruit.com/?q=JST%20SH%204">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">various associated accessories.&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/?q=stemma+qt+cable&amp;amp;sort=BestMatch">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">QT Cable is not included, but we have a variety in the shop&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Comes as a fully assembled breakout board a small bit of header. Some light soldering is required to attach the header for use in a breadboard. &lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit AS5600 Magnetic Angle Sensor</title>
+ <tags/>
+ <properties>
+  <property name="family">Sensor</property>
+  <property name="variant">variant 1</property>
+  <property name="mpn">#6357</property>
+  <property name="mn">Adafruit</property>
+  <property name="part number">#6357</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_a7454345faccae19896a04aeb0d17df5_1_B6_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_a7454345faccae19896a04aeb0d17df5_1_B6_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_a7454345faccae19896a04aeb0d17df5_1_B6_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_a7454345faccae19896a04aeb0d17df5_1_B6_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VCC" type="male" id="connector27">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector27pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector27pin" terminalId="connector27terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector27pad" layer="copper0"/>
+     <p svgId="connector27pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VCC" type="female" id="connector18">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector18pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector18pin" terminalId="connector18terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector18pad" layer="copper0"/>
+     <p svgId="connector18pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VCC" type="female" id="connector12">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector12pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector12pin" terminalId="connector12terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector12pad" layer="copper0"/>
+     <p svgId="connector12pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" type="male" id="connector28">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector28pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector28pin" terminalId="connector28terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector28pad" layer="copper0"/>
+     <p svgId="connector28pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="PWMOUT" type="male" id="connector32">
+   <description>PWMOUT</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector32pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector32pin" terminalId="connector32terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector32pad" layer="copper0"/>
+     <p svgId="connector32pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="female" id="connector14">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector14pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector14pin" terminalId="connector14terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector14pad" layer="copper0"/>
+     <p svgId="connector14pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="female" id="connector20">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector20pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector20pin" terminalId="connector20terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector20pad" layer="copper0"/>
+     <p svgId="connector20pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" type="male" id="connector30">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector30pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector30pin" terminalId="connector30terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector30pad" layer="copper0"/>
+     <p svgId="connector30pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="male" id="connector31">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector31pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector31pin" terminalId="connector31terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector31pad" layer="copper0"/>
+     <p svgId="connector31pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="female" id="connector19">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector19pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector19pin" terminalId="connector19terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector19pad" layer="copper0"/>
+     <p svgId="connector19pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" type="female" id="connector13">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector13pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector13pin" terminalId="connector13terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector13pad" layer="copper0"/>
+     <p svgId="connector13pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector29">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector29pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector29pin" terminalId="connector29terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector29pad" layer="copper0"/>
+     <p svgId="connector29pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector17">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector17pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector17pin" terminalId="connector17terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector17pad" layer="copper0"/>
+     <p svgId="connector17pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="female" id="connector11">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector11pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector11pin" terminalId="connector11terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector11pad" layer="copper0"/>
+     <p svgId="connector11pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector29"/>
+   <nodeMember connectorId="connector17"/>
+   <nodeMember connectorId="connector11"/>
+  </bus>
+  <bus id="vcc">
+   <nodeMember connectorId="connector27"/>
+   <nodeMember connectorId="connector18"/>
+   <nodeMember connectorId="connector12"/>
+  </bus>
+  <bus id="sda">
+   <nodeMember connectorId="connector31"/>
+   <nodeMember connectorId="connector19"/>
+   <nodeMember connectorId="connector13"/>
+  </bus>
+  <bus id="scl">
+   <nodeMember connectorId="connector14"/>
+   <nodeMember connectorId="connector20"/>
+   <nodeMember connectorId="connector30"/>
+  </bus>
+ </buses>
+ <label>Adafruit AS5600 Magnetic Angle Sensor</label>
+ <url>https://www.adafruit.com/product/6357</url>
+</module>

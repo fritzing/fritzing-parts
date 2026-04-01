@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="Adafruit Mini Sparkle Motion.fzp" fritzingVersion="0.5.2b.02.18.4756" moduleId="Adafruit-_36e193c8cbd814ac9fab8cc2e1374765_5_6C">
+ <version>4</version>
+ <date>2025-01-16</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Adafruit Sparkle Motion Mini&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> is part of our series of &amp;quot;Sparkle Motion&amp;quot; boards, that are our attempt to make the best small WLED-friendly smart LED driving board in the whole world. Our resident mermaid, &lt;/span>&lt;a href="https://learn.adafruit.com/u/firepixie">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">firepixie&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> makes a lot of projects with WLED and she loves it! So how can we make something that will be powerful enough to drive advanced LED projects that need a compact design?&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Mini&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> version of the Sparkle Motion is a simpler version of our full-featured Sparkle Motion, we give up the high voltage support and built in IR receiver, in order to make it under 1 square inch in size! By using a 4-layer board and double-sided assembly we've put together this feature set:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Power via USB Type C for up to 5V 4A input - &lt;/span>&lt;span style=" font-size:15px;">you can use off-the-shelf USB battery packs for portable operation.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">4 Amp resetting fuse &lt;/span>&lt;span style=" font-size:15px;">to protect from over-current drive&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">ESP32&lt;/span>&lt;span style=" font-size:15px;"> mini module with built in antenna port - the classic ESP32 has the best WLED support even if we'd prefer the 'S2 or 'S3. Comes with 4 MB of flash, dual core 240MHz Tensilica, WiFi, Bluetooth LE and Bluetooth Classic support.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">USB-serial converter &lt;/span>&lt;span style=" font-size:15px;">with auto-reset&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Two output signals plus 5V power and ground&lt;/span>&lt;span style=" font-size:15px;"> - both signal output are level shifted to 5V. These are on 0.1&amp;quot; spaced breakout pads. To keep the design slim we don't include terminal blocks pre-soldered, &lt;/span>&lt;a href="https://www.adafruit.com/product/2137">&lt;span style=" font-size:15px; text-decoration: underline; color:#0062c7;">but we do stock the matching blocks if you want them&lt;/span>&lt;/a>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Extra 2x3 0.1&amp;quot; breakout pads&lt;/span>&lt;span style=" font-size:15px;"> with 4 more GPIO plus 3V power and ground.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Built-in I2S microphone&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Stemma QT I2C port&lt;/span>&lt;span style=" font-size:15px;"> to connect external sensors/OLED/etc&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">User button on GPIO 0&lt;/span>&lt;span style=" font-size:15px;"> plus Reset button&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Red built-in LED&lt;/span>&lt;span style=" font-size:15px;"> on pin 12&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Small built-in NeoPixel&lt;/span>&lt;span style=" font-size:15px;"> on pin 18 &lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Separate analog/digital input JST port &lt;/span>&lt;span style=" font-size:15px;">for analog input, potentiometer, microphone or external IR receiver on pin 13&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Compact enough you can use it for wearable projects&lt;/span>&lt;span style=" font-size:15px;"> - 1.2&amp;quot;x0.8&amp;quot; / 30mm x 20mm size with mounting holes&lt;/span>&lt;/li>&lt;/ul>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">While we recommend it for use with WLED, it will also work just fine as a compact ESP32 board for use with Arduino, ESP-IDF, MicroPython, CircuitPython or any other ESP32 supported codebase. &lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Note that unlike the classic Sparkle Motion board, we don't include terminal blocks pre-soldered to keep the board very slim.&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/product/2137">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">We do stock the matching blocks if you want them&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, a small amount of soldering is required to attach them. Also, unlike the bigger version, we dropped the on-board IR receiver - however its easy to add one by &lt;/span>&lt;a href="https://www.adafruit.com/product/5755">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">plugging in a JST SH 3-pin socket cable&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> and &lt;/span>&lt;a href="https://www.adafruit.com/product/157">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">slotting in an IR receiver module&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit Mini Sparkle Motion</title>
+ <tags/>
+ <properties>
+  <property name="family">NeoPixel</property>
+  <property name="variant">variant 2</property>
+  <property name="mpn">#6160</property>
+  <property name="part number">#6160</property>
+  <property name="mn">Adafruit</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_36e193c8cbd814ac9fab8cc2e1374765_5_6C_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_36e193c8cbd814ac9fab8cc2e1374765_5_6C_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_36e193c8cbd814ac9fab8cc2e1374765_5_6C_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_36e193c8cbd814ac9fab8cc2e1374765_5_6C_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector41" type="female" name="+5V">
+   <description>+5V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector41pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector41terminal" svgId="connector41pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector41pad" layer="copper0"/>
+     <p svgId="connector41pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector46" type="female" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector46pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector46terminal" svgId="connector46pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector46pad" layer="copper0"/>
+     <p svgId="connector46pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector14" type="female" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector14pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector14terminal" svgId="connector14pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector14pad" layer="copper0"/>
+     <p svgId="connector14pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector99" type="female" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector99pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector99terminal" svgId="connector99pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector99pad" layer="copper0"/>
+     <p svgId="connector99pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector16" type="female" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector16pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector16terminal" svgId="connector16pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector16pad" layer="copper0"/>
+     <p svgId="connector16pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector15" type="female" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector15pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector15terminal" svgId="connector15pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector15pad" layer="copper0"/>
+     <p svgId="connector15pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector98" type="female" name="SENSOR">
+   <description>SENSOR</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector98pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector98terminal" svgId="connector98pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector98pad" layer="copper0"/>
+     <p svgId="connector98pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector43" type="female" name="S1">
+   <description>S1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector43pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector43terminal" svgId="connector43pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector43pad" layer="copper0"/>
+     <p svgId="connector43pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector42" type="female" name="S2">
+   <description>S2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector42pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector42terminal" svgId="connector42pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector42pad" layer="copper0"/>
+     <p svgId="connector42pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector47" type="female" name="IO14">
+   <description>IO14</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector47pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector47terminal" svgId="connector47pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector47pad" layer="copper0"/>
+     <p svgId="connector47pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector48" type="female" name="IO27">
+   <description>IO27</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector48pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector48terminal" svgId="connector48pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector48pad" layer="copper0"/>
+     <p svgId="connector48pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector49" type="female" name="IO25">
+   <description>IO25</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector49pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector49terminal" svgId="connector49pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector49pad" layer="copper0"/>
+     <p svgId="connector49pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector50" type="female" name="IO26">
+   <description>IO26</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector50pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector50terminal" svgId="connector50pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector50pad" layer="copper0"/>
+     <p svgId="connector50pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector44" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector44pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector44terminal" svgId="connector44pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector44pad" layer="copper0"/>
+     <p svgId="connector44pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector45" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector45pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector45terminal" svgId="connector45pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector45pad" layer="copper0"/>
+     <p svgId="connector45pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector13" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector13pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector13terminal" svgId="connector13pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector13pad" layer="copper0"/>
+     <p svgId="connector13pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector100" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector100pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector100terminal" svgId="connector100pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector100pad" layer="copper0"/>
+     <p svgId="connector100pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector40"/>
+   <nodeMember connectorId="connector44"/>
+   <nodeMember connectorId="connector45"/>
+   <nodeMember connectorId="connector13"/>
+   <nodeMember connectorId="connector100"/>
+  </bus>
+  <bus id="3.3v">
+   <nodeMember connectorId="connector46"/>
+   <nodeMember connectorId="connector14"/>
+   <nodeMember connectorId="connector99"/>
+  </bus>
+ </buses>
+ <label>Adafruit Mini Sparkle Motion</label>
+ <url>https://www.adafruit.com/product/6160</url>
+</module>

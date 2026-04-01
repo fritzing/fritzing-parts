@@ -1,0 +1,380 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="Adafruit-_9daf72ace2b56aff838413acaaaf32e2_1_A2" fritzingVersion="0.5.2b.02.18.4756" referenceFile="Adafruit DC Power BFF.fzp">
+ <version>4</version>
+ <date>2024-02-09</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">We were recently working on a project where we really wanted to power a QT Py ESP32 from 12V - but the only power input on the board is basically USB 5V max. Never one to give up, we designed an add-on that will allow anyone to use a QT Py or Xiao dev board with up to 20V DC power!&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">In the center is an MPM3610 integrated buck converter, which will generate 5V from up to 20V input, with cool DC/DC technology so there's no heat-sink needed. The MPM3610 can give about 1 Amp output, which should be plenty even if you have LEDs, WiFi connectivity, displays or even a small motor or servo.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">The board features both 3.5mm terminal block and 2.1mm DC jack inputs, protected with a Schottky diode. You can use &lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-style:italic; color:#000000;">either&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> to power the board, but don't plug in different power inputs to both - they're wired directly together on the BFF. If you're using the DC jack to power, you can use the terminal block as an 'pass through output' to connect other high-voltage devices.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">There's two small enable and an ground solderable pads next to the terminal block so you can use an external switch to disable the converter. &lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Since its a bulky add-on with through hole components, compared to&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/search?q=bff">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">most of our other BFF boards&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, we think it's best to use socket header to plug a QT Py on top, rather than trying to have it solder back-to-back. For that reason we include two 7-pin socket headers. Solder them so that the QT Py sits on the top, there's two break-apart railings that can be used to bolt the board since plugging in a jack requires  mechanical stabilization.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit DC Power BFF</title>
+ <tags/>
+ <properties>
+  <property name="family">BFF</property>
+  <property name="variant">variant 1</property>
+  <property name="mpn">#5882</property>
+  <property name="part number">#5882</property>
+  <property name="mn">Adafruit</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_9daf72ace2b56aff838413acaaaf32e2_1_breadboard_A2.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_9daf72ace2b56aff838413acaaaf32e2_1_schematic_A2.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_9daf72ace2b56aff838413acaaaf32e2_1_pcb_A2.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_9daf72ace2b56aff838413acaaaf32e2_1_icon_A2.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="3.3V" id="connector50" type="male">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector50pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector50pin" terminalId="connector50terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector50pad" layer="copper0"/>
+     <p svgId="connector50pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="+5V" id="connector52" type="male">
+   <description>+5V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector52pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector52pin" terminalId="connector52terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector52pad" layer="copper0"/>
+     <p svgId="connector52pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="PWR" id="connector71" type="pad">
+   <description>PWR</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector71pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector71pin" terminalId="connector71terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector71pad" layer="copper0"/>
+     <p svgId="connector71pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="N$2" id="connector38" type="female">
+   <description>N$2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector38pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector38pin" terminalId="connector38terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector38pad" layer="copper0"/>
+     <p svgId="connector38pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A0" id="connector39" type="male">
+   <description>A0</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector39pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector39pin" terminalId="connector39terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector39pad" layer="copper0"/>
+     <p svgId="connector39pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A1" id="connector40" type="male">
+   <description>A1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector40pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector40pin" terminalId="connector40terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector40pad" layer="copper0"/>
+     <p svgId="connector40pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A2" id="connector41" type="male">
+   <description>A2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector41pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector41pin" terminalId="connector41terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector41pad" layer="copper0"/>
+     <p svgId="connector41pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="A3" id="connector42" type="male">
+   <description>A3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector42pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector42pin" terminalId="connector42terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector42pad" layer="copper0"/>
+     <p svgId="connector42pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SDA" id="connector43" type="male">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector43pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector43pin" terminalId="connector43terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector43pad" layer="copper0"/>
+     <p svgId="connector43pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCL" id="connector44" type="male">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector44pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector44pin" terminalId="connector44terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector44pad" layer="copper0"/>
+     <p svgId="connector44pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="TX" id="connector45" type="male">
+   <description>TX</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector45pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector45pin" terminalId="connector45terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector45pad" layer="copper0"/>
+     <p svgId="connector45pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MOSI" id="connector49" type="male">
+   <description>MOSI</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector49pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector49pin" terminalId="connector49terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector49pad" layer="copper0"/>
+     <p svgId="connector49pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="MISO" id="connector48" type="male">
+   <description>MISO</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector48pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector48pin" terminalId="connector48terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector48pad" layer="copper0"/>
+     <p svgId="connector48pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="SCK" id="connector47" type="male">
+   <description>SCK</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector47pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector47pin" terminalId="connector47terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector47pad" layer="copper0"/>
+     <p svgId="connector47pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="RX" id="connector46" type="male">
+   <description>RX</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector46pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector46pin" terminalId="connector46terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector46pad" layer="copper0"/>
+     <p svgId="connector46pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="EN" id="connector53" type="female">
+   <description>EN</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector53pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector53pin" terminalId="connector53terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector53pad" layer="copper0"/>
+     <p svgId="connector53pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector37" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector37pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector37pin" terminalId="connector37terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector37pad" layer="copper0"/>
+     <p svgId="connector37pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector51" type="male">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector51pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector51pin" terminalId="connector51terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector51pad" layer="copper0"/>
+     <p svgId="connector51pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector54" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector54pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector54pin" terminalId="connector54terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector54pad" layer="copper0"/>
+     <p svgId="connector54pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector69" type="pad">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector69pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector69pin" terminalId="connector69terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector69pad" layer="copper0"/>
+     <p svgId="connector69pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector70" type="pad">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector70pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector70pin" terminalId="connector70terminal" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector70pad" layer="copper0"/>
+     <p svgId="connector70pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector37"/>
+   <nodeMember connectorId="connector51"/>
+   <nodeMember connectorId="connector54"/>
+   <nodeMember connectorId="connector69"/>
+   <nodeMember connectorId="connector70"/>
+  </bus>
+  <bus id="n$2">
+   <nodeMember connectorId="connector71"/>
+   <nodeMember connectorId="connector38"/>
+  </bus>
+ </buses>
+ <label>Adafruit DC Power BFF</label>
+ <url>https://www.adafruit.com/product/5882</url>
+</module>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.5b.07.02.6130" moduleId="f36ed007240186f136c0046af7ef99d8_32">
+    <author>John De Cristofaro</author>
+    <title>Waterproof Pushbutton (white)</title>
+    <label>BUTTON</label>
+    <date>2012-09-20</date>
+    <url>https://www.adafruit.com/products/558</url>
+    <tags>
+        <tag>waterproof</tag>
+        <tag>button</tag>
+        <tag>led</tag>
+        <tag>illuminated</tag>
+        <tag>switch</tag>
+        <tag>adafruit</tag>
+    </tags>
+    <properties>
+        <property name="family">af_wpb</property>
+        <property name="color">white</property>
+        <property name="part number"></property>
+    </properties>
+    <description>Waterproof Illuminated Pushbutton (white)</description>
+    <views>
+        <schematicView>
+            <layers image="schematic/Waterproof_Momentary_Pushbutton__red___8__schematic__16ce13ae8ec2a6255530791e2aea98bd_32.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/Waterproof_Momentary_Pushbutton__red___8__pcb__3366a2fd46e307b79d340967a30e3c2e_32.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="copper1"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+        <iconView>
+            <layers image="icon/Waterproof_Pushbutton__white___ef7b5357b__icon__ac09e538586102689bf728c37d587985_32.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/Waterproof_Pushbutton__white___ef7b5357b__breadboard__0e2be1defffb042262882339e45d9089_32.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+    </views>
+    <connectors>
+        <connector id="connector3" type="male" name="no name yet">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector3pin"/>
+                    <p layer="copper0" svgId="connector3pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" type="male" name="no name yet">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector4pin"/>
+                    <p layer="copper0" svgId="connector4pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" type="male" name="no name yet">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector5pin"/>
+                    <p layer="copper0" svgId="connector5pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="no name yet">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector1pin"/>
+                    <p layer="copper0" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="no name yet">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector2pin"/>
+                    <p layer="copper0" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

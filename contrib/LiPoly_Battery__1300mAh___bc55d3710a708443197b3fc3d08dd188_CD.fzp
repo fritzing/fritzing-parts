@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.5b.07.02.6130" moduleId="429554780853871ee7a5d41bb711aebd_CD">
+    <author>John De Cristofaro</author>
+    <title>LiPoly Battery (1300mAh)</title>
+    <label>BATT</label>
+    <date>2012-08-30</date>
+    <url>https://www.adafruit.com/products/258</url>
+    <tags>
+        <tag>battery</tag>
+        <tag>adafruit</tag>
+        <tag>voltage</tag>
+        <tag>source</tag>
+    </tags>
+    <properties>
+        <property name="family"></property>
+        <property name="part number"></property>
+    </properties>
+    <description>Lithium Ion Polymer Battery (1300mAh)</description>
+    <views>
+        <iconView>
+            <layers image="icon/LiPoly_Battery__1300mAh___bc55d3710a7084__icon__b9a86a0640635280016fc4a5f8063f0d_CD.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/LiPoly_Battery__1300mAh___bc55d3710a7084__breadboard__6b3cce1f5ede237f9017ca63fe540b6b_CD.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/LiPoly_Battery__1300mAh___bc55d3710a7084__schematic__91e191d5745e12a099fa191d6b8823ea_CD.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/LiPoly_Battery__1300mAh___bc55d3710a7084__pcb__5726a06ec35459995a144a3632d8985a_CD.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector1" type="male" name="positive">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="negative">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

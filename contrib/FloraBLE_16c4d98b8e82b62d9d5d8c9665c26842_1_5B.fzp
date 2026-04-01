@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="FloraBLE_16c4d98b8e82b62d9d5d8c9665c26842_1_5B" referenceFile="Flora BLE Friend rev B.fzp" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2016-08-04</date>
+ <author>Adafruit</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica';">Would you like to add powerful and easy-to-use Bluetooth Low Energy to your wearable FLORA project? Heck yeah! With BLE now included in modern smart phones and tablets, its fun to add wireless connectivity. So what you really need is the new Adafruit Flora Bluefruit LE!&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica';">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica';">The Flora Bluefruit LE makes it easy to add Bluetooth Low Energy connectivity to your Flora. Sew 4 traces (or solder 4 wires) and BooM! Bluetooth Low Energy!&lt;/span> &lt;/p>&lt;/body>&lt;/html></description>
+ <title>Flora Bluefruit LE</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Adafruit Flora Bluefruit LE</property>
+  <property name="part number"></property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/FloraBLE_72c021dadd0ebccc9f5e39bd921ffda5_1_breadboard_5B.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/FloraBLE_72c021dadd0ebccc9f5e39bd921ffda5_1_schematic_5B.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/FloraBLE_72c021dadd0ebccc9f5e39bd921ffda5_1_pcb_5B.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/FloraBLE_72c021dadd0ebccc9f5e39bd921ffda5_1_icon_5B.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector0" type="female" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pad"/>
+     <p layer="copper1" svgId="connector0pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector15" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector15pin" terminalId="connector15terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector15pad"/>
+     <p layer="copper1" svgId="connector15pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector24" type="female" name="RXI">
+   <description>RXI</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector24pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector24pin" terminalId="connector24terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector24pad"/>
+     <p layer="copper1" svgId="connector24pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector31" type="female" name="MODE">
+   <description>MODE</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector31pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector31pin" terminalId="connector31terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector31pad"/>
+     <p layer="copper1" svgId="connector31pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector32" type="female" name="TXO">
+   <description>TXO</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector32pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector32pin" terminalId="connector32terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector32pad"/>
+     <p layer="copper1" svgId="connector32pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.adafruit.com/products/2487</url>
+</module>

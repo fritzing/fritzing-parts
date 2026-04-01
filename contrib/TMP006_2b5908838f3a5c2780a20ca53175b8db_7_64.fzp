@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="TMP006_2b5908838f3a5c2780a20ca53175b8db_7_64" referenceFile="TMP006_v0.1.fzp" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>2016-08-04</date>
+ <author>Adafruit</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Helvetica';">Unlike all the other temperature sensors we have, this breakout has a really cool IR sensor from TI that can measure the temperature of an object without touching it! Simply point the sensor towards what you want to measure and it will detect the temperature by absorbing IR waves emitted. The embedded thermopile sensor generates a very very small voltage depending on how much IR there is, and using some math, that micro voltage can be used to calculate the temperature. It also takes the measurement over an area so it can be handy for determining the average temperature of something.&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <title>TMP006 Thermopile Sensor</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Adafruit TMP006</property>
+  <property name="part number"></property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/TMP006_017d577f640f7b040c461e0fccafde9d_1_breadboard_64.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/TMP006_017d577f640f7b040c461e0fccafde9d_1_schematic_64.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/TMP006_017d577f640f7b040c461e0fccafde9d_1_pcb_64.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/TMP006_017d577f640f7b040c461e0fccafde9d_1_icon_64.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector4" type="male" name="VCC">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector4pad"/>
+     <p layer="copper1" svgId="connector4pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector5" type="male" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pad"/>
+     <p layer="copper1" svgId="connector5pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector6" type="male" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pad"/>
+     <p layer="copper1" svgId="connector6pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector7" type="male" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector7pad"/>
+     <p layer="copper1" svgId="connector7pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector8" type="male" name="DRDY">
+   <description>DRDY</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector8pad"/>
+     <p layer="copper1" svgId="connector8pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector9" type="male" name="ADDR1">
+   <description>ADDR1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pad"/>
+     <p layer="copper1" svgId="connector9pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector10" type="male" name="ADDR0">
+   <description>ADDR0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pad"/>
+     <p layer="copper1" svgId="connector10pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses/>
+ <url>https://www.adafruit.com/products/1296</url>
+</module>

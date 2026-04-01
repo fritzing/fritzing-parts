@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="adafruit_bc0ba015bf34e54442f6b0e52cf72368_13_52" referenceFile="Adafruit INA169.fzp">
+ <version>4</version>
+ <date>2017-04-03</date>
+ <author>ladyada</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This breakout board will solve all your current-monitoring problems. Instead of struggling with a multimeter, you can just use the handy INA169 chip on this breakout to both measure both the DC current draw and have a handy analog output that is with respect to ground. The analog output makes this an ideal breakout for feedback-loop control.&lt;br />&lt;br />Most current-measuring devices such as our current panel meter are only good for &lt;span style=" font-style:italic;">low side&lt;/span> measuring. That means that unless you want to get a battery involved, you have to stick the measurement resistor between the target ground and true ground. This can cause problems with circuits since electronics tend to not like it when the ground references change and move with varying current draw. This chip is much smarter - it can handle high side current measuring, up to +60VDC!&lt;/p>&lt;/body>&lt;/html></description>
+ <title>Adafruit INA169 Analog DC Current Sensor Breakout</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">Adafruit INA169 Analog DC Current Sensor Breakout</property>
+  <property name="part number">Adafruit #1164</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/adafruit_153b0d899874580ecaa5d96af76eddfc_1_breadboard_52.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/adafruit_153b0d899874580ecaa5d96af76eddfc_1_schematic_52.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/adafruit_153b0d899874580ecaa5d96af76eddfc_1_pcb_52.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/adafruit_153b0d899874580ecaa5d96af76eddfc_1_icon_52.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VIN-" id="connector4" type="female">
+   <description>VIN-</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector4terminal" layer="schematic" svgId="connector4pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector4pad"/>
+     <p layer="copper1" svgId="connector4pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VIN+" id="connector5" type="female">
+   <description>VIN+</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector5terminal" layer="schematic" svgId="connector5pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pad"/>
+     <p layer="copper1" svgId="connector5pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VCC" id="connector6" type="male">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector6terminal" layer="schematic" svgId="connector6pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pad"/>
+     <p layer="copper1" svgId="connector6pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector7" type="male">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector7terminal" layer="schematic" svgId="connector7pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector7pad"/>
+     <p layer="copper1" svgId="connector7pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VIN-" id="connector8" type="male">
+   <description>VIN-</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector8terminal" layer="schematic" svgId="connector8pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector8pad"/>
+     <p layer="copper1" svgId="connector8pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VIN+" id="connector9" type="male">
+   <description>VIN+</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector9terminal" layer="schematic" svgId="connector9pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pad"/>
+     <p layer="copper1" svgId="connector9pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="OUT" id="connector10" type="male">
+   <description>OUT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector10terminal" layer="schematic" svgId="connector10pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pad"/>
+     <p layer="copper1" svgId="connector10pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="OUT" id="connector11" type="female">
+   <description>OUT</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector11terminal" layer="schematic" svgId="connector11pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pad"/>
+     <p layer="copper1" svgId="connector11pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector12" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector12terminal" layer="schematic" svgId="connector12pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pad"/>
+     <p layer="copper1" svgId="connector12pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="vin-">
+   <nodeMember connectorId="connector4"/>
+   <nodeMember connectorId="connector8"/>
+  </bus>
+  <bus id="vin+">
+   <nodeMember connectorId="connector5"/>
+   <nodeMember connectorId="connector9"/>
+  </bus>
+  <bus id="out">
+   <nodeMember connectorId="connector10"/>
+   <nodeMember connectorId="connector11"/>
+  </bus>
+  <bus id="gnd">
+   <nodeMember connectorId="connector7"/>
+   <nodeMember connectorId="connector12"/>
+  </bus>
+ </buses>
+ <url>https://www.adafruit.com/products/1164</url>
+</module>

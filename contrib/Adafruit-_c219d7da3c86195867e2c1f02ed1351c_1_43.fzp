@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="Adafruit-_c219d7da3c86195867e2c1f02ed1351c_1_43" referenceFile="Adafruit Sparkle Motion WLED Friend.fzp">
+ <version>4</version>
+ <date>2025-01-21</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">We're designing a board for using WLED - and we want to make like the bestest board in the whole&lt;/span>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">&lt;br />world. Our resident mermaid, &lt;/span>&lt;a href="https://learn.adafruit.com/u/firepixie">&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">firepixie&lt;/span>&lt;/a>&lt;span style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> makes a lot of projects with WLED and she loves it! So how can we make something that will be powerful but not too bulky? Here's some things we're thinking about as&lt;br />the design starts to congeal like cranberry sauce:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Power via USB Type C PD&lt;/span>&lt;span style=" font-size:15px;"> with a slide switch that selects between 5, 12 and 20V (24V pixels can usually run fine at 20V)&lt;br />OR via &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">2.1mm DC jack&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Low forward-voltage diodes &lt;/span>&lt;span style=" font-size:15px;">so its good for up to 5A from either&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">5 Amp fuse &lt;/span>&lt;span style=" font-size:15px;">to protect from over-current drive&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">ESP32&lt;/span>&lt;span style=" font-size:15px;"> mini module with built in or optionally wFL antenna port (the classic '32 has broad support even if we'd prefer the 'S2 or 'S3)&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Three output signal terminal block sets with power and ground for each&lt;/span>&lt;span style=" font-size:15px;"> - they'll be level shifted to 5V.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">6 GPIO breakout pads&lt;/span>&lt;span style=" font-size:15px;"> with a fourth level-shifted ouput, and 3 more GPIO plus power and ground.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Built-in I2S microphone&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Built-in IR receiver&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Stemma QT I2C port&lt;/span>&lt;span style=" font-size:15px;"> to connect external sensors/OLED/etc&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Separate analog/digital input JST port &lt;/span>&lt;span style=" font-size:15px;">for analog input, potentiometer, microphone or external IR receiver&lt;/span>&lt;/li>
+&lt;li style=" font-family:'Proxima Nova','Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Compact enough you can use it for wearable projects - 1.3&amp;quot;x1.75&amp;quot; / 33mm x 45mm size with mounting holes&lt;/span>&lt;/li>&lt;/ul>&lt;/body>&lt;/html></description>
+ <title>Adafruit Sparkle Motion WLED Friend</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 1</property>
+  <property name="family">NeoPixel</property>
+  <property name="mn">Adafruit</property>
+  <property name="part number">#6100</property>
+  <property name="mpn">#6100</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_c219d7da3c86195867e2c1f02ed1351c_1_43_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_c219d7da3c86195867e2c1f02ed1351c_1_43_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_c219d7da3c86195867e2c1f02ed1351c_1_43_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_c219d7da3c86195867e2c1f02ed1351c_1_43_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector86" type="female" name="+24V">
+   <description>+24V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector86pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector86terminal" svgId="connector86pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector86pad" layer="copper0"/>
+     <p svgId="connector86pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector89" type="female" name="+24V">
+   <description>+24V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector89pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector89terminal" svgId="connector89pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector89pad" layer="copper0"/>
+     <p svgId="connector89pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector92" type="female" name="+24V">
+   <description>+24V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector92pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector92terminal" svgId="connector92pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector92pad" layer="copper0"/>
+     <p svgId="connector92pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector94" type="female" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector94pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector94terminal" svgId="connector94pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector94pad" layer="copper0"/>
+     <p svgId="connector94pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector36" type="female" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector36pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector36terminal" svgId="connector36pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector36pad" layer="copper0"/>
+     <p svgId="connector36pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector194" type="female" name="3.3V">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector194pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector194terminal" svgId="connector194pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector194pad" layer="copper0"/>
+     <p svgId="connector194pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector96" type="female" name="IO10">
+   <description>IO10</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector96pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector96terminal" svgId="connector96pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector96pad" layer="copper0"/>
+     <p svgId="connector96pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector97" type="female" name="IO18">
+   <description>IO18</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector97pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector97terminal" svgId="connector97pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector97pad" layer="copper0"/>
+     <p svgId="connector97pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector95" type="female" name="IO9">
+   <description>IO9</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector95pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector95terminal" svgId="connector95pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector95pad" layer="copper0"/>
+     <p svgId="connector95pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector37" type="female" name="SDA">
+   <description>SDA</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector37pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector37terminal" svgId="connector37pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector37pad" layer="copper0"/>
+     <p svgId="connector37pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector38" type="female" name="SCL">
+   <description>SCL</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector38pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector38terminal" svgId="connector38pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector38pad" layer="copper0"/>
+     <p svgId="connector38pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector193" type="female" name="SENSOR">
+   <description>SENSOR</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector193pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector193terminal" svgId="connector193pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector193pad" layer="copper0"/>
+     <p svgId="connector193pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector98" type="female" name="S4">
+   <description>S4</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector98pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector98terminal" svgId="connector98pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector98pad" layer="copper0"/>
+     <p svgId="connector98pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector85" type="female" name="S3">
+   <description>S3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector85pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector85terminal" svgId="connector85pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector85pad" layer="copper0"/>
+     <p svgId="connector85pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector88" type="female" name="S2">
+   <description>S2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector88pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector88terminal" svgId="connector88pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector88pad" layer="copper0"/>
+     <p svgId="connector88pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector91" type="female" name="S1">
+   <description>S1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector91pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector91terminal" svgId="connector91pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector91pad" layer="copper0"/>
+     <p svgId="connector91pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector84" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector84pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector84terminal" svgId="connector84pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector84pad" layer="copper0"/>
+     <p svgId="connector84pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector87" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector87pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector87terminal" svgId="connector87pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector87pad" layer="copper0"/>
+     <p svgId="connector87pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector90" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector90pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector90terminal" svgId="connector90pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector90pad" layer="copper0"/>
+     <p svgId="connector90pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector93" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector93pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector93terminal" svgId="connector93pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector93pad" layer="copper0"/>
+     <p svgId="connector93pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector35" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector35pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector35terminal" svgId="connector35pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector35pad" layer="copper0"/>
+     <p svgId="connector35pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector195" type="female" name="GND">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector195pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p terminalId="connector195terminal" svgId="connector195pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector195pad" layer="copper0"/>
+     <p svgId="connector195pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector84"/>
+   <nodeMember connectorId="connector87"/>
+   <nodeMember connectorId="connector90"/>
+   <nodeMember connectorId="connector93"/>
+   <nodeMember connectorId="connector35"/>
+   <nodeMember connectorId="connector195"/>
+  </bus>
+  <bus id="+24v">
+   <nodeMember connectorId="connector86"/>
+   <nodeMember connectorId="connector89"/>
+   <nodeMember connectorId="connector92"/>
+  </bus>
+  <bus id="3.3v">
+   <nodeMember connectorId="connector94"/>
+   <nodeMember connectorId="connector36"/>
+   <nodeMember connectorId="connector194"/>
+  </bus>
+ </buses>
+ <label>Adafruit Sparkle Motion WLED Friend</label>
+ <url>https://www.adafruit.com/product/6100</url>
+</module>

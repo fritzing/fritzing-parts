@@ -19,8 +19,11 @@
 <text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='1.23472' x='0' y='0' text-anchor='start'>GND</text>
 </g></g>
 <rect class='terminal' x='17.6565' y='15.1165' width='0.246944' height='0.246944' fill='none' stroke='none' stroke-width='0' id='connector1terminal' />
-<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='17.9387' y='2.83979' text-anchor='middle'>Voltage</text>
-<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='17.9387' y='4.4391' text-anchor='middle'>Regulator</text>
-<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='17.9387' y='6.0384' text-anchor='middle'>5V</text>
+
+<text id="label" text-anchor="middle" font-family="Noto Sans" stroke='none' stroke-width='0' fill='#000000' font-size='1.5' x='17.9387' y='2.83979' >
+<tspan>Voltage</tspan>
+<tspan x='17.9387' dy="1em">Regulator</tspan>
+<tspan x='17.9387' dy="1em">5V</tspan>
+</text>
 </g>
 </svg>

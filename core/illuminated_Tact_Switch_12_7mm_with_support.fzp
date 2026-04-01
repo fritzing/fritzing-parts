@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="IlluminatedTactileSwitch12_7mm_with_support_631e09" fritzingVersion="1.0.6">
+ <version>4</version>
+ <author>Lisa Chyhryna</author>
+ <title>Illuminated Tact LED Switch 12.7mm with supports</title>
+ <label>TSL</label>
+ <date>2023-07-30</date>
+ <history date="2023-07-30" author="Kjell Morgenstern">Added support holes</history>
+ <history date="2023-08-05" author="Kjell Morgenstern">Recalculate viewBox. Change pin distances to multiples of 2.54mm</history>
+ <history date="2026-02-15" author="Kjell Morgenstern">Add CX marker. Resize schematic connectors. Add a Fritzing version</history>
+ <tags>
+  <tag>switch</tag>
+  <tag>LED</tag>
+  <tag>Button</tag>
+  <tag>Tactile</tag>
+ </tags>
+ <properties>
+  <property name="family">Tactile button</property>
+  <property name="hole size">1.2mm</property>
+  <property name="part number">TSL12121</property>
+ </properties>
+ <taxonomy>tactile.switch.led</taxonomy>
+ <url> http://www.khan.cn/en/productshow/TSL12121 </url>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;"&gt;
+This version of the tactile switch comes with support pins for additional stability. The footprint was modified to 0.1inch factors for better alignment.
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Travel&lt;/td&gt;
+      &lt;td&gt;0.25mmР’В±0.1mm&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Rated load&lt;/td&gt;
+      &lt;td&gt;DC 12V 50mA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Contact Resistance&lt;/td&gt;
+      &lt;td&gt;≤100mΩ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Dielectric Strength&lt;/td&gt;
+      &lt;td&gt;AC 250V for 1 minute&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Insulation Resistance&lt;/td&gt;
+      &lt;td&gt; ≥100MΩ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Electrical Life&lt;/td&gt;
+      &lt;td&gt;≥100,000 cycles&lt;/td&gt;
+    &lt;/tr&gt;    
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/body&gt;&lt;/html&gt;</description>
+ <views>
+  <iconView>
+   <layers image="icon/illuminated_Tact_Switch_12x12mm_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/illuminated_Tact_Switch_12x12mm.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <!--layers image="schematic/illuminated_Tact_Switch_12x12mm.svg"-->
+   <layers image="schematic/illuminated_Tact_LED_Switch_127mm_with_supports_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/illuminated_Tact_Switch_12x12mm_with_support.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector name="1" type="male" id="connector1">
+   <description>1A</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector1terminal" layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+     <p layer="copper1" svgId="connector1pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="2" type="male" id="connector2">
+   <description>2A</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector2terminal" layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector2pin"/>
+     <p layer="copper1" svgId="connector2pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3" type="male" id="connector3">
+   <description>3B</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector3terminal" layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector3pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector3pin"/>
+     <p layer="copper1" svgId="connector3pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="4" type="male" id="connector4">
+   <description>4B</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector4terminal" layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector4pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector4pin"/>
+     <p layer="copper1" svgId="connector4pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" type="male" id="connector5">
+   <description>Ground/Cathode</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector5terminal" layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector5pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pin"/>
+     <p layer="copper1" svgId="connector5pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="VCC" type="male" id="connector6">
+   <description>VCC/Anode</description>
+   <views>
+    <breadboardView>
+     <p terminalId="connector6terminal" layer="breadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector6pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pin"/>
+     <p layer="copper1" svgId="connector6pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>

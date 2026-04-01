@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module referenceFile="Adafruit Pixel Trinkey.fzp" fritzingVersion="0.5.2b.02.18.4756" moduleId="Adafruit-_76c25def869d9a49089752ecc12e3ddc_2_DA">
+ <version>4</version>
+ <date>2024-05-23</date>
+ <author>liz</author>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Blast-off to Pixel Planet with the&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;"> Adafruit Pixel Trinkey&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, a co-pilot for those who like to shine bright. This little microcontroller board plugs into your computer's USB port and can drive tons of NeoPixel (SK6812, WS2812, etc) or DotStar (e.g. AP102) LEDs without having to do any soldering or complex wiring. The SAMD21 chip on board has 32KB of SRAM, that means thousands of pixels! All from the convenience of your computer with support for Arduino, CircuitPython or Windows 11's built-in &lt;/span>&lt;a href="https://support.microsoft.com/en-us/windows/control-your-dynamic-lighting-devices-in-windows-8e8f22e3-e820-476c-8f9d-9ffc7b6ffcd2">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">Dynamic Light Control&lt;/span>&lt;/a>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">NeoPixels and Dotstars are 'smart' LEDs that can display 24-bit color, they're bright, colorful, individually-addressable, and come in dozens of different shapes: from&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/product/2848">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">flexible strips&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, to &lt;/span>&lt;a href="https://www.adafruit.com/product/3630">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">individual dots&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, to &lt;/span>&lt;a href="https://www.adafruit.com/search?q=neopixel+ring">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">rings&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;">, and beyond. However, you need a microcontroller to drive them: something that can generate the exact pattern of data that they desire to set each pixel color. Normally folks use something like an Arduino, which will work just fine, but sometimes needs level shifting or separate power, or just has gangly wires.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">This board contains the microcontroller, plus level shifting in a compact package that pokes out an inch from your computer USB port. On the end is a screw terminal block that can accept stranded or solid-core wires 26 to 18 AWG with four ports: 5V power, Data, Clock and Ground. If you're using DotStars, wire up the 'input' side of your LEDs to the 4 pads. If you're using NeoPixels, you can have one or two strands, where the second strand uses the Clock pin as the data generator.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">Computer USB ports can provide up to 1A which we've found will drive about 150 pixels without difficulty as long as they are not all on full white at max brightness. If you need to drive a ton more pixels, simply disconnect the 5V power wire and use an external power source - just make sure that the ground wire from the external power is connected to the ground of the Trinkey+pixels. You can monitor the USB 5V line voltage thanks to a resistor divider on the board.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000; background-color:#ffffff;">If you want to add additional circuitry, such as an Infrared remote input, or potentiometer, or a button, there's a JST-SH 3-pin connector on board. Use a&lt;/span>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> &lt;/span>&lt;a href="https://www.adafruit.com/search?q=jst+sh+3-pin">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; text-decoration: underline; color:#0062c7;">JST SH 3-pin cable&lt;/span>&lt;/a>&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;"> to access the 3V, ground and pin D4. There's also a separate mini NeoPixel for status feedback if desired.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:13px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;">&lt;span style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; font-weight:496; color:#000000;">Features:&lt;/span>&lt;/p>
+&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;">&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:10px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">ATSAMD21E18 32-bit Cortex M0+&lt;/span>&lt;span style=" font-size:15px;"> - 48 MHz 32-bit processor with 256KB Flash and 32 KB RAM&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Native USB supported by every OS &lt;/span>&lt;span style=" font-size:15px;">- can be used in Arduino or CircuitPython as a USB serial console, MIDI, Keyboard/Mouse HID, and even a little disk drive for storing Python scripts&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">Can be used with&lt;/span>&lt;span style=" font-size:15px; font-weight:496;"> Arduino IDE&lt;/span>&lt;span style=" font-size:15px;"> or &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">CircuitPython&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">0.1&amp;quot; / 2.54mm Terminal Blocks &lt;/span>&lt;span style=" font-size:15px;">- Attach LEDs with no soldering! Just use a common screwdriver.&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px;">On-board &lt;/span>&lt;span style=" font-size:15px; font-weight:496;">RGB NeoPixel LED&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">JST SH 3-pin compatible connector&lt;/span>&lt;span style=" font-size:15px;"> - For extra hardware connectivity&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Reset switch&lt;/span>&lt;span style=" font-size:15px;"> to start your project code over or enter bootloader mode&lt;/span>&lt;/li>
+&lt;li style=" font-family:'proxima nova','lucida grande','lucida sans unicode','lucida sans','Geneva','Verdana','sans-serif'; font-size:15px; color:#000000;" style=" margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:15px; font-weight:496;">Open Source Hardware&lt;/span>&lt;span style=" font-size:15px;"> so you have full control over your LEDs&lt;/span>&lt;/li>&lt;/ul>&lt;/body>&lt;/html></description>
+ <title>Adafruit Pixel Trinkey</title>
+ <tags/>
+ <properties>
+  <property name="variant">variant 2</property>
+  <property name="family">Trinkey</property>
+  <property name="part number">#5953</property>
+  <property name="mpn">#5953</property>
+  <property name="mn">Adafruit</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/Adafruit-_76c25def869d9a49089752ecc12e3ddc_2_DA_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Adafruit-_76c25def869d9a49089752ecc12e3ddc_2_DA_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/Adafruit-_76c25def869d9a49089752ecc12e3ddc_2_DA_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/Adafruit-_76c25def869d9a49089752ecc12e3ddc_2_DA_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector name="VBUS" id="connector60" type="female">
+   <description>VBUS</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector60pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector60pin" layer="schematic" terminalId="connector60terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector60pad" layer="copper0"/>
+     <p svgId="connector60pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="3.3V" id="connector86" type="female">
+   <description>3.3V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector86pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector86pin" layer="schematic" terminalId="connector86terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector86pad" layer="copper0"/>
+     <p svgId="connector86pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="DAT_5V" id="connector62" type="female">
+   <description>DAT_5V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector62pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector62pin" layer="schematic" terminalId="connector62terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector62pad" layer="copper0"/>
+     <p svgId="connector62pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="CLK_5V" id="connector61" type="female">
+   <description>CLK_5V</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector61pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector61pin" layer="schematic" terminalId="connector61terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector61pad" layer="copper0"/>
+     <p svgId="connector61pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="N$1" id="connector85" type="female">
+   <description>N$1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector85pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector85pin" layer="schematic" terminalId="connector85terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector85pad" layer="copper0"/>
+     <p svgId="connector85pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector63" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector63pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector63pin" layer="schematic" terminalId="connector63terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector63pad" layer="copper0"/>
+     <p svgId="connector63pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector name="GND" id="connector87" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector87pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector87pin" layer="schematic" terminalId="connector87terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector87pad" layer="copper0"/>
+     <p svgId="connector87pad" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector63"/>
+   <nodeMember connectorId="connector87"/>
+  </bus>
+ </buses>
+ <label>Adafruit Pixel Trinkey</label>
+ <url>https://www.adafruit.com/product/5953</url>
+</module>
