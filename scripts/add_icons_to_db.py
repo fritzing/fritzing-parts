@@ -9,6 +9,7 @@ This script:
 
 """
 
+import logging
 import os
 import sqlite3
 import sys
@@ -16,6 +17,8 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from multiprocessing import Pool, cpu_count
 import io
+
+logger = logging.getLogger(__name__)
 
 try:
     import cairosvg
@@ -90,7 +93,7 @@ def svg_to_png_bytes(svg_path, size=42):
         return png_bytes
 
     except Exception as e:
-        print(f"Warning: Failed to convert {svg_path}: {e}")
+        logger.warning("Failed to convert %s: %s", svg_path, e)
         return None
 
 
@@ -110,27 +113,27 @@ def parse_fzp_file(fzp_path):
         # Get moduleID from root element
         module_id = root.get('moduleId')
         if not module_id:
-            print(f"Warning: No moduleId found in {fzp_path}")
+            logger.warning("No moduleId found in %s", fzp_path)
             return None, None
 
         # Find iconView image path
         icon_view = root.find('.//iconView/layers')
         if icon_view is None:
-            print(f"Warning: No iconView found in {fzp_path}")
+            logger.warning("No iconView found in %s", fzp_path)
             return None, None
 
         icon_image = icon_view.get('image')
         if not icon_image:
-            print(f"Warning: No image attribute in iconView for {fzp_path}")
+            logger.warning("No image attribute in iconView for %s", fzp_path)
             return None, None
 
         return module_id, icon_image
 
     except ET.ParseError as e:
-        print(f"Warning: Failed to parse {fzp_path}: {e}")
+        logger.warning("Failed to parse %s: %s", fzp_path, e)
         return None, None
     except Exception as e:
-        print(f"Warning: Error processing {fzp_path}: {e}")
+        logger.warning("Error processing %s: %s", fzp_path, e)
         return None, None
 
 
@@ -151,7 +154,7 @@ def find_fzp_files_and_extract_info(base_path):
 
     for part_type, search_path in search_paths:
         if not os.path.exists(search_path):
-            print(f"Warning: Path does not exist: {search_path}")
+            logger.warning("Path does not exist: %s", search_path)
             continue
 
         for root, dirs, files in os.walk(search_path):
@@ -168,7 +171,7 @@ def find_fzp_files_and_extract_info(base_path):
                         if os.path.exists(icon_svg_path):
                             parts_info.append((module_id, icon_svg_path, fzp_path))
                         else:
-                            print(f"Warning: Icon file not found: {icon_svg_path} (from {fzp_path})")
+                            logger.warning("Icon file not found: %s (from %s)", icon_svg_path, fzp_path)
 
     return parts_info
 
@@ -233,7 +236,7 @@ def add_icons_to_database(db_path, parts_info, size=42, dry_run=False, workers=N
             icon_name = f"{module_id}_icon"
 
             if not success:
-                print(f"Warning: {error_msg}")
+                logger.warning("%s", error_msg)
                 stats['failed'] += 1
                 continue
 
@@ -251,7 +254,7 @@ def add_icons_to_database(db_path, parts_info, size=42, dry_run=False, workers=N
                             "UPDATE icons SET data = ? WHERE name = ?",
                             (png_data, icon_name)
                         )
-                        print(f"Converted {icon_name} ({len(png_data)} bytes) - will update")
+                        logger.debug("Converted %s (%d bytes) - will update", icon_name, len(png_data))
                         stats['skipped'] += 1
                     else:
                         # Insert new icon
@@ -259,13 +262,13 @@ def add_icons_to_database(db_path, parts_info, size=42, dry_run=False, workers=N
                             "INSERT INTO icons (name, data) VALUES (?, ?)",
                             (icon_name, png_data)
                         )
-                        print(f"Converted {icon_name} ({len(png_data)} bytes) - will insert")
+                        logger.debug("Converted %s (%d bytes) - will insert", icon_name, len(png_data))
                         stats['inserted'] += 1
                 except sqlite3.Error as e:
-                    print(f"Warning: Failed to save {icon_name}: {e}")
+                    logger.warning("Failed to save %s: %s", icon_name, e)
                     stats['failed'] += 1
             else:
-                print(f"Would add/update {icon_name} ({len(png_data)} bytes)")
+                logger.debug("Would add/update %s (%d bytes)", icon_name, len(png_data))
                 stats['inserted'] += 1
 
         if not dry_run:
@@ -315,8 +318,19 @@ def main():
         default=None,
         help='Number of parallel workers for conversion (default: number of CPU cores)'
     )
+    parser.add_argument(
+        '-v', '--verbose', '--debug',
+        dest='verbose',
+        action='store_true',
+        help='Log per-file conversion details (debug level)'
+    )
 
     args = parser.parse_args()
+
+    logging.basicConfig(
+        level=logging.DEBUG if args.verbose else logging.INFO,
+        format='%(levelname)s: %(message)s',
+    )
 
     # Resolve paths
     db_path = os.path.abspath(args.db)
