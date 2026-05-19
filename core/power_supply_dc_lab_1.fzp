@@ -43,10 +43,10 @@ p, li { white-space: pre-wrap; }
       </layers>
     </schematicView>
     <pcbView>
-      <layers image="pcb/jumper_2_100mil_pcb.svg">
+      <layers image="pcb/power_supply_dc_lab_1_pcb.svg">
         <layer layerId="copper0"/>
-        <layer layerId="silkscreen"/>
         <layer layerId="copper1"/>
+        <layer layerId="partimage"/>
       </layers>
     </pcbView>
   </views>
@@ -60,6 +60,10 @@ p, li { white-space: pre-wrap; }
         <schematicView>
           <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
         </schematicView>
+        <pcbView>
+          <p svgId="connector1pad" layer="copper0" hybrid="yes"/>
+          <p svgId="connector1pad" layer="copper1" hybrid="yes"/>
+        </pcbView>
       </views>
     </connector>
     <connector id="connector0" type="male" name="Pin 2">
@@ -71,6 +75,10 @@ p, li { white-space: pre-wrap; }
         <schematicView>
           <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
         </schematicView>
+        <pcbView>
+          <p svgId="connector0pad" layer="copper0" hybrid="yes"/>
+          <p svgId="connector0pad" layer="copper1" hybrid="yes"/>
+        </pcbView>
       </views>
     </connector>
   </connectors>

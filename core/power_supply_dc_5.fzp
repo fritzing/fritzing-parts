@@ -53,29 +53,17 @@
         <current flow="source" valueMax="0"/>
       </erc>
       <views>
-        <breadboardView>
-          <p svgId="connector1pin" layer="breadboard"/>
-        </breadboardView>
         <schematicView>
           <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
         </schematicView>
-        <pcbView>
-          <p svgId="connector1pin" layer="schematic"/>
-        </pcbView>
       </views>
     </connector>
     <connector type="male" id="connector0" name="V-">
       <description>Negative Supply Voltage</description>
       <views>
-        <breadboardView>
-          <p svgId="connector0pin" layer="breadboard"/>
-        </breadboardView>
         <schematicView>
           <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
         </schematicView>
-        <pcbView>
-          <p svgId="connector0pin" layer="schematic"/>
-        </pcbView>
       </views>
     </connector>
   </connectors>

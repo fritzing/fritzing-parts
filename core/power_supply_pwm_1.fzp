@@ -46,8 +46,10 @@
       </layers>
     </schematicView>
     <pcbView>
-      <layers image="schematic/power_supply_pulse_1_schematic.svg">
-        <layer layerId="schematic"/>
+      <layers image="pcb/waveform_generator_pwm_v1_pcb.svg">
+        <layer layerId="copper0"/>
+        <layer layerId="copper1"/>
+        <layer layerId="partimage"/>
       </layers>
     </pcbView>
   </views>
@@ -66,7 +68,8 @@
           <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
         </schematicView>
         <pcbView>
-          <p svgId="connector0pin" layer="schematic"/>
+          <p svgId="connector0pad" layer="copper0" hybrid="yes"/>
+          <p svgId="connector0pad" layer="copper1" hybrid="yes"/>
         </pcbView>
       </views>
     </connector>
@@ -80,7 +83,8 @@
           <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
         </schematicView>
         <pcbView>
-          <p svgId="connector1pin" layer="schematic"/>
+          <p svgId="connector1pad" layer="copper0" hybrid="yes"/>
+          <p svgId="connector1pad" layer="copper1" hybrid="yes"/>
         </pcbView>
       </views>
     </connector>
