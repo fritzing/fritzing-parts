@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.beta.1396" moduleId="5mmColorLEDModuleID">
- <version>4</version>
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="1.0.6" moduleId="LED-genedb611bf8177f41ac9c325217070f0c62ColorLEDModuleID">
+ <version>5</version>
+ <history date="2008-07-25" author="Brendan Howell">Initial version </history>
+ <history date="2026-06-14" author="Kjell Morgenstern" mode="optional">Corrected the cathode/anode pad markings in PCB view (fritzing-parts #268): the square pad now marks the cathode on the flat side.</history>
  <author>Brendan Howell</author>
  <title>Red LED - 5mm</title>
  <label>LED</label>
@@ -15,7 +18,7 @@
   <property name="family">LED</property>
   <property name="color" showInLabel="yes">Red (633nm)</property>
   <property name="current">0.030A</property>
-  <property name="leg" >yes</property>
+  <property name="leg">yes</property>
  </properties>
  <description>A generic red LED (~1.8V)</description>
  <spice>
@@ -40,12 +43,9 @@
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="pcb/5mm_LED.svg">
+   <layers image="pcb/LED-generic-5mm_6852162_005.svg">
     <layer layerId="copper0"/>
-    <layer layerId="keepout"/>
-    <layer layerId="soldermask"/>
     <layer layerId="silkscreen"/>
-    <layer layerId="outline"/>
    <layer layerId="copper1"/></layers>
   </pcbView>
  </views>
@@ -54,7 +54,7 @@
    <description>cathode pin</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector0pin"  legId="connector0leg"/>
+     <p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
@@ -68,7 +68,7 @@
    <description>anode pin</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector1pin"  legId="connector1leg"/>
+     <p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
