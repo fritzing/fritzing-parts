@@ -27,8 +27,16 @@ def get_dom(filename):
     return dom.documentElement
 
 
-def set_module_id(dom, name):
-    newModuleID = '%.8s%s' % (re.sub(r'\s+|_', '', name), uuid.uuid4().hex)
+def set_module_id(dom, name, old_module_id=None):
+    # Preserve a legacy CamelCase "<Word>ModuleID" suffix (e.g. "ColorLEDModuleID")
+    # from the original moduleId. Several Fritzing core parts are recognized in the
+    # app by this suffix, so a regenerated part must keep it or it loses that special
+    # handling. Parts whose id does not end in "...ModuleID" are unaffected.
+    if old_module_id is None:
+        old_module_id = dom.getAttribute("moduleId")
+    suffix_match = re.search(r'[A-Z][A-Za-z]*ModuleID$', old_module_id or '')
+    suffix = suffix_match.group(0) if suffix_match else ''
+    newModuleID = '%.8s%s%s' % (re.sub(r'\s+|_', '', name), uuid.uuid4().hex, suffix)
     dom.setAttribute("moduleId", newModuleID)
     return newModuleID
 
@@ -215,7 +223,7 @@ def main():
     old_module_id = obsolete_fzp_dom.getAttribute("moduleId")
     print("replace moduleId=\"%s\"" % old_module_id)
 
-    new_module_id = set_module_id(new_fzp_dom, name)
+    new_module_id = set_module_id(new_fzp_dom, name, old_module_id)
     print("with moduleId=\"%s\"" % new_module_id)
     versions = obsolete_fzp_dom.getElementsByTagName("version")
     if not versions:
