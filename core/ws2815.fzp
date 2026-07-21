@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module moduleId="WS2815_RGB_LED_strip_17b5c981895fad978faf4675cba95063_36" referenceFile="WS2812_RGB_LED_strip_b9573a31cb8645f06da0e27be1b6a859_2.fzp">
+<module fritzingVersion="1.0.6" moduleId="WS2815_RGB_LED_strip_17b5c981895fad978faf4675cba95063_37" referenceFile="WS2812_RGB_LED_strip_b9573a31cb8645f06da0e27be1b6a859_2.fzp">
  <version>1.0</version>
- <author>Skillkiller</author>
+ <author>Kjell</author>
  <title>WS2815 RGB LED strip</title>
  <label>U</label>
- <date>2025-03-28</date>
+ <date>2026-07-21</date>
+ <history date="2025-03-28" author="Skillkiller" mode="optional">initial version</history>
+ <history date="2026-07-21" author="Kjell" mode="required">Lots of fixes: Size, Connector Mapping, Fonts, Scour</history>
  <tags>
   <tag>LED</tag>
   <tag>strip</tag>
@@ -16,12 +18,8 @@
   <property name="variant">12V</property>
   <property name="type">strip</property>
  </properties>
- <taxonomy>part.dip.8.pins</taxonomy>
- <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">WS2815 12V Led Strip&lt;/p>&lt;/body>&lt;/html></description>
+ <taxonomy>part.mechanical.8.pins</taxonomy>
+ <description>WS2815 12V Led Strip</description>
  <views>
   <iconView>
    <layers image="icon/ws2815_icon.svg">
