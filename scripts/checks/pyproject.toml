@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fritzing-parts-linter"
+description = "Linter for Fritzing parts: validation checks for FZP and SVG files"
+requires-python = ">=3.12"
+dependencies = ["lxml"]
+dynamic = ["version"]
+
+[tool.setuptools]
+packages = ["fritzing_parts_linter"]
+
+[tool.setuptools.package-dir]
+fritzing_parts_linter = "."
+
+[tool.setuptools.dynamic]
+version = {attr = "fritzing_parts_linter.__version__"}
