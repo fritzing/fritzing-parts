@@ -315,6 +315,71 @@ class SVGViewBoxChecker(SVGChecker):
         return "Check that the viewBox attribute is valid"
 
 
+class SVGSizeUnitsChecker(SVGChecker):
+    """
+    Check that the SVG root's width/height attributes use unambiguous physical
+    units (in, mm, mil, etc.) rather than being unitless or 'px'. Fritzing
+    determines a part's real-world size from these attributes (see
+    fritzing-app's TextUtils::parseForWidthAndHeight), so a bare number is
+    ambiguous: per the SVG spec it defaults to px, which is a screen/DPI unit
+    and not a physical size.
+    """
+
+    LENGTH_RE = re.compile(r"^\s*(-?\d*\.?\d+)\s*([a-zA-Z%]*)\s*$")
+    # Units fritzing-app's TextUtils::convertToInches understands.
+    # 'mil' (1/1000 in) is a Fritzing/PCB-world addition, not a CSS/SVG unit.
+    PHYSICAL_UNITS = {"in", "mm", "cm", "mil", "pt", "pc"}
+
+    def check(self):
+        # Icons are thumbnails only; their real-world size doesn't matter
+        if self.layer_ids == ['icon']:
+            return self.get_result()
+
+        root_element = self.svg_doc.getroot()
+        units = {}
+        for dim in ("width", "height"):
+            value = root_element.attrib.get(dim)
+            if not value:
+                self.add_error(f"SVG root is missing '{dim}' attribute", node=root_element)
+                continue
+
+            match = self.LENGTH_RE.match(value)
+            if not match:
+                self.add_error(f"Could not parse '{dim}' attribute: '{value}'", node=root_element)
+                continue
+
+            unit = match.group(2).lower()
+            if not unit or unit == "px":
+                self.add_warning(
+                    f"SVG '{dim}' attribute has no physical unit (defaults to px): '{value}'. "
+                    "Use an explicit unit such as in, mm, or mil, otherwise the part's "
+                    "real-world size is ambiguous.",
+                    node=root_element
+                )
+            elif unit not in self.PHYSICAL_UNITS:
+                self.add_warning(
+                    f"SVG '{dim}' attribute uses an unrecognized unit '{unit}': '{value}'",
+                    node=root_element
+                )
+            units[dim] = unit
+
+        if units.get("width") and units.get("height") and units["width"] != units["height"]:
+            self.add_warning(
+                f"Mismatched units between width ('{units['width']}') and height ('{units['height']}')",
+                node=root_element
+            )
+
+        return self.get_result()
+
+    @staticmethod
+    def get_name():
+        return "svg_size_units"
+
+    @staticmethod
+    def get_description():
+        return "Check that the SVG root width/height use unambiguous physical units (in, mm, mil, etc.) instead of being unitless/px"
+
+
 class SVGIdsChecker(SVGChecker):
     def check(self):
         id_occurrences = {}

@@ -835,5 +835,55 @@ class TestCheckers(unittest.TestCase):
                         0,
                         None)
 
+    def check_size_units(self, width, height, layer_ids=('breadboard',)):
+        from .svg_checkers import SVGSizeUnitsChecker
+        svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 10 10"><g id="breadboard"/></svg>'
+        svg_doc = etree.fromstring(svg.encode('utf-8')).getroottree()
+        checker = SVGSizeUnitsChecker(svg_doc, list(layer_ids))
+        return checker.check()
+
+    def test_size_units_unitless_warns(self):
+        errors, warnings = self.check_size_units('10', '10')
+        self.assertEqual(errors, 0)
+        self.assertEqual(warnings, 2)  # ambiguous width + ambiguous height
+
+    def test_size_units_px_warns(self):
+        errors, warnings = self.check_size_units('10px', '10px')
+        self.assertEqual(errors, 0)
+        self.assertEqual(warnings, 2)
+
+    def test_size_units_in_valid(self):
+        errors, warnings = self.check_size_units('1in', '1in')
+        self.assertEqual((errors, warnings), (0, 0))
+
+    def test_size_units_mm_valid(self):
+        errors, warnings = self.check_size_units('25.4mm', '25.4mm')
+        self.assertEqual((errors, warnings), (0, 0))
+
+    def test_size_units_mil_valid(self):
+        # 'mil' isn't a CSS/SVG unit, but fritzing-app's TextUtils::convertToInches
+        # supports it, so it shouldn't be flagged.
+        errors, warnings = self.check_size_units('1000mil', '1000mil')
+        self.assertEqual((errors, warnings), (0, 0))
+
+    def test_size_units_missing_is_error(self):
+        from .svg_checkers import SVGSizeUnitsChecker
+        svg = '<svg xmlns="http://www.w3.org/2000/svg" height="1in" viewBox="0 0 10 10"><g id="breadboard"/></svg>'
+        svg_doc = etree.fromstring(svg.encode('utf-8')).getroottree()
+        checker = SVGSizeUnitsChecker(svg_doc, ['breadboard'])
+        errors, warnings = checker.check()
+        self.assertEqual(errors, 1)  # missing width
+        self.assertEqual(warnings, 0)
+
+    def test_size_units_mismatched_units_warns(self):
+        errors, warnings = self.check_size_units('1in', '25.4mm')
+        self.assertEqual(errors, 0)
+        self.assertEqual(warnings, 1)  # mismatched units between width and height
+
+    def test_size_units_icon_skipped(self):
+        # Icons are thumbnails only, no physical size requirement
+        errors, warnings = self.check_size_units('10', '10', layer_ids=['icon'])
+        self.assertEqual((errors, warnings), (0, 0))
+
 if __name__ == '__main__':
     unittest.main()
