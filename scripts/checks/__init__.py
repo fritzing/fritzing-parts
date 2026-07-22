@@ -23,4 +23,4 @@ for checker_class in AVAILABLE_CHECKERS:
         FZP_ONLY_CHECKERS.append(checker_class)
 
 # Version info
-__version__ = "1.0.0"
+__version__ = "1.0.1"

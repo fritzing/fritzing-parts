@@ -3,8 +3,93 @@ import re
 import zipfile
 import tempfile
 import shutil
+from lxml import etree
 
 class FZPUtils:
+    # Views whose connectors reference SVG element ids (iconView never does)
+    CONNECTOR_VIEWS = ('breadboardView', 'schematicView', 'pcbView')
+
+    @staticmethod
+    def get_referenced_connector_ids(fzp_doc, view_name):
+        """
+        All svgId/terminalId/legId values referenced by connector <p> elements
+        for view_name. References of other views sharing the same SVG file are
+        included. Returns None for views that never reference connectors
+        (e.g. iconView).
+        """
+        if view_name not in FZPUtils.CONNECTOR_VIEWS:
+            return None
+
+        images = {}
+        for view in FZPUtils.CONNECTOR_VIEWS:
+            layers = fzp_doc.xpath(f"//views/{view}/layers")
+            if layers:
+                images[view] = layers[0].attrib.get("image")
+
+        referenced = set()
+        image = images.get(view_name)
+        for view in FZPUtils.CONNECTOR_VIEWS:
+            if view != view_name and (image is None or images.get(view) != image):
+                continue
+            for p in fzp_doc.xpath(f"//connector/views/{view}/p"):
+                for attr in ('svgId', 'terminalId', 'legId'):
+                    value = p.attrib.get(attr)
+                    if value:
+                        referenced.add(value)
+        return referenced
+
+    @staticmethod
+    def find_fzp_dir_for_svg(svg_path):
+        """
+        For an SVG in a parts repository layout (<root>/svg/<family>/<view>/file.svg),
+        return the matching FZP directory <root>/<family>, or None.
+        """
+        abs_path = os.path.abspath(svg_path)
+        parts = abs_path.split(os.sep)
+        for index in range(len(parts) - 2, 0, -1):
+            if parts[index] == 'svg':
+                fzp_dir = os.sep.join(parts[:index] + [parts[index + 1]])
+                if os.path.isdir(fzp_dir):
+                    return fzp_dir
+        return None
+
+    @staticmethod
+    def find_referenced_connector_ids_for_svg(svg_path, fzp_dir=None):
+        """
+        Union of connector ids referenced by all FZP files whose views use this
+        SVG. Returns None if no parts directory or no referencing FZP is found
+        (usage cannot be judged then), or if the SVG is only used as icon.
+        """
+        if fzp_dir is None:
+            fzp_dir = FZPUtils.find_fzp_dir_for_svg(svg_path)
+        if fzp_dir is None:
+            return None
+
+        svg_filename = os.path.basename(svg_path)
+        referenced = None
+        for root, dirs, files in os.walk(fzp_dir):
+            for file in files:
+                if not file.endswith('.fzp'):
+                    continue
+                fzp_path = os.path.join(root, file)
+                try:
+                    with open(fzp_path, 'r', encoding='utf-8') as f:
+                        if svg_filename not in f.read():
+                            continue
+                    fzp_doc = etree.parse(fzp_path)
+                except (OSError, UnicodeDecodeError, etree.XMLSyntaxError):
+                    continue
+                for view in FZPUtils.CONNECTOR_VIEWS:
+                    layers = fzp_doc.xpath(f"//views/{view}/layers")
+                    if not layers:
+                        continue
+                    image = layers[0].attrib.get("image") or ''
+                    if os.path.basename(image) != svg_filename:
+                        continue
+                    view_refs = FZPUtils.get_referenced_connector_ids(fzp_doc, view)
+                    referenced = view_refs if referenced is None else referenced | view_refs
+        return referenced
+
     @staticmethod
     def get_svg_path(fzp_path, image, view_name):
         dir_path = os.path.dirname(fzp_path)

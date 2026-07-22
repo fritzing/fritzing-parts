@@ -203,8 +203,10 @@ class FZPCheckerRunner:
                     if layer_id:
                         layer_ids.append(layer_id)
 
+                referenced_ids = FZPUtils.get_referenced_connector_ids(fzp_doc, view.tag)
+
                 for check_type in svg_check_types:
-                    checker = self._get_svg_checker(check_type, svg_doc, layer_ids)
+                    checker = self._get_svg_checker(check_type, svg_doc, layer_ids, referenced_ids)
                     self.logger.debug(f"Running SVG check: {checker.get_name()} for {view.tag}")
                     errors, warnings = checker.check()
                     self.total_errors += errors
@@ -223,9 +225,11 @@ class FZPCheckerRunner:
                             if svg_path in self.svg_file_results:
                                 self.svg_file_results[svg_path]['fixes'].extend(checker.fixes)
 
-    def _get_svg_checker(self, check_type, svg_doc, layer_ids):
+    def _get_svg_checker(self, check_type, svg_doc, layer_ids, referenced_ids=None):
         for checker in SVG_AVAILABLE_CHECKERS:
             if checker.get_name() == check_type:
+                if checker is SVGUnusedConnectorIdsChecker:
+                    return checker(svg_doc, layer_ids, referenced_ids)
                 return checker(svg_doc, layer_ids)
         raise ValueError(f"Invalid SVG check type: {check_type}")
 
@@ -253,9 +257,17 @@ class FZPCheckerRunner:
         all_fixes = []
         
         self.logger.info(f"Checking SVG file: {svg_path}")
-        
+
+        # For the unused connector id check, look up the FZP files using this
+        # SVG (parts repository layout) to know which ids are referenced.
+        referenced_ids = None
+        if SVGUnusedConnectorIdsChecker.get_name() in selected_svg_checks:
+            referenced_ids = FZPUtils.find_referenced_connector_ids_for_svg(svg_path)
+            if referenced_ids is None:
+                self.logger.info("No FZP referencing this SVG found, skipping unused connector id check")
+
         for check_type in selected_svg_checks:
-            checker = self._get_svg_checker(check_type, svg_doc, [])
+            checker = self._get_svg_checker(check_type, svg_doc, [], referenced_ids)
             self.logger.debug(f"Running SVG check: {checker.get_name()}")
             
             errors, warnings = checker.check()
@@ -524,7 +536,7 @@ class FZPCheckerRunner:
 
 AVAILABLE_CHECKERS = [FZPMissingTagsChecker, FZPConnectorTerminalChecker, FZPConnectorSvgRefChecker, FZPPCBConnectorStrokeChecker, FZPModuleIDSpecialCharsChecker, FZPMissingLegIDsChecker, FZPMissingConnectorRefsChecker, FZPDateFormatChecker, FZPConnectorNumberingChecker]
 
-SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGFontTypeChecker, SVGViewBoxChecker, SVGSizeUnitsChecker, SVGIdsChecker, SVGMatrixChecker, SVGLayerNestingChecker, SVGNoLayerChecker, SVGGornChecker, SVGCopperLayerContentChecker]
+SVG_AVAILABLE_CHECKERS = [SVGFontSizeChecker, SVGFontTypeChecker, SVGViewBoxChecker, SVGSizeUnitsChecker, SVGIdsChecker, SVGMatrixChecker, SVGLayerNestingChecker, SVGNoLayerChecker, SVGGornChecker, SVGCopperLayerContentChecker, SVGUnusedConnectorIdsChecker]
 AVAILABLE_CHECKERS_FROM_GOLANG = [
     FZPFritzingVersionChecker,
     FZPFritzingVersionRangeChecker,

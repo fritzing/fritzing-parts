@@ -138,6 +138,76 @@ class TestCheckers(unittest.TestCase):
                         ['missing_connector_refs'],
                         [], 0, None)  # No errors when all references are present
 
+    def test_unused_connector_ids(self):
+        # Warnings are reported per SVG file: connector1pin (bb), connector1terminal (sch), connector9pad (pcb)
+        self.run_checker('unused_connector_ids.fzp.test',
+                        [], ['unused_connector_ids'],
+                        0, None, 3)
+
+    def test_unused_connector_ids_valid(self):
+        self.run_checker('connector_refs_valid.fzp.test',
+                        [], ['unused_connector_ids'],
+                        0, None, 0)  # No warnings when all connector ids are referenced
+
+    def test_unused_connector_ids_standalone_svg(self):
+        """Checking an SVG directly warns about ids no FZP references (e.g. connector555pin)"""
+        from .fzp_utils import FZPUtils
+        from .svg_checkers import SVGUnusedConnectorIdsChecker
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            fzp_dir = os.path.join(temp_dir, 'core')
+            svg_dir = os.path.join(temp_dir, 'svg', 'core', 'breadboard')
+            os.makedirs(fzp_dir)
+            os.makedirs(svg_dir)
+
+            fzp_path = os.path.join(fzp_dir, 'standalone.fzp')
+            with open(fzp_path, 'w') as f:
+                f.write('''<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="standalone_test">
+  <views>
+    <breadboardView>
+      <layers image="breadboard/standalone_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+  </views>
+  <connectors>
+    <connector id="connector0" type="male">
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+      </views>
+    </connector>
+  </connectors>
+</module>
+''')
+
+            svg_path = os.path.join(svg_dir, 'standalone_breadboard.svg')
+            with open(svg_path, 'w') as f:
+                f.write('''<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg">
+  <g id="breadboard">
+    <circle id="connector0pin" cx="100" cy="100" r="27.5"/>
+    <circle id="connector555pin" cx="200" cy="100" r="27.5"/>
+  </g>
+</svg>
+''')
+
+            referenced_ids = FZPUtils.find_referenced_connector_ids_for_svg(svg_path)
+            self.assertEqual(referenced_ids, {'connector0pin'})
+
+            svg_doc = etree.parse(svg_path)
+            checker = SVGUnusedConnectorIdsChecker(svg_doc, ['breadboard'], referenced_ids)
+            errors, warnings = checker.check()
+            self.assertEqual(errors, 0)
+            self.assertEqual(warnings, 1)
+            self.assertIn('connector555pin', checker.issues[0].message)
+
+            # Without FZP context the check must stay silent
+            checker = SVGUnusedConnectorIdsChecker(etree.parse(svg_path), ['breadboard'], None)
+            self.assertEqual(checker.check(), (0, 0))
+
     def test_missing_leg_ids(self):
         self.run_checker('missing_leg_ids.fzp.test',
                         ['missing_leg_ids'],

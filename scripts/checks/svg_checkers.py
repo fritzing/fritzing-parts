@@ -1016,3 +1016,41 @@ class SVGGornChecker(SVGChecker):
     @staticmethod
     def get_description():
         return "Check for unwanted gorn attributes left by the Fritzing parts editor"
+
+
+class SVGUnusedConnectorIdsChecker(SVGChecker):
+    """
+    Warn about connector-style ids (connector<N>pin/pad/terminal/leg) in the
+    SVG that are not referenced by the FZP using this SVG. Such ids are usually
+    leftovers from editing or misnumbered connectors. Needs the set of ids
+    referenced by the FZP; without that context (standalone SVG with no known
+    FZP) the check is skipped.
+    """
+
+    CONNECTOR_ID_PATTERN = re.compile(r"^connector\d+(pin|pad|terminal|leg)$")
+
+    def __init__(self, svg_doc, layer_ids, referenced_ids=None):
+        super().__init__(svg_doc, layer_ids)
+        self.referenced_ids = referenced_ids
+
+    def check(self):
+        if self.referenced_ids is None:
+            self.logger.debug("No FZP reference context available, skipping unused connector id check")
+            return self.get_result()
+
+        for element in self.svg_doc.xpath("//*[starts-with(@id, 'connector')]"):
+            element_id = element.get('id')
+            if not element_id or not self.CONNECTOR_ID_PATTERN.match(element_id):
+                continue
+            if element_id not in self.referenced_ids:
+                self.add_warning(f"Unused id '{element_id}': no connector in the FZP references it", node=element)
+
+        return self.get_result()
+
+    @staticmethod
+    def get_name():
+        return "unused_connector_ids"
+
+    @staticmethod
+    def get_description():
+        return "Warn about connector pin/pad/terminal/leg ids in the SVG that are not referenced by the FZP"
