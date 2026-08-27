@@ -39,23 +39,19 @@ p, li { white-space: pre-wrap; }
     <line>x{instanceTitle}B {net connector4} {net connector5} {net connector3} {net connector13} {net connector6} NAND</line>
     <line>x{instanceTitle}C {net connector7} {net connector8} {net connector9} {net connector13} {net connector6} NAND</line>
     <line>x{instanceTitle}D {net connector11} {net connector12} {net connector10} {net connector13} {net connector6} NAND</line>
-    <model>.SUBCKT NAND 1 2 3 4 11
-    * NODES : INPUT (2) , OUTPUT , VCC , GND
-    Q1 9 5 1 QMOD
-    D1CLAMP 11 1 DMOD
-    Q2 9 5 2 QMOD
-    D2CLAMP 11 2 DMOD
-    RB 4 5 4K
-    R1 4 6 1.6K
-    Q3 6 9 8 QMOD
-    R2 8 11 1K
-    RC 4 7 130
-    Q4 7 6 10 QMOD
-    DVBEDROP 10 3 DMOD
-    Q5 3 8 11 QMOD
-    .MODEL DMOD D
-    .MODEL QMOD NPN (BF=75 RB=100 CJE=1PF CJC=3PF)
-    .ENDS NAND</model>
+    <model>
+      .SUBCKT NAND in1 in2 out VDD gnd
+      * Taken from ngspice manual
+      * NODES : INPUT (2) , OUTPUT , VCC , GND
+      M1 out in2 Vdd Vdd p1 W=7.5m L=1u pd=13.5u ad=22.5p ps=13.5u as=22.5p
+      M2 net.1 in2 gnd gnd n1 W=3m L=1u pd=9u ad=9p ps=9u as=9p
+      M3 out in1 Vdd Vdd p1 W=7.5m L=1u pd=13.5u ad=22.5p ps=13.5u as=22.5p
+      M4 out in1 net.1 gnd n1 W=3m L=1u pd=9u ad=9p ps=9u as=9p
+      * use BSIM3 model with default parameters
+      .ENDS NAND
+      .MODEL n1 nmos level=8 version=3.3.0
+      .MODEL p1 pmos level=8 version=3.3.0
+    </model>
   </spice>
   <views>
     <iconView>
